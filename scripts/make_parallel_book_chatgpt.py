@@ -1,0 +1,462 @@
+#! /usr/bin/env python3
+
+import argparse
+import json
+import logging
+import os
+import regex
+import sqlite3
+import sys
+import tiktoken
+import time
+from datetime import datetime, timezone
+from openai import OpenAI
+from pathlib import Path
+
+
+PROG_NAME = "make_parallel_book_chatgpt"
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+CHATGPT_MODELS = [
+  # model name, input token cost (USD/1K), output token cost (USD/1K)
+  ("gpt-3.5-turbo", 0.0005, 0.0015),
+  ("gpt-4-turbo", 0.01, 0.03),
+  ("gpt-4", 0.03, 0.06),
+  ("gpt-4o", 0.005, 0.015),
+]
+
+
+logging.basicConfig(format="%(message)s", stream=sys.stderr)
+logger = logging.getLogger(PROG_NAME)
+logger.setLevel(logging.INFO)
+
+
+class StateManager:
+  def __init__(self, db_path):
+    self.db_path = db_path
+
+  def initialize(self, input_tasks):
+    with sqlite3.connect(self.db_path) as conn:
+      cur = conn.cursor()
+      cur.execute('''
+        CREATE TABLE IF NOT EXISTS tasks (
+          idx INTEGER PRIMARY KEY,
+          role TEXT,
+          source_text TEXT,
+          response TEXT
+        )
+      ''')
+      cur.execute('DELETE FROM tasks')
+      for i, (role, text) in enumerate(input_tasks):
+        cur.execute(
+          'INSERT INTO tasks (idx, role, source_text) VALUES (?, ?, ?)',
+          (i, role, text)
+        )
+      conn.commit()
+
+  def load(self, index):
+    with sqlite3.connect(self.db_path) as conn:
+      cur = conn.cursor()
+      cur.execute('SELECT idx, role, source_text, response FROM tasks WHERE idx = ?', (index,))
+      row = cur.fetchone()
+      if row:
+        return {
+          "index": row[0],
+          "role": row[1],
+          "source_text": row[2],
+          "response": json.loads(row[3]) if row[3] is not None else None
+        }
+      return None
+
+  def save(self, index, response):
+    with sqlite3.connect(self.db_path) as conn:
+      cur = conn.cursor()
+      response_json = json.dumps(response, separators=(',', ':'), ensure_ascii=False)
+      cur.execute('UPDATE tasks SET response = ? WHERE idx = ?', (response_json, index))
+      conn.commit()
+
+  def find_undone(self):
+    with sqlite3.connect(self.db_path) as conn:
+      cur = conn.cursor()
+      cur.execute('SELECT idx FROM tasks WHERE response IS NULL ORDER BY idx ASC LIMIT 1')
+      row = cur.fetchone()
+      return row[0] if row else -1
+
+  def count(self):
+    with sqlite3.connect(self.db_path) as conn:
+      cur = conn.cursor()
+      cur.execute('SELECT COUNT(*) FROM tasks')
+      return cur.fetchone()[0]
+
+  def load_all(self):
+    with sqlite3.connect(self.db_path) as conn:
+      cur = conn.cursor()
+      cur.execute('SELECT idx, role, source_text, response FROM tasks ORDER BY idx ASC')
+      rows = cur.fetchall()
+      return [
+        {
+          "index": row[0],
+          "role": row[1],
+          "source_text": row[2],
+          "response": json.loads(row[3]) if row[3] is not None else None
+        } for row in rows
+      ]
+
+
+def load_json(path):
+  with open(path, encoding="utf-8") as f:
+    return json.load(f)
+
+
+def load_input(input_path):
+  data = load_json(input_path)
+  result = []
+  book_title = data.get("title")
+  if book_title:
+    result.append(("book_title", book_title))
+  book_author = data.get("author")
+  if book_author:
+    result.append(("book_author", book_author))
+  for chapter in data.get("chapters", []):
+    chapter_title = chapter.get("title")
+    if chapter_title:
+      result.append(("chapter_title", chapter_title))
+    for paragraph in chapter.get("paragraphs", []):
+      result.append(("paragraph", paragraph))
+  return result
+
+
+def build_output_record(task, concat=False):
+  response = task["response"]
+  pairs = []
+  for content in response["content"]:
+    pair = {
+      "source": content["source"],
+      "target": content["target"],
+    }
+    pairs.append(pair)
+  if concat:
+    pairs = [{
+      "source": " ".join([x["source"] for x in pairs]),
+      "target": " ".join([x["target"] for x in pairs]),
+    }]
+  return pairs
+
+
+def build_output(input_data, tasks):
+  book = {}
+  input_book_id = input_data.get("id")
+  if input_book_id:
+    book["id"] = input_book_id
+  book["source_language"] = "en"
+  book["target_language"] = "ja"
+  total_cost = 0
+  chapters = []
+  for task in tasks:
+    response = task.get("response")
+    if not response:
+      logger.warning(f"Stop by an unprocessed task: {task['index']}")
+      break
+    total_cost += response["cost"]
+    role = task["role"]
+    if role == "book_title" and "title" not in book:
+      book["title"] = build_output_record(task, concat=True)[0]
+    if role == "book_author" and "author" not in book:
+      book["author"] = build_output_record(task, concat=True)[0]
+    elif role == "chapter_title":
+      chapter = {
+        "title": build_output_record(task, concat=True)[0],
+        "paragraphs": [],
+      }
+      chapters.append(chapter)
+    elif role == "paragraph":
+      if not chapters:
+        chapter = {
+          "paragraphs": [],
+        }
+        chapters.append(chapter)
+      chapter = chapters[-1]
+      chapter["paragraphs"].append(build_output_record(task))
+  if chapters:
+    book["chapters"] = chapters
+  book["cost"] = round(total_cost, 3)
+  book["timestamp"] = datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
+  return book
+
+
+def split_sentences_english(text):
+  norm_text = text.strip()
+  norm_text = regex.sub(r"(?i)(mrs|mr|ms|jr|dr|prof|st|etc|i\.e|a\.m|p\.m|vs)\.",
+                        r"\1__PERIOD__", norm_text)
+  norm_text = regex.sub(r"(\W)([A-Z])\.", r"\1\2__PERIOD__", norm_text)
+  norm_text = regex.sub(r"([a-zA-Z])([.!?;]+)(\s+)([A-Z])", r"\1\2{SEP}\4", norm_text)
+  norm_text = regex.sub(r"([^.!?;{}]{100,})([.!?;]+)(\s+)", r"\1\2{SEP}", norm_text)
+  norm_text = regex.sub(r'([.!?;]+)(\s+)(["“‘\p{Ps}])', r"\1{SEP}\2\3", norm_text)
+  norm_text = regex.sub(r'([.!?;]+["”’\p{Pe}”])', r"\1{SEP}", norm_text)
+  norm_text = regex.sub(r"__PERIOD__", ".", norm_text)
+  sentences = []
+  for sentence in norm_text.split("{SEP}"):
+    sentence = sentence.strip()
+    if sentence:
+      sentences.append(sentence)
+  return sentences
+
+
+def calculate_width(text):
+  total = 0
+  for char in text:
+    codepoint = ord(char)
+    if codepoint >= 0x3000:
+      total += 2
+    else:
+      total += 1
+  return total
+
+
+def cut_text_by_width(text, max_width):
+  result = []
+  current_width = 0
+  for char in text:
+    codepoint = ord(char)
+    char_width = 2 if codepoint >= 0x3000 else 1
+    if current_width + char_width > max_width:
+      break
+    result.append(char)
+    current_width += char_width
+  return ''.join(result)
+
+
+def get_hint(sm, index):
+  prev_record = sm.load(index - 1)
+  if not prev_record: return ""
+  response = prev_record["response"]
+  return response["hint"]
+
+
+def get_prev_context(sm, index, max_width=500):
+  all_sentences = []
+  trg_index = max(0, index - 5)
+  while trg_index < index:
+    record = sm.load(trg_index)
+    if not record: break
+    sentences = split_sentences_english(record["source_text"])
+    all_sentences.extend(sentences)
+    trg_index += 1
+  all_sentences.reverse()
+  sum_width = 0
+  picked_sentences = []
+  for sentence in all_sentences:
+    if sum_width >= max_width:
+      break
+    width = calculate_width(sentence)
+    if width > max_width:
+      sentence = cut_text_by_width(sentence, max_width).strip() + "..."
+      width = calculate_width(sentence)
+    picked_sentences.append(sentence)
+    sum_width += width
+  picked_sentences.reverse()
+  return picked_sentences
+
+
+def get_next_context(sm, index, max_width=200):
+  all_sentences = []
+  trg_index = index + 1
+  max_index = min(index + 3, sm.count())
+  while trg_index < max_index:
+    record = sm.load(trg_index)
+    if not record: break
+    sentences = split_sentences_english(record["source_text"])
+    all_sentences.extend(sentences)
+    trg_index += 1
+  sum_width = 0
+  picked_sentences = []
+  for sentence in all_sentences:
+    if sum_width >= max_width:
+      break
+    width = calculate_width(sentence)
+    if width > max_width:
+      sentence = cut_text_by_width(sentence, max_width).strip() + "..."
+      width = calculate_width(sentence)
+    picked_sentences.append(sentence)
+    sum_width += width
+  return picked_sentences
+
+
+def make_prompt_enja(book_title, role, source_text, hint, prev_context, next_context):
+  lines = []
+  def p(line):
+    lines.append(line)
+  if book_title:
+    p(f"あなたは『{book_title}』の英日翻訳を担当しています。")
+  else:
+    p(f"あなたは書籍の英日翻訳を担当しています。")
+  p("以下の情報をもとに、与えられたパラグラフを自然な日本語に翻訳してください。")
+  p("")
+  if hint:
+    p("現在の場面の要約（前回出力された文脈ヒント）:")
+    p(f"- {hint}")
+    p("")
+  if prev_context:
+    p("直前のパラグラフ:")
+    for sentence in prev_context:
+      p(f" - {sentence}")
+    p("")
+  if next_context:
+    p("直後のパラグラフ:")
+    for sentence in next_context:
+      p(f" - {sentence}")
+    p("")
+  p("---")
+  p("翻訳対象のパラグラフ:")
+  p(source_text)
+  p("---")
+  p("出力形式はJSONとし、次の2つの要素を含めてください:")
+  p('"translations": [')
+  p('  { "en": "原文の文1", "ja": "対応する訳文1" },')
+  p('  { "en": "原文の文2", "ja": "対応する訳文2" }')
+  p('  // ...')
+  p('],')
+  p('"context_hint": "この段落を含めた現在の場面の要約、登場人物、心情、場の変化などを1文（100トークン程度）で簡潔に記述してください。"')
+  if role == "book_title":
+    p("このパラグラフは本の題名です。")
+  if role == "chapter_title":
+    p("このパラグラフは章の題名です。")
+  if role == "paragraph":
+    p("英文は意味的に自然な単位で文分割してください。")
+  p("日本語訳は文体・語調に配慮し、自然な対訳文を生成してください。")
+  p("context_hint は次の段落の翻訳時に役立つような背景情報を含めてください（例：誰が話しているか、舞台の変化、話題の推移など）。")
+  p("不要な解説や装飾、サマリー文などは含めず、必ず上記JSON構造のみを出力してください。")
+  return "\n".join(lines)
+
+
+def count_chatgpt_tokens(text, model):
+  encoding = tiktoken.encoding_for_model(model)
+  tokens = encoding.encode(text)
+  return len(tokens)
+
+
+def calculate_chatgpt_cost(prompt, response, model):
+  for name, input_cost, output_cost in CHATGPT_MODELS:
+    if name == model:
+      num_input_tokens = count_chatgpt_tokens(prompt, model)
+      num_output_tokens = count_chatgpt_tokens(response, model)
+      total_cost = num_input_tokens / 1000 * input_cost + num_output_tokens / 1000* output_cost
+      logger.debug(f"Cost: {total_cost:.6f} ({num_input_tokens/1000:.3f}*{input_cost}+{num_output_tokens/1000:.3f}*{output_cost})")
+      return total_cost
+  raise RuntimeError("No matching model")
+
+
+def execute_task_by_chatgpt_enja(
+    book_title, role, source_text, hint, prev_context, next_context, model):
+  prompt = make_prompt_enja(book_title, role, source_text, hint, prev_context, next_context)
+  logger.debug(f"Prompt:\n{prompt}")
+  temperatures = [0.0, 0.4, 0.6, 0.8]
+  for attempt, temp in enumerate(temperatures, 1):
+    try:
+      client = OpenAI(api_key=OPENAI_API_KEY).with_options(timeout=30)
+      response = client.chat.completions.create(
+        model=model,
+        messages=[{ "role": "user", "content": prompt }],
+        temperature=temp,
+      )
+      content = response.choices[0].message.content
+      match = regex.search(r'```(?:json)?\s*(\{.*?\})\s*```', content, regex.DOTALL)
+      if match:
+        content = match.group(1)
+      content = regex.sub(r',\s*([\]}])', r'\1', content)
+      logger.debug(f"Response:\n{content}")
+      data = json.loads(content)
+      if (type(data.get("translations")) == list and type(data.get("context_hint")) == str):
+        record = {}
+        rec_translations = []
+        for translation in data.get("translations"):
+          rec_tran = {
+            "source": translation["en"],
+            "target": translation["ja"],
+          }
+          rec_translations.append(rec_tran)
+        record["content"] = rec_translations
+        record["hint"] = data.get("context_hint")
+        record["cost"] = round(calculate_chatgpt_cost(prompt, content, model), 8)
+        return record
+    except Exception as e:
+      logger.info(f"Attempt {attempt} failed (temperature={temp}): {e}")
+      time.sleep(0.2)
+  raise RuntimeError("All retries failed: unable to parse valid JSON with required fields.")
+
+
+def main():
+  parser = argparse.ArgumentParser()
+  parser.add_argument("input_file")
+  parser.add_argument("--output", default=None)
+  parser.add_argument("--state", default=None)
+  parser.add_argument("--reset", action="store_true")
+  parser.add_argument("--num-tasks", type=int, default=None)
+  parser.add_argument("--force-finish", action="store_true")
+  parser.add_argument("--gpt-model", default=CHATGPT_MODELS[0][0])
+  parser.add_argument("--debug", action="store_true")
+  args = parser.parse_args()
+  if args.debug:
+    logger.setLevel(logging.DEBUG)
+  input_path = Path(args.input_file)
+  if args.output:
+    output_path = Path(args.output)
+  else:
+    output_path = input_path.with_name(input_path.stem + "-parallel.json")
+  if args.state:
+    state_path = Path(args.state)
+  else:
+    state_path = input_path.with_name(input_path.stem + "-state.db")
+  sm = StateManager(state_path)
+  if args.reset or not state_path.exists():
+    tasks = load_input(input_path)
+    sm.initialize(tasks)
+  total_tasks = sm.count()
+  logger.info(f"Total tasks: {total_tasks}")
+  book_title = ""
+  for index in range(100):
+    record = sm.load(index)
+    if not record: break
+    if record["role"] == "book_title":
+      book_title = record["source_text"]
+      logger.info(f"Title: {book_title}")
+      break
+  logger.info(f"GPT model: {args.gpt_model}")
+  total_cost = 0
+  done_tasks = 0
+  max_done_tasks = total_tasks if args.num_tasks is None else args.num_tasks
+  while done_tasks < max_done_tasks:
+    index = sm.find_undone()
+    if index < 0:
+      break
+    record = sm.load(index)
+    role = record["role"]
+    source_text = record["source_text"]
+    short_source_text = cut_text_by_width(source_text, 64)
+    logger.info(f"Task {index}: {role} - {short_source_text}")
+    hint = get_hint(sm, index)
+    prev_context = get_prev_context(sm, index)
+    next_context = get_next_context(sm, index)
+    response = execute_task_by_chatgpt_enja(
+      book_title, role, source_text,
+      hint, prev_context, next_context,
+      args.gpt_model,
+    )
+    sm.save(index, response)
+    total_cost += response["cost"]
+    done_tasks += 1
+  logger.info(f"Done: tasks={done_tasks}, total_cost=${total_cost:.4f} (Y{total_cost*150:.2f})")
+  index = sm.find_undone()
+  if index < 0 or args.force_finish:
+    logger.info(f"Writing data into {output_path}.")
+    input_data = load_json(input_path)
+    tasks = sm.load_all()
+    output_data = build_output(input_data, tasks)
+    with open(output_path, "w", encoding="utf-8") as f:
+      json.dump(output_data, f, ensure_ascii=False, indent=2)
+    logger.info("Finished.")
+  else:
+    logger.info("To be continued.")
+
+
+if __name__ == "__main__":
+  main()
