@@ -4,10 +4,12 @@ parallelbookは、AIを使って対訳本を作る作るプロジェクトです
 
 英日対訳本は、英語の本に現れる文のひとつひとつに対して、日本語訳を付与したものです。以下のような構造です。
 
-|英文|日本語訳
-|I am happy to join with you today in what will go down in history as the greatest demonstration for freedom in the history of our nation.|私は今日、歴史に残るほどの自由のための最大のデモに参加できて嬉しいです。
-|Five score years ago, a great American, in whose symbolic shadow we stand today, signed the Emancipation Proclamation.|五十年前、偉大なアメリカ人が、彼の象徴的な影の下で今日立っている私たちが、奴隷解放宣言に署名しました。
-|This momentous decree came as a great beacon light of hope to millions of Negro slaves who had been seared in the flames of withering injustice.|この重大な布告は、数百万の黒人奴隷たちに、しぼんだ不正義の炎で焼かれた希望の大きな灯台として現れました。
+|英文|日本語訳|
+|---|---|
+|I am happy to join with you today in what will go down in history as the greatest demonstration for freedom in the history of our nation.|私は今日、歴史に残るほどの自由のための最大のデモに参加できて嬉しいです。|
+|Five score years ago, a great American, in whose symbolic shadow we stand today, signed the Emancipation Proclamation.|五十年前、偉大なアメリカ人が、彼の象徴的な影の下で今日立っている私たちが、奴隷解放宣言に署名しました。|
+|This momentous decree came as a great beacon light of hope to millions of Negro slaves who had been seared in the flames of withering injustice.|この重大な布告は、数百万の黒人奴隷たちに、しぼんだ不正義の炎で焼かれた希望の大きな灯台として現れました。|
+|It came as a joyous daybreak to end the long night of their captivity.|それは、彼らの長い捕囚の夜を終わらせる喜ばしい夜明けとして現れました。|
 
 このような構造のデータを対訳コーパスとも呼びます。対訳コーパスは英語学習者の強い味方です。原文を読むだけでは語彙や語法や文法が難しくて意味が解釈できない場合も、訳文を読めばすぐに理解できます。原文だけで理解できる時は訳文を見ないで読み進めて速読・多読することもできますし、逐一訳文を確認して精読することもできます。
 
