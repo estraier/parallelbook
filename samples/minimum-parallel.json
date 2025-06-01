@@ -1,0 +1,32 @@
+{
+  "source_language": "en",
+  "target_language": "ja",
+  "chapters": [
+    {
+      "paragraphs": [
+        [
+          {
+            "source": "Hello, world.",
+            "target": "こんにちは、世界。"
+          },
+          {
+            "source": "We love translation.",
+            "target": "私たちは翻訳が大好きです。"
+          }
+        ],
+        [
+          {
+            "source": "Dr. Slump said, “We did it!”",
+            "target": "ドクタースランプは言った。「やったぞ！」"
+          },
+          {
+            "source": "I was surprised.",
+            "target": "私は驚いた。"
+          }
+        ]
+      ]
+    }
+  ],
+  "cost": 0.001,
+  "timestamp": "2025-06-01T13:53:53.000566Z"
+}
