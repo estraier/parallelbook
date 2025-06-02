@@ -24,7 +24,7 @@ parallelbookは、AIを使って対訳本を作る作るプロジェクトです
 Python3が動く環境であれば、OSは何でも大丈夫です。以下のモジュールが追加で必要になるので、インストールしてください。
 
 ```shell
-pip3 install regex openai tiktoken
+pip3 install regex python-Levenshtein openai tiktoken
 ```
 
 Gitコマンドで本プロジェクトのファイルをダウンロードします。
@@ -95,20 +95,24 @@ Dr. Slump said, “We did it!” I was surprised.
       "paragraphs": [
         [
           {
+            "id": "00000-000",
             "source": "Hello, world.",
             "target": "こんにちは、世界。"
           },
           {
+            "id": "00000-001",
             "source": "We love translation.",
             "target": "私たちは翻訳が大好きです。"
           }
         ],
         [
           {
+            "id": "00001-000",
             "source": "Dr. Slump said, “We did it!”",
             "target": "ドクタースランプは言った。「やったぞ！」"
           },
           {
+            "id": "00001-001",
             "source": "I was surprised.",
             "target": "私は驚いた。"
           }
@@ -117,11 +121,11 @@ Dr. Slump said, “We did it!” I was surprised.
     }
   ],
   "cost": 0.001,
-  "timestamp": "2025-06-01T13:53:53.000566Z"
+  "timestamp": "2025-06-02T01:27:56.352665Z"
 }
 ```
 
-ChatGPTによって、パラグラフは文単位に区切られ、その文単位で翻訳が付与されます。また、"cost"属性は、ChatGPTを動かすために使った費用を示します。0.001 USドルというなので、1ドル150円換算で、このタスクの実行によって0.15円くらいが請求されることがわかります。
+ChatGPTによって、パラグラフは文単位に区切られ、その文単位で翻訳が付与されます。また、cost属性は、ChatGPTを動かすために使った費用を示します。ここでは0.001 USドルなので、1ドル150円換算で、このタスクの実行によって0.15円くらいが請求されることがわかります。
 
 もう少し実践的な例も見てみましょう。以下の内容をbasic-raw.txtとして保存してください。
 
@@ -189,44 +193,53 @@ This software is distributed under the terms of Apache License version 2.0.  Sam
   "source_language": "en",
   "target_language": "ja",
   "title": {
+    "id": "00000-000",
     "source": "How to Make Parallel Books",
     "target": "並行書籍の作り方"
   },
   "author": {
+    "id": "00001-000",
     "source": "Mikio Hirabayashi",
     "target": "平林幹夫"
   },
   "chapters": [
     {
       "title": {
+        "id": "00002-000",
         "source": "Basics",
         "target": "基本"
       },
       "paragraphs": [
         [
           {
+            "id": "00003-000",
             "source": "Parallel corpora are powerful tools to learn languages.",
             "target": "パラレルコーパスは言語を学ぶための強力なツールです。"
           },
           {
+            "id": "00003-001",
             "source": "With them, you can learn foreign languages easily by reading your favorite stories.",
             "target": "それらを使えば、お気に入りの物語を読むことで外国語を簡単に学ぶことができます。"
           },
           {
+            "id": "00003-002",
             "source": "Each sentence in the original corpus is associated with its translation in your mother tongue.",
             "target": "元のコーパスの各文は、母国語の翻訳と関連付けられています。"
           }
         ],
         [
           {
+            "id": "00004-000",
             "source": "This project provides scripts to make parallel books from arbitrary contents.",
             "target": "このプロジェクトでは、任意のコンテンツからパラレルブックを作成するためのスクリプトが提供されています。"
           },
           {
+            "id": "00004-001",
             "source": "All you have to do is to prepare the original corpus and run some commands to make parallel books in various formats.",
             "target": "やることは、元のコーパスを準備し、いくつかのコマンドを実行してさまざまな形式のパラレルブックを作成するだけです。"
           },
           {
+            "id": "00004-002",
             "source": "Translation is done by AI platforms like ChatGPT and Gemini.",
             "target": "翻訳はChatGPTやGeminiなどのAIプラットフォームによって行われます。"
           }
@@ -235,20 +248,24 @@ This software is distributed under the terms of Apache License version 2.0.  Sam
     },
     {
       "title": {
+        "id": "00005-000",
         "source": "License",
         "target": "ライセンス"
       },
       "paragraphs": [
         [
           {
+            "id": "00006-000",
             "source": "This software is distributed under the terms of Apache License version 2.0.",
             "target": "このソフトウェアはApache Licenseバージョン2.0の条件の下で配布されています。"
           },
           {
+            "id": "00006-001",
             "source": "Sample data in this project are in public domain.",
             "target": "このプロジェクトのサンプルデータはパブリックドメインです。"
           },
           {
+            "id": "00006-002",
             "source": "So, both can be redistributed freely without additional permissions.",
             "target": "そのため、追加の許可なしに両方を自由に再配布することができます。"
           }
@@ -257,11 +274,117 @@ This software is distributed under the terms of Apache License version 2.0.  Sam
     }
   ],
   "cost": 0.004,
-  "timestamp": "2025-06-01T14:21:01.708226Z"
+  "timestamp": "2025-06-02T02:55:11.886997Z"
 }
 ```
 
 本のタイトルや章のタイトルも含めて、ちゃんと翻訳がなされています。今回のコストは0.004ドルなので、0.6円くらいが請求されることになります。
+
+実行時のログを見てみましょう。全てが正常に進む場合、以下のようなログが出ます。
+
+```
+Loading data from samples/basic.json
+Total tasks: 7
+Title: How to Make Parallel Books
+GPT model: gpt-3.5-turbo
+Task 0: book_title - How to Make Parallel Books
+Task 1: book_author - Mikio Hirabayashi
+Task 2: chapter_title - Basics
+Task 3: paragraph - Parallel corpora are powerful tools to learn languages.  With th
+Task 4: paragraph - This project provides scripts to make parallel books from arbitr
+Task 5: chapter_title - License
+Task 6: paragraph - This software is distributed under the terms of Apache License v
+Done: tasks=7, total_cost=$0.0036 (Y0.53)
+Validating output
+Writing data into samples/basic-parallel.json
+Finished
+```
+
+タスクの中には、ChatGPTがうまく扱えないものもあるかもしれません。ChatGPTにはJSONの結果を返すように指示していますが、その生成がうまくいかない場合には、プロンプトを微調整して自動的に再試行がなされます。4回の再試行を経ても失敗する場合には、そこで処理を停止します。その際には以下のようなログが出ます。
+
+```
+Loading data from samples/basic.json
+Total tasks: 7
+Title: How to Make Parallel Books
+GPT model: gpt-3.5-turbo
+Task 0: book_title - How to Make Parallel Books
+Attempt 1 failed (temperature=0.0): Extra data: line 6 column 2 (char 120)
+Attempt 2 failed (temperature=0.4): Extra data: line 6 column 2 (char 132)
+Attempt 3 failed (temperature=0.6): Extra data: line 6 column 2 (char 121)
+Attempt 4 failed (temperature=0.8): Extra data: line 6 column 2 (char 124)
+Traceback (most recent call last):
+  File "/Users/mikio/dev/parallelbook/./scripts/make_parallel_book_chatgpt.py", line 533, in <module>
+    main()
+  File "/Users/mikio/dev/parallelbook/./scripts/make_parallel_book_chatgpt.py", line 507, in main
+    response = execute_task_by_chatgpt_enja(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mikio/dev/parallelbook/./scripts/make_parallel_book_chatgpt.py", line 432, in execute_task_by_chatgpt_enja
+    raise RuntimeError("All retries failed: unable to parse valid JSON with required fields")
+RuntimeError: All retries failed: unable to parse valid JSON with required fields
+```
+
+単に再試行しても状況が改善されないでしょう。モデルを変えて再試行しましょう。少しコストは高いですが、GPT-4oモデルを使ってみます。--gpt-model gpt-4oオプションをつけて実行します。
+
+```shell
+./scripts/make_parallel_book_chatgpt.py samples/basic.json --gpt-model gpt-4o
+```
+
+```
+Loading data from samples/basic.json
+Total tasks: 7
+Title: How to Make Parallel Books
+GPT model: gpt-4o
+Task 0: book_title - How to Make Parallel Books
+Task 1: book_author - Mikio Hirabayashi
+Task 2: chapter_title - Basics
+Task 3: paragraph - Parallel corpora are powerful tools to learn languages.  With th
+Task 4: paragraph - This project provides scripts to make parallel books from arbitr
+Task 5: chapter_title - License
+Task 6: paragraph - This software is distributed under the terms of Apache License v
+Done: tasks=7, total_cost=$0.0336 (Y5.04)
+Validating output
+Writing data into samples/basic-parallel.json
+Finished
+```
+
+今度は正常終了しましたが、7タスクで0.0336ドル（5.04円くらい）かかりました。全体をGPT-4oモデルでやると金がかかりすぎるという場合は、適当なタイミングでCtrl-Cを入力するなどして、オプションなしで再実行してください。止めたところから再開されます。
+
+生成したJSONデータに含まれるタスクIDは有用です。生成したデータを使っている最中にそのタスクの処理結果に不満を感じた場合、そのタスクだけを別のモデルで再実行できます。以下の例の場合、タスク35をやり直すことになるでしょう。
+
+```json
+{
+  "id": "00035-004",
+  "source": "Fetch me my hat.",
+  "target": "寝る子は育つ。"
+}
+```
+
+特定のタスクを再実行するには、--redoオプションを設定します。さらに、--gpt-modelオプションもつけて、別モデルで実行します。例えば、タスク1と3をgpt-4oで再実行する場合、以下のようにします。
+
+```shell
+./scripts/make_parallel_book_chatgpt.py samples/basic.json --redo 1,3 --gpt-model gpt-4o
+```
+
+```
+Loading data from samples/basic.json
+Total tasks: 7
+Title: How to Make Parallel Books
+GPT model: gpt-4o
+Task 1: book_author - Mikio Hirabayashi
+Task 3: paragraph - Parallel corpora are powerful tools to learn languages.  With th
+Done: tasks=2, total_cost=$0.0089 (Y1.34)
+Validating output
+Writing data into samples/basic-parallel.json
+Finished
+```
+
+タスク1だけ再実行した上で、全ての処理がうまくいったことが確認できます。このように、基本的には安いモデルで実行して、失敗した場合だけ高いモデルを使うのは良い考えです。高いモデルで実行していてなぜかうまくいかない場合にも、特定のタスクだけ他のモデルを使うとうまく行く場合があります。
+
+新しい入力データや新しいモデルを試したい場合、処理するタスク数を限定しつつ、毎回最初からやり直すと良いでしょう。例えば、先頭5タスクを毎回やり直したいなら、以下のようにします。
+
+```
+./scripts/make_parallel_book_chatgpt.py samples/basic.json --reset --num-tasks 5 --force-finish
+```
 
 ## 変換機能群のチュートリアル
 
@@ -340,7 +463,7 @@ context_hint は次の段落の翻訳時に役立つような背景情報を含�
 }
 ```
 
-前後のパラグラフを文脈情報として与えるだけではなく、前のパラグラフの翻訳作業で得られた場面のヒント情報を次のパラグラフの翻訳にリレーしていくことにより、翻訳精度を高めることを目論んでいます。文単位での翻訳よりもパラグラフ単位の翻訳の方が有利であり、現在のパラグラフだけを見る翻訳よりも、前後の文とリレーされた文脈情報を加味した翻訳の方が有利であると仮定しています。
+前後のパラグラフを文脈情報として与えるだけではなく、前のパラグラフの翻訳作業で得られた場面のヒント情報を次のパラグラフの翻訳にリレーしていくことにより、翻訳精度を高めることを企図しています。文単位での翻訳よりもパラグラフ単位の翻訳の方が有利であり、現在のパラグラフだけを見る翻訳よりも、前後の文とリレーされた文脈情報を加味した翻訳の方が有利であると仮定しています。
 
 ChatGPTのAPIを叩くと、費用がかかります。2025年5月現在、デフォルトのgpt-3.5-turboモデルだと、入力の1000トークンあたり0.0005ドルかかり、出力の1000トークンあたり、0.0015ドルかかります。gpt-4oモデルだとその10倍で、入力の1000トークンあたり0.005ドルかかり、出力の1000トークンあたり、0.015ドルかかります。
 
@@ -357,14 +480,11 @@ make_parallel_book_chatgpt.pyは以下のオプションを備えます。
 - --reset : 最初からタスクをやり直します。
 - --num-tasks NUM_TASKS : 処理する最大タスク数を指定します。
 - --force-finish : 全部のタスクが終わらなくても、出力ファイルを生成します。
+- --no-validation : 出力ファイル生成前の妥当性検証を省略します。
 - --gpt-model GPT_MODEL : ChatGPTのモデル名を指定します。
 - --debug : 各タスクのプロンプトと応答などのデバッグ情報をログ表示します。
 
-新しいデータや設定を試すには、以下のように、お試しで部分的にタスクを実行すると良いでしょう。
-
-```
-./scripts/make_parallel_book_chatgpt.py --reset --num-tasks=5 --force-finish foobar.json
-```
+ChatGPTに渡すプロンプトはスクリプト内にハードコードされているので、適宜修正して使ってください。表記揺れを防ぐために固有名詞とその翻訳のリストを与えたり、作品の背景知識を埋め込んだりすることも有用です。
 
 ## 変換機能群の仕様
 

@@ -3,44 +3,53 @@
   "source_language": "en",
   "target_language": "ja",
   "title": {
+    "id": "00000-000",
     "source": "How to Make Parallel Books",
     "target": "並行書籍の作り方"
   },
   "author": {
+    "id": "00001-000",
     "source": "Mikio Hirabayashi",
     "target": "平林幹夫"
   },
   "chapters": [
     {
       "title": {
+        "id": "00002-000",
         "source": "Basics",
         "target": "基本"
       },
       "paragraphs": [
         [
           {
+            "id": "00003-000",
             "source": "Parallel corpora are powerful tools to learn languages.",
-            "target": "パラレルコーパスは言語を学ぶための強力なツールです。"
+            "target": "平行コーパスは言語を学ぶための強力なツールです。"
           },
           {
+            "id": "00003-001",
             "source": "With them, you can learn foreign languages easily by reading your favorite stories.",
             "target": "それらを使えば、お気に入りの物語を読むことで外国語を簡単に学ぶことができます。"
           },
           {
+            "id": "00003-002",
             "source": "Each sentence in the original corpus is associated with its translation in your mother tongue.",
             "target": "元のコーパスの各文は、母国語の翻訳と関連付けられています。"
           }
         ],
         [
           {
+            "id": "00004-000",
             "source": "This project provides scripts to make parallel books from arbitrary contents.",
-            "target": "このプロジェクトでは、任意のコンテンツからパラレルブックを作成するためのスクリプトが提供されています。"
+            "target": "このプロジェクトでは、任意のコンテンツから平行な書籍を作成するためのスクリプトが提供されています。"
           },
           {
+            "id": "00004-001",
             "source": "All you have to do is to prepare the original corpus and run some commands to make parallel books in various formats.",
-            "target": "やることは、元のコーパスを準備し、いくつかのコマンドを実行してさまざまな形式のパラレルブックを作成するだけです。"
+            "target": "やることは、元のコーパスを準備し、いくつかのコマンドを実行してさまざまな形式の平行な書籍を作成するだけです。"
           },
           {
+            "id": "00004-002",
             "source": "Translation is done by AI platforms like ChatGPT and Gemini.",
             "target": "翻訳はChatGPTやGeminiなどのAIプラットフォームによって行われます。"
           }
@@ -49,20 +58,24 @@
     },
     {
       "title": {
+        "id": "00005-000",
         "source": "License",
         "target": "ライセンス"
       },
       "paragraphs": [
         [
           {
+            "id": "00006-000",
             "source": "This software is distributed under the terms of Apache License version 2.0.",
-            "target": "このソフトウェアはApache Licenseバージョン2.0の条件の下で配布されています。"
+            "target": "このソフトウェアはApache License バージョン2.0の条件の下で配布されています。"
           },
           {
+            "id": "00006-001",
             "source": "Sample data in this project are in public domain.",
             "target": "このプロジェクトのサンプルデータはパブリックドメインです。"
           },
           {
+            "id": "00006-002",
             "source": "So, both can be redistributed freely without additional permissions.",
             "target": "そのため、追加の許可なしに両方を自由に再配布することができます。"
           }
@@ -71,5 +84,5 @@
     }
   ],
   "cost": 0.004,
-  "timestamp": "2025-06-01T14:21:01.708226Z"
+  "timestamp": "2025-06-02T11:14:57.895270Z"
 }

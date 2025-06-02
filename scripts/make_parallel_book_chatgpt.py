@@ -2,6 +2,7 @@
 
 import argparse
 import json
+import Levenshtein
 import logging
 import os
 import regex
@@ -107,8 +108,7 @@ def load_json(path):
     return json.load(f)
 
 
-def load_input(input_path):
-  data = load_json(input_path)
+def parse_input_data(data):
   result = []
   book_title = data.get("title")
   if book_title:
@@ -125,17 +125,34 @@ def load_input(input_path):
   return result
 
 
+def validate_tasks(tasks):
+  def normalize_text(text):
+    return regex.sub(r"\s+", " ", text).lower().strip()
+  for task in tasks:
+    source_text = task["source_text"]
+    response = task.get("response")
+    if not response: continue
+    content = response["content"]
+    if not validate_content(source_text, content):
+      logger.warning(f"Invalid task content: {task}")
+      return False
+  return True
+
+
 def build_output_record(task, concat=False):
   response = task["response"]
+  index = task["index"]
   pairs = []
-  for content in response["content"]:
+  for seq, content in enumerate(response["content"]):
     pair = {
+      "id": f"{index:05d}-{seq:03d}",
       "source": content["source"],
       "target": content["target"],
     }
     pairs.append(pair)
   if concat:
     pairs = [{
+      "id": f"{index:05d}-{0:03d}",
       "source": " ".join([x["source"] for x in pairs]),
       "target": " ".join([x["target"] for x in pairs]),
     }]
@@ -281,7 +298,7 @@ def get_next_context(sm, index, max_width=200):
   return picked_sentences
 
 
-def make_prompt_enja(book_title, role, source_text, hint, prev_context, next_context):
+def make_prompt_enja(book_title, role, source_text, hint, prev_context, next_context, attempt):
   lines = []
   def p(line):
     lines.append(line)
@@ -305,10 +322,10 @@ def make_prompt_enja(book_title, role, source_text, hint, prev_context, next_con
     for sentence in next_context:
       p(f" - {sentence}")
     p("")
-  p("---")
+  p("----")
   p("翻訳対象のパラグラフ:")
   p(source_text)
-  p("---")
+  p("----")
   p("出力形式はJSONとし、次の2つの要素を含めてください:")
   p('"translations": [')
   p('  { "en": "原文の文1", "ja": "対応する訳文1" },')
@@ -325,6 +342,10 @@ def make_prompt_enja(book_title, role, source_text, hint, prev_context, next_con
   p("日本語訳は文体・語調に配慮し、自然な対訳文を生成してください。")
   p("context_hint は次の段落の翻訳時に役立つような背景情報を含めてください（例：誰が話しているか、舞台の変化、話題の推移など）。")
   p("不要な解説や装飾、サマリー文などは含めず、必ず上記JSON構造のみを出力してください。")
+  if attempt > 1:
+    p("JSONの書式には細心の注意を払ってください。引用符や括弧やカンマの仕様を厳密に守ってください。")
+    p("原文を変更しないでください。出力の \"en\" の値を連結すると原文と同じになるようにしてください。")
+    p(f"過去のエラーによる現在の再試行回数={attempt-1}")
   return "\n".join(lines)
 
 
@@ -345,12 +366,37 @@ def calculate_chatgpt_cost(prompt, response, model):
   raise RuntimeError("No matching model")
 
 
+def validate_content(source_text, content):
+  def normalize_text(text):
+    return regex.sub(r"\s+", " ", text).lower().strip()
+  norm_orig = normalize_text(source_text)
+  norm_proc = normalize_text(" ".join([x["source"] for x in content]))
+  distance = Levenshtein.distance(norm_orig, norm_proc)
+  cost = distance / (min(len(norm_orig), len(norm_proc)) + 1)
+  if cost > 0.3:
+    logger.debug(f"Too much cost: {cost:.2f}, {norm_orig} vs {norm_proc}")
+    return False
+  for pair in content:
+    source = pair["source"]
+    target = pair["target"]
+    if regex.search(r"[A-Za-z]{2,} +[A-Za-z]{3,}", target) and len(target) < 1:
+      logger.debug(f"Too short target: {source} vs {target}")
+      return False
+  return True
+
+
 def execute_task_by_chatgpt_enja(
     book_title, role, source_text, hint, prev_context, next_context, model):
-  prompt = make_prompt_enja(book_title, role, source_text, hint, prev_context, next_context)
-  logger.debug(f"Prompt:\n{prompt}")
   temperatures = [0.0, 0.4, 0.6, 0.8]
   for attempt, temp in enumerate(temperatures, 1):
+    if attempt >= 3:
+      proc_source_text = "\n".join(split_sentences_english(source_text))
+    else:
+      proc_source_text = source_text
+    prompt = make_prompt_enja(
+      book_title, role, proc_source_text, hint, prev_context, next_context, attempt)
+    if attempt == 1:
+      logger.debug(f"Prompt:\n{prompt}")
     try:
       client = OpenAI(api_key=OPENAI_API_KEY).with_options(timeout=30)
       response = client.chat.completions.create(
@@ -358,42 +404,54 @@ def execute_task_by_chatgpt_enja(
         messages=[{ "role": "user", "content": prompt }],
         temperature=temp,
       )
-      content = response.choices[0].message.content
-      match = regex.search(r'```(?:json)?\s*(\{.*?\})\s*```', content, regex.DOTALL)
+      response = response.choices[0].message.content
+      match = regex.search(r'```(?:json)?\s*(\{.*?\})\s*```', response, regex.DOTALL)
       if match:
-        content = match.group(1)
-      content = regex.sub(r',\s*([\]}])', r'\1', content)
-      logger.debug(f"Response:\n{content}")
-      data = json.loads(content)
+        response = match.group(1)
+      response = regex.sub(r',\s*([\]}])', r'\1', response)
+      logger.debug(f"Response:\n{response}")
+      data = json.loads(response)
       if (type(data.get("translations")) == list and type(data.get("context_hint")) == str):
         record = {}
-        rec_translations = []
+        content = []
         for translation in data.get("translations"):
           rec_tran = {
             "source": translation["en"],
             "target": translation["ja"],
           }
-          rec_translations.append(rec_tran)
-        record["content"] = rec_translations
+          content.append(rec_tran)
+        record["content"] = content
         record["hint"] = data.get("context_hint")
-        record["cost"] = round(calculate_chatgpt_cost(prompt, content, model), 8)
+        record["cost"] = round(calculate_chatgpt_cost(prompt, response, model), 8)
+        if not validate_content(source_text, content):
+          raise ValueError("Validation error")
         return record
     except Exception as e:
       logger.info(f"Attempt {attempt} failed (temperature={temp}): {e}")
       time.sleep(0.2)
-  raise RuntimeError("All retries failed: unable to parse valid JSON with required fields.")
+  raise RuntimeError("All retries failed: unable to parse valid JSON with required fields")
 
 
 def main():
   parser = argparse.ArgumentParser()
-  parser.add_argument("input_file")
-  parser.add_argument("--output", default=None)
-  parser.add_argument("--state", default=None)
-  parser.add_argument("--reset", action="store_true")
-  parser.add_argument("--num-tasks", type=int, default=None)
-  parser.add_argument("--force-finish", action="store_true")
-  parser.add_argument("--gpt-model", default=CHATGPT_MODELS[0][0])
-  parser.add_argument("--debug", action="store_true")
+  parser.add_argument("input_file",
+                      help="path of the input JSON file")
+  parser.add_argument("--output", default=None,
+                      help="path of the output JSON file")
+  parser.add_argument("--state", default=None,
+                      help="path of the state SQLite file")
+  parser.add_argument("--reset", action="store_true",
+                      help="resets the state and start over all tasks")
+  parser.add_argument("--num-tasks", type=int, default=None,
+                      help="limits the number of tasks to do")
+  parser.add_argument("--redo", type=str, default=None,
+                      help="comma-separated list of task indexes to redo")
+  parser.add_argument("--force-finish", action="store_true",
+                      help="makes the output file even if all tasks are not done")
+  parser.add_argument("--gpt-model", default=CHATGPT_MODELS[0][0],
+                      help="sets the ChatGPT model by the name")
+  parser.add_argument("--debug", action="store_true",
+                      help="prints the debug messages too")
   args = parser.parse_args()
   if args.debug:
     logger.setLevel(logging.DEBUG)
@@ -406,10 +464,12 @@ def main():
     state_path = Path(args.state)
   else:
     state_path = input_path.with_name(input_path.stem + "-state.db")
+  logger.info(f"Loading data from {input_path}")
+  input_data = load_json(input_path)
   sm = StateManager(state_path)
   if args.reset or not state_path.exists():
-    tasks = load_input(input_path)
-    sm.initialize(tasks)
+    input_tasks = parse_input_data(input_data)
+    sm.initialize(input_tasks)
   total_tasks = sm.count()
   logger.info(f"Total tasks: {total_tasks}")
   book_title = ""
@@ -421,11 +481,21 @@ def main():
       logger.info(f"Title: {book_title}")
       break
   logger.info(f"GPT model: {args.gpt_model}")
+  redo_indexes = []
+  if args.redo:
+    try:
+      redo_indexes = set(int(x.strip()) for x in args.redo.split(",") if x.strip())
+      redo_indexes = list(reversed(sorted(list(redo_indexes))))
+    except ValueError:
+      logger.error(f"Invalid format for redo: {args.redo}")
   total_cost = 0
   done_tasks = 0
   max_done_tasks = total_tasks if args.num_tasks is None else args.num_tasks
   while done_tasks < max_done_tasks:
-    index = sm.find_undone()
+    if redo_indexes:
+      index = redo_indexes.pop()
+    else:
+      index = sm.find_undone()
     if index < 0:
       break
     record = sm.load(index)
@@ -447,15 +517,18 @@ def main():
   logger.info(f"Done: tasks={done_tasks}, total_cost=${total_cost:.4f} (Y{total_cost*150:.2f})")
   index = sm.find_undone()
   if index < 0 or args.force_finish:
-    logger.info(f"Writing data into {output_path}.")
     input_data = load_json(input_path)
     tasks = sm.load_all()
+    logger.info(f"Validating output")
+    if not validate_tasks(tasks):
+      raise RuntimeError("Validation failed")
+    logger.info(f"Writing data into {output_path}")
     output_data = build_output(input_data, tasks)
     with open(output_path, "w", encoding="utf-8") as f:
       json.dump(output_data, f, ensure_ascii=False, indent=2)
-    logger.info("Finished.")
+    logger.info("Finished")
   else:
-    logger.info("To be continued.")
+    logger.info("To be continued")
 
 
 if __name__ == "__main__":
