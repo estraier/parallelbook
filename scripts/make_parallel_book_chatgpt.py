@@ -20,9 +20,9 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 CHATGPT_MODELS = [
   # model name, input token cost (USD/1K), output token cost (USD/1K)
   ("gpt-3.5-turbo", 0.0005, 0.0015),
+  ("gpt-4o", 0.005, 0.015),
   ("gpt-4-turbo", 0.01, 0.03),
   ("gpt-4", 0.03, 0.06),
-  ("gpt-4o", 0.005, 0.015),
 ]
 
 
@@ -324,15 +324,31 @@ def make_prompt_enja(book_title, role, source_text, hint, prev_context, next_con
     p("")
   p("----")
   p("翻訳対象のパラグラフ:")
-  p(source_text)
+  if attempt >= 3:
+    proc_source_text = "\n".join(split_sentences_english(source_text))
+  else:
+    proc_source_text = source_text
+  p(proc_source_text)
   p("----")
   p("出力形式はJSONとし、次の2つの要素を含めてください:")
-  p('"translations": [')
-  p('  { "en": "原文の文1", "ja": "対応する訳文1" },')
-  p('  { "en": "原文の文2", "ja": "対応する訳文2" }')
-  p('  // ...')
-  p('],')
-  p('"context_hint": "この段落を含めた現在の場面の要約、登場人物、心情、場の変化などを1文（100トークン程度）で簡潔に記述してください。"')
+  if attempt >= 3:
+    p('{')
+    p('  "translations": [')
+    p('    { "en": "He said, “Hello, world!”", "ja": "「こんにちは世界！」と彼は言った。" },')
+    p('    { "en": "“Good-bye, world”, I replied.", "ja": "「さよなら世界」と私は応えた。" }')
+    p('    // ...')
+    p('  ],')
+    p('  "context_hint": "ジョーが言ったことと反対のことをナンシーが言うやり取りをしている。"')
+    p('}')
+  else:
+    p('{')
+    p('  "translations": [')
+    p('    { "en": "原文の文1", "ja": "対応する訳文1" },')
+    p('    { "en": "原文の文2", "ja": "対応する訳文2" }')
+    p('    // ...')
+    p('  ],')
+    p('  "context_hint": "この段落を含めた現在の場面の要約、登場人物、心情、場の変化などを1文（100トークン程度）で簡潔に記述してください。"')
+    p('}')
   if role == "book_title":
     p("このパラグラフは本の題名です。")
   if role == "chapter_title":
@@ -342,7 +358,7 @@ def make_prompt_enja(book_title, role, source_text, hint, prev_context, next_con
   p("日本語訳は文体・語調に配慮し、自然な対訳文を生成してください。")
   p("context_hint は次の段落の翻訳時に役立つような背景情報を含めてください（例：誰が話しているか、舞台の変化、話題の推移など）。")
   p("不要な解説や装飾、サマリー文などは含めず、必ず上記JSON構造のみを出力してください。")
-  if attempt > 1:
+  if attempt >= 2:
     p("JSONの書式には細心の注意を払ってください。引用符や括弧やカンマの仕様を厳密に守ってください。")
     p("原文を変更しないでください。出力の \"en\" の値を連結すると原文と同じになるようにしてください。")
     p(f"過去のエラーによる現在の再試行回数={attempt-1}")
@@ -372,9 +388,10 @@ def validate_content(source_text, content):
   norm_orig = normalize_text(source_text)
   norm_proc = normalize_text(" ".join([x["source"] for x in content]))
   distance = Levenshtein.distance(norm_orig, norm_proc)
-  cost = distance / (min(len(norm_orig), len(norm_proc)) + 1)
-  if cost > 0.3:
-    logger.debug(f"Too much cost: {cost:.2f}, {norm_orig} vs {norm_proc}")
+  length = max(1, (len(norm_orig) + len(norm_proc)) / 2)
+  diff = distance / length
+  if diff > 0.3:
+    logger.debug(f"Too much diff: {diff:.2f}, {norm_orig} vs {norm_proc}")
     return False
   for pair in content:
     source = pair["source"]
@@ -386,49 +403,51 @@ def validate_content(source_text, content):
 
 
 def execute_task_by_chatgpt_enja(
-    book_title, role, source_text, hint, prev_context, next_context, model):
-  temperatures = [0.0, 0.4, 0.6, 0.8]
-  for attempt, temp in enumerate(temperatures, 1):
-    if attempt >= 3:
-      proc_source_text = "\n".join(split_sentences_english(source_text))
-    else:
-      proc_source_text = source_text
-    prompt = make_prompt_enja(
-      book_title, role, proc_source_text, hint, prev_context, next_context, attempt)
-    if attempt == 1:
+    book_title, role, source_text, hint, prev_context, next_context, main_model):
+  models = [main_model]
+  sub_model = None
+  for name, _, _ in CHATGPT_MODELS:
+    if name != main_model:
+      models.append(name)
+      break
+  for model in models:
+    temperatures = [0.0, 0.4, 0.6, 0.8]
+    for attempt, temp in enumerate(temperatures, 1):
+      prompt = make_prompt_enja(
+        book_title, role, source_text, hint, prev_context, next_context, attempt)
       logger.debug(f"Prompt:\n{prompt}")
-    try:
-      client = OpenAI(api_key=OPENAI_API_KEY).with_options(timeout=30)
-      response = client.chat.completions.create(
-        model=model,
-        messages=[{ "role": "user", "content": prompt }],
-        temperature=temp,
-      )
-      response = response.choices[0].message.content
-      match = regex.search(r'```(?:json)?\s*(\{.*?\})\s*```', response, regex.DOTALL)
-      if match:
-        response = match.group(1)
-      response = regex.sub(r',\s*([\]}])', r'\1', response)
-      logger.debug(f"Response:\n{response}")
-      data = json.loads(response)
-      if (type(data.get("translations")) == list and type(data.get("context_hint")) == str):
-        record = {}
-        content = []
-        for translation in data.get("translations"):
-          rec_tran = {
-            "source": translation["en"],
-            "target": translation["ja"],
-          }
-          content.append(rec_tran)
-        record["content"] = content
-        record["hint"] = data.get("context_hint")
-        record["cost"] = round(calculate_chatgpt_cost(prompt, response, model), 8)
-        if not validate_content(source_text, content):
-          raise ValueError("Validation error")
-        return record
-    except Exception as e:
-      logger.info(f"Attempt {attempt} failed (temperature={temp}): {e}")
-      time.sleep(0.2)
+      try:
+        client = OpenAI(api_key=OPENAI_API_KEY).with_options(timeout=30)
+        response = client.chat.completions.create(
+          model=model,
+          messages=[{ "role": "user", "content": prompt }],
+          temperature=temp,
+        )
+        response = response.choices[0].message.content
+        match = regex.search(r'```(?:json)?\s*(\{.*?\})\s*```', response, regex.DOTALL)
+        if match:
+          response = match.group(1)
+        response = regex.sub(r',\s*([\]}])', r'\1', response)
+        logger.debug(f"Response:\n{response}")
+        data = json.loads(response)
+        if (type(data.get("translations")) == list and type(data.get("context_hint")) == str):
+          record = {}
+          content = []
+          for translation in data.get("translations"):
+            rec_tran = {
+              "source": translation["en"],
+              "target": translation["ja"],
+            }
+            content.append(rec_tran)
+          record["content"] = content
+          record["hint"] = data.get("context_hint")
+          record["cost"] = round(calculate_chatgpt_cost(prompt, response, model), 8)
+          if not validate_content(source_text, content):
+            raise ValueError("Validation error")
+          return record
+      except Exception as e:
+        logger.info(f"Attempt {attempt} failed (temperature={temp}): {e}")
+        time.sleep(0.2)
   raise RuntimeError("All retries failed: unable to parse valid JSON with required fields")
 
 
@@ -448,7 +467,7 @@ def main():
                       help="comma-separated list of task indexes to redo")
   parser.add_argument("--force-finish", action="store_true",
                       help="makes the output file even if all tasks are not done")
-  parser.add_argument("--gpt-model", default=CHATGPT_MODELS[0][0],
+  parser.add_argument("--model", default=CHATGPT_MODELS[0][0],
                       help="sets the ChatGPT model by the name")
   parser.add_argument("--debug", action="store_true",
                       help="prints the debug messages too")
@@ -470,6 +489,11 @@ def main():
   if args.reset or not state_path.exists():
     input_tasks = parse_input_data(input_data)
     sm.initialize(input_tasks)
+
+  # hoge
+  parse_input_data(input_data)
+
+
   total_tasks = sm.count()
   logger.info(f"Total tasks: {total_tasks}")
   book_title = ""
@@ -480,7 +504,7 @@ def main():
       book_title = record["source_text"]
       logger.info(f"Title: {book_title}")
       break
-  logger.info(f"GPT model: {args.gpt_model}")
+  logger.info(f"GPT models: {args.model}")
   redo_indexes = []
   if args.redo:
     try:
@@ -509,7 +533,7 @@ def main():
     response = execute_task_by_chatgpt_enja(
       book_title, role, source_text,
       hint, prev_context, next_context,
-      args.gpt_model,
+      args.model,
     )
     sm.save(index, response)
     total_cost += response["cost"]

@@ -323,10 +323,10 @@ Traceback (most recent call last):
 RuntimeError: All retries failed: unable to parse valid JSON with required fields
 ```
 
-単に再試行しても状況が改善されないでしょう。モデルを変えて再試行しましょう。少しコストは高いですが、GPT-4oモデルを使ってみます。--gpt-model gpt-4oオプションをつけて実行します。
+単に再試行しても状況が改善されないでしょう。モデルを変えて再試行しましょう。少しコストは高いですが、GPT-4oモデルを使ってみます。--model gpt-4oオプションをつけて実行します。
 
 ```shell
-./scripts/make_parallel_book_chatgpt.py samples/basic.json --gpt-model gpt-4o
+./scripts/make_parallel_book_chatgpt.py samples/basic.json --model gpt-4o
 ```
 
 ```
@@ -359,10 +359,10 @@ Finished
 }
 ```
 
-特定のタスクを再実行するには、--redoオプションを設定します。さらに、--gpt-modelオプションもつけて、別モデルで実行します。例えば、タスク1と3をgpt-4oで再実行する場合、以下のようにします。
+特定のタスクを再実行するには、--redoオプションを設定します。さらに、--modelオプションもつけて、別モデルで実行します。例えば、タスク1と3をgpt-4oで再実行する場合、以下のようにします。
 
 ```shell
-./scripts/make_parallel_book_chatgpt.py samples/basic.json --redo 1,3 --gpt-model gpt-4o
+./scripts/make_parallel_book_chatgpt.py samples/basic.json --redo 1,3 --model gpt-4o
 ```
 
 ```
@@ -433,17 +433,19 @@ make_parallel_book_chatgpt.py sample.json
  - she said, in a breathless whisper, as if speaking aloud might shatter the glorious possibility.
  - “Did you really say it?
 
----
+----
 翻訳対象のパラグラフ:
 During Marilla’s speech a sunrise had been dawning on Anne’s face. First the look of despair faded out; then came a faint flush of hope; her eyes grew deep and bright as morning stars. The child was quite transfigured; and, a moment later, when Mrs. Spencer and Mrs. Blewett went out in quest of a recipe the latter had come to borrow she sprang up and flew across the room to Marilla.
----
+----
 出力形式はJSONとし、次の2つの要素を含めてください:
-"translations": [
-  { "en": "原文の文1", "ja": "対応する訳文1" },
-  { "en": "原文の文2", "ja": "対応する訳文2" }
-  // ...
-],
-"context_hint": "この段落を含めた現在の場面の要約、登場人物、心情、場の変化などを1文（100トークン程度）で簡潔に記述してください。"
+{
+  "translations": [
+    { "en": "原文の文1", "ja": "対応する訳文1" },
+    { "en": "原文の文2", "ja": "対応する訳文2" }
+    // ...
+  ],
+  "context_hint": "この段落を含めた現在の場面の要約、登場人物、心情、場の変化などを1文（100トークン程度）で簡潔に記述してください。"
+}
 英文は意味的に自然な単位で文分割してください。
 日本語訳は文体・語調に配慮し、自然な対訳文を生成してください。
 context_hint は次の段落の翻訳時に役立つような背景情報を含めてください（例：誰が話しているか、舞台の変化、話題の推移など）。
@@ -481,7 +483,7 @@ make_parallel_book_chatgpt.pyは以下のオプションを備えます。
 - --num-tasks NUM_TASKS : 処理する最大タスク数を指定します。
 - --force-finish : 全部のタスクが終わらなくても、出力ファイルを生成します。
 - --no-validation : 出力ファイル生成前の妥当性検証を省略します。
-- --gpt-model GPT_MODEL : ChatGPTのモデル名を指定します。
+- --model GPT_MODEL : ChatGPTのモデル名を指定します。
 - --debug : 各タスクのプロンプトと応答などのデバッグ情報をログ表示します。
 
 ChatGPTに渡すプロンプトはスクリプト内にハードコードされているので、適宜修正して使ってください。表記揺れを防ぐために固有名詞とその翻訳のリストを与えたり、作品の背景知識を埋め込んだりすることも有用です。
