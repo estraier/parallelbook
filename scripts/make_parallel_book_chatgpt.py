@@ -637,29 +637,32 @@ def main():
   total_cost = 0
   done_tasks = 0
   max_done_tasks = total_tasks if args.num_tasks is None else args.num_tasks
-  while done_tasks < max_done_tasks:
-    index = sm.find_undone()
-    if index < 0:
-      break
-    record = sm.load(index)
-    role = record["role"]
-    source_text = record["source_text"]
-    short_source_text = cut_text_by_width(source_text, 64)
-    logger.info(f"Task {index}: {role} - {short_source_text}")
-    hint = get_hint(sm, index)
-    prev_context = get_prev_context(sm, index)
-    next_context = get_next_context(sm, index)
-    if role == "macro":
-      response = simulate_task_as_macro(source_text)
-    else:
-      response = execute_task_by_chatgpt_enja(
-        book_title, role, source_text,
-        hint, prev_context, next_context,
-        args.model, args.failsoft, args.no_fallback,
-      )
-    sm.set_response(index, response)
-    total_cost += response.get("cost", 0)
-    done_tasks += 1
+  try:
+    while done_tasks < max_done_tasks:
+      index = sm.find_undone()
+      if index < 0:
+        break
+      record = sm.load(index)
+      role = record["role"]
+      source_text = record["source_text"]
+      short_source_text = cut_text_by_width(source_text, 64)
+      logger.info(f"Task {index}: {role} - {short_source_text}")
+      hint = get_hint(sm, index)
+      prev_context = get_prev_context(sm, index)
+      next_context = get_next_context(sm, index)
+      if role == "macro":
+        response = simulate_task_as_macro(source_text)
+      else:
+        response = execute_task_by_chatgpt_enja(
+          book_title, role, source_text,
+          hint, prev_context, next_context,
+          args.model, args.failsoft, args.no_fallback,
+        )
+      sm.set_response(index, response)
+      total_cost += response.get("cost", 0)
+      done_tasks += 1
+  except KeyboardInterrupt:
+    logger.warning(f"Stop by Ctrl-C")
   logger.info(f"Done: tasks={done_tasks}, total_cost=${total_cost:.4f} (Y{total_cost*150:.2f})")
   index = sm.find_undone()
   if index < 0 or args.force_finish:
