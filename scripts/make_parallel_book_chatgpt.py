@@ -486,10 +486,7 @@ def execute_task_by_chatgpt_enja(
         models.append(name)
         break
   for model in models:
-    #configs = [(0.0, True), (0.4, True), (0.6, True), (0.8, True), (0.0, False), (0.5, False)]
-
-    configs = [(0.0, True)]
-
+    configs = [(0.0, True), (0.4, True), (0.6, True), (0.8, True), (0.0, False), (0.5, False)]
     for attempt, (temp, use_context) in enumerate(configs, 1):
       if use_context:
         p_hint = hint
