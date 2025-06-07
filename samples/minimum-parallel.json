@@ -3,34 +3,38 @@
   "target_language": "ja",
   "chapters": [
     {
-      "paragraphs": [
-        [
-          {
-            "id": "00000-000",
-            "source": "Hello, world.",
-            "target": "こんにちは、世界。"
-          },
-          {
-            "id": "00000-001",
-            "source": "We love translation.",
-            "target": "私たちは翻訳が大好きです。"
-          }
-        ],
-        [
-          {
-            "id": "00001-000",
-            "source": "Dr. Slump said, “We did it!”",
-            "target": "ドクタースランプは言った。「やったぞ！」"
-          },
-          {
-            "id": "00001-001",
-            "source": "I was surprised.",
-            "target": "私は驚いた。"
-          }
-        ]
+      "body": [
+        {
+          "paragraph": [
+            {
+              "id": "00000-000",
+              "source": "Hello, world.",
+              "target": "こんにちは、世界。"
+            },
+            {
+              "id": "00000-001",
+              "source": "We love translation.",
+              "target": "私たちは翻訳が大好きです。"
+            }
+          ]
+        },
+        {
+          "paragraph": [
+            {
+              "id": "00001-000",
+              "source": "Dr. Slump said, “We did it!”",
+              "target": "ドクタースランプは言った。「やったぞ！」"
+            },
+            {
+              "id": "00001-001",
+              "source": "I was surprised.",
+              "target": "私は驚いた。"
+            }
+          ]
+        }
       ]
     }
   ],
   "cost": 0.001,
-  "timestamp": "2025-06-02T04:48:45.555672Z"
+  "timestamp": "2025-06-07T02:51:54.212895Z"
 }

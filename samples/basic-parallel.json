@@ -5,7 +5,7 @@
   "title": {
     "id": "00000-000",
     "source": "How to Make Parallel Books",
-    "target": "並行書籍の作り方"
+    "target": "平行書籍の作り方"
   },
   "author": {
     "id": "00001-000",
@@ -19,70 +19,90 @@
         "source": "Basics",
         "target": "基本"
       },
-      "paragraphs": [
-        [
-          {
-            "id": "00003-000",
-            "source": "Parallel corpora are powerful tools to learn languages.",
-            "target": "平行コーパスは言語を学ぶための強力なツールです。"
-          },
-          {
-            "id": "00003-001",
-            "source": "With them, you can learn foreign languages easily by reading your favorite stories.",
-            "target": "それらを使えば、お気に入りの物語を読むことで外国語を簡単に学ぶことができます。"
-          },
-          {
-            "id": "00003-002",
-            "source": "Each sentence in the original corpus is associated with its translation in your mother tongue.",
-            "target": "元のコーパスの各文は、母国語の翻訳と関連付けられています。"
+      "body": [
+        {
+          "paragraph": [
+            {
+              "id": "00003-000",
+              "source": "Parallel corpora are powerful tools to learn languages.",
+              "target": "平行コーパスは言語を学ぶための強力なツールです。"
+            },
+            {
+              "id": "00003-001",
+              "source": "With them, you can learn foreign languages easily by reading your favorite stories.",
+              "target": "それらを使えば、お気に入りの物語を読むことで外国語を簡単に学ぶことができます。"
+            },
+            {
+              "id": "00003-002",
+              "source": "Each sentence in the original corpus is associated with its translation in your mother tongue.",
+              "target": "元のコーパスの各文は、母国語の翻訳と関連付けられています。"
+            }
+          ]
+        },
+        {
+          "paragraph": [
+            {
+              "id": "00004-000",
+              "source": "This project provides scripts to make parallel books from arbitrary contents.",
+              "target": "このプロジェクトは任意のコンテンツから平行な書籍を作成するためのスクリプトを提供しています。"
+            },
+            {
+              "id": "00004-001",
+              "source": "All you have to do is to prepare the original corpus and run some commands to make parallel books in various formats.",
+              "target": "やることは、元のコーパスを準備し、いくつかのコマンドを実行してさまざまな形式の平行な書籍を作成するだけです。"
+            },
+            {
+              "id": "00004-002",
+              "source": "Translation is done by AI platforms like ChatGPT and Gemini.",
+              "target": "翻訳はChatGPTやGeminiなどのAIプラットフォームによって行われます。"
+            }
+          ]
+        },
+        {
+          "macro": {
+            "id": "00005-000",
+            "name": "image",
+            "value": "https://example.com/logo1.jpg"
           }
-        ],
-        [
-          {
-            "id": "00004-000",
-            "source": "This project provides scripts to make parallel books from arbitrary contents.",
-            "target": "このプロジェクトは任意のコンテンツから平行な書籍を作成するためのスクリプトを提供しています。"
-          },
-          {
-            "id": "00004-001",
-            "source": "All you have to do is to prepare the original corpus and run some commands to make parallel books in various formats.",
-            "target": "やることは、元のコーパスを準備し、いくつかのコマンドを実行してさまざまな形式の平行な書籍を作成するだけです。"
-          },
-          {
-            "id": "00004-002",
-            "source": "Translation is done by AI platforms like ChatGPT and Gemini.",
-            "target": "翻訳はChatGPTやGeminiなどのAIプラットフォームによって行われます。"
+        },
+        {
+          "macro": {
+            "id": "00006-000",
+            "name": "comment",
+            "value": "We will rock you."
           }
-        ]
+        }
       ]
     },
     {
       "title": {
-        "id": "00005-000",
+        "id": "00007-000",
         "source": "License",
         "target": "ライセンス"
       },
-      "paragraphs": [
-        [
-          {
-            "id": "00006-000",
-            "source": "This software is distributed under the terms of Apache License version 2.0.",
-            "target": "このソフトウェアはApache License バージョン2.0の条件の下で配布されています。"
-          },
-          {
-            "id": "00006-001",
-            "source": "Sample data in this project are in public domain.",
-            "target": "このプロジェクトのサンプルデータはパブリックドメインです。"
-          },
-          {
-            "id": "00006-002",
-            "source": "So, both can be redistributed freely without additional permissions.",
-            "target": "そのため、追加の許可なしに自由に再配布することができます。"
-          }
-        ]
+      "body": [
+        {
+          "paragraph": [
+            {
+              "id": "00008-000",
+              "source": "This software is distributed under the terms of Apache License version 2.0.",
+              "target": "このソフトウェアはApache License バージョン2.0の条件の下で配布されています。"
+            },
+            {
+              "id": "00008-001",
+              "source": "Sample data in this project are in public domain.",
+              "target": "このプロジェクトのサンプルデータはパブリックドメインです。"
+            },
+            {
+              "id": "00008-002",
+              "source": "So, both can be redistributed freely without additional permissions.",
+              "target": "そのため、追加の許可なしに両方を自由に再配布することができます。"
+            }
+          ]
+        }
       ]
     }
   ],
-  "cost": 0.003,
-  "timestamp": "2025-06-02T12:42:13.400051Z"
+  "cost": 0.004,
+  "timestamp": "2025-06-07T02:53:09.376157Z"
 }

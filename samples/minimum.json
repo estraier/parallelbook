@@ -1,9 +1,13 @@
 {
   "chapters": [
     {
-      "paragraphs": [
-        "Hello, world. We love translation.",
-        "Dr. Slump said, “We did it!” I was surprised."
+      "body": [
+        {
+          "paragraph": "Hello, world. We love translation."
+        },
+        {
+          "paragraph": "Dr. Slump said, “We did it!” I was surprised."
+        }
       ]
     }
   ]

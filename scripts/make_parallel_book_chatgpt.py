@@ -120,8 +120,12 @@ def parse_input_data(data):
     chapter_title = chapter.get("title")
     if chapter_title:
       result.append(("chapter_title", chapter_title))
-    for paragraph in chapter.get("paragraphs", []):
-      result.append(("paragraph", paragraph))
+    chapter_body = chapter.get("body")
+    for element in chapter_body:
+      for name in ["paragraph", "macro"]:
+        value = element.get(name)
+        if value:
+          result.append((name, value))
   return result
 
 
@@ -129,6 +133,8 @@ def validate_tasks(tasks):
   def normalize_text(text):
     return regex.sub(r"\s+", " ", text).lower().strip()
   for task in tasks:
+    role = task["role"]
+    if role == "macro": continue
     source_text = task["source_text"]
     response = task.get("response")
     if not response: continue
@@ -139,7 +145,7 @@ def validate_tasks(tasks):
   return True
 
 
-def build_output_record(task, concat=False):
+def build_text_record(task, concat=False):
   response = task["response"]
   index = task["index"]
   pairs = []
@@ -159,6 +165,27 @@ def build_output_record(task, concat=False):
   return pairs
 
 
+def build_macro_record(task):
+  response = task["response"]
+  index = task["index"]
+
+  content = response["content"]
+
+  record = {
+    "id": f"{index:05d}-000",
+    "name": content["name"],
+  }
+  value = content.get("value")
+  if value is not None:
+    record["value"] = value
+
+
+
+
+
+  return record
+
+
 def build_output(input_data, tasks):
   book = {}
   input_book_id = input_data.get("id")
@@ -169,30 +196,38 @@ def build_output(input_data, tasks):
   total_cost = 0
   chapters = []
   for task in tasks:
+    role = task["role"]
     response = task.get("response")
     if not response:
       logger.warning(f"Stop by an unprocessed task: {task['index']}")
       break
-    total_cost += response["cost"]
+    total_cost += response.get("cost", 0)
     role = task["role"]
-    if role == "book_title" and "title" not in book:
-      book["title"] = build_output_record(task, concat=True)[0]
-    if role == "book_author" and "author" not in book:
-      book["author"] = build_output_record(task, concat=True)[0]
+    if role == "book_title":
+      if "title" not in book:
+        book["title"] = build_text_record(task, concat=True)[0]
+    elif role == "book_author":
+      if "author" not in book:
+        book["author"] = build_text_record(task, concat=True)[0]
     elif role == "chapter_title":
       chapter = {
-        "title": build_output_record(task, concat=True)[0],
-        "paragraphs": [],
+        "title": build_text_record(task, concat=True)[0],
+        "body": [],
       }
       chapters.append(chapter)
-    elif role == "paragraph":
+    else:
       if not chapters:
         chapter = {
-          "paragraphs": [],
+          "body": [],
         }
         chapters.append(chapter)
       chapter = chapters[-1]
-      chapter["paragraphs"].append(build_output_record(task))
+      if role == "paragraph":
+        chapter["body"].append({"paragraph": build_text_record(task)})
+      elif role == "macro":
+        chapter["body"].append({"macro": build_macro_record(task)})
+      else:
+        logger.warning(f"Unknown role: {role}")
   if chapters:
     book["chapters"] = chapters
   book["cost"] = round(total_cost, 3)
@@ -243,15 +278,23 @@ def cut_text_by_width(text, max_width):
 
 
 def get_hint(sm, index):
-  prev_record = sm.load(index - 1)
-  if not prev_record: return ""
-  response = prev_record["response"]
-  return response["hint"]
+  min_index = max(0, index - 8)
+  index -= 1
+  while index >= min_index:
+    record = sm.load(index)
+    if not record: break
+    response = record["response"]
+    if not response: break
+    hint = response.get("hint")
+    if hint:
+      return hint
+    index -= 1
+  return ""
 
 
 def get_prev_context(sm, index, max_width=500):
   all_sentences = []
-  trg_index = max(0, index - 5)
+  trg_index = max(0, index - 8)
   while trg_index < index:
     record = sm.load(trg_index)
     if not record: break
@@ -277,7 +320,7 @@ def get_prev_context(sm, index, max_width=500):
 def get_next_context(sm, index, max_width=200):
   all_sentences = []
   trg_index = index + 1
-  max_index = min(index + 3, sm.count())
+  max_index = min(index + 5, sm.count())
   while trg_index < max_index:
     record = sm.load(trg_index)
     if not record: break
@@ -334,18 +377,24 @@ def make_prompt_enja(book_title, role, source_text, hint, prev_context, next_con
   if attempt >= 3:
     p('{')
     p('  "translations": [')
-    p('    { "en": "He said, “Hello, world!”", "ja": "「こんにちは世界！」と彼は言った。" },')
-    p('    { "en": "“Good-bye, world”, I replied.", "ja": "「さよなら世界」と私は応えた。" }')
-    p('    // ...')
+    if role == "paragraph":
+      p('    { "en": "He said, “Hello, world!”", "ja": "「こんにちは世界！」と彼は言った。" },')
+      p('    { "en": "“Good-bye, world”, I replied.", "ja": "「さよなら世界」と私は応えた。" }')
+      p('    // ...')
+    else:
+      p('    { "en": "He said, “Hello, world!”", "ja": "「こんにちは世界！」と彼は言った。" }')
     p('  ],')
     p('  "context_hint": "ジョーが言ったことと反対のことをナンシーが言うやり取りをしている。"')
     p('}')
   else:
     p('{')
     p('  "translations": [')
-    p('    { "en": "原文の文1", "ja": "対応する訳文1" },')
-    p('    { "en": "原文の文2", "ja": "対応する訳文2" }')
-    p('    // ...')
+    if role == "paragraph":
+      p('    { "en": "原文の文1", "ja": "対応する訳文1" },')
+      p('    { "en": "原文の文2", "ja": "対応する訳文2" }')
+      p('    // ...')
+    else:
+      p('    { "en": "原文の文", "ja": "対応する訳文" }')
     p('  ],')
     p('  "context_hint": "この段落を含めた現在の場面の要約、登場人物、心情、場の変化などを1文（100トークン程度）で簡潔に記述してください。"')
     p('}')
@@ -411,10 +460,18 @@ def execute_task_by_chatgpt_enja(
       models.append(name)
       break
   for model in models:
-    temperatures = [0.0, 0.4, 0.6, 0.8]
-    for attempt, temp in enumerate(temperatures, 1):
+    configs = [(0.0, True), (0.4, True), (0.6, True), (0.8, True), (0.0, False), (0.5, False)]
+    for attempt, (temp, use_context) in enumerate(configs, 1):
+      if use_context:
+        p_hint = hint
+        p_prev_context = prev_context
+        p_next_context = next_context
+      else:
+        p_hint = ""
+        p_prev_context = None
+        p_next_context = None
       prompt = make_prompt_enja(
-        book_title, role, source_text, hint, prev_context, next_context, attempt)
+        book_title, role, source_text, p_hint, p_prev_context, p_next_context, attempt)
       logger.debug(f"Prompt:\n{prompt}")
       try:
         client = OpenAI(api_key=OPENAI_API_KEY).with_options(timeout=30)
@@ -449,6 +506,23 @@ def execute_task_by_chatgpt_enja(
         logger.info(f"Attempt {attempt} failed (temperature={temp}): {e}")
         time.sleep(0.2)
   raise RuntimeError("All retries failed: unable to parse valid JSON with required fields")
+
+
+def simulate_task_as_macro(source_text):
+  record = {}
+  name = "unknown"
+  value = None
+  match = regex.search(r"^([-_a-zA-Z0-9]+)(\s.*)?$", source_text)
+  if match:
+    name = match.group(1)
+    value = match.group(2)
+  content = {
+    "name": name,
+  }
+  if value is not None:
+    content["value"] = value.strip()
+  record["content"] = content
+  return record
 
 
 def main():
@@ -489,11 +563,6 @@ def main():
   if args.reset or not state_path.exists():
     input_tasks = parse_input_data(input_data)
     sm.initialize(input_tasks)
-
-  # hoge
-  parse_input_data(input_data)
-
-
   total_tasks = sm.count()
   logger.info(f"Total tasks: {total_tasks}")
   book_title = ""
@@ -530,13 +599,16 @@ def main():
     hint = get_hint(sm, index)
     prev_context = get_prev_context(sm, index)
     next_context = get_next_context(sm, index)
-    response = execute_task_by_chatgpt_enja(
-      book_title, role, source_text,
-      hint, prev_context, next_context,
-      args.model,
-    )
+    if role == "macro":
+      response = simulate_task_as_macro(source_text)
+    else:
+      response = execute_task_by_chatgpt_enja(
+        book_title, role, source_text,
+        hint, prev_context, next_context,
+        args.model,
+      )
     sm.save(index, response)
-    total_cost += response["cost"]
+    total_cost += response.get("cost", 0)
     done_tasks += 1
   logger.info(f"Done: tasks={done_tasks}, total_cost=${total_cost:.4f} (Y{total_cost*150:.2f})")
   index = sm.find_undone()
