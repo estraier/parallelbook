@@ -352,7 +352,7 @@ Finished
 ```
 
 ```
-Loading data from samples/basic.json
+Loading data from basic.json
 Total tasks: 9
 Title: How to Make Parallel Books
 GPT models: gpt-4o
@@ -368,7 +368,7 @@ Task 7: chapter_title - License
 Task 8: paragraph - This software is distributed under the terms of Apache License v
 Done: tasks=9, total_cost=$0.0341 (Y5.11)
 Validating output
-Writing data into samples/basic-parallel.json
+Writing data into basic-parallel.json
 Finished
 ```
 
@@ -391,7 +391,7 @@ gpt-3.5-turboでは$0.0038（0.6円）だったのに、gpt-4oだと$0.0341（5.
 タスクの中には、ChatGPTがうまく扱えないものもあるかもしれません。ChatGPTにはJSONの結果を返すように指示していますが、その生成がうまくいかない場合には、プロンプトやパラメータを調整して自動的に再試行がなされます。6回の再試行を経ても失敗する場合には、モデルを変えてさらに6回の再試行を行い、処理を完遂させます。
 
 ```
-Loading data from samples/basic.json
+Loading data from basic.json
 Total tasks: 9
 Title: How to Make Parallel Books
 GPT models: gpt-3.5-turbo
@@ -412,14 +412,14 @@ Task 7: chapter_title - License
 Task 8: paragraph - This software is distributed under the terms of Apache License v
 Done: tasks=9, total_cost=$0.0094 (Y1.41)
 Validating output
-Writing data into samples/basic-parallel.json
+Writing data into basic-parallel.json
 Finished
 ```
 
 プロンプトやパラメータやモデルを変えて合計12回の試行をしてもうまくいかない場合、その場で処理が停止します。
 
 ```
-Loading data from samples/basic.json
+Loading data from basic.json
 Total tasks: 9
 Title: How to Make Parallel Books
 GPT models: gpt-3.5-turbo
