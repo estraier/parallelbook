@@ -2,23 +2,30 @@
   "id": "sample01: How to Make Parallel Books",
   "source_language": "en",
   "target_language": "ja",
-  "title": {
-    "id": "00000-000",
-    "source": "How to Make Parallel Books",
-    "target": "平行書籍の作り方"
-  },
-  "author": {
-    "id": "00001-000",
-    "source": "Mikio Hirabayashi",
-    "target": "平林幹夫"
-  },
+  "title": [
+    {
+      "id": "00000-000",
+      "source": "How to Make Parallel Books",
+      "target": "パラレルブックの作り方"
+    }
+  ],
+  "author": [
+    {
+      "id": "00001-000",
+      "source": "Mikio Hirabayashi",
+      "target": "[*FAILSOFT*]",
+      "error": true
+    }
+  ],
   "chapters": [
     {
-      "title": {
-        "id": "00002-000",
-        "source": "Basics",
-        "target": "基本"
-      },
+      "title": [
+        {
+          "id": "00002-000",
+          "source": "Basics",
+          "target": "基本"
+        }
+      ],
       "body": [
         {
           "paragraph": [
@@ -35,7 +42,7 @@
             {
               "id": "00003-002",
               "source": "Each sentence in the original corpus is associated with its translation in your mother tongue.",
-              "target": "元のコーパスの各文は、母国語の翻訳と関連付けられています。"
+              "target": "元のコーパスの各文は、母国語への翻訳と関連付けられています。"
             }
           ]
         },
@@ -43,18 +50,9 @@
           "paragraph": [
             {
               "id": "00004-000",
-              "source": "This project provides scripts to make parallel books from arbitrary contents.",
-              "target": "このプロジェクトは任意のコンテンツから平行な書籍を作成するためのスクリプトを提供しています。"
-            },
-            {
-              "id": "00004-001",
-              "source": "All you have to do is to prepare the original corpus and run some commands to make parallel books in various formats.",
-              "target": "やることは、元のコーパスを準備し、いくつかのコマンドを実行してさまざまな形式の平行な書籍を作成するだけです。"
-            },
-            {
-              "id": "00004-002",
-              "source": "Translation is done by AI platforms like ChatGPT and Gemini.",
-              "target": "翻訳はChatGPTやGeminiなどのAIプラットフォームによって行われます。"
+              "source": "This project provides scripts to make parallel books from arbitrary contents.  All you have to do is to prepare the original corpus and run some commands to make parallel books in various formats.  Translation is done by AI platforms like ChatGPT and Gemini.",
+              "target": "[*FAILSOFT*]",
+              "error": true
             }
           ]
         },
@@ -75,11 +73,13 @@
       ]
     },
     {
-      "title": {
-        "id": "00007-000",
-        "source": "License",
-        "target": "ライセンス"
-      },
+      "title": [
+        {
+          "id": "00007-000",
+          "source": "License",
+          "target": "ライセンス"
+        }
+      ],
       "body": [
         {
           "paragraph": [
@@ -103,6 +103,6 @@
       ]
     }
   ],
-  "cost": 0.004,
-  "timestamp": "2025-06-07T02:53:09.376157Z"
+  "cost": 0.002,
+  "timestamp": "2025-06-07T04:55:11.107973Z"
 }

@@ -11,7 +11,6 @@ current_paragraph_lines = []
 
 for line in sys.stdin:
   line = re.sub(r"\s", " ", line).strip()
-
   if line == "":
     if not current_chapter:
       current_chapter = {"body": []}

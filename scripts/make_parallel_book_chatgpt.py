@@ -68,7 +68,14 @@ class StateManager:
         }
       return None
 
-  def save(self, index, response):
+  def reset_task(self, index, role, source_text):
+    with sqlite3.connect(self.db_path) as conn:
+      cur = conn.cursor()
+      cur.execute('UPDATE tasks SET role = ?, source_text = ?, response = NULL WHERE idx = ?',
+                  (role, source_text, index))
+      conn.commit()
+
+  def set_response(self, index, response):
     with sqlite3.connect(self.db_path) as conn:
       cur = conn.cursor()
       response_json = json.dumps(response, separators=(',', ':'), ensure_ascii=False)
@@ -148,6 +155,8 @@ def validate_tasks(tasks):
 def build_text_record(task, concat=False):
   response = task["response"]
   index = task["index"]
+  has_error = "error" in response
+  has_intact = "intact" in response
   pairs = []
   for seq, content in enumerate(response["content"]):
     pair = {
@@ -155,22 +164,29 @@ def build_text_record(task, concat=False):
       "source": content["source"],
       "target": content["target"],
     }
+    if has_error:
+      pair["error"] = True
+    if has_intact:
+      pair["intact"] = True
     pairs.append(pair)
   if concat:
-    pairs = [{
+    pair = {
       "id": f"{index:05d}-{0:03d}",
       "source": " ".join([x["source"] for x in pairs]),
       "target": " ".join([x["target"] for x in pairs]),
-    }]
+    }
+    if has_error:
+      pair["error"] = True
+    if has_intact:
+      pair["intact"] = True
+    pairs = [pairs]
   return pairs
 
 
 def build_macro_record(task):
   response = task["response"]
   index = task["index"]
-
   content = response["content"]
-
   record = {
     "id": f"{index:05d}-000",
     "name": content["name"],
@@ -178,11 +194,6 @@ def build_macro_record(task):
   value = content.get("value")
   if value is not None:
     record["value"] = value
-
-
-
-
-
   return record
 
 
@@ -452,15 +463,33 @@ def validate_content(source_text, content):
 
 
 def execute_task_by_chatgpt_enja(
-    book_title, role, source_text, hint, prev_context, next_context, main_model):
+    book_title, role, source_text, hint, prev_context, next_context, main_model, failsoft, no_fallback):
+  latins = regex.sub(r"[^\p{Latin}]", "", source_text)
+  if len(latins) < 2:
+    logger.debug(f"Not English: intact data is generated")
+    record = {}
+    content = []
+    content.append({
+      "source": source_text,
+      "target": source_text,
+    })
+    record["content"] = content
+    if hint:
+      record["hint"] = hint
+    record["intact"] = True
+    return record
   models = [main_model]
-  sub_model = None
-  for name, _, _ in CHATGPT_MODELS:
-    if name != main_model:
-      models.append(name)
-      break
+  if not no_fallback:
+    sub_model = None
+    for name, _, _ in CHATGPT_MODELS:
+      if name != main_model:
+        models.append(name)
+        break
   for model in models:
-    configs = [(0.0, True), (0.4, True), (0.6, True), (0.8, True), (0.0, False), (0.5, False)]
+    #configs = [(0.0, True), (0.4, True), (0.6, True), (0.8, True), (0.0, False), (0.5, False)]
+
+    configs = [(0.0, True)]
+
     for attempt, (temp, use_context) in enumerate(configs, 1):
       if use_context:
         p_hint = hint
@@ -503,8 +532,22 @@ def execute_task_by_chatgpt_enja(
             raise ValueError("Validation error")
           return record
       except Exception as e:
-        logger.info(f"Attempt {attempt} failed (temperature={temp}): {e}")
+        logger.info(f"Attempt {attempt} failed"
+                    f" (model={model}, temperature={temp}, use_context={use_context}): {e}")
         time.sleep(0.2)
+  if failsoft:
+    logger.warning(f"Failsoft: dummy data is generated")
+    record = {}
+    content = []
+    content.append({
+      "source": source_text,
+      "target": "[*FAILSOFT*]",
+    })
+    record["content"] = content
+    if hint:
+      record["hint"] = hint
+    record["error"] = True
+    return record
   raise RuntimeError("All retries failed: unable to parse valid JSON with required fields")
 
 
@@ -541,8 +584,12 @@ def main():
                       help="comma-separated list of task indexes to redo")
   parser.add_argument("--force-finish", action="store_true",
                       help="makes the output file even if all tasks are not done")
+  parser.add_argument("--failsoft", action="store_true",
+                      help="continue tasks on failure")
   parser.add_argument("--model", default=CHATGPT_MODELS[0][0],
                       help="sets the ChatGPT model by the name")
+  parser.add_argument("--no-fallback", action="store_true",
+                      help="do not use the fallback model")
   parser.add_argument("--debug", action="store_true",
                       help="prints the debug messages too")
   args = parser.parse_args()
@@ -581,14 +628,20 @@ def main():
       redo_indexes = list(reversed(sorted(list(redo_indexes))))
     except ValueError:
       logger.error(f"Invalid format for redo: {args.redo}")
+  if redo_indexes:
+    input_tasks = parse_input_data(input_data)
+    for redo_index in redo_indexes:
+      if redo_index < len(input_tasks):
+        role, source_text = input_tasks[redo_index]
+        print(index, role, source_text)
+        sm.reset_task(redo_index, role, source_text)
+      else:
+        logger.error(f"Invalid task ID for redo: {redo_index}")
   total_cost = 0
   done_tasks = 0
   max_done_tasks = total_tasks if args.num_tasks is None else args.num_tasks
   while done_tasks < max_done_tasks:
-    if redo_indexes:
-      index = redo_indexes.pop()
-    else:
-      index = sm.find_undone()
+    index = sm.find_undone()
     if index < 0:
       break
     record = sm.load(index)
@@ -605,9 +658,9 @@ def main():
       response = execute_task_by_chatgpt_enja(
         book_title, role, source_text,
         hint, prev_context, next_context,
-        args.model,
+        args.model, args.failsoft, args.no_fallback,
       )
-    sm.save(index, response)
+    sm.set_response(index, response)
     total_cost += response.get("cost", 0)
     done_tasks += 1
   logger.info(f"Done: tasks={done_tasks}, total_cost=${total_cost:.4f} (Y{total_cost*150:.2f})")
