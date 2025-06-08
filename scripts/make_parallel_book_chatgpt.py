@@ -47,7 +47,7 @@ class StateManager:
         )
       ''')
       cur.execute('DELETE FROM tasks')
-      for i, (role, text) in enumerate(input_tasks):
+      for i, (role, text, attrs) in enumerate(input_tasks):
         cur.execute(
           'INSERT INTO tasks (idx, role, source_text) VALUES (?, ?, ?)',
           (i, role, text)
@@ -110,30 +110,42 @@ class StateManager:
       ]
 
 
-def load_json(path):
+def load_input_data(path):
   with open(path, encoding="utf-8") as f:
-    return json.load(f)
-
-
-def parse_input_data(data):
-  result = []
+    data = json.load(f)
+  meta = {}
+  book_id = data.get("id")
+  if book_id:
+    meta["id"] = book_id
+  tasks = []
   book_title = data.get("title")
   if book_title:
-    result.append(("book_title", book_title))
+    tasks.append(("book_title", book_title, {}))
+    meta["title"] = book_title
   book_author = data.get("author")
   if book_author:
-    result.append(("book_author", book_author))
-  for chapter in data.get("chapters", []):
+    tasks.append(("book_author", book_author, {}))
+    meta["author"] = book_author
+  for chapter_index, chapter in enumerate(data.get("chapters", [])):
+    raw_line = chapter.get("raw_line")
+    if raw_line:
+      name = f"chapter_raw_line_{chapter_index}"
+      meta[name] = raw_line
     chapter_title = chapter.get("title")
     if chapter_title:
-      result.append(("chapter_title", chapter_title))
+      tasks.append(("chapter_title", chapter_title, {}))
     chapter_body = chapter.get("body")
     for element in chapter_body:
+      attrs = {}
+      for name in ["raw_line", "concat"]:
+        value = element.get(name)
+        if value is not None:
+          attrs[name] = value
       for name in ["paragraph", "header", "list", "table", "code", "macro"]:
         value = element.get(name)
         if value:
-          result.append((name, value))
-  return result
+          tasks.append((name, value, attrs))
+  return meta, tasks
 
 
 def validate_tasks(tasks):
@@ -179,7 +191,7 @@ def build_text_record(task, concat=False):
       pair["error"] = True
     if has_intact:
       pair["intact"] = True
-    pairs = [pairs]
+    pairs = [pair]
   return pairs
 
 
@@ -208,9 +220,14 @@ def build_code_record(task):
   return record
 
 
-def build_output(input_data, tasks):
+def build_table_cells(text):
+  text = regex.sub(r"^\|(.*)\|$", r"\1", text)
+  return text.split("|")
+
+
+def build_output(input_meta, input_tasks, tasks):
   book = {}
-  input_book_id = input_data.get("id")
+  input_book_id = input_meta.get("id")
   if input_book_id:
     book["id"] = input_book_id
   book["source_language"] = "en"
@@ -218,19 +235,39 @@ def build_output(input_data, tasks):
   total_cost = 0
   chapters = []
   live_tasks = []
+  index_line_map = {}
+  index_concat_set = set()
   for task in tasks:
     if "response" not in task:
       logger.warning(f"Stop by an unprocessed task: {task['index']}")
       break
+    index = task["index"]
+    role = task["role"]
+    source_text = task["source_text"]
+    if index >= 0 and index < len(input_tasks):
+      input_role, input_text, input_attrs = input_tasks[index]
+      if role != input_role:
+        logger.warning(f"mismatch input role: {index}: {role}")
+      if source_text != input_text:
+        short_text = cut_text_by_width(source_text, 64)
+        logger.warning(f"mismatch input text: {index}: {short_text}")
+      raw_line = input_attrs.get("raw_line")
+      if raw_line:
+        index_line_map[index] = raw_line
+      concat = input_attrs.get("concat")
+      if concat:
+        index_concat_set.add(index)
+    else:
+      logger.warning(f"no matching input: {index}")
     live_tasks.append(task)
   done_seqs = set()
   for seq, task in enumerate(live_tasks):
     if seq in done_seqs: continue
     done_seqs.add(seq)
+    index = task["index"]
     role = task["role"]
     response = task["response"]
     total_cost += response.get("cost", 0)
-    role = task["role"]
     if role == "book_title":
       if "title" not in book:
         book["title"] = build_text_record(task, concat=True)[0]
@@ -250,26 +287,54 @@ def build_output(input_data, tasks):
         }
         chapters.append(chapter)
       chapter = chapters[-1]
+      raw_line = index_line_map.get(index)
       if role == "paragraph":
-        chapter["body"].append({role: build_text_record(task)})
+        record = {role: build_text_record(task)}
+        if raw_line:
+          record["raw_line"] = raw_line
+        chapter["body"].append(record)
       elif role in ["header"]:
         chapter["body"].append({role: build_text_record(task, True)})
       elif role in ["list", "table"]:
-        items = [build_text_record(task, True)]
-        next_seq = seq + 1
+        items = []
+        next_seq = seq
         while next_seq < len(live_tasks):
           next_task = live_tasks[next_seq]
-          if next_task["role"] != role: break
-          items.append(build_text_record(next_task, True))
+          next_index = next_task["index"]
+          if next_seq > seq:
+            if next_task["role"] != role: break
+            if next_index not in index_concat_set: break
+          items.append(build_text_record(next_task, True)[0])
+          done_seqs.add(next_seq)
           next_seq += 1
-        chapter["body"].append({role: items})
+        if role == "table":
+          for item in items:
+            item["source"] = build_table_cells(item["source"])
+            item["target"] = build_table_cells(item["target"])
+            if len(item["source"]) != len(item["target"]):
+              logger.warning(f"Inconsistent number of cells: {index}")
+        record = {role: items}
+        if raw_line:
+          record["raw_line"] = raw_line
+        chapter["body"].append(record)
       elif role == "macro":
-        chapter["body"].append({role: build_macro_record(task)})
+        record = {role: build_macro_record(task)}
+        if raw_line:
+          record["raw_line"] = raw_line
+        chapter["body"].append(record)
       elif role == "code":
-        chapter["body"].append({role: build_code_record(task)})
+        record = {role: build_code_record(task)}
+        if raw_line:
+          record["raw_line"] = raw_line
+        chapter["body"].append(record)
       else:
-        logger.warning(f"Unknown role: {role}")
+        logger.warning(f"Unknown role: {index}: {role}")
   if chapters:
+    for chapter_index, chapter in enumerate(chapters):
+      name = f"chapter_raw_line_{chapter_index}"
+      chapter_raw_line = input_meta.get(name)
+      if chapter_raw_line:
+        chapter["raw_line"] = chapter_raw_line
     book["chapters"] = chapters
   book["cost"] = round(total_cost, 3)
   book["timestamp"] = datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
@@ -650,10 +715,9 @@ def main():
   else:
     state_path = input_path.with_name(input_path.stem + "-state.db")
   logger.info(f"Loading data from {input_path}")
-  input_data = load_json(input_path)
+  input_meta, input_tasks = load_input_data(input_path)
   sm = StateManager(state_path)
   if args.reset or not state_path.exists():
-    input_tasks = parse_input_data(input_data)
     sm.initialize(input_tasks)
   total_tasks = sm.count()
   logger.info(f"Total tasks: {total_tasks}")
@@ -674,11 +738,9 @@ def main():
     except ValueError:
       logger.error(f"Invalid format for redo: {args.redo}")
   if redo_indexes:
-    input_tasks = parse_input_data(input_data)
     for redo_index in redo_indexes:
       if redo_index < len(input_tasks):
-        role, source_text = input_tasks[redo_index]
-        print(index, role, source_text)
+        role, source_text, attrs = input_tasks[redo_index]
         sm.reset_task(redo_index, role, source_text)
       else:
         logger.error(f"Invalid task ID for redo: {redo_index}")
@@ -717,13 +779,12 @@ def main():
   logger.info(f"Done: tasks={done_tasks}, total_cost=${total_cost:.4f} (Y{total_cost*150:.2f})")
   index = sm.find_undone()
   if index < 0 or args.force_finish:
-    input_data = load_json(input_path)
     tasks = sm.load_all()
     logger.info(f"Validating output")
     if not validate_tasks(tasks):
       raise RuntimeError("Validation failed")
     logger.info(f"Writing data into {output_path}")
-    output_data = build_output(input_data, tasks)
+    output_data = build_output(input_meta, input_tasks, tasks)
     with open(output_path, "w", encoding="utf-8") as f:
       json.dump(output_data, f, ensure_ascii=False, indent=2)
     logger.info("Finished")

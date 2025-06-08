@@ -63,7 +63,7 @@ Dr. Slump said, “We did it!” I was surprised.
 ./scripts/jsonize_plaintext.py < minimum-raw.txt > minimum.json
 ```
 
-生成されたminimum.jsonの中身は以下のようになるはずです。何らかの方法でこの書式のJSONファイルを直接作っても構いません。
+生成されたminimum.jsonの中身は以下のようになるはずです。何らかの方法でこの書式のJSONファイルを直接作っても構いません。raw_line要素はデバッグのためだけにあるので、省略しても構いません。
 
 ```json
 {
@@ -71,12 +71,15 @@ Dr. Slump said, “We did it!” I was surprised.
     {
       "body": [
         {
-          "paragraph": "Hello, world. We love translation."
+          "paragraph": "Hello, world. We love translation.",
+          "raw_line": 1
         },
         {
-          "paragraph": "Dr. Slump said, “We did it!” I was surprised."
+          "paragraph": "Dr. Slump said, “We did it!” I was surprised.",
+          "raw_line": 3
         }
-      ]
+      ],
+      "raw_line": 1
     }
   ]
 }
@@ -109,7 +112,8 @@ Dr. Slump said, “We did it!” I was surprised.
               "source": "We love translation.",
               "target": "私たちは翻訳が大好きです。"
             }
-          ]
+          ],
+          "raw_line": 1
         },
         {
           "paragraph": [
@@ -123,13 +127,15 @@ Dr. Slump said, “We did it!” I was surprised.
               "source": "I was surprised.",
               "target": "私は驚いた。"
             }
-          ]
+          ],
+          "raw_line": 3
         }
-      ]
+      ],
+      "raw_line": 1
     }
   ],
   "cost": 0.001,
-  "timestamp": "2025-06-07T02:51:54.212895Z"
+  "timestamp": "2025-06-08T07:12:50.282068Z"
 }
 ```
 
@@ -156,8 +162,6 @@ This project provides scripts to make parallel books from arbitrary contents.  A
 This software is distributed under the terms of Apache License version 2.0.  Sample data in this project are in public domain.  So, both can be redestributed freely without additional permissions.
 ```
 
-「#」で始まる行は本のタイトルを示し、「##」で始まる行は章のタイトルを示します。「- @id」の行は文書のIDを示し、「- @author」の行は文書の著者を示します。
-
 以下のコマンドを実行して、JSON形式に変換します。
 
 ```shell
@@ -176,20 +180,25 @@ This software is distributed under the terms of Apache License version 2.0.  Sam
       "title": "Basics",
       "body": [
         {
-          "paragraph": "Parallel corpora are powerful tools to learn languages.  With them, you can learn foreign languages easily by reading your favorite stories.  Each sentence in the original corpus is associated with its translation in your mother tongue."
+          "paragraph": "Parallel corpora are powerful tools to learn languages.  With them, you can learn foreign languages easily by reading your favorite stories.  Each sentence in the original corpus is associated with its translation in your mother tongue.",
+          "raw_line": 8
         },
         {
-          "paragraph": "This project provides scripts to make parallel books from arbitrary contents.  All you have to do is to prepare the original corpus and run some commands to make parallel books in various formats.  Translation is done by AI platforms like ChatGPT and Gemini."
+          "paragraph": "This project provides scripts to make parallel books from arbitrary contents.  All you have to do is to prepare the original corpus and run some commands to make parallel books in various formats.  Translation is done by AI platforms like ChatGPT and Gemini.",
+          "raw_line": 10
         }
-      ]
+      ],
+      "raw_line": 6
     },
     {
       "title": "License",
       "body": [
         {
-          "paragraph": "This software is distributed under the terms of Apache License version 2.0.  Sample data in this project are in public domain.  So, both can be redestributed freely without additional permissions."
+          "paragraph": "This software is distributed under the terms of Apache License version 2.0.  Sample data in this project are in public domain.  So, both can be redestributed freely without additional permissions.",
+          "raw_line": 14
         }
-      ]
+      ],
+      "raw_line": 12
     }
   ]
 }
@@ -208,29 +217,23 @@ This software is distributed under the terms of Apache License version 2.0.  Sam
   "id": "sample01: How to Make Parallel Books",
   "source_language": "en",
   "target_language": "ja",
-  "title": [
-    {
-      "id": "00000-000",
-      "source": "How to Make Parallel Books",
-      "target": "平行書籍の作り方"
-    }
-  ],
-  "author": [
-    {
-      "id": "00001-000",
-      "source": "Mikio Hirabayashi",
-      "target": "平林幹夫"
-    }
-  ],
+  "title": {
+    "id": "00000-000",
+    "source": "How to Make Parallel Books",
+    "target": "平行書籍の作り方"
+  },
+  "author": {
+    "id": "00001-000",
+    "source": "Mikio Hirabayashi",
+    "target": "平林幹夫"
+  },
   "chapters": [
     {
-      "title": [
-        {
-          "id": "00002-000",
-          "source": "Basics",
-          "target": "基本"
-        }
-      ],
+      "title": {
+        "id": "00002-000",
+        "source": "Basics",
+        "target": "基本"
+      },
       "body": [
         {
           "paragraph": [
@@ -249,7 +252,8 @@ This software is distributed under the terms of Apache License version 2.0.  Sam
               "source": "Each sentence in the original corpus is associated with its translation in your mother tongue.",
               "target": "元のコーパスの各文は、母国語の翻訳と関連付けられています。"
             }
-          ]
+          ],
+          "raw_line": 8
         },
         {
           "paragraph": [
@@ -268,18 +272,18 @@ This software is distributed under the terms of Apache License version 2.0.  Sam
               "source": "Translation is done by AI platforms like ChatGPT and Gemini.",
               "target": "翻訳はChatGPTやGeminiなどのAIプラットフォームによって行われます。"
             }
-          ]
-        }
-      ]
-    },
-    {
-      "title": [
-        {
-          "id": "00005-000",
-          "source": "License",
-          "target": "ライセンス"
+          ],
+          "raw_line": 10
         }
       ],
+      "raw_line": 6
+    },
+    {
+      "title": {
+        "id": "00005-000",
+        "source": "License",
+        "target": "ライセンス"
+      },
       "body": [
         {
           "paragraph": [
@@ -298,13 +302,15 @@ This software is distributed under the terms of Apache License version 2.0.  Sam
               "source": "So, both can be redistributed freely without additional permissions.",
               "target": "そのため、追加の許可なしに自由に再配布することができます。"
             }
-          ]
+          ],
+          "raw_line": 14
         }
-      ]
+      ],
+      "raw_line": 12
     }
   ],
   "cost": 0.004,
-  "timestamp": "2025-06-08T00:38:51.728525Z"
+  "timestamp": "2025-06-08T07:12:55.169844Z"
 }
 ```
 
@@ -451,9 +457,73 @@ TBD.
 
 ## 生成機能群の仕様
 
+### jsonize_plaintext.py
+
+jsonize_plaintext.pyは、Markdown風のテキストファイルを読んで、その内容を元に対訳処理の入力用のJSONデータを生成するスクリプトです。入力データは標準入力から読み込み、出力データは標準出力に書き込みます。よって、以下のように実行します。
+
+```shell
+jsonize_plaintext.py < sample-raw.txt > sample.json
+```
+
+入力の形式は、Markdownのサブセットです。以下のデータはその全ての機能を使っています。
+
+```
+# Book Title
+
+- @id sample02: book title
+- @author John Doe
+
+## Chapter1's Title
+
+### Header in the chapter
+
+This is paragraph one. "Baby steps to giant strides!", he said.
+Contiguous lines are concatened
+into one paragraph. So, you can fold them by a single linefeed.
+
+I replied, "This is the second paragraph. I'm not sure though."
+Brank lines separate paragraphs.
+
+- @macro image https://dbmx.net/parallelbook/logo.png
+- @macro comment Macros are not translated but kept intact to the output.
+
+## Chapter2's Title
+
+> Lines in blockquotes are also concatenated
+> and translated. A whitespace must follow ">".
+
+- Hop. Step. Jump! Each item in the list are not segmented.
+- Saitama, Saitama? A whitespace must follow "-".
+
+|symbol|name|number|
+|Au|gold|79|
+|Ag|silver|47|
+
+```text
+one
+two two
+
+three three three
+```
+
+普通に英文を書くと、段落になります。段落は空行で区切ります。段落の途中の改行は空白と同等とみなされるので、文の間や文の途中で単一の改行を入れて折り返しても大丈夫です。
+
+以下の特殊記法があります。多くの特殊記法は、記号の後ろに空白が必要です。「#1」「-1」で始まっても特殊記法にはなりませんが、「# 1」や「- 1」で始まれば特殊記法になります。
+
+-「#」と空白で始まる行は本のタイトルを示します。通常は文章の冒頭に書きます。
+-「##」と空白で始まる行は章のタイトルを示します。章を区切るにはこれを用います。
+-「###」と空白で始まる行はヘッダを示します。
+-「- @id」と空白で始まる行は文書のIDを示します。
+-「- @author」と空白で始まる行は文書の著者を示します。
+-「- @macro」と空白で始まる行はマクロを示します。マクロは翻訳されずにそのまま出力に渡ります。
+-「-」と空白で始まる行はリストの項目になります。連続した項目は1つのリストになります。
+-「>」と空白で始まる行は引用になります。連続した引用は1つの引用ブロックになります。
+-「|」で始まり「|」で終わる行は表の行になります。連続した表の行は1つの表になります。
+-「```」で始まる行から次の「```」の行までは、コードブロックになります。コードブロックは翻訳されません。
+
 ### make_parallel_book_chatgpt.py
 
-make_parallel_book_chatgpt.pyは、原文データのJSONファイルを読んで、その内容を元に対訳データを生成するスクリプトです。対訳データの生成にはChatGPTを用います。
+make_parallel_book_chatgpt.pyは、jsonize_plaintext.pyが生成したJSONファイルを読んで、その内容を元に対訳データを生成するスクリプトです。対訳データの生成にはChatGPTを用います。
 
 前提として、環境変数OPENAI_API_KEYの値にOpenAIのAPIキーが設定されている必要があります。そのうえで、原文データのJSONファイルを指定して実行すると、そのファイル名に "-parallel.json" をつけた名前で翻訳データのJSONファイルが生成されます。以下のコマンドを実行すると、sample-parallel.jsonが生成されます。
 
@@ -528,7 +598,7 @@ context_hint は次の段落の翻訳時に役立つような背景情報を含�
 
 ChatGPTのAPIを叩くと、費用がかかります。2025年5月現在、デフォルトのgpt-3.5-turboモデルだと、入力の1000トークンあたり0.0005ドルかかり、出力の1000トークンあたり、0.0015ドルかかります。gpt-4oモデルだとその10倍で、入力の1000トークンあたり0.005ドルかかり、出力の1000トークンあたり、0.015ドルかかります。
 
-例えば、「Anne of Green Gables」を訳すとしましょう。平均すると、各パラグラフの翻訳には、入力で1000トークン、出力で500トークン程度が使われます。つまり、gpt-3.5-turboモデルだと、入力で0.0005ドル、出力で0.00075ドルかかります。合計で0.00125ドルです。それを1826パラグラフの分だけやるので、2.28ドルかかります。gpt-4oモデルだと、その10倍の22.8ドルかかります。
+例えば、「Anne of Green Gables」を訳すとしましょう。平均すると、各パラグラフの翻訳には、入力で800トークン、出力で400トークン程度が使われます。つまり、gpt-3.5-turboモデルだと、入力で0.0005ドル、出力で0.0015ドルかかります。合計で0.00125ドルです。それを1826パラグラフの分だけやるので、1.826ドルかかります。gpt-4oモデルだと、その10倍の18.26ドルかかります。
 
 本スクリプトの手法では文脈情報を入力するために多くのトークン数が費やされていますが、入力トークンの費用が出力トークンの費用よりも小さいので、文脈情報を付加することによる総合的な費用の向上は大きくありません。パラグラフ単位での翻訳と文分割を同時に行うことでの出力トークン数の増加の方が問題ですが、使いやすい対訳本を作る上ではそこは譲れません。
 
@@ -547,6 +617,157 @@ make_parallel_book_chatgpt.pyは以下のオプションを備えます。
 - --debug : 各タスクのプロンプトと応答などのデバッグ情報をログ表示します。
 
 ChatGPTに渡すプロンプトはスクリプト内にハードコードされているので、適宜修正して使ってください。表記揺れを防ぐために固有名詞とその翻訳のリストを与えたり、作品の背景知識を埋め込んだりすることも有用です。
+
+make_parallel_book_chatgpt.pyの出力は以下のような形式になります。
+
+```json
+{
+  "id": "sample02: book title",
+  "source_language": "en",
+  "target_language": "ja",
+  "title": {
+    "id": "00000-000",
+    "source": "Book Title",
+    "target": "本の題名"
+  },
+  "author": {
+    "id": "00001-000",
+    "source": "John Doe",
+    "target": "ジョン・ドウ"
+  },
+  "chapters": [
+    {
+      "title": {
+        "id": "00002-000",
+        "source": "Chapter1's Title",
+        "target": "第1章のタイトル"
+      },
+      "body": [
+        {
+          "header": [
+            {
+              "id": "00003-000",
+              "source": "Header in the chapter",
+              "target": "章のヘッダー"
+            }
+          ]
+        },
+        {
+          "paragraph": [
+            {
+              "id": "00004-000",
+              "source": "This is paragraph one.",
+              "target": "これは1つ目の段落です。"
+            },
+            {
+              "id": "00004-001",
+              "source": "\"Baby steps to giant strides!\", he said.",
+              "target": "「小さな一歩から大きな飛躍へ！」と彼は言いました。"
+            },
+            {
+              "id": "00004-002",
+              "source": "Contiguous lines are concatened into one paragraph.",
+              "target": "隣接する行は1つの段落に結合されます。"
+            },
+            {
+              "id": "00004-003",
+              "source": "So, you can fold them by a single linefeed.",
+              "target": "そのため、1つの改行で折りたたむことができます。"
+            }
+          ],
+          "raw_line": 10
+        },
+        {
+          "paragraph": [
+            {
+              "id": "00005-000",
+              "source": "I replied, \"This is the second paragraph.",
+              "target": "私は答えた。「これが2番目の段落です。"
+            },
+            {
+              "id": "00005-001",
+              "source": "I'm not sure though.\" Brank lines separate paragraphs.",
+              "target": "でも、確かではありません。」空行が段落を区切ります。"
+            }
+          ],
+          "raw_line": 14
+        },
+        {
+          "macro": {
+            "id": "00006-000",
+            "name": "image",
+            "value": "https://dbmx.net/parallelbook/logo.png"
+          },
+          "raw_line": 17
+        },
+        {
+          "macro": {
+            "id": "00007-000",
+            "name": "comment",
+            "value": "Macros are not translated but kept intact to the output."
+          },
+          "raw_line": 18
+        }
+      ],
+      "raw_line": 6
+    },
+    {
+      "title": {
+        "id": "00008-000",
+        "source": "Chapter2's Title",
+        "target": "第2章のタイトル"
+      },
+      "body": [
+        {
+          "list": [
+            {
+              "id": "00009-000",
+              "source": "Hop. Step. Jump! Each item in the list are not segmented.",
+              "target": "ホップ。ステップ。ジャンプ！リスト内の各アイテムは分割されません。"
+            },
+            {
+              "id": "00010-000",
+              "source": "Saitama, Saitama? A whitespace must follow \"-\".",
+              "target": "埼玉、埼玉？「-」の後には空白が必要です。"
+            }
+          ],
+          "raw_line": 25
+        },
+        {
+          "table": [
+            {
+              "id": "00011-000",
+              "source": ["symbol", "name", "number"],
+              "target": ["記号", "名前", "番号"]
+            },
+            {
+              "id": "00012-000",
+              "source": ["Au", "gold", "79"],
+              "target": ["Au", "金", "79"]
+            },
+            {
+              "id": "00013-000",
+              "source": ["Ag", "silver", "47"],
+              "target": ["Ag", "銀", "47"]
+            }
+          ],
+          "raw_line": 28
+        },
+        {
+          "code": {
+            "id": "00014-000",
+            "code": "one\ntwo two\n\nthree three three"
+          },
+          "raw_line": 32
+        }
+      ],
+      "raw_line": 20
+    }
+  ],
+  "cost": 0.004,
+  "timestamp": "2025-06-08T10:37:07.325431Z"
+}
+```
 
 ## 変換機能群の仕様
 

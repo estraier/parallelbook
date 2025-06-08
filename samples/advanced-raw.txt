@@ -1,0 +1,37 @@
+# Book Title
+
+- @id sample02: book title
+- @author John Doe
+
+## Chapter1's Title
+
+### Header in the chapter
+
+This is paragraph one. "Baby steps to giant strides!", he said.
+Contiguous lines are concatened
+into one paragraph. So, you can fold them by a single linefeed.
+
+I replied, "This is the second paragraph. I'm not sure though."
+Brank lines separate paragraphs.
+
+- @macro image https://dbmx.net/parallelbook/logo.png
+- @macro comment Macros are not translated but kept intact to the output.
+
+## Chapter2's Title
+
+> Lines in blockquotes are also concatenated
+> and translated. A whitespace must follow ">".
+
+- Hop. Step. Jump! Each item in the list are not segmented.
+- Saitama, Saitama? A whitespace must follow "-".
+
+|symbol|name|number|
+|Au|gold|79|
+|Ag|silver|47|
+
+```text
+one
+two two
+
+three three three
+```

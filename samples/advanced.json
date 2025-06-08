@@ -1,0 +1,71 @@
+{
+  "title": "Book Title",
+  "id": "sample02: book title",
+  "author": "John Doe",
+  "chapters": [
+    {
+      "title": "Chapter1's Title",
+      "body": [
+        {
+          "header": "Header in the chapter",
+          "raw_line": 8
+        },
+        {
+          "paragraph": "This is paragraph one. \"Baby steps to giant strides!\", he said. Contiguous lines are concatened into one paragraph. So, you can fold them by a single linefeed.",
+          "raw_line": 10
+        },
+        {
+          "paragraph": "I replied, \"This is the second paragraph. I'm not sure though.\" Brank lines separate paragraphs.",
+          "raw_line": 14
+        },
+        {
+          "macro": "image https://dbmx.net/parallelbook/logo.png",
+          "raw_line": 17
+        },
+        {
+          "macro": "comment Macros are not translated but kept intact to the output.",
+          "raw_line": 18
+        }
+      ],
+      "raw_line": 6
+    },
+    {
+      "title": "Chapter2's Title",
+      "body": [
+        {
+          "blockquote": "Lines in blockquotes are also concatenated and translated. A whitespace must follow \">\".",
+          "raw_line": 22
+        },
+        {
+          "list": "Hop. Step. Jump! Each item in the list are not segmented.",
+          "raw_line": 25
+        },
+        {
+          "list": "Saitama, Saitama? A whitespace must follow \"-\".",
+          "raw_line": 26,
+          "concat": true
+        },
+        {
+          "table": "|symbol|name|number|",
+          "raw_line": 28
+        },
+        {
+          "table": "|Au|gold|79|",
+          "raw_line": 29,
+          "concat": true
+        },
+        {
+          "table": "|Ag|silver|47|",
+          "raw_line": 30,
+          "concat": true
+        },
+        {
+          "code": "one\ntwo two\n\nthree three three",
+          "raw_line": 32,
+          "mode": "text"
+        }
+      ],
+      "raw_line": 20
+    }
+  ]
+}

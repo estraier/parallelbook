@@ -3,12 +3,15 @@
     {
       "body": [
         {
-          "paragraph": "Hello, world. We love translation."
+          "paragraph": "Hello, world. We love translation.",
+          "raw_line": 1
         },
         {
-          "paragraph": "Dr. Slump said, “We did it!” I was surprised."
+          "paragraph": "Dr. Slump said, “We did it!” I was surprised.",
+          "raw_line": 3
         }
-      ]
+      ],
+      "raw_line": 1
     }
   ]
 }

@@ -2,29 +2,23 @@
   "id": "sample01: How to Make Parallel Books",
   "source_language": "en",
   "target_language": "ja",
-  "title": [
-    {
-      "id": "00000-000",
-      "source": "How to Make Parallel Books",
-      "target": "平行書籍の作り方"
-    }
-  ],
-  "author": [
-    {
-      "id": "00001-000",
-      "source": "Mikio Hirabayashi",
-      "target": "平林幹夫"
-    }
-  ],
+  "title": {
+    "id": "00000-000",
+    "source": "How to Make Parallel Books",
+    "target": "平行書籍の作り方"
+  },
+  "author": {
+    "id": "00001-000",
+    "source": "Mikio Hirabayashi",
+    "target": "平林幹夫"
+  },
   "chapters": [
     {
-      "title": [
-        {
-          "id": "00002-000",
-          "source": "Basics",
-          "target": "基本"
-        }
-      ],
+      "title": {
+        "id": "00002-000",
+        "source": "Basics",
+        "target": "基本"
+      },
       "body": [
         {
           "paragraph": [
@@ -43,7 +37,8 @@
               "source": "Each sentence in the original corpus is associated with its translation in your mother tongue.",
               "target": "元のコーパスの各文は、母国語の翻訳と関連付けられています。"
             }
-          ]
+          ],
+          "raw_line": 8
         },
         {
           "paragraph": [
@@ -62,18 +57,18 @@
               "source": "Translation is done by AI platforms like ChatGPT and Gemini.",
               "target": "翻訳はChatGPTやGeminiなどのAIプラットフォームによって行われます。"
             }
-          ]
-        }
-      ]
-    },
-    {
-      "title": [
-        {
-          "id": "00005-000",
-          "source": "License",
-          "target": "ライセンス"
+          ],
+          "raw_line": 10
         }
       ],
+      "raw_line": 6
+    },
+    {
+      "title": {
+        "id": "00005-000",
+        "source": "License",
+        "target": "ライセンス"
+      },
       "body": [
         {
           "paragraph": [
@@ -92,11 +87,13 @@
               "source": "So, both can be redistributed freely without additional permissions.",
               "target": "そのため、追加の許可なしに自由に再配布することができます。"
             }
-          ]
+          ],
+          "raw_line": 14
         }
-      ]
+      ],
+      "raw_line": 12
     }
   ],
   "cost": 0.004,
-  "timestamp": "2025-06-08T00:38:51.728525Z"
+  "timestamp": "2025-06-08T07:12:55.169844Z"
 }

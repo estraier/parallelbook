@@ -1,21 +1,17 @@
 {
-  "id": "sample02: I Have a Dream",
+  "id": "sample03: I Have a Dream",
   "source_language": "en",
   "target_language": "ja",
-  "title": [
-    {
-      "id": "00000-000",
-      "source": "I Have a Dream",
-      "target": "私には夢があります"
-    }
-  ],
-  "author": [
-    {
-      "id": "00001-000",
-      "source": "Martin Luther King, Jr.",
-      "target": "マーティン・ルーサー・キング・ジュニア"
-    }
-  ],
+  "title": {
+    "id": "00000-000",
+    "source": "I Have a Dream",
+    "target": "私には夢があります"
+  },
+  "author": {
+    "id": "00001-000",
+    "source": "Martin Luther King, Jr.",
+    "target": "マーティン・ルーサー・キング・ジュニア"
+  },
   "chapters": [
     {
       "body": [
@@ -26,7 +22,8 @@
               "source": "I am happy to join with you today in what will go down in history as the greatest demonstration for freedom in the history of our nation.",
               "target": "私は今日、歴史に残るほどの自由のための最大のデモに参加できて嬉しいです。"
             }
-          ]
+          ],
+          "raw_line": 6
         },
         {
           "paragraph": [
@@ -45,7 +42,8 @@
               "source": "It came as a joyous daybreak to end the long night of their captivity.",
               "target": "それは、彼らの長い捕囚の夜を終わらせる喜ばしい夜明けとして現れました。"
             }
-          ]
+          ],
+          "raw_line": 8
         },
         {
           "paragraph": [
@@ -74,7 +72,8 @@
               "source": "And so we've come here today to dramatize a shameful condition.",
               "target": "そして今日、私たちは恥ずべき状況を劇的に表現するためにここに来ました。"
             }
-          ]
+          ],
+          "raw_line": 10
         },
         {
           "paragraph": [
@@ -103,7 +102,8 @@
               "source": "Instead of honoring this sacred obligation, America has given the Negro people a bad check, a check which has come back marked 'insufficient funds.'",
               "target": "この神聖な義務を果たす代わりに、アメリカは黒人たちに不良小切手を渡し、その小切手は『不足資金』という印がついて戻ってきたのです。"
             }
-          ]
+          ],
+          "raw_line": 12
         },
         {
           "paragraph": [
@@ -122,7 +122,8 @@
               "source": "And so, we've come to cash this check, a check that will give us upon demand the riches of freedom and the security of justice.",
               "target": "だからこそ、私たちはこの小切手を現金化しに来たのです。この小切手は、要求すれば自由の富と正義の安全を私たちにもたらすものです。"
             }
-          ]
+          ],
+          "raw_line": 14
         },
         {
           "paragraph": [
@@ -156,7 +157,8 @@
               "source": "Now is the time to make justice a reality for all of God's children.",
               "target": "今こそ、正義を神のすべての子どもたちにとって現実のものとする時なのです。"
             }
-          ]
+          ],
+          "raw_line": 16
         },
         {
           "paragraph": [
@@ -190,7 +192,8 @@
               "source": "The whirlwinds of revolt will continue to shake the foundations of our nation until the bright day of justice emerges.",
               "target": "反乱の旋風は、正義の明るい日が訪れるまで、我々の国の基盤を揺るがし続けるだろう。"
             }
-          ]
+          ],
+          "raw_line": 18
         },
         {
           "paragraph": [
@@ -219,7 +222,8 @@
               "source": "Again and again, we must rise to the majestic heights of meeting physical force with soul force.",
               "target": "何度も何度も、肉体的な力に魂の力で立ち向かう壮大な高みに到達しなければなりません。"
             }
-          ]
+          ],
+          "raw_line": 20
         },
         {
           "paragraph": [
@@ -238,7 +242,8 @@
               "source": "And they have come to realize that their freedom is inextricably bound to our freedom.",
               "target": "そして、彼らは自由が不可分に私たちの自由と結びついていることを認識してきたのです。"
             }
-          ]
+          ],
+          "raw_line": 22
         },
         {
           "paragraph": [
@@ -257,7 +262,8 @@
               "source": "We cannot turn back.",
               "target": "引き返すことはできません。"
             }
-          ]
+          ],
+          "raw_line": 24
         },
         {
           "paragraph": [
@@ -296,7 +302,8 @@
               "source": "No, no, we are not satisfied, and we will not be satisfied until 'justice rolls down like waters, and righteousness like a mighty stream.'",
               "target": "いいえ、いいえ、私たちは満足していませんし、『正義が水のように流れ、義が大川のように流れる』まで満足することはありません。"
             }
-          ]
+          ],
+          "raw_line": 26
         },
         {
           "paragraph": [
@@ -330,7 +337,8 @@
               "source": "Go back to Mississippi, go back to Alabama, go back to South Carolina, go back to Georgia, go back to Louisiana, go back to the slums and ghettos of our northern cities, knowing that somehow this situation can and will be changed.",
               "target": "ミシシッピに戻り、アラバマに戻り、サウスカロライナに戻り、ジョージアに戻り、ルイジアナに戻り、北部都市のスラムやゲットーに戻り、この状況がどうにか変わることを知ってください。"
             }
-          ]
+          ],
+          "raw_line": 28
         },
         {
           "paragraph": [
@@ -339,7 +347,8 @@
               "source": "Let us not wallow in the valley of despair, I say to you today, my friends.",
               "target": "絶望の谷にへこたれることなく、私は今日、友よ、あなたに言います。"
             }
-          ]
+          ],
+          "raw_line": 30
         },
         {
           "paragraph": [
@@ -353,7 +362,8 @@
               "source": "It is a dream deeply rooted in the American dream.",
               "target": "それはアメリカン・ドリームに深く根ざした夢です。"
             }
-          ]
+          ],
+          "raw_line": 32
         },
         {
           "paragraph": [
@@ -367,7 +377,8 @@
               "source": "\"We hold these truths to be self-evident, that all men are created equal.\"",
               "target": "「これらの真理は自明であり、すべての人は平等に創造されている」と我々は信じています。"
             }
-          ]
+          ],
+          "raw_line": 34
         },
         {
           "paragraph": [
@@ -376,7 +387,8 @@
               "source": "I have a dream that one day on the red hills of Georgia, the sons of former slaves and the sons of former slave owners will be able to sit down together at the table of brotherhood.",
               "target": "いつの日か、ジョージア州の赤い丘で、元奴隷の息子たちと元奴隷所有者の息子たちが兄弟愛のテーブルに一緒に座ることができるという夢を持っています。"
             }
-          ]
+          ],
+          "raw_line": 36
         },
         {
           "paragraph": [
@@ -385,7 +397,8 @@
               "source": "I have a dream that one day even the state of Mississippi, a state sweltering with the heat of injustice, sweltering with the heat of oppression, will be transformed into an oasis of freedom and justice.",
               "target": "いつの日か、ミシシッピ州という不正の熱と抑圧の熱で蒸し暑い州ですら、自由と正義のオアシスに変わる日が来ると信じています。"
             }
-          ]
+          ],
+          "raw_line": 38
         },
         {
           "paragraph": [
@@ -394,7 +407,8 @@
               "source": "I have a dream that my four little children will one day live in a nation where they will not be judged by the color of their skin but by the content of their character.",
               "target": "私には夢があります。私の4人の小さな子どもたちが、いつの日か、肌の色ではなく、その人の性格で判断される国で生活することができるという夢があります。"
             }
-          ]
+          ],
+          "raw_line": 40
         },
         {
           "paragraph": [
@@ -408,7 +422,8 @@
               "source": "I have a dream that one day, down in Alabama, with its vicious racists, with its governor having his lips dripping with the words of 'interposition' and 'nullification' -- one day right there in Alabama little black boys and black girls will be able to join hands with little white boys and white girls as sisters and brothers.",
               "target": "私はある日、アラバマ州で、その悪辣な人種差別主義者たち、その知事が「干渉」と「無効宣言」という言葉を滴らせる中で、ある日、まさにアラバマ州で、少年少女たちが肌の色を超えて手を取り合い、姉妹や兄弟として共に過ごすことができると夢見ています。"
             }
-          ]
+          ],
+          "raw_line": 42
         },
         {
           "paragraph": [
@@ -422,7 +437,8 @@
               "source": "I have a dream that one day every valley shall be exalted, and every hill and mountain shall be made low, the rough places will be made plain, and the crooked places will be made straight; 'and the glory of the Lord shall be revealed and all flesh shall see it together.'",
               "target": "いつの日か、すべての谷が高められ、すべての丘や山が低くされ、でこぼこした場所が平らにされ、曲がった場所がまっすぐにされる日が来ることを夢見ています。そして、主の栄光が現れ、すべての肉が共にそれを見るでしょう。"
             }
-          ]
+          ],
+          "raw_line": 44
         },
         {
           "paragraph": [
@@ -431,7 +447,8 @@
               "source": "This is our hope, and this is the faith that I go back to the South with.",
               "target": "これが私たちの希望であり、これが私が南部に持ち帰る信念です。"
             }
-          ]
+          ],
+          "raw_line": 46
         },
         {
           "paragraph": [
@@ -450,7 +467,8 @@
               "source": "With this faith, we will be able to work together, to pray together, to struggle together, to go to jail together, to stand up for freedom together, knowing that we will be free one day.",
               "target": "この信念を持っていれば、一緒に働き、一緒に祈り、一緒に闘い、一緒に牢獄に入り、自由のために立ち上がることができるでしょう。そしていつかは自由になることを知っているのです。"
             }
-          ]
+          ],
+          "raw_line": 48
         },
         {
           "paragraph": [
@@ -464,7 +482,8 @@
               "source": "this will be the day when all of God's children will be able to sing with new meaning:",
               "target": "神の子どもたち全員が新たな意味を持って歌える日が来るだろう："
             }
-          ]
+          ],
+          "raw_line": 50
         },
         {
           "paragraph": [
@@ -483,7 +502,8 @@
               "source": "From every mountainside, let freedom ring!",
               "target": "あらゆる山々から、自由を響かせよう！"
             }
-          ]
+          ],
+          "raw_line": 52
         },
         {
           "paragraph": [
@@ -517,7 +537,8 @@
               "source": "Let freedom ring from the curvaceous slopes of California.",
               "target": "カリフォルニアの曲線美ある斜面から自由の鐘を鳴らしましょう。"
             }
-          ]
+          ],
+          "raw_line": 54
         },
         {
           "paragraph": [
@@ -541,7 +562,8 @@
               "source": "From every mountainside, let freedom ring.",
               "target": "あらゆる山々の斜面から、自由の鐘を鳴らそう。"
             }
-          ]
+          ],
+          "raw_line": 56
         },
         {
           "paragraph": [
@@ -555,7 +577,8 @@
               "source": "we will be able to speed up that day when all of God's children, black men and white men, Jews and Gentiles, Protestants and Catholics, will be able to join hands and sing in the words of the old Negro spiritual",
               "target": "私たちは、神の子どもたち、黒人と白人、ユダヤ人と異邦人、プロテスタントとカトリック教徒が手を取り合い、古い黒人霊歌の言葉で歌える日を早めることができるでしょう"
             }
-          ]
+          ],
+          "raw_line": 58
         },
         {
           "paragraph": [
@@ -569,11 +592,13 @@
               "source": "Free at last! Thank God Almighty, we are free at last!",
               "target": "ついに自由だ！全能の神に感謝します、ついに自由だ！"
             }
-          ]
+          ],
+          "raw_line": 60
         }
-      ]
+      ],
+      "raw_line": 6
     }
   ],
   "cost": 0.028,
-  "timestamp": "2025-06-07T05:47:14.181562Z"
+  "timestamp": "2025-06-08T07:13:14.071986Z"
 }

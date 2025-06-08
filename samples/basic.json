@@ -7,20 +7,25 @@
       "title": "Basics",
       "body": [
         {
-          "paragraph": "Parallel corpora are powerful tools to learn languages.  With them, you can learn foreign languages easily by reading your favorite stories.  Each sentence in the original corpus is associated with its translation in your mother tongue."
+          "paragraph": "Parallel corpora are powerful tools to learn languages.  With them, you can learn foreign languages easily by reading your favorite stories.  Each sentence in the original corpus is associated with its translation in your mother tongue.",
+          "raw_line": 8
         },
         {
-          "paragraph": "This project provides scripts to make parallel books from arbitrary contents.  All you have to do is to prepare the original corpus and run some commands to make parallel books in various formats.  Translation is done by AI platforms like ChatGPT and Gemini."
+          "paragraph": "This project provides scripts to make parallel books from arbitrary contents.  All you have to do is to prepare the original corpus and run some commands to make parallel books in various formats.  Translation is done by AI platforms like ChatGPT and Gemini.",
+          "raw_line": 10
         }
-      ]
+      ],
+      "raw_line": 6
     },
     {
       "title": "License",
       "body": [
         {
-          "paragraph": "This software is distributed under the terms of Apache License version 2.0.  Sample data in this project are in public domain.  So, both can be redestributed freely without additional permissions."
+          "paragraph": "This software is distributed under the terms of Apache License version 2.0.  Sample data in this project are in public domain.  So, both can be redestributed freely without additional permissions.",
+          "raw_line": 14
         }
-      ]
+      ],
+      "raw_line": 12
     }
   ]
 }
