@@ -129,7 +129,7 @@ def parse_input_data(data):
       result.append(("chapter_title", chapter_title))
     chapter_body = chapter.get("body")
     for element in chapter_body:
-      for name in ["paragraph", "macro"]:
+      for name in ["paragraph", "header", "list", "table", "code", "macro"]:
         value = element.get(name)
         if value:
           result.append((name, value))
@@ -141,7 +141,7 @@ def validate_tasks(tasks):
     return regex.sub(r"\s+", " ", text).lower().strip()
   for task in tasks:
     role = task["role"]
-    if role == "macro": continue
+    if role in ["macro", "code"]: continue
     source_text = task["source_text"]
     response = task.get("response")
     if not response: continue
@@ -197,6 +197,17 @@ def build_macro_record(task):
   return record
 
 
+def build_code_record(task):
+  response = task["response"]
+  index = task["index"]
+  content = response["content"]
+  record = {
+    "id": f"{index:05d}-000",
+    "code": content.get("value"),
+  }
+  return record
+
+
 def build_output(input_data, tasks):
   book = {}
   input_book_id = input_data.get("id")
@@ -206,12 +217,18 @@ def build_output(input_data, tasks):
   book["target_language"] = "ja"
   total_cost = 0
   chapters = []
+  live_tasks = []
   for task in tasks:
-    role = task["role"]
-    response = task.get("response")
-    if not response:
+    if "response" not in task:
       logger.warning(f"Stop by an unprocessed task: {task['index']}")
       break
+    live_tasks.append(task)
+  done_seqs = set()
+  for seq, task in enumerate(live_tasks):
+    if seq in done_seqs: continue
+    done_seqs.add(seq)
+    role = task["role"]
+    response = task["response"]
     total_cost += response.get("cost", 0)
     role = task["role"]
     if role == "book_title":
@@ -234,9 +251,22 @@ def build_output(input_data, tasks):
         chapters.append(chapter)
       chapter = chapters[-1]
       if role == "paragraph":
-        chapter["body"].append({"paragraph": build_text_record(task)})
+        chapter["body"].append({role: build_text_record(task)})
+      elif role in ["header"]:
+        chapter["body"].append({role: build_text_record(task, True)})
+      elif role in ["list", "table"]:
+        items = [build_text_record(task, True)]
+        next_seq = seq + 1
+        while next_seq < len(live_tasks):
+          next_task = live_tasks[next_seq]
+          if next_task["role"] != role: break
+          items.append(build_text_record(next_task, True))
+          next_seq += 1
+        chapter["body"].append({role: items})
       elif role == "macro":
-        chapter["body"].append({"macro": build_macro_record(task)})
+        chapter["body"].append({role: build_macro_record(task)})
+      elif role == "code":
+        chapter["body"].append({role: build_code_record(task)})
       else:
         logger.warning(f"Unknown role: {role}")
   if chapters:
@@ -415,6 +445,12 @@ def make_prompt_enja(book_title, role, source_text, hint, prev_context, next_con
     p("このパラグラフは章の題名です。")
   if role == "paragraph":
     p("英文は意味的に自然な単位で文分割してください。たとえ短い文でも、文とみなせれば独立させてください。")
+  elif role == "header":
+    p("英文はヘッダなので、文分割は不要です。入力を1文として扱ってください。")
+  elif role == "list":
+    p("英文はリストの項目なので、文分割は不要です。入力を1文として扱ってください。")
+  elif role == "table":
+    p("英文は \"|\" で区切られたテーブルの要素です。文分割は不要です。\"|\" は維持した上で、それ以外の中身を翻訳してください。")
   p("日本語訳は文体・語調に配慮し、自然な対訳文を生成してください。")
   p("context_hint は次の段落の翻訳時に役立つような背景情報を含めてください（例：誰が話しているか、舞台の変化、話題の推移など）。")
   p("不要な解説や装飾、サマリー文などは含めず、必ず上記JSON構造のみを出力してください。")
@@ -565,6 +601,18 @@ def simulate_task_as_macro(source_text):
   return record
 
 
+def simulate_task_as_code(source_text):
+  record = {}
+  name = "unknown"
+  value = source_text
+  content = {
+    "name": "code",
+    "value": value,
+  }
+  record["content"] = content
+  return record
+
+
 def main():
   parser = argparse.ArgumentParser()
   parser.add_argument("input_file",
@@ -645,13 +693,16 @@ def main():
       record = sm.load(index)
       role = record["role"]
       source_text = record["source_text"]
-      short_source_text = cut_text_by_width(source_text, 64)
+      short_source_text = regex.sub(r"\s+", " ", source_text).strip()
+      short_source_text = cut_text_by_width(short_source_text, 64)
       logger.info(f"Task {index}: {role} - {short_source_text}")
       hint = get_hint(sm, index)
       prev_context = get_prev_context(sm, index)
       next_context = get_next_context(sm, index)
       if role == "macro":
         response = simulate_task_as_macro(source_text)
+      elif role == "code":
+        response = simulate_task_as_code(source_text)
       else:
         response = execute_task_by_chatgpt_enja(
           book_title, role, source_text,

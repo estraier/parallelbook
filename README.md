@@ -151,15 +151,12 @@ Parallel corpora are powerful tools to learn languages.  With them, you can lear
 
 This project provides scripts to make parallel books from arbitrary contents.  All you have to do is to prepare the original corpus and run some commands to make parallel books in various formats.  Translation is done by AI platforms like ChatGPT and Gemini.
 
-- @macro image https://example.com/logo1.jpg
-- @macro comment We will rock you.
-
 ## License
 
 This software is distributed under the terms of Apache License version 2.0.  Sample data in this project are in public domain.  So, both can be redestributed freely without additional permissions.
 ```
 
-「#」で始まる行は本のタイトルを示し、「##」で始まる行は章のタイトルを示します。「- @id」の行は文書のIDを示し、「- @author」の行は文書の著者を示します。「- @macro」の行は、翻訳せずに出力に持ち越したい情報を示します。
+「#」で始まる行は本のタイトルを示し、「##」で始まる行は章のタイトルを示します。「- @id」の行は文書のIDを示し、「- @author」の行は文書の著者を示します。
 
 以下のコマンドを実行して、JSON形式に変換します。
 
@@ -183,12 +180,6 @@ This software is distributed under the terms of Apache License version 2.0.  Sam
         },
         {
           "paragraph": "This project provides scripts to make parallel books from arbitrary contents.  All you have to do is to prepare the original corpus and run some commands to make parallel books in various formats.  Translation is done by AI platforms like ChatGPT and Gemini."
-        },
-        {
-          "macro": "image https://example.com/logo1.jpg"
-        },
-        {
-          "macro": "comment We will rock you."
         }
       ]
     },
@@ -217,23 +208,29 @@ This software is distributed under the terms of Apache License version 2.0.  Sam
   "id": "sample01: How to Make Parallel Books",
   "source_language": "en",
   "target_language": "ja",
-  "title": {
-    "id": "00000-000",
-    "source": "How to Make Parallel Books",
-    "target": "平行書籍の作り方"
-  },
-  "author": {
-    "id": "00001-000",
-    "source": "Mikio Hirabayashi",
-    "target": "平林幹夫"
-  },
+  "title": [
+    {
+      "id": "00000-000",
+      "source": "How to Make Parallel Books",
+      "target": "平行書籍の作り方"
+    }
+  ],
+  "author": [
+    {
+      "id": "00001-000",
+      "source": "Mikio Hirabayashi",
+      "target": "平林幹夫"
+    }
+  ],
   "chapters": [
     {
-      "title": {
-        "id": "00002-000",
-        "source": "Basics",
-        "target": "基本"
-      },
+      "title": [
+        {
+          "id": "00002-000",
+          "source": "Basics",
+          "target": "基本"
+        }
+      ],
       "body": [
         {
           "paragraph": [
@@ -259,12 +256,12 @@ This software is distributed under the terms of Apache License version 2.0.  Sam
             {
               "id": "00004-000",
               "source": "This project provides scripts to make parallel books from arbitrary contents.",
-              "target": "このプロジェクトは任意のコンテンツから平行な書籍を作成するためのスクリプトを提供しています。"
+              "target": "このプロジェクトでは、任意のコンテンツから平行な書籍を作成するためのスクリプトが提供されています。"
             },
             {
               "id": "00004-001",
               "source": "All you have to do is to prepare the original corpus and run some commands to make parallel books in various formats.",
-              "target": "やることは、元のコーパスを準備し、いくつかのコマンドを実行してさまざまな形式の平行な書籍を作成するだけです。"
+              "target": "必要なのは元のコーパスを準備し、いくつかのコマンドを実行してさまざまな形式の平行な書籍を作成するだけです。"
             },
             {
               "id": "00004-002",
@@ -272,46 +269,34 @@ This software is distributed under the terms of Apache License version 2.0.  Sam
               "target": "翻訳はChatGPTやGeminiなどのAIプラットフォームによって行われます。"
             }
           ]
-        },
-        {
-          "macro": {
-            "id": "00005-000",
-            "name": "image",
-            "value": "https://example.com/logo1.jpg"
-          }
-        },
-        {
-          "macro": {
-            "id": "00006-000",
-            "name": "comment",
-            "value": "We will rock you."
-          }
         }
       ]
     },
     {
-      "title": {
-        "id": "00007-000",
-        "source": "License",
-        "target": "ライセンス"
-      },
+      "title": [
+        {
+          "id": "00005-000",
+          "source": "License",
+          "target": "ライセンス"
+        }
+      ],
       "body": [
         {
           "paragraph": [
             {
-              "id": "00008-000",
+              "id": "00006-000",
               "source": "This software is distributed under the terms of Apache License version 2.0.",
               "target": "このソフトウェアはApache License バージョン2.0の条件の下で配布されています。"
             },
             {
-              "id": "00008-001",
+              "id": "00006-001",
               "source": "Sample data in this project are in public domain.",
               "target": "このプロジェクトのサンプルデータはパブリックドメインです。"
             },
             {
-              "id": "00008-002",
+              "id": "00006-002",
               "source": "So, both can be redistributed freely without additional permissions.",
-              "target": "そのため、追加の許可なしに両方を自由に再配布することができます。"
+              "target": "そのため、追加の許可なしに自由に再配布することができます。"
             }
           ]
         }
@@ -319,7 +304,7 @@ This software is distributed under the terms of Apache License version 2.0.  Sam
     }
   ],
   "cost": 0.004,
-  "timestamp": "2025-06-07T02:53:09.376157Z"
+  "timestamp": "2025-06-08T00:38:51.728525Z"
 }
 ```
 
@@ -329,7 +314,7 @@ This software is distributed under the terms of Apache License version 2.0.  Sam
 
 ```
 Loading data from basic.json
-Total tasks: 9
+Total tasks: 7
 Title: How to Make Parallel Books
 GPT models: gpt-3.5-turbo
 Task 0: book_title - How to Make Parallel Books
@@ -337,11 +322,9 @@ Task 1: book_author - Mikio Hirabayashi
 Task 2: chapter_title - Basics
 Task 3: paragraph - Parallel corpora are powerful tools to learn languages.  With th
 Task 4: paragraph - This project provides scripts to make parallel books from arbitr
-Task 5: macro - image https://example.com/logo1.jpg
-Task 6: macro - comment We will rock you.
-Task 7: chapter_title - License
-Task 8: paragraph - This software is distributed under the terms of Apache License v
-Done: tasks=9, total_cost=$0.0038 (Y0.57)
+Task 5: chapter_title - License
+Task 6: paragraph - This software is distributed under the terms of Apache License v
+Done: tasks=7, total_cost=$0.0038 (Y0.57)
 Validating output
 Writing data into basic-parallel.json
 Finished
@@ -355,7 +338,7 @@ Finished
 
 ```
 Loading data from basic.json
-Total tasks: 9
+Total tasks: 7
 Title: How to Make Parallel Books
 GPT models: gpt-4o
 Task 0: book_title - How to Make Parallel Books
@@ -364,11 +347,9 @@ Attempt 1 failed (model=gpt-4o, temperature=0.0, use_context=True): Validation e
 Task 2: chapter_title - Basics
 Task 3: paragraph - Parallel corpora are powerful tools to learn languages.  With th
 Task 4: paragraph - This project provides scripts to make parallel books from arbitr
-Task 5: macro - image https://example.com/logo1.jpg
-Task 6: macro - comment We will rock you.
-Task 7: chapter_title - License
-Task 8: paragraph - This software is distributed under the terms of Apache License v
-Done: tasks=9, total_cost=$0.0341 (Y5.11)
+Task 5: chapter_title - License
+Task 6: paragraph - This software is distributed under the terms of Apache License v
+Done: tasks=7, total_cost=$0.0341 (Y5.11)
 Validating output
 Writing data into basic-parallel.json
 Finished
@@ -394,7 +375,7 @@ gpt-3.5-turboでは$0.0038（0.6円）だったのに、gpt-4oだと$0.0341（5.
 
 ```
 Loading data from basic.json
-Total tasks: 9
+Total tasks: 7
 Title: How to Make Parallel Books
 GPT models: gpt-3.5-turbo
 Task 0: book_title - How to Make Parallel Books
@@ -408,11 +389,9 @@ Attempt 3 failed (model=gpt-3.5-turbo, temperature=0.6, use_context=True): Extra
 Attempt 4 failed (model=gpt-3.5-turbo, temperature=0.8, use_context=True): Extra data: line 8 column 2 (char 587)
 Attempt 5 failed (model=gpt-3.5-turbo, temperature=0.0, use_context=False): Extra data: line 8 column 2 (char 614)
 Attempt 6 failed (model=gpt-3.5-turbo, temperature=0.5, use_context=False): Extra data: line 8 column 2 (char 605)
-Task 5: macro - image https://example.com/logo1.jpg
-Task 6: macro - comment We will rock you.
-Task 7: chapter_title - License
-Task 8: paragraph - This software is distributed under the terms of Apache License v
-Done: tasks=9, total_cost=$0.0094 (Y1.41)
+Task 5: chapter_title - License
+Task 6: paragraph - This software is distributed under the terms of Apache License v
+Done: tasks=7, total_cost=$0.0094 (Y1.41)
 Validating output
 Writing data into basic-parallel.json
 Finished
@@ -422,7 +401,7 @@ Finished
 
 ```
 Loading data from basic.json
-Total tasks: 9
+Total tasks: 7
 Title: How to Make Parallel Books
 GPT models: gpt-3.5-turbo
 Task 0: book_title - How to Make Parallel Books

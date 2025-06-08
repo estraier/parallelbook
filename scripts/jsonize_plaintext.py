@@ -8,9 +8,25 @@ book_data = {}
 chapters = []
 current_chapter = None
 current_paragraph_lines = []
+code_lines = None
 
 for line in sys.stdin:
-  line = re.sub(r"\s", " ", line).strip()
+  line = re.sub(r"\s", " ", line).rstrip()
+  if code_lines is None and re.search(r"^```", line):
+    code_lines = [line]
+    continue
+  if code_lines is not None:
+    code_lines.append(line)
+    if re.search(r"^```", line):
+      if not current_chapter:
+        current_chapter = {"body": []}
+      if current_paragraph_lines:
+        paragraph = " ".join(current_paragraph_lines)
+        current_chapter["body"].append(paragraph)
+        current_paragraph_lines = []
+      current_chapter["body"].append("\n".join(code_lines))
+      code_lines = None
+    continue
   if line == "":
     if not current_chapter:
       current_chapter = {"body": []}
@@ -19,24 +35,20 @@ for line in sys.stdin:
       current_chapter["body"].append(paragraph)
       current_paragraph_lines = []
     continue
-
   if line.startswith("# "):
     if "title" not in book_data:
       book_data["title"] = line[2:].strip()
     continue
-
   match = re.search(r"^- *@id +(.*)$", line)
   if match:
     if "id" not in book_data:
       book_data["id"] = match.group(1)
     continue
-
   match = re.search(r"^- *@author +(.*)$", line)
   if match:
     if "author" not in book_data:
       book_data["author"] = match.group(1)
     continue
-
   if line.startswith("## "):
     if current_chapter:
       if current_paragraph_lines:
@@ -48,7 +60,6 @@ for line in sys.stdin:
     chapter_title = line[3:].strip()
     current_chapter = {"title": chapter_title, "body": []}
     continue
-
   match = re.search(r"^- *@macro +(.*)$", line)
   if match:
     macro = match.group(1)
@@ -60,7 +71,16 @@ for line in sys.stdin:
       current_paragraph_lines = []
     current_chapter["body"].append(line)
     continue
-
+  if (re.search(r"^### +(.*)$", line) or
+      re.search(r"^- +(.*)$", line) or re.search(r"^\|.*\|$", line)):
+    if not current_chapter:
+      current_chapter = {"body": []}
+    if current_paragraph_lines:
+      paragraph = " ".join(current_paragraph_lines)
+      current_chapter["body"].append(paragraph)
+      current_paragraph_lines = []
+    current_chapter["body"].append(line)
+    continue
   current_paragraph_lines.append(line)
 
 if current_chapter:
@@ -78,6 +98,28 @@ for chapter in chapters:
     if match:
       macro = match.group(1)
       new_body.append({"macro": macro})
+      continue
+    match = re.search(r"^```", line)
+    if match:
+      line = re.sub(r"^```", "", line)
+      line = re.sub(r"```$", "", line)
+      line = re.sub(r"^\n+", "", line)
+      line = re.sub(r"\n+$", "", line)
+      new_body.append({"code": line})
+      continue
+    match = re.search(r"^### +(.*)$", line)
+    if match:
+      line = match.group(1)
+      new_body.append({"header": line})
+      continue
+    match = re.search(r"^- +(.*)$", line)
+    if match:
+      line = match.group(1)
+      new_body.append({"list": line})
+      continue
+    match = re.search(r"^\|.*\|$", line)
+    if match:
+      new_body.append({"table": line})
       continue
     if line:
       new_body.append({"paragraph": line})

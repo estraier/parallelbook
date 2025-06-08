@@ -6,15 +6,14 @@
     {
       "id": "00000-000",
       "source": "How to Make Parallel Books",
-      "target": "パラレルブックの作り方"
+      "target": "平行書籍の作り方"
     }
   ],
   "author": [
     {
       "id": "00001-000",
       "source": "Mikio Hirabayashi",
-      "target": "[*FAILSOFT*]",
-      "error": true
+      "target": "平林幹夫"
     }
   ],
   "chapters": [
@@ -42,7 +41,7 @@
             {
               "id": "00003-002",
               "source": "Each sentence in the original corpus is associated with its translation in your mother tongue.",
-              "target": "元のコーパスの各文は、母国語への翻訳と関連付けられています。"
+              "target": "元のコーパスの各文は、母国語の翻訳と関連付けられています。"
             }
           ]
         },
@@ -50,32 +49,27 @@
           "paragraph": [
             {
               "id": "00004-000",
-              "source": "This project provides scripts to make parallel books from arbitrary contents.  All you have to do is to prepare the original corpus and run some commands to make parallel books in various formats.  Translation is done by AI platforms like ChatGPT and Gemini.",
-              "target": "[*FAILSOFT*]",
-              "error": true
+              "source": "This project provides scripts to make parallel books from arbitrary contents.",
+              "target": "このプロジェクトでは、任意のコンテンツから平行な書籍を作成するためのスクリプトが提供されています。"
+            },
+            {
+              "id": "00004-001",
+              "source": "All you have to do is to prepare the original corpus and run some commands to make parallel books in various formats.",
+              "target": "必要なのは元のコーパスを準備し、いくつかのコマンドを実行してさまざまな形式の平行な書籍を作成するだけです。"
+            },
+            {
+              "id": "00004-002",
+              "source": "Translation is done by AI platforms like ChatGPT and Gemini.",
+              "target": "翻訳はChatGPTやGeminiなどのAIプラットフォームによって行われます。"
             }
           ]
-        },
-        {
-          "macro": {
-            "id": "00005-000",
-            "name": "image",
-            "value": "https://example.com/logo1.jpg"
-          }
-        },
-        {
-          "macro": {
-            "id": "00006-000",
-            "name": "comment",
-            "value": "We will rock you."
-          }
         }
       ]
     },
     {
       "title": [
         {
-          "id": "00007-000",
+          "id": "00005-000",
           "source": "License",
           "target": "ライセンス"
         }
@@ -84,25 +78,25 @@
         {
           "paragraph": [
             {
-              "id": "00008-000",
+              "id": "00006-000",
               "source": "This software is distributed under the terms of Apache License version 2.0.",
               "target": "このソフトウェアはApache License バージョン2.0の条件の下で配布されています。"
             },
             {
-              "id": "00008-001",
+              "id": "00006-001",
               "source": "Sample data in this project are in public domain.",
               "target": "このプロジェクトのサンプルデータはパブリックドメインです。"
             },
             {
-              "id": "00008-002",
+              "id": "00006-002",
               "source": "So, both can be redistributed freely without additional permissions.",
-              "target": "そのため、追加の許可なしに両方を自由に再配布することができます。"
+              "target": "そのため、追加の許可なしに自由に再配布することができます。"
             }
           ]
         }
       ]
     }
   ],
-  "cost": 0.002,
-  "timestamp": "2025-06-07T04:55:11.107973Z"
+  "cost": 0.004,
+  "timestamp": "2025-06-08T00:38:51.728525Z"
 }
