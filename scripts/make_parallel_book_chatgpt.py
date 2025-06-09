@@ -447,7 +447,8 @@ def get_next_context(sm, index, max_width=200):
   return picked_sentences
 
 
-def make_prompt_enja(book_title, role, source_text, hint, prev_context, next_context, attempt):
+def make_prompt_enja(book_title, role, source_text,
+                     hint, prev_context, next_context, attempt, jsonize_input):
   lines = []
   def p(line):
     lines.append(line)
@@ -456,31 +457,58 @@ def make_prompt_enja(book_title, role, source_text, hint, prev_context, next_con
   else:
     p(f"あなたは書籍の英日翻訳を担当しています。")
   p("以下の情報をもとに、与えられたパラグラフを自然な日本語に翻訳してください。")
-  p("")
-  if hint:
-    p("現在の場面の要約（前回出力された文脈ヒント）:")
-    p(f"- {hint}")
-    p("")
-  if prev_context:
-    p("直前のパラグラフ:")
-    for sentence in prev_context:
-      p(f" - {sentence}")
-    p("")
-  if next_context:
-    p("直後のパラグラフ:")
-    for sentence in next_context:
-      p(f" - {sentence}")
-    p("")
   p("----")
-  p("翻訳対象のパラグラフ:")
-  if attempt >= 3:
-    proc_source_text = "\n".join(split_sentences_english(source_text))
+  if jsonize_input:
+    data = {}
+    if hint:
+      data["現在の場面の要約"] = hint
+    if prev_context:
+      data["直前のパラグラフ"] = prev_context
+    if next_context:
+      data["直後のパラグラフ"] = next_context
+    data["翻訳対象のパラグラフ"] = source_text
+    p(json.dumps(data, ensure_ascii=False, indent=2))
+    p("")
   else:
-    proc_source_text = source_text
-  p(proc_source_text)
+    if hint:
+      p("現在の場面の要約（前回出力された文脈ヒント）:")
+      p(f"- {hint}")
+      p("")
+    if prev_context:
+      p("直前のパラグラフ:")
+      for sentence in prev_context:
+        p(f" - {sentence}")
+      p("")
+    if next_context:
+      p("直後のパラグラフ:")
+      for sentence in next_context:
+        p(f" - {sentence}")
+      p("")
+    p("----")
+    p("翻訳対象のパラグラフ:")
+    if attempt >= 3:
+      proc_source_text = "\n".join(split_sentences_english(source_text))
+    else:
+      proc_source_text = source_text
+    p(proc_source_text)
+  p("")
   p("----")
-  p("出力形式はJSONとし、次の2つの要素を含めてください:")
+  p("出力形式はJSONとし、次の要素を含めてください:")
+  p('{')
+  p('  "translations": [')
+  if role == "paragraph":
+    p('    { "en": "原文の文1", "ja": "対応する訳文1" },')
+    p('    { "en": "原文の文2", "ja": "対応する訳文2" }')
+    p('    // ...')
+  else:
+    p('    { "en": "原文の文", "ja": "対応する訳文" }')
+  p('  ],')
+  p('  "context_hint": "この段落を含めた現在の場面の要約、登場人物、心情、場の変化などを1文（100トークン程度）で簡潔に記述してください。",')
+  p('}')
+  p("")
+  p("----")
   if attempt >= 3:
+    p("例を示します:")
     p('{')
     p('  "translations": [')
     if role == "paragraph":
@@ -490,26 +518,19 @@ def make_prompt_enja(book_title, role, source_text, hint, prev_context, next_con
     else:
       p('    { "en": "He said, “Hello, world!”", "ja": "「こんにちは世界！」と彼は言った。" }')
     p('  ],')
-    p('  "context_hint": "ジョーが言ったことと反対のことをナンシーが言うやり取りをしている。"')
+    p('  "context_hint": "ジョーが言ったことと反対のことをナンシーが言うやり取りをしている。",')
     p('}')
-  else:
-    p('{')
-    p('  "translations": [')
-    if role == "paragraph":
-      p('    { "en": "原文の文1", "ja": "対応する訳文1" },')
-      p('    { "en": "原文の文2", "ja": "対応する訳文2" }')
-      p('    // ...')
-    else:
-      p('    { "en": "原文の文", "ja": "対応する訳文" }')
-    p('  ],')
-    p('  "context_hint": "この段落を含めた現在の場面の要約、登場人物、心情、場の変化などを1文（100トークン程度）で簡潔に記述してください。"')
-    p('}')
+    p("")
+    p("----")
   if role == "book_title":
     p("このパラグラフは本の題名です。")
   if role == "chapter_title":
     p("このパラグラフは章の題名です。")
   if role == "paragraph":
     p("英文は意味的に自然な単位で文分割してください。たとえ短い文でも、文とみなせれば独立させてください。")
+    p("ただし、分割の際に元の英文を1文字も変更しないでください。句読点や引用符も含めて全て保持してください。")
+    if attempt >= 3 and regex.search(r"\p{Quotation_Mark}", source_text):
+      p("【重要】 翻訳対象には引用符が含まれています。それを絶対に消さないでください。")
   elif role == "header":
     p("英文はヘッダなので、文分割は不要です。入力を1文として扱ってください。")
   elif role == "list":
@@ -517,11 +538,11 @@ def make_prompt_enja(book_title, role, source_text, hint, prev_context, next_con
   elif role == "table":
     p("英文は \"|\" で区切られたテーブルの要素です。文分割は不要です。\"|\" は維持した上で、それ以外の中身を翻訳してください。")
   p("日本語訳は文体・語調に配慮し、自然な対訳文を生成してください。")
-  p("context_hint は次の段落の翻訳時に役立つような背景情報を含めてください（例：誰が話しているか、舞台の変化、話題の推移など）。")
+  p("context_hintは次の段落の翻訳時に役立つような背景情報を含めてください（例：誰が話しているか、舞台の変化、話題の推移など）。")
   p("不要な解説や装飾、サマリー文などは含めず、必ず上記JSON構造のみを出力してください。")
   if attempt >= 2:
     p("JSONの書式には細心の注意を払ってください。引用符や括弧やカンマの仕様を厳密に守ってください。")
-    p("原文を変更しないでください。出力の \"en\" の値を連結すると原文と同じになるようにしてください。")
+    p("文分割の際に原文を変更しないでください。出力の \"en\" の値を連結すると原文と同じになるようにしてください。")
     p(f"過去のエラーによる現在の再試行回数={attempt-1}")
   return "\n".join(lines)
 
@@ -546,13 +567,21 @@ def calculate_chatgpt_cost(prompt, response, model):
 def validate_content(source_text, content):
   def normalize_text(text):
     return regex.sub(r"\s+", " ", text).lower().strip()
+  def extract_marks(text):
+    return regex.sub(r"[^\p{Quotation_Mark}]", "", text)
+  joint_text = " ".join([x["source"] for x in content])
   norm_orig = normalize_text(source_text)
-  norm_proc = normalize_text(" ".join([x["source"] for x in content]))
+  norm_proc = normalize_text(joint_text)
   distance = Levenshtein.distance(norm_orig, norm_proc)
   length = max(1, (len(norm_orig) + len(norm_proc)) / 2)
   diff = distance / length
-  if diff > 0.3:
+  if diff > 0.1:
     logger.debug(f"Too much diff: {diff:.2f}, {norm_orig} vs {norm_proc}")
+    return False
+  mark_orig = extract_marks(source_text)
+  mark_proc = extract_marks(joint_text)
+  if mark_orig != mark_proc:
+    logger.debug(f"Different marks: {mark_orig} vs {mark_proc}")
     return False
   for pair in content:
     source = pair["source"]
@@ -587,18 +616,11 @@ def execute_task_by_chatgpt_enja(
         models.append(name)
         break
   for model in models:
-    configs = [(0.0, True), (0.4, True), (0.6, True), (0.8, True), (0.0, False), (0.5, False)]
-    for attempt, (temp, use_context) in enumerate(configs, 1):
-      if use_context:
-        p_hint = hint
-        p_prev_context = prev_context
-        p_next_context = next_context
-      else:
-        p_hint = ""
-        p_prev_context = None
-        p_next_context = None
+    configs = [(0.0, True), (0.0, False), (0.4, True), (0.4, False),
+               (0.8, True), (0.8, False)]
+    for attempt, (temp, jsonize_input) in enumerate(configs, 1):
       prompt = make_prompt_enja(
-        book_title, role, source_text, p_hint, p_prev_context, p_next_context, attempt)
+        book_title, role, source_text, hint, prev_context, next_context, attempt, jsonize_input)
       logger.debug(f"Prompt:\n{prompt}")
       try:
         client = OpenAI(api_key=OPENAI_API_KEY).with_options(timeout=30)
@@ -631,7 +653,7 @@ def execute_task_by_chatgpt_enja(
           return record
       except Exception as e:
         logger.info(f"Attempt {attempt} failed"
-                    f" (model={model}, temperature={temp}, use_context={use_context}): {e}")
+                    f" (model={model}, temperature={temp}, jsonize_input={jsonize_input}): {e}")
         time.sleep(0.2)
   if failsoft:
     logger.warning(f"Failsoft: dummy data is generated")

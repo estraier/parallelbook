@@ -5,7 +5,7 @@
   "title": {
     "id": "00000-000",
     "source": "How to Make Parallel Books",
-    "target": "平行書籍の作り方"
+    "target": "パラレルブックの作り方"
   },
   "author": {
     "id": "00001-000",
@@ -25,12 +25,12 @@
             {
               "id": "00003-000",
               "source": "Parallel corpora are powerful tools to learn languages.",
-              "target": "平行コーパスは言語を学ぶための強力なツールです。"
+              "target": "パラレルコーパスは言語を学ぶための強力なツールです。"
             },
             {
               "id": "00003-001",
               "source": "With them, you can learn foreign languages easily by reading your favorite stories.",
-              "target": "それらを使えば、お気に入りの物語を読むことで外国語を簡単に学ぶことができます。"
+              "target": "パラレルコーパスを使えば、お気に入りのストーリーを読むことで外国語を簡単に学ぶことができます。"
             },
             {
               "id": "00003-002",
@@ -45,12 +45,12 @@
             {
               "id": "00004-000",
               "source": "This project provides scripts to make parallel books from arbitrary contents.",
-              "target": "このプロジェクトでは、任意のコンテンツから平行な書籍を作成するためのスクリプトが提供されています。"
+              "target": "このプロジェクトは任意のコンテンツからパラレルブックを作成するためのスクリプトを提供しています。"
             },
             {
               "id": "00004-001",
               "source": "All you have to do is to prepare the original corpus and run some commands to make parallel books in various formats.",
-              "target": "必要なのは元のコーパスを準備し、いくつかのコマンドを実行してさまざまな形式の平行な書籍を作成するだけです。"
+              "target": "やることは、元のコーパスを準備し、いくつかのコマンドを実行してさまざまな形式のパラレルブックを作成するだけです。"
             },
             {
               "id": "00004-002",
@@ -94,6 +94,6 @@
       "raw_line": 12
     }
   ],
-  "cost": 0.004,
-  "timestamp": "2025-06-08T07:12:55.169844Z"
+  "cost": 0.003,
+  "timestamp": "2025-06-09T13:24:30.285859Z"
 }

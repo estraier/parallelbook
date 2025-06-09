@@ -349,7 +349,7 @@ Title: How to Make Parallel Books
 GPT models: gpt-4o
 Task 0: book_title - How to Make Parallel Books
 Task 1: book_author - Mikio Hirabayashi
-Attempt 1 failed (model=gpt-4o, temperature=0.0, use_context=True): Validation error
+Attempt 1 failed (model=gpt-4o, temperature=0.0, jsonize=True): Validation error
 Task 2: chapter_title - Basics
 Task 3: paragraph - Parallel corpora are powerful tools to learn languages.  With th
 Task 4: paragraph - This project provides scripts to make parallel books from arbitr
@@ -389,12 +389,12 @@ Task 1: book_author - Mikio Hirabayashi
 Task 2: chapter_title - Basics
 Task 3: paragraph - Parallel corpora are powerful tools to learn languages.  With th
 Task 4: paragraph - This project provides scripts to make parallel books from arbitr
-Attempt 1 failed (model=gpt-3.5-turbo, temperature=0.0, use_context=True): Extra data: line 8 column 2 (char 585)
-Attempt 2 failed (model=gpt-3.5-turbo, temperature=0.4, use_context=True): Extra data: line 8 column 2 (char 587)
-Attempt 3 failed (model=gpt-3.5-turbo, temperature=0.6, use_context=True): Extra data: line 8 column 2 (char 582)
-Attempt 4 failed (model=gpt-3.5-turbo, temperature=0.8, use_context=True): Extra data: line 8 column 2 (char 587)
-Attempt 5 failed (model=gpt-3.5-turbo, temperature=0.0, use_context=False): Extra data: line 8 column 2 (char 614)
-Attempt 6 failed (model=gpt-3.5-turbo, temperature=0.5, use_context=False): Extra data: line 8 column 2 (char 605)
+Attempt 1 failed (model=gpt-3.5-turbo, temperature=0.0, jsonize=True): Extra data: line 8 column 2 (char 585)
+Attempt 2 failed (model=gpt-3.5-turbo, temperature=0.0, jsonize=False): Extra data: line 8 column 2 (char 587)
+Attempt 3 failed (model=gpt-3.5-turbo, temperature=0.4, jsonize=True): Extra data: line 8 column 2 (char 582)
+Attempt 4 failed (model=gpt-3.5-turbo, temperature=0.4, jsonize=False): Extra data: line 8 column 2 (char 587)
+Attempt 5 failed (model=gpt-3.5-turbo, temperature=0.8, jsonize=True): Extra data: line 8 column 2 (char 614)
+Attempt 6 failed (model=gpt-3.5-turbo, temperature=0.8, jsonize=False): Extra data: line 8 column 2 (char 605)
 Task 5: chapter_title - License
 Task 6: paragraph - This software is distributed under the terms of Apache License v
 Done: tasks=7, total_cost=$0.0094 (Y1.41)
@@ -415,18 +415,18 @@ Task 1: book_author - Mikio Hirabayashi
 Task 2: chapter_title - Basics
 Task 3: paragraph - Parallel corpora are powerful tools to learn languages.  With th
 Task 4: paragraph - This project provides scripts to make parallel books from arbitr
-Attempt 1 failed (model=gpt-3.5-turbo, temperature=0.0, use_context=True): Extra data: line 8 column 2 (char 718)
-Attempt 2 failed (model=gpt-3.5-turbo, temperature=0.4, use_context=True): Extra data: line 8 column 2 (char 766)
-Attempt 3 failed (model=gpt-3.5-turbo, temperature=0.6, use_context=True): Extra data: line 8 column 2 (char 573)
-Attempt 4 failed (model=gpt-3.5-turbo, temperature=0.8, use_context=True): Extra data: line 8 column 2 (char 645)
-Attempt 5 failed (model=gpt-3.5-turbo, temperature=0.0, use_context=False): Extra data: line 8 column 2 (char 616)
-Attempt 6 failed (model=gpt-3.5-turbo, temperature=0.5, use_context=False): Extra data: line 8 column 2 (char 614)
-Attempt 1 failed (model=gpt-4o, temperature=0.0, use_context=True): Extra data: line 8 column 2 (char 607)
-Attempt 2 failed (model=gpt-4o, temperature=0.4, use_context=True): Extra data: line 8 column 2 (char 601)
-Attempt 3 failed (model=gpt-4o, temperature=0.6, use_context=True): Extra data: line 8 column 2 (char 551)
-Attempt 4 failed (model=gpt-4o, temperature=0.8, use_context=True): Extra data: line 8 column 2 (char 572)
-Attempt 5 failed (model=gpt-4o, temperature=0.0, use_context=False): Extra data: line 17 column 2 (char 614)
-Attempt 6 failed (model=gpt-4o, temperature=0.5, use_context=False): Extra data: line 17 column 2 (char 605)
+Attempt 1 failed (model=gpt-3.5-turbo, temperature=0.0, jsonize=True): Extra data: line 8 column 2 (char 718)
+Attempt 2 failed (model=gpt-3.5-turbo, temperature=0.0, jsonize=False): Extra data: line 8 column 2 (char 766)
+Attempt 3 failed (model=gpt-3.5-turbo, temperature=0.4, jsonize=True): Extra data: line 8 column 2 (char 573)
+Attempt 4 failed (model=gpt-3.5-turbo, temperature=0.4, jsonize=False): Extra data: line 8 column 2 (char 645)
+Attempt 5 failed (model=gpt-3.5-turbo, temperature=0.8, jsonize=True): Extra data: line 8 column 2 (char 616)
+Attempt 6 failed (model=gpt-3.5-turbo, temperature=0.8, jsonize=False): Extra data: line 8 column 2 (char 614)
+Attempt 1 failed (model=gpt-4o, temperature=0.0, jsonize=True): Extra data: line 8 column 2 (char 607)
+Attempt 2 failed (model=gpt-4o, temperature=0.0, jsonize=False): Extra data: line 8 column 2 (char 601)
+Attempt 3 failed (model=gpt-4o, temperature=0.4, jsonize=True): Extra data: line 8 column 2 (char 551)
+Attempt 4 failed (model=gpt-4o, temperature=0.4, jsonize=False): Extra data: line 8 column 2 (char 572)
+Attempt 5 failed (model=gpt-4o, temperature=0.8, jsonize=True): Extra data: line 17 column 2 (char 614)
+Attempt 6 failed (model=gpt-4o, temperature=0.8, jsonize=False): Extra data: line 17 column 2 (char 605)
 Traceback (most recent call last):
   File "/Users/mikio/dev/parallelbook/./scripts/make_parallel_book_chatgpt.py", line 637, in <module>
     main()
@@ -540,65 +540,75 @@ make_parallel_book_chatgpt.py sample.json
 プロンプトの例を以下に示します。
 
 ```
-あなたは『ANNE OF GREEN GABLES』の英日翻訳を担当しています。
+あなたは『I Have a Dream』の英日翻訳を担当しています。
 以下の情報をもとに、与えられたパラグラフを自然な日本語に翻訳してください。
+----
+{
+  "現在の場面の要約": "マーティン・ルーサー・キング・ジュニアは奴隷解放宣言に署名された場所で演説を行い、アメリカの建国者たちが全てのアメリカ人が相続人となる約束手形に署名したこと、そしてその約束が有色人種の市民に対して果たされていないことが述べられています。次の段落では、キング牧師がアラバマ州での人種差別について語りかけています。",
+  "直前のパラグラフ": [
+    "With this faith, we will be able to transform the jangling discords of our nation into a beautiful symphony of brotherhood.",
+    "With this faith, we will be able to work together, to pray together, to struggle together, to go to jail together, to stand up for freedom together, knowing that we will be free one day.",
+    "And this will be the day -- this will be the day when all of God's children will be able to sing with new meaning:",
+    "My country 'tis of thee, sweet land of liberty, of thee I sing.",
+    "Land where my fathers died, land of the Pilgrim's pride,    From every mountainside, let freedom ring!"
+  ],
+  "直後のパラグラフ": [
+    "But not only that: Let freedom ring from Stone Mountain of Georgia.",
+    "Let freedom ring from Lookout Mountain of Tennessee.",
+    "Let freedom ring from every hill and molehill of Mississippi.",
+    "From every mountainside, let freedom ring."
+  ],
+  "翻訳対象のパラグラフ": "And if America is to be a great nation, this must become true. And so let freedom ring from the prodigious hilltops of New Hampshire. Let freedom ring from the mighty mountains of New York. Let freedom ring from the heightening Alleghenies of Pennsylvania. Let freedom ring from the snow-capped Rockies of Colorado. Let freedom ring from the curvaceous slopes of California."
+}
 
-現在の場面の要約（前回出力された文脈ヒント）:
-- マリラがアンに引き取ることを決めることを示唆しているが、ミセス・ブルーエットは不機嫌な態度でそれを受け入れる様子。
-
-直前のパラグラフ:
- - “I didn’t say that Matthew and I had absolutely decided that we wouldn’t keep her.
- - In fact I may say that Matthew is disposed to keep her.
- - I just came over to find out how the mistake had occurred.
- - I think I’d better take her home again and talk it over with Matthew.
- - I feel that I oughtn’t to decide on anything without consulting him.
- - If we make up our mind not to keep her we’ll bring or send her over to you tomorrow night.
- - If we don’t you may know that she is going to stay with us.
- - Will that suit you, Mrs. Blewett?”
- - “I suppose it’ll have to,” said Mrs. Blewett ungraciously.
-
-直後のパラグラフ:
- - “Oh, Miss Cuthbert, did you really say that perhaps you would let me stay at Green Gables?”
- - she said, in a breathless whisper, as if speaking aloud might shatter the glorious possibility.
- - “Did you really say it?
 
 ----
-翻訳対象のパラグラフ:
-During Marilla’s speech a sunrise had been dawning on Anne’s face. First the look of despair faded out; then came a faint flush of hope; her eyes grew deep and bright as morning stars. The child was quite transfigured; and, a moment later, when Mrs. Spencer and Mrs. Blewett went out in quest of a recipe the latter had come to borrow she sprang up and flew across the room to Marilla.
-----
-出力形式はJSONとし、次の2つの要素を含めてください:
+出力形式はJSONとし、次の要素を含めてください:
 {
   "translations": [
     { "en": "原文の文1", "ja": "対応する訳文1" },
     { "en": "原文の文2", "ja": "対応する訳文2" }
     // ...
   ],
-  "context_hint": "この段落を含めた現在の場面の要約、登場人物、心情、場の変化などを1文（100トークン程度）で簡潔に記述してください。"
+  "context_hint": "この段落を含めた現在の場面の要約、登場人物、心情、場の変化などを1文（100トークン程度）で簡潔に記述してください。",
 }
-英文は意味的に自然な単位で文分割してください。
-日本語訳は文体・語調に配慮し、自然な対訳文を生成してください。たとえ短い文でも、文とみなせれば独立させてください。
-context_hint は次の段落の翻訳時に役立つような背景情報を含めてください（例：誰が話しているか、舞台の変化、話題の推移など）。
+
+----
+英文は意味的に自然な単位で文分割してください。たとえ短い文でも、文とみなせれば独立させてください。
+ただし、分割の際に元の英文を1文字も変更しないでください。句読点や引用符も含めて全て保持してください。
+日本語訳は文体・語調に配慮し、自然な対訳文を生成してください。
+context_hintは次の段落の翻訳時に役立つような背景情報を含めてください（例：誰が話しているか、舞台の変化、話題の推移など）。
 不要な解説や装飾、サマリー文などは含めず、必ず上記JSON構造のみを出力してください。
+
 ```
 
 上述のプロンプトに対するレスポンスは以下のようになります。
 
-```
+```json
 {
   "translations": [
-    { "en": "During Marilla’s speech a sunrise had been dawning on Anne’s face.", "ja": "マリラのスピーチ中、アンの顔には日の出のような光が差していた。" },
-    { "en": "First the look of despair faded out; then came a faint flush of hope; her eyes grew deep and bright as morning stars.", "ja": "最初は絶望の表情が消え、次に微かな希望の光が差し込んだ。彼女の目は深く輝き、まるで朝の星のようだった。" },
-    { "en": "The child was quite transfigured; and, a moment later, when Mrs. Spencer and Mrs. Blewett went out in quest of a recipe the latter had come to borrow she sprang up and flew across the room to Marilla.", "ja": "その子はまるで変わり果てていた。そして、そのしばらく後、スペンサー夫人とブルーエット夫人が借りに来たレシピを探しに出かけた時、アンは飛び起きて部屋を横切り、マリラに駆け寄った。" }
+    { "en": "And if America is to be a great nation, this must become true.", "ja": "もしアメリカが偉大な国であり続けるなら、この言葉は実現しなければならない。" },
+    { "en": "Let freedom ring from the prodigious hilltops of New Hampshire.", "ja": "ニューハンプシャー州の雄大な丘から自由の鐘を鳴らそう。" },
+    { "en": "Let freedom ring from the mighty mountains of New York.", "ja": "ニューヨークの偉大な山々から自由の鐘を鳴らそう。" },
+    { "en": "Let freedom ring from the heightening Alleghenies of Pennsylvania.", "ja": "ペンシルベニア州の高いアレゲニー山脈から自由の鐘を鳴らそう。" },
+    { "en": "Let freedom ring from the snow-capped Rockies of Colorado.", "ja": "コロラド州の雪を被ったロッキー山脈から自由の鐘を鳴らそう。" },
+    { "en": "Let freedom ring from the curvaceous slopes of California.", "ja": "カリフォルニアの曲線美ある斜面から自由の鐘を鳴らそう。" }
   ],
-  "context_hint": "マリラのスピーチ中、アンの表情が次第に変化し、希望に満ちた光を浴びる。アンは喜びに満ち、マリラに駆け寄る。"
+  "context_hint": "キング牧師はアメリカが偉大な国であり続けるためには、全ての州から自由の鐘が鳴らされるべきだと訴えています。"
 }
 ```
 
 前後のパラグラフを文脈情報として与えるだけではなく、前のパラグラフの翻訳作業で得られた場面のヒント情報を次のパラグラフの翻訳にリレーしていくことにより、翻訳精度を高めることを企図しています。文単位での翻訳よりもパラグラフ単位の翻訳の方が有利であり、現在のパラグラフだけを見る翻訳よりも、前後の文とリレーされた文脈情報を加味した翻訳の方が有利であると仮定しています。
 
-ChatGPTのAPIを叩くと、費用がかかります。2025年5月現在、デフォルトのgpt-3.5-turboモデルだと、入力の1000トークンあたり0.0005ドルかかり、出力の1000トークンあたり、0.0015ドルかかります。gpt-4oモデルだとその10倍で、入力の1000トークンあたり0.005ドルかかり、出力の1000トークンあたり、0.015ドルかかります。
+AIは間違います。特に、指示通りのJSONフォーマットを出力しなかったり、指示通りの内容を出さなかったりすることがよくあります。よって、後処理として整合性を確認し、不整合であれば、自動的に再試行が行われます。整合性の確認としては、まずJSONが適切に構築できるかを検査します。さらに、文分割した結果を結合した文字列と、元のパラグラフの間の差分（レーベンシュタイン編集距離）を調べ、その割合が10%を超えていたら不整合とみなします。また、引用符が維持されているかどうかも検査しています。
 
-例えば、「Anne of Green Gables」を訳すとしましょう。平均すると、各パラグラフの翻訳には、入力で800トークン、出力で400トークン程度が使われます。つまり、gpt-3.5-turboモデルだと、入力で0.0005ドル、出力で0.0015ドルかかります。合計で0.00125ドルです。それを1826パラグラフの分だけやるので、1.826ドルかかります。gpt-4oモデルだと、その10倍の18.26ドルかかります。
+再試行の際にはtemperatureパラメータを増やして出力のランダム性を上げるほか、プロンプトに微調整をします。特にプロンプト内の入力データを疑似JSON形式とプレーンテキストで切り替えるのが効果があります。
+
+パラメータやプロンプトを変えて6回の試行をしてもうまくいかない場合、モデルを切り替えてさらに6回の試行をします。gpt-4oモデルを使っている場合、gpt-3.5-turboモデルに切り替え、gpt-4oモデルを以外を使っている場合、gpt-4oモデルに切り替えます。それでもうまく行かない場合、処理が停止します。ただし、--failsoftオプションをつけている場合、ダミーデータを出力して処理が続行されます。
+
+ChatGPTのAPIを叩くと、費用がかかります。2025年5月現在、デフォルトのgpt-3.5-turboモデルだと、入力には1000トークンあたり0.0005ドルかかり、出力には1000トークンあたり0.0015ドルかかります。gpt-4oモデルだとその10倍で、入力には1000トークンあたり0.005ドルかかり、出力には1000トークンあたり0.015ドルかかります。
+
+例えば、「Anne of Green Gables」を訳すとしましょう。平均すると、各パラグラフの翻訳には、入力で800トークン、出力で400トークン程度が使われます。よって、gpt-3.5-turboモデルだと、入力には0.8*0.0005=0.0004ドルかかり、出力には0.4*0.0015=0.0006ドルかかります。合計で0.0012ドルです。それを1826パラグラフの分だけやるので、1.096ドルかかります。実際には再試行の分がかかるので、その1.5倍くらい見ておくと良いでしょう。つまり1.7ドルくらいです。gpt-4oモデルだと、その10倍の17ドルくらいかかります。
 
 本スクリプトの手法では文脈情報を入力するために多くのトークン数が費やされていますが、入力トークンの費用が出力トークンの費用よりも小さいので、文脈情報を付加することによる総合的な費用の向上は大きくありません。パラグラフ単位での翻訳と文分割を同時に行うことでの出力トークン数の増加の方が問題ですが、使いやすい対訳本を作る上ではそこは譲れません。
 
