@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>Parallel Book</title>
+</head>
+<body>
+
+<nav id="parallel-book-selector" aria-label="書籍選択ナビゲーション"></nav>
+
+<article id="parallel-book-content" aria-label="書籍本文表示エリア"></article>
+
+<script type="module">
+import { renderParallelBook } from './parallelbook.js';
+const bookList = {
+  minimum: ["最小限のサンプル", "https://dbmx.net/parallelbook/books/minimum-parallel.json"],
+  basic: ["基本的なサンプル", "https://dbmx.net/parallelbook/books/basic-parallel.json"],
+  advanced: ["高度なサンプル", "https://dbmx.net/parallelbook/books/advanced-parallel.json"],
+  dream: ["I Have a Dreamのサンプル", "https://dbmx.net/parallelbook/books/dream-parallel.json"],
+  anne01: ["赤毛のアン", "https://dbmx.net/parallelbook/books/anne01-parallel.json"]
+};
+renderParallelBook("parallel-book-selector", "parallel-book-content", bookList, "book");
+</script>
+
+</body>
+</html>
