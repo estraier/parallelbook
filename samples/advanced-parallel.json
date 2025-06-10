@@ -25,7 +25,7 @@
             {
               "id": "00003-000",
               "source": "Header in the chapter",
-              "target": "章の見出し"
+              "target": "章のヘッダー"
             }
           ]
         },
@@ -59,7 +59,7 @@
             {
               "id": "00005-000",
               "source": "I replied, \"This is the second paragraph. I'm not sure though.\"",
-              "target": "私は答えました。「これは2番目の段落です。でも、確信は持てません。」"
+              "target": "私は答えました。「これが2番目の段落です。でも、確信はありません。」"
             },
             {
               "id": "00005-001",
@@ -112,45 +112,57 @@
         },
         {
           "table": [
-            {
-              "id": "00011-000",
-              "source": [
-                "symbol",
-                "name",
-                "number"
-              ],
-              "target": [
-                "記号",
-                "名前",
-                "番号"
-              ]
-            },
-            {
-              "id": "00012-000",
-              "source": [
-                "Au",
-                "gold",
-                "79"
-              ],
-              "target": [
-                "Au",
-                "金",
-                "79"
-              ]
-            },
-            {
-              "id": "00013-000",
-              "source": [
-                "Ag",
-                "silver",
-                "47"
-              ],
-              "target": [
-                "Ag",
-                "銀",
-                "47"
-              ]
-            }
+            [
+              {
+                "id": "00011-000",
+                "source": "symbol",
+                "target": "記号"
+              },
+              {
+                "id": "00011-001",
+                "source": "name",
+                "target": "名前"
+              },
+              {
+                "id": "00011-002",
+                "source": "number",
+                "target": "番号"
+              }
+            ],
+            [
+              {
+                "id": "00012-000",
+                "source": "Au",
+                "target": "Au"
+              },
+              {
+                "id": "00012-001",
+                "source": "gold",
+                "target": "金"
+              },
+              {
+                "id": "00012-002",
+                "source": "79",
+                "target": "79"
+              }
+            ],
+            [
+              {
+                "id": "00013-000",
+                "source": "Ag",
+                "target": "Ag"
+              },
+              {
+                "id": "00013-001",
+                "source": "silver",
+                "target": "銀"
+              },
+              {
+                "id": "00013-002",
+                "source": "47",
+                "target": "47"
+              }
+            ]
           ],
           "raw_line": 28
         },
@@ -166,5 +178,5 @@
     }
   ],
   "cost": 0.004,
-  "timestamp": "2025-06-09T13:22:09.188779Z"
+  "timestamp": "2025-06-10T12:06:16.290005Z"
 }

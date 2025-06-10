@@ -158,7 +158,7 @@ def validate_tasks(tasks):
     response = task.get("response")
     if not response: continue
     content = response["content"]
-    if not validate_content(source_text, content):
+    if not validate_content(role, source_text, content):
       logger.warning(f"Invalid task content: {task}")
       return False
   return True
@@ -220,9 +220,25 @@ def build_code_record(task):
   return record
 
 
-def build_table_cells(text):
-  text = regex.sub(r"^\|(.*)\|$", r"\1", text)
-  return text.split("|")
+def build_table_cells(index, item):
+  def get_cells(text):
+    text = regex.sub(r"^\|", "", text.strip())
+    text = regex.sub(r"\|$", "", text.strip())
+    return text.split("|")
+  src_cells = get_cells(item["source"])
+  trg_cells = get_cells(item["target"])
+  max_len = max(len(src_cells), len(trg_cells))
+  src_cells += [""] * (max_len - len(src_cells))
+  trg_cells += [""] * (max_len - len(trg_cells))
+  cells = []
+  for src_cell, trg_cell in zip(src_cells, trg_cells):
+    cell = {
+      "id": f"{index:05d}-{len(cells):03d}",
+      "source": src_cell,
+      "target": trg_cell,
+    }
+    cells.append(cell)
+  return cells
 
 
 def build_output(input_meta, input_tasks, tasks):
@@ -308,11 +324,12 @@ def build_output(input_meta, input_tasks, tasks):
           done_seqs.add(next_seq)
           next_seq += 1
         if role == "table":
-          for item in items:
-            item["source"] = build_table_cells(item["source"])
-            item["target"] = build_table_cells(item["target"])
-            if len(item["source"]) != len(item["target"]):
-              logger.warning(f"Inconsistent number of cells: {index}")
+          rows = []
+          for i, item in enumerate(items):
+            cells = build_table_cells(index + i, item)
+            if cells:
+              rows.append(cells)
+          items = rows
         record = {role: items}
         if raw_line:
           record["raw_line"] = raw_line
@@ -383,6 +400,10 @@ def cut_text_by_width(text, max_width):
   return ''.join(result)
 
 
+def normalize_context_text(text):
+  return regex.sub(r"\s+", " ", text).strip()
+
+
 def get_hint(sm, index):
   min_index = max(0, index - 8)
   index -= 1
@@ -404,7 +425,8 @@ def get_prev_context(sm, index, max_width=500):
   while trg_index < index:
     record = sm.load(trg_index)
     if not record: break
-    sentences = split_sentences_english(record["source_text"])
+    text = normalize_context_text(record["source_text"])
+    sentences = split_sentences_english(text)
     all_sentences.extend(sentences)
     trg_index += 1
   all_sentences.reverse()
@@ -430,7 +452,8 @@ def get_next_context(sm, index, max_width=200):
   while trg_index < max_index:
     record = sm.load(trg_index)
     if not record: break
-    sentences = split_sentences_english(record["source_text"])
+    text = normalize_context_text(record["source_text"])
+    sentences = split_sentences_english(text)
     all_sentences.extend(sentences)
     trg_index += 1
   sum_width = 0
@@ -564,11 +587,13 @@ def calculate_chatgpt_cost(prompt, response, model):
   raise RuntimeError("No matching model")
 
 
-def validate_content(source_text, content):
+def validate_content(role, source_text, content):
   def normalize_text(text):
     return regex.sub(r"\s+", " ", text).lower().strip()
   def extract_marks(text):
     return regex.sub(r"[^\p{Quotation_Mark}]", "", text)
+  def extract_verticals(text):
+    return regex.sub(r"[^|]", "", text)
   joint_text = " ".join([x["source"] for x in content])
   norm_orig = normalize_text(source_text)
   norm_proc = normalize_text(joint_text)
@@ -583,10 +608,16 @@ def validate_content(source_text, content):
   if mark_orig != mark_proc:
     logger.debug(f"Different marks: {mark_orig} vs {mark_proc}")
     return False
+  if role == "table":
+    vert_orig = extract_verticals(source_text)
+    vert_proc = extract_verticals(joint_text)
+    if vert_orig != vert_proc:
+      logger.debug(f"Different verticals: {vert_orig} vs {vert_proc}")
+      return False
   for pair in content:
     source = pair["source"]
     target = pair["target"]
-    if regex.search(r"[A-Za-z]{2,} +[A-Za-z]{3,}", target) and len(target) < 1:
+    if regex.search(r"[A-Za-z]{2,} +[A-Za-z]{3,}", source) and not target:
       logger.debug(f"Too short target: {source} vs {target}")
       return False
   return True
@@ -648,7 +679,7 @@ def execute_task_by_chatgpt_enja(
           record["content"] = content
           record["hint"] = data.get("context_hint")
           record["cost"] = round(calculate_chatgpt_cost(prompt, response, model), 8)
-          if not validate_content(source_text, content):
+          if not validate_content(role, source_text, content):
             raise ValueError("Validation error")
           return record
       except Exception as e:

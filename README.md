@@ -745,21 +745,21 @@ make_parallel_book_chatgpt.pyの出力は以下のような形式になります
         },
         {
           "table": [
-            {
-              "id": "00011-000",
-              "source": ["symbol", "name", "number"],
-              "target": ["記号", "名前", "番号"]
-            },
-            {
-              "id": "00012-000",
-              "source": ["Au", "gold", "79"],
-              "target": ["Au", "金", "79"]
-            },
-            {
-              "id": "00013-000",
-              "source": ["Ag", "silver", "47"],
-              "target": ["Ag", "銀", "47"]
-            }
+            [
+              {"id": "00011-000", "source": "symbol", "target": "記号"},
+              {"id": "00011-001", "source": "name", "target": "名前"},
+              {"id": "00011-002", "source": "number", "target": "番号"}
+            ],
+            [
+              {"id": "00012-000", "source": "Au", "target": "Au"},
+              {"id": "00012-001", "source": "gold", "target": "金"},
+              {"id": "00012-002", "source": "79", "target": "79"}
+            ],
+            [
+              {"id": "00013-000", "source": "Ag", "target": "Ag"},
+              {"id": "00013-001", "source": "silver", "target": "銀"},
+              {"id": "00013-002", "source": "47", "target": "47"}
+            ]
           ],
           "raw_line": 28
         },
