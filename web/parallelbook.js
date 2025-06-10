@@ -6,8 +6,10 @@ export function renderParallelBook(selectorElementId, contentElementId, bookList
     console.error(`No container element: ${selectorElementId}`);
     return;
   }
+  selectorEl.className = "parallel-book-navi";
+  selectorEl.innerHTML = "";
   const label = document.createElement("label");
-  label.textContent = "読みたい書籍を選択してください：";
+  label.textContent = "書籍選択：";
   label.setAttribute("for", "book-selector");
   const select = document.createElement("select");
   select.id = "book-selector";
@@ -79,15 +81,15 @@ function renderParallelBookContent(contentElementId, book) {
     console.error(`No container element: ${contentElementId}`);
     return;
   }
+  contentEl.className = "parallel-book";
   contentEl.innerHTML = "";
-  function createParallelBlock(tagName, classPrefix, source, target) {
+  function createParallelBlock(tagName, className, source, target) {
     const container = document.createElement(tagName);
+    container.className = `${className} parallel`;
     const spanEn = document.createElement("span");
-    spanEn.className = `${classPrefix}-en parallel`;
     spanEn.lang = "en";
     spanEn.textContent = source ?? "";
     const spanJa = document.createElement("span");
-    spanJa.className = `${classPrefix}-ja parallel`;
     spanJa.lang = "ja";
     spanJa.textContent = target ?? "";
     container.appendChild(spanEn);
@@ -98,7 +100,7 @@ function renderParallelBookContent(contentElementId, book) {
     contentEl.appendChild(createParallelBlock("h1", "book-title", book.title.source, book.title.target));
   }
   if (book.author) {
-    contentEl.appendChild(createParallelBlock("p", "book-author", book.author.source, book.author.target));
+    contentEl.appendChild(createParallelBlock("div", "book-author", book.author.source, book.author.target));
   }
   for (const chapter of book.chapters ?? []) {
     const chapterSection = document.createElement("section");
@@ -107,15 +109,19 @@ function renderParallelBookContent(contentElementId, book) {
     }
     for (const block of chapter.body ?? []) {
       if (block.paragraph) {
+        const pane = document.createElement("p");
+        pane.className = "paragraph"
         for (const item of block.paragraph) {
-          chapterSection.appendChild(createParallelBlock("div", "paragraph", item.source, item.target));
+          pane.appendChild(createParallelBlock("div", "sentence", item.source, item.target));
         }
+        chapterSection.appendChild(pane);
       } else if (block.header) {
         for (const item of block.header) {
           chapterSection.appendChild(createParallelBlock("h3", "header", item.source, item.target));
         }
       } else if (block.list) {
         const ul = document.createElement("ul");
+        ul.className = "list"
         for (const item of block.list) {
           const li = document.createElement("li");
           li.appendChild(createParallelBlock("div", "list-item", item.source, item.target));
@@ -124,6 +130,7 @@ function renderParallelBookContent(contentElementId, book) {
         chapterSection.appendChild(ul);
       } else if (block.table) {
         const table = document.createElement("table");
+        table.className = "table"
         for (const row of block.table) {
           const tr = document.createElement("tr");
           for (const cell of row) {
@@ -135,11 +142,16 @@ function renderParallelBookContent(contentElementId, book) {
         }
         chapterSection.appendChild(table);
       } else if (block.macro?.name === "image") {
+        const values = (block.macro.value ?? "").trim().split(" ");
+        const pane = document.createElement("div");
+        pane.className = "macro-image"
         const img = document.createElement("img");
-        img.src = block.macro.value;
-        img.alt = "";
-        img.className = "macro-image";
-        chapterSection.appendChild(img);
+        img.src = values[0];
+        if (values.length > 0) {
+          img.alt = values.slice(1).join(" ");
+        }
+        pane.appendChild(img);
+        chapterSection.appendChild(pane);
       }
     }
     contentEl.appendChild(chapterSection);

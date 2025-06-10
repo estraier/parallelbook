@@ -1,0 +1,85 @@
+body {
+  background: #eee;
+  font-size: 18px;
+}
+
+.parallel-book-navi {
+  display: block;
+  margin: auto;
+  padding: 3ex;
+  max-width: 80ex;
+  text-align: left;
+  opacity: 0.9;
+}
+.parallel-book-navi select {
+  font-size: 105%;
+}
+
+.parallel-book {
+  display: block;
+  margin: auto;
+  padding: 3ex;
+  max-width: 80ex;
+  border: 1px solid #ddd;
+  border-radius: 1ex;
+  text-align: left;
+  background: #fff;
+}
+
+.parallel-book .parallel span {
+  display: block;
+}
+
+.parallel-book span:lang(ja) {
+  font-size: 70%;
+  opacity: 0.5;
+  margin-left: 0.5ex;
+}
+
+.parallel-book h1 {
+  margin: 1.6ex 0;
+  text-align: center;
+  font-size: 120%;
+}
+
+.parallel-book div.book-author {
+  margin: 1.6ex 0;
+  text-align: right;
+}
+
+.parallel-book h2 {
+  margin: 1.8ex 0 1.6ex 0;
+  font-size: 115%;
+}
+
+.parallel-book p {
+  margin: 1.6ex 0;
+}
+
+.parallel-book h3 {
+  margin: 1.7ex 0 1.6ex 0;
+  font-size: 100%;
+}
+
+.parallel-book ul {
+  margin: 1.6ex 0;
+  padding-left: 2ex;
+}
+
+.parallel-book table {
+  margin: 1.6ex 0;
+  border-collapse: collapse;
+  font-size: 95%;
+}
+.parallel-book td {
+  border: 1px solid #ddd;
+  padding: 0 0.5ex;
+}
+
+.parallel-book div.macro-image {
+  margin: 1ex 0;
+}
+.parallel-book div.macro-image img {
+  max-width: 35ex;
+  max-height: 35ex;
+}
