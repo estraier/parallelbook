@@ -1,27 +1,38 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="zxx">
 <head>
 <meta charset="UTF-8">
-<title>Parallel Book</title>
+<title>Parallel Book Library</title>
+<link rel="stylesheet" href="https://dbmx.net/dict/union_dict_pane.css"/>
+<script src="https://dbmx.net/dict/union_dict_pane.js"></script>
 <link rel="stylesheet" href="parallelbook.css">
-</head>
-<body>
-
-<nav id="parallel-book-selector" aria-label="書籍選択ナビゲーション"></nav>
-
-<article id="parallel-book-content" aria-label="書籍本文表示エリア"></article>
-
 <script type="module">
 import { renderParallelBook } from './parallelbook.js';
 const bookList = {
-  minimum: ["最小限のサンプル", "https://dbmx.net/parallelbook/books/minimum-parallel.json"],
-  basic: ["基本的なサンプル", "https://dbmx.net/parallelbook/books/basic-parallel.json"],
-  advanced: ["高度なサンプル", "https://dbmx.net/parallelbook/books/advanced-parallel.json"],
-  dream: ["I Have a Dreamのサンプル", "https://dbmx.net/parallelbook/books/dream-parallel.json"],
-  anne01: ["赤毛のアン", "https://dbmx.net/parallelbook/books/anne01-parallel.json"]
+  minimum: ["最小限のサンプル", "books/minimum-parallel.json"],
+  basic: ["基本的なサンプル", "books/basic-parallel.json"],
+  advanced: ["高度なサンプル", "books/advanced-parallel.json"],
+  dream: ["I Have a Dreamのサンプル", "books/dream-parallel.json"],
+  anne01: ["赤毛のアン", "books/anne01-parallel.json"]
 };
 renderParallelBook("parallel-book-selector", "parallel-book-content", bookList, "book");
+union_dict_activate();
 </script>
+</head>
+<body>
+
+<nav id="parallel-book-selector" aria-label="書籍選択ナビゲーション" lang="ja"></nav>
+
+<article id="parallel-book-content" aria-label="書籍本文表示エリア">
+<section class="parallel-book-usage" lang="ja">
+<h1>対訳本の図書館</h1>
+<p>英文とその対訳文を並べて読める書籍を集めたサイトです。</p>
+<p>上にあるメニューから作品を選んで下さい。その内容の英文とその訳文が並べて表示されます。表示方法は「英日併記」「英語のみ」「日本語のみ」から選べます。</p>
+<p>各文の左側には「▶」の半透明のアイコンがあります。これを押すと、対訳の表示と非表示が切り替わります。</p>
+<p>英文の中のの単語やフレーズをダブルクリックやドラッグで選択すると、ポップアップ辞書でその意味を検索して表示します。</p>
+<p>英語学習には英文の多読が有効ですが、読解が難しい時に対訳文が読めると便利です。初級者は、英文と対訳文を交互に読んで、きちんと読解できているか確かめながら読み進めると良いでしょう。中級者は、基本的に英文だけを読み進めていき、読解に困ったらすぐ対訳文を読むと良いでしょう。上級者は、英語のみを表示するモードにして読み進め、どうしても意味を確認したくなった時だけ対訳文を表示すると良いでしょう。超上級者は、英文を暗唱できるまで読み込んだ上で、日本語のみを表示するモードにして、英文を暗唱してから確認するそうです。</p>
+</section>
+</article>
 
 </body>
 </html>

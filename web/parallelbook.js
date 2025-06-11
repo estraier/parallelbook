@@ -45,6 +45,55 @@ export function renderParallelBook(selectorElementId, contentElementId, bookList
       loadAndRenderParallelBook(contentElementId, book[1]);
     }
   }
+  const modeSelect = document.createElement("select");
+  modeSelect.id = "display-mode-selector";
+  const modes = [
+    ["both", "英日併記"],
+    ["en", "英語のみ"],
+    ["ja", "日本語のみ"]
+  ];
+  for (const [value, label] of modes) {
+    const option = document.createElement("option");
+    option.value = value;
+    option.textContent = label;
+    modeSelect.appendChild(option);
+  }
+  modeSelect.addEventListener("change", () => {
+    const mode = modeSelect.value;
+    const contentRoot = document.getElementById(contentElementId);
+    if (!contentRoot) return;
+    const parallelBlocks = contentRoot.querySelectorAll(".parallel");
+    for (const block of parallelBlocks) {
+      if (mode === "both") {
+        block.lang = "zxx";
+      } else {
+        block.lang = mode;
+      }
+      const spanEn = block.querySelector('span[lang="en"]');
+      const spanJa = block.querySelector('span[lang="ja"]');
+      if (spanEn) {
+        spanEn.style.display = (mode === "ja") ? "none" : "";
+        if (mode === "ja") {
+          spanEn.style.opacity = "0.8";
+        } else {
+          spanEn.style.opacity = "";
+        }
+      }
+      if (spanJa) {
+        spanJa.style.display = (mode === "en") ? "none" : "";
+        if (mode === "ja") {
+          spanJa.style.opacity = "1";
+          spanJa.style.fontSize = "100%";
+          spanJa.style.marginLeft = "0";
+        } else {
+          spanJa.style.opacity = "";
+          spanJa.style.fontSize = "";
+          spanJa.style.marginLeft = "0";
+        }
+      }
+    }
+  });
+  selectorEl.appendChild(modeSelect);
 }
 
 function getBookIdFromQuery(bookParamName) {
@@ -89,23 +138,41 @@ function renderParallelBookContent(contentElementId, book) {
     const spanEn = document.createElement("span");
     spanEn.lang = "en";
     spanEn.textContent = source ?? "";
+    container.appendChild(spanEn);
     const spanJa = document.createElement("span");
     spanJa.lang = "ja";
     spanJa.textContent = target ?? "";
-    container.appendChild(spanEn);
     container.appendChild(spanJa);
+    const toggle = document.createElement("span");
+    toggle.lang = "zxx";
+    toggle.className = "parallel-toggle";
+    toggle.textContent = "▶";
+    toggle.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const trgSpan = container.lang === "ja" ? spanEn : spanJa;
+      if (trgSpan.style.display === "none") {
+        trgSpan.style.display = "";
+      } else {
+        trgSpan.style.display = "none";
+      }
+    });
+    container.appendChild(toggle);
     return container;
   }
   if (book.title) {
-    contentEl.appendChild(createParallelBlock("h1", "book-title", book.title.source, book.title.target));
+    contentEl.appendChild(createParallelBlock(
+      "h1", "book-title", book.title.source, book.title.target));
   }
   if (book.author) {
-    contentEl.appendChild(createParallelBlock("div", "book-author", book.author.source, book.author.target));
+    contentEl.appendChild(createParallelBlock(
+      "div", "book-author", book.author.source, book.author.target));
   }
   for (const chapter of book.chapters ?? []) {
     const chapterSection = document.createElement("section");
     if (chapter.title) {
-      chapterSection.appendChild(createParallelBlock("h2", "chapter-title", chapter.title.source, chapter.title.target));
+      chapterSection.appendChild(createParallelBlock(
+        "h2", "chapter-title", chapter.title.source, chapter.title.target));
     }
     for (const block of chapter.body ?? []) {
       if (block.paragraph) {
@@ -117,7 +184,8 @@ function renderParallelBookContent(contentElementId, book) {
         chapterSection.appendChild(pane);
       } else if (block.header) {
         for (const item of block.header) {
-          chapterSection.appendChild(createParallelBlock("h3", "header", item.source, item.target));
+          chapterSection.appendChild(createParallelBlock(
+            "h3", "header", item.source, item.target));
         }
       } else if (block.list) {
         const ul = document.createElement("ul");
