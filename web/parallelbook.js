@@ -123,6 +123,38 @@ async function loadAndRenderParallelBook(contentElementId, book_url) {
   renderParallelBookContent(contentElementId, book_content);
 }
 
+function createParallelBlock(tagName, className, source, target) {
+  const container = document.createElement(tagName);
+  container.className = `${className} parallel`;
+  container.setAttribute("role", "group");
+  container.setAttribute("tabindex", "0");
+  const spanEn = document.createElement("span");
+  spanEn.lang = "en";
+  spanEn.textContent = source ?? "";
+  container.appendChild(spanEn);
+  const spanJa = document.createElement("span");
+  spanJa.lang = "ja";
+  spanJa.textContent = target ?? "";
+  container.appendChild(spanJa);
+  const toggle = document.createElement("span");
+  toggle.lang = "zxx";
+  toggle.className = "parallel-toggle";
+  toggle.textContent = "▶";
+  toggle.setAttribute("role", "button");
+  toggle.setAttribute("aria-hidden", "true");
+  toggle.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    const trgSpan = container.lang === "ja" ? spanEn : spanJa;
+    if (trgSpan.style.display === "none") {
+      trgSpan.style.display = "";
+    } else {
+      trgSpan.style.display = "none";
+    }
+  });
+  container.appendChild(toggle);
+  return container;
+}
 
 function renderParallelBookContent(contentElementId, book) {
   const contentEl = document.getElementById(contentElementId);
@@ -132,34 +164,6 @@ function renderParallelBookContent(contentElementId, book) {
   }
   contentEl.className = "parallel-book";
   contentEl.innerHTML = "";
-  function createParallelBlock(tagName, className, source, target) {
-    const container = document.createElement(tagName);
-    container.className = `${className} parallel`;
-    const spanEn = document.createElement("span");
-    spanEn.lang = "en";
-    spanEn.textContent = source ?? "";
-    container.appendChild(spanEn);
-    const spanJa = document.createElement("span");
-    spanJa.lang = "ja";
-    spanJa.textContent = target ?? "";
-    container.appendChild(spanJa);
-    const toggle = document.createElement("span");
-    toggle.lang = "zxx";
-    toggle.className = "parallel-toggle";
-    toggle.textContent = "▶";
-    toggle.addEventListener("click", (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      const trgSpan = container.lang === "ja" ? spanEn : spanJa;
-      if (trgSpan.style.display === "none") {
-        trgSpan.style.display = "";
-      } else {
-        trgSpan.style.display = "none";
-      }
-    });
-    container.appendChild(toggle);
-    return container;
-  }
   if (book.title) {
     contentEl.appendChild(createParallelBlock(
       "h1", "book-title", book.title.source, book.title.target));

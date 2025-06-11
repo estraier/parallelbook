@@ -7,7 +7,7 @@ body {
   display: block;
   margin: auto;
   padding: 3ex;
-  max-width: 80ex;
+  max-width: 85ex;
   border: 1px solid #ddd;
   border-radius: 1ex;
   text-align: left;
@@ -19,7 +19,7 @@ body {
   display: block;
   margin: auto;
   padding: 3ex;
-  max-width: 80ex;
+  max-width: 85ex;
   text-align: left;
   opacity: 0.9;
 }
@@ -31,7 +31,7 @@ body {
   display: block;
   margin: auto;
   padding: 3ex;
-  max-width: 80ex;
+  max-width: 85ex;
   border: 1px solid #ddd;
   border-radius: 1ex;
   text-align: left;
@@ -129,7 +129,7 @@ body {
   max-height: 35ex;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 700px) {
   body {
     background: #fff;
   }

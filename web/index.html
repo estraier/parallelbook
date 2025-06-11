@@ -9,11 +9,11 @@
 <script type="module">
 import { renderParallelBook } from './parallelbook.js';
 const bookList = {
+  dream: ["I Have a Dream", "books/dream-parallel.json"],
+  anne01: ["Anne of Green Gables", "books/anne01-parallel.json"],
   minimum: ["最小限のサンプル", "books/minimum-parallel.json"],
   basic: ["基本的なサンプル", "books/basic-parallel.json"],
   advanced: ["高度なサンプル", "books/advanced-parallel.json"],
-  dream: ["I Have a Dreamのサンプル", "books/dream-parallel.json"],
-  anne01: ["赤毛のアン", "books/anne01-parallel.json"]
 };
 renderParallelBook("parallel-book-selector", "parallel-book-content", bookList, "book");
 union_dict_activate();
