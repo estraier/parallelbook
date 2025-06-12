@@ -81,38 +81,70 @@ body {
   display: block;
 }
 
+.parallel-book a {
+  color: #01d;
+  text-decoration: none;
+}
+.parallel-book a:hover {
+  text-decoration: underline;
+}
+
 .parallel-book h1 {
-  margin: 1.7ex 0;
+  margin: 1.8ex 0;
   text-align: center;
   font-size: 120%;
 }
 
 .parallel-book div.book-author {
-  margin: 1.7ex 0;
+  margin: 1.8ex 0;
   text-align: right;
 }
 
+.parallel-book section.chapter {
+  position: relative;
+  margin: 2ex 0;
+  border-top: 1px solid #ddd;
+}
+
+.parallel-book nav.chapter-nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  opacity: 0.3;
+}
+.parallel-book nav.chapter-nav:hover {
+  opacity: 0.8;
+}
+.parallel-book nav.chapter-nav a, .parallel-book nav.chapter-nav span {
+  display: inline-block;
+  width: 2ex;
+}
+.parallel-book nav.chapter-nav span {
+  color: #888;
+}
+
 .parallel-book h2 {
-  margin: 1.9ex 0 1.7ex 0;
+  margin: 1.8ex 0;
   font-size: 115%;
 }
 
 .parallel-book p {
-  margin: 1.7ex 0;
+  margin: 1.8ex 0;
 }
 
 .parallel-book h3 {
-  margin: 1.7ex 0 1.6ex 0;
+  margin: 1.8ex 0 1.6ex 0;
   font-size: 100%;
 }
 
 .parallel-book ul {
-  margin: 1.7ex 0;
+  margin: 1.8ex 0;
   padding-left: 2ex;
 }
 
 .parallel-book table {
-  margin: 1.7ex 0;
+  margin: 1.8ex 0;
   border-collapse: collapse;
   font-size: 95%;
 }

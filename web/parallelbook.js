@@ -182,8 +182,40 @@ function renderParallelBookContent(contentElementId, book, mode) {
     contentEl.appendChild(createParallelBlock(
       "div", "book-author", book.author.source, book.author.target, mode));
   }
+  let num_chapter = 0;
   for (const chapter of book.chapters ?? []) {
+    num_chapter++;
     const chapterSection = document.createElement("section");
+    chapterSection.id = "chapter-" + num_chapter;
+    chapterSection.className = "chapter";
+    const chapterNav = document.createElement("nav");
+    chapterNav.className = "chapter-nav";
+    chapterNav.setAttribute("aria-hidden", "true");
+    if (num_chapter > 1) {
+      const chapterPrev = document.createElement("a")
+      chapterPrev.href = "#chapter-" + (num_chapter - 1);
+      chapterPrev.textContent = "⇚";
+      chapterNav.appendChild(chapterPrev);
+    } else {
+      const chapterPrev = document.createElement("span")
+      chapterPrev.textContent = "⇚";
+      chapterNav.appendChild(chapterPrev);
+    }
+    const chapterCurrent = document.createElement("a")
+    chapterCurrent.href = "#chapter-" + num_chapter;
+    chapterCurrent.textContent = "§";
+    chapterNav.appendChild(chapterCurrent);
+    if (num_chapter < book.chapters.length) {
+      const chapterNext = document.createElement("a");
+      chapterNext.href = "#chapter-" + (num_chapter + 1);
+      chapterNext.textContent = "⇛";
+      chapterNav.appendChild(chapterNext);
+    } else {
+      const chapterNext = document.createElement("span");
+      chapterNext.textContent = "⇛";
+      chapterNav.appendChild(chapterNext);
+    }
+    chapterSection.appendChild(chapterNav);
     if (chapter.title) {
       chapterSection.appendChild(createParallelBlock(
         "h2", "chapter-title", chapter.title.source, chapter.title.target, mode));
