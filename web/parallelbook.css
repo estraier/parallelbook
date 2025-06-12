@@ -37,6 +37,11 @@ body {
   line-height: 1.5;
 }
 
+.parallel-book nav.book-toc {
+  font-size: 90%;
+  line-height: 1.3;
+}
+
 .parallel-book .parallel {
   position: relative;
 }

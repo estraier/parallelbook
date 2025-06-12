@@ -131,6 +131,25 @@ function createParallelBlock(tagName, className, source, target, mode) {
       trgSpan.style.display = "none";
     }
   });
+  toggle.addEventListener("contextmenu", (e) => {
+    e.preventDefault();
+    if (!SpeechSynthesisUtterance) return;
+    if (block.lang === "ja" && spanEn.style.display === "none") {
+      const jaText = spanJa.textContent.trim();
+      if (jaText) {
+        const utterance = new SpeechSynthesisUtterance(jaText);
+        utterance.lang = "ja-JP";
+        speechSynthesis.speak(utterance);
+      }
+    } else {
+      const enText = spanEn.textContent.trim();
+      if (enText) {
+        const utterance = new SpeechSynthesisUtterance(enText);
+        utterance.lang = "en-US";
+        speechSynthesis.speak(utterance);
+      }
+    }
+  });
   block.appendChild(toggle);
   setParallelBlockMode(block, mode);
   return block;
@@ -161,9 +180,47 @@ function setParallelBlockMode(block, mode) {
     } else {
       spanJa.style.opacity = "";
       spanJa.style.fontSize = "";
-      spanJa.style.marginLeft = "0";
+      spanJa.style.marginLeft = "";
     }
   }
+}
+
+function createTableOfContents(book, mode) {
+  const tocNav = document.createElement("nav");
+  tocNav.className = "book-toc";
+  tocNav.setAttribute("aria-label", "目次");
+  const list = document.createElement("ul");
+  let num_chapter = 0;
+  for (const chapter of book.chapters) {
+    num_chapter++;
+    const item = document.createElement("li");
+    const anchor = document.createElement("a");
+    anchor.href = "#chapter-" + num_chapter;
+    anchor.className = "toc-item parallel";
+    let source = "Chapter " + num_chapter;
+    let target = "第" + num_chapter + "章";
+    if (chapter.title) {
+      if (chapter.title.source) {
+        source = chapter.title.source;
+      }
+      if (chapter.title.target) {
+        target = chapter.title.target;
+      }
+    }
+    const spanEn = document.createElement("span");
+    spanEn.lang = "en";
+    spanEn.textContent = source;
+    anchor.appendChild(spanEn);
+    const spanJa = document.createElement("span");
+    spanJa.lang = "ja";
+    spanJa.textContent = target;
+    anchor.appendChild(spanJa);
+    item.appendChild(anchor);
+    setParallelBlockMode(item, mode);
+    list.appendChild(item);
+  }
+  tocNav.appendChild(list);
+  return tocNav;
 }
 
 function renderParallelBookContent(contentElementId, book, mode) {
@@ -182,6 +239,9 @@ function renderParallelBookContent(contentElementId, book, mode) {
     contentEl.appendChild(createParallelBlock(
       "div", "book-author", book.author.source, book.author.target, mode));
   }
+  if (book.chapters && book.chapters.length > 1) {
+    contentEl.appendChild(createTableOfContents(book, mode));
+  }
   let num_chapter = 0;
   for (const chapter of book.chapters ?? []) {
     num_chapter++;
@@ -190,28 +250,32 @@ function renderParallelBookContent(contentElementId, book, mode) {
     chapterSection.className = "chapter";
     const chapterNav = document.createElement("nav");
     chapterNav.className = "chapter-nav";
-    chapterNav.setAttribute("aria-hidden", "true");
     if (num_chapter > 1) {
       const chapterPrev = document.createElement("a")
       chapterPrev.href = "#chapter-" + (num_chapter - 1);
+      chapterPrev.setAttribute("aria-label", "前の章へ");
       chapterPrev.textContent = "⇚";
       chapterNav.appendChild(chapterPrev);
     } else {
       const chapterPrev = document.createElement("span")
+      chapterPrev.setAttribute("aria-hidden", "true");
       chapterPrev.textContent = "⇚";
       chapterNav.appendChild(chapterPrev);
     }
     const chapterCurrent = document.createElement("a")
     chapterCurrent.href = "#chapter-" + num_chapter;
+    chapterCurrent.setAttribute("aria-label", "この章へ");
     chapterCurrent.textContent = "§";
     chapterNav.appendChild(chapterCurrent);
     if (num_chapter < book.chapters.length) {
       const chapterNext = document.createElement("a");
       chapterNext.href = "#chapter-" + (num_chapter + 1);
+      chapterNext.setAttribute("aria-label", "次の章へ");
       chapterNext.textContent = "⇛";
       chapterNav.appendChild(chapterNext);
     } else {
       const chapterNext = document.createElement("span");
+      chapterNext.setAttribute("aria-hidden", "true");
       chapterNext.textContent = "⇛";
       chapterNav.appendChild(chapterNext);
     }
