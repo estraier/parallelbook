@@ -17,8 +17,6 @@ parallelbookは、AIを使って対訳本を作る作るプロジェクトです
 
 このプロジェクトは、生成機能群と変換機能群から構成されます。生成機能群はプレーンテキストやJSONの入力データを読み込んで、AIで処理してJSONの中間データを作ります。変換機能群は、JSONの中間データを読み込んで、HTMLやEPUBなどの出力データを作ります。
 
-（現状、変換機能は未実装。TypeScriptでJSONを読み出してインタラクティブな対訳閲覧ページを作る予定。Kindle用のMOBIファイルも作る予定）
-
 ## インストール
 
 Python3が動く環境であれば、OSは何でも大丈夫です。以下のモジュールが追加で必要になるので、インストールしてください。
@@ -779,6 +777,70 @@ make_parallel_book_chatgpt.pyの出力は以下のような形式になります
 }
 ```
 
+## 変換機能群のチュートリアル
+
+生成機能群で対訳本のJSONデータを生成したら、それを任意の方法で利用します。ユーザ独自の利用方を編み出しても良いのですが、典型的には、HTMLやEPUBなどの標準化されたデータ形式に変換し、Webブラウザや電子書籍リーダなどの既存の表示端末に読み込んで利用することになります。
+
+最も典型的な利用方法は、JSONをHTMLに変換して、Webブラウザで閲覧することです。それを簡単にするために、JavaScriptコードと、それを呼び出すHTMLと、結果を整形するCSSファイルを用意しました。
+
+ここでは、あなたがWebサーバを運用していることを前提とします。手元で手軽に試したい場合、任意のディレクトリで以下のコマンドを実行してください。そのディレクトリの内容を公開する簡易Webサーバが起動します。
+
+```shell
+python3 -m http.server 8000
+```
+
+webディレクトリの中にある index.htmlとparallelbook.jsとparallelbook.cssを、Webサーバで公開されている任意のディレクトリにコピーします。仮に公開ディレクトリが /home/mikio/public/parallelbook とすると、以下のようにします。
+
+```shell
+cp web/index.html web/parallelbook.js web/parallelbook.css /home/mikio/public/parallelbook
+```
+
+また、対訳JSONのサンプルを、公開ディレクトリの中のbookディレクトリにコピーします。
+
+```shell
+mkdir /home/mikio/public/parallelbook/books
+cp samples/*-parallel.json books/*-parallel.json /home/mikio/public/parallelbook/books
+```
+
+Webサーバの該当URLにアクセスすると、対訳本を閲覧できます。ローカルで簡易Webサーバを立ち上げた場合、http://localhost:8000/ にアクセスしてください。詳しい使い方はそのページに書いてあります。
+
+index.htmlを見ると、対訳データのレンダリングの方法が分かります。head要素の中に以下のようなコードを書きます。
+
+```html
+<script type="module">
+// 外部のJavaScriptファイルのインポート
+import { renderParallelBook } from "./parallelbook.js";
+
+// 書籍データのリストを定義
+const bookList = {
+  dream: ["I Have a Dream", "books/dream-parallel.json"],
+  anne01: ["Anne of Green Gables", "books/anne01-parallel.json"],
+  // 「パラメータ名: ["表示名", "JSONのURL"]」の形式で行を足す
+};
+
+// ナビの要素名、コンテンツの要素名、書籍データのリスト、書籍パラメータ名、モードパラメータ名
+// を指定して、レンダリングを行う
+renderParallelBook("parallel-book-selector", "parallel-book-content",
+  bookList, "book", "mode");
+</script>
+<link rel="stylesheet" href="parallelbook.css">
+
+<!-- 以下はポップアップ辞書の設定。辞書が必要なければ省略可 -->
+<script src="https://dbmx.net/dict/union_dict_pane.js"></script>
+<script>
+union_dict_activate();
+</script>
+<link rel="stylesheet" href="https://dbmx.net/dict/union_dict_pane.css"/>
+```
+
+body要素の中には、レンダリングを行う要素を書きます。これらの要素さえ書けば、任意のページに対訳本を埋め込めます。
+
+```html
+<nav id="parallel-book-selector" aria-label="書籍選択ナビゲーション" lang="ja"></nav>
+
+<article id="parallel-book-content" aria-label="書籍本文表示エリア"></article>
+```
+
 ## 変換機能群の仕様
 
-TBD.
+TBD

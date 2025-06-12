@@ -17,10 +17,8 @@ body {
 
 .parallel-book-navi {
   display: block;
-  margin: auto;
   padding: 3ex;
-  max-width: 85ex;
-  text-align: left;
+  text-align: center;
   opacity: 0.9;
 }
 .parallel-book-navi select {
@@ -67,6 +65,8 @@ body {
   padding: 0.2ex 0.5ex;
   color: #026;
   font-weight: normal;
+  cursor: pointer;
+  user-select: none;
   opacity: 0.01;
   z-index: 10;
 }
