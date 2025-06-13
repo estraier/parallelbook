@@ -1,4 +1,4 @@
-# Stanford Commencement Address.
+# Stanford Commencement Address
 
 - @id address01: Stanford Commencement Address
 - @author Steve Jobs
