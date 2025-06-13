@@ -1,0 +1,1084 @@
+{
+  "id": "address01: Stanford Commencement Address",
+  "source_language": "en",
+  "target_language": "ja",
+  "title": {
+    "id": "00000-000",
+    "source": "Stanford Commencement Address.",
+    "target": "スタンフォード大学卒業式スピーチ"
+  },
+  "author": {
+    "id": "00001-000",
+    "source": "Steve Jobs",
+    "target": "スティーブ・ジョブズ"
+  },
+  "chapters": [
+    {
+      "body": [
+        {
+          "paragraph": [
+            {
+              "id": "00002-000",
+              "source": "I’m honored to be with you today for your commencement from one of the finest universities in the world.",
+              "target": "今日は、世界で最も優れた大学の一つであるスタンフォード大学の卒業式に参加できて光栄です。"
+            },
+            {
+              "id": "00002-001",
+              "source": "Truth be told, I never graduated from college.",
+              "target": "実を言うと、私は大学を卒業したことがありません。"
+            },
+            {
+              "id": "00002-002",
+              "source": "And this is the closest I’ve ever gotten to a college graduation.",
+              "target": "そして、これが私にとって大学の卒業式に最も近づいた経験です。"
+            }
+          ],
+          "raw_line": 6
+        },
+        {
+          "paragraph": [
+            {
+              "id": "00003-000",
+              "source": "Today I want to tell you three stories from my life.",
+              "target": "今日は私の人生から3つの話をしたいと思います。"
+            },
+            {
+              "id": "00003-001",
+              "source": "That’s it.",
+              "target": "それだけです。"
+            },
+            {
+              "id": "00003-002",
+              "source": "No big deal.",
+              "target": "大したことではありません。"
+            },
+            {
+              "id": "00003-003",
+              "source": "Just three stories.",
+              "target": "ただ3つの話です。"
+            }
+          ],
+          "raw_line": 8
+        },
+        {
+          "paragraph": [
+            {
+              "id": "00004-000",
+              "source": "The first story is about connecting the dots.",
+              "target": "最初の話は、点と点をつなぐことについてです。"
+            },
+            {
+              "id": "00004-001",
+              "source": "I dropped out of Reed College after the first six months, but then stayed around as a drop-in for another 18 months or so before I really quit.",
+              "target": "私はリード大学を最初の6か月で中退しましたが、その後も本当に辞めるまでの約18か月間、聴講生として居続けました。"
+            },
+            {
+              "id": "00004-002",
+              "source": "So why’d I drop out?",
+              "target": "では、なぜ私は中退したのでしょうか？"
+            }
+          ],
+          "raw_line": 10
+        },
+        {
+          "paragraph": [
+            {
+              "id": "00005-000",
+              "source": "It started before I was born.",
+              "target": "それは私が生まれる前に始まりました。"
+            },
+            {
+              "id": "00005-001",
+              "source": "My biological mother was a young, unwed graduate student, and she decided to put me up for adoption.",
+              "target": "私の生物学上の母は若い未婚の大学院生で、私を養子に出すことに決めました。"
+            },
+            {
+              "id": "00005-002",
+              "source": "She felt very strongly that I should be adopted by college graduates, so everything was all set for me to be adopted at birth by a lawyer and his wife.",
+              "target": "彼女は私が大学卒業者に養子にされるべきだと強く感じていたので、弁護士とその妻に生まれてすぐに養子にされる手はずが整っていました。"
+            }
+          ],
+          "raw_line": 12
+        },
+        {
+          "paragraph": [
+            {
+              "id": "00006-000",
+              "source": "Except that when I popped out, they decided at the last minute that they really wanted a girl.",
+              "target": "しかし、私が生まれたとき、彼らは土壇場で本当は女の子が欲しいと決めました。"
+            },
+            {
+              "id": "00006-001",
+              "source": "So my parents, who were on a waiting list, got a call in the middle of the night asking, “We’ve got an unexpected baby boy. Do you want him?”",
+              "target": "それで、待機リストに載っていた私の両親は、夜中に電話を受け、「予期せぬ男の赤ちゃんがいますが、引き取りますか？」と尋ねられました。"
+            },
+            {
+              "id": "00006-002",
+              "source": "They said, “Of course.”",
+              "target": "彼らは「もちろんです」と答えました。"
+            }
+          ],
+          "raw_line": 14
+        },
+        {
+          "paragraph": [
+            {
+              "id": "00007-000",
+              "source": "My biological mother found out later that my mother had never graduated from college, and that my father had never graduated from high school.",
+              "target": "私の生物学上の母は後になって、私の母が大学を卒業しておらず、父が高校を卒業していないことを知りました。"
+            },
+            {
+              "id": "00007-001",
+              "source": "She refused to sign the final adoption papers.",
+              "target": "彼女は最終的な養子縁組の書類にサインすることを拒みました。"
+            },
+            {
+              "id": "00007-002",
+              "source": "She only relented a few months later, when my parents promised that I would go to college.",
+              "target": "彼女は数ヶ月後、私の両親が私を大学に行かせると約束したときにようやく折れました。"
+            },
+            {
+              "id": "00007-003",
+              "source": "This was the start in my life.",
+              "target": "これが私の人生の始まりでした。"
+            }
+          ],
+          "raw_line": 16
+        },
+        {
+          "paragraph": [
+            {
+              "id": "00008-000",
+              "source": "And 17 years later I did go to college.",
+              "target": "そして17年後、私は大学に進学しました。"
+            },
+            {
+              "id": "00008-001",
+              "source": "But I naively chose a college that was almost as expensive as Stanford.",
+              "target": "しかし、私は無邪気にもスタンフォードとほぼ同じくらい高額な大学を選んでしまいました。"
+            },
+            {
+              "id": "00008-002",
+              "source": "And all of my working class parents’ savings were being spent on my college tuition.",
+              "target": "そして、労働者階級の両親の貯金はすべて私の学費に使われていました。"
+            }
+          ],
+          "raw_line": 18
+        },
+        {
+          "paragraph": [
+            {
+              "id": "00009-000",
+              "source": "After six months, I couldn’t see the value in it.",
+              "target": "6か月後、私はその価値が見いだせなくなりました。"
+            },
+            {
+              "id": "00009-001",
+              "source": "I had no idea what I wanted to do with my life, and no idea how college was going to help me figure it out.",
+              "target": "自分の人生で何をしたいのかもわからず、大学がそれをどう助けてくれるのかも見当がつきませんでした。"
+            },
+            {
+              "id": "00009-002",
+              "source": "And here I was, spending all of the money my parents had saved their entire life.",
+              "target": "そしてここで、私は両親が一生かけて貯めたお金をすべて使っていたのです。"
+            }
+          ],
+          "raw_line": 20
+        },
+        {
+          "paragraph": [
+            {
+              "id": "00010-000",
+              "source": "So I decided to drop out and trust that it would all work out OK.",
+              "target": "そこで私は退学することに決め、すべてがうまくいくと信じることにしました。"
+            },
+            {
+              "id": "00010-001",
+              "source": "It was pretty scary at the time, but looking back it was one of the best decisions I ever made.",
+              "target": "その時はとても怖かったですが、振り返ってみると、それは私が下した中で最良の決断の一つでした。"
+            }
+          ],
+          "raw_line": 22
+        },
+        {
+          "paragraph": [
+            {
+              "id": "00011-000",
+              "source": "The minute I dropped out,",
+              "target": "退学した瞬間、"
+            },
+            {
+              "id": "00011-001",
+              "source": "I could stop taking the required classes that didn’t interest me,",
+              "target": "興味のない必修科目を取る必要がなくなり、"
+            },
+            {
+              "id": "00011-002",
+              "source": "and begin dropping in on the ones that looked far more interesting.",
+              "target": "もっと興味を引く授業に参加できるようになりました。"
+            }
+          ],
+          "raw_line": 24
+        },
+        {
+          "paragraph": [
+            {
+              "id": "00012-000",
+              "source": "It wasn’t all romantic.",
+              "target": "すべてがロマンチックだったわけではありませんでした。"
+            },
+            {
+              "id": "00012-001",
+              "source": "I didn’t have a dorm room, so I slept on the floor in friends’ rooms.",
+              "target": "寮の部屋がなかったので、友人の部屋の床で寝ていました。"
+            },
+            {
+              "id": "00012-002",
+              "source": "I returned Coke bottles for the five-cent deposits to buy food with.",
+              "target": "食べ物を買うために、コーラの瓶を返して5セントのデポジットをもらっていました。"
+            },
+            {
+              "id": "00012-003",
+              "source": "And I would walk the seven miles across town every Sunday night to get one good meal a week at the Hare Krishna temple.",
+              "target": "そして、毎週日曜日の夜には、ハレ・クリシュナ寺院で週に一度のまともな食事を得るために、町を横切って7マイル歩いていました。"
+            },
+            {
+              "id": "00012-004",
+              "source": "I loved it.",
+              "target": "それが大好きでした。"
+            }
+          ],
+          "raw_line": 26
+        },
+        {
+          "paragraph": [
+            {
+              "id": "00013-000",
+              "source": "And much of what I stumbled into, by following my curiosity and intuition, turned out to be priceless later on.",
+              "target": "そして、好奇心と直感に従って偶然出会った多くのことが、後になってかけがえのないものになりました。"
+            },
+            {
+              "id": "00013-001",
+              "source": "Let me give you one example.",
+              "target": "その一例をお話ししましょう。"
+            }
+          ],
+          "raw_line": 28
+        },
+        {
+          "paragraph": [
+            {
+              "id": "00014-000",
+              "source": "Reed College at that time offered perhaps the best calligraphy instruction in the country.",
+              "target": "当時、リード大学はおそらく国内で最高のカリグラフィー教育を提供していました。"
+            },
+            {
+              "id": "00014-001",
+              "source": "Throughout the campus, every poster, every label on every drawer, was beautifully hand-calligraphed.",
+              "target": "キャンパス中のすべてのポスターや引き出しのラベルは、美しく手書きのカリグラフィーで書かれていました。"
+            },
+            {
+              "id": "00014-002",
+              "source": "Because I had dropped out, and didn’t have to take the normal classes, I decided to take a calligraphy class to learn how to do this.",
+              "target": "私は退学して通常の授業を受ける必要がなかったので、この技術を学ぶためにカリグラフィーのクラスを受講することにしました。"
+            },
+            {
+              "id": "00014-003",
+              "source": "I learned about serif and sans-serif typefaces, about varying the amount of space between different letter combinations, about what makes great typography great.",
+              "target": "私はセリフ体とサンセリフ体の書体、文字の組み合わせによるスペースの変化、そして優れたタイポグラフィーの要素について学びました。"
+            },
+            {
+              "id": "00014-004",
+              "source": "It was beautiful, historical, artistically subtle, in a way that science can’t capture.",
+              "target": "それは美しく、歴史的で、芸術的に繊細であり、科学では捉えきれないものでした。"
+            },
+            {
+              "id": "00014-005",
+              "source": "And I found it fascinating.",
+              "target": "そして私はそれに魅了されました。"
+            }
+          ],
+          "raw_line": 30
+        },
+        {
+          "paragraph": [
+            {
+              "id": "00015-000",
+              "source": "None of this had even a hope of any practical application in my life.",
+              "target": "これらの知識が私の人生で実用的に役立つとは思えませんでした。"
+            },
+            {
+              "id": "00015-001",
+              "source": "But ten years later, when we were designing the first Macintosh computer, it all came back to me.",
+              "target": "しかし、10年後に初代Macintoshを設計しているときに、これらの知識がすべて蘇りました。"
+            },
+            {
+              "id": "00015-002",
+              "source": "And we designed it all into the Mac.",
+              "target": "そして、それらをすべてMacに取り入れました。"
+            },
+            {
+              "id": "00015-003",
+              "source": "It was the first computer with beautiful typography.",
+              "target": "それは美しいタイポグラフィを持つ初めてのコンピュータでした。"
+            },
+            {
+              "id": "00015-004",
+              "source": "If I had never dropped in on that single course in college, the Mac would have never had multiple typefaces or proportionally spaced fonts.",
+              "target": "もし大学であの授業を受けていなかったら、Macには複数の書体やプロポーショナルフォントはなかったでしょう。"
+            },
+            {
+              "id": "00015-005",
+              "source": "And since Windows just copied the Mac, it’s likely that no personal computer would have them.",
+              "target": "そして、WindowsがMacを模倣したため、どのパーソナルコンピュータにもそれらは存在しなかったかもしれません。"
+            }
+          ],
+          "raw_line": 32
+        },
+        {
+          "paragraph": [
+            {
+              "id": "00016-000",
+              "source": "If I had never dropped out, I would have never dropped in on that calligraphy class, and personal computers might not have the wonderful typography that they do.",
+              "target": "もし私が大学を中退していなかったら、あのカリグラフィーの授業に参加することもなかったでしょうし、パーソナルコンピュータが今のような素晴らしいタイポグラフィを持つこともなかったかもしれません。"
+            },
+            {
+              "id": "00016-001",
+              "source": "Of course, it was impossible to connect the dots looking forward when I was in college.",
+              "target": "もちろん、大学にいた頃は、将来を見据えて点をつなげることは不可能でした。"
+            },
+            {
+              "id": "00016-002",
+              "source": "But it was very, very clear looking backwards, ten years later.",
+              "target": "しかし、10年後に振り返ってみると、それは非常に明確でした。"
+            },
+            {
+              "id": "00016-003",
+              "source": "Again, you can’t connect the dots looking forward.",
+              "target": "繰り返しますが、将来を見据えて点をつなげることはできません。"
+            },
+            {
+              "id": "00016-004",
+              "source": "You can only connect them looking backwards, so you have to trust that the dots will somehow connect in your future.",
+              "target": "過去を振り返って初めて点をつなげることができるのです。だから、将来その点が何らかの形でつながると信じる必要があります。"
+            }
+          ],
+          "raw_line": 34
+        },
+        {
+          "paragraph": [
+            {
+              "id": "00017-000",
+              "source": "You have to trust in something: your gut, destiny, life, karma, whatever.",
+              "target": "何かを信じなければなりません。直感や運命、人生、カルマ、何でもいいのです。"
+            },
+            {
+              "id": "00017-001",
+              "source": "Because believing that the dots will connect down the road will give you the confidence to follow your heart, even when it leads you off the well-worn path.",
+              "target": "なぜなら、点が将来つながると信じることで、たとえそれが人がよく通る道から外れることになっても、自分の心に従う自信が得られるからです。"
+            },
+            {
+              "id": "00017-002",
+              "source": "And that will make all the difference.",
+              "target": "そして、それがすべての違いを生むのです。"
+            }
+          ],
+          "raw_line": 36
+        },
+        {
+          "paragraph": [
+            {
+              "id": "00018-000",
+              "source": "My second story is about love and loss.",
+              "target": "私の2つ目の話は、愛と喪失についてです。"
+            },
+            {
+              "id": "00018-001",
+              "source": "I was lucky.",
+              "target": "私は幸運でした。"
+            },
+            {
+              "id": "00018-002",
+              "source": "I found what I loved to do early in life.",
+              "target": "私は人生の早い段階で、自分が愛することを見つけました。"
+            },
+            {
+              "id": "00018-003",
+              "source": "Woz and I started Apple in my parents’ garage when I was 20.",
+              "target": "20歳のとき、ウォズと私は両親のガレージでAppleを始めました。"
+            },
+            {
+              "id": "00018-004",
+              "source": "We worked hard, and in ten years Apple had grown from just the two of us in a garage into a $2 billion company with over 4,000 employees.",
+              "target": "私たちは懸命に働き、10年でAppleはガレージで始めた2人の会社から、4,000人以上の従業員を抱える20億ドルの企業に成長しました。"
+            }
+          ],
+          "raw_line": 38
+        },
+        {
+          "paragraph": [
+            {
+              "id": "00019-000",
+              "source": "We just released our finest creation—the Macintosh—a year earlier, and I’d just turned 30.",
+              "target": "私たちはちょうど1年前に最高傑作であるMacintoshを発売し、私は30歳になったばかりでした。"
+            },
+            {
+              "id": "00019-001",
+              "source": "And then I got fired.",
+              "target": "そして、私は解雇されました。"
+            },
+            {
+              "id": "00019-002",
+              "source": "How can you get fired from a company you started?",
+              "target": "自分が始めた会社からどうして解雇されることがあるのでしょうか？"
+            }
+          ],
+          "raw_line": 40
+        },
+        {
+          "paragraph": [
+            {
+              "id": "00020-000",
+              "source": "Well, as Apple grew, we hired someone—who I thought was very talented—to run the company with me.",
+              "target": "さて、Appleが成長するにつれて、私は非常に才能があると思った人物を雇い、共に会社を運営することにしました。"
+            },
+            {
+              "id": "00020-001",
+              "source": "And for the first year or so, things went well.",
+              "target": "最初の1年ほどは、物事は順調に進んでいました。"
+            },
+            {
+              "id": "00020-002",
+              "source": "But then our visions of the future began to diverge.",
+              "target": "しかし、その後、私たちの未来に対するビジョンが分かれ始めました。"
+            },
+            {
+              "id": "00020-003",
+              "source": "And eventually we had a falling out.",
+              "target": "そして最終的には、私たちは仲たがいしました。"
+            },
+            {
+              "id": "00020-004",
+              "source": "When we did, our board of directors sided with him.",
+              "target": "その時、取締役会は彼の側につきました。"
+            },
+            {
+              "id": "00020-005",
+              "source": "And so at 30 I was out, and very publicly out.",
+              "target": "そして私は30歳で、非常に公に解雇されました。"
+            }
+          ],
+          "raw_line": 42
+        },
+        {
+          "paragraph": [
+            {
+              "id": "00021-000",
+              "source": "What had been the focus of my entire adult life was gone, and it was devastating.",
+              "target": "私の大人としての人生の全ての焦点が失われ、それは壊滅的でした。"
+            },
+            {
+              "id": "00021-001",
+              "source": "I really didn’t know what to do for a few months.",
+              "target": "数ヶ月間、私は本当に何をすべきかわかりませんでした。"
+            },
+            {
+              "id": "00021-002",
+              "source": "I felt that I had let the previous generation of entrepreneurs down, that I had dropped the baton as it was being passed to me.",
+              "target": "私は、前の世代の起業家たちを失望させてしまった、渡されたバトンを落としてしまったと感じました。"
+            }
+          ],
+          "raw_line": 44
+        },
+        {
+          "paragraph": [
+            {
+              "id": "00022-000",
+              "source": "I met with David Packard and Bob Noyce, and tried to apologize for screwing up so badly.",
+              "target": "私はデビッド・パッカードとボブ・ノイスに会い、ひどい失敗をしたことを謝ろうとしました。"
+            },
+            {
+              "id": "00022-001",
+              "source": "I was a very public failure, and I even thought about running away from the Valley.",
+              "target": "私は非常に公の場で失敗者となり、シリコンバレーから逃げ出すことさえ考えました。"
+            }
+          ],
+          "raw_line": 46
+        },
+        {
+          "paragraph": [
+            {
+              "id": "00023-000",
+              "source": "But something slowly began to dawn on me:",
+              "target": "しかし、徐々にあることに気づき始めました。"
+            },
+            {
+              "id": "00023-001",
+              "source": "I still loved what I did.",
+              "target": "私は自分のしていたことをまだ愛していたのです。"
+            },
+            {
+              "id": "00023-002",
+              "source": "The turn of events at Apple had not changed that one bit.",
+              "target": "Appleでの出来事は、その気持ちを少しも変えませんでした。"
+            },
+            {
+              "id": "00023-003",
+              "source": "I’d been rejected, but I was still in love.",
+              "target": "拒絶されたけれど、私はまだ夢中でした。"
+            }
+          ],
+          "raw_line": 48
+        },
+        {
+          "paragraph": [
+            {
+              "id": "00024-000",
+              "source": "And so I decided to start over.",
+              "target": "そして、私は再出発することに決めました。"
+            }
+          ],
+          "raw_line": 50
+        },
+        {
+          "paragraph": [
+            {
+              "id": "00025-000",
+              "source": "I didn’t see it then, but it turned out that getting fired from Apple was the best thing that could have ever happened to me.",
+              "target": "当時は気づかなかったが、Appleを解雇されたことは私にとって最高の出来事だったことがわかった。"
+            },
+            {
+              "id": "00025-001",
+              "source": "The heaviness of being successful was replaced by the lightness of being a beginner again, less sure about everything.",
+              "target": "成功者であることの重圧は、再び初心者としての軽やかさに取って代わり、すべてに対する確信が薄れた。"
+            },
+            {
+              "id": "00025-002",
+              "source": "It freed me to enter one of the most creative periods of my life.",
+              "target": "それによって、私は人生で最も創造的な時期に入ることができた。"
+            }
+          ],
+          "raw_line": 52
+        },
+        {
+          "paragraph": [
+            {
+              "id": "00026-000",
+              "source": "During the next five years, I started a company named NeXT, another company named Pixar, and fell in love with an amazing woman who would become my wife.",
+              "target": "その後の5年間で、私はNeXTという会社と、Pixarというもう一つの会社を立ち上げ、そして後に妻となる素晴らしい女性と恋に落ちました。"
+            },
+            {
+              "id": "00026-001",
+              "source": "Pixar went on to create the world’s first computer-animated feature film, Toy Story, and is now the most successful animation studio in the world.",
+              "target": "Pixarは世界初のコンピュータアニメーション長編映画『トイ・ストーリー』を制作し、現在では世界で最も成功したアニメーションスタジオとなっています。"
+            }
+          ],
+          "raw_line": 54
+        },
+        {
+          "paragraph": [
+            {
+              "id": "00027-000",
+              "source": "In a remarkable turn of events, Apple bought NeXT, and I returned to Apple.",
+              "target": "驚くべき展開で、AppleがNeXTを買収し、私はAppleに復帰しました。"
+            },
+            {
+              "id": "00027-001",
+              "source": "And the technology we developed at NeXT is at the heart of Apple’s current renaissance.",
+              "target": "そして、NeXTで開発した技術が、現在のAppleの復活の中心にあります。"
+            },
+            {
+              "id": "00027-002",
+              "source": "And Laurene and I have a wonderful family together.",
+              "target": "そして、ローレンと私は素晴らしい家族を築いています。"
+            }
+          ],
+          "raw_line": 56
+        },
+        {
+          "paragraph": [
+            {
+              "id": "00028-000",
+              "source": "I’m pretty sure none of this would have happened if I hadn’t been fired from Apple.",
+              "target": "もしAppleを解雇されていなかったら、これらのことは何も起こらなかったと確信しています。"
+            },
+            {
+              "id": "00028-001",
+              "source": "It was awful-tasting medicine, but I guess the patient needed it.",
+              "target": "それはひどく苦い薬でしたが、患者には必要だったのでしょう。"
+            }
+          ],
+          "raw_line": 58
+        },
+        {
+          "paragraph": [
+            {
+              "id": "00029-000",
+              "source": "Sometimes life’s gonna hit you in the head with a brick.",
+              "target": "時には人生がレンガで頭を打つようなこともあるでしょう。"
+            },
+            {
+              "id": "00029-001",
+              "source": "Don’t lose faith.",
+              "target": "でも、信念を失わないでください。"
+            }
+          ],
+          "raw_line": 60
+        },
+        {
+          "paragraph": [
+            {
+              "id": "00030-000",
+              "source": "I’m convinced that the only thing that kept me going was that I loved what I did.",
+              "target": "私が前に進み続けられた唯一の理由は、自分のしていることを愛していたからだと確信しています。"
+            },
+            {
+              "id": "00030-001",
+              "source": "You’ve got to find what you love—and that is as true for work as it is for your lovers.",
+              "target": "自分が愛するものを見つけなければなりません。それは仕事においても恋人においても同じです。"
+            },
+            {
+              "id": "00030-002",
+              "source": "Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work.",
+              "target": "仕事は人生の大部分を占めることになりますが、真に満足するためには、自分が素晴らしいと信じる仕事をすることが唯一の方法です。"
+            },
+            {
+              "id": "00030-003",
+              "source": "And the only way to do great work is to love what you do.",
+              "target": "そして、素晴らしい仕事をする唯一の方法は、自分のしていることを愛することです。"
+            }
+          ],
+          "raw_line": 62
+        },
+        {
+          "paragraph": [
+            {
+              "id": "00031-000",
+              "source": "If you haven’t found it yet, keep looking—and don’t settle.",
+              "target": "もしまだ見つかっていないなら、探し続けてください。そして妥協しないでください。"
+            },
+            {
+              "id": "00031-001",
+              "source": "As with all matters of the heart, you’ll know when you find it.",
+              "target": "心の問題においては、見つけたときにそれとわかるものです。"
+            },
+            {
+              "id": "00031-002",
+              "source": "And like any great relationship, it just gets better and better as the years roll on.",
+              "target": "そして素晴らしい関係のように、年月が経つにつれてどんどん良くなっていきます。"
+            },
+            {
+              "id": "00031-003",
+              "source": "So keep looking.",
+              "target": "だから探し続けてください。"
+            },
+            {
+              "id": "00031-004",
+              "source": "Don’t settle.",
+              "target": "妥協しないでください。"
+            }
+          ],
+          "raw_line": 64
+        },
+        {
+          "paragraph": [
+            {
+              "id": "00032-000",
+              "source": "My third story is about death.",
+              "target": "私の3つ目の話は死についてです。"
+            },
+            {
+              "id": "00032-001",
+              "source": "When I was 17, I read a quote that went something like, “If you live each day as if it was your last, someday you’ll most certainly be right.”",
+              "target": "17歳のときに、「毎日を人生最後の日のように生きれば、いつか必ずその通りになる」という趣旨の言葉を読みました。"
+            }
+          ],
+          "raw_line": 66
+        },
+        {
+          "paragraph": [
+            {
+              "id": "00033-000",
+              "source": "It made an impression on me.",
+              "target": "その言葉は私に強い印象を与えました。"
+            },
+            {
+              "id": "00033-001",
+              "source": "And since then, for the past 33 years, I have looked in the mirror every morning and asked myself, “If today were the last day of my life, would I wanna do what I am about to do today?”",
+              "target": "それ以来、過去33年間、毎朝鏡を見て自分に問いかけてきました。「もし今日が人生最後の日だとしたら、今日やろうとしていることを本当にやりたいか？」と。"
+            },
+            {
+              "id": "00033-002",
+              "source": "And whenever the answer has been no for too many days in a row, I know I need to change something.",
+              "target": "そして、その答えが何日も続けて「ノー」であるときは、何かを変えなければならないと気づくのです。"
+            }
+          ],
+          "raw_line": 68
+        },
+        {
+          "paragraph": [
+            {
+              "id": "00034-000",
+              "source": "Remembering that I’ll be dead soon is the most important tool I’ve ever encountered to help me make the big choices in life.",
+              "target": "自分がいずれ死ぬことを思い出すことは、人生の大きな選択をする際に私が出会った中で最も重要な道具です。"
+            },
+            {
+              "id": "00034-001",
+              "source": "Because almost everything, all external expectations, all pride, all fear of embarrassment or failure—these things just fall away in the face of death, leaving only what is truly important.",
+              "target": "なぜなら、死を前にすると、ほとんどすべての外部からの期待、プライド、恥や失敗の恐れといったものは消え去り、本当に重要なものだけが残るからです。"
+            },
+            {
+              "id": "00034-002",
+              "source": "Remembering that you are going to die is the best way I know to avoid the trap of thinking you have something to lose.",
+              "target": "自分が死ぬことを思い出すことは、何かを失うという考えの罠を避けるための最良の方法です。"
+            },
+            {
+              "id": "00034-003",
+              "source": "You are already naked.",
+              "target": "あなたはすでに裸なのです。"
+            },
+            {
+              "id": "00034-004",
+              "source": "There is no reason not to follow your heart.",
+              "target": "だからこそ、自分の心に従わない理由はありません。"
+            }
+          ],
+          "raw_line": 70
+        },
+        {
+          "paragraph": [
+            {
+              "id": "00035-000",
+              "source": "About a year ago, I was diagnosed with cancer.",
+              "target": "約1年前、私は癌と診断されました。"
+            },
+            {
+              "id": "00035-001",
+              "source": "I had a scan at 7:30 in the morning, and it clearly showed a tumor on my pancreas.",
+              "target": "朝の7時30分にスキャンを受けたところ、膵臓に腫瘍があることがはっきりと示されました。"
+            },
+            {
+              "id": "00035-002",
+              "source": "I didn’t even know what a pancreas was.",
+              "target": "私は膵臓が何なのかさえ知りませんでした。"
+            }
+          ],
+          "raw_line": 72
+        },
+        {
+          "paragraph": [
+            {
+              "id": "00036-000",
+              "source": "The doctors told me this was almost certainly a type of cancer that is incurable,",
+              "target": "医師たちは、これはほぼ間違いなく治療不可能なタイプの癌だと私に告げました。"
+            },
+            {
+              "id": "00036-001",
+              "source": "and that I should expect to live no longer than three to six months.",
+              "target": "そして、3ヶ月から6ヶ月以上は生きられないだろうと言われました。"
+            },
+            {
+              "id": "00036-002",
+              "source": "My doctor advised me to go home and get my affairs in order,",
+              "target": "医師は私に、家に帰って身辺整理をするようにと勧めました。"
+            },
+            {
+              "id": "00036-003",
+              "source": "which is doctors’ code for “Prepare to die.”",
+              "target": "これは医師たちの言葉で「死の準備をしなさい」という意味です。"
+            }
+          ],
+          "raw_line": 74
+        },
+        {
+          "paragraph": [
+            {
+              "id": "00037-000",
+              "source": "It means to try and tell your kids everything you thought you’d have the next ten years to tell them in just a few months.",
+              "target": "それは、子供たちにこれから10年かけて伝えようと思っていたことを、わずか数ヶ月で伝えようとすることを意味します。"
+            },
+            {
+              "id": "00037-001",
+              "source": "It means to make sure everything is buttoned up so that it will be as easy as possible for your family.",
+              "target": "それは、家族ができるだけ困らないように、すべてをきちんと整えておくことを意味します。"
+            },
+            {
+              "id": "00037-002",
+              "source": "It means to say your goodbyes.",
+              "target": "それは、別れの言葉を告げることを意味します。"
+            }
+          ],
+          "raw_line": 76
+        },
+        {
+          "paragraph": [
+            {
+              "id": "00038-000",
+              "source": "I lived with that diagnosis all day.",
+              "target": "その診断を受けて一日中過ごしました。"
+            },
+            {
+              "id": "00038-001",
+              "source": "Later that evening I had a biopsy, where they stuck an endoscope down my throat, through my stomach, and into my intestines, put a needle into my pancreas, and got a few cells from the tumor.",
+              "target": "その日の夕方、私は生検を受けました。内視鏡を喉から胃、腸へと通し、膵臓に針を刺して腫瘍からいくつかの細胞を採取しました。"
+            }
+          ],
+          "raw_line": 78
+        },
+        {
+          "paragraph": [
+            {
+              "id": "00039-000",
+              "source": "I was sedated, but my wife, who was there, told me that when they viewed the cells under a microscope, the doctors started crying because it turned out to be a very rare form of pancreatic cancer that is curable with surgery.",
+              "target": "私は鎮静剤を投与されていましたが、そこにいた妻が教えてくれたところによると、顕微鏡で細胞を見たとき、医師たちは泣き始めたそうです。なぜなら、それが手術で治る非常に珍しいタイプの膵臓癌であることが判明したからです。"
+            },
+            {
+              "id": "00039-001",
+              "source": "I had the surgery, and thankfully I’m fine now.",
+              "target": "私は手術を受け、ありがたいことに今は元気です。"
+            }
+          ],
+          "raw_line": 80
+        },
+        {
+          "paragraph": [
+            {
+              "id": "00040-000",
+              "source": "This was the closest I’ve been to facing death,",
+              "target": "これが私が死に直面した最も近い経験でした。"
+            },
+            {
+              "id": "00040-001",
+              "source": "and I hope it’s the closest I get for a few more decades.",
+              "target": "そして、これが今後数十年の間で最も近い経験であることを願っています。"
+            },
+            {
+              "id": "00040-002",
+              "source": "Having lived through it,",
+              "target": "この経験を通じて生き延びたことで、"
+            },
+            {
+              "id": "00040-003",
+              "source": "I can now say this to you with a bit more certainty than when death was a useful but purely intellectual concept.",
+              "target": "死が有用ではあるが純粋に知的な概念であった頃よりも、今は少し確信を持ってこれを皆さんに伝えることができます。"
+            }
+          ],
+          "raw_line": 82
+        },
+        {
+          "paragraph": [
+            {
+              "id": "00041-000",
+              "source": "No one wants to die.",
+              "target": "誰も死にたくはありません。"
+            },
+            {
+              "id": "00041-001",
+              "source": "Even people who want to go to heaven don’t want to die to get there.",
+              "target": "天国に行きたいと思っている人でさえ、そこに行くために死にたいとは思いません。"
+            },
+            {
+              "id": "00041-002",
+              "source": "And yet, death is the destination we all share.",
+              "target": "それでも、死は私たち全員が共有する目的地です。"
+            },
+            {
+              "id": "00041-003",
+              "source": "No one has ever escaped it.",
+              "target": "誰もそれを逃れたことはありません。"
+            },
+            {
+              "id": "00041-004",
+              "source": "And that is as it should be, because death is very likely the single best invention of life.",
+              "target": "そして、それはあるべき姿です。なぜなら、死はおそらく人生における最高の発明だからです。"
+            },
+            {
+              "id": "00041-005",
+              "source": "It’s life’s change agent.",
+              "target": "それは人生の変化の原動力です。"
+            },
+            {
+              "id": "00041-006",
+              "source": "It clears out the old to make way for the new.",
+              "target": "古いものを一掃して新しいもののための道を開くのです。"
+            }
+          ],
+          "raw_line": 84
+        },
+        {
+          "paragraph": [
+            {
+              "id": "00042-000",
+              "source": "Right now, the new is you.",
+              "target": "今、この瞬間、新しい存在はあなたです。"
+            },
+            {
+              "id": "00042-001",
+              "source": "But someday, not too long from now, you will gradually become the old and be cleared away.",
+              "target": "しかし、そう遠くない未来に、あなたも徐々に古い存在となり、消えていくでしょう。"
+            },
+            {
+              "id": "00042-002",
+              "source": "Sorry to be so dramatic, but it’s quite true.",
+              "target": "劇的に聞こえるかもしれませんが、これは紛れもない事実です。"
+            }
+          ],
+          "raw_line": 86
+        },
+        {
+          "paragraph": [
+            {
+              "id": "00043-000",
+              "source": "Your time is limited, so don’t waste it living someone else’s life.",
+              "target": "あなたの時間は限られています。だから、他人の人生を生きることにそれを浪費しないでください。"
+            },
+            {
+              "id": "00043-001",
+              "source": "Don’t be trapped by dogma, which is living with the results of other people’s thinking.",
+              "target": "他人の考えの結果に従って生きること、つまりドグマに囚われないでください。"
+            },
+            {
+              "id": "00043-002",
+              "source": "Don’t let the noise of others’ opinions drown out your own inner voice.",
+              "target": "他人の意見の雑音に、自分自身の内なる声をかき消されないようにしてください。"
+            }
+          ],
+          "raw_line": 88
+        },
+        {
+          "paragraph": [
+            {
+              "id": "00044-000",
+              "source": "And most important, have the courage to follow your heart and intuition.",
+              "target": "そして最も重要なのは、自分の心と直感に従う勇気を持つことです。"
+            },
+            {
+              "id": "00044-001",
+              "source": "They somehow already know what you truly want to become.",
+              "target": "それらは不思議なことに、あなたが本当に何になりたいのかをすでに知っています。"
+            },
+            {
+              "id": "00044-002",
+              "source": "Everything else is secondary.",
+              "target": "他のすべては二の次です。"
+            }
+          ],
+          "raw_line": 90
+        },
+        {
+          "paragraph": [
+            {
+              "id": "00045-000",
+              "source": "When I was young, there was an amazing publication called The Whole Earth Catalog, which was one of the bibles of my generation.",
+              "target": "私が若い頃、『ホール・アース・カタログ』という素晴らしい出版物がありました。それは私の世代のバイブルの一つでした。"
+            },
+            {
+              "id": "00045-001",
+              "source": "It was created by a fellow named Stewart Brand, not far from here in Menlo Park.",
+              "target": "それは、ここから遠くないメンロパークで、スチュワート・ブランドという人物によって作られました。"
+            },
+            {
+              "id": "00045-002",
+              "source": "And he brought it to life with his poetic touch.",
+              "target": "そして彼は、その詩的なセンスでそれを生き生きとしたものにしました。"
+            }
+          ],
+          "raw_line": 92
+        },
+        {
+          "paragraph": [
+            {
+              "id": "00046-000",
+              "source": "This was in the late sixties, before personal computers and desktop publishing, so it was all made with typewriters, scissors, and Polaroid cameras.",
+              "target": "これは1960年代後半のことで、パーソナルコンピュータやデスクトップ出版が登場する前だったので、すべてタイプライター、ハサミ、ポラロイドカメラで作られていました。"
+            },
+            {
+              "id": "00046-001",
+              "source": "It was sort of like Google in paperback form, 35 years before Google came along.",
+              "target": "それは、Googleが登場する35年前に、ペーパーバック版のGoogleのようなものでした。"
+            },
+            {
+              "id": "00046-002",
+              "source": "It was idealistic, overflowing with neat tools and great notions.",
+              "target": "それは理想主義的で、素晴らしい道具やアイデアにあふれていました。"
+            }
+          ],
+          "raw_line": 94
+        },
+        {
+          "paragraph": [
+            {
+              "id": "00047-000",
+              "source": "Stewart and his team put out several issues of The Whole Earth Catalog.",
+              "target": "スチュワートと彼のチームは『ホール・アース・カタログ』を何号か発行しました。"
+            },
+            {
+              "id": "00047-001",
+              "source": "And then, when it had run its course, they put out a final issue.",
+              "target": "そして、その役割を終えたとき、彼らは最終号を発行しました。"
+            },
+            {
+              "id": "00047-002",
+              "source": "It was the mid-1970s, and I was your age.",
+              "target": "それは1970年代半ばのことで、私は今のあなたたちと同じ年齢でした。"
+            }
+          ],
+          "raw_line": 96
+        },
+        {
+          "paragraph": [
+            {
+              "id": "00048-000",
+              "source": "On the back cover of their final issue was a photograph of an early-morning country road—the kind you might find yourself hitchhiking on if you were so adventurous.",
+              "target": "最終号の裏表紙には、早朝の田舎道の写真が載っていました。それは、もしあなたが冒険心に溢れているなら、ヒッチハイクをしているかもしれないような道です。"
+            },
+            {
+              "id": "00048-001",
+              "source": "Beneath it were the words “Stay hungry. Stay foolish.”",
+              "target": "その下には「ハングリーであれ。愚かであれ。」という言葉が書かれていました。"
+            },
+            {
+              "id": "00048-002",
+              "source": "It was their farewell message as they signed off.",
+              "target": "それは彼らが別れを告げるためのメッセージでした。"
+            }
+          ],
+          "raw_line": 98
+        },
+        {
+          "paragraph": [
+            {
+              "id": "00049-000",
+              "source": "“Stay hungry. Stay foolish.”",
+              "target": "「ハングリーであれ。愚かであれ。」"
+            },
+            {
+              "id": "00049-001",
+              "source": "And I have always wished that for myself.",
+              "target": "そして私は常にそれを自分自身に願ってきました。"
+            },
+            {
+              "id": "00049-002",
+              "source": "And now, as you graduate to begin anew, I wish that for you.",
+              "target": "そして今、あなたたちが卒業して新たなスタートを切るにあたり、私はそれをあなたたちにも願います。"
+            },
+            {
+              "id": "00049-003",
+              "source": "Stay hungry. Stay foolish.",
+              "target": "ハングリーであれ。愚かであれ。"
+            },
+            {
+              "id": "00049-004",
+              "source": "Thank you all very much.",
+              "target": "皆さん、本当にありがとうございました。"
+            }
+          ],
+          "raw_line": 100
+        }
+      ],
+      "raw_line": 6
+    }
+  ],
+  "cost": 0.373,
+  "timestamp": "2025-06-13T03:22:02.240390Z"
+}

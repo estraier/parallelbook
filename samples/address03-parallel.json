@@ -1,0 +1,89 @@
+{
+  "id": "address03: Gettysburg Address",
+  "source_language": "en",
+  "target_language": "ja",
+  "title": {
+    "id": "00000-000",
+    "source": "Gettysburg Address",
+    "target": "ゲティスバーグ演説"
+  },
+  "author": {
+    "id": "00001-000",
+    "source": "Abraham Lincoln",
+    "target": "エイブラハム・リンカーン"
+  },
+  "chapters": [
+    {
+      "body": [
+        {
+          "paragraph": [
+            {
+              "id": "00002-000",
+              "source": "Four score and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.",
+              "target": "87年前、我々の父祖たちはこの大陸に、新しい国家を築きました。それは自由の理念に基づき、すべての人間が平等に創られているという命題に捧げられたものでした。"
+            }
+          ],
+          "raw_line": 6
+        },
+        {
+          "paragraph": [
+            {
+              "id": "00003-000",
+              "source": "Now we are engaged in a great civil war, testing whether that nation, or any nation so conceived and so dedicated, can long endure.",
+              "target": "今、我々は偉大な内戦に従事しており、その国、あるいはそのように構想され、献身されたどの国も長く存続できるかを試しています。"
+            },
+            {
+              "id": "00003-001",
+              "source": "We are met on a great battle-field of that war.",
+              "target": "我々はその戦争の偉大な戦場に集まっています。"
+            },
+            {
+              "id": "00003-002",
+              "source": "We have come to dedicate a portion of that field, as a final resting place for those who here gave their lives that that nation might live.",
+              "target": "我々は、その国が生き続けるために命を捧げた人々のために、この地の一部を最終的な安息の地として捧げるために来ました。"
+            },
+            {
+              "id": "00003-003",
+              "source": "It is altogether fitting and proper that we should do this.",
+              "target": "これを行うことは、まったくもって適切で正当なことです。"
+            }
+          ],
+          "raw_line": 8
+        },
+        {
+          "paragraph": [
+            {
+              "id": "00004-000",
+              "source": "But, in a larger sense, we can not dedicate—we can not consecrate—we can not hallow—this ground.",
+              "target": "しかし、より広い意味では、私たちはこの地を捧げることも、神聖化することも、崇めることもできません。"
+            },
+            {
+              "id": "00004-001",
+              "source": "The brave men, living and dead, who struggled here, have consecrated it, far above our poor power to add or detract.",
+              "target": "ここで戦った勇敢な人々、すでに亡くなった者も生きている者も、この地を私たちの力では及ばないほどに神聖なものとしました。"
+            },
+            {
+              "id": "00004-002",
+              "source": "The world will little note, nor long remember what we say here, but it can never forget what they did here.",
+              "target": "世界はここで私たちが言うことをほとんど注目せず、長く記憶することもないでしょうが、彼らがここで成し遂げたことは決して忘れられることはありません。"
+            },
+            {
+              "id": "00004-003",
+              "source": "It is for us the living, rather, to be dedicated here to the unfinished work which they who fought here have thus far so nobly advanced.",
+              "target": "むしろ、ここで戦った彼らがこれまでに高貴に進めてきた未完の仕事に、私たち生きている者がここで専念することが求められています。"
+            },
+            {
+              "id": "00004-004",
+              "source": "It is rather for us to be here dedicated to the great task remaining before us—that from these honored dead we take increased devotion to that cause for which they gave the last full measure of devotion—that we here highly resolve that these dead shall not have died in vain—that this nation, under God, shall have a new birth of freedom—and that government of the people, by the people, for the people, shall not perish from the earth.",
+              "target": "むしろ、私たちがここで専念すべきは、彼らが最後の献身を捧げたその大義に対する私たちの献身を高めることであり、ここで亡くなった者たちが無駄死にしなかったと強く決意することです。そして、この国が神のもとで新たな自由の誕生を迎え、人々の、人々による、人々のための政府が地上から消え去ることがないようにすることです。"
+            }
+          ],
+          "raw_line": 10
+        }
+      ],
+      "raw_line": 6
+    }
+  ],
+  "cost": 0.035,
+  "timestamp": "2025-06-13T03:02:53.685411Z"
+}
