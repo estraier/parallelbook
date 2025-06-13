@@ -4,6 +4,32 @@ export function renderParallelBook(
   selectorElementId, contentElementId, bookList, bookParamName, modeParamName) {
   const queryBookId = getQueryParamValue(bookParamName);
   const queryMode = getQueryParamValue(modeParamName);
+  if (selectorElementId && selectorElementId.length > 0) {
+    renderSelector(selectorElementId, contentElementId, bookList, bookParamName, modeParamName);
+  }
+  if (queryBookId) {
+    const book = bookList[queryBookId];
+    if (book) {
+      loadAndRenderParallelBook(contentElementId, book[1], queryMode);
+    }
+  }
+}
+
+function getQueryParamValue(paramName) {
+  const params = new URLSearchParams(window.location.search);
+  return params.get(paramName);
+}
+
+function updateUrlParam(paramName, paramValue) {
+  const url = new URL(window.location);
+  url.searchParams.set(paramName, paramValue);
+  history.pushState({}, '', url);
+}
+
+function renderSelector(
+  selectorElementId, contentElementId, bookList, bookParamName, modeParamName) {
+  const queryBookId = getQueryParamValue(bookParamName);
+  const queryMode = getQueryParamValue(modeParamName);
   const selectorEl = document.getElementById(selectorElementId);
   if (!selectorEl) {
     console.error(`No container element: ${selectorElementId}`);
@@ -61,23 +87,6 @@ export function renderParallelBook(
     }
     updateUrlParam(modeParamName, modeSelect.value);
   });
-  if (queryBookId) {
-    const book = bookList[queryBookId];
-    if (book) {
-      loadAndRenderParallelBook(contentElementId, book[1], queryMode);
-    }
-  }
-}
-
-function getQueryParamValue(paramName) {
-  const params = new URLSearchParams(window.location.search);
-  return params.get(paramName);
-}
-
-function updateUrlParam(paramName, paramValue) {
-  const url = new URL(window.location);
-  url.searchParams.set(paramName, paramValue);
-  history.pushState({}, '', url);
 }
 
 async function loadAndRenderParallelBook(contentElementId, book_url, mode) {
