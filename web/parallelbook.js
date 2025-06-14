@@ -146,6 +146,7 @@ function toggleParallelBlock(block) {
 
 function utterParallelBlock(block) {
   if (!SpeechSynthesisUtterance) return;
+  speechSynthesis.cancel();
   const spanEn = block.querySelector('span[lang="en"]');
   const spanJa = block.querySelector('span[lang="ja"]');
   if (block.lang === "ja" && spanEn.style.display === "none") {
@@ -268,6 +269,8 @@ function setParallelPane(pane, bookId, contentEl) {
   pane.classList.add("pane");
   const mark = document.createElement("span");
   mark.className = "bookmark";
+  mark.setAttribute("aria-hidden", "true")
+  mark.setAttribute("title", "ブックマーク");
   mark.textContent = "⚑";
   pane.appendChild(mark);
   mark.addEventListener("click", (e) => {
