@@ -65,10 +65,6 @@ body {
   color: #888;
 }
 
-
-
-
-
 .parallel-book nav.book-toc {
   font-size: 90%;
   line-height: 1.3;
@@ -237,8 +233,18 @@ body {
     background: #fff;
   }
   .parallel-book {
-     padding: 2.5ex;
+     padding: 1ex;
      max-width: initial;
      border: none;
+  }
+  .parallel-book-navi select {
+    border: 1px solid #888;
+  }
+  .parallel-book-usage {
+    padding: 0.5ex;
+    border: none;
+  }
+  .parallel-book span.parallel-toggle {
+    transform: translateX(-70%);
   }
 }
