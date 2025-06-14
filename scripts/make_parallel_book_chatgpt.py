@@ -310,7 +310,7 @@ def build_output(input_meta, input_tasks, tasks):
           record["raw_line"] = raw_line
         chapter["body"].append(record)
       elif role in ["header"]:
-        chapter["body"].append({role: build_text_record(task, True)})
+        chapter["body"].append({role: build_text_record(task, True)[0]})
       elif role in ["list", "table"]:
         items = []
         next_seq = seq

@@ -21,13 +21,11 @@
       },
       "body": [
         {
-          "header": [
-            {
-              "id": "00003-000",
-              "source": "Header in the chapter",
-              "target": "章のヘッダー"
-            }
-          ]
+          "header": {
+            "id": "00003-000",
+            "source": "Header in the chapter",
+            "target": "章のヘッダー"
+          }
         },
         {
           "paragraph": [
@@ -73,7 +71,7 @@
           "macro": {
             "id": "00006-000",
             "name": "image",
-            "value": "https://dbmx.net/parallelbook/logo.png sample logo"
+            "value": "https://dbmx.net/parallelbook/logo.png"
           },
           "raw_line": 17
         },
@@ -178,5 +176,5 @@
     }
   ],
   "cost": 0.004,
-  "timestamp": "2025-06-10T12:06:16.290005Z"
+  "timestamp": "2025-06-13T15:36:35.768991Z"
 }

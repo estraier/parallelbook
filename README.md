@@ -654,13 +654,11 @@ make_parallel_book_chatgpt.pyの出力は以下のような形式になります
       },
       "body": [
         {
-          "header": [
-            {
-              "id": "00003-000",
-              "source": "Header in the chapter",
-              "target": "章のヘッダー"
-            }
-          ]
+          "header": {
+            "id": "00003-000",
+            "source": "Header in the chapter",
+            "target": "章のヘッダー"
+          }
         },
         {
           "paragraph": [
@@ -691,13 +689,13 @@ make_parallel_book_chatgpt.pyの出力は以下のような形式になります
           "paragraph": [
             {
               "id": "00005-000",
-              "source": "I replied, \"This is the second paragraph.",
-              "target": "私は答えた。「これが2番目の段落です。"
+              "source": "I replied, \"This is the second paragraph. I'm not sure though.\"",
+              "target": "私は答えました。「これが2番目の段落です。でも、確信はありません。」"
             },
             {
               "id": "00005-001",
-              "source": "I'm not sure though.\" Brank lines separate paragraphs.",
-              "target": "でも、確かではありません。」空行が段落を区切ります。"
+              "source": "Brank lines separate paragraphs.",
+              "target": "空行が段落を区切ります。"
             }
           ],
           "raw_line": 14
@@ -733,7 +731,7 @@ make_parallel_book_chatgpt.pyの出力は以下のような形式になります
             {
               "id": "00009-000",
               "source": "Hop. Step. Jump! Each item in the list are not segmented.",
-              "target": "ホップ。ステップ。ジャンプ！リスト内の各アイテムは分割されません。"
+              "target": "ホップ。ステップ。ジャンプ！リスト内の各項目は分割されません。"
             },
             {
               "id": "00010-000",
@@ -746,19 +744,55 @@ make_parallel_book_chatgpt.pyの出力は以下のような形式になります
         {
           "table": [
             [
-              {"id": "00011-000", "source": "symbol", "target": "記号"},
-              {"id": "00011-001", "source": "name", "target": "名前"},
-              {"id": "00011-002", "source": "number", "target": "番号"}
+              {
+                "id": "00011-000",
+                "source": "symbol",
+                "target": "記号"
+              },
+              {
+                "id": "00011-001",
+                "source": "name",
+                "target": "名前"
+              },
+              {
+                "id": "00011-002",
+                "source": "number",
+                "target": "番号"
+              }
             ],
             [
-              {"id": "00012-000", "source": "Au", "target": "Au"},
-              {"id": "00012-001", "source": "gold", "target": "金"},
-              {"id": "00012-002", "source": "79", "target": "79"}
+              {
+                "id": "00012-000",
+                "source": "Au",
+                "target": "Au"
+              },
+              {
+                "id": "00012-001",
+                "source": "gold",
+                "target": "金"
+              },
+              {
+                "id": "00012-002",
+                "source": "79",
+                "target": "79"
+              }
             ],
             [
-              {"id": "00013-000", "source": "Ag", "target": "Ag"},
-              {"id": "00013-001", "source": "silver", "target": "銀"},
-              {"id": "00013-002", "source": "47", "target": "47"}
+              {
+                "id": "00013-000",
+                "source": "Ag",
+                "target": "Ag"
+              },
+              {
+                "id": "00013-001",
+                "source": "silver",
+                "target": "銀"
+              },
+              {
+                "id": "00013-002",
+                "source": "47",
+                "target": "47"
+              }
             ]
           ],
           "raw_line": 28
@@ -775,7 +809,7 @@ make_parallel_book_chatgpt.pyの出力は以下のような形式になります
     }
   ],
   "cost": 0.004,
-  "timestamp": "2025-06-08T10:37:07.325431Z"
+  "timestamp": "2025-06-13T15:36:35.768991Z"
 }
 ```
 
@@ -847,14 +881,14 @@ body要素の中には、レンダリングを行う要素を書きます。こ�
 
 ### parallelbook.js
 
-parallelbook.jsは、任意のWebページに対訳コーパスを表示する機能を実現する。通常は、script要素の中にimport文を書き、renderParallelBook関数をインポートする。その後、renderParallelBook関数を呼び出す。パラーメータとして以下のものを与える。
+parallelbook.jsは、任意のWebページに対訳コーパスを表示する機能を実現します。通常は、script要素の中にimport文を書き、renderParallelBook関数をインポートします。その後、renderParallelBook関数を呼び出します。パラーメータとして以下のものを与えます。
 
-- 書籍選択のセレクタを表示する要素のID。通常はnav要素を用いる。nullや空文字列なら書籍選択のセレクタは省略される。
-- 書籍の本文を表示する要素のID。通常はarticle要素を用いる。
-- 書籍データのリスト。「パラメータ名: ["表示名", "JSONのURL"]」を持つ連想配列。
-- URLのクエリ部分における書籍パラメータをの名前。
-- URLのクエリ部分におけるモードパラメータをの名前。
+- 書籍選択のセレクタを表示する要素のID。通常はnav要素を用います。nullや空文字列なら書籍選択のセレクタは省略されます。
+- 書籍の本文を表示する要素のID。通常はarticle要素を用います。
+- 書籍データのリスト。「パラメータ名: ["表示名", "JSONのURL"]」を持つ連想配列です。
+- URLのクエリ部分における書籍パラメータの名前。
+- URLのクエリ部分におけるモードパラメータの名前。
 
 parallelbook.cssは、renderParallelBookが表示した対訳本のスタイルを設定する。このファイルを編集すると、文字の色や大きさや文書の幅などの様々な設定をカスタマイズできる。
 
-デフォルトでは、URLクエリのbookパラメータで、表示する
+書籍パラメータ名が "book" でモードパラメータ名が "mode" の場合、URLのクエリ部分に "?book=anne01&mode=en" などとすることで、初期状態で該当の書籍を表示できます。その場合、書籍選択セレクタを省略しても機能します。
