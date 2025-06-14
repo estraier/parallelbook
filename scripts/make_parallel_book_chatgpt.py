@@ -254,7 +254,8 @@ def build_output(input_meta, input_tasks, tasks):
   index_line_map = {}
   index_concat_set = set()
   for task in tasks:
-    if "response" not in task:
+    response = task.get("response")
+    if not response:
       logger.warning(f"Stop by an unprocessed task: {task['index']}")
       break
     index = task["index"]
@@ -676,6 +677,23 @@ def execute_task_by_chatgpt_enja(
               "target": translation["ja"],
             }
             content.append(rec_tran)
+          if content:
+            match = regex.search(r"^(\p{Quotation_Mark})", source_text)
+            if match:
+              src_quot = match.group(1)
+              first_tran = content[0]
+              if not first_tran["source"].startswith(src_quot):
+                first_tran["source"] = src_quot + first_tran["source"]
+                if not regex.search(r"^(\p{Quotation_Mark})", first_tran["target"]):
+                  first_tran["target"] = "「" + first_tran["target"]
+            match = regex.search(r"(\p{Quotation_Mark})$", source_text)
+            if match:
+              src_quot = match.group(1)
+              last_tran = content[-1]
+              if not last_tran["source"].endswith(src_quot):
+                last_tran["source"] = last_tran["source"] + src_quot
+                if not regex.search(r"(\p{Quotation_Mark})$", last_tran["target"]):
+                  last_tran["target"] = last_tran["target"] + "」"
           record["content"] = content
           record["hint"] = data.get("context_hint")
           record["cost"] = round(calculate_chatgpt_cost(prompt, response, model), 8)
