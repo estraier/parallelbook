@@ -130,6 +130,20 @@ function setGlobalKeyEvents() {
   document.addEventListener('mousedown', () => {
     document.lastInteractionWasKeyboard = false;
   });
+  document.addEventListener("click", (e) => {
+    let el = e.target;
+    while (el && el !== document.body) {
+      if (el.tagName.toLowerCase() === "a" && el.getAttribute("href")?.startsWith("#chapter-")) {
+        const targetId = el.getAttribute("href").substring(1);
+        const target = document.getElementById(targetId);
+        if (target) {
+          setTimeout(() => target.focus({ preventScroll: true }), 0);
+        }
+        break;
+      }
+      el = el.parentElement;
+    }
+  });
 }
 
 function toggleParallelBlock(block) {
@@ -348,6 +362,7 @@ function createTableOfContents(book, mode) {
     const anchor = document.createElement("a");
     anchor.href = "#chapter-" + num_chapter;
     anchor.className = "toc-item parallel";
+    anchor.setAttribute("tabindex", "0");
     let source = "Chapter " + num_chapter;
     let target = "第" + num_chapter + "章";
     if (chapter.title) {
@@ -403,6 +418,7 @@ function renderParallelBookContent(contentElementId, bookId, bookContent, mode) 
     const chapterSection = document.createElement("section");
     chapterSection.id = "chapter-" + num_chapter;
     chapterSection.className = "chapter";
+    chapterSection.setAttribute("tabindex", "-1");
     const chapterNav = document.createElement("nav");
     chapterNav.className = "chapter-nav";
     chapterNav.setAttribute("aria-label", "章による移動ナビ");
@@ -411,6 +427,7 @@ function renderParallelBookContent(contentElementId, bookId, bookContent, mode) 
       chapterPrev.href = "#chapter-" + (num_chapter - 1);
       chapterPrev.setAttribute("aria-label", "前の章に移動");
       chapterPrev.setAttribute("title", "前の章に移動");
+      chapterPrev.setAttribute("tabindex", "0");
       chapterPrev.textContent = "⇚";
       chapterNav.appendChild(chapterPrev);
     } else {
@@ -423,6 +440,7 @@ function renderParallelBookContent(contentElementId, bookId, bookContent, mode) 
     chapterCurrent.href = "#chapter-" + num_chapter;
     chapterCurrent.setAttribute("aria-label", "この章に移動");
     chapterCurrent.setAttribute("title", "この章に移動");
+    chapterCurrent.setAttribute("tabindex", "-1");
     chapterCurrent.textContent = "§";
     chapterNav.appendChild(chapterCurrent);
     if (num_chapter < bookContent.chapters.length) {
@@ -430,6 +448,7 @@ function renderParallelBookContent(contentElementId, bookId, bookContent, mode) 
       chapterNext.href = "#chapter-" + (num_chapter + 1);
       chapterNext.setAttribute("aria-label", "次の章に移動");
       chapterNext.setAttribute("title", "次の章に移動");
+      chapterNext.setAttribute("tabindex", "0");
       chapterNext.textContent = "⇛";
       chapterNav.appendChild(chapterNext);
     } else {
@@ -516,5 +535,87 @@ function renderParallelBookContent(contentElementId, bookId, bookContent, mode) 
     }
     contentEl.appendChild(chapterSection);
   }
+  contentEl.appendChild(makeMetadataPane(bookContent));
   renderBookmark(contentEl, bookId);
+}
+
+function makeMetadataPane(bookContent) {
+  const pane = document.createElement("aside");
+  pane.lang = "ja";
+  pane.className = "book-meta";
+  const counts = countSourceWordsInBook(bookContent);
+  const blockCountSpan = document.createElement("span");
+  blockCountSpan.textContent = `段数: ${counts.blocks}`;
+  pane.appendChild(blockCountSpan);
+  const sentenceCountSpan = document.createElement("span");
+  sentenceCountSpan.textContent = `文数: ${counts.sentences}`;
+  pane.appendChild(sentenceCountSpan);
+  const wordCountSpan = document.createElement("span");
+  wordCountSpan.textContent = `単語数: ${counts.words}`;
+  pane.appendChild(wordCountSpan);
+  const characterCountSpan = document.createElement("span");
+  characterCountSpan.textContent = `文字数: ${counts.characters}`;
+  pane.appendChild(characterCountSpan);
+  return pane;
+}
+
+function countSourceWordsInBook(bookContent) {
+  const counts = {
+    blocks: 0,
+    sentences: 0,
+    words: 0,
+    characters: 0,
+  }
+  function addCounts(text) {
+    if (!text) return;
+    counts.sentences += 1
+    const matches = text.match(/\b[\w\u2019']+\b/g);
+    if (matches) {
+      counts.words += matches.length;
+    }
+    counts.characters += text.length;
+  }
+  if (bookContent.title?.source) {
+    addCounts(bookContent.title.source);
+    counts.blocks += 1;
+  }
+  if (bookContent.author?.source) {
+    addCounts(bookContent.author.source);
+    counts.blocks += 1;
+  }
+  for (const chapter of bookContent.chapters ?? []) {
+    if (chapter.title?.source) {
+      addCounts(chapter.title.source);
+      counts.blocks += 1;
+    }
+    for (const block of chapter.body ?? []) {
+      if (block.paragraph) {
+        for (const item of block.paragraph) {
+          addCounts(item.source);
+        }
+        counts.blocks += 1;
+      } else if (block.blockquote) {
+        for (const item of block.blockquote) {
+          addCounts(item.source);
+        }
+        counts.blocks += 1;
+      } else if (block.header?.source) {
+        addCounts(block.header.source);
+        counts.blocks += 1;
+      } else if (block.list) {
+        for (const item of block.list) {
+          addCounts(item.source);
+        }
+        counts.blocks += 1;
+      } else if (block.table) {
+        for (const row of block.table) {
+          for (const cell of row) {
+            addCounts(cell.source);
+          }
+        }
+        counts.blocks += 1;
+      }
+    }
+  }
+  return counts;
 }

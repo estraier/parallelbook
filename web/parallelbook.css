@@ -172,6 +172,9 @@ body {
   margin: 2ex 0;
   border-top: 1px solid #ddd;
 }
+.parallel-book section.chapter:focus {
+  outline: none;
+}
 
 .parallel-book nav.chapter-nav {
   position: absolute;
@@ -233,6 +236,16 @@ body {
 .parallel-book div.macro-image img {
   max-width: 35ex;
   max-height: 35ex;
+}
+
+.parallel-book aside.book-meta {
+  display: block;
+  text-align: right;
+  font-size: 70%;
+  opacity: 0.3;
+}
+.parallel-book aside.book-meta span {
+  padding: 0 0.7ex;
 }
 
 @media screen and (max-width: 700px) {
