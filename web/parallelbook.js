@@ -535,11 +535,11 @@ function renderParallelBookContent(contentElementId, bookId, bookContent, mode) 
     }
     contentEl.appendChild(chapterSection);
   }
-  contentEl.appendChild(makeMetadataPane(bookContent));
+  contentEl.appendChild(createMetadataPane(bookContent));
   renderBookmark(contentEl, bookId);
 }
 
-function makeMetadataPane(bookContent) {
+function createMetadataPane(bookContent) {
   const pane = document.createElement("aside");
   pane.lang = "ja";
   pane.className = "book-meta";
