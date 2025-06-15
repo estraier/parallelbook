@@ -457,6 +457,16 @@ function renderParallelBookContent(contentElementId, bookId, bookContent, mode) 
         }
         chapterSection.appendChild(pane);
         setParallelPane(pane, bookId, contentEl);
+      } else if (block.blockquote) {
+        const pane = document.createElement("blockquote");
+        pane.className = "blockquote"
+        for (const item of block.blockquote) {
+          if (!pane.id) pane.id = item.id;
+          pane.appendChild(createParallelBlock(
+            "span", "sentence", item.source, item.target, mode));
+        }
+        chapterSection.appendChild(pane);
+        setParallelPane(pane, bookId, contentEl);
       } else if (block.header) {
         const pane = createParallelBlock(
           "h3", "header", block.header.source, block.header.target, mode)

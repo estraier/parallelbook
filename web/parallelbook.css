@@ -200,6 +200,13 @@ body {
   margin: 1.8ex 0;
 }
 
+.parallel-book blockquote {
+  margin: 1.8ex 0;
+  margin-left: 0.8ex;
+  padding-left: 0.8ex;
+  border-left: solid 2px #ddd;
+}
+
 .parallel-book h3 {
   margin: 1.8ex 0 1.6ex 0;
   font-size: 100%;
