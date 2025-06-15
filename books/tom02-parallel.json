@@ -1944,28 +1944,33 @@
           "paragraph": [
             {
               "id": "00085-000",
-              "source": "I reached for some of it as quick as I could to throw over my left shoulder and keep off the bad luck, but Miss Watson was in ahead of me, and crossed me off.",
-              "target": "朝食時に塩をひっくり返してしまった。左肩にかけて悪運を払うために急いで取ろうとしたが、ミス・ワトソンが先回りして私を制止した。"
+              "source": "One morning I happened to turn over the salt-cellar at breakfast.",
+              "target": "ある朝、朝食時に塩をこぼしてしまった。"
             },
             {
               "id": "00085-001",
-              "source": "She says, “Take your hands away, Huckleberry; what a mess you are always making!”",
-              "target": "彼女は言った。「手を離しなさい、ハックルベリー。いつも何て散らかし者なのかしら！」"
+              "source": "I reached for some of it as quick as I could to throw over my left shoulder and keep off the bad luck, but Miss Watson was in ahead of me, and crossed me off.",
+              "target": "左肩に投げて不運を避けようとしたが、ミス・ワトソンが先回りして邪魔をした。"
             },
             {
               "id": "00085-002",
-              "source": "The widow put in a good word for me, but that warn’t going to keep off the bad luck, I knowed that well enough.",
-              "target": "未亡人は私の味方をしてくれたが、それでも悪運を払うことはできないとよくわかっていた。"
+              "source": "She says, “Take your hands away, Huckleberry; what a mess you are always making!”",
+              "target": "彼女は言った。「手を離しなさい、ハックルベリー。いつもこんなに散らかして。」"
             },
             {
               "id": "00085-003",
-              "source": "I started out, after breakfast, feeling worried and shaky, and wondering where it was going to fall on me, and what it was going to be.",
-              "target": "朝食後、不安でふるえながら出かけ、どこに落ちてくるのか、それが何であるかを考えていた。"
+              "source": "The widow put in a good word for me, but that warn’t going to keep off the bad luck, I knowed that well enough.",
+              "target": "未亡人が私の味方をしてくれたが、それでは不運を避けられないことはよくわかっていた。"
             },
             {
               "id": "00085-004",
+              "source": "I started out, after breakfast, feeling worried and shaky, and wondering where it was going to fall on me, and what it was going to be.",
+              "target": "朝食後、不安でふらふらしながら出かけ、どこに落ちてくるのか、それが何かを考えていた。"
+            },
+            {
+              "id": "00085-005",
               "source": "There is ways to keep off some kinds of bad luck, but this wasn’t one of them kind; so I never tried to do anything, but just poked along low-spirited and on the watch-out.",
-              "target": "悪運を払う方法はいくつかあるが、これはそのうちの一つではなかった。だから私は何も試さず、ただ気が滅入りながら用心深く歩いていた。"
+              "target": "不運を避ける方法はいくつかあるが、この場合はそれに当てはまらない。だから私は何もせず、ただ気が滅入りながら用心していた。"
             }
           ],
           "raw_line": 459
@@ -20799,8 +20804,8 @@
           "paragraph": [
             {
               "id": "01020-000",
-              "source": "He said, “You read about them once—you’ll see.",
-              "target": "彼は言った、「一度読んだらわかるさ。"
+              "source": "“You read about them once—you’ll see.",
+              "target": "「一度読んでみればわかる。"
             },
             {
               "id": "01020-001",
@@ -20810,12 +20815,12 @@
             {
               "id": "01020-002",
               "source": "And look at Charles Second, and Louis Fourteen, and Louis Fifteen, and James Second, and Edward Second, and Richard Third, and forty more; besides all them Saxon heptarchies that used to rip around so in old times and raise Cain.",
-              "target": "チャールズ二世、ルイ十四世、ルイ十五世、ジェームズ二世、エドワード二世、リチャード三世、その他四十人以上も見ろ。昔のサクソン七王国も含めて、騒がしく騒ぎ立ててた時代を考えろ。"
+              "target": "チャールズ二世、ルイ十四世、ルイ十五世、ジェームズ二世、エドワード二世、リチャード三世、その他四十人以上も見ろ。昔のサクソン七王国も含めて、昔は乱暴者だった。"
             },
             {
               "id": "01020-003",
               "source": "My, you ought to seen old Henry the Eight when he was in bloom.",
-              "target": "おお、ヘンリー八世が全盛期だった時を見るべきだったよ。"
+              "target": "おや、ヘンリー八世が全盛期だった頃を見たらよかった。"
             },
             {
               "id": "01020-004",
@@ -20825,17 +20830,17 @@
             {
               "id": "01020-005",
               "source": "He used to marry a new wife every day, and chop off her head next morning.",
-              "target": "彼は毎日新しい妻を娶り、翌朝彼女の首を切り落としていた。"
+              "target": "彼は毎日新しい妻を娶り、翌朝その首を切り落としていた。"
             },
             {
               "id": "01020-006",
               "source": "And he would do it just as indifferent as if he was ordering up eggs.",
-              "target": "それを、卵を注文するかのように無関心に行っていた。"
+              "target": "それを、まるで卵を注文するかのように無関心に行っていた。"
             },
             {
               "id": "01020-007",
               "source": "‘Fetch up Nell Gwynn,’ he says.",
-              "target": "「ネル・グインを連れてこい」と彼は言う。"
+              "target": "「ネル・グウィンを連れてこい」と言う。"
             },
             {
               "id": "01020-008",
@@ -20850,22 +20855,22 @@
             {
               "id": "01020-010",
               "source": "And they chop it off.",
-              "target": "そして彼らはそれを切り落とす。"
+              "target": "そして首を切り落とす。"
             },
             {
               "id": "01020-011",
-              "source": "‘Fetch up Jane Shore,’ he says; and up she comes, Next morning, ‘Chop off her head’—and they chop it off.",
-              "target": "「ジェーン・ショアを連れてこい」と彼は言う。そして彼女が現れる。翌朝、「首を切り落とせ」と—そして彼らはそれを切り落とす。"
+              "source": "‘Fetch up Jane Shore,’ he says; and up she comes.",
+              "target": "「ジェーン・ショアを連れてこい」と言う。そして彼女が現れる。"
             },
             {
               "id": "01020-012",
-              "source": "‘Ring up Fair Rosamun.’",
-              "target": "「フェア・ロザムンを呼び起こせ」。"
+              "source": "Next morning, ‘Chop off her head’—and they chop it off.",
+              "target": "翌朝、「首を切り落とせ」―そして首を切り落とす。"
             },
             {
               "id": "01020-013",
-              "source": "Fair Rosamun answers the bell.",
-              "target": "フェア・ロザムンがベルに応える。"
+              "source": "‘Ring up Fair Rosamun.’ Fair Rosamun answers the bell.",
+              "target": "「フェア・ロザムンを呼び出せ」。フェア・ロザムンが呼び出しに応じる。"
             },
             {
               "id": "01020-014",
@@ -20875,112 +20880,82 @@
             {
               "id": "01020-015",
               "source": "And he made every one of them tell him a tale every night; and he kept that up till he had hogged a thousand and one tales that way, and then he put them all in a book, and called it Domesday Book—which was a good name and stated the case.",
-              "target": "そして彼は毎晩彼らに話を聞かせ、その方法で千一つの物語を聞き続け、それから彼はそれら全てを本にまとめ、それを『最後の審判の書』と呼び、それは適切な名前であり、事態を説明していた。"
+              "target": "そして彼は毎晩彼女たちに物語を語らせ、それを千一つ集めるまで続け、それからそれらをすべて本にまとめ、ドゥームズデイ・ブックと名付けた―それは適切な名前であり、事態を述べていた。"
             },
             {
               "id": "01020-016",
               "source": "You don’t know kings, Jim, but I know them; and this old rip of ourn is one of the cleanest I’ve struck in history.",
-              "target": "ジム、お前は王たちを知らないが、俺は知っている。そして、この俺たちの古い悪党は、歴史の中でも最も清廉なものの一つだ。"
+              "target": "ジム、お前は王たちを知らないが、俺は知っている。そして、この俺たちの古いやつは、歴史の中でも最もまともな王の一人だ。"
             },
             {
               "id": "01020-017",
               "source": "Well, Henry he takes a notion he wants to get up some trouble with this country.",
-              "target": "さて、ヘンリーはこの国にトラブルを起こしたいという気持ちを抱く。"
+              "target": "さて、ヘンリーはこの国で何か騒動を起こしたいと思い立った。"
             },
             {
               "id": "01020-018",
-              "source": "How does he go at it—give notice?—give the country a show?",
-              "target": "彼はどうやってそれを行うのか—通告をするのか？—国に見せるのか？"
+              "source": "How does he go at it—give notice?—give the country a show? No.",
+              "target": "どうやってそれを行うのか―通告するか？―国に見せるか？いいえ。"
             },
             {
               "id": "01020-019",
-              "source": "No.",
-              "target": "いいえ。"
+              "source": "All of a sudden he heaves all the tea in Boston Harbor overboard, and whacks out a declaration of independence, and dares them to come on.",
+              "target": "突然、彼はボストン港の紅茶をすべて海に投げ捨て、独立宣言を発表し、彼らに挑戦した。"
             },
             {
               "id": "01020-020",
-              "source": "All of a sudden he heaves all the tea in Boston Harbor overboard, and whacks out a declaration of independence, and dares them to come on.",
-              "target": "突然、彼はボストン港の紅茶を全て海に捨て、独立宣言を打ち出し、彼らに挑戦する。"
+              "source": "That was his style—he never give anybody a chance.",
+              "target": "それが彼のやり方だった―彼は誰にもチャンスを与えなかった。"
             },
             {
               "id": "01020-021",
-              "source": "That was his style—he never give anybody a chance.",
-              "target": "それが彼のスタイルだった—彼は誰にもチャンスを与えなかった。"
-            },
-            {
-              "id": "01020-022",
               "source": "He had suspicions of his father, the Duke of Wellington.",
               "target": "彼は父親であるウェリントン公爵に疑念を抱いていた。"
             },
             {
+              "id": "01020-022",
+              "source": "Well, what did he do? Ask him to show up? No—drownded him in a butt of mamsey, like a cat.",
+              "target": "では、彼は何をしたのか？彼に出頭するよう求めたか？いいえ―彼をマムジーのたるに溺れさせた、猫のように。"
+            },
+            {
               "id": "01020-023",
-              "source": "Well, what did he do?",
-              "target": "さて、彼は何をしたのか？"
+              "source": "S’pose people left money laying around where he was—what did he do? He collared it.",
+              "target": "もし人々が彼のいる場所にお金を置いていったら―彼はそれを巻き上げた。"
             },
             {
               "id": "01020-024",
-              "source": "Ask him to show up?",
-              "target": "彼に出てきてもらうよう頼んだのか？"
+              "source": "S’pose he contracted to do a thing, and you paid him, and didn’t set down there and see that he done it—what did he do? He always done the other thing.",
+              "target": "もし彼が何かをする契約を結び、お前が彼に支払い、その場に座って彼がそれをやったか見守らなかったら―彼はいつも逆のことをした。"
             },
             {
               "id": "01020-025",
-              "source": "No—drownded him in a butt of mamsey, like a cat.",
-              "target": "いいえ—彼をマムジーのたるに溺れさせた、猫のように。"
+              "source": "S’pose he opened his mouth—what then? If he didn’t shut it up powerful quick he’d lose a lie every time.",
+              "target": "もし彼が口を開いたら―その後はどうなる？もし彼がすぐに口を閉じなかったら、彼は毎回嘘をつくことになる。"
             },
             {
               "id": "01020-026",
-              "source": "S’pose people left money laying around where he was—what did he do?",
-              "target": "もし人々が彼のいる場所にお金を置いていったら—彼は何をしたか？"
+              "source": "That’s the kind of a bug Henry was; and if we’d a had him along ’stead of our kings he’d a fooled that town a heap worse than ourn done.",
+              "target": "それがヘンリーの性格だった。もし俺たちの王たちの代わりに彼がいたら、彼はその町を、俺たちの王たちよりもずっとひどくだましていただろう。"
             },
             {
               "id": "01020-027",
-              "source": "He collared it.",
-              "target": "彼はそれを掴んだ。"
+              "source": "I don’t say that ourn is lambs, because they ain’t, when you come right down to the cold facts; but they ain’t nothing to that old ram, anyway.",
+              "target": "俺は俺たちの王たちが羊だとは言わない。なぜなら、冷静に考えると、彼らはそうではないからだ。しかし、とにかく、あの古い雄羊ほどではない。"
             },
             {
               "id": "01020-028",
-              "source": "S’pose he contracted to do a thing, and you paid him, and didn’t set down there and see that he done it—what did he do?",
-              "target": "もし彼が何かをやる契約を結び、お前が彼に支払い、そしてその仕事が完了したか見届けなかったら—彼は何をしたか？"
+              "source": "All I say is, kings is kings, and you got to make allowances.",
+              "target": "俺が言いたいのは、王は王だ、そしてある程度の配慮をしなければならないということだ。"
             },
             {
               "id": "01020-029",
-              "source": "He always done the other thing.",
-              "target": "彼はいつも逆のことをした。"
+              "source": "Take them all around, they’re a mighty ornery lot.",
+              "target": "全体的に見れば、彼らは非常に厄介な連中だ。"
             },
             {
               "id": "01020-030",
-              "source": "S’pose he opened his mouth—what then?",
-              "target": "もし彼が口を開いたら—それからは？"
-            },
-            {
-              "id": "01020-031",
-              "source": "If he didn’t shut it up powerful quick he’d lose a lie every time.",
-              "target": "もし彼がすぐに口を閉じなかったら、彼は毎回嘘をつくだろう。"
-            },
-            {
-              "id": "01020-032",
-              "source": "That’s the kind of a bug Henry was; and if we’d a had him along ’stead of our kings he’d a fooled that town a heap worse than ourn done.",
-              "target": "それがヘンリーの性格だった。もし俺たちの王たちの代わりに彼がいたら、彼はその町を俺たちのよりもずっとひどくだますだろう。"
-            },
-            {
-              "id": "01020-033",
-              "source": "I don’t say that ourn is lambs, because they ain’t, when you come right down to the cold facts; but they ain’t nothing to that old ram, anyway.",
-              "target": "俺たちの王たちが羊だとは言わない。なぜなら、冷静に事実を見ればそうではないからだ。しかし、それでもあの古い雄羊ほどではない。"
-            },
-            {
-              "id": "01020-034",
-              "source": "All I say is, kings is kings, and you got to make allowances.",
-              "target": "俺が言いたいのは、王は王だということで、ある程度の配慮が必要だということだ。"
-            },
-            {
-              "id": "01020-035",
-              "source": "Take them all around, they’re a mighty ornery lot.",
-              "target": "全体的に見れば、彼らはかなり面倒な連中だ。"
-            },
-            {
-              "id": "01020-036",
               "source": "It’s the way they’re raised.”",
-              "target": "それは彼らが育てられた方法だ。」"
+              "target": "それは彼らが育てられた方法だ。"
             }
           ],
           "raw_line": 4906
@@ -40970,6 +40945,6 @@
       "raw_line": 9670
     }
   ],
-  "cost": 2.535,
-  "timestamp": "2025-06-14T04:59:11.914211Z"
+  "cost": 2.534,
+  "timestamp": "2025-06-15T00:07:02.688467Z"
 }

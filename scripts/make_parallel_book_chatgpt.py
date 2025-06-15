@@ -141,7 +141,7 @@ def load_input_data(path):
         value = element.get(name)
         if value is not None:
           attrs[name] = value
-      for name in ["paragraph", "header", "list", "table", "code", "macro"]:
+      for name in ["paragraph", "blockquote", "header", "list", "table", "code", "macro"]:
         value = element.get(name)
         if value:
           tasks.append((name, value, attrs))
@@ -305,7 +305,7 @@ def build_output(input_meta, input_tasks, tasks):
         chapters.append(chapter)
       chapter = chapters[-1]
       raw_line = index_line_map.get(index)
-      if role == "paragraph":
+      if role in ["paragraph", "blockquote"]:
         record = {role: build_text_record(task)}
         if raw_line:
           record["raw_line"] = raw_line
@@ -472,7 +472,8 @@ def get_next_context(sm, index, max_width=200):
 
 
 def make_prompt_enja(book_title, role, source_text,
-                     hint, prev_context, next_context, attempt, jsonize_input):
+                     hint, prev_context, next_context, attempt,
+                     jsonize_input, use_source_example):
   lines = []
   def p(line):
     lines.append(line)
@@ -520,7 +521,7 @@ def make_prompt_enja(book_title, role, source_text,
   p("出力形式はJSONとし、次の要素を含めてください:")
   p('{')
   p('  "translations": [')
-  if role == "paragraph":
+  if role in ["paragraph", "blockquote"]:
     p('    { "en": "原文の文1", "ja": "対応する訳文1" },')
     p('    { "en": "原文の文2", "ja": "対応する訳文2" }')
     p('    // ...')
@@ -532,25 +533,49 @@ def make_prompt_enja(book_title, role, source_text,
   p("")
   p("----")
   if attempt >= 3:
-    p("例を示します:")
-    p('{')
-    p('  "translations": [')
-    if role == "paragraph":
-      p('    { "en": "He said, “Hello, world!”", "ja": "「こんにちは世界！」と彼は言った。" },')
-      p('    { "en": "“Good-bye, world”, I replied.", "ja": "「さよなら世界」と私は応えた。" }')
-      p('    // ...')
+    if use_source_example:
+      translations = []
+      if role in ["paragraph", "blockquote"]:
+        for split_source in split_sentences_english(source_text)[:2]:
+          translation = {
+            "source": split_source,
+            "target": "(sourceの訳文...)",
+          }
+          translations.append(translation)
+      else:
+        translation = {
+          "source": source_text,
+          "target": "(sourceの訳文...)",
+        }
+        translations.append(translation)
+      example = {
+        "translations": translations,
+        "context_hint": "マイケルが言ったことと反対のことをマリアが言うやり取りをしている。",
+      }
+      p("例を示します:")
+      p(json.dumps(example, ensure_ascii=False, indent=2))
+      p("")
+      p("----")
     else:
-      p('    { "en": "He said, “Hello, world!”", "ja": "「こんにちは世界！」と彼は言った。" }')
-    p('  ],')
-    p('  "context_hint": "ジョーが言ったことと反対のことをナンシーが言うやり取りをしている。",')
-    p('}')
-    p("")
-    p("----")
+      p("例を示します:")
+      p('{')
+      p('  "translations": [')
+      if role in ["paragraph", "blockquote"]:
+        p('    { "en": "He said, “Hello, world!”", "ja": "「こんにちは世界！」と彼は言った。" },')
+        p('    { "en": "“Good-bye, world”, I replied.", "ja": "「さよなら世界」と私は応えた。" }')
+        p('    // ...')
+      else:
+        p('    { "en": "He said, “Hello, world!”", "ja": "「こんにちは世界！」と彼は言った。" }')
+      p('  ],')
+      p('  "context_hint": "ジョーが言ったことと反対のことをナンシーが言うやり取りをしている。",')
+      p('}')
+      p("")
+      p("----")
   if role == "book_title":
     p("このパラグラフは本の題名です。")
   if role == "chapter_title":
     p("このパラグラフは章の題名です。")
-  if role == "paragraph":
+  if role in ["paragraph", "blockquote"]:
     p("英文は意味的に自然な単位で文分割してください。たとえ短い文でも、文とみなせれば独立させてください。")
     p("ただし、分割の際に元の英文を1文字も変更しないでください。句読点や引用符も含めて全て保持してください。")
     if attempt >= 3 and regex.search(r"\p{Quotation_Mark}", source_text):
@@ -589,6 +614,8 @@ def calculate_chatgpt_cost(prompt, response, model):
 
 
 def validate_content(role, source_text, content):
+  def first_text(text):
+    return regex.sub(r"\s", "", text)[:8]
   def normalize_text(text):
     return regex.sub(r"\s+", " ", text).lower().strip()
   def extract_marks(text):
@@ -596,6 +623,11 @@ def validate_content(role, source_text, content):
   def extract_verticals(text):
     return regex.sub(r"[^|]", "", text)
   joint_text = " ".join([x["source"] for x in content])
+  first_orig = first_text(source_text)
+  first_proc = first_text(joint_text)
+  if first_orig != first_proc:
+    logger.debug(f"First text diff: {first_orig} vs {first_proc}")
+    return False
   norm_orig = normalize_text(source_text)
   norm_proc = normalize_text(joint_text)
   distance = Levenshtein.distance(norm_orig, norm_proc)
@@ -625,7 +657,8 @@ def validate_content(role, source_text, content):
 
 
 def execute_task_by_chatgpt_enja(
-    book_title, role, source_text, hint, prev_context, next_context, main_model, failsoft, no_fallback):
+    book_title, role, source_text, hint, prev_context, next_context, main_model,
+    failsoft, no_fallback):
   latins = regex.sub(r"[^\p{Latin}]", "", source_text)
   if len(latins) < 2:
     logger.debug(f"Not English: intact data is generated")
@@ -648,11 +681,13 @@ def execute_task_by_chatgpt_enja(
         models.append(name)
         break
   for model in models:
-    configs = [(0.0, True), (0.0, False), (0.4, True), (0.4, False),
-               (0.8, True), (0.8, False)]
-    for attempt, (temp, jsonize_input) in enumerate(configs, 1):
+    configs = [(0.0, True, False), (0.0, False, False),
+               (0.4, True, False), (0.4, False, False),
+               (0.8, True, True), (0.8, False, True)]
+    for attempt, (temp, jsonize_input, use_source_example) in enumerate(configs, 1):
       prompt = make_prompt_enja(
-        book_title, role, source_text, hint, prev_context, next_context, attempt, jsonize_input)
+        book_title, role, source_text, hint, prev_context, next_context, attempt,
+        jsonize_input, use_source_example)
       logger.debug(f"Prompt:\n{prompt}")
       try:
         client = OpenAI(api_key=OPENAI_API_KEY).with_options(timeout=30)

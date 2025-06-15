@@ -57,7 +57,7 @@
             {
               "id": "00005-000",
               "source": "I replied, \"This is the second paragraph. I'm not sure though.\"",
-              "target": "私は答えました。「これが2番目の段落です。でも、確信はありません。」"
+              "target": "私は答えた。「これが2番目の段落です。でも、確信は持てません。」"
             },
             {
               "id": "00005-001",
@@ -71,7 +71,7 @@
           "macro": {
             "id": "00006-000",
             "name": "image",
-            "value": "https://dbmx.net/parallelbook/logo.png"
+            "value": "https://dbmx.net/parallelbook/logo.png sample logo"
           },
           "raw_line": 17
         },
@@ -94,14 +94,29 @@
       },
       "body": [
         {
-          "list": [
+          "blockquote": [
             {
               "id": "00009-000",
-              "source": "Hop. Step. Jump! Each item in the list are not segmented.",
-              "target": "ホップ。ステップ。ジャンプ！リスト内の各項目は分割されません。"
+              "source": "Lines in blockquotes are also concatenated and translated.",
+              "target": ">ブロック引用内の行も連結されて翻訳されます。"
             },
             {
+              "id": "00009-001",
+              "source": "A whitespace must follow \">\".",
+              "target": ">の後には空白を入れる必要があります。"
+            }
+          ],
+          "raw_line": 22
+        },
+        {
+          "list": [
+            {
               "id": "00010-000",
+              "source": "Hop. Step. Jump! Each item in the list are not segmented.",
+              "target": "ホップ。ステップ。ジャンプ！リスト内の各アイテムは分割されません。"
+            },
+            {
+              "id": "00011-000",
               "source": "Saitama, Saitama? A whitespace must follow \"-\".",
               "target": "埼玉、埼玉？「-」の後には空白が必要です。"
             }
@@ -112,51 +127,51 @@
           "table": [
             [
               {
-                "id": "00011-000",
+                "id": "00012-000",
                 "source": "symbol",
                 "target": "記号"
               },
               {
-                "id": "00011-001",
+                "id": "00012-001",
                 "source": "name",
                 "target": "名前"
               },
               {
-                "id": "00011-002",
+                "id": "00012-002",
                 "source": "number",
                 "target": "番号"
               }
             ],
             [
               {
-                "id": "00012-000",
+                "id": "00013-000",
                 "source": "Au",
                 "target": "Au"
               },
               {
-                "id": "00012-001",
+                "id": "00013-001",
                 "source": "gold",
                 "target": "金"
               },
               {
-                "id": "00012-002",
+                "id": "00013-002",
                 "source": "79",
                 "target": "79"
               }
             ],
             [
               {
-                "id": "00013-000",
+                "id": "00014-000",
                 "source": "Ag",
                 "target": "Ag"
               },
               {
-                "id": "00013-001",
+                "id": "00014-001",
                 "source": "silver",
                 "target": "銀"
               },
               {
-                "id": "00013-002",
+                "id": "00014-002",
                 "source": "47",
                 "target": "47"
               }
@@ -166,7 +181,7 @@
         },
         {
           "code": {
-            "id": "00014-000",
+            "id": "00015-000",
             "code": "one\ntwo two\n\nthree three three"
           },
           "raw_line": 32
@@ -175,6 +190,6 @@
       "raw_line": 20
     }
   ],
-  "cost": 0.004,
-  "timestamp": "2025-06-13T15:36:35.768991Z"
+  "cost": 0.005,
+  "timestamp": "2025-06-14T18:09:17.019869Z"
 }

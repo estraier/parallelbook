@@ -16376,8 +16376,8 @@
     {
       "title": {
         "id": "01129-000",
-        "source": "GLINDA THE GOOD WITCH GRANTS DOROTHY’S WISH",
-        "target": "グリンダ善き魔女がドロシーの願いを叶える"
+        "source": "23: GLINDA THE GOOD WITCH GRANTS DOROTHY’S WISH",
+        "target": "23: 良い魔女グリンダがドロシーの願いを叶える"
       },
       "body": [
         {
@@ -17004,6 +17004,6 @@
       "raw_line": 3576
     }
   ],
-  "cost": 1.167,
-  "timestamp": "2025-06-13T12:04:20.089948Z"
+  "cost": 1.172,
+  "timestamp": "2025-06-15T00:08:57.980944Z"
 }

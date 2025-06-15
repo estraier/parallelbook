@@ -5,12 +5,12 @@
   "title": {
     "id": "00000-000",
     "source": "Anne of the Island",
-    "target": "『アンの島』"
+    "target": "島のアン"
   },
   "author": {
     "id": "00001-000",
     "source": "Lucy Maud Montgomery",
-    "target": "ルーシー・モード・モンゴメリー"
+    "target": "ルーシー・モード・モンゴメリ"
   },
   "chapters": [
     {
@@ -36534,6 +36534,6 @@
       "raw_line": 7587
     }
   ],
-  "cost": 2.164,
-  "timestamp": "2025-06-12T19:05:35.351731Z"
+  "cost": 2.168,
+  "timestamp": "2025-06-15T00:27:51.794391Z"
 }

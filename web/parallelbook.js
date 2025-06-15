@@ -115,8 +115,7 @@ async function loadAndRenderParallelBook(contentElementId, bookId, bookUrl, mode
 function setGlobalKeyEvents() {
   document.lastFocused = null;
   document.addEventListener("keydown", (event) => {
-    const isTab = event.key === "Tab";
-    if (!isTab) return;
+    if (event.key !== "Tab") return;
     const active = document.activeElement;
     const bodyOrNull = (active === document.body || active === null);
     if (bodyOrNull && document.lastFocused) {
