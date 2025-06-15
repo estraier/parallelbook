@@ -17,7 +17,7 @@ parallelbookは、AIを使って対訳本を作る作るプロジェクトです
 
 対訳コーパス形式の教材は巷に多くありますが、文章全体の対訳が並べられているものが多いです。それだと、原文で分からない文に出会った時に、訳文の中の該当文を探すのが面倒です。それに対策すべく、このプロジェクトでは、原文と訳文を文単位で対応付けます。躓きそうな時に即座に救いがあることで、多少難しい英文でも読み進められるようになります。
 
-このプロジェクトは、生成機能群と変換機能群から構成されます。生成機能群はプレーンテキストやJSONの入力データを読み込んで、AIで処理してJSONの中間データを作ります。変換機能群は、JSONの中間データを読み込んで、HTMLやEPUBなどの出力データを作ります。
+このプロジェクトは、生成機能群と変換機能群から構成されます。生成機能群はプレーンテキストやJSONの入力データを読み込んで、AIで処理してJSONの対訳データを作ります。変換機能群は、JSONの対訳データを読み込んで、HTMLやEPUBなどの出力データを作ります。
 
 ## インストール
 
@@ -57,13 +57,13 @@ Dr. Slump said, “We did it!” I was surprised.
 
 パラグラフは空行で区切られます。1つのパラグラフの中に任意の数の文が書けます。
 
-以下のコマンドを実行して、JSON形式に変換します。
+以下のコマンドを実行して、ソースJSON形式に変換します。
 
 ```shell
 ./scripts/jsonize_plaintext.py < minimum-raw.txt > minimum-source.json
 ```
 
-生成されたminimum-source.jsonの中身は以下のようになるはずです。何らかの方法でこの書式のJSONファイルを直接作っても構いません。raw_line要素はデバッグのためだけにあるので、省略しても構いません。
+生成されたminimum-source.jsonの中身は以下のようになるはずです。何らかの方法でこの書式のソースJSONファイルを直接作っても構いません。raw_line要素はデバッグのためだけにあるので、省略しても構いません。
 
 ```json
 {
@@ -85,7 +85,7 @@ Dr. Slump said, “We did it!” I was surprised.
 }
 ```
 
-以下のコマンドを実行して、ChatGPTで翻訳を行い、結果のJSONファイルを生成します。
+以下のコマンドを実行して、ChatGPTで翻訳を行い、結果の対訳JSONファイルを生成します。
 
 ```shell
 ./scripts/make_parallel_book_chatgpt.py minimum-source.json
@@ -162,7 +162,7 @@ This project provides scripts to make parallel books from arbitrary contents.  A
 This software is distributed under the terms of Apache License version 2.0.  Sample data in this project are in public domain.  So, both can be redestributed freely without additional permissions.
 ```
 
-以下のコマンドを実行して、JSON形式に変換します。
+以下のコマンドを実行して、ソースJSON形式に変換します。
 
 ```shell
 ./scripts/jsonize_plaintext.py < basic-raw.txt > basic-source.json
@@ -204,7 +204,7 @@ This software is distributed under the terms of Apache License version 2.0.  Sam
 }
 ```
 
-以下のコマンドを実行して、ChatGPTで翻訳を行い、結果のJSONファイルを生成します。
+以下のコマンドを実行して、ChatGPTで翻訳を行い、結果の対訳JSONファイルを生成します。
 
 ```
 ./scripts/make_parallel_book_chatgpt.py basic-source.json
@@ -459,7 +459,7 @@ TBD.
 
 ### jsonize_plaintext.py
 
-jsonize_plaintext.pyは、Markdown風のテキストファイルを読んで、その内容を元に対訳処理の入力用のJSONデータを生成するスクリプトです。入力データは標準入力から読み込み、出力データは標準出力に書き込みます。よって、以下のように実行します。
+jsonize_plaintext.pyは、Markdown風のテキストファイルを読んで、その内容を元に対訳処理の入力用のJSONデータを生成するスクリプトです。このデータ形式をソースJSON形式と呼びます。入力データは標準入力から読み込み、出力データは標準出力に書き込みます。よって、以下のように実行します。
 
 ```shell
 jsonize_plaintext.py < sample-raw.txt > sample-source.json
@@ -523,9 +523,9 @@ three three three
 
 ### make_parallel_book_chatgpt.py
 
-make_parallel_book_chatgpt.pyは、jsonize_plaintext.pyが生成したJSONファイルを読んで、その内容を元に対訳データを生成するスクリプトです。対訳データの生成にはChatGPTを用います。
+make_parallel_book_chatgpt.pyは、jsonize_plaintext.pyが生成したソースJSONファイルを読んで、その内容を元に対訳データを生成するスクリプトです。対訳データの生成にはChatGPTを用います。
 
-前提として、環境変数OPENAI_API_KEYの値にOpenAIのAPIキーが設定されている必要があります。そのうえで、原文データのJSONファイルを指定して実行すると、そのファイル名から拡張子と "-source" を抜いた文字列に "-parallel.json" をつけた名前で翻訳データのJSONファイルが生成されます。以下のコマンドを実行すると、sample-parallel.jsonが生成されます。
+前提として、環境変数OPENAI_API_KEYの値にOpenAIのAPIキーが設定されている必要があります。そのうえで、ソースJSONファイルを指定して実行すると、そのファイル名から拡張子と "-source" を抜いた文字列に "-parallel.json" をつけた名前で翻訳データのJSONファイルが生成されます。以下のコマンドを実行すると、sample-parallel.jsonが生成されます。
 
 ```shell
 make_parallel_book_chatgpt.py sample-source.json
