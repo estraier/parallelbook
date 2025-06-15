@@ -812,14 +812,15 @@ def main():
   if args.debug:
     logger.setLevel(logging.DEBUG)
   input_path = Path(args.input_file)
+  input_stem = regex.sub(r"-(source|input)", "", input_path.stem)
   if args.output:
     output_path = Path(args.output)
   else:
-    output_path = input_path.with_name(input_path.stem + "-parallel.json")
+    output_path = input_path.with_name(input_stem + "-parallel.json")
   if args.state:
     state_path = Path(args.state)
   else:
-    state_path = input_path.with_name(input_path.stem + "-state.db")
+    state_path = input_path.with_name(input_stem + "-state.db")
   logger.info(f"Loading data from {input_path}")
   input_meta, input_tasks = load_input_data(input_path)
   sm = StateManager(state_path)

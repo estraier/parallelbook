@@ -47,7 +47,7 @@ export OPENAI_API_KEY="sk-proj-xxxxxxxxxxx"
 
 ## 生成機能群のチュートリアル
 
-まず、原文のデータを作りましょう。以下のようなプレーンテキストのファイルを用意します。minimum-raw.jsonという名前で保存しましょう。samplesディレクトリの中に同じものがあります。
+まず、原文のデータを作りましょう。以下のようなプレーンテキストのファイルを用意します。minimum-raw.txtという名前で保存しましょう。samplesディレクトリの中に同じものがあります。
 
 ```
 Hello, world. We love translation.
@@ -60,10 +60,10 @@ Dr. Slump said, “We did it!” I was surprised.
 以下のコマンドを実行して、JSON形式に変換します。
 
 ```shell
-./scripts/jsonize_plaintext.py < minimum-raw.txt > minimum.json
+./scripts/jsonize_plaintext.py < minimum-raw.txt > minimum-source.json
 ```
 
-生成されたminimum.jsonの中身は以下のようになるはずです。何らかの方法でこの書式のJSONファイルを直接作っても構いません。raw_line要素はデバッグのためだけにあるので、省略しても構いません。
+生成されたminimum-source.jsonの中身は以下のようになるはずです。何らかの方法でこの書式のJSONファイルを直接作っても構いません。raw_line要素はデバッグのためだけにあるので、省略しても構いません。
 
 ```json
 {
@@ -88,7 +88,7 @@ Dr. Slump said, “We did it!” I was surprised.
 以下のコマンドを実行して、ChatGPTで翻訳を行い、結果のJSONファイルを生成します。
 
 ```shell
-./scripts/make_parallel_book_chatgpt.py minimum.json
+./scripts/make_parallel_book_chatgpt.py minimum-source.json
 ```
 
 生成されたminimum-parallel.jsonの中身は以下のようになるはずです。
@@ -165,10 +165,10 @@ This software is distributed under the terms of Apache License version 2.0.  Sam
 以下のコマンドを実行して、JSON形式に変換します。
 
 ```shell
-./scripts/jsonize_plaintext.py < basic-raw.txt > basic.json
+./scripts/jsonize_plaintext.py < basic-raw.txt > basic-source.json
 ```
 
-生成されたbasic.jsonの中身は以下のようになるはずです。タイトルなどのメタデータが反映され、章ごとにタイトルとパラグラフのリストが保持されていることを確認してください。
+生成されたbasic-source.jsonの中身は以下のようになるはずです。タイトルなどのメタデータが反映され、章ごとにタイトルとパラグラフのリストが保持されていることを確認してください。
 
 ```json
 {
@@ -207,7 +207,7 @@ This software is distributed under the terms of Apache License version 2.0.  Sam
 以下のコマンドを実行して、ChatGPTで翻訳を行い、結果のJSONファイルを生成します。
 
 ```
-./scripts/make_parallel_book_chatgpt.py basic.json
+./scripts/make_parallel_book_chatgpt.py basic-source.json
 ```
 
 生成されたbasic-parallel.jsonの中身は以下のようになるはずです。
@@ -319,7 +319,7 @@ This software is distributed under the terms of Apache License version 2.0.  Sam
 実行時のログを見てみましょう。全てが正常に進む場合、以下のようなログが出ます。
 
 ```
-Loading data from basic.json
+Loading data from basic-source.json
 Total tasks: 7
 Title: How to Make Parallel Books
 GPT models: gpt-3.5-turbo
@@ -339,11 +339,11 @@ Finished
 デフォルトでは、gpt-3.5-turboというモデルが使われます。これは多くのタスクで十分な精度で、かつ安いのが利点です。費用は多くかかりますが、より高精度な結果が欲しいのであれば、gpt-4oを使うのも良いでしょう。以下のように実行します。
 
 ```
-./scripts/make_parallel_book_chatgpt.py basic.json --model gpt-4o
+./scripts/make_parallel_book_chatgpt.py basic-source.json --model gpt-4o
 ```
 
 ```
-Loading data from basic.json
+Loading data from basic-source.json
 Total tasks: 7
 Title: How to Make Parallel Books
 GPT models: gpt-4o
@@ -374,13 +374,13 @@ gpt-3.5-turboでは$0.0038（0.6円）だったのに、gpt-4oだと$0.0341（5.
 その場合、タスク35をやり直すことになるでしょう。--redoオプションに、タスクIDを指定します。35,128,247のように、複数のタスクIDを指定することもできます。
 
 ```
-./scripts/make_parallel_book_chatgpt.py basic.json --model gpt-4o --redo 35
+./scripts/make_parallel_book_chatgpt.py basic-source.json --model gpt-4o --redo 35
 ```
 
 タスクの中には、ChatGPTがうまく扱えないものもあるかもしれません。ChatGPTにはJSONの結果を返すように指示していますが、その生成がうまくいかない場合には、プロンプトやパラメータを調整して自動的に再試行がなされます。6回の再試行を経ても失敗する場合には、モデルを変えてさらに6回の再試行を行い、処理を完遂させます。
 
 ```
-Loading data from basic.json
+Loading data from basic-source.json
 Total tasks: 7
 Title: How to Make Parallel Books
 GPT models: gpt-3.5-turbo
@@ -406,7 +406,7 @@ Finished
 プロンプトやパラメータやモデルを変えて合計12回の試行をしてもうまくいかない場合、その場で処理が停止します。
 
 ```
-Loading data from basic.json
+Loading data from basic-source.json
 Total tasks: 7
 Title: How to Make Parallel Books
 GPT models: gpt-3.5-turbo
@@ -462,7 +462,7 @@ TBD.
 jsonize_plaintext.pyは、Markdown風のテキストファイルを読んで、その内容を元に対訳処理の入力用のJSONデータを生成するスクリプトです。入力データは標準入力から読み込み、出力データは標準出力に書き込みます。よって、以下のように実行します。
 
 ```shell
-jsonize_plaintext.py < sample-raw.txt > sample.json
+jsonize_plaintext.py < sample-raw.txt > sample-source.json
 ```
 
 入力の形式は、Markdownのサブセットです。以下のデータはその全ての機能を使っています。
@@ -525,10 +525,10 @@ three three three
 
 make_parallel_book_chatgpt.pyは、jsonize_plaintext.pyが生成したJSONファイルを読んで、その内容を元に対訳データを生成するスクリプトです。対訳データの生成にはChatGPTを用います。
 
-前提として、環境変数OPENAI_API_KEYの値にOpenAIのAPIキーが設定されている必要があります。そのうえで、原文データのJSONファイルを指定して実行すると、そのファイル名に "-parallel.json" をつけた名前で翻訳データのJSONファイルが生成されます。以下のコマンドを実行すると、sample-parallel.jsonが生成されます。
+前提として、環境変数OPENAI_API_KEYの値にOpenAIのAPIキーが設定されている必要があります。そのうえで、原文データのJSONファイルを指定して実行すると、そのファイル名から拡張子と "-source" を抜いた文字列に "-parallel.json" をつけた名前で翻訳データのJSONファイルが生成されます。以下のコマンドを実行すると、sample-parallel.jsonが生成されます。
 
 ```shell
-make_parallel_book_chatgpt.py sample.json
+make_parallel_book_chatgpt.py sample-source.json
 ```
 
 本スクリプトは、パラグラフ単位でChatGPTを呼び出して翻訳を行います。文単位ではなくパラグラフ単位で翻訳することで、文脈を加味した翻訳が可能になります。語彙の曖昧性や代名詞の曖昧性を解決するには、ある程度大きい単位で翻訳するのが有利です。さらに、プロンプトの中に文脈情報として以下のものを加えています。
