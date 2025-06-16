@@ -31,6 +31,7 @@ body {
   opacity: 0.9;
 }
 .parallel-book-navi select {
+  max-width: 24ex;
   font-size: 105%;
 }
 

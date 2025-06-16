@@ -38,8 +38,10 @@ function renderSelector(
   }
   selectorEl.className = "parallel-book-navi";
   selectorEl.innerHTML = "";
+  const firstRow = document.createElement("div");
+  firstRow.className = "navi-first-row";
   const bookSelect = document.createElement("select");
-  bookSelect.id = "book-selector";
+  bookSelect.id = selectorElementId + "-book";
   const bookDefaultOption = document.createElement("option");
   bookDefaultOption.value = "";
   bookDefaultOption.textContent = "-- 書籍選択 --";
@@ -53,9 +55,16 @@ function renderSelector(
     }
     bookSelect.appendChild(option);
   }
-  selectorEl.appendChild(bookSelect);
+  const fileOption = document.createElement("option");
+  fileOption.value = "__file__";
+  fileOption.textContent = "（JSONファイル）"
+  if (queryBookId === fileOption.value) {
+    fileOption.selected = true;
+  }
+  bookSelect.appendChild(fileOption);
+  firstRow.appendChild(bookSelect);
   const modeSelect = document.createElement("select");
-  modeSelect.id = "display-mode-selector";
+  modeSelect.id = selectorElementId + "-mode";
   const modes = [
     ["both", "英日併記"],
     ["en", "英語のみ"],
@@ -70,13 +79,22 @@ function renderSelector(
     }
     modeSelect.appendChild(option);
   }
-  selectorEl.appendChild(modeSelect);
+  firstRow.appendChild(modeSelect);
+  selectorEl.appendChild(firstRow);
   bookSelect.addEventListener("change", () => {
     if (!bookSelect.value || bookSelect.value.length == 0) return;
-    const book = bookList[bookSelect.value];
-    if (!book) return;
-    updateUrlParam(bookParamName, bookSelect.value);
-    loadAndRenderParallelBook(contentElementId, bookSelect.value, book[1], modeSelect.value);
+    updateFileInput(selectorElementId, contentElementId);
+    if (bookSelect.value === fileOption.value) {
+      updateUrlParam(bookParamName, fileOption.value);
+      updateFileInput(selectorElementId, contentElementId, true);
+    } else {
+      updateFileInput(selectorElementId, contentElementId, false);
+      const book = bookList[bookSelect.value];
+      if (book) {
+        updateUrlParam(bookParamName, bookSelect.value);
+        loadAndRenderParallelBook(contentElementId, bookSelect.value, book[1], modeSelect.value);
+      }
+    }
   });
   modeSelect.addEventListener("change", () => {
     const mode = modeSelect.value;
@@ -88,6 +106,56 @@ function renderSelector(
     }
     updateUrlParam(modeParamName, modeSelect.value);
   });
+  const isFile = bookSelect.value === fileOption.value
+  updateFileInput(selectorElementId, contentElementId, isFile);
+}
+
+function updateFileInput(selectorElementId, contentElementId, show) {
+  const selectorEl = document.getElementById(selectorElementId);
+  if (!selectorEl) {
+    console.error(`No container element: ${selectorElementId}`);
+    return;
+  }
+  const oldRow = selectorEl.querySelector('.file-row');
+  if (oldRow) {
+    oldRow.remove(oldRow);
+  }
+  if (!show) return;
+  const row = document.createElement("div");
+  row.className = "file-row";
+  const fileInput = document.createElement("input");
+  fileInput.type = "file";
+  fileInput.accept = ".json";
+  fileInput.id = selectorElementId + "-file";
+  row.appendChild(fileInput);
+  selectorEl.appendChild(row);
+  fileInput.addEventListener("change", function (event) {
+    const modeSelect = document.getElementById(selectorElementId + "-mode");
+    const mode = modeSelect ? modeSelect.value : "both";
+    const file = event.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = function (e) {
+      try {
+        const result = e.target.result;
+        const bookId = hashString(result);
+        const bookContent = JSON.parse(result);
+        renderParallelBookContent(contentElementId, bookId, bookContent, mode);
+      } catch (err) {
+        console.error("JSON error")
+      }
+    };
+    reader.readAsText(file);
+  });
+}
+
+function hashString(str) {
+  let hash = 0;
+  for (let i = 0; i < str.length; i++) {
+    hash = (hash << 5) - hash + str.charCodeAt(i);
+    hash |= 0;
+  }
+  return Math.abs(hash).toString(36);
 }
 
 async function loadAndRenderParallelBook(contentElementId, bookId, bookUrl, mode) {
