@@ -206,7 +206,7 @@ This software is distributed under the terms of Apache License version 2.0.  Sam
 
 以下のコマンドを実行して、ChatGPTで翻訳を行い、結果の対訳JSONファイルを生成します。
 
-```
+```shell
 ./scripts/make_parallel_book_chatgpt.py basic-source.json
 ```
 
@@ -338,7 +338,7 @@ Finished
 
 デフォルトでは、gpt-3.5-turboというモデルが使われます。これは多くのタスクで十分な精度で、かつ安いのが利点です。費用は多くかかりますが、より高精度な結果が欲しいのであれば、gpt-4oを使うのも良いでしょう。以下のように実行します。
 
-```
+```shell
 ./scripts/make_parallel_book_chatgpt.py basic-source.json --model gpt-4o
 ```
 
@@ -883,7 +883,23 @@ body要素の中には、レンダリングを行う要素を書きます。こ�
 ./scripts/make_parallel_epub.py basic-parallel.json
 ```
 
-そうすると、basic-parallel.epubというファイルが出来上がります。これを適当な電子書籍リーダに読み込めば、対訳本として読めます。Kindleの場合、[Send-to-Kindle](https://www.amazon.co.jp/sendtokindle)にアップロードするか端末のメールアドレスに送信すれば、AZW3形式に変換されたデータが端末に送信されます。
+そうすると、basic-parallel.epubというファイルが出来上がります。
+
+```
+Loading data from basic-parallel.json
+Preparing the directory as basic-parallel-epub
+Writing the navigation file as basic-parallel-epub/OEBPS/nav.xhtml
+Writing the chapter file as basic-parallel-epub/OEBPS/text/chapter-001.xhtml
+Writing the chapter file as basic-parallel-epub/OEBPS/text/chapter-002.xhtml
+Writing the style file as basic-parallel-epub/OEBPS/css/style.css
+Writing the OPF file as basic-parallel-epub/OEBPS/content.opf
+Writing the container file as basic-parallel-epub/META-INF/container.xml
+Writing the EPUB file as basic-parallel.epub
+```
+
+これを適当な電子書籍リーダに読み込めば、対訳本として読めます。Kindleの場合、[Send-to-Kindle](https://www.amazon.co.jp/sendtokindle)にアップロードするか端末のメールアドレスに送信すれば、AZW3形式に変換されたデータが端末に送信されます。
+
+
 
 ## 変換機能群の仕様
 
@@ -900,3 +916,16 @@ parallelbook.jsは、任意のWebページに対訳コーパスを表示する�
 parallelbook.cssは、renderParallelBookが表示した対訳本のスタイルを設定する。このファイルを編集すると、文字の色や大きさや文書の幅などの様々な設定をカスタマイズできる。
 
 書籍パラメータ名が "book" でモードパラメータ名が "mode" の場合、URLのクエリ部分に "?book=anne01&mode=en" などとすることで、初期状態で該当の書籍を表示できます。その場合、書籍選択セレクタを省略しても機能します。
+
+### make_parallel_epub.py
+
+make_parallel_epub.pyは、対訳JSONデータを読んでEPUBファイルを生成する機能です。EPUBファイルは、XHTMLやCSSで電子書籍の内容を表現し、XMLのメタデータと合わせて特定のディレクトリ構造に配置したデータを、ZIP形式でアーカイブしたものです。対訳JSONファイルを指定して実行すると、その拡張子を抜いて "-epub" を付けたディレクトリの中にEPUBのデータが作成され、"-epub" を ".epub" に変えたアーカイブファイルが作成されます。
+
+```shell
+./scripts/make_parallel_epub.py basic-parallel.json
+```
+
+make_parallel_epub.pyは以下のオプションを備えます。
+
+- --output OUTPUT : 出力ファイルを明示的に指定します。
+- --working OUTPUT : 作業用ディレクトリを明示的に指定します。

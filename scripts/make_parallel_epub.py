@@ -246,11 +246,7 @@ def main():
                       help="path of the output EPUB file")
   parser.add_argument("--working", default=None,
                       help="path of the working EPUB directory")
-  parser.add_argument("--debug", action="store_true",
-                      help="prints the debug messages too")
   args = parser.parse_args()
-  if args.debug:
-    logger.setLevel(logging.DEBUG)
   input_path = Path(args.input_file)
   input_stem = input_path.stem
   input_stem = re.sub(r"-(epub)", "", input_path.stem)
