@@ -11,7 +11,7 @@
           "raw_line": 8
         },
         {
-          "paragraph": "This is paragraph one. \"Baby steps to giant strides!\", he said. Contiguous lines are concatened into one paragraph. So, you can fold them by a single linefeed.",
+          "paragraph": "This is paragraph one. \"Baby steps to giant strides!\", he said. Contiguous lines are concatenated. into one paragraph. So, you can fold them by a single linefeed.",
           "raw_line": 10
         },
         {

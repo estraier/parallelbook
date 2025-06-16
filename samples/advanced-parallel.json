@@ -41,8 +41,8 @@
             },
             {
               "id": "00004-002",
-              "source": "Contiguous lines are concatened into one paragraph.",
-              "target": "隣接する行は1つの段落に結合されます。"
+              "source": "Contiguous lines are concatenated into one paragraph.",
+              "target": "隣接する行は1つの段落に連結されます。"
             },
             {
               "id": "00004-003",
@@ -196,5 +196,5 @@
     }
   ],
   "cost": 0.005,
-  "timestamp": "2025-06-15T03:05:28.963554Z"
+  "timestamp": "2025-06-15T18:12:58.903642Z"
 }

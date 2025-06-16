@@ -877,6 +877,14 @@ body要素の中には、レンダリングを行う要素を書きます。こ�
 <article id="parallel-book-content" aria-label="書籍本文表示エリア" lang="zxx"></article>
 ```
 
+対訳データを電子書籍リーダで読むためのEPUB形式に変換することもできます。対訳JSONファイルを指定してコマンドを実行するだけです。
+
+```shell
+./scripts/make_parallel_epub.py basic-parallel.json
+```
+
+そうすると、basic-parallel.epubというファイルが出来上がります。これを適当な電子書籍リーダに読み込めば、対訳本として読めます。Kindleの場合、[Send-to-Kindle](https://www.amazon.co.jp/sendtokindle)にアップロードするか端末のメールアドレスに送信すれば、AZW3形式に変換されたデータが端末に送信されます。
+
 ## 変換機能群の仕様
 
 ### parallelbook.js
