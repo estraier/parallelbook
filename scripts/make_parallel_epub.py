@@ -13,11 +13,6 @@ from pathlib import Path
 import uuid
 import xml.etree.ElementTree as ET
 from xml.dom import minidom
-from xml.dom import minidom
-from xml.dom import minidom
-from xml.dom import minidom
-from xml.dom import minidom
-from xml.etree.ElementTree import Element, SubElement, ElementTree
 import zipfile
 
 
@@ -86,59 +81,59 @@ def make_nav_file(output_path, book):
 
 
 def create_parallel_element(tag, class_name, source, target):
-  container = Element(tag, {"class": f"{class_name} parallel"})
-  source_span = SubElement(container, "span", {"class": "source", "lang": "en"})
+  container = ET.Element(tag, {"class": f"{class_name} parallel"})
+  source_span = ET.SubElement(container, "span", {"class": "source", "lang": "en"})
   source_span.text = source
-  target_span = SubElement(container, "span", {"class": "target", "lang": "ja"})
+  target_span = ET.SubElement(container, "span", {"class": "target", "lang": "ja"})
   target_span.text = target
   return container
 
 
 def make_chapter_file(output_path, chapter, chapter_num):
   chapter_title = chapter.get("title", {}).get("source") or f"Chapter {chapter_num}"
-  html = Element("html", {
+  html = ET.Element("html", {
     "xmlns": "http://www.w3.org/1999/xhtml",
     "xml:lang": "en",
     "lang": "en"
   })
-  head = SubElement(html, "head")
-  SubElement(head, "meta", {"charset": "utf-8"})
-  SubElement(head, "title").text = chapter_title
-  SubElement(head, "link", {
+  head = ET.SubElement(html, "head")
+  ET.SubElement(head, "meta", {"charset": "utf-8"})
+  ET.SubElement(head, "title").text = chapter_title
+  ET.SubElement(head, "link", {
     "rel": "stylesheet",
     "href": "../css/style.css",
     "type": "text/css"
   })
-  body = SubElement(html, "body")
+  body = ET.SubElement(html, "body")
   if "title" in chapter:
-    SubElement(body, "h2").append(create_parallel_element(
+    ET.SubElement(body, "h2").append(create_parallel_element(
       "span", "title", chapter["title"]["source"], chapter["title"]["target"]))
   for block in chapter["body"]:
     if "header" in block:
-      el = SubElement(body, "h3")
+      el = ET.SubElement(body, "h3")
       el.append(create_parallel_element(
         "span", "header", block["header"]["source"], block["header"]["target"]))
     elif "paragraph" in block:
-      p = SubElement(body, "p", {"class": "paragraph"})
+      p = ET.SubElement(body, "p", {"class": "paragraph"})
       for item in block["paragraph"]:
         p.append(create_parallel_element("span", "sentence", item["source"], item["target"]))
     elif "blockquote" in block:
-      bq = SubElement(body, "blockquote", {"class": "blockquote"})
+      bq = ET.SubElement(body, "blockquote", {"class": "blockquote"})
       for item in block["blockquote"]:
         bq.append(create_parallel_element("span", "sentence", item["source"], item["target"]))
     elif "list" in block:
-      ul = SubElement(body, "ul", {"class": "list"})
+      ul = ET.SubElement(body, "ul", {"class": "list"})
       for item in block["list"]:
-        li = SubElement(ul, "li")
+        li = ET.SubElement(ul, "li")
         li.append(create_parallel_element("span", "sentence", item["source"], item["target"]))
     elif "table" in block:
-      table = SubElement(body, "table", {"class": "table"})
+      table = ET.SubElement(body, "table", {"class": "table"})
       for row in block["table"]:
-        tr = SubElement(table, "tr")
+        tr = ET.SubElement(table, "tr")
         for cell in row:
-          td = SubElement(tr, "td")
+          td = ET.SubElement(tr, "td")
           td.append(create_parallel_element("span", "sentence", cell["source"], cell["target"]))
-  tree = ElementTree(html)
+  tree = ET.ElementTree(html)
   with open(output_path, "w", encoding="utf-8") as f:
     f.write(prettify(tree.getroot()))
 
