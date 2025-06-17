@@ -25,7 +25,7 @@ function web {
     cp samples/*-parallel.json books/*-parallel.json web/books
 }
 
-function web-clean {
+function clean_web {
     rm -rf web/books
 }
 
@@ -55,7 +55,7 @@ case "$mode" in
         web
         ;;
     web-clean)
-        web-clean
+        clean_web
         ;;
     epub)
         build_epub
@@ -64,8 +64,8 @@ case "$mode" in
         clean_epub
         ;;
     clean)
-        web-clean
-        epub-clean
+        clean_web
+        clean_epub
         ;;
     "")
         echo "specify a mode"
