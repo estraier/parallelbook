@@ -11,6 +11,11 @@ import sys
 from pathlib import Path
 import uuid
 import xml.etree.ElementTree as ET
+from xml.dom import minidom
+from xml.dom import minidom
+from xml.dom import minidom
+from xml.dom import minidom
+from xml.dom import minidom
 from xml.etree.ElementTree import Element, SubElement, ElementTree
 import zipfile
 
@@ -44,6 +49,12 @@ def prepare_working_directories(root_path):
   (root_path / "OEBPS" / "text").mkdir(parents=True, exist_ok=True)
 
 
+def prettify(elem):
+  rough_string = ET.tostring(elem, encoding='utf-8')
+  parsed = minidom.parseString(rough_string)
+  return parsed.toprettyxml(indent='  ')
+
+
 def make_nav_file(output_path, book):
   book_title = book.get("title", {}).get("source") or "untitled"
   html = ET.Element("html", {
@@ -69,7 +80,8 @@ def make_nav_file(output_path, book):
     })
     a.text = chapter_title
   tree = ET.ElementTree(html)
-  tree.write(output_path, encoding="utf-8", xml_declaration=True, method="xml")
+  with open(output_path, "w", encoding="utf-8") as f:
+    f.write(prettify(tree.getroot()))
 
 
 def create_parallel_element(tag, class_name, source, target):
@@ -126,7 +138,8 @@ def make_chapter_file(output_path, chapter, chapter_num):
           td = SubElement(tr, "td")
           td.append(create_parallel_element("span", "sentence", cell["source"], cell["target"]))
   tree = ElementTree(html)
-  tree.write(output_path, encoding="utf-8", xml_declaration=True, method="xml")
+  with open(output_path, "w", encoding="utf-8") as f:
+    f.write(prettify(tree.getroot()))
 
 
 def make_style_file(output_path):
@@ -209,7 +222,8 @@ def make_content_opf_file(output_path, book):
       "idref": f"chapter-{i:03d}"
     })
   tree = ET.ElementTree(package)
-  tree.write(output_path, encoding="utf-8", xml_declaration=True, method="xml")
+  with open(output_path, "w", encoding="utf-8") as f:
+    f.write(prettify(tree.getroot()))
 
 
 def make_container_file(output_path):
@@ -223,7 +237,8 @@ def make_container_file(output_path):
     "media-type": "application/oebps-package+xml"
   })
   tree = ET.ElementTree(container)
-  tree.write(output_path, encoding="utf-8", xml_declaration=True, method="xml")
+  with open(output_path, "w", encoding="utf-8") as f:
+    f.write(prettify(tree.getroot()))
 
 
 def make_epub_archive(working_path, output_path):
