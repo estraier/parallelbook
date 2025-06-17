@@ -2,6 +2,7 @@
 
 import argparse
 from datetime import datetime
+import hashlib
 import json
 import logging
 import os
@@ -180,10 +181,19 @@ td {
   output_path.write_text(css, encoding="utf-8")
 
 
+def compute_book_uid(book):
+  serialized = json.dumps(book, ensure_ascii=False, sort_keys=True)
+  digest = hashlib.sha1(serialized.encode("utf-8")).digest()
+  uuid_bytes = bytearray(digest[:16])
+  uuid_bytes[6] = (uuid_bytes[6] & 0x0F) | 0x50
+  uuid_bytes[8] = (uuid_bytes[8] & 0x3F) | 0x80
+  return str(uuid.UUID(bytes=bytes(uuid_bytes)))
+
+
 def make_content_opf_file(output_path, book):
   book_title = book.get("title", {}).get("source") or "untitled"
   book_author = book.get("author", {}).get("source") or "anonymous"
-  uid = str(uuid.uuid4())
+  uid = compute_book_uid(book)
   timestamp = datetime.now().isoformat(timespec="seconds") + "Z"
   package = ET.Element("package", {
     "xmlns": "http://www.idpf.org/2007/opf",
