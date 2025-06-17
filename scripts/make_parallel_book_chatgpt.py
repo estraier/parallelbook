@@ -10,7 +10,6 @@ import sqlite3
 import sys
 import tiktoken
 import time
-from datetime import datetime, timezone
 from openai import OpenAI
 from pathlib import Path
 
@@ -355,7 +354,6 @@ def build_output(input_meta, input_tasks, tasks):
         chapter["raw_line"] = chapter_raw_line
     book["chapters"] = chapters
   book["cost"] = round(total_cost, 3)
-  book["timestamp"] = datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
   return book
 
 
