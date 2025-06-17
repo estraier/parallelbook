@@ -5,7 +5,7 @@
   "title": {
     "id": "00000-000",
     "source": "Anne of the Island",
-    "target": "アンの島"
+    "target": "島のアン"
   },
   "author": {
     "id": "00001-000",
@@ -36534,5 +36534,5 @@
       "raw_line": 7587
     }
   ],
-  "cost": 2.172
+  "cost": 2.168
 }

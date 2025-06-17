@@ -470,7 +470,7 @@ def get_next_context(sm, index, max_width=200):
 
 
 def make_prompt_enja(book_title, role, source_text,
-                     hint, prev_context, next_context, attempt,
+                     hint, prev_context, next_context, extra_hint, attempt,
                      jsonize_input, use_source_example):
   lines = []
   def p(line):
@@ -591,6 +591,9 @@ def make_prompt_enja(book_title, role, source_text,
     p("JSONの書式には細心の注意を払ってください。引用符や括弧やカンマの仕様を厳密に守ってください。")
     p("文分割の際に原文を変更しないでください。出力の \"en\" の値を連結すると原文と同じになるようにしてください。")
     p(f"過去のエラーによる現在の再試行回数={attempt-1}")
+  extra_hint = extra_hint.strip()
+  if extra_hint:
+    p(extra_hint)
   return "\n".join(lines)
 
 
@@ -656,7 +659,7 @@ def validate_content(role, source_text, content):
 
 def execute_task_by_chatgpt_enja(
     book_title, role, source_text, hint, prev_context, next_context, main_model,
-    failsoft, no_fallback):
+    failsoft, no_fallback, extra_hint):
   latins = regex.sub(r"[^\p{Latin}]", "", source_text)
   if len(latins) < 2:
     logger.debug(f"Not English: intact data is generated")
@@ -684,7 +687,7 @@ def execute_task_by_chatgpt_enja(
                (0.8, True, True), (0.8, False, True)]
     for attempt, (temp, jsonize_input, use_source_example) in enumerate(configs, 1):
       prompt = make_prompt_enja(
-        book_title, role, source_text, hint, prev_context, next_context, attempt,
+        book_title, role, source_text, hint, prev_context, next_context, extra_hint, attempt,
         jsonize_input, use_source_example)
       logger.debug(f"Prompt:\n{prompt}")
       try:
@@ -804,6 +807,8 @@ def main():
                       help="sets the ChatGPT model by the name")
   parser.add_argument("--no-fallback", action="store_true",
                       help="do not use the fallback model")
+  parser.add_argument("--extra-hint", default="",
+                      help="extra hint to be appended to the prompt")
   parser.add_argument("--debug", action="store_true",
                       help="prints the debug messages too")
   args = parser.parse_args()
@@ -874,7 +879,7 @@ def main():
         response = execute_task_by_chatgpt_enja(
           book_title, role, source_text,
           hint, prev_context, next_context,
-          args.model, args.failsoft, args.no_fallback,
+          args.model, args.failsoft, args.no_fallback, args.extra_hint,
         )
       sm.set_response(index, response)
       total_cost += response.get("cost", 0)
