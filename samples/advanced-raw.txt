@@ -14,7 +14,7 @@ into one paragraph. So, you can fold them by a single linefeed.
 I replied, "This is the second paragraph. I'm not sure though."
 Brank lines separate paragraphs.
 
-- @macro image https://dbmx.net/parallelbook/logo.png sample logo
+- @macro image https://dbmx.net/parallelbook/abc-logo.png sample logo
 - @macro comment Macros are not translated but kept intact to the output.
 
 ## Chapter2's Title

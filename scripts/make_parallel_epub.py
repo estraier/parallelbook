@@ -41,8 +41,9 @@ def prepare_working_directories(root_path):
         else:
           item.unlink()
   (root_path / "META-INF").mkdir(parents=True, exist_ok=True)
-  (root_path / "OEBPS" / "css").mkdir(parents=True, exist_ok=True)
   (root_path / "OEBPS" / "text").mkdir(parents=True, exist_ok=True)
+  (root_path / "OEBPS" / "css").mkdir(parents=True, exist_ok=True)
+  (root_path / "OEBPS" / "image").mkdir(parents=True, exist_ok=True)
 
 
 def prettify(elem):
@@ -187,6 +188,7 @@ def compute_book_uid(book):
 
 def make_content_opf_file(output_path, book):
   book_title = book.get("title", {}).get("source") or "untitled"
+  book_title = "[PB] " + book_title
   book_author = book.get("author", {}).get("source") or "anonymous"
   uid = compute_book_uid(book)
   timestamp = datetime.now().isoformat(timespec="seconds") + "Z"
@@ -199,8 +201,11 @@ def make_content_opf_file(output_path, book):
   metadata = ET.SubElement(package, "metadata")
   ET.SubElement(metadata, "dc:identifier", {"id": "book-id"}).text = f"urn:uuid:{uid}"
   ET.SubElement(metadata, "dc:title").text = book_title
-  ET.SubElement(metadata, "dc:language").text = "en"
   ET.SubElement(metadata, "dc:creator").text = book_author
+  ET.SubElement(metadata, "dc:language").text = "en"
+  ET.SubElement(metadata, "dc:language").text = "ja"
+  ET.SubElement(metadata, "dc:publisher").text = "estraier/parallelbook"
+  ET.SubElement(metadata, "dc:subject").text = "parallel corpus"
   ET.SubElement(metadata, "meta", {"property": "dcterms:modified"}).text = timestamp
   manifest = ET.SubElement(package, "manifest")
   ET.SubElement(manifest, "item", {

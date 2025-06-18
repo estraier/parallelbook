@@ -1,4 +1,4 @@
-# ANNE OF GREEN GABLES
+# Anne of Green Gables
 
 - @id anne01: Anne of Green Gables
 - @author Lucy Maud Montgomery

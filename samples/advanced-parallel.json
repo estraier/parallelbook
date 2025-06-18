@@ -24,7 +24,7 @@
           "header": {
             "id": "00003-000",
             "source": "Header in the chapter",
-            "target": "章の見出し"
+            "target": "章のヘッダー"
           }
         },
         {
@@ -62,7 +62,7 @@
             {
               "id": "00005-001",
               "source": "I'm not sure though.\"",
-              "target": "でも、確信は持てません。」"
+              "target": "でも、確かではありません。」"
             },
             {
               "id": "00005-002",
@@ -76,7 +76,7 @@
           "macro": {
             "id": "00006-000",
             "name": "image",
-            "value": "https://dbmx.net/parallelbook/logo.png sample logo"
+            "value": "https://dbmx.net/parallelbook/abc-logo.png sample logo"
           },
           "raw_line": 17
         },
@@ -123,7 +123,7 @@
             {
               "id": "00011-000",
               "source": "Saitama, Saitama? A whitespace must follow \"-\".",
-              "target": "埼玉、埼玉？「-」の後には空白を入れる必要があります。"
+              "target": "埼玉、埼玉？「-」の後には空白が必要です。"
             }
           ],
           "raw_line": 25
