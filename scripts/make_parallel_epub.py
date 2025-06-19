@@ -30,7 +30,7 @@ def load_input_data(path):
   return data
 
 
-def prepare_working_directories(root_path):
+def prepare_working_directories(args, root_path):
   meta_inf = root_path / "META-INF"
   oebps = root_path / "OEBPS"
   for path in [meta_inf, oebps]:
@@ -52,8 +52,11 @@ def prettify(elem):
   return parsed.toprettyxml(indent='  ')
 
 
-def make_nav_file(output_path, book):
-  book_title = book.get("title", {}).get("source") or "untitled"
+def make_nav_file(args, output_path, book):
+  if args.title:
+    book_title = args.title
+  else:
+    book_title = book.get("title", {}).get("source") or "untitled"
   html = ET.Element("html", {
     "xmlns": "http://www.w3.org/1999/xhtml",
     "xmlns:epub": "http://www.idpf.org/2007/ops",
@@ -90,7 +93,7 @@ def create_parallel_element(tag, class_name, source, target):
   return container
 
 
-def make_chapter_file(output_path, chapter, chapter_num):
+def make_chapter_file(args, output_path, chapter, chapter_num):
   chapter_title = chapter.get("title", {}).get("source") or f"Chapter {chapter_num}"
   html = ET.Element("html", {
     "xmlns": "http://www.w3.org/1999/xhtml",
@@ -139,7 +142,7 @@ def make_chapter_file(output_path, chapter, chapter_num):
     f.write(prettify(tree.getroot()))
 
 
-def make_style_file(output_path):
+def make_style_file(args, output_path):
   css = """
 .parallel {
   display: block;
@@ -177,7 +180,7 @@ td {
   output_path.write_text(css, encoding="utf-8")
 
 
-def compute_book_uid(book):
+def compute_book_id(book):
   serialized = json.dumps(book, ensure_ascii=False, sort_keys=True)
   digest = hashlib.sha1(serialized.encode("utf-8")).digest()
   uuid_bytes = bytearray(digest[:16])
@@ -186,11 +189,20 @@ def compute_book_uid(book):
   return str(uuid.UUID(bytes=bytes(uuid_bytes)))
 
 
-def make_content_opf_file(output_path, book):
-  book_title = book.get("title", {}).get("source") or "untitled"
-  book_title = "[PB] " + book_title
-  book_author = book.get("author", {}).get("source") or "anonymous"
-  uid = compute_book_uid(book)
+def make_content_opf_file(args, output_path, book):
+  if args.renew_id:
+    book_id = str(uuid.uuid4())
+  else:
+    book_id = compute_book_id(book)
+  if args.title:
+    book_title = args.title
+  else:
+    book_title = book.get("title", {}).get("source") or "untitled"
+    book_title = "[PB] " + book_title
+  if args.author:
+    book_author = args.author
+  else:
+    book_author = book.get("author", {}).get("source") or "anonymous"
   timestamp = datetime.now().isoformat(timespec="seconds") + "Z"
   package = ET.Element("package", {
     "xmlns": "http://www.idpf.org/2007/opf",
@@ -199,7 +211,7 @@ def make_content_opf_file(output_path, book):
     "unique-identifier": "book-id"
   })
   metadata = ET.SubElement(package, "metadata")
-  ET.SubElement(metadata, "dc:identifier", {"id": "book-id"}).text = f"urn:uuid:{uid}"
+  ET.SubElement(metadata, "dc:identifier", {"id": "book-id"}).text = f"urn:uuid:{book_id}"
   ET.SubElement(metadata, "dc:title").text = book_title
   ET.SubElement(metadata, "dc:creator").text = book_author
   ET.SubElement(metadata, "dc:language").text = "en"
@@ -236,7 +248,7 @@ def make_content_opf_file(output_path, book):
     f.write(prettify(tree.getroot()))
 
 
-def make_container_file(output_path):
+def make_container_file(args, output_path):
   container = ET.Element("container", {
     "version": "1.0",
     "xmlns": "urn:oasis:names:tc:opendocument:xmlns:container"
@@ -251,7 +263,7 @@ def make_container_file(output_path):
     f.write(prettify(tree.getroot()))
 
 
-def make_epub_archive(working_path, output_path):
+def make_epub_archive(args, working_path, output_path):
   mimetype_path = working_path / "mimetype"
   mimetype_path.write_text("application/epub+zip", encoding="utf-8")
   with zipfile.ZipFile(output_path, "w") as zf:
@@ -271,6 +283,12 @@ def main():
                       help="path of the output EPUB file")
   parser.add_argument("--working", default=None,
                       help="path of the working EPUB directory")
+  parser.add_argument("--renew-id", action="store_true",
+                      help="Renew the book ID every time")
+  parser.add_argument("--title", default=None,
+                      help="Override the book title")
+  parser.add_argument("--author", default=None,
+                      help="Override the book author")
   args = parser.parse_args()
   input_path = Path(args.input_file)
   input_stem = input_path.stem
@@ -286,30 +304,30 @@ def main():
   logger.info(f"Loading data from {input_path}")
   book = load_input_data(input_path)
   logger.info(f"Preparing the directory as {working_path}")
-  prepare_working_directories(working_path)
+  prepare_working_directories(args, working_path)
 
   nav_path = working_path / "OEBPS" / "nav.xhtml"
   logger.info(f"Writing the navigation file as {nav_path}")
-  make_nav_file(nav_path, book)
+  make_nav_file(args, nav_path, book)
 
   for i, chapter in enumerate(book.get("chapters", []), 1):
     chapter_path = working_path / "OEBPS" / "text" / f"chapter-{i:03d}.xhtml"
     logger.info(f"Writing the chapter file as {chapter_path}")
-    make_chapter_file(chapter_path, chapter, i)
+    make_chapter_file(args, chapter_path, chapter, i)
   style_path = working_path / "OEBPS" / "css" / "style.css"
   logger.info(f"Writing the style file as {style_path}")
-  make_style_file(style_path)
+  make_style_file(args, style_path)
 
   opf_path = working_path / "OEBPS" / "content.opf"
   logger.info(f"Writing the OPF file as {opf_path}")
-  make_content_opf_file(opf_path, book)
+  make_content_opf_file(args, opf_path, book)
 
   container_path = working_path / "META-INF" / "container.xml"
   logger.info(f"Writing the container file as {container_path}")
-  make_container_file(container_path)
+  make_container_file(args, container_path)
 
   logger.info(f"Writing the EPUB file as {output_path}")
-  make_epub_archive(working_path, output_path)
+  make_epub_archive(args, working_path, output_path)
 
 
 if __name__ == "__main__":
