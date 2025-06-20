@@ -4,7 +4,7 @@
   "target_language": "ja",
   "title": {
     "id": "00000-000",
-    "source": "Stanford Commencement Address.",
+    "source": "Stanford Commencement Address",
     "target": "スタンフォード大学卒業式スピーチ"
   },
   "author": {
@@ -1079,5 +1079,5 @@
       "raw_line": 6
     }
   ],
-  "cost": 0.373
+  "cost": 0.37
 }

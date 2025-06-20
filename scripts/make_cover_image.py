@@ -11,9 +11,9 @@ def make_cover_image_file(output_path, title, author):
   title_color = "#000000"
   author_color = "#111111"
   bg_color = "#ffffff"
-  en_color = "#2244bb"
-  ja_color = "#bb2244"
-  ln_color = "#555555"
+  en_color = "#3355bb"
+  ja_color = "#bb5533"
+  ln_color = "#666666"
   svg_content = f'''<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg width="1600" height="2400" xmlns="http://www.w3.org/2000/svg">
 <rect width="100%" height="100%" fill="{bg_color}" />
@@ -50,10 +50,8 @@ def main():
   parser.add_argument("--author", default="Anonymous")
   parser.add_argument("--book", default=None)
   args = parser.parse_args()
-
   title = args.title
   author = args.author
-
   if args.book:
     with open(args.book, encoding="utf-8") as f:
       book = json.load(f)
@@ -61,11 +59,6 @@ def main():
         title = book["title"]["source"]
       if "author" in book:
         author = book["author"]["source"]
-  print(title, author)
-
-
-
-
   make_cover_image_file(args.output, title, author)
 
 

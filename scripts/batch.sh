@@ -32,13 +32,17 @@ function clean_web {
 function build_epub {
     ls samples/*-parallel.json books/*-parallel.json |
         while read file ; do
-            ./scripts/make_parallel_epub.py "$file"
+            svgname="${file%.json}.svg"
+            pngname="${file%.json}.png"
+            ./scripts/make_cover_image.py "$svgname" --book "$file"
+            magick -background white -density 300 "${svgname}" "${pngname}"
+            ./scripts/make_parallel_epub.py "$file" --cover "${pngname}"
         done
 }
 
 function clean_epub {
-    rm -rf samples/*-epub samples/*.epub
-    rm -rf books/*-epub books/*.epub
+    rm -rf samples/*-epub samples/*.epub samples/*-cover.*
+    rm -rf books/*-epub books/*.epub books/*-cover.*
 }
 
 set -eux

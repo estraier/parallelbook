@@ -52,6 +52,10 @@ def prettify(elem):
   return parsed.toprettyxml(indent='  ')
 
 
+def make_cover_file(args, output_path):
+  shutil.copy(args.cover, output_path)
+
+
 def make_nav_file(args, output_path, book):
   if args.title:
     book_title = args.title
@@ -68,7 +72,7 @@ def make_nav_file(args, output_path, book):
   body = ET.SubElement(html, "body")
   ET.SubElement(body, "h1").text = book_title
   nav = ET.SubElement(body, "nav", {
-    "epub:type": "toc"
+    "epub:type": "toc",
   })
   ET.SubElement(nav, "h2").text = "Table of Contents"
   ol = ET.SubElement(nav, "ol")
@@ -76,7 +80,7 @@ def make_nav_file(args, output_path, book):
     chapter_title = chapter.get("title", {}).get("source") or f"Chapter {i}"
     li = ET.SubElement(ol, "li")
     a = ET.SubElement(li, "a", {
-      "href": f"text/chapter-{i:03d}.xhtml"
+      "href": f"chapter-{i:03d}.xhtml",
     })
     a.text = chapter_title
   tree = ET.ElementTree(html)
@@ -106,7 +110,7 @@ def make_chapter_file(args, output_path, chapter, chapter_num):
   ET.SubElement(head, "link", {
     "rel": "stylesheet",
     "href": "../css/style.css",
-    "type": "text/css"
+    "type": "text/css",
   })
   body = ET.SubElement(html, "body")
   if "title" in chapter:
@@ -220,28 +224,47 @@ def make_content_opf_file(args, output_path, book):
   ET.SubElement(metadata, "dc:subject").text = "parallel corpus"
   ET.SubElement(metadata, "meta", {"property": "dcterms:modified"}).text = timestamp
   manifest = ET.SubElement(package, "manifest")
-  ET.SubElement(manifest, "item", {
-    "id": "nav",
-    "href": "nav.xhtml",
-    "media-type": "application/xhtml+xml",
-    "properties": "nav"
-  })
+  if args.cover:
+    ext = Path(args.cover).suffix.lower() or ".jpg"
+    if ext in [".jpg", ".jpeg"]:
+      img_type = "image/jpeg"
+    elif ext in [".png"]:
+      img_type = "image/png"
+    elif ext in [".svg"]:
+      img_type = "image/svg+xml"
+    elif ext in [".gif"]:
+      img_type = "image/gif"
+    elif ext in [".webp"]:
+      img_type = "image/webp"
+    else:
+      img_type = "image/" + ext[1:]
+    ET.SubElement(manifest, "item", {
+      "id": "cover",
+      "href": f"image/cover{ext}",
+      "media-type": img_type,
+    })
   ET.SubElement(manifest, "item", {
     "id": "style",
     "href": "css/style.css",
-    "media-type": "text/css"
+    "media-type": "text/css",
+  })
+  ET.SubElement(manifest, "item", {
+    "id": "nav",
+    "href": "text/nav.xhtml",
+    "media-type": "application/xhtml+xml",
+    "properties": "nav",
   })
   chapter_count = len(book.get("chapters", []))
   for i in range(1, chapter_count + 1):
     ET.SubElement(manifest, "item", {
       "id": f"chapter-{i:03d}",
       "href": f"text/chapter-{i:03d}.xhtml",
-      "media-type": "application/xhtml+xml"
+      "media-type": "application/xhtml+xml",
     })
   spine = ET.SubElement(package, "spine")
   for i in range(1, chapter_count + 1):
     ET.SubElement(spine, "itemref", {
-      "idref": f"chapter-{i:03d}"
+      "idref": f"chapter-{i:03d}",
     })
   tree = ET.ElementTree(package)
   with open(output_path, "w", encoding="utf-8") as f:
@@ -251,12 +274,12 @@ def make_content_opf_file(args, output_path, book):
 def make_container_file(args, output_path):
   container = ET.Element("container", {
     "version": "1.0",
-    "xmlns": "urn:oasis:names:tc:opendocument:xmlns:container"
+    "xmlns": "urn:oasis:names:tc:opendocument:xmlns:container",
   })
   rootfiles = ET.SubElement(container, "rootfiles")
   ET.SubElement(rootfiles, "rootfile", {
     "full-path": "OEBPS/content.opf",
-    "media-type": "application/oebps-package+xml"
+    "media-type": "application/oebps-package+xml",
   })
   tree = ET.ElementTree(container)
   with open(output_path, "w", encoding="utf-8") as f:
@@ -289,6 +312,8 @@ def main():
                       help="Override the book title")
   parser.add_argument("--author", default=None,
                       help="Override the book author")
+  parser.add_argument("--cover", default=None,
+                      help="Path to PNG file to use as cover image")
   args = parser.parse_args()
   input_path = Path(args.input_file)
   input_stem = input_path.stem
@@ -305,11 +330,13 @@ def main():
   book = load_input_data(input_path)
   logger.info(f"Preparing the directory as {working_path}")
   prepare_working_directories(args, working_path)
-
-  nav_path = working_path / "OEBPS" / "nav.xhtml"
+  if args.cover:
+    ext = Path(args.cover).suffix.lower() or ".jpg"
+    cover_path = working_path / "OEBPS" / "image" / f"cover{ext}"
+    make_cover_file(args, cover_path)
+  nav_path = working_path / "OEBPS" / "text" / "nav.xhtml"
   logger.info(f"Writing the navigation file as {nav_path}")
   make_nav_file(args, nav_path, book)
-
   for i, chapter in enumerate(book.get("chapters", []), 1):
     chapter_path = working_path / "OEBPS" / "text" / f"chapter-{i:03d}.xhtml"
     logger.info(f"Writing the chapter file as {chapter_path}")
@@ -317,15 +344,12 @@ def main():
   style_path = working_path / "OEBPS" / "css" / "style.css"
   logger.info(f"Writing the style file as {style_path}")
   make_style_file(args, style_path)
-
   opf_path = working_path / "OEBPS" / "content.opf"
   logger.info(f"Writing the OPF file as {opf_path}")
   make_content_opf_file(args, opf_path, book)
-
   container_path = working_path / "META-INF" / "container.xml"
   logger.info(f"Writing the container file as {container_path}")
   make_container_file(args, container_path)
-
   logger.info(f"Writing the EPUB file as {output_path}")
   make_epub_archive(args, working_path, output_path)
 
