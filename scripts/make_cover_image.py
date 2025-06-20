@@ -2,25 +2,98 @@
 
 
 import argparse
+import itertools
 import json
 from pathlib import Path
 from xml.sax.saxutils import escape
 
 
+CHAR_WIDTH_TABLE = {
+  "A": 0.722, "B": 0.667, "C": 0.722, "D": 0.722, "E": 0.667, "F": 0.611, "G": 0.778,
+  "H": 0.778, "I": 0.389, "J": 0.500, "K": 0.722, "L": 0.611, "M": 0.889, "N": 0.722,
+  "O": 0.778, "P": 0.611, "Q": 0.778, "R": 0.722, "S": 0.556, "T": 0.667, "U": 0.722,
+  "V": 0.722, "W": 1.000, "X": 0.722, "Y": 0.722, "Z": 0.667,
+  "a": 0.444, "b": 0.500, "c": 0.444, "d": 0.500, "e": 0.444, "f": 0.333, "g": 0.500,
+  "h": 0.500, "i": 0.278, "j": 0.278, "k": 0.500, "l": 0.278, "m": 0.778, "n": 0.500,
+  "o": 0.500, "p": 0.500, "q": 0.500, "r": 0.333, "s": 0.389, "t": 0.278, "u": 0.500,
+  "v": 0.500, "w": 0.722, "x": 0.500, "y": 0.500, "z": 0.444,
+  "0": 0.500, "1": 0.500, "2": 0.500, "3": 0.500, "4": 0.500,
+  "5": 0.500, "6": 0.500, "7": 0.500, "8": 0.500, "9": 0.500,
+  " ": 0.278, "-": 0.333, ".": 0.250, ",": 0.250, ":": 0.278, ";": 0.278,
+  "!": 0.333, "?": 0.500, "'": 0.191, "\"": 0.407, "(": 0.333, ")": 0.333,
+  "[": 0.333, "]": 0.333, "/": 0.278, "\\": 0.278, "&": 0.778, "@": 0.920,
+  "#": 0.500, "$": 0.500, "%": 0.833, "*": 0.500, "+": 0.564, "=": 0.564
+}
+
+
+def compute_line_width(line, font_size, is_bold, table,
+                       inter_char_spacing=0.2, word_spacing=0.5):
+  words = line.split()
+  total_em = 0.0
+  for word_index, word in enumerate(words):
+    word_em = 0.0
+    for i, ch in enumerate(word):
+      em = table.get(ch, 0.5)
+      if is_bold:
+        em *= 1.1
+      word_em += em
+      if i < len(word) - 1:
+        word_em += inter_char_spacing
+    total_em += word_em
+    if word_index < len(words) - 1:
+      total_em += word_spacing
+  return total_em * font_size
+
+
+def balanced_wrap(text, width, font_size, is_bold, char_width_table):
+  words = text.split()
+  n = len(words)
+  em_total = compute_line_width(text, 1.0, is_bold, char_width_table)
+  estimated_line_count = max(1, round((em_total * font_size) / width))
+  best_lines = None
+  best_score = float('inf')
+  for breaks in itertools.combinations(range(1, n), estimated_line_count - 1):
+    indices = (0,) + breaks + (n,)
+    lines = [" ".join(words[indices[i]:indices[i+1]]) for i in range(estimated_line_count)]
+    line_widths = [compute_line_width(line, font_size, is_bold, char_width_table) for line in lines]
+    score = max(line_widths) - min(line_widths)
+    if score < best_score:
+      best_score = score
+      best_lines = lines
+  return best_lines
+
+
 def make_cover_image_file(output_path, title, author):
+  width = 1600
+  height = 2250
+  title_font_size = 96
   title_color = "#000000"
+  author_font_size = 54
   author_color = "#111111"
+  logo_font_size = 50
   bg_color = "#ffffff"
   en_color = "#3355bb"
   ja_color = "#bb5533"
   ln_color = "#666666"
+  title_lines = balanced_wrap(title, width * 0.8, title_font_size, True, CHAR_WIDTH_TABLE)
+  title_line_height = title_font_size * 1.2
+  total_title_block_height = title_line_height * len(title_lines)
+  center_y = height * 0.40
+  first_line_y = center_y - (total_title_block_height - title_line_height) / 2
+  title_texts = "\n".join(
+    f'<text x="50%" y="{first_line_y + i * title_line_height:.1f}" font-size="{title_font_size}" '
+    f'font-weight="bold" text-anchor="middle" fill="{title_color}" font-family="serif">'
+    f'{escape(line)}</text>'
+    for i, line in enumerate(title_lines)
+  )
+  author_y = first_line_y + len(title_lines) * title_line_height + 20  # slight gap below title
   svg_content = f'''<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="1600" height="2400" xmlns="http://www.w3.org/2000/svg">
+<svg width="{width}" height="{height}" xmlns="http://www.w3.org/2000/svg">
 <rect width="100%" height="100%" fill="{bg_color}" />
-<text x="50%" y="40%" font-size="96" font-weight="bold" text-anchor="middle" fill="{title_color}" font-family="serif">{escape(title)}</text>
-<text x="50%" y="45%" font-size="54" text-anchor="middle" fill="{author_color}" font-family="sans-serif">{escape(author)}</text>
-<text x="50%" y="72%" font-size="50" text-anchor="middle" fill="{ln_color}" font-family="fantasy">Parallel Book</text>
-<g transform="translate(800, 1520) scale(0.5)">
+{title_texts}
+<text x="50%" y="{author_y:.1f}" font-size="{author_font_size}" text-anchor="middle" fill="{author_color}" font-family="sans-serif">{escape(author)}</text>
+<text x="50%" y="73%" font-size="{logo_font_size}" text-anchor="middle" fill="{ln_color}" font-family="fantasy">Parallel Book</text>
+<g transform="translate({width / 2}, {height * 0.633}) scale(0.5)">
 <g transform="translate(-400, -325)">
 <path style="fill:{bg_color}; stroke:none;" d="M0 0L0 650L800 650L800 0L0 0z"/>
 <path style="fill:{ln_color}; stroke:none;" d="M728 73L728 44C727.998 38.791 728.204 33.1844 723.786 29.5139C719.193 25.6978 711.543 27 706 27L662 27C596.782 27 528.05 35.9797 466 56.6667C450.763 61.7465 435.755 67.8136 421 74.1505C414.968 76.7409 406.639 82.566 400 82.5741C394.708 82.5805 388.742 78.4872 384 76.4244C372.105 71.2501 360.23 66.0488 348 61.6921C313.721 49.4808 277.811 42.2131 242 36.2469C200.537 29.3389 157.96 27 116 27C106.667 27 97.3328 26.9552 88 27.0008C83.2869 27.0238 77.913 27.2001 74.7029 31.2245C69.2212 38.097 72 52.7335 72 61C72 64.306 72.9813 69.8119 70.3966 72.3966C67.9708 74.8224 63.1008 73.9998 60 74C52.3357 74.0005 44.6635 73.897 37 74.0038C32.6742 74.0642 28.6822 74.6863 26.7029 79.0439C22.429 88.4535 25 102.891 25 113L25 189L25 456L25 563C25 571.325 24.7969 579.678 25.0147 588C25.119 591.989 25.7156 596.625 29.2245 599.142C32.2741 601.33 36.4479 600.994 40 601L59 601L137 601L291 601L342 601C350.557 601 359.484 600.268 368 601.105C381.983 602.479 386.305 621.48 400 621.863C408.367 622.096 412.738 614.184 418.015 609.04C424.144 603.065 429.601 601.003 438 601L686 601L748 601C754.378 601 766.568 603.301 771.566 598.486C774.375 595.781 773.994 591.565 774 588L774 566L774 473L774 186L774 108C774 102.01 773.812 95.9846 774.075 90C774.254 85.9219 774.938 80.8356 772.822 77.1088C770.177 72.4518 764.603 73.0018 760 73L728 73z"/>

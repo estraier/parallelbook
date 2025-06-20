@@ -32,10 +32,10 @@ function clean_web {
 function build_epub {
     ls samples/*-parallel.json books/*-parallel.json |
         while read file ; do
-            svgname="${file%.json}.svg"
-            pngname="${file%.json}.png"
+            svgname="${file%-parallel.json}-cover.svg"
+            pngname="${file%-parallel.json}-cover.png"
             ./scripts/make_cover_image.py "$svgname" --book "$file"
-            magick -background white -density 300 "${svgname}" "${pngname}"
+            magick -background white -density 150 "${svgname}" "${pngname}"
             ./scripts/make_parallel_epub.py "$file" --cover "${pngname}"
         done
 }

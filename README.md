@@ -906,8 +906,6 @@ Writing the EPUB file as basic-parallel.epub
 
 これを適当な電子書籍リーダに読み込めば、対訳本として読めます。Kindleの場合、[Send-to-Kindle](https://www.amazon.co.jp/sendtokindle)にアップロードするか端末のメールアドレスに送信すれば、AZW3形式に変換されたデータが端末に送信されます。
 
-
-
 ## 変換機能群の仕様
 
 ### parallelbook.js
@@ -936,3 +934,25 @@ make_parallel_epub.pyは以下のオプションを備えます。
 
 - --output OUTPUT : 出力ファイルを明示的に指定します。
 - --working OUTPUT : 作業用ディレクトリを明示的に指定します。
+- --renew-id : 毎回新しい書籍IDを生成します。
+- --title : 書籍の題名を上書きします。
+- --author : 書籍の著者名を上書きします。
+- --cover FILE : 表紙画像のファイル名を指定します。
+
+出力ファイルのデフォルトは、入力ファイルの ".json" を ".epub" に変えたものです。作業用ディレクトリのデフォルトは、入力ファイルの ".json" を "-epub" に変えたものです。
+
+### make_cover_image.py
+
+make_cover_image.pyは、EPUBなどの電子書籍の表紙画像を作る機能です。引数に出力ファイル名を指定します。オプションとして、題名や著者名を指定します。基本的には、対訳JSONデータを指定して、以下のように実行します。
+
+```shell
+/scripts/make_cover_image.py basic-cover.svg --book basic-parallel.json
+```
+
+make_parallel_epub.pyは以下のオプションを備えます。
+
+- --title TITLE : 題名を指定します。
+- --author AUTHOR : 著者名を上書きします。
+- --book FILE : 題名と著者名を読み込む対訳JSONファイルを指定します。
+
+生成される画像はSVG形式です。多くの電子書籍リーダはSVGに対応していないので、ImageMagickなどの何らかの方法でJPEGやPNGに変換してください。
