@@ -5,6 +5,7 @@ import argparse
 import itertools
 import json
 from pathlib import Path
+import statistics
 from xml.sax.saxutils import escape
 
 
@@ -50,28 +51,30 @@ def balanced_wrap(text, width, font_size, is_bold, char_width_table):
   n = len(words)
   em_total = compute_line_width(text, 1.0, is_bold, char_width_table)
   estimated_line_count = max(1, round((em_total * font_size) / width))
+  if estimated_line_count < 2:
+    return [text]
   best_lines = None
   best_score = float('inf')
   weak_end_penalty = {
-    "a": 2.0, "an": 2.0, "the": 2.0,
-    "and": 1.3, "but": 1.3, "or": 1.3, "so": 1.3, "yet": 1.3,
-    "in": 1.2, "on": 1.2, "at": 1.2, "by": 1.2, "to": 1.2, "of": 1.2,
-    "for": 1.2, "with": 1.2, "about": 1.2, "against": 1.2,
-    "between": 1.2, "into": 1.2, "through": 1.2, "during": 1.2,
-    "before": 1.2, "after": 1.2, "above": 1.2, "below": 1.2,
-    "from": 1.2, "up": 1.2, "down": 1.2, "off": 1.2, "over": 1.2,
-    "under": 1.2, "around": 1.2, "near": 1.2, "outside": 1.2,
-    "inside": 1.2, "without": 1.2, "within": 1.2,
+    "a": 9.0, "an": 9.0, "the": 9.0,
+    "and": 3.0, "but": 3.0, "or": 3.0, "so": 3.0, "yet": 3.0,
+    "in": 2.0, "on": 2.0, "at": 2.0, "by": 2.0, "to": 2.0, "of": 2.0,
+    "for": 2.0, "with": 2.0, "about": 2.0, "against": 2.0,
+    "between": 2.0, "into": 2.0, "through": 2.0, "during": 2.0,
+    "before": 2.0, "after": 2.0, "above": 2.0, "below": 2.0,
+    "from": 2.0, "up": 2.0, "down": 2.0, "off": 2.0, "over": 2.0,
+    "under": 2.0, "around": 2.0, "near": 2.0, "outside": 2.0,
+    "inside": 2.0, "without": 2.0, "within": 2.0,
   }
   for breaks in itertools.combinations(range(1, n), estimated_line_count - 1):
     indices = (0,) + breaks + (n,)
     lines = [" ".join(words[indices[i]:indices[i+1]]) for i in range(estimated_line_count)]
     line_widths = [compute_line_width(line, font_size, is_bold, char_width_table) for line in lines]
     penalty = 1.0
-    for line in lines:
+    for line in lines[:-1]:
       last_word = line.split()[-1].lower()
       penalty *= weak_end_penalty.get(last_word, 1.0)
-    score = (max(line_widths) - min(line_widths)) * penalty
+    score = statistics.stdev(line_widths) / font_size + penalty
     if score < best_score:
       best_score = score
       best_lines = lines
@@ -92,7 +95,7 @@ def make_cover_image_file(output_path, title, author):
   ja_color = "#bb5533"
   ln_color = "#666666"
   title_lines = balanced_wrap(title, width * 0.8, title_font_size, True, CHAR_WIDTH_TABLE)
-  title_line_height = title_font_size * 1.2
+  title_line_height = title_font_size * 1.15
   total_title_block_height = title_line_height * len(title_lines)
   center_y = height * 0.40
   first_line_y = center_y - (total_title_block_height - title_line_height) / 2
@@ -108,18 +111,14 @@ def make_cover_image_file(output_path, title, author):
 <rect width="100%" height="100%" fill="{bg_color}" />
 {title_texts}
 <text x="50%" y="{author_y:.1f}" font-size="{author_font_size}" text-anchor="middle" fill="{author_color}" font-family="sans-serif">{escape(author)}</text>
-<text x="50%" y="73%" font-size="{logo_font_size}" text-anchor="middle" fill="{ln_color}" font-family="fantasy">Parallel Book</text>
+<text x="50%" y="74%" font-size="{logo_font_size}" text-anchor="middle" fill="{ln_color}" font-family="fantasy">Parallel Book</text>
 <g transform="translate(0, {0.035 * height}) scale({width / 1000}, -1)">
-  <path d="M0 5 L50 0 L100 5 L150 0 L200 5 L250 0 L300 5 L350 0 L400 5 L450 0
-           L500 5 L550 0 L600 5 L650 0 L700 5 L750 0 L800 5 L850 0 L900 5 L950 0 L1000 5"
-        stroke="{zigzag_color}" fill="none" stroke-width="20"/>
+<path d="M0 5 L50 0 L100 5 L150 0 L200 5 L250 0 L300 5 L350 0 L400 5 L450 0 L500 5 L550 0 L600 5 L650 0 L700 5 L750 0 L800 5 L850 0 L900 5 L950 0 L1000 5" stroke="{zigzag_color}" fill="none" stroke-width="20"/>
 </g>
 <g transform="translate(0, {0.965 * height}) scale({width / 1000}, 1)">
-  <path d="M0 5 L50 0 L100 5 L150 0 L200 5 L250 0 L300 5 L350 0 L400 5 L450 0
-           L500 5 L550 0 L600 5 L650 0 L700 5 L750 0 L800 5 L850 0 L900 5 L950 0 L1000 5"
-        stroke="{zigzag_color}" fill="none" stroke-width="20"/>
+<path d="M0 5 L50 0 L100 5 L150 0 L200 5 L250 0 L300 5 L350 0 L400 5 L450 0 L500 5 L550 0 L600 5 L650 0 L700 5 L750 0 L800 5 L850 0 L900 5 L950 0 L1000 5" stroke="{zigzag_color}" fill="none" stroke-width="20"/>
 </g>
-<g transform="translate({width / 2}, {height * 0.633}) scale(0.5)">
+<g transform="translate({width / 2}, {height * 0.65}) scale(0.5)">
 <g transform="translate(-400, -325)">
 <path style="fill:{bg_color}; stroke:none;" d="M0 0L0 650L800 650L800 0L0 0z"/>
 <path style="fill:{ln_color}; stroke:none;" d="M728 73L728 44C727.998 38.791 728.204 33.1844 723.786 29.5139C719.193 25.6978 711.543 27 706 27L662 27C596.782 27 528.05 35.9797 466 56.6667C450.763 61.7465 435.755 67.8136 421 74.1505C414.968 76.7409 406.639 82.566 400 82.5741C394.708 82.5805 388.742 78.4872 384 76.4244C372.105 71.2501 360.23 66.0488 348 61.6921C313.721 49.4808 277.811 42.2131 242 36.2469C200.537 29.3389 157.96 27 116 27C106.667 27 97.3328 26.9552 88 27.0008C83.2869 27.0238 77.913 27.2001 74.7029 31.2245C69.2212 38.097 72 52.7335 72 61C72 64.306 72.9813 69.8119 70.3966 72.3966C67.9708 74.8224 63.1008 73.9998 60 74C52.3357 74.0005 44.6635 73.897 37 74.0038C32.6742 74.0642 28.6822 74.6863 26.7029 79.0439C22.429 88.4535 25 102.891 25 113L25 189L25 456L25 563C25 571.325 24.7969 579.678 25.0147 588C25.119 591.989 25.7156 596.625 29.2245 599.142C32.2741 601.33 36.4479 600.994 40 601L59 601L137 601L291 601L342 601C350.557 601 359.484 600.268 368 601.105C381.983 602.479 386.305 621.48 400 621.863C408.367 622.096 412.738 614.184 418.015 609.04C424.144 603.065 429.601 601.003 438 601L686 601L748 601C754.378 601 766.568 603.301 771.566 598.486C774.375 595.781 773.994 591.565 774 588L774 566L774 473L774 186L774 108C774 102.01 773.812 95.9846 774.075 90C774.254 85.9219 774.938 80.8356 772.822 77.1088C770.177 72.4518 764.603 73.0018 760 73L728 73z"/>
