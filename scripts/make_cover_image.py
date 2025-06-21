@@ -91,7 +91,7 @@ def make_cover_image_file(output_path, title, author):
   en_color = "#3355bb"
   ja_color = "#bb5533"
   ln_color = "#666666"
-  title_lines = balanced_wrap(title, width * 0.78, title_font_size, True, CHAR_WIDTH_TABLE)
+  title_lines = balanced_wrap(title, width * 0.8, title_font_size, True, CHAR_WIDTH_TABLE)
   title_line_height = title_font_size * 1.2
   total_title_block_height = title_line_height * len(title_lines)
   center_y = height * 0.40
