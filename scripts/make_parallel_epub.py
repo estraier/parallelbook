@@ -158,7 +158,7 @@ def make_style_file(args, output_path):
 
 .parallel span.target {
   font-size: 80%;
-  color: #666;
+  color: #777;
   margin-left: 1ex;
 }
 
@@ -242,6 +242,7 @@ def make_content_opf_file(args, output_path, book):
       "id": "cover",
       "href": f"image/cover{ext}",
       "media-type": img_type,
+      "properties": "cover-image",
     })
   ET.SubElement(manifest, "item", {
     "id": "style",

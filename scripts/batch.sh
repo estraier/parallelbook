@@ -35,7 +35,7 @@ function build_epub {
             svgname="${file%-parallel.json}-cover.svg"
             pngname="${file%-parallel.json}-cover.png"
             ./scripts/make_cover_image.py "$svgname" --book "$file"
-            magick -background white -density 150 "${svgname}" "${pngname}"
+            rsvg-convert -b white -w 1600 -h 2250 -o "${pngname}" "${svgname}"
             ./scripts/make_parallel_epub.py "$file" --cover "${pngname}"
         done
 }

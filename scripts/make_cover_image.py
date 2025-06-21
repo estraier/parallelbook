@@ -66,16 +66,17 @@ def balanced_wrap(text, width, font_size, is_bold, char_width_table):
 def make_cover_image_file(output_path, title, author):
   width = 1600
   height = 2250
-  title_font_size = 96
+  title_font_size = 120
   title_color = "#000000"
-  author_font_size = 54
+  author_font_size = 65
   author_color = "#111111"
+  zigzag_color = "#bbccbb"
   logo_font_size = 50
-  bg_color = "#ffffff"
+  bg_color = "#eeffee"
   en_color = "#3355bb"
   ja_color = "#bb5533"
   ln_color = "#666666"
-  title_lines = balanced_wrap(title, width * 0.8, title_font_size, True, CHAR_WIDTH_TABLE)
+  title_lines = balanced_wrap(title, width * 0.78, title_font_size, True, CHAR_WIDTH_TABLE)
   title_line_height = title_font_size * 1.2
   total_title_block_height = title_line_height * len(title_lines)
   center_y = height * 0.40
@@ -93,6 +94,16 @@ def make_cover_image_file(output_path, title, author):
 {title_texts}
 <text x="50%" y="{author_y:.1f}" font-size="{author_font_size}" text-anchor="middle" fill="{author_color}" font-family="sans-serif">{escape(author)}</text>
 <text x="50%" y="73%" font-size="{logo_font_size}" text-anchor="middle" fill="{ln_color}" font-family="fantasy">Parallel Book</text>
+<g transform="translate(0, {0.035 * height}) scale({width / 1000}, -1)">
+  <path d="M0 5 L50 0 L100 5 L150 0 L200 5 L250 0 L300 5 L350 0 L400 5 L450 0
+           L500 5 L550 0 L600 5 L650 0 L700 5 L750 0 L800 5 L850 0 L900 5 L950 0 L1000 5"
+        stroke="{zigzag_color}" fill="none" stroke-width="20"/>
+</g>
+<g transform="translate(0, {0.965 * height}) scale({width / 1000}, 1)">
+  <path d="M0 5 L50 0 L100 5 L150 0 L200 5 L250 0 L300 5 L350 0 L400 5 L450 0
+           L500 5 L550 0 L600 5 L650 0 L700 5 L750 0 L800 5 L850 0 L900 5 L950 0 L1000 5"
+        stroke="{zigzag_color}" fill="none" stroke-width="20"/>
+</g>
 <g transform="translate({width / 2}, {height * 0.633}) scale(0.5)">
 <g transform="translate(-400, -325)">
 <path style="fill:{bg_color}; stroke:none;" d="M0 0L0 650L800 650L800 0L0 0z"/>
