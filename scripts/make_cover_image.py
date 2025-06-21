@@ -52,11 +52,26 @@ def balanced_wrap(text, width, font_size, is_bold, char_width_table):
   estimated_line_count = max(1, round((em_total * font_size) / width))
   best_lines = None
   best_score = float('inf')
+  weak_end_penalty = {
+    "a": 2.0, "an": 2.0, "the": 2.0,
+    "and": 1.3, "but": 1.3, "or": 1.3, "so": 1.3, "yet": 1.3,
+    "in": 1.2, "on": 1.2, "at": 1.2, "by": 1.2, "to": 1.2, "of": 1.2,
+    "for": 1.2, "with": 1.2, "about": 1.2, "against": 1.2,
+    "between": 1.2, "into": 1.2, "through": 1.2, "during": 1.2,
+    "before": 1.2, "after": 1.2, "above": 1.2, "below": 1.2,
+    "from": 1.2, "up": 1.2, "down": 1.2, "off": 1.2, "over": 1.2,
+    "under": 1.2, "around": 1.2, "near": 1.2, "outside": 1.2,
+    "inside": 1.2, "without": 1.2, "within": 1.2,
+  }
   for breaks in itertools.combinations(range(1, n), estimated_line_count - 1):
     indices = (0,) + breaks + (n,)
     lines = [" ".join(words[indices[i]:indices[i+1]]) for i in range(estimated_line_count)]
     line_widths = [compute_line_width(line, font_size, is_bold, char_width_table) for line in lines]
-    score = max(line_widths) - min(line_widths)
+    penalty = 1.0
+    for line in lines:
+      last_word = line.split()[-1].lower()
+      penalty *= weak_end_penalty.get(last_word, 1.0)
+    score = (max(line_widths) - min(line_widths)) * penalty
     if score < best_score:
       best_score = score
       best_lines = lines
