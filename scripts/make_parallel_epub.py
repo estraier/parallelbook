@@ -16,7 +16,7 @@ from xml.dom import minidom
 import zipfile
 
 
-PROG_NAME = "make_parallel_epub"
+PROG_NAME = "make_parallel_epub.py"
 
 
 logging.basicConfig(format="%(message)s", stream=sys.stderr)
@@ -27,6 +27,12 @@ logger.setLevel(logging.INFO)
 def load_input_data(path):
   with open(path, encoding="utf-8") as f:
     data = json.load(f)
+  if data.get("format") != "parallel":
+    raise ValueError("Not parallel book data")
+  if data.get("source_language") != "en":
+    raise ValueError("Source language is not English")
+  if data.get("target_language") != "ja":
+    raise ValueError("Target language is not Japanese")
   return data
 
 

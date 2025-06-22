@@ -14,7 +14,7 @@ from openai import OpenAI
 from pathlib import Path
 
 
-PROG_NAME = "make_parallel_book_chatgpt"
+PROG_NAME = "make_parallel_book_chatgpt.py"
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 CHATGPT_MODELS = [
   # model name, input token cost (USD/1K), output token cost (USD/1K)
@@ -112,6 +112,8 @@ class StateManager:
 def load_input_data(path):
   with open(path, encoding="utf-8") as f:
     data = json.load(f)
+  if data.get("format") != "source":
+    raise ValueError("Not source book data")
   meta = {}
   book_id = data.get("id")
   if book_id:
@@ -241,7 +243,7 @@ def build_table_cells(index, item):
 
 
 def build_output(input_meta, input_tasks, tasks):
-  book = {}
+  book = {"format": "parallel"}
   input_book_id = input_meta.get("id")
   if input_book_id:
     book["id"] = input_book_id

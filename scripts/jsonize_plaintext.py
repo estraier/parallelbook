@@ -4,7 +4,7 @@ import sys
 import json
 import re
 
-book_data = {}
+book_data = {"format": "source"}
 chapters = []
 current_chapter = None
 current_paragraph_lines = []

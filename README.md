@@ -67,6 +67,7 @@ Dr. Slump said, “We did it!” I was surprised.
 
 ```json
 {
+  "format": "source",
   "chapters": [
     {
       "body": [
@@ -95,6 +96,7 @@ Dr. Slump said, “We did it!” I was surprised.
 
 ```json
 {
+  "format": "parallel",
   "source_language": "en",
   "target_language": "ja",
   "chapters": [
@@ -172,6 +174,7 @@ This software is distributed under the terms of Apache License version 2.0.  Sam
 
 ```json
 {
+  "format": "parallel",
   "title": "How to Make Parallel Books",
   "id": "sample01: How to Make Parallel Books",
   "author": "Mikio Hirabayashi",
@@ -214,6 +217,7 @@ This software is distributed under the terms of Apache License version 2.0.  Sam
 
 ```json
 {
+  "format": "parallel",
   "id": "sample01: How to Make Parallel Books",
   "source_language": "en",
   "target_language": "ja",
@@ -639,6 +643,7 @@ make_parallel_book_chatgpt.pyの出力は以下のような形式になります
 
 ```json
 {
+  "format": "parallel",
   "id": "sample02: book title",
   "source_language": "en",
   "target_language": "ja",
