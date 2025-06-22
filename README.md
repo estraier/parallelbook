@@ -968,3 +968,11 @@ make_parallel_epub.pyは以下のオプションを備えます。
 - --book FILE : 題名と著者名を読み込む対訳JSONファイルを指定します。
 
 生成される画像はSVG形式です。多くの電子書籍リーダはSVGに対応していないので、ImageMagickなどの何らかの方法でJPEGやPNGに変換してください。
+
+### extract_parallel_tsv.py
+
+extract_parallel_tsv.pyは、対訳JSONデータを読んで、原文とその対訳の組をTSV（タブ区切りテキスト）として出力すします。以下の以下のコマンドを実行すると、標準出力にTSVデータが出力されます。
+
+```shell
+./scripts/make_parallel_epub.py basic-parallel.json
+```
