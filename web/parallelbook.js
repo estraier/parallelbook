@@ -173,6 +173,10 @@ async function loadAndRenderParallelBook(contentElementId, bookId, bookUrl, mode
   let bookContent = null;
   try {
     bookContent = await response.json();
+    if (bookContent.format !== "parallel") {
+      console.error(`JSON error: url=${bookUrl}, error=not parallel`)
+      return
+    }
   } catch(error) {
     console.error(`JSON error: url=${bookUrl}, error=${error}`)
     return

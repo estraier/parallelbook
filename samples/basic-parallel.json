@@ -6,7 +6,7 @@
   "title": {
     "id": "00000-000",
     "source": "How to Make Parallel Books",
-    "target": "パラレル・ブックを作る方法"
+    "target": "平行な本を作る方法"
   },
   "author": {
     "id": "00001-000",
@@ -18,7 +18,7 @@
       "title": {
         "id": "00002-000",
         "source": "Basics",
-        "target": "基礎"
+        "target": "基本"
       },
       "body": [
         {
@@ -26,17 +26,17 @@
             {
               "id": "00003-000",
               "source": "Parallel corpora are powerful tools to learn languages.",
-              "target": "パラレルコーパスは言語を学ぶための強力なツールです。"
+              "target": "平行コーパスは言語を学ぶための強力なツールである。"
             },
             {
               "id": "00003-001",
               "source": "With them, you can learn foreign languages easily by reading your favorite stories.",
-              "target": "それらを使えば、お気に入りの物語を読むことで外国語を簡単に学ぶことができます。"
+              "target": "それらを使えば、お気に入りの物語を読むことで外国語を簡単に学ぶことができる。"
             },
             {
               "id": "00003-002",
               "source": "Each sentence in the original corpus is associated with its translation in your mother tongue.",
-              "target": "元のコーパス内の各文は、母国語の翻訳と関連付けられています。"
+              "target": "元のコーパスの各文は、母国語の翻訳と関連付けられている。"
             }
           ],
           "raw_line": 8
@@ -46,12 +46,12 @@
             {
               "id": "00004-000",
               "source": "This project provides scripts to make parallel books from arbitrary contents.",
-              "target": "このプロジェクトは、任意のコンテンツからパラレルブックを作成するスクリプトを提供します。"
+              "target": "このプロジェクトは任意のコンテンツから平行書籍を作成するためのスクリプトを提供しています。"
             },
             {
               "id": "00004-001",
               "source": "All you have to do is to prepare the original corpus and run some commands to make parallel books in various formats.",
-              "target": "必要なのは元のコーパスを準備し、さまざまな形式のパラレルブックを作成するためにコマンドを実行するだけです。"
+              "target": "やることは、元のコーパスを準備し、いくつかのコマンドを実行してさまざまな形式の平行書籍を作成するだけです。"
             },
             {
               "id": "00004-002",
@@ -76,7 +76,7 @@
             {
               "id": "00006-000",
               "source": "This software is distributed under the terms of Apache License version 2.0.",
-              "target": "このソフトウェアはApacheライセンスバージョン2.0の条件の下で配布されています。"
+              "target": "このソフトウェアはApache Licenseバージョン2.0の条件の下で配布されています。"
             },
             {
               "id": "00006-001",
@@ -85,8 +85,8 @@
             },
             {
               "id": "00006-002",
-              "source": "So, both can be redestributed freely without additional permissions.",
-              "target": "したがって、追加の許可なしにどちらも自由に再配布できます。"
+              "source": "So, both can be redistributed freely without additional permissions.",
+              "target": "そのため、追加の許可なしに両方とも自由に再配布することができます。"
             }
           ],
           "raw_line": 14

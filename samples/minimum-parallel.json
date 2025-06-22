@@ -25,12 +25,12 @@
             {
               "id": "00001-000",
               "source": "Dr. Slump said, “We did it!”",
-              "target": "ドクタースランプが言いました。「やりましたね！」"
+              "target": "ドクタースランプは言った。「やったぞ！」"
             },
             {
               "id": "00001-001",
               "source": "I was surprised.",
-              "target": "私は驚きました。"
+              "target": "私は驚いた。"
             }
           ],
           "raw_line": 3

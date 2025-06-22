@@ -18,14 +18,14 @@
       "title": {
         "id": "00002-000",
         "source": "Chapter1's Title",
-        "target": "第1章のタイトル"
+        "target": "第1章の題名"
       },
       "body": [
         {
           "header": {
             "id": "00003-000",
             "source": "Header in the chapter",
-            "target": "章のヘッダー"
+            "target": "章の題名が明かされる場面。"
           }
         },
         {
@@ -57,16 +57,11 @@
           "paragraph": [
             {
               "id": "00005-000",
-              "source": "I replied, \"This is the second paragraph.",
-              "target": "私は答えた。「これが2番目の段落です。"
+              "source": "I replied, \"This is the second paragraph. I'm not sure though.\"",
+              "target": "私は答えた。「これが2番目の段落です。でも、確信は持てません。」"
             },
             {
               "id": "00005-001",
-              "source": "I'm not sure though.\"",
-              "target": "でも、確かではありません。」"
-            },
-            {
-              "id": "00005-002",
               "source": "Brank lines separate paragraphs.",
               "target": "空行が段落を区切ります。"
             }
@@ -96,7 +91,7 @@
       "title": {
         "id": "00008-000",
         "source": "Chapter2's Title",
-        "target": "第2章のタイトル"
+        "target": "第2章の題名"
       },
       "body": [
         {
@@ -109,7 +104,7 @@
             {
               "id": "00009-001",
               "source": "A whitespace must follow \">\".",
-              "target": ">の後には空白を入れる必要があります。"
+              "target": ">の後には空白が必要です。"
             }
           ],
           "raw_line": 22
@@ -124,7 +119,7 @@
             {
               "id": "00011-000",
               "source": "Saitama, Saitama? A whitespace must follow \"-\".",
-              "target": "埼玉、埼玉？「-」の後には空白が必要です。"
+              "target": "埼玉、埼玉？「-」の後には空白を入れる必要がある。"
             }
           ],
           "raw_line": 25
