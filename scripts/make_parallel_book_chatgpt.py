@@ -186,6 +186,45 @@ def load_input_data(path):
   return meta, tasks
 
 
+
+def merge_translations(translations):
+  merged = []
+  i = 0
+  while i < len(translations):
+    en = translations[i]["source"].strip()
+    ja = translations[i]["target"].strip()
+    j = i + 1
+    while j < len(translations):
+      next_en = translations[j]["source"].strip()
+      next_ja = translations[j]["target"].strip()
+      concat = False
+      if regex.search(r"[,:]$", en) and regex.search(r"^[a-zA-Z0-9]", next_en):
+        concat = True
+      elif regex.search(r"[a-z]$", en) and regex.search("^([a-z]|I )", next_en):
+        concat = True
+      if concat:
+        en += " " + next_en
+        if not regex.search(r"[,.:：、。！？]$", ja):
+          ja_sep = "：" if en.endswith(":") else "、"
+        else:
+          ja_sep = ""
+        ja += ja_sep + next_ja
+        j += 1
+      else:
+        break
+    merged.append({"source": en, "target": ja})
+    i = j
+  return merged
+
+
+def postprocess_tasks(tasks):
+  for task in tasks:
+    response = task.get("response")
+    if not response: continue
+    content = response["content"]
+    response["content"] = merge_translations(content)
+
+
 def validate_tasks(tasks):
   def normalize_text(text):
     return regex.sub(r"\s+", " ", text).lower().strip()
@@ -637,7 +676,7 @@ def make_prompt_enja(book_title, role, source_text,
   if role == "chapter_title":
     p("このパラグラフは章の題名です。")
   if role in ["paragraph", "blockquote"]:
-    p("英文は意味的に自然な単位で文分割してください。たとえ短い文でも、文とみなせれば独立させてください。")
+    p("英文は文法に従って文分割してください。たとえ短い文でも、文とみなせれば独立させてください。")
     p("ただし、分割の際に元の英文を1文字も変更しないでください。句読点や引用符も含めて全て保持してください。")
     if attempt >= 3 and regex.search(r"\p{Quotation_Mark}", source_text):
       p("【重要】 翻訳対象には引用符が含まれています。それを絶対に消さないでください。")
@@ -681,6 +720,8 @@ def calculate_chatgpt_cost(prompt, response, model):
 def validate_content(role, source_text, content):
   def first_text(text):
     return regex.sub(r"\s", "", text)[:8]
+  def last_text(text):
+    return regex.sub(r"\s", "", text)[-4:]
   def normalize_text(text):
     return regex.sub(r"\s+", " ", text).lower().strip()
   def extract_marks(text):
@@ -692,6 +733,11 @@ def validate_content(role, source_text, content):
   first_proc = first_text(joint_text)
   if first_orig != first_proc:
     logger.debug(f"First text diff: {first_orig} vs {first_proc}")
+    return False
+  last_orig = last_text(source_text)
+  last_proc = last_text(joint_text)
+  if last_orig != last_proc:
+    logger.debug(f"Last text diff: {last_orig} vs {last_proc}")
     return False
   norm_orig = normalize_text(source_text)
   norm_proc = normalize_text(joint_text)
@@ -721,7 +767,7 @@ def validate_content(role, source_text, content):
   return True
 
 
-def execute_task_by_chatgpt_enja(
+def execute_task(
     book_title, role, source_text, hint, prev_context, next_context,
     assistant_thread_id, main_model,
     failsoft, no_fallback, extra_hint):
@@ -986,7 +1032,7 @@ def main():
       elif role == "code":
         response = simulate_task_as_code(source_text)
       else:
-        response = execute_task_by_chatgpt_enja(
+        response = execute_task(
           book_title, role, source_text,
           hint, prev_context, next_context,
           assistant_thread_id, args.model,
@@ -1001,7 +1047,9 @@ def main():
   index = sm.find_undone()
   if index < 0 or args.force_finish:
     tasks = sm.load_all()
-    logger.info(f"Validating output")
+    logger.info(f"Postprocessing the output")
+    postprocess_tasks(tasks)
+    logger.info(f"Validating the output")
     if not validate_tasks(tasks):
       raise RuntimeError("Validation failed")
     logger.info(f"Writing data into {output_path}")
