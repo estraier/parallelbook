@@ -198,7 +198,7 @@ def merge_translations(translations):
       next_en = translations[j]["source"].strip()
       next_ja = translations[j]["target"].strip()
       concat = False
-      if regex.search(r"[,:]$", en) and regex.search(r"^[a-zA-Z0-9]", next_en):
+      if regex.search(r"[,]$", en) and regex.search(r"^[a-zA-Z0-9]", next_en):
         concat = True
       elif regex.search(r"[a-z]$", en) and regex.search("^([a-z]|I )", next_en):
         concat = True
