@@ -1870,13 +1870,8 @@
             },
             {
               "id": "00090-004",
-              "source": "and I would slip down and meet Gilbert and we would go together to the heart of the beech woods,",
-              "target": "そして私はこっそりと下りてギルバートに会い、一緒にブナの森の奥深くへ行きます。"
-            },
-            {
-              "id": "00090-005",
-              "source": "and there, under the green arches that would be like a splendid cathedral, we would be married.”",
-              "target": "そしてそこで、壮大な大聖堂のような緑のアーチの下で、私たちは結婚するのです。"
+              "source": "and I would slip down and meet Gilbert and we would go together to the heart of the beech woods, and there, under the green arches that would be like a splendid cathedral, we would be married.”",
+              "target": "そして私はこっそりと下りてギルバートに会い、一緒にブナの森の奥深くへ行きます。そしてそこで、壮大な大聖堂のような緑のアーチの下で、私たちは結婚するのです。"
             }
           ],
           "raw_line": 393
@@ -5590,13 +5585,8 @@
             },
             {
               "id": "00271-002",
-              "source": "even gruff old Doctor Dave gave her an approving glance,",
-              "target": "厳格な老医師デイブさえも、彼女に賛成の一瞥を送った。"
-            },
-            {
-              "id": "00271-003",
-              "source": "and told his wife, as they drove home together, that that red-headed wife of the boy’s was something of a beauty.",
-              "target": "そして、2人で家に帰る際、その赤毛の妻はなかなかの美人だと、デイブは妻に話した。"
+              "source": "even gruff old Doctor Dave gave her an approving glance, and told his wife, as they drove home together, that that red-headed wife of the boy’s was something of a beauty.",
+              "target": "厳格な老医師デイブさえも、彼女に賛成の一瞥を送った。そして、2人で家に帰る際、その赤毛の妻はなかなかの美人だと、デイブは妻に話した。"
             }
           ],
           "raw_line": 1201
@@ -13330,13 +13320,8 @@
             },
             {
               "id": "00619-002",
-              "source": "But they did not clash at all, for Mrs. Rachel was in the kitchen helping Anne and Marilla with the dinner, and it fell to Gilbert to entertain Captain Jim and Miss Cornelia,",
-              "target": "しかし、全く衝突することはありませんでした。なぜなら、レイチェル夫人はキッチンでアンとマリラを手伝っていたため、ジルバートがジム船長とコーネリアさんをもてなす役割を果たすことになりました。"
-            },
-            {
-              "id": "00619-003",
-              "source": "or rather to be entertained by them, for a dialogue between those two old friends and antagonists was assuredly never dull.",
-              "target": "というより、彼らにもてなされることになりました。なぜなら、その二人の古い友人であり敵対者の間の対話は確かに決して退屈ではなかったからです。"
+              "source": "But they did not clash at all, for Mrs. Rachel was in the kitchen helping Anne and Marilla with the dinner, and it fell to Gilbert to entertain Captain Jim and Miss Cornelia, or rather to be entertained by them, for a dialogue between those two old friends and antagonists was assuredly never dull.",
+              "target": "しかし、全く衝突することはありませんでした。なぜなら、レイチェル夫人はキッチンでアンとマリラを手伝っていたため、ジルバートがジム船長とコーネリアさんをもてなす役割を果たすことになりました。というより、彼らにもてなされることになりました。なぜなら、その二人の古い友人であり敵対者の間の対話は確かに決して退屈ではなかったからです。"
             }
           ],
           "raw_line": 2842
@@ -14600,13 +14585,8 @@
             },
             {
               "id": "00678-003",
-              "source": "He had a tolerable knack of fiddling, which all appreciated save the First Mate,",
-              "target": "彼はまずまずの腕前のバイオリン演奏を持っていたが、全員が評価したのは、ファーストメイトを除いて"
-            },
-            {
-              "id": "00678-004",
-              "source": "who sprang from the sofa as if he had been shot, emitted a shriek of protest, and fled wildly up the stairs.",
-              "target": "ソファから飛び上がり、撃たれたかのように悲鳴を上げ、階段を荒々しく駆け上がった。"
+              "source": "He had a tolerable knack of fiddling, which all appreciated save the First Mate, who sprang from the sofa as if he had been shot, emitted a shriek of protest, and fled wildly up the stairs.",
+              "target": "彼はまずまずの腕前のバイオリン演奏を持っていたが、全員が評価したのは、ファーストメイトを除いて、ソファから飛び上がり、撃たれたかのように悲鳴を上げ、階段を荒々しく駆け上がった。"
             }
           ],
           "raw_line": 3100
@@ -21885,7 +21865,7 @@
           "paragraph": [
             {
               "id": "01024-000",
-              "source": "“You must wait until it is published,” he said. ",
+              "source": "“You must wait until it is published,” he said.",
               "target": "「出版されるまで待っていてくれ」と彼は言った。"
             },
             {
@@ -22805,16 +22785,11 @@
             },
             {
               "id": "01061-001",
-              "source": "Better rub some tallow on your nose when you go to bed,” said Miss Cornelia,",
-              "target": "寝る前に鼻に羊脂を塗った方がいいわ」とミス・コーネリアは言った。"
+              "source": "Better rub some tallow on your nose when you go to bed,” said Miss Cornelia, who had come in through the little gate between the firs in time to catch Owen’s last remark.",
+              "target": "寝る前に鼻に羊脂を塗った方がいいわ」とミス・コーネリアは言った。彼女はモミの木の間の小さな門から入ってきて、オーウェンの最後の発言を聞き逃さなかった。"
             },
             {
               "id": "01061-002",
-              "source": "who had come in through the little gate between the firs in time to catch Owen’s last remark.",
-              "target": "彼女はモミの木の間の小さな門から入ってきて、オーウェンの最後の発言を聞き逃さなかった。"
-            },
-            {
-              "id": "01061-003",
               "source": "Miss Cornelia liked Owen; but it was a matter of principle with her to visit any “high-falutin” language from a man with a snub.",
               "target": "ミス・コーネリアはオーウェンが好きだったが、彼女にとっては、高尚な言葉を使う男性には断固として冷たい態度を取ることが原則だった。"
             }
@@ -25180,7 +25155,7 @@
           "paragraph": [
             {
               "id": "01167-000",
-              "source": "“And why did Uncle Dave tell her that, if it wasn’t true?” cried Anne, triumphantly. ",
+              "source": "“And why did Uncle Dave tell her that, if it wasn’t true?” cried Anne, triumphantly.",
               "target": "「それが本当でないなら、なぜデイブおじさんが彼女にそう言ったの？」とアンは勝ち誇って叫んだ。"
             },
             {
@@ -34261,12 +34236,12 @@
             {
               "id": "01617-003",
               "source": "The Morgan place was all that Gilbert claimed.",
-              "target": "モーガンの家はギルバートが主張するすべてを備えていました。"
+              "target": "モーガンの家はギルバートが主張した通りでした。"
             },
             {
               "id": "01617-004",
               "source": "The grounds were beautiful, the house old enough to have dignity and repose and traditions, and new enough to be comfortable and up-to-date.",
-              "target": "敷地は美しく、家は十分な品位と安らぎと伝統を持つ古いものであり、快適で最新のものでもありました。"
+              "target": "敷地は美しく、家は十分な品位と安らぎと伝統を持ち、快適で最新のものでした。"
             },
             {
               "id": "01617-005",
@@ -34276,7 +34251,12 @@
             {
               "id": "01617-006",
               "source": "She loved EVERYTHING about it—the garden she had tended, and which so many women had tended before her—the gleam and sparkle of the little brook that crept so roguishly across the corner—the gate between the creaking fir trees—the old red sandstone step—the stately Lombardies—the two tiny quaint glass cupboards over the chimney-piece in the living-room—the crooked pantry door in the kitchen—the two funny dormer windows upstairs—the little jog in the staircase—why, these things were a part of her!",
-              "target": "彼女はそれについてすべてを愛していました―彼女が世話をしていた庭、そして彼女の前に多くの女性が世話をしていた庭―隅をひょこひょこと這う小川のきらめきと輝き―きしむトウヒの木の間の門―古い赤い砂岩の階段―堂々としたランバーディ―リビングルームの暖炉の上の2つの小さな風変わりなガラスの戸棚―台所の曲がったパントリーの扉―2つの面白い屋根裏部屋の窓―階段の小さな段差―なぜ、これらのものは彼女の一部だったのです！"
+              "target": "彼女はそれについてすべてを愛していました―彼女が世話をしていた庭、そして彼女の前に多くの女性が世話をしていた庭―小さな小川のきらめきと輝き―隅をずる賢く這う小川―きしむトウヒの木の間の門―古い赤い砂岩の階段―堂々としたランバーディ―リビングルームの暖炉の上の2つの小さな風変わりなガラスの戸棚―キッチンの曲がったパントリーの扉―2つの面白い屋根裏部屋の窓―階段の小さな段差―これらのものは彼女の一部でした！"
+            },
+            {
+              "id": "01617-007",
+              "source": "How could she leave them?",
+              "target": "彼女はそれらをどうして残していけるのでしょうか？"
             }
           ],
           "raw_line": 7279
@@ -34755,16 +34735,11 @@
           "paragraph": [
             {
               "id": "01641-000",
-              "source": "“It has all such a heart-broken, reproachful look, hasn’t it?”,",
-              "target": "「なんて心を打つような、非難の目をしているんでしょう？」とアンが言いました。"
+              "source": "“It has all such a heart-broken, reproachful look, hasn’t it?”, said Anne.",
+              "target": "「なんて心を打つような、非難の目をしているんでしょう？」とアンが言いました。アンは言いました。"
             },
             {
               "id": "01641-001",
-              "source": "said Anne.",
-              "target": "アンは言いました。"
-            },
-            {
-              "id": "01641-002",
               "source": "“Oh, I shall be so homesick at the Glen tonight!”",
               "target": "「ああ、今夜はグレンでホームシックになるわ！」"
             }
@@ -34870,5 +34845,5 @@
       "raw_line": 7156
     }
   ],
-  "cost": 1.751
+  "cost": 1.752
 }

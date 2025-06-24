@@ -25,16 +25,11 @@
           "paragraph": [
             {
               "id": "00003-000",
-              "source": "Folklore, legends, myths and fairy tales have followed childhood through the ages,",
-              "target": "民間伝承、伝説、神話、童話は時代を超えて子ども時代に付き纏ってきました。"
+              "source": "Folklore, legends, myths and fairy tales have followed childhood through the ages, for every healthy youngster has a wholesome and instinctive love for stories fantastic, marvelous and manifestly unreal.",
+              "target": "民間伝承、伝説、神話、童話は時代を超えて子ども時代に付き纏ってきました。なぜなら、健全な子どもは、素晴らしく、驚くべき、明らかに非現実的な物語を本能的に愛するからです。"
             },
             {
               "id": "00003-001",
-              "source": "for every healthy youngster has a wholesome and instinctive love for stories fantastic, marvelous and manifestly unreal.",
-              "target": "なぜなら、健全な子どもは、素晴らしく、驚くべき、明らかに非現実的な物語を本能的に愛するからです。"
-            },
-            {
-              "id": "00003-002",
               "source": "The winged fairies of Grimm and Andersen have brought more happiness to childish hearts than all other human creations.",
               "target": "グリムやアンデルセンの羽を持つ妖精たちは、他のどんな人間の創造物よりも、子どもの心により多くの幸福をもたらしてきました。"
             }
@@ -2355,18 +2350,8 @@
             },
             {
               "id": "00154-002",
-              "source": "For my mouth is only painted, and if I should cut a hole in it so I could eat,",
-              "target": "なぜなら私の口はただ塗られているだけで、もし私が食べるために穴を開けたら、"
-            },
-            {
-              "id": "00154-003",
-              "source": "the straw I am stuffed with would come out,",
-              "target": "私が詰められている藁が出てきてしまい、"
-            },
-            {
-              "id": "00154-004",
-              "source": "and that would spoil the shape of my head.”",
-              "target": "それは私の頭の形を台無しにしてしまうからね」と。"
+              "source": "For my mouth is only painted, and if I should cut a hole in it so I could eat, the straw I am stuffed with would come out, and that would spoil the shape of my head.”",
+              "target": "なぜなら私の口はただ塗られているだけで、もし私が食べるために穴を開けたら、私が詰められている藁が出てきてしまい、それは私の頭の形を台無しにしてしまうからね」と。"
             }
           ],
           "raw_line": 508
@@ -2600,13 +2585,8 @@
             },
             {
               "id": "00169-005",
-              "source": "and when they fastened on my head, at last, I felt very proud,",
-              "target": "最後に頭を取り付けられたとき、とても誇らしく感じました。"
-            },
-            {
-              "id": "00169-006",
-              "source": "for I thought I was just as good a man as anyone.",
-              "target": "だって、自分も他の人と同じように立派な人間だと思ったから。"
+              "source": "and when they fastened on my head, at last, I felt very proud, for I thought I was just as good a man as anyone.",
+              "target": "最後に頭を取り付けられたとき、とても誇らしく感じました。だって、自分も他の人と同じように立派な人間だと思ったから。"
             }
           ],
           "raw_line": 553
@@ -2720,23 +2700,13 @@
             },
             {
               "id": "00174-002",
-              "source": "‘If you only had brains in your head you would be as good a man as any of them,",
-              "target": "『もしあなたの頭に脳があれば、あなたは彼らの誰にも劣らない良い人間になれるでしょう。"
+              "source": "‘If you only had brains in your head you would be as good a man as any of them, and a better man than some of them.",
+              "target": "『もしあなたの頭に脳があれば、あなたは彼らの誰にも劣らない良い人間になれるでしょう。そして、彼らの中の何人かよりも優れた人間になれるでしょう。"
             },
             {
               "id": "00174-003",
-              "source": "and a better man than some of them.",
-              "target": "そして、彼らの中の何人かよりも優れた人間になれるでしょう。"
-            },
-            {
-              "id": "00174-004",
-              "source": "Brains are the only things worth having in this world,",
-              "target": "この世界で持つ価値があるのは脳だけです。"
-            },
-            {
-              "id": "00174-005",
-              "source": "no matter whether one is a crow or a man.’",
-              "target": "それがカラスであろうと人間であろうと関係ありません。』"
+              "source": "Brains are the only things worth having in this world, no matter whether one is a crow or a man.’",
+              "target": "この世界で持つ価値があるのは脳だけです。それがカラスであろうと人間であろうと関係ありません。』"
             }
           ],
           "raw_line": 578
@@ -3110,18 +3080,8 @@
           "paragraph": [
             {
               "id": "00201-000",
-              "source": "Dorothy looked at him in amazement, and so did the Scarecrow,",
-              "target": "ドロシーは驚きの表情で彼を見つめ、かかしも同様にそうした。"
-            },
-            {
-              "id": "00201-001",
-              "source": "while Toto barked sharply and made a snap at the tin legs,",
-              "target": "トトは鋭く吠えて、錫の脚にかみついた。"
-            },
-            {
-              "id": "00201-002",
-              "source": "which hurt his teeth.",
-              "target": "その結果、歯が痛んだ。"
+              "source": "Dorothy looked at him in amazement, and so did the Scarecrow, while Toto barked sharply and made a snap at the tin legs, which hurt his teeth.",
+              "target": "ドロシーは驚きの表情で彼を見つめ、かかしも同様にそうした。トトは鋭く吠えて、錫の脚にかみついた。その結果、歯が痛んだ。"
             }
           ],
           "raw_line": 660
@@ -3260,13 +3220,8 @@
             },
             {
               "id": "00211-001",
-              "source": "and he thanked them again and again for his release,",
-              "target": "そして、解放されたことに何度も感謝しました。"
-            },
-            {
-              "id": "00211-002",
-              "source": "for he seemed a very polite creature, and very grateful.",
-              "target": "彼は非常に礼儀正しく、感謝の気持ちが強いようでした。"
+              "source": "and he thanked them again and again for his release, for he seemed a very polite creature, and very grateful.",
+              "target": "そして、解放されたことに何度も感謝しました。彼は非常に礼儀正しく、感謝の気持ちが強いようでした。"
             }
           ],
           "raw_line": 688
@@ -3565,43 +3520,18 @@
             },
             {
               "id": "00233-003",
-              "source": "But the girl lived with an old woman who did not want her to marry anyone,",
-              "target": "しかし、その女の子は誰とも結婚してほしくないと考える年老いた女性と一緒に住んでいました。"
+              "source": "But the girl lived with an old woman who did not want her to marry anyone, for she was so lazy she wished the girl to remain with her and do the cooking and the housework.",
+              "target": "しかし、その女の子は誰とも結婚してほしくないと考える年老いた女性と一緒に住んでいました。その女性はとても怠け者で、女の子に自分と一緒にいて料理や家事をしてほしいと思っていたからです。"
             },
             {
               "id": "00233-004",
-              "source": "for she was so lazy she wished the girl to remain with her and do the cooking and the housework.",
-              "target": "その女性はとても怠け者で、女の子に自分と一緒にいて料理や家事をしてほしいと思っていたからです。"
+              "source": "So the old woman went to the Wicked Witch of the East, and promised her two sheep and a cow if she would prevent the marriage.",
+              "target": "そこでその年老いた女性は東の悪い魔女のところに行きました。そして、もし結婚を妨げてくれるなら羊2頭と牛1頭をあげると約束しました。"
             },
             {
               "id": "00233-005",
-              "source": "So the old woman went to the Wicked Witch of the East,",
-              "target": "そこでその年老いた女性は東の悪い魔女のところに行きました。"
-            },
-            {
-              "id": "00233-006",
-              "source": "and promised her two sheep and a cow if she would prevent the marriage.",
-              "target": "そして、もし結婚を妨げてくれるなら羊2頭と牛1頭をあげると約束しました。"
-            },
-            {
-              "id": "00233-007",
-              "source": "Thereupon the Wicked Witch enchanted my axe,",
-              "target": "その結果、悪い魔女は私の斧に魔法をかけました。"
-            },
-            {
-              "id": "00233-008",
-              "source": "and when I was chopping away at my best one day,",
-              "target": "そしてある日、私が一生懸命木を切っているときに、"
-            },
-            {
-              "id": "00233-009",
-              "source": "for I was anxious to get the new house and my wife as soon as possible,",
-              "target": "新しい家と妻をできるだけ早く手に入れたかったので、"
-            },
-            {
-              "id": "00233-010",
-              "source": "the axe slipped all at once and cut off my left leg.",
-              "target": "斧が突然滑って私の左足を切り落としてしまいました。」"
+              "source": "Thereupon the Wicked Witch enchanted my axe, and when I was chopping away at my best one day, for I was anxious to get the new house and my wife as soon as possible, the axe slipped all at once and cut off my left leg.",
+              "target": "その結果、悪い魔女は私の斧に魔法をかけました。そしてある日、私が一生懸命木を切っているときに、新しい家と妻をできるだけ早く手に入れたかったので、斧が突然滑って私の左足を切り落としてしまいました。」"
             }
           ],
           "raw_line": 751
@@ -3975,18 +3905,8 @@
           "paragraph": [
             {
               "id": "00256-000",
-              "source": "“Is he stuffed?” asked the Lion in surprise,",
-              "target": "「ふりふり人形か？」とライオンが驚いて尋ねました。"
-            },
-            {
-              "id": "00256-001",
-              "source": "as he watched her pick up the Scarecrow and set him upon his feet,",
-              "target": "彼女がスケアクロウを拾い上げ、立たせるのを見ながら、"
-            },
-            {
-              "id": "00256-002",
-              "source": "while she patted him into shape again.",
-              "target": "彼女が再び彼を形作るようにそっと叩いた。"
+              "source": "“Is he stuffed?” asked the Lion in surprise, as he watched her pick up the Scarecrow and set him upon his feet, while she patted him into shape again.",
+              "target": "「ふりふり人形か？」とライオンが驚いて尋ねました。彼女がスケアクロウを拾い上げ、立たせるのを見ながら、彼女が再び彼を形作るようにそっと叩いた。"
             }
           ],
           "raw_line": 840
@@ -4930,18 +4850,8 @@
             },
             {
               "id": "00321-002",
-              "source": "The Lion, although he was certainly afraid, turned to face the Kalidahs,",
-              "target": "ライオンは確かに恐れていましたが、カリダに向かって振り向き、"
-            },
-            {
-              "id": "00321-003",
-              "source": "and then he gave so loud and terrible a roar that Dorothy screamed and the Scarecrow fell over backward,",
-              "target": "そして、非常に大きくて恐ろしいほえ声をあげたため、ドロシーが悲鳴を上げ、かかし人形は後ろに倒れました。"
-            },
-            {
-              "id": "00321-004",
-              "source": "while even the fierce beasts stopped short and looked at him in surprise.",
-              "target": "そして、その凶暴な獣たちさえも驚きながら立ち止まり、彼を見つめました。"
+              "source": "The Lion, although he was certainly afraid, turned to face the Kalidahs, and then he gave so loud and terrible a roar that Dorothy screamed and the Scarecrow fell over backward, while even the fierce beasts stopped short and looked at him in surprise.",
+              "target": "ライオンは確かに恐れていましたが、カリダに向かって振り向き、そして、非常に大きくて恐ろしいほえ声をあげたため、ドロシーが悲鳴を上げ、かかし人形は後ろに倒れました。そして、その凶暴な獣たちさえも驚きながら立ち止まり、彼を見つめました。"
             }
           ],
           "raw_line": 1042
@@ -6135,26 +6045,11 @@
           "paragraph": [
             {
               "id": "00408-000",
-              "source": "One by one the mice came creeping back,",
-              "target": "一匹ずつネズミたちが忍び寄ってきました。"
+              "source": "One by one the mice came creeping back, and Toto did not bark again, although he tried to get out of the Woodman’s arms, and would have bitten him had he not known very well he was made of tin.",
+              "target": "一匹ずつネズミたちが忍び寄ってきました。トトは再び吠えませんでした。ウッドマンの腕から逃げようとしましたが、もし彼が自分がスズでできていることをよく知っていなかったら、彼は噛んでいたでしょう。"
             },
             {
               "id": "00408-001",
-              "source": "and Toto did not bark again,",
-              "target": "トトは再び吠えませんでした。"
-            },
-            {
-              "id": "00408-002",
-              "source": "although he tried to get out of the Woodman’s arms,",
-              "target": "ウッドマンの腕から逃げようとしましたが、"
-            },
-            {
-              "id": "00408-003",
-              "source": "and would have bitten him had he not known very well he was made of tin.",
-              "target": "もし彼が自分がスズでできていることをよく知っていなかったら、彼は噛んでいたでしょう。"
-            },
-            {
-              "id": "00408-004",
               "source": "Finally one of the biggest mice spoke.",
               "target": "最後に、一番大きなネズミの一匹が話しました。"
             }
@@ -6210,7 +6105,7 @@
           "paragraph": [
             {
               "id": "00412-000",
-              "source": "“Oh, no,” declared the Scarecrow; ",
+              "source": "“Oh, no,” declared the Scarecrow;",
               "target": "「いいえ」とかかしが宣言しました。"
             },
             {
@@ -8100,13 +7995,8 @@
             },
             {
               "id": "00542-001",
-              "source": "and the eyes winked again and looked upon her anxiously,",
-              "target": "そして目が再びウインクして、不安そうに彼女を見つめた。"
-            },
-            {
-              "id": "00542-002",
-              "source": "as if the Great Oz felt that she could help him if she would.",
-              "target": "まるでオズ大魔法使いが、彼女が手助けをすれば役に立つと感じているかのように。"
+              "source": "and the eyes winked again and looked upon her anxiously, as if the Great Oz felt that she could help him if she would.",
+              "target": "そして目が再びウインクして、不安そうに彼女を見つめた。まるでオズ大魔法使いが、彼女が手助けをすれば役に立つと感じているかのように。"
             }
           ],
           "raw_line": 1718
@@ -9040,13 +8930,8 @@
             },
             {
               "id": "00610-001",
-              "source": "so that before night Dorothy and Toto and the Lion were tired, and lay down upon the grass and fell asleep,",
-              "target": "夜になる前にドロシーとトトとライオンは疲れ果て、草の上に寝転んで眠りに落ちました。"
-            },
-            {
-              "id": "00610-002",
-              "source": "with the Woodman and the Scarecrow keeping watch.",
-              "target": "ウッドマンとかかしは見張りをしていました。"
+              "source": "so that before night Dorothy and Toto and the Lion were tired, and lay down upon the grass and fell asleep, with the Woodman and the Scarecrow keeping watch.",
+              "target": "夜になる前にドロシーとトトとライオンは疲れ果て、草の上に寝転んで眠りに落ちました。ウッドマンとかかしは見張りをしていました。"
             }
           ],
           "raw_line": 1915
@@ -11080,13 +10965,8 @@
             },
             {
               "id": "00749-001",
-              "source": "but they saw that no harm was intended, so they rode through the air quite cheerfully,",
-              "target": "しかし、彼らは害意がないことに気づき、だから空を楽しそうに飛んでいました。"
-            },
-            {
-              "id": "00749-002",
-              "source": "and had a fine time looking at the pretty gardens and woods far below them.",
-              "target": "そして、下に広がる美しい庭園や森を眺めながら楽しい時間を過ごしました。"
+              "source": "but they saw that no harm was intended, so they rode through the air quite cheerfully, and had a fine time looking at the pretty gardens and woods far below them.",
+              "target": "しかし、彼らは害意がないことに気づき、だから空を楽しそうに飛んでいました。そして、下に広がる美しい庭園や森を眺めながら楽しい時間を過ごしました。"
             }
           ],
           "raw_line": 2351
@@ -12300,23 +12180,13 @@
             },
             {
               "id": "00836-001",
-              "source": "But I found myself in the midst of a strange people,",
-              "target": "しかし、私は奇妙な人々の中にいることに気づきました。"
+              "source": "But I found myself in the midst of a strange people, who, seeing me come from the clouds, thought I was a Great Wizard.",
+              "target": "しかし、私は奇妙な人々の中にいることに気づきました。彼らは、私が雲から降りてきたのを見て、私を偉大な魔法使いだと思いました。"
             },
             {
               "id": "00836-002",
-              "source": "who, seeing me come from the clouds, thought I was a Great Wizard.",
-              "target": "彼らは、私が雲から降りてきたのを見て、私を偉大な魔法使いだと思いました。"
-            },
-            {
-              "id": "00836-003",
-              "source": "Of course I let them think so, because they were afraid of me,",
-              "target": "もちろん、私は彼らにそう思わせておきました。なぜなら、彼らは私を恐れていたからです。"
-            },
-            {
-              "id": "00836-004",
-              "source": "and promised to do anything I wished them to.",
-              "target": "そして、私が望むことは何でもすると約束しました。」"
+              "source": "Of course I let them think so, because they were afraid of me, and promised to do anything I wished them to.",
+              "target": "もちろん、私は彼らにそう思わせておきました。なぜなら、彼らは私を恐れていたからです。そして、私が望むことは何でもすると約束しました。」"
             }
           ],
           "raw_line": 2604
@@ -12350,12 +12220,12 @@
           "paragraph": [
             {
               "id": "00839-000",
-              "source": "“No more than in any other city,” replied Oz; ",
+              "source": "“No more than in any other city,” replied Oz;",
               "target": "「他のどの街とも同じくらいです」とオズが答えました。"
             },
             {
               "id": "00839-001",
-              "source": "“but when you wear green spectacles, why of course everything you see looks green to you. ",
+              "source": "“but when you wear green spectacles, why of course everything you see looks green to you.",
               "target": "しかし、緑のメガネをかけていると、見えるもの全てが緑に見えるのは当然です。"
             },
             {
@@ -12380,51 +12250,41 @@
           "paragraph": [
             {
               "id": "00840-000",
-              "source": "“One of my greatest fears was the Witches,",
-              "target": "「私の最大の恐怖の一つは魔女たちでした。"
+              "source": "“One of my greatest fears was the Witches, for while I had no magical powers at all I soon found out that the Witches were really able to do wonderful things.",
+              "target": "「私の最大の恐怖の一つは魔女たちでした。なぜなら、私には全く魔法の力がなかったのに対し、魔女たちは本当に素晴らしいことをすることができるとすぐに分かったからです。"
             },
             {
               "id": "00840-001",
-              "source": "for while I had no magical powers at all I soon found out that the Witches were really able to do wonderful things.",
-              "target": "なぜなら、私には全く魔法の力がなかったのに対し、魔女たちは本当に素晴らしいことをすることができるとすぐに分かったからです。"
-            },
-            {
-              "id": "00840-002",
               "source": "There were four of them in this country, and they ruled the people who live in the North and South and East and West.",
               "target": "この国には四人の魔女がいて、彼女たちは北、南、東、西に住む人々を支配していました。"
             },
             {
-              "id": "00840-003",
+              "id": "00840-002",
               "source": "Fortunately, the Witches of the North and South were good, and I knew they would do me no harm;",
               "target": "幸いなことに、北と南の魔女たちは善良で、私に害を及ぼすことはないと分かっていました；"
             },
             {
+              "id": "00840-003",
+              "source": "but the Witches of the East and West were terribly wicked, and had they not thought I was more powerful than they themselves, they would surely have destroyed me.",
+              "target": "しかし、東と西の魔女たちは非常に邪悪で、もし彼女たちが私を自分たちよりも強力だと思わなければ、きっと私を滅ぼしていたでしょう。"
+            },
+            {
               "id": "00840-004",
-              "source": "but the Witches of the East and West were terribly wicked,",
-              "target": "しかし、東と西の魔女たちは非常に邪悪で、"
-            },
-            {
-              "id": "00840-005",
-              "source": "and had they not thought I was more powerful than they themselves, they would surely have destroyed me.",
-              "target": "もし彼女たちが私を自分たちよりも強力だと思わなければ、きっと私を滅ぼしていたでしょう。"
-            },
-            {
-              "id": "00840-006",
               "source": "As it was, I lived in deadly fear of them for many years;",
               "target": "実際、私は何年もの間、彼女たちを恐れて生きていました；"
             },
             {
-              "id": "00840-007",
+              "id": "00840-005",
               "source": "so you can imagine how pleased I was when I heard your house had fallen on the Wicked Witch of the East.",
               "target": "だから、あなたの家が東の悪い魔女の上に落ちたと聞いたとき、どれほど嬉しかったか想像できるでしょう。"
             },
             {
-              "id": "00840-008",
+              "id": "00840-006",
               "source": "When you came to me I was willing to promise anything if you would only do away with the other Witch;",
               "target": "あなたが私のところに来たとき、もしもう一人の魔女を退治してくれるなら、何でも約束するつもりでした；"
             },
             {
-              "id": "00840-009",
+              "id": "00840-007",
               "source": "but, now that you have melted her, I am ashamed to say that I cannot keep my promises.”",
               "target": "しかし、今やあなたが彼女を溶かしてしまったので、約束を守れないことを恥ずかしく思います。」"
             }
@@ -13485,7 +13345,7 @@
           "paragraph": [
             {
               "id": "00916-000",
-              "source": "“We!” exclaimed the girl; ",
+              "source": "“We!” exclaimed the girl;",
               "target": "「私たちでしょうか！」と少女は叫びました;"
             },
             {
@@ -14300,16 +14160,11 @@
           "paragraph": [
             {
               "id": "00976-000",
-              "source": "“It seems, in spite of dangers,",
-              "target": "「危険にもかかわらず、"
+              "source": "“It seems, in spite of dangers, that the best thing Dorothy can do is to travel to the Land of the South and ask Glinda to help her.",
+              "target": "「危険にもかかわらず、ドロシーができる最善のことは、南の国へ旅してグリンダに助けを求めることのようです。"
             },
             {
               "id": "00976-001",
-              "source": "that the best thing Dorothy can do is to travel to the Land of the South and ask Glinda to help her.",
-              "target": "ドロシーができる最善のことは、南の国へ旅してグリンダに助けを求めることのようです。"
-            },
-            {
-              "id": "00976-002",
               "source": "For, of course, if Dorothy stays here she will never get back to Kansas.”",
               "target": "なぜなら、もちろん、ドロシーがここに留まっていては、カンザスに戻ることは決してできないからです。」"
             }
@@ -16440,18 +16295,8 @@
             },
             {
               "id": "01134-001",
-              "source": "how the cyclone had brought her to the Land of Oz,",
-              "target": "竜巻が彼女をオズの国に連れてきた経緯や、"
-            },
-            {
-              "id": "01134-002",
-              "source": "how she had found her companions,",
-              "target": "仲間たちを見つけたこと、"
-            },
-            {
-              "id": "01134-003",
-              "source": "and of the wonderful adventures they had met with.",
-              "target": "そして彼らが出会った素晴らしい冒険について話しました。"
+              "source": "how the cyclone had brought her to the Land of Oz, how she had found her companions, and of the wonderful adventures they had met with.",
+              "target": "竜巻が彼女をオズの国に連れてきた経緯や、仲間たちを見つけたこと、そして彼らが出会った素晴らしい冒険について話しました。"
             }
           ],
           "raw_line": 3472

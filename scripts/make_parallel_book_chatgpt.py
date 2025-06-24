@@ -219,6 +219,8 @@ def merge_translations(translations):
 
 def postprocess_tasks(tasks):
   for task in tasks:
+    role = task["role"]
+    if role in ["macro", "code"]: continue
     response = task.get("response")
     if not response: continue
     content = response["content"]
@@ -442,8 +444,8 @@ def split_sentences_english(text):
   norm_text = regex.sub(r"(\W)([A-Z])\.", r"\1\2__PERIOD__", norm_text)
   norm_text = regex.sub(r"([a-zA-Z])([.!?;]+)(\s+)([A-Z])", r"\1\2{SEP}\4", norm_text)
   norm_text = regex.sub(r"([^.!?;{}]{100,})([.!?;]+)(\s+)", r"\1\2{SEP}", norm_text)
-  norm_text = regex.sub(r'([.!?;]+)(\s+)(["“‘\p{Ps}])', r"\1{SEP}\2\3", norm_text)
-  norm_text = regex.sub(r'([.!?;]+["”’\p{Pe}”])', r"\1{SEP}", norm_text)
+  norm_text = regex.sub(r'([.!?;]+)(\s+)(["“‘*\p{Ps}])', r"\1{SEP}\2\3", norm_text)
+  norm_text = regex.sub(r'([.!?;]+["”’)\p{Pe}”])', r"\1{SEP}", norm_text)
   norm_text = regex.sub(r"__PERIOD__", ".", norm_text)
   sentences = []
   for sentence in norm_text.split("{SEP}"):
@@ -638,14 +640,14 @@ def make_prompt_enja(book_title, role, source_text,
       if role in ["paragraph", "blockquote"]:
         for split_source in split_sentences_english(source_text)[:2]:
           translation = {
-            "source": split_source,
-            "target": "(sourceの訳文...)",
+            "en": split_source,
+            "ja": "(enの訳文...)",
           }
           translations.append(translation)
       else:
         translation = {
-          "source": source_text,
-          "target": "(sourceの訳文...)",
+          "en": source_text,
+          "ja": "(enの訳文...)",
         }
         translations.append(translation)
       example = {
@@ -771,6 +773,68 @@ def execute_task(
     book_title, role, source_text, hint, prev_context, next_context,
     assistant_thread_id, main_model,
     failsoft, no_fallback, extra_hint):
+  if len(source_text) <= 2000:
+    return execute_task_single(
+      book_title, role, source_text, hint, prev_context, next_context,
+      assistant_thread_id, main_model,
+      failsoft, no_fallback, extra_hint)
+  sentences = split_sentences_english(source_text)
+  batches = [[]]
+  batch_len = 0
+  for sentence in sentences:
+    if batch_len > 1000:
+      batches.append([])
+      batch_len = 0
+    batches[-1].append(sentence)
+    batch_len += len(sentence)
+  if len(batches) > 1 and batch_len < 400:
+    last_batch = batches.pop()
+    batches[-1].extend(last_batch)
+  batch_records = []
+  batch_hint = hint
+  batch_prev_context = prev_context
+  for i, batch in enumerate(batches):
+    batch_text = " ".join(batch)
+    if i == len(batches) - 1:
+      batch_next_context = next_context
+    else:
+      batch_next_context = []
+      context_width = 0
+      for sentence in batches[i+1]:
+        batch_next_context.append(sentence)
+        context_width += calculate_width(sentence)
+        if context_width > 100: break
+    record = execute_task_single(
+      book_title, role, batch_text, hint, batch_prev_context, batch_next_context,
+      assistant_thread_id, main_model,
+      failsoft, no_fallback, batch_hint)
+    batch_records.append(record)
+    batch_prev_context = []
+    context_width = 0
+    for sentence in reversed(batches[i]):
+      batch_prev_context.append(sentence)
+      context_width += calculate_width(sentence)
+      if context_width > 200: break
+    batch_prev_context.reverse()
+    batch_hint = record["hint"]
+  content = []
+  cost = 0
+  for record in batch_records:
+    for translation in record["content"]:
+      content.append(translation)
+    cost += record["cost"]
+  merged_record = {
+    "content": content,
+    "hint": batch_hint,
+    "cost": cost,
+  }
+  return merged_record
+
+
+def execute_task_single(
+    book_title, role, source_text, hint, prev_context, next_context,
+    assistant_thread_id, main_model,
+    failsoft, no_fallback, extra_hint):
   latins = regex.sub(r"[^\p{Latin}]", "", source_text)
   if len(latins) < 2:
     logger.debug(f"Not English: intact data is generated")
@@ -844,38 +908,45 @@ def execute_task(
         response = regex.sub(r',\s*([\]}])', r'\1', response)
         logger.debug(f"Response:\n{response}")
         data = json.loads(response)
-        if (type(data.get("translations")) == list and type(data.get("context_hint")) == str):
-          record = {}
-          content = []
-          for translation in data.get("translations"):
-            rec_tran = {
-              "source": translation["en"],
-              "target": translation["ja"],
-            }
-            content.append(rec_tran)
-          if content:
-            match = regex.search(r"^(\p{Quotation_Mark})", source_text)
-            if match:
-              src_quot = match.group(1)
-              first_tran = content[0]
-              if not first_tran["source"].startswith(src_quot):
-                first_tran["source"] = src_quot + first_tran["source"]
-                if not regex.search(r"^(\p{Quotation_Mark})", first_tran["target"]):
-                  first_tran["target"] = "「" + first_tran["target"]
-            match = regex.search(r"(\p{Quotation_Mark})$", source_text)
-            if match:
-              src_quot = match.group(1)
-              last_tran = content[-1]
-              if not last_tran["source"].endswith(src_quot):
-                last_tran["source"] = last_tran["source"] + src_quot
-                if not regex.search(r"(\p{Quotation_Mark})$", last_tran["target"]):
-                  last_tran["target"] = last_tran["target"] + "」"
-          record["content"] = content
-          record["hint"] = data.get("context_hint")
-          record["cost"] = round(calculate_chatgpt_cost(prompt, response, model), 8)
-          if not validate_content(role, source_text, content):
-            raise ValueError("Validation error")
-          return record
+        if type(data.get("translations")) != list:
+          raise ValueError("No translaitons")
+        if type(data.get("context_hint")) != str:
+          raise ValueError("No context_hint")
+        record = {}
+        content = []
+        for translation in data.get("translations"):
+          if "en" not in translation:
+            raise ValueError("No en in translaiton")
+          if "ja" not in translation:
+            raise ValueError("No ja in translaiton")
+          rec_tran = {
+            "source": translation["en"],
+            "target": translation["ja"],
+          }
+          content.append(rec_tran)
+        if content:
+          match = regex.search(r"^(\p{Quotation_Mark})", source_text)
+          if match:
+            src_quot = match.group(1)
+            first_tran = content[0]
+            if not first_tran["source"].startswith(src_quot):
+              first_tran["source"] = src_quot + first_tran["source"]
+              if not regex.search(r"^(\p{Quotation_Mark})", first_tran["target"]):
+                first_tran["target"] = "「" + first_tran["target"]
+          match = regex.search(r"(\p{Quotation_Mark})$", source_text)
+          if match:
+            src_quot = match.group(1)
+            last_tran = content[-1]
+            if not last_tran["source"].endswith(src_quot):
+              last_tran["source"] = last_tran["source"] + src_quot
+              if not regex.search(r"(\p{Quotation_Mark})$", last_tran["target"]):
+                last_tran["target"] = last_tran["target"] + "」"
+        record["content"] = content
+        record["hint"] = data.get("context_hint")
+        record["cost"] = round(calculate_chatgpt_cost(prompt, response, model), 8)
+        if not validate_content(role, source_text, content):
+          raise ValueError("Validation error")
+        return record
       except Exception as e:
         logger.info(f"Attempt {attempt} failed"
                     f" (model={model}, temperature={temp}, jsonize_input={jsonize_input}): {e}")

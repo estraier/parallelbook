@@ -2601,21 +2601,16 @@
             },
             {
               "id": "00163-002",
-              "source": "It had occurred to me that this shadow of a garage must be a blind, and that sumptuous and romantic apartments were concealed overhead,",
-              "target": "このガレージの影が隠れ蓑であると私には思えました。そして、豪華でロマンチックなアパートが上階に隠されているのだろうと。"
+              "source": "It had occurred to me that this shadow of a garage must be a blind, and that sumptuous and romantic apartments were concealed overhead, when the proprietor himself appeared in the door of an office, wiping his hands on a piece of waste.",
+              "target": "このガレージの影が隠れ蓑であると私には思えました。そして、豪華でロマンチックなアパートが上階に隠されているのだろうと。その時、店主自らがオフィスの扉に現れ、廃材で手を拭いていました。"
             },
             {
               "id": "00163-003",
-              "source": "when the proprietor himself appeared in the door of an office, wiping his hands on a piece of waste.",
-              "target": "その時、店主自らがオフィスの扉に現れ、廃材で手を拭いていました。"
-            },
-            {
-              "id": "00163-004",
               "source": "He was a blond, spiritless man, anaemic, and faintly handsome.",
               "target": "彼は金髪で気力のない男で、貧血気味で、かすかにハンサムでした。"
             },
             {
-              "id": "00163-005",
+              "id": "00163-004",
               "source": "When he saw us a damp gleam of hope sprang into his light blue eyes.",
               "target": "私たちを見ると、彼の薄青色の目に湿った希望のきらめきが生まれました。"
             }
@@ -7161,13 +7156,8 @@
           "paragraph": [
             {
               "id": "00464-000",
-              "source": "Everyone suspects himself of at least one of the cardinal virtues, and this is mine:",
-              "target": "誰もが自分自身を少なくとも1つの基本的美徳の持ち主だと疑っており、私の場合はこちらです："
-            },
-            {
-              "id": "00464-001",
-              "source": "I am one of the few honest people that I have ever known.",
-              "target": "私はこれまで知ってきた数少ない正直な人間の1人です。"
+              "source": "Everyone suspects himself of at least one of the cardinal virtues, and this is mine: I am one of the few honest people that I have ever known.",
+              "target": "誰もが自分自身を少なくとも1つの基本的美徳の持ち主だと疑っており、私の場合はこちらです：私はこれまで知ってきた数少ない正直な人間の1人です。"
             }
           ],
           "raw_line": 1503
@@ -7431,16 +7421,11 @@
           "paragraph": [
             {
               "id": "00481-000",
-              "source": "“It’s pretty, isn’t it, old sport?”,",
-              "target": "「きれいだろう、おやじ？」"
+              "source": "“It’s pretty, isn’t it, old sport?”, He jumped off to give me a better view.",
+              "target": "「きれいだろう、おやじ？」、彼は飛び降りて、私により良い景色を見せてくれた。"
             },
             {
               "id": "00481-001",
-              "source": "He jumped off to give me a better view.",
-              "target": "彼は飛び降りて、私により良い景色を見せてくれた。"
-            },
-            {
-              "id": "00481-002",
               "source": "“Haven’t you ever seen it before?”",
               "target": "「これまで見たことないのかい？」"
             }
@@ -11682,16 +11667,11 @@
           "paragraph": [
             {
               "id": "00771-000",
-              "source": "“Look at that,” she whispered,",
-              "target": "「あれを見て」と彼女は囁いた。"
+              "source": "“Look at that,” she whispered, and then after a moment:",
+              "target": "「あれを見て」と彼女は囁いた。そしてしばらくしてから、"
             },
             {
               "id": "00771-001",
-              "source": "and then after a moment:",
-              "target": "そしてしばらくしてから、"
-            },
-            {
-              "id": "00771-002",
               "source": "“I’d like to just get one of those pink clouds and put you in it and push you around.”",
               "target": "「あのピンクの雲の中にあなたを入れて、押して回したいわ」。"
             }
@@ -19753,13 +19733,8 @@
             },
             {
               "id": "01343-002",
-              "source": "Toward dawn I heard a taxi go up Gatsby’s drive, and immediately I jumped out of bed and began to dress",
-              "target": "夜明けに向かって、タクシーがギャツビーのドライブウェイを上がる音が聞こえ、私はすぐにベッドから飛び起きて服を着始めた。"
-            },
-            {
-              "id": "01343-003",
-              "source": "I felt that I had something to tell him, something to warn him about, and morning would be too late.",
-              "target": "彼に伝えるべきことがあると感じ、警告すべきことがあると感じた。朝になると遅すぎると思った。"
+              "source": "Toward dawn I heard a taxi go up Gatsby’s drive, and immediately I jumped out of bed and began to dress I felt that I had something to tell him, something to warn him about, and morning would be too late.",
+              "target": "夜明けに向かって、タクシーがギャツビーのドライブウェイを上がる音が聞こえ、私はすぐにベッドから飛び起きて服を着始めた。彼に伝えるべきことがあると感じ、警告すべきことがあると感じた。朝になると遅すぎると思った。"
             }
           ],
           "raw_line": 4134

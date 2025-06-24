@@ -466,12 +466,17 @@
             {
               "id": "00033-000",
               "source": "While Tom was eating his supper, and stealing sugar as opportunity offered, Aunt Polly asked him questions that were full of guile, and very deep—for she wanted to trap him into damaging revealments.",
-              "target": "トムが夕食を食べている間、チャンスが訪れると砂糖を盗んでいた。ポリーおばさんは、トムを罪に陥れるために、狡猾で非常に深い質問をしていた。"
+              "target": "トムが夕食を食べている間、チャンスが巡ってくると砂糖を盗んでいた。その時、ポリーおばさんはトムに質問を投げかけた。その質問は狡猾で非常に深いものだった。なぜなら、彼女はトムを罪を認めさせる罠にかけたかったからだ。"
             },
             {
               "id": "00033-001",
               "source": "Like many other simple-hearted souls, it was her pet vanity to believe she was endowed with a talent for dark and mysterious diplomacy, and she loved to contemplate her most transparent devices as marvels of low cunning.",
-              "target": "他の多くの素朴な心を持つ人々と同様に、彼女は自分が暗く神秘的な外交の才能を持っていると信じることが彼女の虚栄心だった。彼女は、自分の最も透明な策略を、卑劣な巧妙さの驚異として考えるのが好きだった。"
+              "target": "他の多くの素朴な心を持つ人々と同様、彼女は自分が暗く神秘的な外交の才能を持っていると信じることが彼女の自慢だった。そして、彼女は自分の最も透明な策略を、卑劣な巧妙さの驚異として考えることを愛していた。"
+            },
+            {
+              "id": "00033-002",
+              "source": "Said she:",
+              "target": "彼女は言った:"
             }
           ],
           "raw_line": 101
@@ -2221,7 +2226,7 @@
             {
               "id": "00151-000",
               "source": "The brush continued to move.",
-              "target": " p>筆は動き続けた。</p>"
+              "target": "p>筆は動き続けた。</p>"
             }
           ],
           "raw_line": 481
@@ -2836,37 +2841,47 @@
             {
               "id": "00184-000",
               "source": "Presently she stepped into the kitchen, and Sid, happy in his immunity, reached for the sugar-bowl—a sort of glorying over Tom which was wellnigh unbearable.",
-              "target": "やがて彼女は台所に入り、免疫を持って幸せそうなシドは砂糖入れに手を伸ばした。それはトムを見下すような態度で、トムにとってはほとんど我慢できないものだった。"
+              "target": "やがて彼女が台所に入ると、シドは叱られないことに喜び、砂糖の入れ物に手を伸ばした。それはトムにとってほとんど耐え難いほどの勝ち誇った様子だった。"
             },
             {
               "id": "00184-001",
               "source": "But Sid’s fingers slipped and the bowl dropped and broke.",
-              "target": "しかし、シドの指が滑り、入れ物が落ちて割れてしまった。"
+              "target": "しかし、シドの指が滑り、入れ物は落ちて割れてしまった。"
             },
             {
               "id": "00184-002",
               "source": "Tom was in ecstasies.",
-              "target": "トムは有頂天だった。"
+              "target": "トムは有頂天になった。"
             },
             {
               "id": "00184-003",
               "source": "In such ecstasies that he even controlled his tongue and was silent.",
-              "target": "そのような有頂天ぶりで、彼は舌を抑えて黙っていた。"
+              "target": "あまりに有頂天になったので、彼は口を慎んで黙っていた。"
             },
             {
               "id": "00184-004",
               "source": "He said to himself that he would not speak a word, even when his aunt came in, but would sit perfectly still till she asked who did the mischief; and then he would tell, and there would be nothing so good in the world as to see that pet model “catch it.”",
-              "target": "彼は自分に言い聞かせた。叔母が入ってきても一言も発しないで、ただじっと座っている。そして叔母が誰が悪さをしたのか尋ねるまで、そしてその後、彼は教えるつもりでいる。そして、その模範的な甥が叱られるのを見ることほど素晴らしいことはないだろう。"
+              "target": "彼は心の中で、叔母が入ってきても一言も話さず、彼女が誰が悪さをしたのか尋ねるまでじっとしていようと思った。そしてその時に告げ口をし、あの模範的な子が叱られるのを見ることほど素晴らしいことはないだろうと考えた。"
             },
             {
               "id": "00184-005",
               "source": "He was so brimful of exultation that he could hardly hold himself when the old lady came back and stood above the wreck discharging lightnings of wrath from over her spectacles.",
-              "target": "彼は歓喜に満ちあふれていて、老婦人が戻ってきて眼鏡越しに怒りの稲妻を放つのを見て、自分を抑えるのがやっとだった。"
+              "target": "彼は喜びに満ち溢れていたので、老婦人が戻ってきて、眼鏡越しに怒りの稲妻を放ちながら壊れたものの上に立ったとき、ほとんど自制できなかった。"
             },
             {
               "id": "00184-006",
-              "source": "He said to himself, “Now it’s coming!” And the next instant he was sprawling on the floor!",
-              "target": "彼は自分に言った。「さあ、来たぞ！」そして次の瞬間、彼は床に散らばっていた！"
+              "source": "He said to himself, “Now it’s coming!”",
+              "target": "彼は心の中で「さあ、来るぞ！」と思った。"
+            },
+            {
+              "id": "00184-007",
+              "source": "And the next instant he was sprawling on the floor!",
+              "target": "そして次の瞬間、彼は床にひっくり返っていた！"
+            },
+            {
+              "id": "00184-008",
+              "source": "The potent palm was uplifted to strike again when Tom cried out:",
+              "target": "強力な手のひらが再び打とうと持ち上げられたとき、トムは叫んだ。"
             }
           ],
           "raw_line": 631
@@ -3085,13 +3100,8 @@
             },
             {
               "id": "00193-001",
-              "source": "but if he had any dim idea of making any “references to allusions,” he thought better of it and held his peace,",
-              "target": "しかし、もし彼が何か「言及や暗示」をするつもりがあったとしても、それを思いとどまり黙っていた。"
-            },
-            {
-              "id": "00193-002",
-              "source": "for there was danger in Tom’s eye.",
-              "target": "なぜなら、トムの目には危険が潜んでいたからだ。"
+              "source": "but if he had any dim idea of making any “references to allusions,” he thought better of it and held his peace, for there was danger in Tom’s eye.",
+              "target": "しかし、もし彼が何か「言及や暗示」をするつもりがあったとしても、それを思いとどまり黙っていた。なぜなら、トムの目には危険が潜んでいたからだ。"
             }
           ],
           "raw_line": 695
@@ -4305,13 +4315,8 @@
           "paragraph": [
             {
               "id": "00258-000",
-              "source": "Shall I be car-ri-ed toe the skies, on flow’ry beds of ease,",
-              "target": "私は楽園の花畑で空に運ばれるのでしょうか、"
-            },
-            {
-              "id": "00258-001",
-              "source": "Whilst others fight to win the prize, and sail thro’ blood -y seas?",
-              "target": "他の人々が賞を勝ち取るために戦い、血の海を航海する中で？"
+              "source": "Shall I be car-ri-ed toe the skies, on flow’ry beds of ease, Whilst others fight to win the prize, and sail thro’ blood -y seas?",
+              "target": "私は楽園の花畑で空に運ばれるのでしょうか、他の人々が賞を勝ち取るために戦い、血の海を航海する中で？"
             }
           ],
           "raw_line": 991
@@ -5740,16 +5745,11 @@
           "paragraph": [
             {
               "id": "00342-000",
-              "source": "and then walk away quick, eleven steps, with your eyes shut,",
-              "target": "それから目を閉じて、素早く十一歩歩いて、"
+              "source": "and then walk away quick, eleven steps, with your eyes shut, and then turn around three times and walk home without speaking to anybody.",
+              "target": "それから目を閉じて、素早く十一歩歩いて、それから三回回って、誰とも話さずに家に帰るんだ。"
             },
             {
               "id": "00342-001",
-              "source": "and then turn around three times and walk home without speaking to anybody.",
-              "target": "それから三回回って、誰とも話さずに家に帰るんだ。"
-            },
-            {
-              "id": "00342-002",
               "source": "Because if you speak the charm’s busted.”",
               "target": "なぜなら、話してしまうと呪文が台無しになるからさ。"
             }
@@ -8180,23 +8180,8 @@
             },
             {
               "id": "00504-003",
-              "source": "and by this time the scholars began to gather again,",
-              "target": "その頃には生徒たちが再び集まり始め、"
-            },
-            {
-              "id": "00504-004",
-              "source": "and she had to hide her griefs and still her broken heart",
-              "target": "彼女は悲しみを隠し、傷ついた心をなおさらに抑えなければならなかった。"
-            },
-            {
-              "id": "00504-005",
-              "source": "and take up the cross of a long, dreary, aching afternoon,",
-              "target": "そして、長く、暗く、苦しい午後の苦しみを引き受けることになった。"
-            },
-            {
-              "id": "00504-006",
-              "source": "with none among the strangers about her to exchange sorrows with.",
-              "target": "周囲の見知らぬ人々と悲しみを分かち合う相手がいないまま。"
+              "source": "and by this time the scholars began to gather again, and she had to hide her griefs and still her broken heart and take up the cross of a long, dreary, aching afternoon, with none among the strangers about her to exchange sorrows with.",
+              "target": "その頃には生徒たちが再び集まり始め、彼女は悲しみを隠し、傷ついた心をなおさらに抑えなければならなかった。そして、長く、暗く、苦しい午後の苦しみを引き受けることになった。周囲の見知らぬ人々と悲しみを分かち合う相手がいないまま。"
             }
           ],
           "raw_line": 1882
@@ -10156,16 +10141,11 @@
           "paragraph": [
             {
               "id": "00605-000",
-              "source": "“No, you’ve always been fair and square with me, Muff Potter,",
-              "target": "「いや、マフ・ポッター、お前はいつも俺に対して正直で公正だった。"
+              "source": "“No, you’ve always been fair and square with me, Muff Potter, and I won’t go back on you.",
+              "target": "「いや、マフ・ポッター、お前はいつも俺に対して正直で公正だった。だから俺はお前を裏切らないよ。"
             },
             {
               "id": "00605-001",
-              "source": "and I won’t go back on you.",
-              "target": "だから俺はお前を裏切らないよ。"
-            },
-            {
-              "id": "00605-002",
               "source": "There, now, that’s as fair as a man can say.”",
               "target": "ほら、これが男として言える限りの公正さだ。」"
             }
@@ -10386,8 +10366,13 @@
           "paragraph": [
             {
               "id": "00620-000",
-              "source": "“Who’ll tell? We?”,",
-              "target": "「誰が言う？僕たち？」"
+              "source": "“Who’ll tell?",
+              "target": "「誰が言う？"
+            },
+            {
+              "id": "00620-001",
+              "source": "We?”",
+              "target": "私たちが？」"
             }
           ],
           "raw_line": 2360
@@ -11846,13 +11831,8 @@
             },
             {
               "id": "00710-002",
-              "source": "He was now become, to them, the most balefully interesting object they had ever looked upon,",
-              "target": "彼は今や、彼らにとってこれまで見た中で最も邪悪で興味深い存在となっていました。"
-            },
-            {
-              "id": "00710-003",
-              "source": "and they could not take their fascinated eyes from his face.",
-              "target": "そして、彼らは彼の顔から目を離すことができませんでした。"
+              "source": "He was now become, to them, the most balefully interesting object they had ever looked upon, and they could not take their fascinated eyes from his face.",
+              "target": "彼は今や、彼らにとってこれまで見た中で最も邪悪で興味深い存在となっていました。そして、彼らは彼の顔から目を離すことができませんでした。"
             }
           ],
           "raw_line": 2689
@@ -13246,8 +13226,8 @@
           "paragraph": [
             {
               "id": "00783-000",
-              "source": "“What sail’s she carrying?”,",
-              "target": "「彼女はどんな帆を掲げているのか？」"
+              "source": "“What sail’s she carrying?”",
+              "target": "「彼女は何の帆を持っていますか？」"
             }
           ],
           "raw_line": 3019
@@ -16996,7 +16976,7 @@
           "paragraph": [
             {
               "id": "00966-000",
-              "source": "“Yes, you could have done that, Tom,” said Mary; ",
+              "source": "“Yes, you could have done that, Tom,” said Mary;",
               "target": "「そうだね、トム、そうすればよかったのに」とメアリーが言った。"
             },
             {
@@ -17971,18 +17951,8 @@
             },
             {
               "id": "01033-001",
-              "source": "and she glanced ever so furtively at Tom,",
-              "target": "そして彼女はトムをこっそりと見たが、"
-            },
-            {
-              "id": "01033-002",
-              "source": "but he talked right along to Amy Lawrence about the terrible storm on the island,",
-              "target": "トムはアイランドでのひどい嵐についてエイミー・ローレンスと話し続けていたが、"
-            },
-            {
-              "id": "01033-003",
-              "source": "and how the lightning tore the great sycamore tree “all to flinders” while he was “standing within three feet of it.”",
-              "target": "そして彼が「そのすぐそばで立っていた」時に稲妻が大きなプラタナスの木を「完全に粉々にした」ことについて話していた。"
+              "source": "and she glanced ever so furtively at Tom, but he talked right along to Amy Lawrence about the terrible storm on the island, and how the lightning tore the great sycamore tree “all to flinders” while he was “standing within three feet of it.”",
+              "target": "そして彼女はトムをこっそりと見たが、トムはアイランドでのひどい嵐についてエイミー・ローレンスと話し続けていたが、そして彼が「そのすぐそばで立っていた」時に稲妻が大きなプラタナスの木を「完全に粉々にした」ことについて話していた。"
             }
           ],
           "raw_line": 4079
@@ -21891,8 +21861,8 @@
           "paragraph": [
             {
               "id": "01242-000",
-              "source": "“Why, is it hid all around?”,",
-              "target": "「なぜ、それは周囲に隠されているの？」と、"
+              "source": "“Why, is it hid all around?”",
+              "target": "「なぜ、それはあちこちに隠されているの？」"
             }
           ],
           "raw_line": 4953
@@ -23856,8 +23826,18 @@
           "paragraph": [
             {
               "id": "01377-000",
-              "source": "“Sh!... There!... Hear it?”,",
-              "target": "「しーっ... そこ！... 聞こえる？」"
+              "source": "“Sh!...",
+              "target": "「しーっ…"
+            },
+            {
+              "id": "01377-001",
+              "source": "There!...",
+              "target": "そこ！…"
+            },
+            {
+              "id": "01377-002",
+              "source": "Hear it?”",
+              "target": "聞こえる？」"
             }
           ],
           "raw_line": 5381
@@ -28642,27 +28622,27 @@
             {
               "id": "01640-000",
               "source": "Becky responded to his call, and they made a smoke-mark for future guidance, and started upon their quest.",
-              "target": "ベッキーは彼の呼びかけに応じ、将来の目印として煙の印を作り、探検を始めました。"
+              "target": "ベッキーは彼の呼びかけに応じ、将来の目印として煙を立て、探検を始めました。"
             },
             {
               "id": "01640-001",
               "source": "They wound this way and that, far down into the secret depths of the cave, made another mark, and branched off in search of novelties to tell the upper world about.",
-              "target": "彼らは洞窟の秘密の奥深くまで蛇行し、別の印を作り、新しい発見を探して上の世界に伝えるために分かれました。"
+              "target": "彼らは洞窟の奥深くに入り込み、蛇行しながら進み、もう一つ目印をつけ、新しい発見を探しに分かれました。"
             },
             {
               "id": "01640-002",
               "source": "In one place they found a spacious cavern, from whose ceiling depended a multitude of shining stalactites of the length and circumference of a man’s leg; they walked all about it, wondering and admiring, and presently left it by one of the numerous passages that opened into it.",
-              "target": "ある場所で、彼らは広々とした洞窟を見つけました。その天井からは、一本の男の脚ほどの長さと円周の輝く鍾乳石がたくさん垂れ下がっていました。彼らはそれを歩き回り、驚きと感嘆の念を抱きながら、やがてその洞窟に開かれた多くの通路の一つから出て行きました。"
+              "target": "ある場所で、彼らは広々とした洞窟を見つけました。天井からは、一人の脚の長さと円周の多くの輝く鍾乳石が垂れ下がっていました。彼らはそれを歩き回り、驚きと感嘆の念を抱きながら、やがてその洞窟に繋がる多くの通路の一つから出て行きました。"
             },
             {
               "id": "01640-003",
               "source": "This shortly brought them to a bewitching spring, whose basin was incrusted with a frostwork of glittering crystals; it was in the midst of a cavern whose walls were supported by many fantastic pillars which had been formed by the joining of great stalactites and stalagmites together, the result of the ceaseless water-drip of centuries.",
-              "target": "やがて彼らは魅惑的な泉にたどり着きました。その盆地は輝く結晶の霜で覆われていました。それは、多くの幻想的な柱で支えられた洞窟の中央にあり、それらの柱は大きな鍾乳石と鍾乳柱が一緒になって形成されたもので、何世紀にもわたる絶え間ない水滴の結果でした。"
+              "target": "やがて彼らは魅惑的な泉にたどり着きました。その盆地は輝く結晶の霜で覆われていました。それは、壁が多くの幻想的な柱で支えられている洞窟の中央にあり、大きな鍾乳石と鍾乳柱が結合してできた素晴らしい柱がたくさんありました。それは何世紀にもわたる絶え間ない水滴の結果でした。"
             },
             {
               "id": "01640-004",
               "source": "Under the roof vast knots of bats had packed themselves together, thousands in a bunch; the lights disturbed the creatures and they came flocking down by hundreds, squeaking and darting furiously at the candles.",
-              "target": "屋根の下では、膨大な数のコウモリが集まっており、何千もが一団になっていました。光が生物を乱し、彼らは百匹単位で群れてきて、キャンドルに激しく鳴きながら飛びかかってきました。"
+              "target": "屋根の下では、大勢のコウモリが集まっており、何千もが一団になっていました。光が生物を乱し、彼らは百匹単位で群れて、キャンドルに激しく羽ばたいて鳴き散らしていました。"
             },
             {
               "id": "01640-005",
@@ -28672,7 +28652,7 @@
             {
               "id": "01640-006",
               "source": "He seized Becky’s hand and hurried her into the first corridor that offered; and none too soon, for a bat struck Becky’s light out with its wing while she was passing out of the cavern.",
-              "target": "彼はベッキーの手をつかみ、彼女を最初に見つけた通路に急いで連れて行きました。そして、洞窟を出ようとしているときに、コウモリがベッキーの明かりを羽で消してしまいました。"
+              "target": "彼はベッキーの手を掴んで、最初に見つけた通路に急いで彼女を連れて行きました。そして、間に合ってよかった、なぜならコウモリが洞窟を出る際にベッキーの灯りを羽で消してしまったからです。"
             },
             {
               "id": "01640-007",
@@ -28682,12 +28662,22 @@
             {
               "id": "01640-008",
               "source": "Tom found a subterranean lake, shortly, which stretched its dim length away until its shape was lost in the shadows.",
-              "target": "トムはすぐに地下湖を見つけました。その湖は薄暗い長さを伸ばし、その形が影の中で失われるまで続いていました。"
+              "target": "トムはやがて地下湖を見つけました。その湖は薄暗い長さを伸ばし、その姿が影の中で失われるまで続いていました。"
             },
             {
               "id": "01640-009",
               "source": "He wanted to explore its borders, but concluded that it would be best to sit down and rest awhile, first.",
               "target": "彼はその周辺を探検したかったが、まずは座って少し休むのが一番だと結論づけました。"
+            },
+            {
+              "id": "01640-010",
+              "source": "Now, for the first time, the deep stillness of the place laid a clammy hand upon the spirits of the children.",
+              "target": "そして、初めてその場所の深い静けさが子供たちの心に冷たい手を置きました。"
+            },
+            {
+              "id": "01640-011",
+              "source": "Becky said:",
+              "target": "ベッキーは言いました。"
             }
           ],
           "raw_line": 6458
@@ -29066,16 +29056,11 @@
             },
             {
               "id": "01664-001",
-              "source": "the children tried to pay attention, for it was dreadful to think of sitting down when time was grown to be so precious,",
-              "target": "子供たちは注意を払おうとした。時間が非常に貴重になっているときに座ることを考えるのは恐ろしいからだ。"
+              "source": "the children tried to pay attention, for it was dreadful to think of sitting down when time was grown to be so precious, moving, in some direction, in any direction, was at least progress and might bear fruit;",
+              "target": "子供たちは注意を払おうとした。時間が非常に貴重になっているときに座ることを考えるのは恐ろしいからだ。どこか、どんな方向でも進むことは少なくとも進歩であり、成果を生む可能性があった。"
             },
             {
               "id": "01664-002",
-              "source": "moving, in some direction, in any direction, was at least progress and might bear fruit;",
-              "target": "どこか、どんな方向でも進むことは少なくとも進歩であり、成果を生む可能性があった。"
-            },
-            {
-              "id": "01664-003",
               "source": "but to sit down was to invite death and shorten its pursuit.",
               "target": "しかし座ることは死を招き、その追求を短縮することになる。"
             }
@@ -32126,8 +32111,8 @@
           "paragraph": [
             {
               "id": "01839-000",
-              "source": "“Well, what?”,",
-              "target": "「それで、何？」"
+              "source": "“Well, what?”",
+              "target": "「さて、何だい？」"
             }
           ],
           "raw_line": 7245
@@ -33156,5 +33141,5 @@
       "raw_line": 7489
     }
   ],
-  "cost": 1.811
+  "cost": 1.825
 }

@@ -255,13 +255,8 @@
             },
             {
               "id": "00015-002",
-              "source": "so then I didn’t care no more about him,",
-              "target": "だからもう彼について気にかけなくなった。"
-            },
-            {
-              "id": "00015-003",
-              "source": "because I don’t take no stock in dead people.",
-              "target": "死んだ人には興味がないからだ。"
+              "source": "so then I didn’t care no more about him, because I don’t take no stock in dead people.",
+              "target": "だからもう彼について気にかけなくなった。死んだ人には興味がないからだ。"
             }
           ],
           "raw_line": 62
@@ -1355,18 +1350,8 @@
             },
             {
               "id": "00062-002",
-              "source": "They agreed to get together and fix a day as soon as they could,",
-              "target": "彼らはできるだけ早く集まって日を決めることに同意した。"
-            },
-            {
-              "id": "00062-003",
-              "source": "and then we elected Tom Sawyer first captain and Jo Harper second captain of the Gang,",
-              "target": "そして、トム・ソーヤーを第一の船長に、ジョー・ハーパーを第二の船長に選出し、"
-            },
-            {
-              "id": "00062-004",
-              "source": "and so started home.",
-              "target": "そして家に向かい始めた。"
+              "source": "They agreed to get together and fix a day as soon as they could, and then we elected Tom Sawyer first captain and Jo Harper second captain of the Gang, and so started home.",
+              "target": "彼らはできるだけ早く集まって日を決めることに同意した。そして、トム・ソーヤーを第一の船長に、ジョー・ハーパーを第二の船長に選出し、そして家に向かい始めた。"
             }
           ],
           "raw_line": 322
@@ -3000,13 +2985,8 @@
             },
             {
               "id": "00135-003",
-              "source": "and when I reckoned he was gone he come back and put his head in again, and told me to mind about that school,",
-              "target": "そして彼がいなくなったと思ったとき、彼は戻ってきて再び頭を入れ、その学校のことを気にするように私に言いました。"
-            },
-            {
-              "id": "00135-004",
-              "source": "because he was going to lay for me and lick me if I didn’t drop that.",
-              "target": "なぜなら、私を待ち伏せして叩くつもりだと言い、それをやめないと私を叩くつもりだと言いました。"
+              "source": "and when I reckoned he was gone he come back and put his head in again, and told me to mind about that school, because he was going to lay for me and lick me if I didn’t drop that.",
+              "target": "そして彼がいなくなったと思ったとき、彼は戻ってきて再び頭を入れ、その学校のことを気にするように私に言いました。なぜなら、私を待ち伏せして叩くつもりだと言い、それをやめないと私を叩くつもりだと言いました。"
             }
           ],
           "raw_line": 689
@@ -5965,61 +5945,36 @@
           "paragraph": [
             {
               "id": "00248-000",
-              "source": "“I tuck out en shin down de hill,",
-              "target": "「私は抜け出して丘を駆け下り、"
+              "source": "“I tuck out en shin down de hill, en ’spec to steal a skift ’long de sho’ som’ers ’bove de town, but dey wuz people a-stirring yit, so I hid in de ole tumble-down cooper-shop on de bank to wait for everybody to go ’way.",
+              "target": "「私は抜け出して丘を駆け下り、町の上流のどこかで小舟を盗もうと思ったが、まだ人々が動いていたので、みんながいなくなるのを待つために、川岸の古い壊れかけた樽工場に隠れた。"
             },
             {
               "id": "00248-001",
-              "source": "en ’spec to steal a skift ’long de sho’ som’ers ’bove de town,",
-              "target": "町の上流のどこかで小舟を盗もうと思ったが、"
-            },
-            {
-              "id": "00248-002",
-              "source": "but dey wuz people a-stirring yit,",
-              "target": "まだ人々が動いていたので、"
-            },
-            {
-              "id": "00248-003",
-              "source": "so I hid in de ole tumble-down cooper-shop on de bank to wait for everybody to go ’way.",
-              "target": "みんながいなくなるのを待つために、川岸の古い壊れかけた樽工場に隠れた。"
-            },
-            {
-              "id": "00248-004",
               "source": "Well, I wuz dah all night.",
               "target": "まあ、一晩中そこにいた。"
             },
             {
-              "id": "00248-005",
+              "id": "00248-002",
               "source": "Dey wuz somebody roun’ all de time.",
               "target": "ずっと誰かが周りにいた。"
             },
             {
-              "id": "00248-006",
-              "source": "’Long ’bout six in de mawnin’ skifts begin to go by,",
-              "target": "朝の6時ごろに小舟が通り始め、"
+              "id": "00248-003",
+              "source": "’Long ’bout six in de mawnin’ skifts begin to go by, en ’bout eight er nine every skift dat went ’long wuz talkin’ ’bout how yo’ pap come over to de town en say you’s killed.",
+              "target": "朝の6時ごろに小舟が通り始め、8時か9時ごろには、通り過ぎる小舟がみんな、君の父親が町に来て君が殺されたと言っている話をしていた。"
             },
             {
-              "id": "00248-007",
-              "source": "en ’bout eight er nine every skift dat went ’long wuz talkin’ ’bout how yo’ pap come over to de town en say you’s killed.",
-              "target": "8時か9時ごろには、通り過ぎる小舟がみんな、君の父親が町に来て君が殺されたと言っている話をしていた。"
-            },
-            {
-              "id": "00248-008",
+              "id": "00248-004",
               "source": "Dese las’ skifts wuz full o’ ladies en genlmen a-goin’ over for to see de place.",
               "target": "最後の小舟には、その場所を見に行くために向かう紳士淑女がいっぱいだった。"
             },
             {
-              "id": "00248-009",
-              "source": "Sometimes dey’d pull up at de sho’ en take a res’ b’fo’ dey started acrost,",
-              "target": "時々、彼らは岸に寄せて休憩を取り、渡り始める前に休んでいた。"
+              "id": "00248-005",
+              "source": "Sometimes dey’d pull up at de sho’ en take a res’ b’fo’ dey started acrost, so by de talk I got to know all ’bout de killin’.",
+              "target": "時々、彼らは岸に寄せて休憩を取り、渡り始める前に休んでいた。だから、その話を聞いて殺人についてすべて知った。"
             },
             {
-              "id": "00248-010",
-              "source": "so by de talk I got to know all ’bout de killin’.",
-              "target": "だから、その話を聞いて殺人についてすべて知った。"
-            },
-            {
-              "id": "00248-011",
+              "id": "00248-006",
               "source": "I ’uz powerful sorry you’s killed, Huck, but I ain’t no mo’ now.",
               "target": "君が殺されたと聞いてとても悲しかったよ、ハック。でも今はもう違う。」"
             }
@@ -6040,33 +5995,13 @@
             },
             {
               "id": "00249-002",
-              "source": "bekase I knowed ole missus en de widder wuz goin’ to start to de camp-meet’n’ right arter breakfas’ en be gone all day,",
-              "target": "なぜなら、奥様と未亡人が朝食後すぐにキャンプ集会に出かけ、一日中いないことを知っていたからです。"
+              "source": "bekase I knowed ole missus en de widder wuz goin’ to start to de camp-meet’n’ right arter breakfas’ en be gone all day, en dey knows I goes off wid de cattle ’bout daylight, so dey wouldn’ ’spec to see me roun’ de place, en so dey wouldn’ miss me tell arter dark in de evenin’.",
+              "target": "なぜなら、奥様と未亡人が朝食後すぐにキャンプ集会に出かけ、一日中いないことを知っていたからです。そして彼らは、私が夜明け頃に牛と一緒に出かけることを知っているので、私がその場所にいるとは思わないでしょうし、だから、夕方暗くなるまで私がいないことに気づかないでしょう。"
             },
             {
               "id": "00249-003",
-              "source": "en dey knows I goes off wid de cattle ’bout daylight,",
-              "target": "そして彼らは、私が夜明け頃に牛と一緒に出かけることを知っているので、"
-            },
-            {
-              "id": "00249-004",
-              "source": "so dey wouldn’ ’spec to see me roun’ de place,",
-              "target": "私がその場所にいるとは思わないでしょうし、"
-            },
-            {
-              "id": "00249-005",
-              "source": "en so dey wouldn’ miss me tell arter dark in de evenin’.",
-              "target": "だから、夕方暗くなるまで私がいないことに気づかないでしょう。"
-            },
-            {
-              "id": "00249-006",
-              "source": "De yuther servants wouldn’ miss me,",
-              "target": "他の使用人たちも私がいないことに気づかないでしょう。"
-            },
-            {
-              "id": "00249-007",
-              "source": "kase dey’d shin out en take holiday soon as de ole folks ’uz out’n de way.",
-              "target": "なぜなら、年寄りたちがいなくなるとすぐに休暇を取るからです。"
+              "source": "De yuther servants wouldn’ miss me, kase dey’d shin out en take holiday soon as de ole folks ’uz out’n de way.",
+              "target": "他の使用人たちも私がいないことに気づかないでしょう。なぜなら、年寄りたちがいなくなるとすぐに休暇を取るからです。"
             }
           ],
           "raw_line": 1404
@@ -6100,63 +6035,38 @@
           "paragraph": [
             {
               "id": "00251-000",
-              "source": "“I see a light a-comin’ roun’ de p’int bymeby,",
-              "target": "「やがて、岬の向こうから光が近づいてくるのが見えた。"
+              "source": "“I see a light a-comin’ roun’ de p’int bymeby, so I wade’ in en shove’ a log ahead o’ me en swum more’n half way acrost de river, en got in ’mongst de drift-wood, en kep’ my head down low, en kinder swum agin de current tell de raff come along.",
+              "target": "「やがて、岬の向こうから光が近づいてくるのが見えた。それで、川に入って丸太を前に押しながら、川の半分以上を泳いで渡った。流木の中に入り、頭を低く保ちながら、いかだが来るまで流れに逆らって泳いだ。"
             },
             {
               "id": "00251-001",
-              "source": "so I wade’ in en shove’ a log ahead o’ me en swum more’n half way acrost de river,",
-              "target": "それで、川に入って丸太を前に押しながら、川の半分以上を泳いで渡った。"
-            },
-            {
-              "id": "00251-002",
-              "source": "en got in ’mongst de drift-wood, en kep’ my head down low,",
-              "target": "流木の中に入り、頭を低く保ちながら、"
-            },
-            {
-              "id": "00251-003",
-              "source": "en kinder swum agin de current tell de raff come along.",
-              "target": "いかだが来るまで流れに逆らって泳いだ。"
-            },
-            {
-              "id": "00251-004",
               "source": "Den I swum to de stern uv it en tuck a-holt.",
               "target": "それから、いかだの後ろに泳いで行って、つかまった。"
             },
             {
-              "id": "00251-005",
+              "id": "00251-002",
               "source": "It clouded up en ’uz pooty dark for a little while.",
               "target": "雲が出てきて、しばらくの間かなり暗くなった。"
             },
             {
-              "id": "00251-006",
+              "id": "00251-003",
               "source": "So I clumb up en laid down on de planks.",
               "target": "それで、いかだに登って板の上に横になった。"
             },
             {
-              "id": "00251-007",
+              "id": "00251-004",
               "source": "De men ’uz all ’way yonder in de middle, whah de lantern wuz.",
               "target": "男たちはみんな、ランタンのある真ん中の方にいた。"
             },
             {
-              "id": "00251-008",
+              "id": "00251-005",
               "source": "De river wuz a-risin’, en dey wuz a good current;",
               "target": "川は増水していて、流れは速かった。"
             },
             {
-              "id": "00251-009",
-              "source": "so I reck’n’d ’at by fo’ in de mawnin’ I’d be twenty-five mile down de river,",
-              "target": "だから、朝の4時までには川を25マイル下ったところにいるだろうと考えた。"
-            },
-            {
-              "id": "00251-010",
-              "source": "en den I’d slip in jis b’fo’ daylight en swim asho’,",
-              "target": "それから、夜明け前にこっそりと岸に泳ぎ着き、"
-            },
-            {
-              "id": "00251-011",
-              "source": "en take to de woods on de Illinois side.",
-              "target": "イリノイ側の森に入るつもりだった。」"
+              "id": "00251-006",
+              "source": "so I reck’n’d ’at by fo’ in de mawnin’ I’d be twenty-five mile down de river, en den I’d slip in jis b’fo’ daylight en swim asho’, en take to de woods on de Illinois side.",
+              "target": "だから、朝の4時までには川を25マイル下ったところにいるだろうと考えた。それから、夜明け前にこっそりと岸に泳ぎ着き、イリノイ側の森に入るつもりだった。」"
             }
           ],
           "raw_line": 1416
@@ -7925,41 +7835,31 @@
             },
             {
               "id": "00334-009",
-              "source": "Well, he hain’t come back sence, and they ain’t looking for him back till this thing blows over a little,",
-              "target": "さて、それ以来彼は戻ってきておらず、この件が少し落ち着くまで彼を探すつもりもないのです。"
+              "source": "Well, he hain’t come back sence, and they ain’t looking for him back till this thing blows over a little, for people thinks now that he killed his boy and fixed things so folks would think robbers done it, and then he’d get Huck’s money without having to bother a long time with a lawsuit.",
+              "target": "さて、それ以来彼は戻ってきておらず、この件が少し落ち着くまで彼を探すつもりもないのです。というのも、人々は今、彼が自分の息子を殺し、強盗がやったと思わせるように仕組んだと考えているからです。そして、長い訴訟をせずにハックの金を手に入れようとしたのです。"
             },
             {
               "id": "00334-010",
-              "source": "for people thinks now that he killed his boy and fixed things so folks would think robbers done it,",
-              "target": "というのも、人々は今、彼が自分の息子を殺し、強盗がやったと思わせるように仕組んだと考えているからです。"
-            },
-            {
-              "id": "00334-011",
-              "source": "and then he’d get Huck’s money without having to bother a long time with a lawsuit.",
-              "target": "そして、長い訴訟をせずにハックの金を手に入れようとしたのです。"
-            },
-            {
-              "id": "00334-012",
               "source": "People do say he warn’t any too good to do it.",
               "target": "人々は彼がそれをやるのに十分悪い人間だと言っています。"
             },
             {
-              "id": "00334-013",
+              "id": "00334-011",
               "source": "Oh, he’s sly, I reckon.",
               "target": "ああ、彼はずる賢いと思います。"
             },
             {
-              "id": "00334-014",
+              "id": "00334-012",
               "source": "If he don’t come back for a year he’ll be all right.",
               "target": "彼が1年間戻ってこなければ大丈夫でしょう。"
             },
             {
-              "id": "00334-015",
+              "id": "00334-013",
               "source": "You can’t prove anything on him, you know;",
               "target": "彼に何も証明できませんからね。"
             },
             {
-              "id": "00334-016",
+              "id": "00334-014",
               "source": "everything will be quieted down then, and he’ll walk in Huck’s money as easy as nothing.”",
               "target": "その頃にはすべてが静まり、彼は何事もなくハックの金を手に入れるでしょう。」"
             }
@@ -10420,7 +10320,7 @@
           "paragraph": [
             {
               "id": "00465-000",
-              "source": "“Up where? Where are they?”,",
+              "source": "“Up where? Where are they?”",
               "target": "「どこに？彼らはどこにいるの？」"
             }
           ],
@@ -11115,16 +11015,11 @@
           "paragraph": [
             {
               "id": "00506-000",
-              "source": "“But hang it, Jim,",
-              "target": "「でも、ちくしょう、ジム、"
+              "source": "“But hang it, Jim, you’ve clean missed the point—",
+              "target": "「でも、ちくしょう、ジム、お前は完全に要点を見逃しているんだ—"
             },
             {
               "id": "00506-001",
-              "source": "you’ve clean missed the point—",
-              "target": "お前は完全に要点を見逃しているんだ—"
-            },
-            {
-              "id": "00506-002",
               "source": "blame it, you’ve missed it a thousand mile.”",
               "target": "まったく、千マイルも見逃しているよ。」"
             }
@@ -14265,18 +14160,18 @@
           "paragraph": [
             {
               "id": "00692-000",
-              "source": "The candle was on the floor, and there they all was, looking at me, and me at them, for about a quarter of a minute:",
-              "target": "ろうそくは床にあり、彼ら全員が私を見つめ、私も彼らを見つめた、約15秒間："
+              "source": "The candle was on the floor, and there they all was, looking at me, and me at them, for about a quarter of a minute: Three big men with guns pointed at me, which made me wince, I tell you;",
+              "target": "ろうそくが床に置かれていて、彼ら全員が私を見つめ、私も彼らを見つめ返した、およそ15秒間。私に向けられた銃を持った大男3人、それを見て私は身をすくめた、本当に。"
             },
             {
               "id": "00692-001",
-              "source": "Three big men with guns pointed at me, which made me wince, I tell you;",
-              "target": "私を狙って銃を持つ大男3人、それを見て私はビクッとした、本当に言うと；"
+              "source": "the oldest, gray and about sixty, the other two thirty or more—all of them fine and handsome—and the sweetest old gray-headed lady, and back of her two young women which I couldn’t see right well.",
+              "target": "最年長の男性は灰色で60歳ほど、他の2人は30歳以上―みんな立派でハンサムで―そして最愛らしい灰色の髪のおばあさん、その後ろには私がよく見えなかった2人の若い女性がいた。"
             },
             {
               "id": "00692-002",
-              "source": "the oldest, gray and about sixty, the other two thirty or more—all of them fine and handsome—and the sweetest old gray-headed lady, and back of her two young women which I couldn’t see right well.",
-              "target": "最年長の男性は灰色で60歳ほど、他の2人は30歳以上―全員が立派でハンサムで―そして最も優しい灰色の髪のおばあさん、その後ろには私がよく見えなかった2人の若い女性がいた。"
+              "source": "The old gentleman says:",
+              "target": "老紳士が言った："
             }
           ],
           "raw_line": 3320
@@ -15040,36 +14935,31 @@
             },
             {
               "id": "00732-006",
-              "source": "Despised love struck not with woe That head of curly knots,",
-              "target": "軽蔑された愛は、その巻き毛の頭を悲しみで打つことはなかった。"
+              "source": "Despised love struck not with woe That head of curly knots, Nor stomach troubles laid him low, Young Stephen Dowling Bots.",
+              "target": "軽蔑された愛は、その巻き毛の頭を悲しみで打つことはなかった。胃の問題も彼を苦しめることはなかった、若きスティーブン・ダウリング・ボッツ。"
             },
             {
               "id": "00732-007",
-              "source": "Nor stomach troubles laid him low, Young Stephen Dowling Bots.",
-              "target": "胃の問題も彼を苦しめることはなかった、若きスティーブン・ダウリング・ボッツ。"
-            },
-            {
-              "id": "00732-008",
               "source": "O no.",
               "target": "いいえ。"
             },
             {
-              "id": "00732-009",
+              "id": "00732-008",
               "source": "Then list with tearful eye, Whilst I his fate do tell.",
               "target": "そして、涙を浮かべながら耳を傾けよ、私が彼の運命を語る間。"
             },
             {
-              "id": "00732-010",
+              "id": "00732-009",
               "source": "His soul did from this cold world fly By falling down a well.",
               "target": "彼の魂はこの冷たい世界から井戸に落ちることで飛び立った。"
             },
             {
-              "id": "00732-011",
+              "id": "00732-010",
               "source": "They got him out and emptied him; Alas it was too late;",
               "target": "彼を引き上げて中身を空にした；ああ、それはあまりにも遅すぎた；"
             },
             {
-              "id": "00732-012",
+              "id": "00732-011",
               "source": "His spirit was gone for to sport aloft In the realms of the good and great.",
               "target": "彼の魂は高く舞い上がるために去っていった、善人と偉大なる者たちの領域に。"
             }
@@ -15895,13 +15785,8 @@
             },
             {
               "id": "00777-004",
-              "source": "but everybody said it was a good sermon, and they all talked it over going home, and had such a powerful lot to say about faith and good works and free grace and preforeordestination,",
-              "target": "しかし、みんなはそれが良い説教だと言い、帰り道にそれについて話し合い、信仰や善行、自由な恩寵、予定説などについてたくさん語り合った。"
-            },
-            {
-              "id": "00777-005",
-              "source": "and I don’t know what all, that it did seem to me to be one of the roughest Sundays I had run across yet.",
-              "target": "私には、これまで出会った中で最もつらい日曜日の1つに思えた。"
+              "source": "but everybody said it was a good sermon, and they all talked it over going home, and had such a powerful lot to say about faith and good works and free grace and preforeordestination, and I don’t know what all, that it did seem to me to be one of the roughest Sundays I had run across yet.",
+              "target": "しかし、みんなはそれが良い説教だと言い、帰り道にそれについて話し合い、信仰や善行、自由な恩寵、予定説などについてたくさん語り合った。私には、これまで出会った中で最もつらい日曜日の1つに思えた。"
             }
           ],
           "raw_line": 3692
@@ -16101,17 +15986,22 @@
             {
               "id": "00787-000",
               "source": "I waked him up, and I reckoned it was going to be a grand surprise to him to see me again, but it warn’t.",
-              "target": "彼を起こしました。再び私に会うことが彼にとって大きな驚きになると思っていましたが、そうではありませんでした。"
+              "target": "彼を起こし、もう一度会うことが彼にとって大きな驚きになるだろうと思ったが、そうではなかった。"
             },
             {
               "id": "00787-001",
               "source": "He nearly cried he was so glad, but he warn’t surprised.",
-              "target": "彼はとても喜んで泣きそうになりましたが、驚いていませんでした。"
+              "target": "彼はとても喜んで泣きそうになったが、驚いていなかった。"
             },
             {
               "id": "00787-002",
               "source": "Said he swum along behind me that night, and heard me yell every time, but dasn’t answer, because he didn’t want nobody to pick him up and take him into slavery again.",
-              "target": "彼はその夜私の後ろを泳いでいて、私が叫ぶたびに聞いていたと言いましたが、答えなかった。なぜなら、誰かに拾われて再び奴隷にされたくなかったからです。"
+              "target": "彼はその夜私の後ろを泳いでついてきて、私が叫ぶのを毎回聞いたが、答えなかった。奴隷にされるのを避けたかったからだ。"
+            },
+            {
+              "id": "00787-003",
+              "source": "Says he:",
+              "target": "彼は言った:"
             }
           ],
           "raw_line": 3745
@@ -16120,38 +16010,28 @@
           "paragraph": [
             {
               "id": "00788-000",
-              "source": "“I got hurt a little, en couldn’t swim fas’, so I wuz a considable ways behine you towards de las’; ",
+              "source": "“I got hurt a little, en couldn’t swim fas’, so I wuz a considable ways behine you towards de las’;",
               "target": "「ちょっと怪我をして、速く泳げなかったから、最後の方ではかなり後ろにいたんだ。"
             },
             {
               "id": "00788-001",
-              "source": "when you landed I reck’ned I could ketch up wid you on de lan’ ’dout havin’ to shout at you, ",
-              "target": "君が上陸したとき、声をかけなくても陸で追いつけると思ったんだけど、"
+              "source": "when you landed I reck’ned I could ketch up wid you on de lan’ ’dout havin’ to shout at you, but when I see dat house I begin to go slow.",
+              "target": "君が上陸したとき、声をかけなくても陸で追いつけると思ったんだけど、あの家を見たとき、ゆっくり行くことにしたんだ。"
             },
             {
               "id": "00788-002",
-              "source": "but when I see dat house I begin to go slow. ",
-              "target": "あの家を見たとき、ゆっくり行くことにしたんだ。"
-            },
-            {
-              "id": "00788-003",
-              "source": "I ’uz off too fur to hear what dey say to you—I wuz ’fraid o’ de dogs; ",
+              "source": "I ’uz off too fur to hear what dey say to you—I wuz ’fraid o’ de dogs;",
               "target": "君に何を言っているのか聞こえないくらい遠くにいて、犬が怖かったんだ。"
             },
             {
-              "id": "00788-004",
-              "source": "but when it ’uz all quiet agin, I knowed you’s in de house, so I struck out for de woods to wait for day. ",
+              "id": "00788-003",
+              "source": "but when it ’uz all quiet agin, I knowed you’s in de house, so I struck out for de woods to wait for day.",
               "target": "でも、また静かになったとき、君が家の中にいるとわかったから、森に行って夜が明けるのを待ったんだ。"
             },
             {
-              "id": "00788-005",
-              "source": "Early in de mawnin’ some er de niggers come along, gwyne to de fields, en dey tuk me en showed me dis place, ",
-              "target": "朝早く、畑に行く黒人たちが来て、ここに連れてきてくれたんだ。"
-            },
-            {
-              "id": "00788-006",
-              "source": "whah de dogs can’t track me on accounts o’ de water, en dey brings me truck to eat every night, en tells me how you’s a-gitt’n along.”",
-              "target": "ここでは水のせいで犬が追跡できないから、毎晩食べ物を持ってきてくれて、君の様子を教えてくれるんだ。」"
+              "id": "00788-004",
+              "source": "Early in de mawnin’ some er de niggers come along, gwyne to de fields, en dey tuk me en showed me dis place, whah de dogs can’t track me on accounts o’ de water, en dey brings me truck to eat every night, en tells me how you’s a-gitt’n along.”",
+              "target": "朝早く、畑に行く黒人たちが来て、ここに連れてきてくれたんだ。ここでは水のせいで犬が追跡できないから、毎晩食べ物を持ってきてくれて、君の様子を教えてくれるんだ。」"
             }
           ],
           "raw_line": 3750
@@ -17010,13 +16890,8 @@
             },
             {
               "id": "00826-002",
-              "source": "and by-and-by her waves would get to us, a long time after she was gone, and joggle the raft a bit,",
-              "target": "そしてその後、しばらくして彼女の波が私たちに届き、彼女が去ってから長い時間が経ってから、いくらかいかだを揺らしました。"
-            },
-            {
-              "id": "00826-003",
-              "source": "and after that you wouldn’t hear nothing for you couldn’t tell how long, except maybe frogs or something.",
-              "target": "その後、どれくらい経ったかわからないまま、カエルの鳴き声などを除いて、何も聞こえなくなりました。"
+              "source": "and by-and-by her waves would get to us, a long time after she was gone, and joggle the raft a bit, and after that you wouldn’t hear nothing for you couldn’t tell how long, except maybe frogs or something.",
+              "target": "そしてその後、しばらくして彼女の波が私たちに届き、彼女が去ってから長い時間が経ってから、いくらかいかだを揺らしました。その後、どれくらい経ったかわからないまま、カエルの鳴き声などを除いて、何も聞こえなくなりました。"
             }
           ],
           "raw_line": 3975
@@ -17160,66 +17035,26 @@
           "paragraph": [
             {
               "id": "00835-000",
-              "source": "“Well, I’d ben a-runnin’ a little temperance revival thar, ’bout a week,",
-              "target": "「まあ、私はそこで1週間ほど禁酒運動をやっていたんだ。"
+              "source": "“Well, I’d ben a-runnin’ a little temperance revival thar, ’bout a week, and was the pet of the women folks, big and little, for I was makin’ it mighty warm for the rummies, I tell you, and takin’ as much as five or six dollars a night—ten cents a head, children and niggers free—",
+              "target": "「まあ、私はそこで1週間ほど禁酒運動をやっていたんだ。そして、女性たちの人気者だったんだ、大人も子供もね。というのも、酔っ払いどもにはかなり厳しくしていたからね、言っておくけど。そして、一晩で5ドルか6ドルも稼いでいたんだ—一人10セントで、子供と黒人は無料だったけど—"
             },
             {
               "id": "00835-001",
-              "source": "and was the pet of the women folks, big and little,",
-              "target": "そして、女性たちの人気者だったんだ、大人も子供もね。"
+              "source": "and business a-growin’ all the time, when somehow or another a little report got around last night that I had a way of puttin’ in my time with a private jug on the sly.",
+              "target": "しかも、商売はどんどん成長していたんだ。ところが、昨晩、どういうわけかちょっとした噂が広まってしまってね、私がこっそりと自分用の酒を楽しんでいるという噂がね。"
             },
             {
               "id": "00835-002",
-              "source": "for I was makin’ it mighty warm for the rummies, I tell you,",
-              "target": "というのも、酔っ払いどもにはかなり厳しくしていたからね、言っておくけど。"
+              "source": "A nigger rousted me out this mornin’, and told me the people was getherin’ on the quiet with their dogs and horses, and they’d be along pretty soon and give me ’bout half an hour’s start, and then run me down if they could;",
+              "target": "今朝、黒人が私を起こしに来て、人々が犬や馬を連れてひっそりと集まっていると教えてくれたんだ、そして、すぐにやって来て、私に30分ほどの逃げる時間をくれると言ってね、それから、できるなら私を追い詰めるつもりだと。"
             },
             {
               "id": "00835-003",
-              "source": "and takin’ as much as five or six dollars a night—ten cents a head, children and niggers free—",
-              "target": "そして、一晩で5ドルか6ドルも稼いでいたんだ—一人10セントで、子供と黒人は無料だったけど—"
-            },
-            {
-              "id": "00835-004",
-              "source": "and business a-growin’ all the time,",
-              "target": "しかも、商売はどんどん成長していたんだ。"
-            },
-            {
-              "id": "00835-005",
-              "source": "when somehow or another a little report got around last night",
-              "target": "ところが、昨晩、どういうわけかちょっとした噂が広まってしまってね、"
-            },
-            {
-              "id": "00835-006",
-              "source": "that I had a way of puttin’ in my time with a private jug on the sly.",
-              "target": "私がこっそりと自分用の酒を楽しんでいるという噂がね。"
-            },
-            {
-              "id": "00835-007",
-              "source": "A nigger rousted me out this mornin’,",
-              "target": "今朝、黒人が私を起こしに来て、"
-            },
-            {
-              "id": "00835-008",
-              "source": "and told me the people was getherin’ on the quiet with their dogs and horses,",
-              "target": "人々が犬や馬を連れてひっそりと集まっていると教えてくれたんだ、"
-            },
-            {
-              "id": "00835-009",
-              "source": "and they’d be along pretty soon and give me ’bout half an hour’s start,",
-              "target": "そして、すぐにやって来て、私に30分ほどの逃げる時間をくれると言ってね、"
-            },
-            {
-              "id": "00835-010",
-              "source": "and then run me down if they could;",
-              "target": "それから、できるなら私を追い詰めるつもりだと。"
-            },
-            {
-              "id": "00835-011",
               "source": "and if they got me they’d tar and feather me and ride me on a rail, sure.",
               "target": "もし捕まったら、私をタールと羽で覆って、レールに乗せて引き回すだろうとね、確実に。"
             },
             {
-              "id": "00835-012",
+              "id": "00835-004",
               "source": "I didn’t wait for no breakfast—I warn’t hungry.”",
               "target": "私は朝食を待たなかった—お腹は空いていなかったから。」"
             }
@@ -18985,46 +18820,31 @@
             },
             {
               "id": "00933-001",
-              "source": "For who would fardels bear, till Birnam Wood do come to Dunsinane, But that the fear of something after death Murders the innocent sleep,",
-              "target": "誰が荷物を背負い続けるだろうか、バーンムの森がダンシナンに来るまで。しかし、死後の何かを恐れることが、無邪気な眠りを殺す。"
+              "source": "For who would fardels bear, till Birnam Wood do come to Dunsinane, But that the fear of something after death Murders the innocent sleep, Great nature’s second course, And makes us rather sling the arrows of outrageous fortune Than fly to others that we know not of.",
+              "target": "誰が荷物を背負い続けるだろうか、バーンムの森がダンシナンに来るまで。しかし、死後の何かを恐れることが、無邪気な眠りを殺す。大いなる自然の第二の道筋、そして、我々に運命の矢を放つ方が、知らぬ他者に逃げるよりも良い。"
             },
             {
               "id": "00933-002",
-              "source": "Great nature’s second course, And makes us rather sling the arrows of outrageous fortune Than fly to others that we know not of.",
-              "target": "大いなる自然の第二の道筋、そして、我々に運命の矢を放つ方が、知らぬ他者に逃げるよりも良い。"
-            },
-            {
-              "id": "00933-003",
               "source": "There’s the respect must give us pause: Wake Duncan with thy knocking! I would thou couldst;",
               "target": "そこには尊敬が我々に立ち止まらせねばならない。ダンカンをお前のノックで起こせ！願わくば、お前ができるとよいのだが。"
             },
             {
-              "id": "00933-004",
+              "id": "00933-003",
               "source": "For who would bear the whips and scorns of time, The oppressor’s wrong, the proud man’s contumely, The law’s delay, and the quietus which his pangs might take.",
               "target": "誰が時間のむち打ちや侮辱、圧政者の悪行、高慢者の侮辱、法の遅延、そして苦痛が取り憑くことを耐えるだろうか。"
             },
             {
+              "id": "00933-004",
+              "source": "In the dead waste and middle of the night, when churchyards yawn In customary suits of solemn black, But that the undiscovered country from whose bourne no traveler returns, Breathes forth contagion on the world, And thus the native hue of resolution, like the poor cat i’ the adage, Is sicklied o’er with care.",
+              "target": "真夜中の荒れ果てた場所で、教会墓地が黒い喪服を着て欠伸をする時、しかし、旅人が戻らない未知の国が、世界に伝染病をまき散らすので、そして、決意の固い本来の色合いは、諺の貧しい猫のように、憂鬱に染まる。"
+            },
+            {
               "id": "00933-005",
-              "source": "In the dead waste and middle of the night, when churchyards yawn In customary suits of solemn black,",
-              "target": "真夜中の荒れ果てた場所で、教会墓地が黒い喪服を着て欠伸をする時、"
-            },
-            {
-              "id": "00933-006",
-              "source": "But that the undiscovered country from whose bourne no traveler returns, Breathes forth contagion on the world,",
-              "target": "しかし、旅人が戻らない未知の国が、世界に伝染病をまき散らすので、"
-            },
-            {
-              "id": "00933-007",
-              "source": "And thus the native hue of resolution, like the poor cat i’ the adage, Is sicklied o’er with care.",
-              "target": "そして、決意の固い本来の色合いは、諺の貧しい猫のように、憂鬱に染まる。"
-            },
-            {
-              "id": "00933-008",
               "source": "And all the clouds that lowered o’er our housetops, With this regard their currents turn awry, And lose the name of action.",
               "target": "そして、屋根の上に低く垂れ込めた全ての雲は、このようにして彼らの流れを乱し、行動の名を失う。"
             },
             {
-              "id": "00933-009",
+              "id": "00933-006",
               "source": "’Tis a consummation devoutly to be wished. But soft you, the fair Ophelia: Ope not thy ponderous and marble jaws. But get thee to a nunnery—go!",
               "target": "これは心から望ましい結末である。しかし、美しいオフィーリアよ、お前よ、重い大理石の口を開くな。尼僧院へ行け―行け！"
             }
@@ -19250,13 +19070,8 @@
             },
             {
               "id": "00943-002",
-              "source": "You pay me back the chaws you’ve awready borry’d off’n me, Lafe Buckner,",
-              "target": "ラフ・バックナー、俺に借りた分の一服を返してくれ。"
-            },
-            {
-              "id": "00943-003",
-              "source": "then I’ll loan you one or two ton of it, and won’t charge you no back intrust, nuther.”",
-              "target": "そうすれば1トンか2トン貸してやる。利子も取らない。」"
+              "source": "You pay me back the chaws you’ve awready borry’d off’n me, Lafe Buckner, then I’ll loan you one or two ton of it, and won’t charge you no back intrust, nuther.”",
+              "target": "ラフ・バックナー、俺に借りた分の一服を返してくれ。そうすれば1トンか2トン貸してやる。利子も取らない。」"
             }
           ],
           "raw_line": 4525
@@ -20570,13 +20385,8 @@
             },
             {
               "id": "01004-003",
-              "source": "and by-and-by, about midnight, they made Jim and me back her out and float her down the middle of the river,",
-              "target": "そして、やがて真夜中頃、ジムと僕に彼女を引き返して川の真ん中に浮かべ、"
-            },
-            {
-              "id": "01004-004",
-              "source": "and fetch her in and hide her about two mile below town.",
-              "target": "そして引き返して2マイルほど下流の町の近くに隠した。"
+              "source": "and by-and-by, about midnight, they made Jim and me back her out and float her down the middle of the river, and fetch her in and hide her about two mile below town.",
+              "target": "そして、やがて真夜中頃、ジムと僕に彼女を引き返して川の真ん中に浮かべ、そして引き返して2マイルほど下流の町の近くに隠した。"
             }
           ],
           "raw_line": 4848
@@ -21215,76 +21025,56 @@
             },
             {
               "id": "01036-002",
-              "source": "en when I come back dah was dat do’ a-stannin’ open yit,",
-              "target": "戻ってくると、ドアはまだ開いたままで、"
+              "source": "en when I come back dah was dat do’ a-stannin’ open yit, en dat chile stannin’ mos’ right in it, a-lookin’ down and mournin’, en de tears runnin’ down.",
+              "target": "戻ってくると、ドアはまだ開いたままで、その子はほとんどドアのところに立って、下を向いて悲しんでいて、涙が流れていたんだ。」"
             },
             {
               "id": "01036-003",
-              "source": "en dat chile stannin’ mos’ right in it, a-lookin’ down and mournin’, en de tears runnin’ down.",
-              "target": "その子はほとんどドアのところに立って、下を向いて悲しんでいて、涙が流れていたんだ。」"
-            },
-            {
-              "id": "01036-004",
               "source": "My, but I wuz mad!",
               "target": "「ああ、でも私は怒っていた！」"
             },
             {
-              "id": "01036-005",
+              "id": "01036-004",
               "source": "I was a-gwyne for de chile, but jis’ den—it was a do’ dat open innerds—jis’ den, ’long come de wind en slam it to, behine de chile, ker-blam!",
               "target": "「私はその子に向かおうとしたが、ちょうどその時、内側に開くドアが風でバタンと閉まったんだ、子供の後ろで、ドカンと！」"
             },
             {
-              "id": "01036-006",
+              "id": "01036-005",
               "source": "—en my lan’, de chile never move’!",
               "target": "「—そして、なんと、その子は全く動かなかったんだ！」"
             },
             {
-              "id": "01036-007",
+              "id": "01036-006",
               "source": "My breff mos’ hop outer me;",
               "target": "「息が止まりそうになったよ；"
             },
             {
-              "id": "01036-008",
+              "id": "01036-007",
               "source": "en I feel so—so—I doan’ know how I feel.",
               "target": "そして、私はとても—とても—どう感じたらいいのかわからなかった。」"
             },
             {
+              "id": "01036-008",
+              "source": "I crope out, all a-tremblin’, en crope aroun’ en open de do’ easy en slow, en poke my head in behine de chile, sof’ en still, en all uv a sudden I says pow! jis’ as loud as I could yell.",
+              "target": "「私は震えながら這い出して、ドアをゆっくりと静かに開けて、その子の後ろから頭をそっと差し入れて、そして突然、できるだけ大きな声で『バン！』と言ったんだ。」"
+            },
+            {
               "id": "01036-009",
-              "source": "I crope out, all a-tremblin’, en crope aroun’ en open de do’ easy en slow,",
-              "target": "「私は震えながら這い出して、ドアをゆっくりと静かに開けて、"
-            },
-            {
-              "id": "01036-010",
-              "source": "en poke my head in behine de chile, sof’ en still,",
-              "target": "その子の後ろから頭をそっと差し入れて、"
-            },
-            {
-              "id": "01036-011",
-              "source": "en all uv a sudden I says pow! jis’ as loud as I could yell.",
-              "target": "そして突然、できるだけ大きな声で『バン！』と言ったんだ。」"
-            },
-            {
-              "id": "01036-012",
               "source": "She never budge!",
               "target": "「彼女は全く動かなかった！」"
             },
             {
-              "id": "01036-013",
-              "source": "Oh, Huck, I bust out a-cryin’ en grab her up in my arms,",
-              "target": "「ああ、ハック、私は泣き出して、彼女を腕に抱きしめたんだ、"
+              "id": "01036-010",
+              "source": "Oh, Huck, I bust out a-cryin’ en grab her up in my arms, en say, ‘Oh, de po’ little thing!",
+              "target": "「ああ、ハック、私は泣き出して、彼女を腕に抱きしめたんだ、そして言った、『ああ、かわいそうな子だ！"
             },
             {
-              "id": "01036-014",
-              "source": "en say, ‘Oh, de po’ little thing!",
-              "target": "そして言った、『ああ、かわいそうな子だ！"
-            },
-            {
-              "id": "01036-015",
+              "id": "01036-011",
               "source": "De Lord God Amighty fogive po’ ole Jim, kaze he never gwyne to fogive hisself as long’s he live!’",
               "target": "全能の神様、かわいそうなジムをお許しください、彼は生きている限り自分を許せないでしょう！』」"
             },
             {
-              "id": "01036-016",
+              "id": "01036-012",
               "source": "Oh, she was plumb deef en dumb, Huck, plumb deef en dumb—en I’d ben a-treat’n her so!”",
               "target": "「ああ、彼女は全く耳が聞こえず、話せなかったんだ、ハック、全く聞こえず、話せなかった—それなのに私は彼女をそんな風に扱っていたんだ！」"
             }
@@ -21585,62 +21375,52 @@
           "paragraph": [
             {
               "id": "01051-000",
-              "source": "“Well, he don’t miss any property by it,",
-              "target": "「まあ、それで彼が財産を逃すことはありません。"
+              "source": "“Well, he don’t miss any property by it, because he’ll get that all right;",
+              "target": "「まあ、それで彼が財産を逃すことはありません。なぜなら、彼はそれをちゃんと手に入れるでしょうから。"
             },
             {
               "id": "01051-001",
-              "source": " because he’ll get that all right;",
-              "target": "なぜなら、彼はそれをちゃんと手に入れるでしょうから。"
+              "source": "but he’s missed seeing his brother Peter die—which he mayn’t mind, nobody can tell as to that—but his brother would a give anything in this world to see him before he died;",
+              "target": "しかし、彼は兄のピーターが死ぬのを見逃してしまいました――それを気にしないかもしれませんが。それについては誰にもわからないことですが――しかし、彼の兄は死ぬ前に彼に会うためならこの世の何でも差し出したでしょう。"
             },
             {
               "id": "01051-002",
-              "source": " but he’s missed seeing his brother Peter die—which he mayn’t mind,",
-              "target": "しかし、彼は兄のピーターが死ぬのを見逃してしまいました――それを気にしないかもしれませんが。"
-            },
-            {
-              "id": "01051-003",
-              "source": " nobody can tell as to that—but his brother would a give anything in this world to see him before he died;",
-              "target": "それについては誰にもわからないことですが――しかし、彼の兄は死ぬ前に彼に会うためならこの世の何でも差し出したでしょう。"
-            },
-            {
-              "id": "01051-004",
-              "source": " never talked about nothing else all these three weeks;",
+              "source": "never talked about nothing else all these three weeks;",
               "target": "この3週間、他のことは何も話しませんでした。"
             },
             {
-              "id": "01051-005",
-              "source": " hadn’t seen him since they was boys together—and hadn’t ever seen his brother William at all—that’s the deef and dumb one—",
+              "id": "01051-003",
+              "source": "hadn’t seen him since they was boys together—and hadn’t ever seen his brother William at all—that’s the deef and dumb one—",
               "target": "彼らが一緒に少年だった頃から彼に会っておらず――そして兄弟のウィリアムには全く会ったことがありません――それは耳が聞こえず口がきけない方の兄弟です――"
             },
             {
-              "id": "01051-006",
+              "id": "01051-004",
               "source": "William ain’t more than thirty or thirty-five.",
               "target": "ウィリアムは30歳か35歳くらいです。"
             },
             {
-              "id": "01051-007",
-              "source": " Peter and George were the only ones that come out here;",
+              "id": "01051-005",
+              "source": "Peter and George were the only ones that come out here;",
               "target": "ここに来たのはピーターとジョージだけでした。"
             },
             {
-              "id": "01051-008",
-              "source": " George was the married brother;",
+              "id": "01051-006",
+              "source": "George was the married brother;",
               "target": "ジョージは結婚している兄弟でした。"
             },
             {
-              "id": "01051-009",
-              "source": " him and his wife both died last year.",
+              "id": "01051-007",
+              "source": "him and his wife both died last year.",
               "target": "彼と彼の妻は昨年亡くなりました。"
             },
             {
-              "id": "01051-010",
-              "source": " Harvey and William’s the only ones that’s left now;",
+              "id": "01051-008",
+              "source": "Harvey and William’s the only ones that’s left now;",
               "target": "今残っているのはハーヴェイとウィリアムだけです。"
             },
             {
-              "id": "01051-011",
-              "source": " and, as I was saying, they haven’t got here in time.”",
+              "id": "01051-009",
+              "source": "and, as I was saying, they haven’t got here in time.”",
               "target": "そして、私が言っていたように、彼らは時間通りにここに来ることができませんでした。」"
             }
           ],
@@ -22255,28 +22035,58 @@
           "paragraph": [
             {
               "id": "01093-000",
-              "source": "Then the king he hunched the duke private—I see him do it—and then he looked around and see the coffin, over in the corner on two chairs; so then him and the duke, with a hand across each other’s shoulder, and t’other hand to their eyes, walked slow and solemn over there, everybody dropping back to give them room, and all the talk and noise stopping, people saying “Sh!” and all the men taking their hats off and drooping their heads, so you could a heard a pin fall.",
-              "target": "その後、王は公爵に密かに合図を送った―私はそれを見た―そして周りを見回し、2つの椅子の上にある棺を見つけた。そこで彼と公爵は、肩を組み合わせ、もう片方の手を目に当て、ゆっくりと厳かにそこへ歩いて行った。みんなが後退して彼らに場所を与え、話し声や騒音が止まり、人々が「シッ！」と言い、全員が帽子を取り、頭を垂れる様子だった。まるでピンが落ちる音が聞こえるほどだった。"
+              "source": "Then the king he hunched the duke private—I see him do it—and then he looked around and see the coffin, over in the corner on two chairs;",
+              "target": "それから王様は公爵をこっそりとつついた—私はそれを見た—そして彼は周りを見回し、隅の二つの椅子の上にある棺を見た。"
             },
             {
               "id": "01093-001",
-              "source": "And when they got there they bent over and looked in the coffin, and took one sight, and then they bust out a-crying so you could a heard them to Orleans, most; and then they put their arms around each other’s necks, and hung their chins over each other’s shoulders; and then for three minutes, or maybe four, I never see two men leak the way they done.",
-              "target": "そして彼らがそこに着くと、身をかがめて棺の中を見つめ、一目見て、そしてオーリンズまで聞こえるほどに泣き出した。そして彼らはお互いの首に腕を回し、お互いの肩に顎を乗せ、そして3分、あるいは4分、2人が漏らすように泣く姿を見たことはなかった。"
+              "source": "so then him and the duke, with a hand across each other’s shoulder, and t’other hand to their eyes, walked slow and solemn over there, everybody dropping back to give them room, and all the talk and noise stopping, people saying “Sh!” and all the men taking their hats off and drooping their heads, so you could a heard a pin fall.",
+              "target": "それで彼と公爵は、お互いの肩に手をかけ、もう一方の手を目に当てて、ゆっくりと厳かにそこへ歩いて行った。みんなが彼らに場所を空けるために後ろに下がり、話し声や騒音が止まり、人々が「シーッ！」と言い、男たちは帽子を脱いで頭を垂れた。それで、ピンが落ちる音が聞こえるほどだった。"
             },
             {
               "id": "01093-002",
-              "source": "And, mind you, everybody was doing the same; and the place was that damp I never see anything like it.",
-              "target": "そして、皆が同じようにしていたのだが、その場所はあまりにも湿気ていたので、私はそれに似たものを見たことがなかった。"
+              "source": "And when they got there they bent over and looked in the coffin, and took one sight, and then they bust out a-crying so you could a heard them to Orleans, most;",
+              "target": "そして彼らがそこに着くと、身をかがめて棺の中を見て、一目見た後、オルレアンまで聞こえるほどの大声で泣き出した。"
             },
             {
               "id": "01093-003",
-              "source": "Then one of them got on one side of the coffin, and t’other on t’other side, and they kneeled down and rested their foreheads on the coffin, and let on to pray all to themselves.",
-              "target": "そして1人は棺の片側に、もう1人は反寇側に行き、ひざまずいて、額を棺に預け、黙って自分たちだけで祈り始めた。"
+              "source": "and then they put their arms around each other’s necks, and hung their chins over each other’s shoulders;",
+              "target": "それから彼らはお互いの首に腕を回し、顎をお互いの肩に乗せた。"
             },
             {
               "id": "01093-004",
-              "source": "Well, when it come to that it worked the crowd like you never see anything like it, and everybody broke down and went to sobbing right out loud—the poor girls, too; and every woman, nearly, went up to the girls, without saying a word, and kissed them, solemn, on the forehead, and then put their hand on their head, and looked up towards the sky, with the tears running down, and then busted out and went off sobbing and swabbing, and give the next woman a show.",
-              "target": "さて、その光景になると、それはまるで見たことのないような感動を観衆に与え、皆が崩れ落ちて大声で泣き出した―可哀想な女の子たちもそうだった。そしてほとんどの女性が、何も言わずに女の子たちに近づき、真剣な表情で額にキスをし、その後手を頭に置き、空を見上げ、涙を流しながら泣き出し、次の女性に場を譲った。"
+              "source": "and then for three minutes, or maybe four, I never see two men leak the way they done.",
+              "target": "そして3分間、あるいは4分間、私はあんなに涙を流す二人の男を見たことがなかった。"
+            },
+            {
+              "id": "01093-005",
+              "source": "And, mind you, everybody was doing the same;",
+              "target": "そして、みんなが同じことをしていたのだ。"
+            },
+            {
+              "id": "01093-006",
+              "source": "and the place was that damp I never see anything like it.",
+              "target": "その場所はあまりにも湿っぽく、私はこんなものを見たことがなかった。"
+            },
+            {
+              "id": "01093-007",
+              "source": "Then one of them got on one side of the coffin, and t’other on t’other side, and they kneeled down and rested their foreheads on the coffin, and let on to pray all to themselves.",
+              "target": "それから彼らの一人が棺の片側に、もう一人が反対側に立ち、ひざまずいて額を棺に当て、独りで祈るふりをした。"
+            },
+            {
+              "id": "01093-008",
+              "source": "Well, when it come to that it worked the crowd like you never see anything like it, and everybody broke down and went to sobbing right out loud—the poor girls, too;",
+              "target": "さて、それが始まると、群衆はそれまで見たことのないような反応を示した。そしてみんなが声を上げて泣き崩れた—かわいそうな女の子たちもそうだった。"
+            },
+            {
+              "id": "01093-009",
+              "source": "and every woman, nearly, went up to the girls, without saying a word, and kissed them, solemn, on the forehead, and then put their hand on their head, and looked up towards the sky, with the tears running down, and then busted out and went off sobbing and swabbing, and give the next woman a show.",
+              "target": "そしてほとんどの女性が、何も言わずに女の子たちのところに行き、厳かに彼女たちの額にキスをした。それから彼女たちの頭に手を置き、涙を流しながら空を見上げた。そして泣き崩れてすすり泣きながら去り、次の女性にその場を譲った。"
+            },
+            {
+              "id": "01093-010",
+              "source": "I never see anything so disgusting.",
+              "target": "私はこんなに気持ち悪いものを見たことがなかった。"
             }
           ],
           "raw_line": 5250
@@ -23166,12 +22976,17 @@
             {
               "id": "01139-000",
               "source": "And when it was all done me and the hare-lip had supper in the kitchen off of the leavings, whilst the others was helping the niggers clean up the things.",
-              "target": "そして、すべてが終わった後、私と唇の裂けた女の子は台所で残り物を食べて夕食をとった。他の人たちは奴隷たちが片付けを手伝う間、私たち二人は食事をとった。"
+              "target": "そしてすべてが終わったとき、私と口唇裂の子は、残り物で台所で夕食をとりました。その間、他の人たちは黒人たちが片付けをするのを手伝っていました。"
             },
             {
               "id": "01139-001",
               "source": "The hare-lip she got to pumping me about England, and blest if I didn’t think the ice was getting mighty thin sometimes.",
-              "target": "唇の裂けた女の子は私にイングランドについて質問し始めた。時々、私は状況がかなり緊迫していると感じた。"
+              "target": "口唇裂の子は私にイギリスについていろいろと質問し始めました。そして、時々氷が非常に薄くなっているのではないかと思いました。"
+            },
+            {
+              "id": "01139-002",
+              "source": "She says:",
+              "target": "彼女は言いました。"
             }
           ],
           "raw_line": 5464
@@ -23210,8 +23025,8 @@
           "paragraph": [
             {
               "id": "01142-000",
-              "source": "“What—regular?”,",
-              "target": "「なんだって？　定期的に？」"
+              "source": "“What—regular?”",
+              "target": "「何？ まあ、普通に？」"
             }
           ],
           "raw_line": 5474
@@ -23585,8 +23400,8 @@
           "paragraph": [
             {
               "id": "01175-000",
-              "source": "“His’n? What does he want with a pew?”,",
-              "target": "「彼の？彼はなぜ教会の敷席が欲しいの？」"
+              "source": "“His’n? What does he want with a pew?”",
+              "target": "「彼のもの？彼はなぜ教会の椅子を欲しがるの？」"
             }
           ],
           "raw_line": 5550
@@ -24335,13 +24150,8 @@
             },
             {
               "id": "01222-001",
-              "source": "About an hour or two ago it would a been a little different, but now it made me feel bad and disappointed,",
-              "target": "1〜2時間前なら少し違ったかもしれないが、今は私を悲しくさせ、失望させる。"
-            },
-            {
-              "id": "01222-002",
-              "source": "The king rips out and says:",
-              "target": "王が激怒して言う："
+              "source": "About an hour or two ago it would a been a little different, but now it made me feel bad and disappointed, The king rips out and says:",
+              "target": "1〜2時間前なら少し違ったかもしれないが、今は私を悲しくさせ、失望させる。王が激怒して言う："
             }
           ],
           "raw_line": 5725
@@ -25981,26 +25791,21 @@
             },
             {
               "id": "01316-001",
-              "source": "Nobody don’t have to pay for the things they buy till a whole day after the auction on accounts of the short notice,",
-              "target": "誰もオークションの翌日まで買ったものの代金を支払う必要はありません、急な通知のためですから。"
+              "source": "Nobody don’t have to pay for the things they buy till a whole day after the auction on accounts of the short notice, and they ain’t going out of this till they get that money;",
+              "target": "誰もオークションの翌日まで買ったものの代金を支払う必要はありません、急な通知のためですから。そして彼らはそのお金を手に入れるまでここを出て行きません；"
             },
             {
               "id": "01316-002",
-              "source": "and they ain’t going out of this till they get that money;",
-              "target": "そして彼らはそのお金を手に入れるまでここを出て行きません；"
-            },
-            {
-              "id": "01316-003",
               "source": "and the way we’ve fixed it the sale ain’t going to count, and they ain’t going to get no money.",
               "target": "私たちが仕組んだ方法では、その売買は無効になり、彼らはお金を手に入れることはできません。"
             },
             {
-              "id": "01316-004",
+              "id": "01316-003",
               "source": "It’s just like the way it was with the niggers—it warn’t no sale, and the niggers will be back before long.",
               "target": "それは奴隷たちの場合と同じで、売買は成立しておらず、奴隷たちはすぐに戻ってきます。"
             },
             {
-              "id": "01316-005",
+              "id": "01316-004",
               "source": "Why, they can’t collect the money for the niggers yet—they’re in the worst kind of a fix, Miss Mary.”",
               "target": "なぜなら、彼らはまだ奴隷たちの代金を集めることができず、最悪の状況に陥っているのです、メアリーさん。」"
             }
@@ -28186,16 +27991,11 @@
             },
             {
               "id": "01456-005",
-              "source": "stead of being fixed so I could take my own time if I wanted to, and see all the fun, and have Mary Jane at my back to save me and set me free when the close-fit come,",
-              "target": "私が自分のペースで行動し、楽しい時間を過ごし、マリー・ジェーンが私を助けて解放してくれるような状況になるはずが、"
+              "source": "stead of being fixed so I could take my own time if I wanted to, and see all the fun, and have Mary Jane at my back to save me and set me free when the close-fit come, here was nothing in the world betwixt me and sudden death but just them tattoo-marks.",
+              "target": "私が自分のペースで行動し、楽しい時間を過ごし、マリー・ジェーンが私を助けて解放してくれるような状況になるはずが、私と突然の死の間にあるのは、ただの刺青だけでした。"
             },
             {
               "id": "01456-006",
-              "source": "here was nothing in the world betwixt me and sudden death but just them tattoo-marks.",
-              "target": "私と突然の死の間にあるのは、ただの刺青だけでした。"
-            },
-            {
-              "id": "01456-007",
               "source": "If they didn’t find them—",
               "target": "もし彼らがそれらを見つけなかったら—"
             }
@@ -32086,21 +31886,16 @@
             },
             {
               "id": "01692-002",
-              "source": "so, coming down the river, me and Tom thought it would be a first-rate surprise for him to come here to the house first,",
-              "target": "だから、川を下っている間、僕とトムは、彼が最初にここに家に来るのがすごく驚きになるだろうと思った。"
+              "source": "so, coming down the river, me and Tom thought it would be a first-rate surprise for him to come here to the house first, and for me to by-and-by tag along and drop in, and let on to be a stranger.",
+              "target": "だから、川を下っている間、僕とトムは、彼が最初にここに家に来るのがすごく驚きになるだろうと思った。そして、その後で僕がついてきて立ち寄り、見知らぬ人のふりをすることにしたんだ。"
             },
             {
               "id": "01692-003",
-              "source": "and for me to by-and-by tag along and drop in, and let on to be a stranger.",
-              "target": "そして、その後で僕がついてきて立ち寄り、見知らぬ人のふりをすることにしたんだ。"
-            },
-            {
-              "id": "01692-004",
               "source": "But it was a mistake, Aunt Sally.",
               "target": "でも、それは間違いだったよ、おばさん。"
             },
             {
-              "id": "01692-005",
+              "id": "01692-004",
               "source": "This ain’t no healthy place for a stranger to come.”",
               "target": "見知らぬ人が来るには、ここは健康的な場所じゃないよ。」"
             }
@@ -32201,23 +31996,13 @@
             },
             {
               "id": "01697-003",
-              "source": "so, being tired, we bid good-night and went up to bed right after supper,",
-              "target": "疲れていたので、夕食後すぐにおやすみを言ってベッドに上がり、"
+              "source": "so, being tired, we bid good-night and went up to bed right after supper, and clumb out of the window and down the lightning-rod, and shoved for the town;",
+              "target": "疲れていたので、夕食後すぐにおやすみを言ってベッドに上がり、窓から外に出て、落雷避けの棒を降りて、町に向かった；"
             },
             {
               "id": "01697-004",
-              "source": "and clumb out of the window and down the lightning-rod, and shoved for the town;",
-              "target": "窓から外に出て、落雷避けの棒を降りて、町に向かった；"
-            },
-            {
-              "id": "01697-005",
-              "source": "for I didn’t believe anybody was going to give the king and the duke a hint,",
-              "target": "だれも王様と公爵に手が出るとは思わなかったので、"
-            },
-            {
-              "id": "01697-006",
-              "source": "and so if I didn’t hurry up and give them one they’d get into trouble sure.",
-              "target": "急いで手助けをしないと、きっとトラブルに巻き込まれるだろうと思った。"
+              "source": "for I didn’t believe anybody was going to give the king and the duke a hint, and so if I didn’t hurry up and give them one they’d get into trouble sure.",
+              "target": "だれも王様と公爵に手が出るとは思わなかったので、急いで手助けをしないと、きっとトラブルに巻き込まれるだろうと思った。"
             }
           ],
           "raw_line": 7632
@@ -33706,41 +33491,36 @@
             },
             {
               "id": "01788-005",
-              "source": "and, besides, Jim’s a nigger, and wouldn’t understand the reasons for it,",
-              "target": "それに、ジムは黒人だから、その理由を理解しないだろうし、"
+              "source": "and, besides, Jim’s a nigger, and wouldn’t understand the reasons for it, and how it’s the custom in Europe;",
+              "target": "それに、ジムは黒人だから、その理由を理解しないだろうし、それがヨーロッパの習慣だということもね。"
             },
             {
               "id": "01788-006",
-              "source": "and how it’s the custom in Europe;",
-              "target": "それがヨーロッパの習慣だということもね。"
-            },
-            {
-              "id": "01788-007",
               "source": "so we’ll let it go.",
               "target": "だから、それは諦めることにするよ。"
             },
             {
-              "id": "01788-008",
+              "id": "01788-007",
               "source": "But there’s one thing—he can have a rope ladder;",
               "target": "でも、一つだけあるんだ—彼にはロープのはしごを持たせられるんだ。"
             },
             {
-              "id": "01788-009",
+              "id": "01788-008",
               "source": "we can tear up our sheets and make him a rope ladder easy enough.",
               "target": "シーツを裂いて、簡単にロープのはしごを作れるよ。"
             },
             {
-              "id": "01788-010",
+              "id": "01788-009",
               "source": "And we can send it to him in a pie;",
               "target": "そして、それをパイに入れて彼に送ることができるんだ。"
             },
             {
-              "id": "01788-011",
+              "id": "01788-010",
               "source": "it’s mostly done that way.",
               "target": "大抵はそうやってやるんだ。"
             },
             {
-              "id": "01788-012",
+              "id": "01788-011",
               "source": "And I’ve et worse pies.”",
               "target": "そして、もっとひどいパイを食べたことがあるよ。」"
             }
@@ -34001,16 +33781,11 @@
             },
             {
               "id": "01805-004",
-              "source": "and when he wants to send any little common ordinary mysterious message to let the world know where he’s captivated,",
-              "target": "そして、彼がどこに囚われているかを世界に知らせるために、ちょっとした普通の謎めいたメッセージを送りたいときには、"
+              "source": "and when he wants to send any little common ordinary mysterious message to let the world know where he’s captivated, he can write it on the bottom of a tin plate with a fork and throw it out of the window.",
+              "target": "そして、彼がどこに囚われているかを世界に知らせるために、ちょっとした普通の謎めいたメッセージを送りたいときには、彼はフォークでブリキの皿の底にそれを書いて、窓から投げ出せばいいんだ。"
             },
             {
               "id": "01805-005",
-              "source": "he can write it on the bottom of a tin plate with a fork and throw it out of the window.",
-              "target": "彼はフォークでブリキの皿の底にそれを書いて、窓から投げ出せばいいんだ。"
-            },
-            {
-              "id": "01805-006",
               "source": "The Iron Mask always done that, and it’s a blame’ good way, too.”",
               "target": "鉄仮面もいつもそうしていたし、それはとても良い方法なんだ。」"
             }
@@ -34731,21 +34506,16 @@
             },
             {
               "id": "01850-002",
-              "source": "and we wouldn’t get but a few minutes to dig, every day, while they was changing watches,",
-              "target": "それに、見張りが交代している間に毎日数分しか掘る時間がないから、"
+              "source": "and we wouldn’t get but a few minutes to dig, every day, while they was changing watches, and so our hands wouldn’t get blistered, and we could keep it up right along, year in and year out, and do it right, and the way it ought to be done.",
+              "target": "それに、見張りが交代している間に毎日数分しか掘る時間がないから、だから手に水ぶくれもできずに、年中ずっと続けられて、正しく、やるべき方法でできるんだ。」"
             },
             {
               "id": "01850-003",
-              "source": "and so our hands wouldn’t get blistered, and we could keep it up right along, year in and year out, and do it right, and the way it ought to be done.",
-              "target": "だから手に水ぶくれもできずに、年中ずっと続けられて、正しく、やるべき方法でできるんだ。」"
-            },
-            {
-              "id": "01850-004",
               "source": "But we can’t fool along; we got to rush; we ain’t got no time to spare.",
               "target": "「でも、僕たちはのんびりしていられない；急がなきゃいけない；時間の余裕がないんだ。」"
             },
             {
-              "id": "01850-005",
+              "id": "01850-004",
               "source": "If we was to put in another night this way we’d have to knock off for a week to let our hands get well—couldn’t touch a case-knife with them sooner.”",
               "target": "「もしこの調子であと一晩やったら、手を治すために一週間は休まなきゃいけない—それまでナイフなんて触れないよ。」"
             }
@@ -35411,46 +35181,16 @@
           "paragraph": [
             {
               "id": "01886-000",
-              "source": "My heart fell down amongst my lungs and livers and things,",
-              "target": "私の心臓は肺や肝臓やその他のものの間に落ち込んでしまった。"
+              "source": "My heart fell down amongst my lungs and livers and things, and a hard piece of corn-crust started down my throat after it and got met on the road with a cough, and was shot across the table, and took one of the children in the eye and curled him up like a fishing-worm, and let a cry out of him the size of a warwhoop, and Tom he turned kinder blue around the gills, and it all amounted to a considerable state of things for about a quarter of a minute or as much as that, and I would a sold out for half price if there was a bidder.",
+              "target": "私の心臓は肺や肝臓やその他のものの間に落ち込んでしまった。そして硬いトウモロコシの皮が喉を通り始め、咳と共に途中で出会った。それがテーブルを横切って飛び、子供の一人の目に当たり、彼を釣り糸の虫のように丸めた。そして彼から戦いの叫びのような大きな声を上げさせた。そしてトムはエラの周りが少し青くなった。それは四分の一分かそれくらいの間、かなりの状態になった。もし買い手がいたら、私は半額で売り払っていただろう。"
             },
             {
               "id": "01886-001",
-              "source": "and a hard piece of corn-crust started down my throat after it and got met on the road with a cough,",
-              "target": "そして硬いトウモロコシの皮が喉を通り始め、咳と共に途中で出会った。"
-            },
-            {
-              "id": "01886-002",
-              "source": "and was shot across the table, and took one of the children in the eye and curled him up like a fishing-worm,",
-              "target": "それがテーブルを横切って飛び、子供の一人の目に当たり、彼を釣り糸の虫のように丸めた。"
-            },
-            {
-              "id": "01886-003",
-              "source": "and let a cry out of him the size of a warwhoop,",
-              "target": "そして彼から戦いの叫びのような大きな声を上げさせた。"
-            },
-            {
-              "id": "01886-004",
-              "source": "and Tom he turned kinder blue around the gills,",
-              "target": "そしてトムはエラの周りが少し青くなった。"
-            },
-            {
-              "id": "01886-005",
-              "source": "and it all amounted to a considerable state of things for about a quarter of a minute or as much as that,",
-              "target": "それは四分の一分かそれくらいの間、かなりの状態になった。"
-            },
-            {
-              "id": "01886-006",
-              "source": "and I would a sold out for half price if there was a bidder.",
-              "target": "もし買い手がいたら、私は半額で売り払っていただろう。"
-            },
-            {
-              "id": "01886-007",
               "source": "But after that we was all right again—it was the sudden surprise of it that knocked us so kind of cold.",
               "target": "しかしその後、私たちは再び大丈夫になった—それは突然の驚きが私たちを冷たくしたのだ。"
             },
             {
-              "id": "01886-008",
+              "id": "01886-002",
               "source": "Uncle Silas he says:",
               "target": "サイラスおじさんが言った："
             }
@@ -36066,8 +35806,8 @@
           "paragraph": [
             {
               "id": "01923-000",
-              "source": "“You numskull, didn’t you see me count ’m?”,",
-              "target": "「おろか者、私が数えているのを見なかったのか？」と、"
+              "source": "“You numskull, didn’t you see me count ’m?”",
+              "target": "「おろか者、私が数えているのを見なかったのか？」"
             }
           ],
           "raw_line": 8539
@@ -36716,21 +36456,16 @@
             },
             {
               "id": "01960-002",
-              "source": "Then Tom marked out them things on it with the nail, and set Jim to work on them, with the nail for a chisel and an iron bolt from the rubbage in the lean-to for a hammer,",
-              "target": "その後、トムは釘でそれらのものを印をつけ、ジムにそれらに取り組むよう指示し、彼には鑿として釘、屋根裏部屋のがらくたからの鉄のボルトをハンマーとして使わせた。"
+              "source": "Then Tom marked out them things on it with the nail, and set Jim to work on them, with the nail for a chisel and an iron bolt from the rubbage in the lean-to for a hammer, and told him to work till the rest of his candle quit on him, and then he could go to bed, and hide the grindstone under his straw tick and sleep on it.",
+              "target": "その後、トムは釘でそれらのものを印をつけ、ジムにそれらに取り組むよう指示し、彼には鑿として釘、屋根裏部屋のがらくたからの鉄のボルトをハンマーとして使わせた。そして、ろうそくが消えるまで作業するように言い、その後ベッドに入り、砥石をわらの敷き布の下に隠して眠るように伝えた。"
             },
             {
               "id": "01960-003",
-              "source": "and told him to work till the rest of his candle quit on him, and then he could go to bed, and hide the grindstone under his straw tick and sleep on it.",
-              "target": "そして、ろうそくが消えるまで作業するように言い、その後ベッドに入り、砥石をわらの敷き布の下に隠して眠るように伝えた。"
-            },
-            {
-              "id": "01960-004",
               "source": "Then we helped him fix his chain back on the bed-leg, and was ready for bed ourselves.",
               "target": "その後、私たちは彼がベッドの脚に鎖を取り付けるのを手伝い、自分たちもベッドの準備ができた。"
             },
             {
-              "id": "01960-005",
+              "id": "01960-004",
               "source": "But Tom thought of something, and says:",
               "target": "しかし、トムは何かを思いついて言った："
             }
@@ -37266,13 +37001,8 @@
           "paragraph": [
             {
               "id": "01992-000",
-              "source": "“One er dem big cat-tail-lookin’ mullen-stalks would grow in heah, Mars Tom, I reck’n,",
-              "target": "「あの大きなガマのようなマレインの茎ならここで育つと思います、トム坊ちゃん、"
-            },
-            {
-              "id": "01992-001",
-              "source": "but she wouldn’t be wuth half de trouble she’d coss.”",
-              "target": "でも、それが引き起こす手間の半分の価値もないでしょう。」"
+              "source": "“One er dem big cat-tail-lookin’ mullen-stalks would grow in heah, Mars Tom, I reck’n, but she wouldn’t be wuth half de trouble she’d coss.”",
+              "target": "「あの大きなガマのようなマレインの茎ならここで育つと思います、トム坊ちゃん、でも、それが引き起こす手間の半分の価値もないでしょう。」"
             }
           ],
           "raw_line": 8812
@@ -39696,8 +39426,8 @@
           "paragraph": [
             {
               "id": "02132-000",
-              "source": "“Did I give you the letter?”,",
-              "target": "「私、手紙渡したっけ？」"
+              "source": "“Did I give you the letter?”",
+              "target": "「私がその手紙をあなたに渡したかしら？」"
             }
           ],
           "raw_line": 9412
@@ -39976,13 +39706,8 @@
             },
             {
               "id": "02149-002",
-              "source": "but they didn’t think of it, and I reckoned it warn’t best for me to mix in,",
-              "target": "しかし、彼らはそんなことを考えていなかった。私が口を挟むのは得策ではないと思ったので、"
-            },
-            {
-              "id": "02149-003",
-              "source": "but I judged I’d get the doctor’s yarn to Aunt Sally somehow or other as soon as I’d got through the breakers that was laying just ahead of me—explanations, I mean, of how I forgot to mention about Sid being shot when I was telling how him and me put in that dratted night paddling around hunting the runaway nigger.",
-              "target": "しかし、私はどうにかして医者の話をサリーおばさんに伝えると判断した。私が直面している困難を乗り越えたらすぐに。つまり、私が逃げた黒人を探して夜通し漕いでいた話をしている最中に、シドが撃たれたことを言い忘れたことの説明を。"
+              "source": "but they didn’t think of it, and I reckoned it warn’t best for me to mix in, but I judged I’d get the doctor’s yarn to Aunt Sally somehow or other as soon as I’d got through the breakers that was laying just ahead of me—explanations, I mean, of how I forgot to mention about Sid being shot when I was telling how him and me put in that dratted night paddling around hunting the runaway nigger.",
+              "target": "しかし、彼らはそんなことを考えていなかった。私が口を挟むのは得策ではないと思ったので、しかし、私はどうにかして医者の話をサリーおばさんに伝えると判断した。私が直面している困難を乗り越えたらすぐに。つまり、私が逃げた黒人を探して夜通し漕いでいた話をしている最中に、シドが撃たれたことを言い忘れたことの説明を。"
             }
           ],
           "raw_line": 9488
@@ -40201,16 +39926,11 @@
             },
             {
               "id": "02163-007",
-              "source": "And we had to steal candles, and the sheet, and the shirt, and your dress, and spoons, and tin plates, and case-knives, and the warming-pan, and the grindstone, and flour, and just no end of things,",
-              "target": "それに、ろうそくやシーツ、シャツ、君のドレス、スプーン、ブリキの皿、ナイフ、暖め鍋、砥石、小麦粉、そして他にもたくさんのものを盗まなきゃならなかったんだ。"
+              "source": "And we had to steal candles, and the sheet, and the shirt, and your dress, and spoons, and tin plates, and case-knives, and the warming-pan, and the grindstone, and flour, and just no end of things, and you can’t think what work it was to make the saws, and pens, and inscriptions, and one thing or another, and you can’t think half the fun it was.",
+              "target": "それに、ろうそくやシーツ、シャツ、君のドレス、スプーン、ブリキの皿、ナイフ、暖め鍋、砥石、小麦粉、そして他にもたくさんのものを盗まなきゃならなかったんだ。のこぎりやペン、刻印を作るのがどれだけ大変だったか、そしてそれがどれだけ楽しかったか、君には想像もつかないだろう。"
             },
             {
               "id": "02163-008",
-              "source": "and you can’t think what work it was to make the saws, and pens, and inscriptions, and one thing or another, and you can’t think half the fun it was.",
-              "target": "のこぎりやペン、刻印を作るのがどれだけ大変だったか、そしてそれがどれだけ楽しかったか、君には想像もつかないだろう。"
-            },
-            {
-              "id": "02163-009",
               "source": "And we had to make up the pictures of coffins and things, and nonnamous letters from the robbers, and get up and down the lightning-rod, and dig the hole into the cabin, and made the rope ladder and send it in cooked up in a pie, and send in spoons and things to work with in your apron pocket—”",
               "target": "それに、棺桶の絵や強盗からの匿名の手紙を作ったり、避雷針を上り下りしたり、小屋に穴を掘ったり、ロープのはしごを作ってパイに入れて送ったり、エプロンのポケットにスプーンや作業用のものを入れて送ったりしたんだ—」"
             }
@@ -40946,5 +40666,5 @@
       "raw_line": 9670
     }
   ],
-  "cost": 2.534
+  "cost": 2.564
 }

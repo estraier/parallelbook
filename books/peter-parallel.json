@@ -2370,13 +2370,8 @@
           "paragraph": [
             {
               "id": "00155-000",
-              "source": "Even Michael, already half asleep, knew that she was perturbed,",
-              "target": "すでに半分眠りに落ちかけていたミカエルでさえ、彼女が動揺していることに気づいていた。"
-            },
-            {
-              "id": "00155-001",
-              "source": "and he asked, “Can anything harm us, mother, after the night-lights are lit?”",
-              "target": "そして彼は尋ねた。「母さん、夜灯を灯した後に私たちに危害が及ぶことはあるの？」"
+              "source": "Even Michael, already half asleep, knew that she was perturbed, and he asked, “Can anything harm us, mother, after the night-lights are lit?”",
+              "target": "すでに半分眠りに落ちかけていたミカエルでさえ、彼女が動揺していることに気づいていた。そして彼は尋ねた。「母さん、夜灯を灯した後に私たちに危害が及ぶことはあるの？」"
             }
           ],
           "raw_line": 514
@@ -2490,13 +2485,8 @@
             },
             {
               "id": "00161-002",
-              "source": "but Wendy’s light blinked and gave such a yawn that the other two yawned also,",
-              "target": "しかし、ウェンディの灯りが点滅し、大きなあくびをして、他の2つもあくびをしました。"
-            },
-            {
-              "id": "00161-003",
-              "source": "and before they could close their mouths all the three went out.",
-              "target": "そして、口を閉じる前に、3つの灯りはすべて消えてしまいました。"
+              "source": "but Wendy’s light blinked and gave such a yawn that the other two yawned also, and before they could close their mouths all the three went out.",
+              "target": "しかし、ウェンディの灯りが点滅し、大きなあくびをして、他の2つもあくびをしました。そして、口を閉じる前に、3つの灯りはすべて消えてしまいました。"
             }
           ],
           "raw_line": 537
@@ -2560,13 +2550,8 @@
           "paragraph": [
             {
               "id": "00165-000",
-              "source": "“Oh, do come out of that jug, and tell me",
-              "target": "「ああ、その壺から出てきて、私に教えてくれ」"
-            },
-            {
-              "id": "00165-001",
-              "source": "do you know where they put my shadow?”",
-              "target": "私の影をどこに置いたか知ってる？」"
+              "source": "“Oh, do come out of that jug, and tell me do you know where they put my shadow?”",
+              "target": "「ああ、その壺から出てきて、私に教えてくれ」、私の影をどこに置いたか知ってる？」"
             }
           ],
           "raw_line": 553
@@ -3230,33 +3215,13 @@
             },
             {
               "id": "00214-002",
-              "source": "She made herself rather cheap by inclining her face toward him,",
-              "target": "彼女は顔を彼に向けることで自らを安く見せたが、"
+              "source": "She made herself rather cheap by inclining her face toward him, but he merely dropped an acorn button into her hand, so she slowly returned her face to where it had been before, and said nicely that she would wear his kiss on the chain around her neck.",
+              "target": "彼女は顔を彼に向けることで自らを安く見せたが、彼はただドングリのボタンを彼女の手に落とすだけで、彼女はゆっくりと顔を以前の位置に戻し、そして丁寧に彼のキスを首にかけた鎖につけると言った。"
             },
             {
               "id": "00214-003",
-              "source": "but he merely dropped an acorn button into her hand,",
-              "target": "彼はただドングリのボタンを彼女の手に落とすだけで、"
-            },
-            {
-              "id": "00214-004",
-              "source": "so she slowly returned her face to where it had been before,",
-              "target": "彼女はゆっくりと顔を以前の位置に戻し、"
-            },
-            {
-              "id": "00214-005",
-              "source": "and said nicely that she would wear his kiss on the chain around her neck.",
-              "target": "そして丁寧に彼のキスを首にかけた鎖につけると言った。"
-            },
-            {
-              "id": "00214-006",
-              "source": "It was lucky that she did put it on that chain,",
-              "target": "彼女がその鎖につけたのは幸運だった。"
-            },
-            {
-              "id": "00214-007",
-              "source": "for it was afterwards to save her life.",
-              "target": "なぜなら後にそれが彼女の命を救うことになるからだ。"
+              "source": "It was lucky that she did put it on that chain, for it was afterwards to save her life.",
+              "target": "彼女がその鎖につけたのは幸運だった。なぜなら後にそれが彼女の命を救うことになるからだ。"
             }
           ],
           "raw_line": 684
@@ -7170,13 +7135,8 @@
           "paragraph": [
             {
               "id": "00504-000",
-              "source": "“I do wish Peter would come back,” every one of them said nervously,",
-              "target": "「ピーターが戻ってきてくれるといいのに」と、彼らは皆神経質に言った。"
-            },
-            {
-              "id": "00504-001",
-              "source": "though in height and still more in breadth they were all larger than their captain.",
-              "target": "身長でも、さらに体格でも、彼らは皆船長よりも大きかった。"
+              "source": "“I do wish Peter would come back,” every one of them said nervously, though in height and still more in breadth they were all larger than their captain.",
+              "target": "「ピーターが戻ってきてくれるといいのに」と、彼らは皆神経質に言った。身長でも、さらに体格でも、彼らは皆船長よりも大きかった。"
             }
           ],
           "raw_line": 1509
@@ -7795,21 +7755,16 @@
             },
             {
               "id": "00540-007",
-              "source": "They will find the cake and they will gobble it up,",
-              "target": "彼らはケーキを見つけて、むさぼり食うだろう。"
+              "source": "They will find the cake and they will gobble it up, because, having no mother, they don’t know how dangerous ’tis to eat rich damp cake.”",
+              "target": "彼らはケーキを見つけて、むさぼり食うだろう。母親がいないので、リッチで湿ったケーキを食べることがどれほど危険かを知らないからだ。」"
             },
             {
               "id": "00540-008",
-              "source": "because, having no mother, they don’t know how dangerous ’tis to eat rich damp cake.”",
-              "target": "母親がいないので、リッチで湿ったケーキを食べることがどれほど危険かを知らないからだ。」"
-            },
-            {
-              "id": "00540-009",
               "source": "He burst into laughter, not hollow laughter now, but honest laughter.",
               "target": "彼は笑い出したが、それは今や空虚な笑いではなく、心からの笑いだった。"
             },
             {
-              "id": "00540-010",
+              "id": "00540-009",
               "source": "“Aha, they will die.”",
               "target": "「ああ、彼らは死ぬだろう。」"
             }
@@ -12655,18 +12610,8 @@
           "paragraph": [
             {
               "id": "00885-000",
-              "source": "“Michael’s kite,” Peter said without interest,",
-              "target": "「マイケルの凧だ」とピーターは興味を示さずに言ったが、"
-            },
-            {
-              "id": "00885-001",
-              "source": "but next moment he had seized the tail,",
-              "target": "しかし次の瞬間、彼は尾をつかみ、"
-            },
-            {
-              "id": "00885-002",
-              "source": "and was pulling the kite toward him.",
-              "target": "凧を自分の方に引っ張っていた。"
+              "source": "“Michael’s kite,” Peter said without interest, but next moment he had seized the tail, and was pulling the kite toward him.",
+              "target": "「マイケルの凧だ」とピーターは興味を示さずに言ったが、しかし次の瞬間、彼は尾をつかみ、凧を自分の方に引っ張っていた。"
             }
           ],
           "raw_line": 2681
@@ -17725,18 +17670,8 @@
             },
             {
               "id": "01243-002",
-              "source": "and the exhausted four who had carried the little house lay prone on the deck,",
-              "target": "そして、小さな家を運んだ疲れ果てた4人はデッキに伏して横たわっていた。"
-            },
-            {
-              "id": "01243-003",
-              "source": "where even in their sleep they rolled skillfully to this side or that out of Hook’s reach,",
-              "target": "彼らは眠りながらも、巧みにデッキの端に転がり、フックが手が届かないようにした。"
-            },
-            {
-              "id": "01243-004",
-              "source": "lest he should claw them mechanically in passing.",
-              "target": "彼らが通り過ぎる際にフックが機械的に引っかけることがないように。"
+              "source": "and the exhausted four who had carried the little house lay prone on the deck, where even in their sleep they rolled skillfully to this side or that out of Hook’s reach, lest he should claw them mechanically in passing.",
+              "target": "そして、小さな家を運んだ疲れ果てた4人はデッキに伏して横たわっていた。彼らは眠りながらも、巧みにデッキの端に転がり、フックが手が届かないようにした。彼らが通り過ぎる際にフックが機械的に引っかけることがないように。"
             }
           ],
           "raw_line": 3790
@@ -18135,18 +18070,8 @@
             },
             {
               "id": "01269-001",
-              "source": "and they broke into a bacchanalian dance, which brought him to his feet at once,",
-              "target": "そして彼らはバッカス祭のような踊りを始め、彼を一気に立ち上がらせました。"
-            },
-            {
-              "id": "01269-002",
-              "source": "all traces of human weakness gone,",
-              "target": "人間の弱さの痕跡はすべて消え去り、"
-            },
-            {
-              "id": "01269-003",
-              "source": "as if a bucket of water had passed over him.",
-              "target": "まるで水をかぶったかのように。"
+              "source": "and they broke into a bacchanalian dance, which brought him to his feet at once, all traces of human weakness gone, as if a bucket of water had passed over him.",
+              "target": "そして彼らはバッカス祭のような踊りを始め、彼を一気に立ち上がらせました。人間の弱さの痕跡はすべて消え去り、まるで水をかぶったかのように。"
             }
           ],
           "raw_line": 3879
@@ -19110,21 +19035,11 @@
           "paragraph": [
             {
               "id": "01331-000",
-              "source": "“Yo ho, yo ho, the frisky plank,",
-              "target": "「ヨーホー、ヨーホー、元気な板、"
+              "source": "“Yo ho, yo ho, the frisky plank, You walks along it so, Till it goes down and you goes down",
+              "target": "「ヨーホー、ヨーホー、元気な板、君はそう歩いていく、それが沈んで君も沈むまで、"
             },
             {
               "id": "01331-001",
-              "source": "You walks along it so,",
-              "target": "君はそう歩いていく、"
-            },
-            {
-              "id": "01331-002",
-              "source": "Till it goes down and you goes down",
-              "target": "それが沈んで君も沈むまで、"
-            },
-            {
-              "id": "01331-003",
               "source": "To Davy Jones below!”",
               "target": "ダヴィー・ジョーンズの下へ！」"
             }
@@ -20905,13 +20820,8 @@
             },
             {
               "id": "01447-003",
-              "source": "For some time he sat with his head out of the kennel, talking with Mrs. Darling of this success,",
-              "target": "しばらくの間、彼はケンネルの外で座り、この成功についてダーリング夫人と話していた。"
-            },
-            {
-              "id": "01447-004",
-              "source": "and pressing her hand reassuringly when she said she hoped his head would not be turned by it.",
-              "target": "そして、彼女が彼の頭がそれによって変わらないことを願っているとき、彼は安心させるように彼女の手を握った。"
+              "source": "For some time he sat with his head out of the kennel, talking with Mrs. Darling of this success, and pressing her hand reassuringly when she said she hoped his head would not be turned by it.",
+              "target": "しばらくの間、彼はケンネルの外で座り、この成功についてダーリング夫人と話していた。そして、彼女が彼の頭がそれによって変わらないことを願っているとき、彼は安心させるように彼女の手を握った。"
             }
           ],
           "raw_line": 4499
@@ -23390,13 +23300,8 @@
             },
             {
               "id": "01640-002",
-              "source": "she was a grown woman smiling at it all,",
-              "target": "彼女は全てを微笑みながら見つめる大人の女性だったが、"
-            },
-            {
-              "id": "01640-003",
-              "source": "but they were wet-eyed smiles.",
-              "target": "その笑顔には涙がにじんでいた。"
+              "source": "she was a grown woman smiling at it all, but they were wet-eyed smiles.",
+              "target": "彼女は全てを微笑みながら見つめる大人の女性だったが、その笑顔には涙がにじんでいた。"
             }
           ],
           "raw_line": 5051
@@ -23690,16 +23595,11 @@
             },
             {
               "id": "01664-001",
-              "source": "and he rose in the air,",
-              "target": "そして彼は空中に舞い上がり、"
+              "source": "and he rose in the air, and the shameless Jane rose with him;",
+              "target": "そして彼は空中に舞い上がり、厚かましいジェーンも彼と共に舞い上がった。"
             },
             {
               "id": "01664-002",
-              "source": "and the shameless Jane rose with him;",
-              "target": "厚かましいジェーンも彼と共に舞い上がった。"
-            },
-            {
-              "id": "01664-003",
               "source": "it was already her easiest way of moving about.",
               "target": "それはすでに彼女にとって最も簡単な移動方法だった。"
             }

@@ -27245,16 +27245,11 @@
           "paragraph": [
             {
               "id": "01425-000",
-              "source": "“He could see what he was doing here,",
-              "target": "「彼はここで自分が何をしているのかを見ることができた。"
+              "source": "“He could see what he was doing here, and he could not there.",
+              "target": "「彼はここで自分が何をしているのかを見ることができた。そして、あちらではそれができなかった。"
             },
             {
               "id": "01425-001",
-              "source": "and he could not there.",
-              "target": "そして、あちらではそれができなかった。"
-            },
-            {
-              "id": "01425-002",
               "source": "That was his reason.”",
               "target": "それが彼の理由だった。」"
             }

@@ -7304,23 +7304,13 @@
           "paragraph": [
             {
               "id": "00443-000",
-              "source": "The solemn Mr. Merryweather perched himself upon a crate, with a very injured expression upon his face,",
-              "target": "厳粛なメリーウェザー氏は、顔に非常に傷ついた表情を浮かべながら、木箱に腰を下ろした。"
+              "source": "The solemn Mr. Merryweather perched himself upon a crate, with a very injured expression upon his face, while Holmes fell upon his knees upon the floor, and, with the lantern and a magnifying lens, began to examine minutely the cracks between the stones.",
+              "target": "厳粛なメリーウェザー氏は、顔に非常に傷ついた表情を浮かべながら、木箱に腰を下ろした。一方、ホームズは床にひざまずき、ランタンと拡大鏡を使って、石の間の隙間を細かく調べ始めた。"
             },
             {
               "id": "00443-001",
-              "source": "while Holmes fell upon his knees upon the floor, and, with the lantern and a magnifying lens, began to examine minutely the cracks between the stones.",
-              "target": "一方、ホームズは床にひざまずき、ランタンと拡大鏡を使って、石の間の隙間を細かく調べ始めた。"
-            },
-            {
-              "id": "00443-002",
-              "source": "A few seconds sufficed to satisfy him,",
-              "target": "数秒で彼は満足した。"
-            },
-            {
-              "id": "00443-003",
-              "source": "for he sprang to his feet again, and put his glass in his pocket.",
-              "target": "そして再び立ち上がり、拡大鏡をポケットにしまった。"
+              "source": "A few seconds sufficed to satisfy him, for he sprang to his feet again, and put his glass in his pocket.",
+              "target": "数秒で彼は満足した。そして再び立ち上がり、拡大鏡をポケットにしまった。"
             }
           ],
           "raw_line": 1534
@@ -8594,13 +8584,8 @@
           "paragraph": [
             {
               "id": "00506-000",
-              "source": "I had expected to see Sherlock Holmes impatient under this rambling and inconsequential narrative,",
-              "target": "私はこの冗長で無関係な話に対して、シャーロック・ホームズがいら立っているのを予想していたが、"
-            },
-            {
-              "id": "00506-001",
-              "source": "but, on the contrary, he had listened with the greatest concentration of attention.",
-              "target": "逆に、彼は最大限の注意を払って聞いていた。"
+              "source": "I had expected to see Sherlock Holmes impatient under this rambling and inconsequential narrative, but, on the contrary, he had listened with the greatest concentration of attention.",
+              "target": "私はこの冗長で無関係な話に対して、シャーロック・ホームズがいら立っているのを予想していたが、逆に、彼は最大限の注意を払って聞いていた。"
             }
           ],
           "raw_line": 1800
@@ -12224,7 +12209,7 @@
           "paragraph": [
             {
               "id": "00706-000",
-              "source": "“And your father?” asked Holmes. ",
+              "source": "“And your father?” asked Holmes.",
               "target": "「あなたのお父様は？」とホームズが尋ねました。"
             },
             {

@@ -25,16 +25,11 @@
           "paragraph": [
             {
               "id": "00003-000",
-              "source": "“How white the moonlight is tonight!” said Anne Blythe to herself",
-              "target": "「今夜は月明かりがとても白いわ！」とアン・ブライスは自分に向かって言った。"
+              "source": "“How white the moonlight is tonight!” said Anne Blythe to herself as she went up the walk of the Wright garden to Diana Wright's front door",
+              "target": "「今夜は月明かりがとても白いわ！」とアン・ブライスは自分に向かって言った。ワイト家の庭の小道を歩いていく彼女は"
             },
             {
               "id": "00003-001",
-              "source": "as she went up the walk of the Wright garden to Diana Wright's front door",
-              "target": "ワイト家の庭の小道を歩いていく彼女は"
-            },
-            {
-              "id": "00003-002",
               "source": ", where little cherry-blossom petals were coming down on the salty, breeze-stirred air.",
               "target": "そこでは小さな桜の花びらが塩気のある風に乗って舞っていた。"
             }
@@ -285,7 +280,7 @@
           "paragraph": [
             {
               "id": "00014-000",
-              "source": "“Aunt Mary Maria...Gilbert always calls her that although she is only his father's cousin...always calls me 'Annie,'” shuddered Anne. ",
+              "source": "“Aunt Mary Maria...Gilbert always calls her that although she is only his father's cousin...always calls me 'Annie,'” shuddered Anne.",
               "target": "「マリア・マリアおばさん…ギルバートはいつもそう呼ぶんだけど、彼女はただ父方のいとこなのに…私はいつも『アニー』って呼ばれるの」と、アンは震えた。"
             },
             {
@@ -3185,8 +3180,13 @@
             },
             {
               "id": "00148-003",
-              "source": "I hope my bed has been well aired, Annie.”",
-              "target": "ベッドリネンが湿っているとひどいわよ。アニー、私のベッドはよく干されていることを願っているわ。」"
+              "source": "I hope my bed has been well aired, Annie.",
+              "target": "アニー、私のベッドはよく風通しされていることを願います。"
+            },
+            {
+              "id": "00148-004",
+              "source": "Damp bed linen is terrible.”",
+              "target": "湿ったベッドリネンはひどいわ。」"
             }
           ],
           "raw_line": 667
@@ -9825,18 +9825,8 @@
             },
             {
               "id": "00490-003",
-              "source": "The dark hills, with the darker spruces marching over them, looked grim on early falling nights,",
-              "target": "暗い丘と、それを覆うように進むより暗いスプルースは、早い夜には陰鬱に見えた。"
-            },
-            {
-              "id": "00490-004",
-              "source": "but Ingleside bloomed with firelight and laughter,",
-              "target": "しかしイングルサイドは火明かりと笑いで満ち溢れていた。"
-            },
-            {
-              "id": "00490-005",
-              "source": "though the winds come in from the Atlantic singing of mournful things.",
-              "target": "大西洋から吹く風は悲しいことを歌いながらやって来る。"
+              "source": "The dark hills, with the darker spruces marching over them, looked grim on early falling nights, but Ingleside bloomed with firelight and laughter, though the winds come in from the Atlantic singing of mournful things.",
+              "target": "暗い丘と、それを覆うように進むより暗いスプルースは、早い夜には陰鬱に見えた。しかしイングルサイドは火明かりと笑いで満ち溢れていた。大西洋から吹く風は悲しいことを歌いながらやって来る。"
             }
           ],
           "raw_line": 2044
@@ -10341,12 +10331,12 @@
             {
               "id": "00523-000",
               "source": "“I know...but Gilbert...I don't think he quite realises everything.",
-              "target": "「わかってるわ…でもギルバート…彼はまだ全てを理解していないと思うの。"
+              "target": "「わかってるけど…でもギルバート…彼はまだ全てを理解していないと思うの。"
             },
             {
               "id": "00523-001",
-              "source": "He's away so much...and really...everything is so little in itself...I'm ashamed…”",
-              "target": "彼はいつも出張でいないし…実際…全ては些細なことなのに…私は恥ずかしいわ…」"
+              "source": "He's away so much...and really...everything is so little in itself...I'm ashamed...”",
+              "target": "彼はいつも出張で…実際…全ては些細なことなのに…私は恥ずかしい…」"
             }
           ],
           "raw_line": 2153
@@ -17085,31 +17075,26 @@
           "paragraph": [
             {
               "id": "00888-000",
-              "source": "Ways and means must be considered:",
-              "target": "手段と方法を考えなければならない："
+              "source": "Ways and means must be considered: He had an allowance but it was all needed for necessary things and pearl necklaces were not among the items budgeted for.",
+              "target": "手段と方法を考えなければならない：彼はお小遣いをもらっていたが、それは必要なものに全て必要だったし、真珠のネックレスは予算に入っていなかった。"
             },
             {
               "id": "00888-001",
-              "source": "He had an allowance but it was all needed for necessary things and pearl necklaces were not among the items budgeted for.",
-              "target": "彼はお小遣いをもらっていたが、それは必要なものに全て必要だったし、真珠のネックレスは予算に入っていなかった。"
-            },
-            {
-              "id": "00888-002",
               "source": "Besides, he wanted to earn the money for it himself.",
               "target": "それに、彼は自分でそのお金を稼ぎたかった。"
             },
             {
-              "id": "00888-003",
+              "id": "00888-002",
               "source": "It would be really his gift then.",
               "target": "それは本当に彼の贈り物になるだろう。"
             },
             {
-              "id": "00888-004",
+              "id": "00888-003",
               "source": "Mother's birthday was in March...only six weeks away.",
               "target": "母の誕生日は3月だった...あと6週間しかない。"
             },
             {
-              "id": "00888-005",
+              "id": "00888-004",
               "source": "And the necklace would cost fifty cents!",
               "target": "そしてネックレスは50セントもする！"
             }
@@ -20015,63 +20000,23 @@
           "paragraph": [
             {
               "id": "01009-000",
-              "source": "“Make it where the winds may sweep Through the pine boughs soft and deep,",
-              "target": "「風が松の枝を柔らかく深く吹き抜ける場所に作ってください。"
+              "source": "“Make it where the winds may sweep Through the pine boughs soft and deep, And the murmur of the sea Come across the orient lea, And the falling raindrops sing Gently to his slumbering.",
+              "target": "「風が松の枝を柔らかく深く吹き抜ける場所に作ってください。そして、海のささやきが東の草原を越えて届く場所に。降り注ぐ雨粒が彼の眠りに優しく歌いかける場所に。」"
             },
             {
               "id": "01009-001",
-              "source": "And the murmur of the sea Come across the orient lea,",
-              "target": "そして、海のささやきが東の草原を越えて届く場所に。"
+              "source": "”Make it where the meadows wide Greenly lie on every side, Harvest fields he reaped and trod, Westering slopes of clover sod, Orchard lands where bloom and blow Trees he planted long ago.",
+              "target": "「広々とした草原が四方に緑豊かに広がる場所に作ってください。彼が刈り取り歩いた収穫の畑、クローバーの芝生の西に傾く斜面に。彼が昔植えた木々が咲き誇る果樹園の土地に。」"
             },
             {
               "id": "01009-002",
-              "source": "And the falling raindrops sing Gently to his slumbering.",
-              "target": "降り注ぐ雨粒が彼の眠りに優しく歌いかける場所に。」"
+              "source": "“Make it where the starshine dim May be always close to him, And the sunrise glory spread Lavishly around his bed, And the dewy grasses creep Tenderly above his sleep.",
+              "target": "「星の輝きがいつも彼のそばにある場所に作ってください。そして、日の出の栄光が彼の寝床の周りに豊かに広がる場所に。露に濡れた草が彼の眠りの上を優しく這う場所に。」"
             },
             {
               "id": "01009-003",
-              "source": "”Make it where the meadows wide Greenly lie on every side,",
-              "target": "「広々とした草原が四方に緑豊かに広がる場所に作ってください。"
-            },
-            {
-              "id": "01009-004",
-              "source": "Harvest fields he reaped and trod, Westering slopes of clover sod,",
-              "target": "彼が刈り取り歩いた収穫の畑、クローバーの芝生の西に傾く斜面に。"
-            },
-            {
-              "id": "01009-005",
-              "source": "Orchard lands where bloom and blow Trees he planted long ago.",
-              "target": "彼が昔植えた木々が咲き誇る果樹園の土地に。」"
-            },
-            {
-              "id": "01009-006",
-              "source": "“Make it where the starshine dim May be always close to him,",
-              "target": "「星の輝きがいつも彼のそばにある場所に作ってください。"
-            },
-            {
-              "id": "01009-007",
-              "source": "And the sunrise glory spread Lavishly around his bed,",
-              "target": "そして、日の出の栄光が彼の寝床の周りに豊かに広がる場所に。"
-            },
-            {
-              "id": "01009-008",
-              "source": "And the dewy grasses creep Tenderly above his sleep.",
-              "target": "露に濡れた草が彼の眠りの上を優しく這う場所に。」"
-            },
-            {
-              "id": "01009-009",
-              "source": "”Since these things to him were dear Through full many a well-spent year,",
-              "target": "「これらのものが彼にとって多くの充実した年月を通じて大切だったので、"
-            },
-            {
-              "id": "01009-010",
-              "source": "It is surely meet their grace Should be on his resting place,",
-              "target": "それらの優美さが彼の安息の地にあるのは当然のことです。"
-            },
-            {
-              "id": "01009-011",
-              "source": "And the murmur of the sea Be his dirge eternally.”",
-              "target": "そして、海のささやきが永遠に彼の葬送歌となるでしょう。」"
+              "source": "”Since these things to him were dear Through full many a well-spent year, It is surely meet their grace Should be on his resting place, And the murmur of the sea Be his dirge eternally.”",
+              "target": "「これらのものが彼にとって多くの充実した年月を通じて大切だったので、それらの優美さが彼の安息の地にあるのは当然のことです。そして、海のささやきが永遠に彼の葬送歌となるでしょう。」"
             }
           ],
           "raw_line": 4186
@@ -24830,13 +24775,8 @@
             },
             {
               "id": "01223-001",
-              "source": "said Anne, while Susan swiftly and stealthily removed from the hearth-rug a huge fishbone the Shrimp had brought in,",
-              "target": "スーザンが素早くこっそりと暖炉の敷物から、シュリンプが持ち込んだ巨大な魚の骨を取り除く間、アンが言った。"
-            },
-            {
-              "id": "01223-002",
-              "source": "praying that Miss Cornelia had not noticed it.",
-              "target": "ミス・コーネリアがそれに気づいていないことを祈りながら。"
+              "source": "said Anne, while Susan swiftly and stealthily removed from the hearth-rug a huge fishbone the Shrimp had brought in, praying that Miss Cornelia had not noticed it.",
+              "target": "スーザンが素早くこっそりと暖炉の敷物から、シュリンプが持ち込んだ巨大な魚の骨を取り除く間、アンが言った。ミス・コーネリアがそれに気づいていないことを祈りながら。"
             }
           ],
           "raw_line": 5207
@@ -28481,12 +28421,12 @@
             {
               "id": "01422-000",
               "source": "Di ventured to open her eyes once as they plotted this.",
-              "target": "ディは彼らが考える中で一度目を開けることに踏み切った。"
+              "target": "ディは彼らがこれを計画している間に一度目を開ける勇気を出した。"
             },
             {
               "id": "01422-001",
               "source": "The sleeping world around looked very strange to her.",
-              "target": "眠っている世界は彼女にとって非常に奇妙に見えた。"
+              "target": "周囲の眠っている世界は彼女にはとても奇妙に見えた。"
             },
             {
               "id": "01422-002",
@@ -28496,12 +28436,22 @@
             {
               "id": "01422-003",
               "source": "The stars were laughing at her.",
-              "target": "星々が彼女を笑っているようだった。"
+              "target": "星は彼女を嘲笑っていた。"
             },
             {
               "id": "01422-004",
-              "source": "“I don't like such a big sky. But if I can just hold on a little spell longer I'll be home. If they find out that I'm not dead they'll just leave me here and I'll never get home in the dark alone.”",
-              "target": "「こんなに広い空は好きじゃない。でももう少し我慢すれば、家に着くわ。もし私が死んでいないことがバレたら、ここに置いていかれて暗闇の中で家に帰れなくなるわ」。"
+              "source": "(“I don't like such a big sky.",
+              "target": "（「こんなに大きな空は好きじゃない。"
+            },
+            {
+              "id": "01422-005",
+              "source": "But if I can just hold on a little spell longer I'll be home.",
+              "target": "でも、もう少しだけ我慢すれば家に着く。"
+            },
+            {
+              "id": "01422-006",
+              "source": "If they find out that I'm not dead they'll just leave me here and I'll never get home in the dark alone.”)",
+              "target": "もし彼らが私が死んでいないと気づいたら、ここに置いていかれてしまい、暗闇の中で一人では家に帰れない。」）"
             }
           ],
           "raw_line": 6026
@@ -29775,7 +29725,7 @@
           "paragraph": [
             {
               "id": "01498-000",
-              "source": "“Here's the parasol, Dovie,” she said breathlessly. ",
+              "source": "“Here's the parasol, Dovie,” she said breathlessly.",
               "target": "「ドーヴィー、日傘だよ」と息を切らせながら言った。"
             },
             {
@@ -34436,17 +34386,22 @@
             {
               "id": "01743-000",
               "source": "“It was just like a picture you'd seen in a magazine,” agreed Mrs. Simon with a sigh.",
-              "target": "「雑誌で見た絵のようだったわ」と、サイモン夫人はため息をつきながら同意した。"
+              "target": "「雑誌で見た絵のようでしたわ」とサイモン夫人はため息をついて同意した。"
             },
             {
               "id": "01743-001",
               "source": "“I can cook as good a supper as anyone, if I do say it, but I can't fix up a table with a single prestige of style.",
-              "target": "「自分でも言うけれど、誰にも負けない夕食を作れるわ。でも、テーブルをスタイリッシュに飾るのは苦手なの。"
+              "target": "「自分でも言うけど、誰にも負けない夕食を作れるわ。でも、テーブルをスタイリッシュに飾るのは苦手なの。"
             },
             {
               "id": "01743-002",
-              "source": "As for that young Walter, I could spank his bottom with a relish.”",
-              "target": "あの若いウォルターには、思いっきりお尻を叩いてやりたいわ。」"
+              "source": "As for that young Walter, I could spank his bottom with a relish.",
+              "target": "あの若いウォルターには、思いっきりお尻を叩いてやりたいわ。"
+            },
+            {
+              "id": "01743-003",
+              "source": "Such a turn as he gave me!”",
+              "target": "あんな仕打ちをされたものよ！」"
             }
           ],
           "raw_line": 7284
@@ -37580,13 +37535,8 @@
           "paragraph": [
             {
               "id": "01891-000",
-              "source": "“I'm very well, thank you, Mr. Fyfe,",
-              "target": "「元気です、フィフさん、ありがとうございます」"
-            },
-            {
-              "id": "01891-001",
-              "source": "How are you yourself and your wife?”",
-              "target": "「ご自身と奥様はいかがですか？」"
+              "source": "“I'm very well, thank you, Mr. Fyfe, How are you yourself and your wife?”",
+              "target": "「元気です、フィフさん、ありがとうございます」、「ご自身と奥様はいかがですか？」"
             }
           ],
           "raw_line": 7956
@@ -41901,107 +41851,107 @@
             {
               "id": "02095-000",
               "source": "Anne got her handkerchief and sat down in her chair to torture herself luxuriantly.",
-              "target": "アンはハンカチを取り、自分を贅沢に苦しめるため椅子に座った。"
+              "target": "アンはハンカチを取り、椅子に座って贅沢に自分を苦しめ始めた。"
             },
             {
               "id": "02095-001",
               "source": "Gilbert didn't love her any more.",
-              "target": "ギルバートはもう彼女を愛していなかった。"
+              "target": "ギルバートはもう彼女を愛していない。"
             },
             {
               "id": "02095-002",
               "source": "When he kissed her he kissed her absently...just “habit.”",
-              "target": "彼が彼女をキスするとき、彼は無意識にキスした...単なる“習慣”だった。"
+              "target": "彼が彼女にキスをするとき、それは無意識で...ただの「習慣」だった。"
             },
             {
               "id": "02095-003",
               "source": "All the glamour was gone.",
-              "target": "すべての魅力が失われていた。"
+              "target": "すべての魅力は消えてしまった。"
             },
             {
               "id": "02095-004",
               "source": "Old jokes they had laughed together over came up in recollection, charged with tragedy now.",
-              "target": "一緒に笑っていた古い冗談が、今では悲劇的な思い出として浮かび上がってきた。"
+              "target": "かつて一緒に笑った古い冗談が思い出され、今では悲劇を帯びている。"
             },
             {
               "id": "02095-005",
               "source": "How could she ever have thought them funny?",
-              "target": "彼女はいったいどうしてそれらを面白いと思えたのだろうか？"
+              "target": "どうしてそれらを面白いと思えたのだろうか？"
             },
             {
               "id": "02095-006",
               "source": "Monty Turner who kissed his wife systematically once a week...made a memorandum to remind him.",
-              "target": "週に一度システマティックに妻にキスをするモンティ・ターナー...彼は自分を思い出させるためのメモを作った。"
+              "target": "モンティ・ターナーは週に一度、体系的に妻にキスをし...それを思い出すためのメモを作った。"
             },
             {
               "id": "02095-007",
-              "source": "“Would any wife want such kisses?”",
-              "target": "「どの妻もそんなキスを望むだろうか？」"
+              "source": "(“Would any wife want such kisses?”)",
+              "target": "（「そんなキスを望む妻がいるだろうか？」）"
             },
             {
               "id": "02095-008",
               "source": "Curtis Ames who met his wife in a new bonnet and didn't know her.",
-              "target": "新しい帽子をかぶった妻に会っても彼女を認識しなかったカーティス・エイムズ。"
+              "target": "カーティス・エイムズは新しいボンネットをかぶった妻に会い、彼女を認識できなかった。"
             },
             {
               "id": "02095-009",
               "source": "Mrs. Clancy Dare who had said, “I don't care an awful lot about my husband but I'd miss him if he wasn't round.”",
-              "target": "「夫にあまり興味がないけれど、彼がいなくなったら寂しくなるだろう」と言ったクランシー・デア夫人。"
+              "target": "クランシー・デア夫人は「夫のことをあまり気にしていないけれど、彼がいなければ寂しい」と言った。"
             },
             {
               "id": "02095-010",
-              "source": "“I suppose Gilbert would miss me if I weren't around! Has it come to that with us?”",
-              "target": "「もし私がいなかったら、ギルバートは私を寂しく思うだろう！私たちはそこまで来てしまったのか？」"
+              "source": "(“I suppose Gilbert would miss me if I weren't around! Has it come to that with us?”)",
+              "target": "（「ギルバートも私がいなければ寂しいと思うだろうか！私たちもそうなってしまったのか？」）"
             },
             {
               "id": "02095-011",
               "source": "Nat Elliott who told his wife after ten years of marriage, “if you must know I'm just tired of being married.”",
-              "target": "結婚して10年後、妻に「知っておく必要があるなら、私はただ結婚に疲れた」と告げたナット・エリオット。"
+              "target": "ナット・エリオットは結婚10年後に妻に「結婚生活に疲れた」と言った。"
             },
             {
               "id": "02095-012",
-              "source": "“And we've been married fifteen years!”",
-              "target": "「そして私たちは結婚して15年も経っている！」"
+              "source": "(“And we've been married fifteen years!”)",
+              "target": "（「そして私たちは結婚して15年だ！」）"
             },
             {
               "id": "02095-013",
               "source": "Well, perhaps all men were like that.",
-              "target": "まあ、おそらくすべての男性がそうだったのかもしれない。"
+              "target": "まあ、おそらくすべての男性がそうなのだろう。"
             },
             {
               "id": "02095-014",
               "source": "Probably Miss Cornelia would say that they were.",
-              "target": "おそらくコーネリアさんはそう言うだろう。"
+              "target": "おそらくコーネリア嬢もそう言うだろう。"
             },
             {
               "id": "02095-015",
               "source": "After a time they were hard to hold.",
-              "target": "しばらくすると、彼らはつかみにくくなった。"
+              "target": "しばらくすると、彼らをつなぎとめるのは難しくなる。"
             },
             {
               "id": "02095-016",
-              "source": "“If my husband has to be 'held' I don't want to hold him.”",
-              "target": "「もし夫を“つかまえなければならない”のなら、私は彼をつかまえたくない。」"
+              "source": "(“If my husband has to be 'held' I don't want to hold him.”)",
+              "target": "（「もし夫を『つなぎとめる』必要があるなら、私は彼をつなぎとめたくない。」）"
             },
             {
               "id": "02095-017",
               "source": "But there was Mrs. Theodore Clow who had said proudly at a Ladies' Aid, “We've been married twenty years and my husband loves me as much as he did on our wedding day.”",
-              "target": "しかし、セオドア・クロウ夫人は自慢げに言った。「私たちは結婚して20年で、夫は私を結婚式の日と同じくらい愛してくれています。」"
+              "target": "しかし、セオドア・クロー夫人はレディース・エイドで誇らしげに「私たちは結婚して20年になるが、夫は結婚式の日と同じくらい私を愛している」と言った。"
             },
             {
               "id": "02095-018",
               "source": "But perhaps she was deceiving herself or only “keeping face.”",
-              "target": "でもおそらく彼女は自分を欺いているか、ただ“面子”を保っているだけだった。"
+              "target": "しかし、彼女は自分を欺いているか、ただ「体裁を保っている」だけかもしれない。"
             },
             {
               "id": "02095-019",
               "source": "And she looked every day of her age and more.",
-              "target": "そして彼女は毎日、自分の年齢以上に見えた。"
+              "target": "そして彼女は年相応以上に見えた。"
             },
             {
               "id": "02095-020",
-              "source": "“I wonder if I am beginning to look old.”",
-              "target": "「私は老け始めているのかしら。」"
+              "source": "(“I wonder if I am beginning to look old.”)",
+              "target": "（「私も老けて見え始めているのだろうか。」）"
             }
           ],
           "raw_line": 8881
@@ -43605,27 +43555,27 @@
             },
             {
               "id": "02160-001",
-              "source": " (“That terrible mouthful of teeth!”)",
+              "source": "(“That terrible mouthful of teeth!”)",
               "target": "（「あの恐ろしいほどの歯並び！」）"
             },
             {
               "id": "02160-002",
-              "source": " “Do you really never feel that you want a broader life?",
+              "source": "“Do you really never feel that you want a broader life?",
               "target": "「本当にもっと広い世界を求めたいと思わないの？」"
             },
             {
               "id": "02160-003",
-              "source": " You used to be quite ambitious, if I remember aright.",
+              "source": "You used to be quite ambitious, if I remember aright.",
               "target": "確か、あなたは以前はかなり野心的だったわよね。"
             },
             {
               "id": "02160-004",
-              "source": " Didn't you write some rather clever little things when you were at Redmond?",
+              "source": "Didn't you write some rather clever little things when you were at Redmond?",
               "target": "レッドモンドにいたときに、かなり巧妙な小品を書いていたでしょう？"
             },
             {
               "id": "02160-005",
-              "source": " A bit fantastic and whimsical, of course, but still...”",
+              "source": "A bit fantastic and whimsical, of course, but still...”",
               "target": "もちろん少し幻想的で気まぐれだったけど、それでも…」"
             }
           ],
@@ -43996,12 +43946,12 @@
             {
               "id": "02179-000",
               "source": "A wave or horror swept over Annie.",
-              "target": "アニーに恐怖の波が押し寄せた。"
+              "target": "アンは恐怖の波に襲われた。"
             },
             {
               "id": "02179-001",
               "source": "Gilbert did look tired...frightfully tired...and she hadn't seen it until Christine pointed it out!",
-              "target": "ギルバートは本当に疲れて見えた...恐ろしく疲れて...そしてクリスティンが指摘するまで、アンはそれに気づかなかった！"
+              "target": "ギルバートは確かに疲れて見えた…ひどく疲れて…そしてクリスティンが指摘するまで彼女はそれに気づかなかったのだ！"
             },
             {
               "id": "02179-002",
@@ -44010,8 +43960,8 @@
             },
             {
               "id": "02179-003",
-              "source": "“I've been taking Gilbert too much for granted and blaming him for doing the same thing.”",
-              "target": "「私はギルバートをあまり当たり前の存在として受け入れすぎて、同じことをしていると非難していたのかもしれない。」"
+              "source": "(“I've been taking Gilbert too much for granted and blaming him for doing the same thing.”)",
+              "target": "（「私はギルバートを当然のことと考えすぎて、彼が同じことをしていると責めていた。」）"
             }
           ],
           "raw_line": 9303
@@ -44830,13 +44780,8 @@
           "paragraph": [
             {
               "id": "02224-000",
-              "source": "(“They were talking of fleas when I was writhing with jealousy.",
-              "target": "「私が嫉妬で苦しんでいる時に、彼らはノミの話をしていたんだ。"
-            },
-            {
-              "id": "02224-001",
-              "source": "What an idiot I've been!”",
-              "target": "なんてバカなことをしたんだろう！」"
+              "source": "(“They were talking of fleas when I was writhing with jealousy. What an idiot I've been!”)",
+              "target": "「彼らはノミの話をしていたとき、私は嫉妬で苦しんでいました。なんて馬鹿なことをしていたんだろう！」"
             }
           ],
           "raw_line": 9486
@@ -45485,5 +45430,5 @@
       "raw_line": 9329
     }
   ],
-  "cost": 2.398
+  "cost": 2.435
 }

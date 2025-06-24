@@ -4200,7 +4200,7 @@
           "paragraph": [
             {
               "id": "00176-000",
-              "source": "“'Not silly at all...very wise and very delightful,' I said.",
+              "source": "“'Not silly at all...very wise and very delightful,' I said..",
               "target": "「全然愚かではないわ…とても賢明でとても楽しいわ」と私は言った。"
             }
           ],
@@ -6031,47 +6031,57 @@
             {
               "id": "00262-000",
               "source": "Anne went down to the old graveyard along a deep-rutted lane between high, mossy stone dykes, tasseled with frosted ferns.",
-              "target": "アンは、高く、苔むした石の堤防に挟まれた深い轍のある小道を古い墓地に向かって歩いた。"
+              "target": "アンは、霜で覆われたシダが垂れ下がる、高く苔むした石の堤防の間の深い轍のある小道を通って、古い墓地に向かいました。"
             },
             {
               "id": "00262-001",
-              "source": "Slim, pointed lombardies, from which November winds had not yet stripped all the leaves, grew along it at intervals, coming out darkly against the amethyst of the far hills; but the old graveyard, with half its tombstones leaning at a drunken slant, was surrounded by a four-square row of tall, somber fir trees.",
-              "target": "11月の風がまだ全ての葉を落としていない細く尖ったランバーディが、時折現れ、遠くの丘のアメジスト色に対して暗く浮かび上がっていた。しかし、古い墓地は、半分の墓石が酔っ払ったように傾いていて、背の高い重々しいトウヒの四角い列で囲まれていた。"
+              "source": "Slim, pointed lombardies, from which November winds had not yet stripped all the leaves, grew along it at intervals, coming out darkly against the amethyst of the far hills;",
+              "target": "細く尖ったロムバルディーの木々が、まだ11月の風にすべての葉を奪われておらず、遠くの丘の紫水晶色に対して暗く浮かび上がるように、間隔を置いて生えていました；"
             },
             {
               "id": "00262-002",
-              "source": "Anne had not expected to find any one there and was a little taken aback when she met Miss Valentine Courtaloe, with her long delicate nose, her thin delicate mouth, her sloping delicate shoulders and her general air of invincible lady-likeness, just inside the gate.",
-              "target": "アンは誰かに会うことは期待しておらず、門のすぐ内側で、長い繊細な鼻、細い繊細な口、傾斜のある繊細な肩、そして不屈の淑女らしさを持つヴァレンタイン・コートローさんに出会ったとき、少し驚いた。"
+              "source": "but the old graveyard, with half its tombstones leaning at a drunken slant, was surrounded by a four-square row of tall, somber fir trees.",
+              "target": "しかし、古い墓地は、半分の墓石が酔ったように傾いており、高く陰鬱なモミの木が四角く囲んでいました。"
             },
             {
               "id": "00262-003",
-              "source": "She knew Miss Valentine, of course, as did everyone in Summerside.",
-              "target": "もちろん、アンはヴァレンタインさんを知っていた。サマーサイドの誰もが知っていた。"
+              "source": "Anne had not expected to find any one there and was a little taken aback when she met Miss Valentine Courtaloe, with her long delicate nose, her thin delicate mouth, her sloping delicate shoulders and her general air of invincible lady-likeness, just inside the gate.",
+              "target": "アンはそこに誰もいないと思っていたので、門のすぐ内側で、長く繊細な鼻、薄く繊細な口、傾斜した繊細な肩、そして全体的に無敵の淑女らしさを漂わせるバレンタイン・コータロー嬢に出会ったとき、少し驚きました。"
             },
             {
               "id": "00262-004",
-              "source": "She was “the” local dressmaker and what she didn't know about people, living or dead, was not worth taking into account.",
-              "target": "彼女は“その”地元の仕立て屋であり、生きている人々や亡くなった人々について知らないことは考慮に値しなかった。"
+              "source": "She knew Miss Valentine, of course, as did everyone in Summerside.",
+              "target": "もちろん、アンはバレンタイン嬢を知っていましたし、サマサイドの誰もが彼女を知っていました。"
             },
             {
               "id": "00262-005",
-              "source": "Anne had wanted to wander about by herself, read the odd old epitaphs and puzzle out the names of forgotten lovers under the lichens that were growing over them.",
-              "target": "アンは一人で散策し、古い奇妙な碑文を読み、それらの上に生えている地衣類の下に埋もれた恋人たちの名前を解き明かしたかった。"
+              "source": "She was “the” local dressmaker and what she didn't know about people, living or dead, was not worth taking into account.",
+              "target": "彼女は地元の「ドレスメーカー」であり、生きている人や死んでいる人について彼女が知らないことは、考慮に値しないものでした。"
             },
             {
               "id": "00262-006",
-              "source": "But she could not escape when Miss Valentine slipped an arm through hers and proceeded to do the honors of the graveyard, where there were evidently as many Courtaloes buried as Pringles.",
-              "target": "しかし、ヴァレンタインさんが腕を組んで案内し始めると、アンは逃れることができなかった。明らかに、プリングル家と同じくらい多くのコートロー家が埋葬されている墓地であった。"
+              "source": "Anne had wanted to wander about by herself, read the odd old epitaphs and puzzle out the names of forgotten lovers under the lichens that were growing over them.",
+              "target": "アンは一人で歩き回り、奇妙な古い墓碑銘を読み、それらの上に生えている地衣類の下にある忘れられた恋人たちの名前を解読したいと思っていました。"
             },
             {
               "id": "00262-007",
-              "source": "Miss Valentine had not a drop of Pringle blood in her and one of Anne's favorite pupils was her nephew.",
-              "target": "ヴァレンタインさんにはプリングル家の血は一滴も流れておらず、アンのお気に入りの生徒の一人は彼女の甥だった。"
+              "source": "But she could not escape when Miss Valentine slipped an arm through hers and proceeded to do the honors of the graveyard, where there were evidently as many Courtaloes buried as Pringles.",
+              "target": "しかし、バレンタイン嬢がアンの腕に腕を通し、墓地の案内を始めたとき、アンは逃げることができませんでした。そこには明らかにコータロー家とプリングル家の墓が同じくらい多くありました。"
             },
             {
               "id": "00262-008",
+              "source": "Miss Valentine had not a drop of Pringle blood in her and one of Anne's favorite pupils was her nephew.",
+              "target": "バレンタイン嬢にはプリングル家の血は一滴も入っておらず、アンのお気に入りの生徒の一人は彼女の甥でした。"
+            },
+            {
+              "id": "00262-009",
               "source": "So it was no great mental strain to be nice to her, except that one must be very careful never to hint that she “sewed for a living.”",
-              "target": "だから、彼女に親切でいることはそれほど精神的な負担ではなかったが、彼女が“生計を立てるために裁縫をしている”ことをほのめかすことがないように非常に注意しなければならなかった。"
+              "target": "したがって、彼女に親切にすることは大した精神的負担ではありませんでしたが、彼女が「生計を立てるために縫っている」とほのめかさないように非常に注意しなければなりませんでした。"
+            },
+            {
+              "id": "00262-010",
+              "source": "Miss Valentine was said to be very sensitive on that point.",
+              "target": "バレンタイン嬢はその点に非常に敏感だと言われていました。"
             }
           ],
           "raw_line": 1270
@@ -14940,13 +14950,8 @@
             },
             {
               "id": "00680-001",
-              "source": "a flushed, starry-eyed Pauline, looking ten years younger, in spite of the resumed taffeta and the old hat,",
-              "target": "ポーリンは顔を赤らめ、星のような目をして、再び身につけたタフタと古い帽子にもかかわらず、10歳若く見えた。"
-            },
-            {
-              "id": "00680-002",
-              "source": "and carrying a beautiful bouquet which she hurriedly presented to the grim lady in the wheel-chair.",
-              "target": "そして美しい花束を持ち、急いで車椅子の厳つい女性に差し出した。"
+              "source": "a flushed, starry-eyed Pauline, looking ten years younger, in spite of the resumed taffeta and the old hat, and carrying a beautiful bouquet which she hurriedly presented to the grim lady in the wheel-chair.",
+              "target": "ポーリンは顔を赤らめ、星のような目をして、再び身につけたタフタと古い帽子にもかかわらず、10歳若く見えた。そして美しい花束を持ち、急いで車椅子の厳つい女性に差し出した。"
             }
           ],
           "raw_line": 3151
@@ -15506,7 +15511,7 @@
             {
               "id": "00711-001",
               "source": "“And it's wonderful, Dusty Miller, to be able to give happiness to somebody.",
-              "target": "「そして、誰かに幸せを与えられることは素晴らしいことだよ、ダスティ・ミラー。"
+              "target": "「そして、誰かに幸せを与えられるのは素晴らしいことだよ、ダスティ・ミラー。"
             },
             {
               "id": "00711-002",
@@ -15515,8 +15520,13 @@
             },
             {
               "id": "00711-003",
-              "source": "But, oh, Dusty Miller, you don't think I'll ever be like Mrs. Adoniram Gibson, even if I live to be eighty?”",
-              "target": "でも、ああ、ダスティ・ミラー、私が80歳になっても、私はアドナイラム・ギブソン夫人のようになるとは思わないでしょう？」"
+              "source": "But, oh, Dusty Miller, you don't think I'll ever be like Mrs. Adoniram Gibson, even if I live to be eighty?",
+              "target": "でも、ああ、ダスティ・ミラー、私が80歳になっても、アドナイラム・ギブソン夫人のようになるとは思わないでしょう？"
+            },
+            {
+              "id": "00711-004",
+              "source": "Do you, Dusty Miller?”",
+              "target": "そう思う？」"
             }
           ],
           "raw_line": 3276
@@ -16096,32 +16106,37 @@
             {
               "id": "00734-000",
               "source": "It was a large party, for all the married Nelson girls and their husbands were there, besides ushers and bridesmaids; and it was a merry one, in spite of Aunt Mouser's “felicities”...or perhaps because of them.",
-              "target": "結婚したネルソン家の娘たちとその夫たち、そして案内役や花嫁介添人たちも含め、大勢の人が集まった賑やかなパーティでした。おそらくは、おばネズミの“おかしな言動”のおかげか、それともそれにもかかわらず、楽しい雰囲気でした。"
+              "target": "ネルソン家の結婚した姉妹たちとその夫たち、そして案内役や花嫁介添人たちが全員集まった大所帯のパーティーでした。そして、それは楽しいものでした。おそらくは、おばネズミの“おかしな言葉”のおかげかもしれません。"
             },
             {
               "id": "00734-001",
               "source": "Nobody took Aunt Mouser very seriously; she was evidently a joke among the young fry.",
-              "target": "誰もおばネズミを真剣に受け取っていませんでした。明らかに若者たちの間ではジョークの対象だったのです。"
+              "target": "誰もおばネズミを真剣に受け取りませんでした。彼女は明らかに若者たちの笑いものでした。"
             },
             {
               "id": "00734-002",
               "source": "When she said, on being introduced to Gordon Hill, “Well, well, you ain't a bit like I expected. I always thought Sally would pick out a tall handsome man,” ripples of laughter ran through the porch.",
-              "target": "ゴードン・ヒルに紹介されたとき、おばネズミが言った“まあまあ、あなたは全然私が想像していたとおりじゃないわ。いつもサリーは背の高くてハンサムな男性を選ぶと思っていたのに”という言葉に、ポーチ中に笑いの波が広がりました。"
+              "target": "ゴードン・ヒルに紹介されたとき、彼女が言った“まあ、まあ、あなたは全然私が想像していたとおりではありませんね。私はいつもサリーが背の高いハンサムな男性を選ぶと思っていました”という言葉に、ポーチ中に笑いの波が広がりました。"
             },
             {
               "id": "00734-003",
               "source": "Gordon Hill, who was on the short side and called no more than “pleasant-faced” by his best friends, knew he would never hear the last of it.",
-              "target": "身長が低く、親しい友人たちからは“愛想のいい顔”と呼ばれるゴードン・ヒルは、これについては最後まで言われ続けることを知っていました。"
+              "target": "身長が低く、親友たちから“愛想のいい顔”と呼ばれることもあるゴードン・ヒルは、これについては最後まで言われ続けるだろうと知っていました。"
             },
             {
               "id": "00734-004",
               "source": "When she said to Dot Fraser, “Well, well, a new dress every time I see you! All I hope is your father's purse will be able to stand it for a few years yet,” Dot could, of course, have boiled her in oil, but some of the other girls found it amusing.",
-              "target": "ドット・フレイザーに“まあまあ、あなたに会うたびに新しいドレスね！父親の財布がそれを数年間も支えられることを願うわ”と言ったとき、ドットはもちろん彼女を油で揚げることもできましたが、他の女の子たちの中にはそれを面白いと思う人もいました。"
+              "target": "ドット・フレイザーに言った“まあ、まあ、あなたに会うたびに新しいドレスね！私が願うのは、あなたの父親の財布がまだ数年間それに耐えられることです”という言葉に、ドットはもちろん彼女を油で茹でることもできましたが、他の女の子たちの中にはそれを面白いと思う人もいました。"
             },
             {
               "id": "00734-005",
               "source": "And when Aunt Mouser mournfully remarked, apropos of the preparations of the wedding-dinner, “All I hope is everybody will get her teaspoons afterwards. Five were missing after Gertie Paul's wedding. They never turned up,” Mrs. Nelson, who had borrowed three dozen and the sisters-in-law she had borrowed them from all looked harried.",
-              "target": "そして、おばネズミが結婚式の夕食の準備に関連して悲しげに述べた“願わくば、誰もがそのティースプーンを後で手に入れられますように。ガーティ・ポールの結婚式の後、5本が行方不明になりました。見つかることはありませんでした”という言葉に、3ダースを借りたネルソン夫人とそれを借りた義理の姉妹たちはみな困惑した表情を浮かべました。"
+              "target": "そして、おばネズミが結婚式の夕食の準備に関連して悲しげに述べた“私が願うのは、誰もがその後に彼女のティースプーンを手に入れることです。ガーティ・ポールの結婚式の後、5本が行方不明になりました。それらは決して見つかりませんでした”という言葉に、3ダースを借りたネルソン夫人とそれらを借りた義理の姉妹たちはみな慌ただしそうに見えました。"
+            },
+            {
+              "id": "00734-006",
+              "source": "But Dr. Nelson haw-hawed cheerfully.",
+              "target": "しかし、ネルソン博士は陽気に笑いました。"
             }
           ],
           "raw_line": 3405
@@ -16985,13 +17000,8 @@
             },
             {
               "id": "00770-003",
-              "source": "Anne, in her Nile green dress and hat, looked at herself in the mirror,",
-              "target": "アンはナイルグリーンのドレスと帽子を身に着け、鏡を見つめた。"
-            },
-            {
-              "id": "00770-004",
-              "source": "and wished that Gilbert could see her.",
-              "target": "そして、ギルバートに自分を見てほしいと願った。"
+              "source": "Anne, in her Nile green dress and hat, looked at herself in the mirror, and wished that Gilbert could see her.",
+              "target": "アンはナイルグリーンのドレスと帽子を身に着け、鏡を見つめた。そして、ギルバートに自分を見てほしいと願った。"
             }
           ],
           "raw_line": 3616
@@ -17735,13 +17745,8 @@
             },
             {
               "id": "00813-001",
-              "source": "said Nora as icily as possible,",
-              "target": "ノラはできるだけ冷たく"
-            },
-            {
-              "id": "00813-002",
-              "source": "consistent with hunting for a bloodless spot on Jim's handkerchief.",
-              "target": "ジムのハンカチで血のついていない部分を探すように、一貫していた。"
+              "source": "said Nora as icily as possible, consistent with hunting for a bloodless spot on Jim's handkerchief.",
+              "target": "ノラはできるだけ冷たく、ジムのハンカチで血のついていない部分を探すように、一貫していた。"
             }
           ],
           "raw_line": 3769
@@ -21655,13 +21660,18 @@
           "paragraph": [
             {
               "id": "01024-000",
-              "source": "“I've seen a good many sunsets,” said the latter coldly, without moving.",
-              "target": "「私はたくさんの夕焼けを見てきました」と、後者は冷たく言い、動かずにいた。"
+              "source": "“I've seen a good many sunsets,”",
+              "target": "「私はたくさんの夕焼けを見てきました」"
             },
             {
               "id": "01024-001",
-              "source": "“Condescending to me with your sunsets!” she thought bitterly.",
-              "target": "「あなたの夕焼けで私を見下しているつもりね！」と、彼女は辛辣に思った。"
+              "source": "said the latter coldly, without moving.",
+              "target": "と彼女は動かずに冷たく言った。"
+            },
+            {
+              "id": "01024-002",
+              "source": "(“Condescending to me with your sunsets!” she thought bitterly.)",
+              "target": "（「夕焼けで私に恩着せがましいことを！」と彼女は苦々しく思った。）"
             }
           ],
           "raw_line": 4600
@@ -25955,16 +25965,11 @@
           "paragraph": [
             {
               "id": "01235-000",
-              "source": "“Do you s'pose they'll ask us at the judgment day how many petticoats we've got on?”, asked Rebecca Dew, ",
-              "target": "「最後の審判の日に、私たちに何枚のペチコートを履いているか尋ねるでしょうか？」とレベッカ・デューは尋ねた。"
+              "source": "“Do you s'pose they'll ask us at the judgment day how many petticoats we've got on?”, asked Rebecca Dew, escaping to the kitchen before any one could register horror.",
+              "target": "「最後の審判の日に、私たちに何枚のペチコートを履いているか尋ねるでしょうか？」とレベッカ・デューは尋ねた。誰もが驚きを感じる前に、レベッカ・デューは台所に逃げた。"
             },
             {
               "id": "01235-001",
-              "source": "escaping to the kitchen before any one could register horror.",
-              "target": "誰もが驚きを感じる前に、レベッカ・デューは台所に逃げた。"
-            },
-            {
-              "id": "01235-002",
               "source": "Even Aunt Chatty thought Rebecca Dew really had gone a little too far.",
               "target": "アンチャティでさえ、レベッカ・デューが本当にやりすぎたと思った。"
             }
@@ -29101,7 +29106,7 @@
             {
               "id": "01390-000",
               "source": "“H.M.",
-              "target": "H.M.  "
+              "target": "H.M."
             }
           ],
           "raw_line": 6174
@@ -35040,8 +35045,8 @@
           "paragraph": [
             {
               "id": "01729-000",
-              "source": "Franklin Westcott took his pipe out of his mouth at the door and tapped her on the shoulder with it.",
-              "target": "フランクリン・ウェストコットはドアでパイプを口から取り出し、それで彼女の肩を軽く叩いた。"
+              "source": "Franklin Westcott took his pipe out of his mouth at the door and tapped her on the shoulder with it..",
+              "target": "フランクリン・ウェストコットはドアのところでパイプを口から取り出し、それで彼女の肩を軽く叩いた。"
             }
           ],
           "raw_line": 7404
@@ -38930,13 +38935,8 @@
           "paragraph": [
             {
               "id": "01922-000",
-              "source": "“I've found Tomorrow,” she said,",
-              "target": "「私は明日を見つけました」と彼女は言った。"
-            },
-            {
-              "id": "01922-001",
-              "source": "as the nurse looked Father and Miss Shirley out.",
-              "target": "看護師が父親とシャーリーさんを見送る中で。"
+              "source": "“I've found Tomorrow,” she said, as the nurse looked Father and Miss Shirley out.",
+              "target": "「私は明日を見つけました」と彼女は言った。看護師が父親とシャーリーさんを見送る中で。"
             }
           ],
           "raw_line": 8236
@@ -39761,5 +39761,5 @@
       "raw_line": 8165
     }
   ],
-  "cost": 2.072
+  "cost": 2.104
 }

@@ -655,21 +655,11 @@
           "paragraph": [
             {
               "id": "00045-000",
-              "source": "Everyone thought soberly for a minute,",
-              "target": "みんなが一分間、真剣な表情で考えました。"
+              "source": "Everyone thought soberly for a minute, then Meg announced, as if the idea was suggested by the sight of her own pretty hands,",
+              "target": "みんなが一分間、真剣な表情で考えました。その後、メグが宣言しました。自分のきれいな手を見ていると、その考えが提案されたかのように。"
             },
             {
               "id": "00045-001",
-              "source": "then Meg announced,",
-              "target": "その後、メグが宣言しました。"
-            },
-            {
-              "id": "00045-002",
-              "source": "as if the idea was suggested by the sight of her own pretty hands,",
-              "target": "自分のきれいな手を見ていると、その考えが提案されたかのように。"
-            },
-            {
-              "id": "00045-003",
               "source": "“I shall give her a nice pair of gloves.”",
               "target": "「私は彼女に素敵な手袋をプレゼントします」と。"
             }
@@ -890,13 +880,8 @@
           "paragraph": [
             {
               "id": "00059-000",
-              "source": "“It’s the best we’ve had yet,” said Meg",
-              "target": "「これまでで一番良かったわ」とメグが言った。"
-            },
-            {
-              "id": "00059-001",
-              "source": "as the dead villain sat up and rubbed his elbows.",
-              "target": "死んだ悪党が起き上がって肘をこすっている。"
+              "source": "“It’s the best we’ve had yet,” said Meg as the dead villain sat up and rubbed his elbows.",
+              "target": "「これまでで一番良かったわ」とメグが言った。死んだ悪党が起き上がって肘をこすっている。"
             }
           ],
           "raw_line": 184
@@ -1210,21 +1195,16 @@
             },
             {
               "id": "00077-005",
-              "source": "Jo wasn’t ashamed of the great tear that dropped off the end of her nose,",
-              "target": "ジョーは鼻の先から落ちた大きな涙を恥ずかしがりませんでした。"
+              "source": "Jo wasn’t ashamed of the great tear that dropped off the end of her nose, and Amy never minded the rumpling of her curls as she hid her face on her mother’s shoulder and sobbed out,",
+              "target": "ジョーは鼻の先から落ちた大きな涙を恥ずかしがりませんでした。エイミーは母の肩に顔を埋めてすすり泣きながら、カールが乱れるのを気にしませんでした。"
             },
             {
               "id": "00077-006",
-              "source": "and Amy never minded the rumpling of her curls as she hid her face on her mother’s shoulder and sobbed out,",
-              "target": "エイミーは母の肩に顔を埋めてすすり泣きながら、カールが乱れるのを気にしませんでした。"
-            },
-            {
-              "id": "00077-007",
               "source": "“I am a selfish girl!",
               "target": "「私はわがままな女の子です！"
             },
             {
-              "id": "00077-008",
+              "id": "00077-007",
               "source": "But I’ll truly try to be better, so he mayn’t be disappointed in me by-and-by.”",
               "target": "でも、彼がいつか私に失望しないように、本当に良くなるように努力します。」"
             }
@@ -1395,26 +1375,21 @@
           "paragraph": [
             {
               "id": "00091-000",
-              "source": "“We were in the Slough of Despond tonight,",
-              "target": "「今夜、私たちは絶望の沼にいました。"
+              "source": "“We were in the Slough of Despond tonight, and Mother came and pulled us out as Help did in the book.",
+              "target": "「今夜、私たちは絶望の沼にいました。そして母が来て、本の中の助けのように私たちを引っ張り出してくれました。"
             },
             {
               "id": "00091-001",
-              "source": "and Mother came and pulled us out as Help did in the book.",
-              "target": "そして母が来て、本の中の助けのように私たちを引っ張り出してくれました。"
-            },
-            {
-              "id": "00091-002",
               "source": "We ought to have our roll of directions, like Christian.",
               "target": "私たちもクリスチャンのように指示書を持つべきです。"
             },
             {
-              "id": "00091-003",
+              "id": "00091-002",
               "source": "What shall we do about that?”",
               "target": "それについてどうしましょうか？」"
             },
             {
-              "id": "00091-004",
+              "id": "00091-003",
               "source": "asked Jo, delighted with the fancy which lent a little romance to the very dull task of doing her duty.",
               "target": "ジョーは、自分の義務を果たすという非常に退屈な作業に少しのロマンスを与えるこの空想に喜んで尋ねました。"
             }
@@ -3400,16 +3375,11 @@
             },
             {
               "id": "00205-001",
-              "source": "cried Jo,",
-              "target": "ジョーが叫び、"
+              "source": "cried Jo, adding with a laugh as they went on,",
+              "target": "ジョーが叫び、彼女たちは進んでいく間に笑いながら付け加えた、「"
             },
             {
               "id": "00205-002",
-              "source": "adding with a laugh as they went on,",
-              "target": "彼女たちは進んでいく間に笑いながら付け加えた、「"
-            },
-            {
-              "id": "00205-003",
               "source": "“I do believe Marmee would ask that if we were all running away from an earthquake.”",
               "target": "本当に、もし私たちが地震から逃げているときでも、マーミーはそれを尋ねるだろう」。"
             }
@@ -3755,16 +3725,11 @@
           "paragraph": [
             {
               "id": "00229-000",
-              "source": "“I can’t thrash Aunt March,",
-              "target": "「おばさんをぶちのめすわけにはいかないから、"
+              "source": "“I can’t thrash Aunt March, so I suppose I shall have to bear it.”",
+              "target": "「おばさんをぶちのめすわけにはいかないから、仕方なく我慢するしかないわね。」"
             },
             {
               "id": "00229-001",
-              "source": "so I suppose I shall have to bear it.”",
-              "target": "仕方なく我慢するしかないわね。」"
-            },
-            {
-              "id": "00229-002",
               "source": "And Jo resigned herself with a sigh.",
               "target": "とジョーはため息をついて諦めた。"
             }
@@ -4905,18 +4870,8 @@
             },
             {
               "id": "00307-001",
-              "source": "cried Jo, losing her temper when she had upset an inkstand,",
-              "target": "ジョーは怒りを爆発させ、インク入れをひっくり返してしまったときに叫んだ。"
-            },
-            {
-              "id": "00307-002",
-              "source": "broken both boot lacings,",
-              "target": "靴紐を2本切ってしまい、"
-            },
-            {
-              "id": "00307-003",
-              "source": "and sat down upon her hat.",
-              "target": "そして帽子に座ってしまった。"
+              "source": "cried Jo, losing her temper when she had upset an inkstand, broken both boot lacings, and sat down upon her hat.",
+              "target": "ジョーは怒りを爆発させ、インク入れをひっくり返してしまったときに叫んだ。靴紐を2本切ってしまい、そして帽子に座ってしまった。"
             }
           ],
           "raw_line": 1023
@@ -7915,13 +7870,8 @@
           "paragraph": [
             {
               "id": "00497-000",
-              "source": "“Did he?”,",
-              "target": "「そうだったの？」と、"
-            },
-            {
-              "id": "00497-001",
-              "source": "And Jo opened her eyes as if it had never occurred to her before.",
-              "target": "ジョーは目を見開き、それが以前に彼女に思い浮かんだことがなかったかのように。"
+              "source": "“Did he?”, And Jo opened her eyes as if it had never occurred to her before.",
+              "target": "「そうだったの？」と、ジョーは目を見開き、それが以前に彼女に思い浮かんだことがなかったかのように。"
             }
           ],
           "raw_line": 1659
@@ -8595,13 +8545,8 @@
           "paragraph": [
             {
               "id": "00536-000",
-              "source": "“How nice it sounds! I wish someone would write to me so!” said Amy,",
-              "target": "「なんて素敵なことでしょう！誰か私にも手紙を書いてくれたらいいのに！」とエイミーは言いました。"
-            },
-            {
-              "id": "00536-001",
-              "source": "who thought the old-fashioned address very elegant.",
-              "target": "彼女はその古風な宛名をとても上品だと思いました。"
+              "source": "“How nice it sounds! I wish someone would write to me so!” said Amy, who thought the old-fashioned address very elegant.",
+              "target": "「なんて素敵なことでしょう！誰か私にも手紙を書いてくれたらいいのに！」とエイミーは言いました。彼女はその古風な宛名をとても上品だと思いました。"
             }
           ],
           "raw_line": 1805
@@ -8820,13 +8765,8 @@
           "paragraph": [
             {
               "id": "00550-000",
-              "source": "“That boy is a perfect cyclops, isn’t he?”, said Amy one day",
-              "target": "「あの少年、まるでサイクロプスみたいでしょ？」とエイミーがある日言いました。"
-            },
-            {
-              "id": "00550-001",
-              "source": "as Laurie clattered by on horseback, with a flourish of his whip as he passed.",
-              "target": "ローリーが馬に乗ってカタカタと通り過ぎ、鞭を振るっていました。"
+              "source": "“That boy is a perfect cyclops, isn’t he?”, said Amy one day as Laurie clattered by on horseback, with a flourish of his whip as he passed.",
+              "target": "「あの少年、まるでサイクロプスみたいでしょ？」とエイミーがある日言いました。ローリーが馬に乗ってカタカタと通り過ぎ、鞭を振るっていました。"
             }
           ],
           "raw_line": 1856
@@ -9610,13 +9550,8 @@
             },
             {
               "id": "00600-001",
-              "source": "Maybe she would have helped me, I’m so stupid,” said Beth,",
-              "target": "もしかしたら私を助けてくれたかもしれないわ、私ってば馬鹿だから」と、ベスは言った。"
-            },
-            {
-              "id": "00600-002",
-              "source": "who stood beside him, listening eagerly.",
-              "target": "彼の横に立って熱心に聞いていた。"
+              "source": "Maybe she would have helped me, I’m so stupid,” said Beth, who stood beside him, listening eagerly.",
+              "target": "もしかしたら私を助けてくれたかもしれないわ、私ってば馬鹿だから」と、ベスは言った。彼の横に立って熱心に聞いていた。"
             }
           ],
           "raw_line": 2020
@@ -9630,13 +9565,8 @@
             },
             {
               "id": "00601-001",
-              "source": "answered Laurie, looking at her with such mischievous meaning in his merry black eyes",
-              "target": "ローリーは、陽気な黒い目にいたずらっぽい意味を込めて彼女を見つめながら答えた。"
-            },
-            {
-              "id": "00601-002",
-              "source": "that Beth suddenly turned very red, and hid her face in the sofa cushion, quite overcome by such an unexpected discovery.",
-              "target": "そのためベスは突然顔を真っ赤にし、ソファのクッションに顔を隠し、その予期せぬ発見に完全に圧倒されてしまった。"
+              "source": "answered Laurie, looking at her with such mischievous meaning in his merry black eyes that Beth suddenly turned very red, and hid her face in the sofa cushion, quite overcome by such an unexpected discovery.",
+              "target": "ローリーは、陽気な黒い目にいたずらっぽい意味を込めて彼女を見つめながら答えた。そのためベスは突然顔を真っ赤にし、ソファのクッションに顔を隠し、その予期せぬ発見に完全に圧倒されてしまった。"
             }
           ],
           "raw_line": 2023
@@ -11185,23 +11115,8 @@
             },
             {
               "id": "00702-001",
-              "source": "said Meg,",
-              "target": "メグが言い、"
-            },
-            {
-              "id": "00702-002",
-              "source": "one April day,",
-              "target": "ある4月の日に、"
-            },
-            {
-              "id": "00702-003",
-              "source": "as she stood packing the ‘go abroady’ trunk in her room,",
-              "target": "自分の部屋で「海外へ行く用」のトランクを詰めながら立っているとき、"
-            },
-            {
-              "id": "00702-004",
-              "source": "surrounded by her sisters.",
-              "target": "姉妹に囲まれて。"
+              "source": "said Meg, one April day, as she stood packing the ‘go abroady’ trunk in her room, surrounded by her sisters.",
+              "target": "メグが言い、ある4月の日に、自分の部屋で「海外へ行く用」のトランクを詰めながら立っているとき、姉妹に囲まれて。"
             }
           ],
           "raw_line": 2352
@@ -12276,27 +12191,27 @@
             {
               "id": "00770-000",
               "source": "Keeping that warning carefully in mind, Margaret got safely down stairs and sailed into the drawing rooms where the Moffats and a few early guests were assembled.",
-              "target": "その警告を注意深く心に留めながら、マーガレットは慎重に階段を下り、モファット家と数人の早めに集まった客がいる居間に入って行った。"
+              "target": "その警告を心に留めておきながら、マーガレットは無事に階段を下り、モファット家と数人の早く来た客が集まっている客間に入った。"
             },
             {
               "id": "00770-001",
               "source": "She very soon discovered that there is a charm about fine clothes which attracts a certain class of people and secures their respect.",
-              "target": "彼女はすぐに、上品な服には特定の人々を引き付け、彼らの尊敬を確保する魅力があることを発見した。"
+              "target": "彼女はすぐに、上等な服には特定の階層の人々を引きつけ、彼らの尊敬を得る魅力があることに気づいた。"
             },
             {
               "id": "00770-002",
               "source": "Several young ladies, who had taken no notice of her before, were very affectionate all of a sudden.",
-              "target": "以前は彼女に気を取らなかったいくつかの若い女性が、突然非常に親しみやすくなった。"
+              "target": "以前は彼女に注意を払わなかった数人の若い女性たちが、突然とても親しげになった。"
             },
             {
               "id": "00770-003",
-              "source": "Several young gentlemen, who had only stared at her at the other party, now not only stared, but asked to be introduced, and said all manner of foolish but agreeable things to her.",
-              "target": "以前のパーティーでただ彼女をじっと見つめていたいくつかの若い紳士が、今ではただ見つめるだけでなく、紹介を求め、彼女に愚かだが愉快なことを言った。"
+              "source": "Several young gentlemen, who had only stared at her at the other party, now not only stared, but asked to be introduced, and said all manner of foolish but agreeable things to her, and several old ladies, who sat on the sofas, and criticized the rest of the party, inquired who she was with an air of interest.",
+              "target": "以前のパーティーでは彼女を見つめるだけだった数人の若い紳士たちが、今では見つめるだけでなく、紹介を求め、愚かだが心地よいことを彼女に言った。そして、ソファに座って他のパーティーの参加者を批評していた数人の年配の女性たちが、興味深そうに彼女が誰なのかを尋ねた。"
             },
             {
               "id": "00770-004",
-              "source": "Several old ladies, who sat on the sofas, and criticized the rest of the party, inquired who she was with an air of interest.",
-              "target": "ソファに座って他のパーティー参加者を批判していたいくつかの年配の女性が、興味深げな態度で彼女が誰か尋ねた。"
+              "source": "She heard Mrs. Moffat reply to one of them...",
+              "target": "彼女はモファット夫人がそのうちの一人に答えるのを聞いた..."
             }
           ],
           "raw_line": 2576
@@ -13025,18 +12940,8 @@
           "paragraph": [
             {
               "id": "00824-000",
-              "source": "“Is that all?”, asked Jo,",
-              "target": "「それだけ？」とジョーが尋ねた。"
-            },
-            {
-              "id": "00824-001",
-              "source": "as Mrs. March looked silently at the downcast face of her pretty daughter,",
-              "target": "マーチ夫人が、自分の美しい娘のうつむいた顔を黙って見つめると、"
-            },
-            {
-              "id": "00824-002",
-              "source": "and could not find it in her heart to blame her little follies.",
-              "target": "心の中で彼女の些細な愚かさを責めることができなかった。"
+              "source": "“Is that all?”, asked Jo, as Mrs. March looked silently at the downcast face of her pretty daughter, and could not find it in her heart to blame her little follies.",
+              "target": "「それだけ？」とジョーが尋ねた。マーチ夫人が、自分の美しい娘のうつむいた顔を黙って見つめると、心の中で彼女の些細な愚かさを責めることができなかった。"
             }
           ],
           "raw_line": 2730
@@ -14385,23 +14290,8 @@
             },
             {
               "id": "00905-001",
-              "source": "cried the three girls,",
-              "target": "三人の女の子が叫びました。"
-            },
-            {
-              "id": "00905-002",
-              "source": "as Snodgrass led her friend triumphantly forth,",
-              "target": "スノドグラスが自慢の友人を連れ出すと"
-            },
-            {
-              "id": "00905-003",
-              "source": "and producing both a chair and a badge,",
-              "target": "椅子とバッジを取り出して"
-            },
-            {
-              "id": "00905-004",
-              "source": "installed him in a jiffy.",
-              "target": "彼をすぐに据えました。"
+              "source": "cried the three girls, as Snodgrass led her friend triumphantly forth, and producing both a chair and a badge, installed him in a jiffy.",
+              "target": "三人の女の子が叫びました。スノドグラスが自慢の友人を連れ出すと、椅子とバッジを取り出して、彼をすぐに据えました。"
             }
           ],
           "raw_line": 3056
@@ -14900,98 +14790,73 @@
             },
             {
               "id": "00935-003",
-              "source": "Beth was worried by the confusion of her closet and the difficulty of learning three or four songs at once,",
-              "target": "ベスはクローゼットの混乱と、一度に3、4曲を覚える難しさに悩んでいました。"
+              "source": "Beth was worried by the confusion of her closet and the difficulty of learning three or four songs at once, and Amy deeply regretted the damage done her frock, for Katy Brown’s party was to be the next day and now like Flora McFlimsey, she had ‘nothing to wear’.",
+              "target": "ベスはクローゼットの混乱と、一度に3、4曲を覚える難しさに悩んでいました。そしてエイミーはドレスの損傷を深く後悔しました。なぜなら翌日はケイティ・ブラウンのパーティーで、今やフローラ・マクフリムジーのように『着るものがない』状態だったからです。"
             },
             {
               "id": "00935-004",
-              "source": "and Amy deeply regretted the damage done her frock, for Katy Brown’s party was to be the next day and now like Flora McFlimsey, she had ‘nothing to wear’.",
-              "target": "そしてエイミーはドレスの損傷を深く後悔しました。なぜなら翌日はケイティ・ブラウンのパーティーで、今やフローラ・マクフリムジーのように『着るものがない』状態だったからです。"
-            },
-            {
-              "id": "00935-005",
               "source": "But these were mere trifles, and they assured their mother that the experiment was working finely.",
               "target": "しかし、これらは些細なことであり、彼女たちは母親に実験がうまくいっていると確信させました。"
             },
             {
-              "id": "00935-006",
+              "id": "00935-005",
               "source": "She smiled, said nothing, and with Hannah’s help did their neglected work, keeping home pleasant and the domestic machinery running smoothly.",
               "target": "彼女は微笑み、何も言わず、ハンナの助けを借りて彼女たちの放置された仕事をこなし、家庭を快適に保ち、家事を円滑に進めました。"
             },
             {
-              "id": "00935-007",
+              "id": "00935-006",
               "source": "It was astonishing what a peculiar and uncomfortable state of things was produced by the ‘resting and reveling’ process.",
               "target": "『休息と享楽』の過程によって、どれほど奇妙で不快な状態が生み出されたかは驚くべきことでした。"
             },
             {
-              "id": "00935-008",
+              "id": "00935-007",
               "source": "The days kept getting longer and longer, the weather was unusually variable and so were tempers;",
               "target": "日々はどんどん長くなり、天気は異常に変わりやすく、気分も同様でした。"
             },
             {
-              "id": "00935-009",
+              "id": "00935-008",
               "source": "an unsettled feeling possessed everyone, and Satan found plenty of mischief for the idle hands to do.",
               "target": "不安定な感情が皆を支配し、サタンは怠けた手にたくさんのいたずらを見つけました。"
             },
             {
-              "id": "00935-010",
+              "id": "00935-009",
               "source": "As the height of luxury, Meg put out some of her sewing, and then found time hang so heavily, that she fell to snipping and spoiling her clothes in her attempts to furbish them up a la Moffat.",
               "target": "贅沢の極みとして、メグは一部の縫い物を外に出し、時間があまりにも重く感じられたため、モファット風に仕上げようとして服を切り刻んで台無しにしました。"
             },
             {
+              "id": "00935-010",
+              "source": "Jo read till her eyes gave out and she was sick of books, got so fidgety that even good-natured Laurie had a quarrel with her, and so reduced in spirits that she desperately wished she had gone with Aunt March.",
+              "target": "ジョーは目が疲れるまで本を読み、読書に飽き、落ち着きがなくなり、親切なローリーでさえ彼女と口論しました。そして気分が落ち込み、必死にマーチおばさんと一緒に行けばよかったと願いました。"
+            },
+            {
               "id": "00935-011",
-              "source": "Jo read till her eyes gave out and she was sick of books, got so fidgety that even good-natured Laurie had a quarrel with her,",
-              "target": "ジョーは目が疲れるまで本を読み、読書に飽き、落ち着きがなくなり、親切なローリーでさえ彼女と口論しました。"
-            },
-            {
-              "id": "00935-012",
-              "source": "and so reduced in spirits that she desperately wished she had gone with Aunt March.",
-              "target": "そして気分が落ち込み、必死にマーチおばさんと一緒に行けばよかったと願いました。"
-            },
-            {
-              "id": "00935-013",
               "source": "Beth got on pretty well, for she was constantly forgetting that it was to be all play and no work, and fell back into her old ways now and then.",
               "target": "ベスはかなりうまくやっていました。なぜなら、彼女は常にそれが遊びだけで仕事ではないことを忘れ、時々古い習慣に戻っていたからです。"
             },
             {
-              "id": "00935-014",
-              "source": "But something in the air affected her, and more than once her tranquility was much disturbed,",
-              "target": "しかし、何かが彼女に影響を与え、何度も彼女の平穏が大いに乱されました。"
+              "id": "00935-012",
+              "source": "But something in the air affected her, and more than once her tranquility was much disturbed, so much so that on one occasion she actually shook poor dear Joanna and told her she was ‘a fright’.",
+              "target": "しかし、何かが彼女に影響を与え、何度も彼女の平穏が大いに乱されました。そのため、ある時には実際にかわいそうなジョアンナを揺さぶり、彼女に『怖い』と言いました。"
             },
             {
-              "id": "00935-015",
-              "source": "so much so that on one occasion she actually shook poor dear Joanna and told her she was ‘a fright’.",
-              "target": "そのため、ある時には実際にかわいそうなジョアンナを揺さぶり、彼女に『怖い』と言いました。"
-            },
-            {
-              "id": "00935-016",
+              "id": "00935-013",
               "source": "Amy fared worst of all, for her resources were small, and when her sisters left her to amuse herself, she soon found that accomplished and important little self a great burden.",
               "target": "エイミーは最も悪い状況にありました。なぜなら、彼女の資源は少なく、姉妹たちが彼女を一人で楽しませるために置いていくと、すぐにその達成された重要な小さな自分が大きな負担であることに気づいたからです。"
             },
             {
-              "id": "00935-017",
+              "id": "00935-014",
               "source": "She didn’t like dolls, fairy tales were childish, and one couldn’t draw all the time.",
               "target": "彼女は人形が好きではなく、おとぎ話は子供っぽく、ずっと絵を描くこともできませんでした。"
             },
             {
-              "id": "00935-018",
+              "id": "00935-015",
               "source": "Tea parties didn’t amount to much, neither did picnics, unless very well conducted.",
               "target": "お茶会はあまり意味がなく、ピクニックも非常にうまく行われない限り同様でした。"
             },
             {
-              "id": "00935-019",
-              "source": "“If one could have a fine house, full of nice girls, or go traveling, the summer would be delightful,",
-              "target": "「もし素敵な女の子たちでいっぱいの素晴らしい家があったり、旅行に行けたりすれば、夏は楽しいでしょう。"
-            },
-            {
-              "id": "00935-020",
-              "source": "but to stay at home with three selfish sisters and a grown-up boy was enough to try the patience of a Boaz,” complained Miss Malaprop,",
-              "target": "しかし、3人のわがままな姉妹と大人の男の子と一緒に家にいるのは、ボアズの忍耐を試すのに十分です」とミス・マラプロップは不満を言いました。"
-            },
-            {
-              "id": "00935-021",
-              "source": "after several days devoted to pleasure, fretting, and ennui.",
-              "target": "数日間、楽しみや不安、退屈に専念した後で。"
+              "id": "00935-016",
+              "source": "“If one could have a fine house, full of nice girls, or go traveling, the summer would be delightful, but to stay at home with three selfish sisters and a grown-up boy was enough to try the patience of a Boaz,” complained Miss Malaprop, after several days devoted to pleasure, fretting, and ennui.",
+              "target": "「もし素敵な女の子たちでいっぱいの素晴らしい家があったり、旅行に行けたりすれば、夏は楽しいでしょう。しかし、3人のわがままな姉妹と大人の男の子と一緒に家にいるのは、ボアズの忍耐を試すのに十分です」とミス・マラプロップは不満を言いました。数日間、楽しみや不安、退屈に専念した後で。"
             }
           ],
           "raw_line": 3156
@@ -16201,12 +16066,17 @@
             {
               "id": "01016-000",
               "source": "Laying her head on her arms, Jo wet her little romance with a few happy tears, for she had thought that no one saw and appreciated her efforts to be good, and this assurance was doubly precious, doubly encouraging, because unexpected and from the person whose commendation she most valued.",
-              "target": "ジョーは腕に頭を置き、幸せそうな涙で彼女の小さなロマンスを濡らした。誰も彼女の善良な努力を見て評価してくれないと思っていたので、この保証は予想外であり、彼女が最も尊敬する人からのものだったため、二重に貴重で励みになった。"
+              "target": "ジョーは腕に頭を乗せ、少しの幸せな涙で彼女の小さなロマンスを濡らしました。彼女は誰も自分の善良であろうとする努力を見てくれず、評価してくれないと思っていたからです。そしてこの確信は二重に貴重で、二重に励みになりました。それは予期せぬものであり、彼女が最も価値を置く人からの称賛だったからです。"
             },
             {
               "id": "01016-001",
               "source": "Feeling stronger than ever to meet and subdue her Apollyon, she pinned the note inside her frock, as a shield and a reminder, lest she be taken unaware, and proceeded to open her other letter, quite ready for either good or bad news.",
-              "target": "アポリオンに立ち向かい、打ち勝つために今まで以上に強く感じた彼女は、メモをフロックの中に留め、盾として、そして思い出しとして使った。不意をつかれないようにし、もう1通の手紙を開く準備が整った。良いニュースでも悪いニュースでも受け入れる覚悟ができていた。"
+              "target": "彼女のアポリオンに立ち向かい、打ち負かすためにこれまで以上に強く感じ、彼女はそのメモを盾とし、忘れないためにドレスの内側に留めました。不意を突かれないように、そして、良い知らせでも悪い知らせでも受け入れる準備をして、もう一通の手紙を開け始めました。"
+            },
+            {
+              "id": "01016-002",
+              "source": "In a big, dashing hand, Laurie wrote...",
+              "target": "大きくて勢いのある字で、ローリーは書きました..."
             }
           ],
           "raw_line": 3426
@@ -16630,13 +16500,8 @@
             },
             {
               "id": "01038-002",
-              "source": "You shall not make a guy of yourself,” remonstrated Meg,",
-              "target": "自分を男らしくするんじゃないわ」とメグが抗議した。"
-            },
-            {
-              "id": "01038-003",
-              "source": "as Jo tied down with a red ribbon the broad-brimmed, old-fashioned leghorn Laurie had sent for a joke.",
-              "target": "ジョーが、ローリーが冗談で送ってきた広いつばの古風なレグホーン帽に赤いリボンを結ぶところだった。"
+              "source": "You shall not make a guy of yourself,” remonstrated Meg, as Jo tied down with a red ribbon the broad-brimmed, old-fashioned leghorn Laurie had sent for a joke.",
+              "target": "自分を男らしくするんじゃないわ」とメグが抗議した。ジョーが、ローリーが冗談で送ってきた広いつばの古風なレグホーン帽に赤いリボンを結ぶところだった。"
             }
           ],
           "raw_line": 3513
@@ -18630,13 +18495,8 @@
             },
             {
               "id": "01161-001",
-              "source": "I hope I shall go abroad some day, but I’d rather go to Rome than the Row,” said Amy,",
-              "target": "いつか海外に行けるといいな、でも私はローマの方がいいわ」とエイミーは言った。"
-            },
-            {
-              "id": "01161-002",
-              "source": "who had not the remotest idea what the Row was and wouldn’t have asked for the world.",
-              "target": "エイミーはロウが何か全くわからず、世界中の何よりも尋ねたくなかった。"
+              "source": "I hope I shall go abroad some day, but I’d rather go to Rome than the Row,” said Amy, who had not the remotest idea what the Row was and wouldn’t have asked for the world.",
+              "target": "いつか海外に行けるといいな、でも私はローマの方がいいわ」とエイミーは言った。エイミーはロウが何か全くわからず、世界中の何よりも尋ねたくなかった。"
             }
           ],
           "raw_line": 3925
@@ -18705,21 +18565,11 @@
             },
             {
               "id": "01167-001",
-              "source": "I don’t know anything about them, thought Beth,",
-              "target": "ベスは考えました、私はそれについて何も知らない"
+              "source": "I don’t know anything about them, thought Beth, and forgetting the boy’s misfortune in her flurry, she said, hoping to make him talk,",
+              "target": "ベスは考えました、私はそれについて何も知らない、そして興奮して少年の不幸を忘れて、彼に話させることを期待して言いました"
             },
             {
               "id": "01167-002",
-              "source": "and forgetting the boy’s misfortune in her flurry,",
-              "target": "そして興奮して少年の不幸を忘れて"
-            },
-            {
-              "id": "01167-003",
-              "source": "she said, hoping to make him talk,",
-              "target": "彼に話させることを期待して言いました"
-            },
-            {
-              "id": "01167-004",
               "source": "“I never saw any hunting, but I suppose you know all about it.”",
               "target": "「狩りを見たことはありませんが、あなたはそれについてすべて知っていると思います」"
             }
@@ -18780,13 +18630,8 @@
           "paragraph": [
             {
               "id": "01173-000",
-              "source": "“I haven’t heard Frank laugh so much for ever so long,” said Grace to Amy",
-              "target": "「フランクがこんなに笑うのはずっとずっとぶりだわ」とグレースがエイミーに言った。"
-            },
-            {
-              "id": "01173-001",
-              "source": "as they sat discussing dolls and making tea sets out of the acorn cups.",
-              "target": "彼女たちは座って人形の話をしたり、ドングリのコップでティーセットを作ったりしていた。"
+              "source": "“I haven’t heard Frank laugh so much for ever so long,” said Grace to Amy as they sat discussing dolls and making tea sets out of the acorn cups.",
+              "target": "「フランクがこんなに笑うのはずっとずっとぶりだわ」とグレースがエイミーに言った。彼女たちは座って人形の話をしたり、ドングリのコップでティーセットを作ったりしていた。"
             }
           ],
           "raw_line": 3956
@@ -21140,13 +20985,8 @@
           "paragraph": [
             {
               "id": "01345-000",
-              "source": "“Is that all?”, said Jo, looking disappointed,",
-              "target": "「それだけ？」とジョーががっかりした表情で言うと、"
-            },
-            {
-              "id": "01345-001",
-              "source": "as Laurie nodded and twinkled with a face full of mysterious intelligence.",
-              "target": "ローリーが頷いて、謎めいた知識に満ちた表情で目を細めた。"
+              "source": "“Is that all?”, said Jo, looking disappointed, as Laurie nodded and twinkled with a face full of mysterious intelligence.",
+              "target": "「それだけ？」とジョーががっかりした表情で言うと、ローリーが頷いて、謎めいた知識に満ちた表情で目を細めた。"
             }
           ],
           "raw_line": 4452
@@ -22580,13 +22420,8 @@
           "paragraph": [
             {
               "id": "01446-000",
-              "source": "Meg spoke earnestly, and forgot herself entirely till something in the brown eyes looking down at her made her remember the cooling tea",
-              "target": "メグは真剣に語り、自分自身を完全に忘れてしまった。しかし、彼女を見下ろす茶色の目の中にある何かが彼女に冷めたお茶を思い出させた"
-            },
-            {
-              "id": "01446-001",
-              "source": "and lead the way into the parlor, saying she would call her mother.",
-              "target": "そして、リビングに案内し、母親を呼ぶと言った。"
+              "source": "Meg spoke earnestly, and forgot herself entirely till something in the brown eyes looking down at her made her remember the cooling tea and lead the way into the parlor, saying she would call her mother.",
+              "target": "メグは真剣に語り、自分自身を完全に忘れてしまった。しかし、彼女を見下ろす茶色の目の中にある何かが彼女に冷めたお茶を思い出させた、そして、リビングに案内し、母親を呼ぶと言った。"
             }
           ],
           "raw_line": 4752
@@ -23935,33 +23770,13 @@
           "paragraph": [
             {
               "id": "01524-000",
-              "source": "Queen of my tub, I merrily sing,",
-              "target": "私の浴槽の女王よ、私は陽気に歌います、"
+              "source": "Queen of my tub, I merrily sing, While the white foam rises high, And sturdily wash and rinse and wring, And fasten the clothes to dry.",
+              "target": "私の浴槽の女王よ、私は陽気に歌います、白い泡が高く立ち上がる間に、しっかりと洗い、すすぎ、絞り、そして服を干すために留めます。"
             },
             {
               "id": "01524-001",
-              "source": "While the white foam rises high,",
-              "target": "白い泡が高く立ち上がる間に、"
-            },
-            {
-              "id": "01524-002",
-              "source": "And sturdily wash and rinse and wring,",
-              "target": "しっかりと洗い、すすぎ、絞り、"
-            },
-            {
-              "id": "01524-003",
-              "source": "And fasten the clothes to dry.",
-              "target": "そして服を干すために留めます。"
-            },
-            {
-              "id": "01524-004",
-              "source": "Then out in the free fresh air they swing,",
-              "target": "そして自由な新鮮な空気の中で服は揺れます、"
-            },
-            {
-              "id": "01524-005",
-              "source": "Under the sunny sky.",
-              "target": "晴れた空の下。"
+              "source": "Then out in the free fresh air they swing, Under the sunny sky.",
+              "target": "そして自由な新鮮な空気の中で服は揺れます、晴れた空の下。"
             }
           ],
           "raw_line": 5034
@@ -24005,38 +23820,13 @@
           "paragraph": [
             {
               "id": "01527-000",
-              "source": "I am glad a task to me is given,",
-              "target": "私は課せられた仕事を喜んでいます。"
+              "source": "I am glad a task to me is given, To labor at day by day, For it brings me health and strength and hope, And I cheerfully learn to say,",
+              "target": "私は課せられた仕事を喜んでいます。日々労働することで、それは私に健康と力と希望をもたらし、そして喜んで言うことを学びます。"
             },
             {
               "id": "01527-001",
-              "source": "To labor at day by day,",
-              "target": "日々労働することで、"
-            },
-            {
-              "id": "01527-002",
-              "source": "For it brings me health and strength and hope,",
-              "target": "それは私に健康と力と希望をもたらし、"
-            },
-            {
-              "id": "01527-003",
-              "source": "And I cheerfully learn to say,",
-              "target": "そして喜んで言うことを学びます。"
-            },
-            {
-              "id": "01527-004",
-              "source": "“Head, you may think,",
-              "target": "「頭よ、考えてもよい、"
-            },
-            {
-              "id": "01527-005",
-              "source": "Heart, you may feel,",
-              "target": "心よ、感じてもよい、"
-            },
-            {
-              "id": "01527-006",
-              "source": "But, Hand, you shall work alway!”",
-              "target": "しかし、手よ、いつも働かねばならない！」"
+              "source": "“Head, you may think, Heart, you may feel, But, Hand, you shall work alway!”",
+              "target": "「頭よ、考えてもよい、心よ、感じてもよい、しかし、手よ、いつも働かねばならない！」"
             }
           ],
           "raw_line": 5055
@@ -25530,13 +25320,8 @@
           "paragraph": [
             {
               "id": "01627-000",
-              "source": "“I don’t think I can bear it, but I’ll try,” thought Amy",
-              "target": "「私はそれを我慢できるとは思わないけれど、でも頑張ってみるわ」とエイミーは考えた。"
-            },
-            {
-              "id": "01627-001",
-              "source": "as she was left alone with Aunt March.",
-              "target": "彼女はマーチ伯母と一緒に一人残された。"
+              "source": "“I don’t think I can bear it, but I’ll try,” thought Amy as she was left alone with Aunt March.",
+              "target": "「私はそれを我慢できるとは思わないけれど、でも頑張ってみるわ」とエイミーは考えた。彼女はマーチ伯母と一緒に一人残された。"
             }
           ],
           "raw_line": 5372
@@ -26770,18 +26555,8 @@
             },
             {
               "id": "01696-001",
-              "source": "asked Amy, who in her loneliness felt the need of help of some sort,",
-              "target": "孤独感を抱えるエイミーは、ある種の助けを求めていると感じていました。"
-            },
-            {
-              "id": "01696-002",
-              "source": "and found that she was apt to forget her little book,",
-              "target": "そして、彼女は自分が小さな本を忘れがちであることに気づきました。"
-            },
-            {
-              "id": "01696-003",
-              "source": "now that Beth was not there to remind her of it.",
-              "target": "ベスがそれを思い出させてくれない今、彼女はそれを忘れがちだとわかったのです。"
+              "source": "asked Amy, who in her loneliness felt the need of help of some sort, and found that she was apt to forget her little book, now that Beth was not there to remind her of it.",
+              "target": "孤独感を抱えるエイミーは、ある種の助けを求めていると感じていました。そして、彼女は自分が小さな本を忘れがちであることに気づきました。ベスがそれを思い出させてくれない今、彼女はそれを忘れがちだとわかったのです。"
             }
           ],
           "raw_line": 5637
@@ -28125,13 +27900,8 @@
           "paragraph": [
             {
               "id": "01777-000",
-              "source": "“Hadn’t you rather have her marry a rich man?”, asked Jo, ",
-              "target": "「彼女を金持ちの男と結婚させたいと思わないの？」とジョーが尋ねた。"
-            },
-            {
-              "id": "01777-001",
-              "source": "as her mother’s voice faltered a little over the last words.",
-              "target": "母親の声が最後の言葉で少し震えた。"
+              "source": "“Hadn’t you rather have her marry a rich man?”, asked Jo, as her mother’s voice faltered a little over the last words.",
+              "target": "「彼女を金持ちの男と結婚させたいと思わないの？」とジョーが尋ねた。母親の声が最後の言葉で少し震えた。"
             }
           ],
           "raw_line": 5926
@@ -29000,13 +28770,8 @@
           "paragraph": [
             {
               "id": "01830-000",
-              "source": "“It was altogether abominable, and I don’t deserve to be spoken to for a month, but you will, though, won’t you?”,",
-              "target": "「それは全く憎むべきことで、1か月間話しかけてもらう資格はないけれど、君は話しかけてくれるだろうね？ということだよ」と、"
-            },
-            {
-              "id": "01830-001",
-              "source": "And Laurie folded his hands together with such an imploring gesture, as he spoke in his irresistibly persuasive tone, that it was impossible to frown upon him in spite of his scandalous behavior.",
-              "target": "ローリーは手を組み、懇願するジェスチャーを見せながら、彼の無抵抗な説得力のある口調で話しました。そのため、彼のスキャンダラスな行動にもかかわらず、彼をしかることは不可能でした。"
+              "source": "“It was altogether abominable, and I don’t deserve to be spoken to for a month, but you will, though, won’t you?”, And Laurie folded his hands together with such an imploring gesture, as he spoke in his irresistibly persuasive tone, that it was impossible to frown upon him in spite of his scandalous behavior.",
+              "target": "「それは全く憎むべきことで、1か月間話しかけてもらう資格はないけれど、君は話しかけてくれるだろうね？ということだよ」と、ローリーは手を組み、懇願するジェスチャーを見せながら、彼の無抵抗な説得力のある口調で話しました。そのため、彼のスキャンダラスな行動にもかかわらず、彼をしかることは不可能でした。"
             }
           ],
           "raw_line": 6108
@@ -30335,16 +30100,11 @@
             },
             {
               "id": "01917-001",
-              "source": "May nothing you dismay,",
-              "target": "何もあなたを悩ませることがありませんように、"
+              "source": "May nothing you dismay, But health and peace and happiness",
+              "target": "何もあなたを悩ませることがありませんように、しかし健康と平和と幸福が"
             },
             {
               "id": "01917-002",
-              "source": "But health and peace and happiness",
-              "target": "しかし健康と平和と幸福が"
-            },
-            {
-              "id": "01917-003",
               "source": "Be yours, this Christmas day.",
               "target": "あなたのものとなりますように、このクリスマスの日に。"
             }
@@ -32950,13 +32710,8 @@
           "paragraph": [
             {
               "id": "02079-000",
-              "source": "Everything was done at last, even to Amy’s arranging different colored soaps to match the different colored rooms",
-              "target": "最後には、アミーが異なる色の石鹸を異なる色の部屋に合わせて配置するまで、すべてが完了した。"
-            },
-            {
-              "id": "02079-001",
-              "source": "and Beth’s setting the table for the first meal.",
-              "target": "ベスが最初の食事のためにテーブルをセットする。"
+              "source": "Everything was done at last, even to Amy’s arranging different colored soaps to match the different colored rooms and Beth’s setting the table for the first meal.",
+              "target": "最後には、アミーが異なる色の石鹸を異なる色の部屋に合わせて配置するまで、すべてが完了した。ベスが最初の食事のためにテーブルをセットする。"
             }
           ],
           "raw_line": 6948
@@ -32970,13 +32725,8 @@
             },
             {
               "id": "02080-001",
-              "source": "asked Mrs. March, as she and her daughter went through the new kingdom arm in arm,",
-              "target": "3月夫人が尋ねた。彼女と娘が腕を組んで新しい王国を歩いていく間、"
-            },
-            {
-              "id": "02080-002",
-              "source": "for just then they seemed to cling together more tenderly than ever.",
-              "target": "その時、彼らは今まで以上に優しく寄り添っているように見えた。"
+              "source": "asked Mrs. March, as she and her daughter went through the new kingdom arm in arm, for just then they seemed to cling together more tenderly than ever.",
+              "target": "3月夫人が尋ねた。彼女と娘が腕を組んで新しい王国を歩いていく間、その時、彼らは今まで以上に優しく寄り添っているように見えた。"
             }
           ],
           "raw_line": 6950
@@ -35360,13 +35110,8 @@
           "paragraph": [
             {
               "id": "02240-000",
-              "source": "“I suppose he’ll laugh and joke over it with Laurie, but I shan’t see them, that’s a comfort,” thought Amy",
-              "target": "「おそらく彼はローリーと一緒にそれを笑い飛ばして冗談を言うでしょうが、私は彼らに会わないでしょう、それが唯一の救いです」とエイミーは考えました。"
-            },
-            {
-              "id": "02240-001",
-              "source": "as Tudor bowed and departed.",
-              "target": "トゥーダーがお辞儀をして去っていくのを見て。"
+              "source": "“I suppose he’ll laugh and joke over it with Laurie, but I shan’t see them, that’s a comfort,” thought Amy as Tudor bowed and departed.",
+              "target": "「おそらく彼はローリーと一緒にそれを笑い飛ばして冗談を言うでしょうが、私は彼らに会わないでしょう、それが唯一の救いです」とエイミーは考えました。トゥーダーがお辞儀をして去っていくのを見て。"
             }
           ],
           "raw_line": 7450
@@ -35510,13 +35255,8 @@
             },
             {
               "id": "02250-001",
-              "source": "began Jo,",
-              "target": "ジョーが言い始めた。"
-            },
-            {
-              "id": "02250-002",
-              "source": "as they sat down to ice cream and salad for the second time in two days.",
-              "target": "彼らが2日間で2度目のアイスクリームとサラダを食べるために席に着いたときに。"
+              "source": "began Jo, as they sat down to ice cream and salad for the second time in two days.",
+              "target": "ジョーが言い始めた。彼らが2日間で2度目のアイスクリームとサラダを食べるために席に着いたときに。"
             }
           ],
           "raw_line": 7480
@@ -36955,13 +36695,8 @@
             },
             {
               "id": "02334-001",
-              "source": "She longed to run to meet him, and beg pardon, and be kissed and comforted, as she was sure of being, but, of course, she did nothing of the sort,",
-              "target": "彼に会いに走って行って謝罪し、キスを求め、慰められたいと切望していたが、もちろん、彼女はそんなことは何もせず、"
-            },
-            {
-              "id": "02334-002",
-              "source": "and when she saw John coming, began to hum quite naturally, as she rocked and sewed, like a lady of leisure in her best parlor.",
-              "target": "ジョンが近づいてくるのを見ると、彼女は自然にハミングを始め、リビングでゆったりと縫い物をしながら、まるで上品なくつろぎの場であるかのように。"
+              "source": "She longed to run to meet him, and beg pardon, and be kissed and comforted, as she was sure of being, but, of course, she did nothing of the sort, and when she saw John coming, began to hum quite naturally, as she rocked and sewed, like a lady of leisure in her best parlor.",
+              "target": "彼に会いに走って行って謝罪し、キスを求め、慰められたいと切望していたが、もちろん、彼女はそんなことは何もせず、ジョンが近づいてくるのを見ると、彼女は自然にハミングを始め、リビングでゆったりと縫い物をしながら、まるで上品なくつろぎの場であるかのように。"
             }
           ],
           "raw_line": 7795
@@ -37730,13 +37465,8 @@
             },
             {
               "id": "02372-002",
-              "source": "A peal of laughter from Jo, Amy, Mrs. March, Hannah, and John caused him to open them the next minute,",
-              "target": "ジョー、エイミー、マーチ夫人、ハンナ、ジョンからの笑い声で、次の瞬間に彼は目を開けた。"
-            },
-            {
-              "id": "02372-003",
-              "source": "to find himself invested with two babies instead of one.",
-              "target": "そして1人の代わりに2人の赤ん坊を抱えている自分に気づいた。"
+              "source": "A peal of laughter from Jo, Amy, Mrs. March, Hannah, and John caused him to open them the next minute, to find himself invested with two babies instead of one.",
+              "target": "ジョー、エイミー、マーチ夫人、ハンナ、ジョンからの笑い声で、次の瞬間に彼は目を開けた。そして1人の代わりに2人の赤ん坊を抱えている自分に気づいた。"
             }
           ],
           "raw_line": 7957
@@ -40280,13 +40010,8 @@
             },
             {
               "id": "02531-003",
-              "source": "I’ve got to help Amy, so you go and make yourself splendid,",
-              "target": "私はエイミーを手伝わなくちゃ。だから、あなたは立派にして、"
-            },
-            {
-              "id": "02531-004",
-              "source": "and if you’ll be so very kind as to let Hayes take a few nice flowers up to the Hall, I’ll bless you forever.”",
-              "target": "もしヘイズにいくつかの素敵な花をホールに持って行かせてくれるなら、私は永遠にあなたを祝福するわ。」"
+              "source": "I’ve got to help Amy, so you go and make yourself splendid, and if you’ll be so very kind as to let Hayes take a few nice flowers up to the Hall, I’ll bless you forever.”",
+              "target": "私はエイミーを手伝わなくちゃ。だから、あなたは立派にして、もしヘイズにいくつかの素敵な花をホールに持って行かせてくれるなら、私は永遠にあなたを祝福するわ。」"
             }
           ],
           "raw_line": 8502
@@ -40300,13 +40025,8 @@
             },
             {
               "id": "02532-001",
-              "source": "asked Laurie, so suggestively that Jo shut the gate in his face with inhospitable haste,",
-              "target": "ラウリーがそう提案すると、ジョーは非常に示唆的だったので、無愛想な速さで門を彼の顔に閉め、"
-            },
-            {
-              "id": "02532-002",
-              "source": "and called through the bars, “Go away, Teddy, I’m busy.”",
-              "target": "鉄格子越しに「行って、テディ、忙しいのよ」と呼びかけた。"
+              "source": "asked Laurie, so suggestively that Jo shut the gate in his face with inhospitable haste, and called through the bars, “Go away, Teddy, I’m busy.”",
+              "target": "ラウリーがそう提案すると、ジョーは非常に示唆的だったので、無愛想な速さで門を彼の顔に閉め、鉄格子越しに「行って、テディ、忙しいのよ」と呼びかけた。"
             }
           ],
           "raw_line": 8508
@@ -40395,13 +40115,8 @@
             },
             {
               "id": "02536-002",
-              "source": "Jo couldn’t resist giving that little slap, but May took it so meekly she regretted it a minute after,",
-              "target": "ジョーはその小さな皮肉を言わずにはいられなかったが、メイがそれをあまりにも素直に受け入れたので、彼女はすぐに後悔しました。"
-            },
-            {
-              "id": "02536-003",
-              "source": "and fell to praising the great vases, which still remained unsold.",
-              "target": "そして、まだ売れ残っている大きな花瓶を褒め始めました。"
+              "source": "Jo couldn’t resist giving that little slap, but May took it so meekly she regretted it a minute after, and fell to praising the great vases, which still remained unsold.",
+              "target": "ジョーはその小さな皮肉を言わずにはいられなかったが、メイがそれをあまりにも素直に受け入れたので、彼女はすぐに後悔しました。そして、まだ売れ残っている大きな花瓶を褒め始めました。"
             }
           ],
           "raw_line": 8524
@@ -43330,13 +43045,8 @@
             },
             {
               "id": "02699-001",
-              "source": "and her mother looked up quickly,",
-              "target": "母親は急いで顔を上げた"
-            },
-            {
-              "id": "02699-002",
-              "source": "as if the words suggested a double meaning.",
-              "target": "まるでその言葉に二重の意味が含まれているかのように。"
+              "source": "and her mother looked up quickly, as if the words suggested a double meaning.",
+              "target": "母親は急いで顔を上げた、まるでその言葉に二重の意味が含まれているかのように。"
             }
           ],
           "raw_line": 9147
@@ -43830,13 +43540,8 @@
           "paragraph": [
             {
               "id": "02733-000",
-              "source": "“I’ll do my best, for your sake,” promised Beth",
-              "target": "「あなたのために、私、最善を尽くします」とベスは約束した。"
-            },
-            {
-              "id": "02733-001",
-              "source": "wondering why Jo looked at her so queerly.",
-              "target": "なぜジョーが彼女を変な目で見るのか、ベスは不思議に思った。"
+              "source": "“I’ll do my best, for your sake,” promised Beth wondering why Jo looked at her so queerly.",
+              "target": "「あなたのために、私、最善を尽くします」とベスは約束した。なぜジョーが彼女を変な目で見るのか、ベスは不思議に思った。"
             }
           ],
           "raw_line": 9253
@@ -46485,21 +46190,16 @@
           "paragraph": [
             {
               "id": "02876-000",
-              "source": "“I think I haven’t done much harm yet, and may keep this to pay for my time,” she said, after a long meditation,",
-              "target": "「まだあまり害を及ぼしていないと思うし、これを自分の時間代わりに使ってもいいかもしれないわ」と、彼女は長い熟考の後に言った。"
+              "source": "“I think I haven’t done much harm yet, and may keep this to pay for my time,” she said, after a long meditation, adding impatiently, “I almost wish I hadn’t any conscience, it’s so inconvenient.",
+              "target": "「まだあまり害を及ぼしていないと思うし、これを自分の時間代わりに使ってもいいかもしれないわ」と、彼女は長い熟考の後に言った。「もう少しで良心がなかったらいいのに、不便だわ」と、彼女はいらだちを込めて付け加えた。"
             },
             {
               "id": "02876-001",
-              "source": "adding impatiently, “I almost wish I hadn’t any conscience, it’s so inconvenient.",
-              "target": "「もう少しで良心がなかったらいいのに、不便だわ」と、彼女はいらだちを込めて付け加えた。"
-            },
-            {
-              "id": "02876-002",
               "source": "If I didn’t care about doing right, and didn’t feel uncomfortable when doing wrong, I should get on capitally.",
               "target": "もし正しいことを気にせず、間違ったことをしても気にしないなら、うまくやっていけるのに。"
             },
             {
-              "id": "02876-003",
+              "id": "02876-002",
               "source": "I can’t help wishing sometimes, that Mother and Father hadn’t been so particular about such things.”",
               "target": "時々、母や父がそんなに細かいことを気にしていなかったらなぁと思わずにはいられないわ」と。"
             }
@@ -46590,38 +46290,13 @@
             },
             {
               "id": "02881-002",
-              "source": "He did it so quietly that Jo never knew he was watching to see if she would accept and profit by his reproof,",
-              "target": "彼はとても静かにそれを行い、ジョーは彼が自分が受け入れて叱責を受けるかどうかを見守っていることに気づかなかった。"
+              "source": "He did it so quietly that Jo never knew he was watching to see if she would accept and profit by his reproof, but she stood the test, and he was satisfied, for though no words passed between them, he knew that she had given up writing.",
+              "target": "彼はとても静かにそれを行い、ジョーは彼が自分が受け入れて叱責を受けるかどうかを見守っていることに気づかなかった。しかし、彼女はその試練に耐え、彼は満足していた。言葉は交わされなかったが、彼は彼女が執筆をやめたことを知っていた。"
             },
             {
               "id": "02881-003",
-              "source": "but she stood the test, and he was satisfied,",
-              "target": "しかし、彼女はその試練に耐え、彼は満足していた。"
-            },
-            {
-              "id": "02881-004",
-              "source": "for though no words passed between them, he knew that she had given up writing.",
-              "target": "言葉は交わされなかったが、彼は彼女が執筆をやめたことを知っていた。"
-            },
-            {
-              "id": "02881-005",
-              "source": "Not only did he guess it by the fact that the second finger of her right hand was no longer inky,",
-              "target": "彼は、彼女の右手の第二の指がもはやインクで汚れていないという事実からそれを推測しただけでなく、"
-            },
-            {
-              "id": "02881-006",
-              "source": "but she spent her evenings downstairs now,",
-              "target": "彼女は今や夜を一階で過ごし、"
-            },
-            {
-              "id": "02881-007",
-              "source": "was met no more among newspaper offices,",
-              "target": "新聞社でもう会われなくなり、"
-            },
-            {
-              "id": "02881-008",
-              "source": "and studied with a dogged patience, which assured him that she was bent on occupying her mind with something useful, if not pleasant.",
-              "target": "そして、根気強く勉強し続ける彼女を見て、彼女が心を有益なもので占めようとしていることを確信した。"
+              "source": "Not only did he guess it by the fact that the second finger of her right hand was no longer inky, but she spent her evenings downstairs now, was met no more among newspaper offices, and studied with a dogged patience, which assured him that she was bent on occupying her mind with something useful, if not pleasant.",
+              "target": "彼は、彼女の右手の第二の指がもはやインクで汚れていないという事実からそれを推測しただけでなく、彼女は今や夜を一階で過ごし、新聞社でもう会われなくなり、そして、根気強く勉強し続ける彼女を見て、彼女が心を有益なもので占めようとしていることを確信した。"
             }
           ],
           "raw_line": 9824
@@ -47765,18 +47440,8 @@
             },
             {
               "id": "02962-001",
-              "source": "And he shook off his grandfather’s hands with an impatient motion,",
-              "target": "そして、じいさんの手をイライラした仕草で振り払った。"
-            },
-            {
-              "id": "02962-002",
-              "source": "for though grateful for the sympathy,",
-              "target": "同情に感謝しているが、"
-            },
-            {
-              "id": "02962-003",
-              "source": "his man’s pride could not bear a man’s pity.",
-              "target": "男の誇りは男の哀れみを受け入れられなかった。"
+              "source": "And he shook off his grandfather’s hands with an impatient motion, for though grateful for the sympathy, his man’s pride could not bear a man’s pity.",
+              "target": "そして、じいさんの手をイライラした仕草で振り払った。同情に感謝しているが、男の誇りは男の哀れみを受け入れられなかった。"
             }
           ],
           "raw_line": 10078
@@ -48010,13 +47675,8 @@
             },
             {
               "id": "02978-001",
-              "source": "I can’t ask it of you at your age,” began Laurie,",
-              "target": "あなたの年齢でお願いするわけにはいかないです」とローリーが言いかけました。"
-            },
-            {
-              "id": "02978-002",
-              "source": "who was grateful for the sacrifice, but much preferred to go alone, if he went at all.",
-              "target": "ローリーはその犠牲に感謝していましたが、もし行くなら一人で行く方が好きでした。"
+              "source": "I can’t ask it of you at your age,” began Laurie, who was grateful for the sacrifice, but much preferred to go alone, if he went at all.",
+              "target": "あなたの年齢でお願いするわけにはいかないです」とローリーが言いかけました。ローリーはその犠牲に感謝していましたが、もし行くなら一人で行く方が好きでした。"
             }
           ],
           "raw_line": 10124
@@ -48521,17 +48181,22 @@
             {
               "id": "03006-000",
               "source": "“Not through me,” said Jo decidedly.",
-              "target": "「私には関係ないわ」とジョーは断言した。"
+              "target": "「私は関わらないわ」とジョーは断固として言った。"
             },
             {
               "id": "03006-001",
               "source": "“Amy is left for him, and they would suit excellently, but I have no heart for such things, now.",
-              "target": "「エイミーが彼のために残されているし、彼らはぴったりだろうけど、私には今、そんなことに心がないの。"
+              "target": "「エイミーが彼のために残されているし、彼らはぴったりだろうけど、私は今、そんなことに心を向ける余裕がないの。"
             },
             {
               "id": "03006-002",
-              "source": "I don’t care what becomes of anybody but you, Beth.”",
-              "target": "あなた以外の誰がどうなろうと、私は気にしない。ベス、あなたが良くなることだけが大切なの。」"
+              "source": "I don’t care what becomes of anybody but you, Beth.",
+              "target": "ベス、あなた以外の誰がどうなろうと、私は気にしないわ。"
+            },
+            {
+              "id": "03006-003",
+              "source": "You must get well.”",
+              "target": "あなたは回復しなくちゃ。」"
             }
           ],
           "raw_line": 10233
@@ -49350,23 +49015,8 @@
           "paragraph": [
             {
               "id": "03050-000",
-              "source": "Laurie did not read all this while he watched her feed the peacocks, but he saw enough to satisfy and interest him",
-              "target": "ローリーは、彼女がクジャクたちに餌をやる様子を見ながら、これらすべてを読むことはなかったが、彼は満足し興味を持つには十分なものを見た"
-            },
-            {
-              "id": "03050-001",
-              "source": "and carried away a pretty little picture of a bright-faced girl standing in the sunshine",
-              "target": "そして、彼は日光の中に立つ明るい顔をした少女のかわいらしい姿を心に留めていった"
-            },
-            {
-              "id": "03050-002",
-              "source": "which brought out the soft hue of her dress, the fresh color of her cheeks, the golden gloss of her hair",
-              "target": "それによって、彼女の服の柔らかな色合い、頬の新鮮な色合い、髪の金色の艶が引き立った"
-            },
-            {
-              "id": "03050-003",
-              "source": "and made her a prominent figure in the pleasant scene.",
-              "target": "そして、彼女を楽しい光景の中で目立つ存在にした。"
+              "source": "Laurie did not read all this while he watched her feed the peacocks, but he saw enough to satisfy and interest him and carried away a pretty little picture of a bright-faced girl standing in the sunshine which brought out the soft hue of her dress, the fresh color of her cheeks, the golden gloss of her hair and made her a prominent figure in the pleasant scene.",
+              "target": "ローリーは、彼女がクジャクたちに餌をやる様子を見ながら、これらすべてを読むことはなかったが、彼は満足し興味を持つには十分なものを見た、そして、彼は日光の中に立つ明るい顔をした少女のかわいらしい姿を心に留めていった、それによって、彼女の服の柔らかな色合い、頬の新鮮な色合い、髪の金色の艶が引き立った、そして、彼女を楽しい光景の中で目立つ存在にした。"
             }
           ],
           "raw_line": 10411
@@ -49795,13 +49445,8 @@
           "paragraph": [
             {
               "id": "03081-000",
-              "source": "A daughter of the gods,",
-              "target": "神々の娘、"
-            },
-            {
-              "id": "03081-001",
-              "source": "Devinely tall, and most divinely fair,”",
-              "target": "神々しく背が高く、最も神々しく美しい」"
+              "source": "A daughter of the gods, Devinely tall, and most divinely fair,”",
+              "target": "神々の娘、神々しく背が高く、最も神々しく美しい」"
             }
           ],
           "raw_line": 10500
@@ -51105,21 +50750,11 @@
           "paragraph": [
             {
               "id": "03160-000",
-              "source": "Meg returned to her place, and supper was progressing pleasantly,",
-              "target": "メグは自分の席に戻り、夕食は楽しく進行していた。"
+              "source": "Meg returned to her place, and supper was progressing pleasantly, when the little ghost walked again, and exposed the maternal delinquencies by boldly demanding,",
+              "target": "メグは自分の席に戻り、夕食は楽しく進行していた。すると小さな幽霊が再び現れたとき、そして母親の怠慢を暴露し、大胆にも要求した。"
             },
             {
               "id": "03160-001",
-              "source": "when the little ghost walked again,",
-              "target": "すると小さな幽霊が再び現れたとき、"
-            },
-            {
-              "id": "03160-002",
-              "source": "and exposed the maternal delinquencies by boldly demanding,",
-              "target": "そして母親の怠慢を暴露し、大胆にも要求した。"
-            },
-            {
-              "id": "03160-003",
               "source": "“More sudar, Marmar.”",
               "target": "「もっと砂糖、ママ。」"
             }
@@ -51225,113 +50860,48 @@
           "paragraph": [
             {
               "id": "03167-000",
-              "source": "But even that refuge proved unavailing,",
-              "target": "しかし、その避難所も役に立たないことがわかりました。"
+              "source": "But even that refuge proved unavailing, for he was delivered over to the enemy, with a “Be gentle with him, John,”",
+              "target": "しかし、その避難所も役に立たないことがわかりました。彼は「優しくしてね、ジョン」と言われながら敵に引き渡されました。"
             },
             {
               "id": "03167-001",
-              "source": "for he was delivered over to the enemy, with a “Be gentle with him, John,”",
-              "target": "彼は「優しくしてね、ジョン」と言われながら敵に引き渡されました。"
+              "source": "which struck the culprit with dismay, for when Mamma deserted him, then the judgment day was at hand.",
+              "target": "それは犯人を驚かせました。ママが彼を見捨てたとき、審判の日が近づいていました。"
             },
             {
               "id": "03167-002",
-              "source": "which struck the culprit with dismay,",
-              "target": "それは犯人を驚かせました。"
+              "source": "Bereft of his cake, defrauded of his frolic, and borne away by a strong hand to that detested bed, poor Demi could not restrain his wrath, but openly defied Papa, and kicked and screamed lustily all the way upstairs.",
+              "target": "ケーキを奪われ、遊びを奪われ、強い手によって嫌いなベッドに運ばれました。かわいそうなデミは怒りを抑えることができませんでした。しかし、パパに公然と反抗し、階段を上がる間中、力強く蹴り、叫びました。"
             },
             {
               "id": "03167-003",
-              "source": "for when Mamma deserted him, then the judgment day was at hand.",
-              "target": "ママが彼を見捨てたとき、審判の日が近づいていました。"
+              "source": "The minute he was put into bed on one side, he rolled out on the other, and made for the door, only to be ignominiously caught up by the tail of his little toga and put back again, which lively performance was kept up till the young man’s strength gave out, when he devoted himself to roaring at the top of his voice.",
+              "target": "彼がベッドの片側に置かれるとすぐに、反対側に転がり出ました。そしてドアに向かいましたが、小さなトーガの裾を恥ずかしげに掴まれて再び戻されました。この活発な行動は若者の力が尽きるまで続きました。彼は声を限りに叫ぶことに専念しました。"
             },
             {
               "id": "03167-004",
-              "source": "Bereft of his cake, defrauded of his frolic, and borne away by a strong hand to that detested bed,",
-              "target": "ケーキを奪われ、遊びを奪われ、強い手によって嫌いなベッドに運ばれました。"
+              "source": "This vocal exercise usually conquered Meg, but John sat as unmoved as the post which is popularly believed to be deaf.",
+              "target": "この声の運動は通常メグを打ち負かしましたが、ジョンは一般に耳が聞こえないと信じられている柱のように動じずに座っていました。"
             },
             {
               "id": "03167-005",
-              "source": "poor Demi could not restrain his wrath,",
-              "target": "かわいそうなデミは怒りを抑えることができませんでした。"
+              "source": "No coaxing, no sugar, no lullaby, no story, even the light was put out and only the red glow of the fire enlivened the ‘big dark’",
+              "target": "なだめることも、砂糖も、子守唄も、物語もありませんでした。光さえも消され、火の赤い輝きだけが「大きな暗闇」を活気づけました。"
             },
             {
               "id": "03167-006",
-              "source": "but openly defied Papa, and kicked and screamed lustily all the way upstairs.",
-              "target": "しかし、パパに公然と反抗し、階段を上がる間中、力強く蹴り、叫びました。"
-            },
-            {
-              "id": "03167-007",
-              "source": "The minute he was put into bed on one side, he rolled out on the other,",
-              "target": "彼がベッドの片側に置かれるとすぐに、反対側に転がり出ました。"
-            },
-            {
-              "id": "03167-008",
-              "source": "and made for the door, only to be ignominiously caught up by the tail of his little toga and put back again,",
-              "target": "そしてドアに向かいましたが、小さなトーガの裾を恥ずかしげに掴まれて再び戻されました。"
-            },
-            {
-              "id": "03167-009",
-              "source": "which lively performance was kept up till the young man’s strength gave out,",
-              "target": "この活発な行動は若者の力が尽きるまで続きました。"
-            },
-            {
-              "id": "03167-010",
-              "source": "when he devoted himself to roaring at the top of his voice.",
-              "target": "彼は声を限りに叫ぶことに専念しました。"
-            },
-            {
-              "id": "03167-011",
-              "source": "This vocal exercise usually conquered Meg,",
-              "target": "この声の運動は通常メグを打ち負かしましたが、"
-            },
-            {
-              "id": "03167-012",
-              "source": "but John sat as unmoved as the post which is popularly believed to be deaf.",
-              "target": "ジョンは一般に耳が聞こえないと信じられている柱のように動じずに座っていました。"
-            },
-            {
-              "id": "03167-013",
-              "source": "No coaxing, no sugar, no lullaby, no story,",
-              "target": "なだめることも、砂糖も、子守唄も、物語もありませんでした。"
-            },
-            {
-              "id": "03167-014",
-              "source": "even the light was put out and only the red glow of the fire enlivened the ‘big dark’",
-              "target": "光さえも消され、火の赤い輝きだけが「大きな暗闇」を活気づけました。"
-            },
-            {
-              "id": "03167-015",
               "source": "which Demi regarded with curiosity rather than fear.",
               "target": "デミは恐怖よりも好奇心を持ってそれを見つめました。"
             },
             {
-              "id": "03167-016",
-              "source": "This new order of things disgusted him,",
-              "target": "この新しい状況は彼をうんざりさせました。"
+              "id": "03167-007",
+              "source": "This new order of things disgusted him, and he howled dismally for ‘Marmar’, as his angry passions subsided, and recollections of his tender bondwoman returned to the captive autocrat.",
+              "target": "この新しい状況は彼をうんざりさせました。そして彼は「マーマー」と悲しげに叫びました。彼の怒りの感情が静まると、彼の優しい母親の思い出が捕らわれた独裁者に戻ってきました。"
             },
             {
-              "id": "03167-017",
-              "source": "and he howled dismally for ‘Marmar’,",
-              "target": "そして彼は「マーマー」と悲しげに叫びました。"
-            },
-            {
-              "id": "03167-018",
-              "source": "as his angry passions subsided,",
-              "target": "彼の怒りの感情が静まると、"
-            },
-            {
-              "id": "03167-019",
-              "source": "and recollections of his tender bondwoman returned to the captive autocrat.",
-              "target": "彼の優しい母親の思い出が捕らわれた独裁者に戻ってきました。"
-            },
-            {
-              "id": "03167-020",
-              "source": "The plaintive wail which succeeded the passionate roar went to Meg’s heart,",
-              "target": "情熱的な叫びの後に続く哀れな泣き声はメグの心に響きました。"
-            },
-            {
-              "id": "03167-021",
-              "source": "and she ran up to say beseechingly...",
-              "target": "そして彼女は懇願するように言うために駆け上がりました..."
+              "id": "03167-008",
+              "source": "The plaintive wail which succeeded the passionate roar went to Meg’s heart, and she ran up to say beseechingly...",
+              "target": "情熱的な叫びの後に続く哀れな泣き声はメグの心に響きました。そして彼女は懇願するように言うために駆け上がりました..."
             }
           ],
           "raw_line": 10789
@@ -51810,13 +51380,8 @@
             },
             {
               "id": "03196-002",
-              "source": "They are done now, and I am going to Valrosa to sketch, will you come?” said Amy,",
-              "target": "手紙はもう書き終わったの。私はスケッチにバルローザに行くわ、一緒に来る？とエイミーが言った。"
-            },
-            {
-              "id": "03196-003",
-              "source": "as she joined Laurie one lovely day when he lounged in as usual, about noon.",
-              "target": "彼がいつものように昼前にのんびりしているところに、美しい日のエイミーが加わった。"
+              "source": "They are done now, and I am going to Valrosa to sketch, will you come?” said Amy, as she joined Laurie one lovely day when he lounged in as usual, about noon.",
+              "target": "手紙はもう書き終わったの。私はスケッチにバルローザに行くわ、一緒に来る？とエイミーが言った。彼がいつものように昼前にのんびりしているところに、美しい日のエイミーが加わった。"
             }
           ],
           "raw_line": 10891
@@ -53340,13 +52905,8 @@
             },
             {
               "id": "03306-002",
-              "source": "“Wait till you’ve tried it yourself,” he added in a low voice,",
-              "target": "「自分で経験してみるまで待ってみろ」と、彼は低い声で付け加えた。"
-            },
-            {
-              "id": "03306-003",
-              "source": "as he pulled up the grass by the handful.",
-              "target": "一握りずつ草を引き抜いている。"
+              "source": "“Wait till you’ve tried it yourself,” he added in a low voice, as he pulled up the grass by the handful.",
+              "target": "「自分で経験してみるまで待ってみろ」と、彼は低い声で付け加えた。一握りずつ草を引き抜いている。"
             }
           ],
           "raw_line": 11208
@@ -53535,13 +53095,8 @@
           "paragraph": [
             {
               "id": "03318-000",
-              "source": "“How well you draw!” he said, with a genuine surprise and pleasure at her skill,",
-              "target": "「上手に描けるね！」と彼は言い、彼女の腕前に本当の驚きと喜びを感じながら、"
-            },
-            {
-              "id": "03318-001",
-              "source": "adding, with a half-laugh, “Yes, that’s me.”",
-              "target": "半笑いで付け加えた。「そう、それが僕だよ」。"
+              "source": "“How well you draw!” he said, with a genuine surprise and pleasure at her skill, adding, with a half-laugh, “Yes, that’s me.”",
+              "target": "「上手に描けるね！」と彼は言い、彼女の腕前に本当の驚きと喜びを感じながら、半笑いで付け加えた。「そう、それが僕だよ」。"
             }
           ],
           "raw_line": 11248
@@ -53690,13 +53245,8 @@
             },
             {
               "id": "03325-003",
-              "source": "The friendly frankness was disturbed, the sunshine had a shadow over it,",
-              "target": "友好的な率直さが乱れ、陽気な雰囲気に影が差していた。"
-            },
-            {
-              "id": "03325-004",
-              "source": "and despite their apparent gaiety, there was a secret discontent in the heart of each.",
-              "target": "見かけの陽気さにもかかわらず、お互いの心には秘かな不満があった。"
+              "source": "The friendly frankness was disturbed, the sunshine had a shadow over it, and despite their apparent gaiety, there was a secret discontent in the heart of each.",
+              "target": "友好的な率直さが乱れ、陽気な雰囲気に影が差していた。見かけの陽気さにもかかわらず、お互いの心には秘かな不満があった。"
             }
           ],
           "raw_line": 11277
@@ -54030,21 +53580,16 @@
           "paragraph": [
             {
               "id": "03346-000",
-              "source": "Sitting patient in the shadow Till the blessed light shall come,",
-              "target": "祝福された光が来るまで、影に耐え静かに座っている"
+              "source": "Sitting patient in the shadow Till the blessed light shall come, A serene and saintly presence Sanctifies our troubled home.",
+              "target": "祝福された光が来るまで、影に耐え静かに座っている、穏やかで聖なる存在が、わたしたちの困難な家を神聖にする"
             },
             {
               "id": "03346-001",
-              "source": "A serene and saintly presence Sanctifies our troubled home.",
-              "target": "穏やかで聖なる存在が、わたしたちの困難な家を神聖にする"
-            },
-            {
-              "id": "03346-002",
               "source": "Earthly joys and hopes and sorrows Break like ripples on the strand",
               "target": "地上の喜びや希望、悲しみは、砂浜に波紋のように広がる"
             },
             {
-              "id": "03346-003",
+              "id": "03346-002",
               "source": "Of the deep and solemn river Where her willing feet now stand.",
               "target": "深く厳かな川の中で、彼女の意志の足が立っている"
             }
@@ -54235,18 +53780,8 @@
             },
             {
               "id": "03357-001",
-              "source": "and then and there Jo renounced her old ambition, pledged herself to a new and better one,",
-              "target": "そしてその場で、ジョーは古い野望を捨て、新しくより良いものに自分を誓いました。"
-            },
-            {
-              "id": "03357-002",
-              "source": "acknowledging the poverty of other desires,",
-              "target": "他の欲望の貧困を認めながら、"
-            },
-            {
-              "id": "03357-003",
-              "source": "and feeling the blessed solace of a belief in the immortality of love.",
-              "target": "そして愛の不滅を信じることで得られる祝福された慰めを感じました。"
+              "source": "and then and there Jo renounced her old ambition, pledged herself to a new and better one, acknowledging the poverty of other desires, and feeling the blessed solace of a belief in the immortality of love.",
+              "target": "そしてその場で、ジョーは古い野望を捨て、新しくより良いものに自分を誓いました。他の欲望の貧困を認めながら、そして愛の不滅を信じることで得られる祝福された慰めを感じました。"
             }
           ],
           "raw_line": 11416
@@ -56490,13 +56025,8 @@
             },
             {
               "id": "03474-001",
-              "source": "and he went down upon his knees, with a penitent clasping of hands,",
-              "target": "そして、彼は両手を懺悔のしぐさで組み、ひざまずいた"
-            },
-            {
-              "id": "03474-002",
-              "source": "and a face full of mischief, mirth, and triumph.",
-              "target": "そして、いたずら、歓喜、勝利に満ちた表情を浮かべた。"
+              "source": "and he went down upon his knees, with a penitent clasping of hands, and a face full of mischief, mirth, and triumph.",
+              "target": "そして、彼は両手を懺悔のしぐさで組み、ひざまずいた、そして、いたずら、歓喜、勝利に満ちた表情を浮かべた。"
             }
           ],
           "raw_line": 11891
@@ -58460,18 +57990,8 @@
             },
             {
               "id": "03599-001",
-              "source": "and Jo sighed,",
-              "target": "ジョーはため息をついた。"
-            },
-            {
-              "id": "03599-002",
-              "source": "then smiled brightly",
-              "target": "そして明るく微笑んだ"
-            },
-            {
-              "id": "03599-003",
-              "source": "as Professor Bhaer opened the gate with an impatient push.",
-              "target": "プロフェッサー・ベーアが我慢できずに門を開けると。"
+              "source": "and Jo sighed, then smiled brightly as Professor Bhaer opened the gate with an impatient push.",
+              "target": "ジョーはため息をついた。そして明るく微笑んだ、プロフェッサー・ベーアが我慢できずに門を開けると。"
             }
           ],
           "raw_line": 12296
@@ -59235,16 +58755,11 @@
           "paragraph": [
             {
               "id": "03646-000",
-              "source": "If the boy had replied like Alcibiades, “By the gods, Socrates, I cannot tell,” his grandfather would not have been surprised,",
-              "target": "もし少年がアルキビアデスのように答えていたら、「神々よ、ソクラテス、私にはわかりません」と言っていたら、祖父は驚かなかっただろう。"
+              "source": "If the boy had replied like Alcibiades, “By the gods, Socrates, I cannot tell,” his grandfather would not have been surprised, but when, after standing a moment on one leg, like a meditative young stork, he answered, in a tone of calm conviction, “In my little belly,”",
+              "target": "もし少年がアルキビアデスのように答えていたら、「神々よ、ソクラテス、私にはわかりません」と言っていたら、祖父は驚かなかっただろう。しかし、その少年が一本足で立ち、瞑想する若いコウノトリのように、しばらくしてから「私の小さなお腹に」と静かな確信の声で答えたとき、"
             },
             {
               "id": "03646-001",
-              "source": "but when, after standing a moment on one leg, like a meditative young stork, he answered, in a tone of calm conviction, “In my little belly,”",
-              "target": "しかし、その少年が一本足で立ち、瞑想する若いコウノトリのように、しばらくしてから「私の小さなお腹に」と静かな確信の声で答えたとき、"
-            },
-            {
-              "id": "03646-002",
               "source": "the old gentleman could only join in Grandma’s laugh, and dismiss the class in metaphysics.",
               "target": "老紳士はおばあちゃんの笑いに加わるしかなく、形而上学の授業を終了させた。"
             }
@@ -59320,18 +58835,8 @@
           "paragraph": [
             {
               "id": "03653-000",
-              "source": "“Now you have been good children, and I’ll play anything you like,” says Meg,",
-              "target": "「さあ、良い子供たちだったから、何でも好きな遊びをしましょう」とメグが言います。"
-            },
-            {
-              "id": "03653-001",
-              "source": "as she leads her assistant cooks upstairs,",
-              "target": "助手の料理人たちを階上に連れて行くとき、"
-            },
-            {
-              "id": "03653-002",
-              "source": "when the pudding is safely bouncing in the pot.",
-              "target": "プディングが安全にポットの中で跳ねているとき。"
+              "source": "“Now you have been good children, and I’ll play anything you like,” says Meg, as she leads her assistant cooks upstairs, when the pudding is safely bouncing in the pot.",
+              "target": "「さあ、良い子供たちだったから、何でも好きな遊びをしましょう」とメグが言います。助手の料理人たちを階上に連れて行くとき、プディングが安全にポットの中で跳ねているとき。"
             }
           ],
           "raw_line": 12469
@@ -59495,16 +59000,11 @@
             },
             {
               "id": "03663-001",
-              "source": "and, after a few convulsive efforts, the red legs took the shape of a pair of compasses,",
-              "target": "そして、けいれんするような努力の後、赤い足はコンパスの形を取りました。"
+              "source": "and, after a few convulsive efforts, the red legs took the shape of a pair of compasses, and the intelligent pupil triumphantly shouted,",
+              "target": "そして、けいれんするような努力の後、赤い足はコンパスの形を取りました。そして、その賢い生徒は誇らしげに叫びました。"
             },
             {
               "id": "03663-002",
-              "source": "and the intelligent pupil triumphantly shouted,",
-              "target": "そして、その賢い生徒は誇らしげに叫びました。"
-            },
-            {
-              "id": "03663-003",
               "source": "“It’s a We, Dranpa, it’s a We!”",
               "target": "「Wだよ、おじいちゃん、Wだよ！」"
             }
@@ -59616,12 +59116,12 @@
             {
               "id": "03673-000",
               "source": "“Thou shouldst save some for the little friend. Sweets to the sweet, mannling,” and Mr. Bhaer offered Jo some, with a look that made her wonder if chocolate was not the nectar drunk by the gods.",
-              "target": "「君は少しは小さな友達のために取っておくべきだよ。甘いものは甘い者に、小さな友達にね」と、バーエル氏はジョーにチョコレートを差し出し、その表情にジョーは、チョコレートが神々が飲む蜜ではないかと思わずにはいられた。"
+              "target": "「君は少しは小さな友達のために取っておくべきだよ。甘いものは甘い者に、ちびっ子よ」と、バーエル氏はジョーにチョコレートを差し出し、その表情にジョーは、チョコレートが神々が飲む蜜ではないかと思わずにはいられた。"
             },
             {
               "id": "03673-001",
-              "source": "Demi also saw the smile, was impressed by it, and artlessly inquired.",
-              "target": "デミもその笑顔を見て感銘を受け、無邪気に尋ねた。"
+              "source": "Demi also saw the smile, was impressed by it, and artlessy inquired. ..",
+              "target": "デミもその笑顔を見て感銘を受け、無邪気に尋ねた..."
             }
           ],
           "raw_line": 12526
@@ -60185,13 +59685,8 @@
             },
             {
               "id": "03714-001",
-              "source": "and Jo left her skirts to their fate,",
-              "target": "そしてジョーは自分のスカートをそのままにして"
-            },
-            {
-              "id": "03714-002",
-              "source": "as if it didn’t matter now what became of her clothes or herself.",
-              "target": "今は服や自分がどうなろうともかまわないかのように。"
+              "source": "and Jo left her skirts to their fate, as if it didn’t matter now what became of her clothes or herself.",
+              "target": "そしてジョーは自分のスカートをそのままにして、今は服や自分がどうなろうともかまわないかのように。"
             }
           ],
           "raw_line": 12648
@@ -60470,13 +59965,8 @@
             },
             {
               "id": "03734-001",
-              "source": "“I’m going very fast, and he’s getting dearer every minute,” added Jo to herself,",
-              "target": "「私はとても急いでいるし、彼はどんどん可愛くなっているわ」とジョーは心の中で付け加えた。"
-            },
-            {
-              "id": "03734-002",
-              "source": "then with a mental shake she entered into the business with an energy that was pleasant to behold.",
-              "target": "そして、精神的にふるえながら、見ていて楽しいほどのエネルギーでその仕事に取り組んだ。"
+              "source": "“I’m going very fast, and he’s getting dearer every minute,” added Jo to herself, then with a mental shake she entered into the business with an energy that was pleasant to behold.",
+              "target": "「私はとても急いでいるし、彼はどんどん可愛くなっているわ」とジョーは心の中で付け加えた。そして、精神的にふるえながら、見ていて楽しいほどのエネルギーでその仕事に取り組んだ。"
             }
           ],
           "raw_line": 12706
@@ -60995,38 +60485,18 @@
             },
             {
               "id": "03768-001",
-              "source": "I look in with loving eyes, For folded here, with well-known care, A goodly gathering lies,",
-              "target": "愛情を込めて中を覗くと、ここにはよく知られた丁寧さで折り畳まれた、たくさんの品々が並んでいる。"
+              "source": "I look in with loving eyes, For folded here, with well-known care, A goodly gathering lies, The record of a peaceful life— Gifts to gentle child and girl, A bridal gown, lines to a wife, A tiny shoe, a baby curl.",
+              "target": "愛情を込めて中を覗くと、ここにはよく知られた丁寧さで折り畳まれた、たくさんの品々が並んでいる。平和な生活の記録―穏やかな子どもや少女への贈り物。花嫁のドレス、妻への手紙、小さな靴、赤ちゃんのかけら。"
             },
             {
               "id": "03768-002",
-              "source": "The record of a peaceful life— Gifts to gentle child and girl,",
-              "target": "平和な生活の記録―穏やかな子どもや少女への贈り物。"
+              "source": "No toys in this first chest remain, For all are carried away, In their old age, to join again In another small Meg’s play.",
+              "target": "この最初の箱にはもうおもちゃは残っていない。なぜなら、すべてが持ち去られてしまったから。彼らは年を取り、再び別の小さなメグの遊びに加わるために。"
             },
             {
               "id": "03768-003",
-              "source": "A bridal gown, lines to a wife, A tiny shoe, a baby curl.",
-              "target": "花嫁のドレス、妻への手紙、小さな靴、赤ちゃんのかけら。"
-            },
-            {
-              "id": "03768-004",
-              "source": "No toys in this first chest remain, For all are carried away,",
-              "target": "この最初の箱にはもうおもちゃは残っていない。なぜなら、すべてが持ち去られてしまったから。"
-            },
-            {
-              "id": "03768-005",
-              "source": "In their old age, to join again In another small Meg’s play.",
-              "target": "彼らは年を取り、再び別の小さなメグの遊びに加わるために。"
-            },
-            {
-              "id": "03768-006",
-              "source": "Ah, happy mother! Well I know You hear, like a sweet refrain,",
-              "target": "ああ、幸せな母よ！よく知っている、あなたは聞いている、まるで甘いリフレインのように。"
-            },
-            {
-              "id": "03768-007",
-              "source": "Lullabies ever soft and low In the falling summer rain.",
-              "target": "夏の雨が降る中で、いつも柔らかく低い子守唄。"
+              "source": "Ah, happy mother! Well I know You hear, like a sweet refrain, Lullabies ever soft and low In the falling summer rain.",
+              "target": "ああ、幸せな母よ！よく知っている、あなたは聞いている、まるで甘いリフレインのように。夏の雨が降る中で、いつも柔らかく低い子守唄。"
             }
           ],
           "raw_line": 12827
@@ -61035,81 +60505,26 @@
           "paragraph": [
             {
               "id": "03769-000",
-              "source": "“Jo” on the next lid, scratched and worn,",
-              "target": "次の箱には「ジョー」と彫られ、傷ついていました。"
+              "source": "“Jo” on the next lid, scratched and worn, And within a motley store",
+              "target": "次の箱には「ジョー」と彫られ、傷ついていました。そして、その中には様々なものが詰まっていました。"
             },
             {
               "id": "03769-001",
-              "source": "And within a motley store",
-              "target": "そして、その中には様々なものが詰まっていました。"
+              "source": "Of headless dolls, of schoolbooks torn, Birds and beasts that speak no more, Spoils brought home from the fairy ground",
+              "target": "首のない人形や破れた教科書、もう話さない鳥や獣、妖精の地から持ち帰った戦利品、"
             },
             {
               "id": "03769-002",
-              "source": "Of headless dolls, of schoolbooks torn,",
-              "target": "首のない人形や破れた教科書、"
+              "source": "Only trod by youthful feet, Dreams of a future never found, Memories of a past still sweet, Half-writ poems, stories wild, April letters, warm and cold, Diaries of a wilful child, Hints of a woman early old, A woman in a lonely home, Hearing, like a sad refrain—",
+              "target": "若い足だけが踏んだ場所、見つからなかった未来の夢、今でも甘い過去の思い出、中途半端な詩や乱雑な物語、暖かくも寒い4月の手紙、意志の強い子供の日記、早く老けた女性の兆候、孤独な家に住む女性、悲しいリフレインのように聞こえる―"
             },
             {
               "id": "03769-003",
-              "source": "Birds and beasts that speak no more,",
-              "target": "もう話さない鳥や獣、"
-            },
-            {
-              "id": "03769-004",
-              "source": "Spoils brought home from the fairy ground",
-              "target": "妖精の地から持ち帰った戦利品、"
-            },
-            {
-              "id": "03769-005",
-              "source": "Only trod by youthful feet,",
-              "target": "若い足だけが踏んだ場所、"
-            },
-            {
-              "id": "03769-006",
-              "source": "Dreams of a future never found,",
-              "target": "見つからなかった未来の夢、"
-            },
-            {
-              "id": "03769-007",
-              "source": "Memories of a past still sweet,",
-              "target": "今でも甘い過去の思い出、"
-            },
-            {
-              "id": "03769-008",
-              "source": "Half-writ poems, stories wild,",
-              "target": "中途半端な詩や乱雑な物語、"
-            },
-            {
-              "id": "03769-009",
-              "source": "April letters, warm and cold,",
-              "target": "暖かくも寒い4月の手紙、"
-            },
-            {
-              "id": "03769-010",
-              "source": "Diaries of a wilful child,",
-              "target": "意志の強い子供の日記、"
-            },
-            {
-              "id": "03769-011",
-              "source": "Hints of a woman early old,",
-              "target": "早く老けた女性の兆候、"
-            },
-            {
-              "id": "03769-012",
-              "source": "A woman in a lonely home,",
-              "target": "孤独な家に住む女性、"
-            },
-            {
-              "id": "03769-013",
-              "source": "Hearing, like a sad refrain—",
-              "target": "悲しいリフレインのように聞こえる―"
-            },
-            {
-              "id": "03769-014",
               "source": "“Be worthy, love, and love will come,”",
               "target": "「価値ある者になりなさい、愛はやってくる」"
             },
             {
-              "id": "03769-015",
+              "id": "03769-004",
               "source": "In the falling summer rain.",
               "target": "夏の雨が降る中で。"
             }
@@ -61290,18 +60705,8 @@
           "paragraph": [
             {
               "id": "03780-000",
-              "source": "“I’m glad you are poor. I couldn’t bear a rich husband,” said Jo decidedly",
-              "target": "「あなたが貧乏で良かったわ。お金持ちの夫なんて耐えられないわ」とジョーは断言した。"
-            },
-            {
-              "id": "03780-001",
-              "source": "adding in a softer tone, “Don’t fear poverty. I’ve known it long enough to lose my dread and be happy working for those I love",
-              "target": "そして柔らかい口調で付け加えた。「貧困を恐れないで。私は長い間それを知っているから、恐怖を失い、愛する人たちのために働いて幸せになれるわ"
-            },
-            {
-              "id": "03780-002",
-              "source": "and don’t call yourself old—forty is the prime of life. I couldn’t help loving you if you were seventy!”",
-              "target": "そして自分を老いたと呼ばないで。40歳は人生の全盛期よ。あなたが70歳でも、私はあなたを愛さずにはいられないわ！」"
+              "source": "“I’m glad you are poor. I couldn’t bear a rich husband,” said Jo decidedly adding in a softer tone, “Don’t fear poverty. I’ve known it long enough to lose my dread and be happy working for those I love and don’t call yourself old—forty is the prime of life. I couldn’t help loving you if you were seventy!”",
+              "target": "「あなたが貧乏で良かったわ。お金持ちの夫なんて耐えられないわ」とジョーは断言した。そして柔らかい口調で付け加えた。「貧困を恐れないで。私は長い間それを知っているから、恐怖を失い、愛する人たちのために働いて幸せになれるわ、そして自分を老いたと呼ばないで。40歳は人生の全盛期よ。あなたが70歳でも、私はあなたを愛さずにはいられないわ！」"
             }
           ],
           "raw_line": 12903
@@ -62560,5 +61965,5 @@
       "raw_line": 12934
     }
   ],
-  "cost": 4.111
+  "cost": 4.134
 }

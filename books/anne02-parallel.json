@@ -2965,16 +2965,11 @@
             },
             {
               "id": "00142-001",
-              "source": "the “freshies,” wiser in their day and generation, had banded themselves together on the big staircase of the entrance hall, where they were shouting out glees with all the vigor of youthful lungs, as a species of defiance to their traditional enemies, the Sophomores,",
-              "target": "一方、「新入生男子」はその時代と世代に賢く、入口ホールの大きな階段で団結し、若々しい肺の力で歌を大声で歌っていた。これは彼らの伝統的な敵であるソフォモアに対する一種の挑戦だった。"
+              "source": "the “freshies,” wiser in their day and generation, had banded themselves together on the big staircase of the entrance hall, where they were shouting out glees with all the vigor of youthful lungs, as a species of defiance to their traditional enemies, the Sophomores, a few of whom were prowling loftily about, looking properly disdainful of the “unlicked cubs” on the stairs.",
+              "target": "一方、「新入生男子」はその時代と世代に賢く、入口ホールの大きな階段で団結し、若々しい肺の力で歌を大声で歌っていた。これは彼らの伝統的な敵であるソフォモアに対する一種の挑戦だった。そのうちの数人は高慢そうにうろつき回り、階段にいる「未熟な子どもたち」を見下すような態度を崩さなかった。"
             },
             {
               "id": "00142-002",
-              "source": "a few of whom were prowling loftily about, looking properly disdainful of the “unlicked cubs” on the stairs.",
-              "target": "そのうちの数人は高慢そうにうろつき回り、階段にいる「未熟な子どもたち」を見下すような態度を崩さなかった。"
-            },
-            {
-              "id": "00142-003",
               "source": "Gilbert and Charlie were nowhere to be seen.",
               "target": "ギルバートとチャーリーはどこにも見当たらなかった。"
             }
@@ -3960,13 +3955,8 @@
           "paragraph": [
             {
               "id": "00184-000",
-              "source": "“I don’t know how you managed to make up your mind to come to Redmond at all",
-              "target": "「いったいどうやって決心してレドモンドに来ることができたのか、わからないわ"
-            },
-            {
-              "id": "00184-001",
-              "source": "if you are really such an undecided person,” said amused Priscilla.",
-              "target": "あなたが本当にそんなに優柔不断な人なら」と、楽しそうなプリシラが言った。"
+              "source": "“I don’t know how you managed to make up your mind to come to Redmond at all if you are really such an undecided person,” said amused Priscilla.",
+              "target": "「いったいどうやって決心してレドモンドに来ることができたのか、わからないわ、あなたが本当にそんなに優柔不断な人なら」と、楽しそうなプリシラが言った。"
             }
           ],
           "raw_line": 837
@@ -6005,13 +5995,8 @@
           "paragraph": [
             {
               "id": "00248-000",
-              "source": "“‘And so in mountain solitudes o’ertaken As by some spell divine,",
-              "target": "「『そして山の孤独の中で、まるで神秘の呪文にかかったかのように、"
-            },
-            {
-              "id": "00248-001",
-              "source": "Their cares drop from them like the needles shaken From out the gusty pine,’”",
-              "target": "彼らの心配事は、風に揺れる松の針のように彼らから落ちる』」"
+              "source": "“‘And so in mountain solitudes o’ertaken As by some spell divine, Their cares drop from them like the needles shaken From out the gusty pine,’”",
+              "target": "「『そして山の孤独の中で、まるで神秘の呪文にかかったかのように、彼らの心配事は、風に揺れる松の針のように彼らから落ちる』」"
             }
           ],
           "raw_line": 1277
@@ -7640,26 +7625,21 @@
           "paragraph": [
             {
               "id": "00331-000",
-              "source": "“Just at the conventional moment, when all hope had fled, and the conductor was holding out his box to the passenger next to me,",
-              "target": "「すべての希望が消え去り、車掌が隣の乗客に箱を差し出しているまさにその時、"
+              "source": "“Just at the conventional moment, when all hope had fled, and the conductor was holding out his box to the passenger next to me, I suddenly remembered where I had put that wretched coin of the realm.",
+              "target": "「すべての希望が消え去り、車掌が隣の乗客に箱を差し出しているまさにその時、私は突然、あの厄介な硬貨をどこに置いたかを思い出しました。"
             },
             {
               "id": "00331-001",
-              "source": "I suddenly remembered where I had put that wretched coin of the realm.",
-              "target": "私は突然、あの厄介な硬貨をどこに置いたかを思い出しました。"
-            },
-            {
-              "id": "00331-002",
               "source": "I hadn’t swallowed it after all.",
               "target": "結局、私はそれを飲み込んでいなかったのです。"
             },
             {
-              "id": "00331-003",
+              "id": "00331-002",
               "source": "I meekly fished it out of the index finger of my glove and poked it in the box.",
               "target": "私はおとなしく手袋の人差し指からそれを取り出し、箱に入れました。"
             },
             {
-              "id": "00331-004",
+              "id": "00331-003",
               "source": "I smiled at everybody and felt that it was a beautiful world.”",
               "target": "私はみんなに微笑みかけ、この世界はなんて美しいのだろうと感じました。」"
             }
@@ -16425,12 +16405,12 @@
           "paragraph": [
             {
               "id": "00795-000",
-              "source": "“We remain, ",
+              "source": "“We remain,",
               "target": "「引き続き、"
             },
             {
               "id": "00795-001",
-              "source": "“Yours very truly, ",
+              "source": "“Yours very truly,",
               "target": "敬具、"
             },
             {
@@ -19850,21 +19830,16 @@
             },
             {
               "id": "00954-001",
-              "source": "said Anne, who was curled up on the hearth-rug with Rusty in her lap,",
-              "target": "アンは炉の敷居に座り、ラスティを膝に抱いている状態で言った"
+              "source": "said Anne, who was curled up on the hearth-rug with Rusty in her lap, to Aunt Jamesina who was reading in her pet chair.",
+              "target": "アンは炉の敷居に座り、ラスティを膝に抱いている状態で言った、愛用の椅子で読書をしているジェイムジーナおばさんに向かって"
             },
             {
               "id": "00954-002",
-              "source": "to Aunt Jamesina who was reading in her pet chair.",
-              "target": "愛用の椅子で読書をしているジェイムジーナおばさんに向かって"
-            },
-            {
-              "id": "00954-003",
               "source": "They were alone in the living room.",
               "target": "2人はリビングルームにふたりきりだった。"
             },
             {
-              "id": "00954-004",
+              "id": "00954-003",
               "source": "Stella and Priscilla had gone to a committee meeting and Phil was upstairs adorning herself for a party.",
               "target": "ステラとプリシラは委員会の会議に出かけており、フィルはパーティーのために階上で身なりを整えていた。"
             }
@@ -21150,13 +21125,8 @@
             },
             {
               "id": "01031-001",
-              "source": "Gilbert asked after a very dreadful pause,",
-              "target": "ギルバートは、非常に不安な沈黙の後に尋ねました。"
-            },
-            {
-              "id": "01031-002",
-              "source": "during which Anne had not dared to look up.",
-              "target": "その間、アンは上を向く勇気が出せなかった。"
+              "source": "Gilbert asked after a very dreadful pause, during which Anne had not dared to look up.",
+              "target": "ギルバートは、非常に不安な沈黙の後に尋ねました。その間、アンは上を向く勇気が出せなかった。"
             }
           ],
           "raw_line": 4457
@@ -22490,13 +22460,13 @@
           "paragraph": [
             {
               "id": "01101-000",
-              "source": "“Well, it’d be fun while it lasted, wouldn’t it?”, persisted Davy.",
-              "target": "「まあ、続く間は楽しいだろうね？」と、デイヴィーはしつこく言いました。"
+              "source": "“Well, it’d be fun while it lasted, wouldn’t it?” persisted Davy.",
+              "target": "「まあ、楽しい間は楽しいだろうね？」とデイヴィーはしつこく言った。"
             },
             {
               "id": "01101-001",
-              "source": "“I could be sorry for it afterwards, couldn’t I?”,",
-              "target": "「後でそれを後悔すればいいじゃないか？」と、"
+              "source": "“I could be sorry for it afterwards, couldn’t I?”",
+              "target": "「後で後悔すればいいじゃない？」"
             }
           ],
           "raw_line": 4751
@@ -25950,7 +25920,7 @@
           "paragraph": [
             {
               "id": "01276-000",
-              "source": "“Do you suppose you’ll be able to keep it up?”,",
+              "source": "“Do you suppose you’ll be able to keep it up?”",
               "target": "「それを続けられると思う？」"
             }
           ],
@@ -26995,13 +26965,8 @@
             },
             {
               "id": "01320-009",
-              "source": "Mrs. Rachel has given you one of her beloved knitted quilts of the ‘tobacco stripe’ pattern,",
-              "target": "レイチェルさんはあなたに彼女のお気に入りの『タバコストライプ』柄の編みキルトをくれたわね。"
-            },
-            {
-              "id": "01320-010",
-              "source": "and she says when I am married she’ll give me one, too.”",
-              "target": "そして、私が結婚するときにも同じものをくれるって言ってたわ。」"
+              "source": "Mrs. Rachel has given you one of her beloved knitted quilts of the ‘tobacco stripe’ pattern, and she says when I am married she’ll give me one, too.”",
+              "target": "レイチェルさんはあなたに彼女のお気に入りの『タバコストライプ』柄の編みキルトをくれたわね。そして、私が結婚するときにも同じものをくれるって言ってたわ。」"
             }
           ],
           "raw_line": 5719
@@ -30240,7 +30205,7 @@
           "paragraph": [
             {
               "id": "01482-000",
-              "source": "“Why didn’t you tell me this?” asked Janet chokingly. ",
+              "source": "“Why didn’t you tell me this?” asked Janet chokingly.",
               "target": "「なぜこれを私に言わなかったの？」とジャネットは声を詰まらせて尋ねた。"
             },
             {
@@ -32375,23 +32340,13 @@
           "paragraph": [
             {
               "id": "01595-000",
-              "source": "“‘There are lots of things that never go by rule,",
-              "target": "「『規則に従わないことがたくさんある、"
+              "source": "“‘There are lots of things that never go by rule, There’s a powerful pile o’ knowledge",
+              "target": "「『規則に従わないことがたくさんある、学ぶべき知識が山ほどある、"
             },
             {
               "id": "01595-001",
-              "source": "There’s a powerful pile o’ knowledge",
-              "target": "学ぶべき知識が山ほどある、"
-            },
-            {
-              "id": "01595-002",
-              "source": "That you never get at college,",
-              "target": "大学では得られない、"
-            },
-            {
-              "id": "01595-003",
-              "source": "There are heaps of things you never learn at school,’”",
-              "target": "学校では学べないことが山ほどある』」"
+              "source": "That you never get at college, There are heaps of things you never learn at school,’”",
+              "target": "大学では得られない、学校では学べないことが山ほどある』」"
             }
           ],
           "raw_line": 6883
@@ -35716,12 +35671,12 @@
             {
               "id": "01759-000",
               "source": "Long after Pacifique’s gay whistle had faded into the phantom of music and then into silence far up under the maples of Lover’s Lane Anne stood under the willows, tasting the poignant sweetness of life when some great dread has been removed from it.",
-              "target": "パシフィックの陽気な口笛が音楽の幻影に消え、そしてラバーズ・レーンのカエデの木の下で遠く静寂になった後も、アンは柳の木の下に立ち、大きな恐怖が取り除かれたときの人生の切ない甘さを味わっていた。"
+              "target": "パシフィックの陽気な口笛が音楽の幻影と静寂に消えた後も、アンはラバーズ・レーンのカエデの木の下で立ち、人生の切ない甘さを味わっていた。"
             },
             {
               "id": "01759-001",
               "source": "The morning was a cup filled with mist and glamor.",
-              "target": "朝は霧と魅力で満たされたカップのようだった。"
+              "target": "朝は霧と魅力に満ちたカップのようだった。"
             },
             {
               "id": "01759-002",
@@ -35735,8 +35690,8 @@
             },
             {
               "id": "01759-004",
-              "source": "A sentence from a very old, very true, very wonderful Book came to her lips.",
-              "target": "非常に古く、非常に真実で、非常に素晴らしい書物からの一文が彼女の唇に浮かんだ。"
+              "source": "A sentence from a very old, very true, very wonderful Book came to her lips,",
+              "target": "非常に古く、真実で素晴らしい書物からの一文が彼女の唇に浮かんだ。"
             }
           ],
           "raw_line": 7578

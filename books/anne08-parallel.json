@@ -2206,32 +2206,37 @@
             {
               "id": "00105-000",
               "source": "“Oh, mother will put me through a course of reading next winter.",
-              "target": "「ああ、母は来年の冬に私に読書のコースを受けさせるわ。彼女の学士号を磨くために。幸いにも私は読書が好きなの。」"
+              "target": "「ああ、母は来年の冬に私に読書のコースを受けさせるわ。」"
             },
             {
               "id": "00105-001",
               "source": "It will polish up her B.A. degree.",
-              "target": "彼女の学士号を磨くでしょう。"
+              "target": "それで彼女の学士号を磨いてくれるの。"
             },
             {
               "id": "00105-002",
               "source": "Luckily I like reading.",
-              "target": "幸いにも私は読書が好きなの。"
+              "target": "幸い、私は読書が好きなの。"
             },
             {
               "id": "00105-003",
               "source": "Don't look at me so sorrowfully and so disapprovingly, dearest.",
-              "target": "そんなに悲しそうで、非難するように私を見ないで。大切な人よ。"
+              "target": "そんなに悲しそうで、しかも非難するように私を見ないで。大切な人よ。"
             },
             {
               "id": "00105-004",
               "source": "I can't be sober and serious—everything looks so rosy and rainbowy to me.",
-              "target": "私は真面目で冷静になれないわ―すべてが私にとって薔薇色で虹色に見えるの。"
+              "target": "私は真面目で冷静になんてなれないわ―すべてが私にとって薔薇色で虹色に見えるの。"
             },
             {
               "id": "00105-005",
-              "source": "Next month I'll be fifteen—and next year sixteen—and the year after that seventeen.”",
-              "target": "来月で15歳になるわ―そして来年16歳―その次の年には17歳。もっと魅力的なことはあるだろうか？」"
+              "source": "Next month I'll be fifteen—and next year sixteen—and the year after that seventeen.",
+              "target": "来月で15歳になるの―そして来年16歳―その次の年には17歳。もっと魅力的なことってある？"
+            },
+            {
+              "id": "00105-006",
+              "source": "Could anything be more enchanting?”",
+              "target": "もっと魅惑的なことってある？」"
             }
           ],
           "raw_line": 472
@@ -8901,12 +8906,17 @@
             {
               "id": "00378-000",
               "source": "There—the train was coming—mother was holding Jem's hand—Dog Monday was licking it—everybody was saying good-bye—the train was in!",
-              "target": "そこに―列車が来ている―母がジェムの手を握っている―犬のマンデーがそれを舐めている―みんながさようならを言っている―列車が到着した！"
+              "target": "そこに—列車が来ていた—母がジェムの手を握っていた—ドッグ・マンデーがそれを舐めていた—みんながさよならを言っていた—列車が到着した！"
             },
             {
               "id": "00378-001",
-              "source": "Jem kissed Faith before everybody—old Mrs. Drew whooped hysterically—the men, led by Kenneth, cheered—Rilla felt Jem seize her hand—“Good-bye, Spider”—somebody kissed her cheek—she believed it was Jerry but never was sure—they were off—the train was pulling out—Jem and Jerry were waving to everybody—everybody was waving back—mother and Nan were smiling still, but as if they had just forgotten to take the smile off—Monday was howling dismally and being forcibly restrained by the Methodist minister from tearing after the train—Susan was waving her best bonnet and hurrahing like a man—had she gone crazy?",
-              "target": "ジェムがみんなの前でフェイスにキスをした―古いドリュー夫人がヒステリックに叫び声を上げた―ケネスを先頭にした男たちが歓声を上げた―リラはジェムが自分の手を握るのを感じた―「さようなら、スパイダー」と言われ―誰かが彼女の頬にキスをした―ジェリーだと思ったが確信は持てなかった―彼らは出発した―列車が発車していく―ジェムとジェリーがみんなに手を振っている―みんなが手を振り返している―母とナンはまだ微笑んでいたが、まるで笑顔を忘れたかのように―マンデーは悲しげに遠吠えし、メソジストの牧師に引き止められて列車の後を追おうとしていた―スーザンは一番いい帽子を振りながら男のように歓声を上げていた―彼女は気が狂ったのか？"
+              "source": "Jem kissed Faith before everybody—old Mrs. Drew whooped hysterically—the men, led by Kenneth, cheered—Rilla felt Jem seize her hand—“Good-bye, Spider”—somebody kissed her cheek—she believed it was Jerry but never was sure—they were off—the train was pulling out—Jem and Jerry were waving to everybody—everybody was waving back—mother and Nan were smiling still, but as if they had just forgotten to take the smile off—Monday was howling dismally and being forcibly restrained by the Methodist minister from tearing after the train—Susan was waving her best bonnet and hurrahing like a man—had she gone crazy?—the train rounded a curve.",
+              "target": "ジェムはみんなの前でフェイスにキスをした—老婦人のドリューさんがヒステリックに叫んだ—ケネスに率いられた男たちが歓声を上げた—リラはジェムが自分の手を掴むのを感じた—「さよなら、スパイダー」—誰かが彼女の頬にキスをした—それがジェリーだと思ったが確信はなかった—彼らは出発した—列車が動き出した—ジェムとジェリーはみんなに手を振っていた—みんなが手を振り返していた—母とナンはまだ微笑んでいたが、まるで微笑みを消し忘れたかのようだった—マンデーは悲しげに遠吠えし、列車を追いかけようとするのをメソジストの牧師に力ずくで止められていた—スーザンは最高のボンネットを振り回し、男のように歓声を上げていた—彼女は狂ってしまったのか？—列車はカーブを曲がった。"
+            },
+            {
+              "id": "00378-002",
+              "source": "They had gone.",
+              "target": "彼らは行ってしまった。"
             }
           ],
           "raw_line": 1898
@@ -11115,13 +11125,8 @@
             },
             {
               "id": "00482-005",
-              "source": "sometimes, after she went to bed, she cried a little in her pillow over Walter's absence and Jem at Valcartier and Kenneth's unromantic farewell message,",
-              "target": "時々、寝る前にウォルターの不在やヴァルカルティエのジェム、ケネスのロマンチックでない別れのメッセージについて少し枕で泣いたこともありますが、"
-            },
-            {
-              "id": "00482-006",
-              "source": "but she was generally asleep before the tears got fairly started.",
-              "target": "泣き始める前にほとんど眠ってしまっていました。"
+              "source": "sometimes, after she went to bed, she cried a little in her pillow over Walter's absence and Jem at Valcartier and Kenneth's unromantic farewell message, but she was generally asleep before the tears got fairly started.",
+              "target": "時々、寝る前にウォルターの不在やヴァルカルティエのジェム、ケネスのロマンチックでない別れのメッセージについて少し枕で泣いたこともありますが、泣き始める前にほとんど眠ってしまっていました。"
             }
           ],
           "raw_line": 2376
@@ -13065,13 +13070,8 @@
           "paragraph": [
             {
               "id": "00570-000",
-              "source": "“'Tired or not, I will wear it that long,' I said:",
-              "target": "「『疲れていようとも、それをそのまま着用する』と私は言いました。"
-            },
-            {
-              "id": "00570-001",
-              "source": "and then I marched upstairs and cried to think that I had been sarcastic to mother.",
-              "target": "そして私は階段を上がって行進し、母親に皮肉を言ってしまったことを思い出して泣きました。"
+              "source": "“'Tired or not, I will wear it that long,' I said: and then I marched upstairs and cried to think that I had been sarcastic to mother.",
+              "target": "「『疲れていようとも、それをそのまま着用する』と私は言いました。そして私は階段を上がって行進し、母親に皮肉を言ってしまったことを思い出して泣きました。"
             }
           ],
           "raw_line": 2787
@@ -13875,13 +13875,8 @@
           "paragraph": [
             {
               "id": "00609-000",
-              "source": "“I hate this war,” said Rilla bitterly,",
-              "target": "「この戦争が大嫌い」とリラは苦々しく言った。"
-            },
-            {
-              "id": "00609-001",
-              "source": "as she gazed out into the maple grove that was a chill glory of pink and gold in the winter sunset.",
-              "target": "冬の夕日にピンクとゴールドの華やかな楓の木立を見つめながら。"
+              "source": "“I hate this war,” said Rilla bitterly, as she gazed out into the maple grove that was a chill glory of pink and gold in the winter sunset.",
+              "target": "「この戦争が大嫌い」とリラは苦々しく言った。冬の夕日にピンクとゴールドの華やかな楓の木立を見つめながら。"
             }
           ],
           "raw_line": 2966
@@ -16630,16 +16625,11 @@
           "paragraph": [
             {
               "id": "00719-000",
-              "source": "“Mrs. Channing cannot come because her son is ill in Kingsport,",
-              "target": "「ミセス・チャニングはキングスポートで息子さんが病気のため来られません。"
+              "source": "“Mrs. Channing cannot come because her son is ill in Kingsport, and I have come on behalf of the committee to ask you if you will be so kind as to sing for us in her place.”",
+              "target": "「ミセス・チャニングはキングスポートで息子さんが病気のため来られません。それで、委員会を代表してあなたに彼女の代わりに歌っていただけないかお願いに来ました。」"
             },
             {
               "id": "00719-001",
-              "source": "and I have come on behalf of the committee to ask you if you will be so kind as to sing for us in her place.”",
-              "target": "それで、委員会を代表してあなたに彼女の代わりに歌っていただけないかお願いに来ました。」"
-            },
-            {
-              "id": "00719-002",
               "source": "Rilla enunciated every word so precisely and carefully that she seemed to be reciting a lesson.",
               "target": "リラはまるで授業を暗唱しているかのように、一語一語を非常に正確かつ慎重に発音した。"
             }
@@ -16835,16 +16825,11 @@
             },
             {
               "id": "00731-001",
-              "source": "said Rilla,",
-              "target": "リラが言った。"
+              "source": "said Rilla, who knew Irene had been going to town all winter for lessons and that this was only a pretext.",
+              "target": "リラが言った。イレーンが冬中街に通ってレッスンを受けていたことを知っていた。そしてこれは単なる口実に過ぎないことを。"
             },
             {
               "id": "00731-002",
-              "source": "who knew Irene had been going to town all winter for lessons and that this was only a pretext.",
-              "target": "イレーンが冬中街に通ってレッスンを受けていたことを知っていた。そしてこれは単なる口実に過ぎないことを。"
-            },
-            {
-              "id": "00731-003",
               "source": "“They will all be new down there.”",
               "target": "「そこでは全て新しいものになるわ」。"
             }
@@ -22335,13 +22320,8 @@
           "paragraph": [
             {
               "id": "00956-000",
-              "source": "“'No, I shall just have to let Joe go, and he will be killed—I know he will be killed—and my heart will break,' said Miranda,",
-              "target": "「いいえ、ジョーを行かせるしかないの。彼はきっと死んでしまうわ―死んでしまうとわかっているわ。そして、私の心は壊れてしまうわ」とミランダは言った。"
-            },
-            {
-              "id": "00956-001",
-              "source": "her tears running down and copiously bedewing the vermin shirts!",
-              "target": "彼女の涙が流れ落ち、害虫のシャツをたっぷりと濡らしていた！」"
+              "source": "“'No, I shall just have to let Joe go, and he will be killed—I know he will be killed—and my heart will break,' said Miranda, her tears running down and copiously bedewing the vermin shirts!",
+              "target": "「いいえ、ジョーを行かせるしかないの。彼はきっと死んでしまうわ―死んでしまうとわかっているわ。そして、私の心は壊れてしまうわ」とミランダは言った。彼女の涙が流れ落ち、害虫のシャツをたっぷりと濡らしていた！」"
             }
           ],
           "raw_line": 4748
@@ -35396,12 +35376,12 @@
             {
               "id": "01557-000",
               "source": "“Rilla, it was a good dream.",
-              "target": "「リラ、それは良い夢だったのよ。"
+              "target": "「リラ、それは良い夢だったの。"
             },
             {
               "id": "01557-001",
               "source": "Listen—I dreamed just as I did four years ago, that I stood on the veranda steps and looked down the Glen.",
-              "target": "聞いて。4年前と同じように、私はベランダの階段に立ってグレンを見下ろしている夢を見たの。"
+              "target": "聞いて。私は4年前と同じように、ベランダの階段に立ってグレンを見下ろしている夢を見たの。"
             },
             {
               "id": "01557-002",
@@ -35410,8 +35390,13 @@
             },
             {
               "id": "01557-003",
-              "source": "But as I looked the waves began to ebb—and they ebbed as swiftly as, four years ago, they rolled in—ebbed out and out, to the gulf; and the Glen lay before me, beautiful and green, with a rainbow spanning Rainbow Valley—a rainbow of such splendid colour that it dazzled me—and I woke.”",
-              "target": "しかし、私が見ているうちに波が引き始めたの。そして、4年前に押し寄せたように、波は急速に引いていったの。湾に向かって引いていき、グレンは美しく緑豊かに広がっていて、虹が虹の谷を横切っていた。その虹はとても素晴らしい色彩で私を眩ませたわ。そして目が覚めたの。リラ、リラ・ブライス、潮が変わったのよ」"
+              "source": "But as I looked the waves began to ebb—and they ebbed as swiftly as, four years ago, they rolled in—ebbed out and out, to the gulf; and the Glen lay before me, beautiful and green, with a rainbow spanning Rainbow Valley—a rainbow of such splendid colour that it dazzled me—and I woke.",
+              "target": "しかし、私が見ているうちに波が引き始め、そして4年前と同じように、急速に引いていった。湾に向かって引いていき、グレンは美しく緑色で、虹が虹の谷を横切っているのが見えた。その虹はとても鮮やかな色彩で、私を眩ませた。そして目が覚めたの。"
+            },
+            {
+              "id": "01557-004",
+              "source": "Rilla—Rilla Blythe—the tide has turned.”",
+              "target": "リラ、リラ・ブライス、潮が変わったのよ。」"
             }
           ],
           "raw_line": 7531
@@ -35500,13 +35485,8 @@
           "paragraph": [
             {
               "id": "01564-000",
-              "source": "“Thank God,” said Susan, folding her trembling old hands,",
-              "target": "「感謝します」と、震える老いた手を組んだスーザンが言った。"
-            },
-            {
-              "id": "01564-001",
-              "source": "Then she added, under her breath, “but it won't bring our boys back.”",
-              "target": "そして彼女はつぶやいた。「でも、それでは私たちの子供たちを取り戻すことはできないわ」。"
+              "source": "“Thank God,” said Susan, folding her trembling old hands, Then she added, under her breath, “but it won't bring our boys back.”",
+              "target": "「感謝します」と、震える老いた手を組んだスーザンが言った。そして彼女はつぶやいた。「でも、それでは私たちの子供たちを取り戻すことはできないわ」。"
             }
           ],
           "raw_line": 7555
@@ -39900,5 +39880,5 @@
       "raw_line": 8371
     }
   ],
-  "cost": 2.095
+  "cost": 2.108
 }

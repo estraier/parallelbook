@@ -6,7 +6,7 @@
   "title": {
     "id": "00000-000",
     "source": "I Have a Dream",
-    "target": "私には夢があります"
+    "target": "私には夢がある"
   },
   "author": {
     "id": "00001-000",
@@ -21,7 +21,7 @@
             {
               "id": "00002-000",
               "source": "I am happy to join with you today in what will go down in history as the greatest demonstration for freedom in the history of our nation.",
-              "target": "私は今日、歴史に残る我が国史上最大の自由のためのデモに参加できることを嬉しく思います。"
+              "target": "私は今日、我が国の歴史における自由のための最大のデモンストレーションとして歴史に残るであろうこの場に、皆さんと共に参加できることを嬉しく思います。"
             }
           ],
           "raw_line": 6
@@ -31,17 +31,17 @@
             {
               "id": "00003-000",
               "source": "Five score years ago, a great American, in whose symbolic shadow we stand today, signed the Emancipation Proclamation.",
-              "target": "五十年前、偉大なアメリカ人が、彼の象徴的な影の下で今日立っている我々が、奴隷解放宣言に署名しました。"
+              "target": "100年前、今日我々がその象徴的な影の下に立っている偉大なアメリカ人が、奴隷解放宣言に署名しました。"
             },
             {
               "id": "00003-001",
               "source": "This momentous decree came as a great beacon light of hope to millions of Negro slaves who had been seared in the flames of withering injustice.",
-              "target": "この重大な布告は、数百万の黒人奴隷たちに、しぼんだ不正義の炎で焼かれた希望の大きな灯台として現れました。"
+              "target": "この重大な布告は、衰えゆく不正義の炎に焼かれてきた何百万もの黒人奴隷にとって、大いなる希望の灯台の光として現れました。"
             },
             {
               "id": "00003-002",
               "source": "It came as a joyous daybreak to end the long night of their captivity.",
-              "target": "それは、彼らの長い監禁の夜を終わらせる喜ばしい夜明けとして現れました。"
+              "target": "それは彼らの長い囚われの夜を終わらせる、喜びに満ちた夜明けとして訪れました。"
             }
           ],
           "raw_line": 8
@@ -51,27 +51,27 @@
             {
               "id": "00004-000",
               "source": "But one hundred years later, the Negro still is not free.",
-              "target": "しかし100年後も、黒人はまだ自由ではありません。"
+              "target": "しかし、100年後も黒人はまだ自由ではありません。"
             },
             {
               "id": "00004-001",
               "source": "One hundred years later, the life of the Negro is still sadly crippled by the manacles of segregation and the chains of discrimination.",
-              "target": "100年後もなお、黒人の生活は分離の手かせと差別の鎖によって悲しく制約されています。"
+              "target": "100年後も、黒人の生活は依然として隔離の手錠と差別の鎖によって悲しくも不自由なままです。"
             },
             {
               "id": "00004-002",
               "source": "One hundred years later, the Negro lives on a lonely island of poverty in the midst of a vast ocean of material prosperity.",
-              "target": "100年後も、黒人は物質的な繁栄の広大な海の中で貧困の孤島に住んでいます。"
+              "target": "100年後も、黒人は物質的繁栄の広大な海の中で、貧困という孤独な島に住んでいます。"
             },
             {
               "id": "00004-003",
               "source": "One hundred years later, the Negro is still languished in the corners of American society and finds himself an exile in his own land.",
-              "target": "100年後も、黒人はアメリカ社会の隅々にうずくまり、自国で亡命者として自らを見つけます。"
+              "target": "100年後も、黒人はアメリカ社会の片隅で苦しみ、自分の国で追放者のように感じています。"
             },
             {
               "id": "00004-004",
               "source": "And so we've come here today to dramatize a shameful condition.",
-              "target": "そして今日私たちはここに来て、恥ずべき状況を劇的に表現するために来ました。"
+              "target": "それゆえ、私たちは今日ここに来て、この恥ずべき状況を劇的に示すために集まりました。"
             }
           ],
           "raw_line": 10
@@ -81,27 +81,27 @@
             {
               "id": "00005-000",
               "source": "In a sense we've come to our nation's capital to cash a check.",
-              "target": "ある意味、私たちは国の首都にやってきて小切手を現金化しに来たのです。"
+              "target": "ある意味で、私たちは小切手を現金化するためにこの国の首都に来たのです。"
             },
             {
               "id": "00005-001",
               "source": "When the architects of our republic wrote the magnificent words of the Constitution and the Declaration of Independence, they were signing a promissory note to which every American was to fall heir.",
-              "target": "共和国の建築家たちが憲法や独立宣言の素晴らしい言葉を書いたとき、彼らは全てのアメリカ人が相続人となる約束手形に署名していました。"
+              "target": "我が国の建国者たちが憲法と独立宣言の壮大な言葉を書いたとき、彼らはすべてのアメリカ人が受け継ぐべき約束手形に署名していたのです。"
             },
             {
               "id": "00005-002",
               "source": "This note was a promise that all men, yes, black men as well as white men, would be guaranteed the \"unalienable Rights\" of \"Life, Liberty and the pursuit of Happiness.\"",
-              "target": "この手形は、すべての人々、そう、黒人も白人も、「生命、自由、幸福の追求」という「譲渡不能な権利」が保証されるという約束でした。"
+              "target": "この手形は、すべての人々、そう、黒人も白人も、「生命、自由、そして幸福の追求」という「譲ることのできない権利」が保証されるという約束でした。"
             },
             {
               "id": "00005-003",
               "source": "It is obvious today that America has defaulted on this promissory note, insofar as her citizens of color are concerned.",
-              "target": "今日、アメリカがこの約束手形について、有色人種の市民に関しては明らかに不履行していることは明らかです。"
+              "target": "今日、アメリカがこの約束手形を有色人種の市民に対して履行していないことは明らかです。"
             },
             {
               "id": "00005-004",
               "source": "Instead of honoring this sacred obligation, America has given the Negro people a bad check, a check which has come back marked \"insufficient funds.\"",
-              "target": "この神聖な義務を果たす代わりに、アメリカは黒人たちに不良小切手を渡し、その小切手は「不足資金」と印字されて戻ってきたのです。"
+              "target": "この神聖な義務を果たす代わりに、アメリカは黒人に対して不渡りの小切手を渡しました。それは「残高不足」と記された小切手です。"
             }
           ],
           "raw_line": 12
@@ -116,12 +116,12 @@
             {
               "id": "00006-001",
               "source": "We refuse to believe that there are insufficient funds in the great vaults of opportunity of this nation.",
-              "target": "この国の大きな機会の金庫には不足している資金があるとは信じません。"
+              "target": "この国の大きな機会の金庫に資金が不足しているとは信じません。"
             },
             {
               "id": "00006-002",
               "source": "And so, we've come to cash this check, a check that will give us upon demand the riches of freedom and the security of justice.",
-              "target": "だから、私たちはこの小切手を現金化しに来たのです。この小切手は、要求すれば私たちに自由の富と正義の安全をもたらしてくれるものです。"
+              "target": "それゆえ、私たちはこの小切手を現金化しに来たのです。この小切手は、要求に応じて自由の富と正義の安全を私たちに与えるものです。"
             }
           ],
           "raw_line": 14
@@ -131,32 +131,32 @@
             {
               "id": "00007-000",
               "source": "We have also come to this hallowed spot to remind America of the fierce urgency of Now.",
-              "target": "私たちはまた、この聖なる場所に来たのは、アメリカに今この瞬間の緊急性を思い起こさせるためです。"
+              "target": "私たちはまた、この神聖な場所に来て、アメリカに「今」の激しい緊急性を思い出させるために来ました。"
             },
             {
               "id": "00007-001",
               "source": "This is no time to engage in the luxury of cooling off or to take the tranquilizing drug of gradualism.",
-              "target": "今は冷静になる贅沢をする時ではないし、徐々に進む鎮静剤を服用する時でもありません。"
+              "target": "今は、冷却の贅沢にふけったり、漸進主義という鎮静剤を服用する時ではありません。"
             },
             {
               "id": "00007-002",
               "source": "Now is the time to make real the promises of democracy.",
-              "target": "今こそ民主主義の約束を実現する時なのです。"
+              "target": "今こそ、民主主義の約束を現実のものとする時です。"
             },
             {
               "id": "00007-003",
               "source": "Now is the time to rise from the dark and desolate valley of segregation to the sunlit path of racial justice.",
-              "target": "今こそ、分離という暗く荒涼とした谷から、人種的正義の陽の光が差す道へと立ち上がる時なのです。"
+              "target": "今こそ、隔離の暗く荒れ果てた谷から、人種的正義の陽光に照らされた道へと立ち上がる時です。"
             },
             {
               "id": "00007-004",
               "source": "Now is the time to lift our nation from the quicksands of racial injustice to the solid rock of brotherhood.",
-              "target": "今こそ、私たちの国を人種的不正義の流砂から、兄弟愛の堅固な岩へと引き上げる時なのです。"
+              "target": "今こそ、人種的不正義の流砂から、兄弟愛の堅固な岩へと我々の国を引き上げる時です。"
             },
             {
               "id": "00007-005",
               "source": "Now is the time to make justice a reality for all of God's children.",
-              "target": "今こそ、正義を神のすべての子どもたちにとって現実のものとする時なのです。"
+              "target": "今こそ、すべての神の子供たちのために正義を現実のものとする時です。"
             }
           ],
           "raw_line": 16
@@ -166,12 +166,12 @@
             {
               "id": "00008-000",
               "source": "It would be fatal for the nation to overlook the urgency of the moment.",
-              "target": "国がこの緊急性を見落とすことは致命的だろう。"
+              "target": "この瞬間の緊急性を見過ごすことは、国家にとって致命的である。"
             },
             {
               "id": "00008-001",
               "source": "This sweltering summer of the Negro's legitimate discontent will not pass until there is an invigorating autumn of freedom and equality.",
-              "target": "ネグロの正当な不満のこの蒸し暑い夏は、自由と平等の爽やかな秋が訪れるまで終わることはないだろう。"
+              "target": "黒人の正当な不満のこの暑苦しい夏は、自由と平等の活気ある秋が訪れるまで過ぎ去ることはない。"
             },
             {
               "id": "00008-002",
@@ -181,17 +181,17 @@
             {
               "id": "00008-003",
               "source": "And those who hope that the Negro needed to blow off steam and will now be content will have a rude awakening if the nation returns to business as usual.",
-              "target": "そして、ネグロが蒸し返しを必要とし、今は満足するだろうと希望する人々は、国がいつも通りのビジネスに戻れば、失望することになるだろう。"
+              "target": "黒人が鬱憤を晴らして満足するだろうと期待する者たちは、国家が通常の状態に戻れば、厳しい現実に直面することになるだろう。"
             },
             {
               "id": "00008-004",
               "source": "And there will be neither rest nor tranquility in America until the Negro is granted his citizenship rights.",
-              "target": "そして、ネグロが市民権を与えられるまで、アメリカには休息も平穏も訪れないだろう。"
+              "target": "黒人に市民権が与えられるまで、アメリカには休息も平穏もないだろう。"
             },
             {
               "id": "00008-005",
               "source": "The whirlwinds of revolt will continue to shake the foundations of our nation until the bright day of justice emerges.",
-              "target": "反乱の旋風は、正義の明るい日が訪れるまで、我々の国の基盤を揺るがし続けるだろう。"
+              "target": "正義の明るい日が現れるまで、反乱の旋風は我々の国家の基盤を揺るがし続けるだろう。"
             }
           ],
           "raw_line": 18
@@ -200,33 +200,28 @@
           "paragraph": [
             {
               "id": "00009-000",
-              "source": "But there is something that I must say to my people, who stand on the warm threshold which leads into the palace of justice:",
-              "target": "しかし、正義の宮殿へと続く暖かい敷居に立つ私の人々に言わねばならないことがあります。"
+              "source": "But there is something that I must say to my people, who stand on the warm threshold which leads into the palace of justice: In the process of gaining our rightful place, we must not be guilty of wrongful deeds.",
+              "target": "しかし、正義の宮殿へと続く温かい敷居に立つ私の人々に言わねばならないことがあります。我々が正当な地位を得る過程で、不正な行いをしてはなりません。"
             },
             {
               "id": "00009-001",
-              "source": "In the process of gaining our rightful place, we must not be guilty of wrongful deeds.",
-              "target": "正当な地位を得る過程で、不正な行為に手を染めてはなりません。"
+              "source": "Let us not seek to satisfy our thirst for freedom by drinking from the cup of bitterness and hatred.",
+              "target": "苦しみと憎しみの杯から飲むことで、自由への渇望を満たそうとしてはなりません。"
             },
             {
               "id": "00009-002",
-              "source": "Let us not seek to satisfy our thirst for freedom by drinking from the cup of bitterness and hatred.",
-              "target": "自由への渇望を苦しみや憎しみの杯で満たそうとしてはいけません。"
+              "source": "We must forever conduct our struggle on the high plane of dignity and discipline.",
+              "target": "我々の闘争は常に尊厳と規律の高い次元で行わねばなりません。"
             },
             {
               "id": "00009-003",
-              "source": "We must forever conduct our struggle on the high plane of dignity and discipline.",
-              "target": "永遠に、尊厳と規律の高いレベルで闘いを続けなければなりません。"
+              "source": "We must not allow our creative protest to degenerate into physical violence.",
+              "target": "創造的な抗議が物理的な暴力に堕落することを許してはなりません。"
             },
             {
               "id": "00009-004",
-              "source": "We must not allow our creative protest to degenerate into physical violence.",
-              "target": "創造的な抗議が暴力に堕ちることを許してはなりません。"
-            },
-            {
-              "id": "00009-005",
               "source": "Again and again, we must rise to the majestic heights of meeting physical force with soul force.",
-              "target": "何度でも、肉体的な力に魂の力で立ち向かう壮大な高みに昇らねばなりません。"
+              "target": "何度も何度も、物理的な力に魂の力で対抗するという荘厳な高みへと昇らねばなりません。"
             }
           ],
           "raw_line": 20
@@ -236,12 +231,12 @@
             {
               "id": "00010-000",
               "source": "The marvelous new militancy which has engulfed the Negro community must not lead us to a distrust of all white people, for many of our white brothers, as evidenced by their presence here today, have come to realize that their destiny is tied up with our destiny.",
-              "target": "ネグロコミュニティを包み込んだ素晴らしい新しい闘志が、私たちをすべての白人に対する不信へと導いてはならない。なぜなら、今日ここにいる多くの白人の兄弟たちは、彼らの運命が私たちの運命と結びついていることを悟ってきたからだ。"
+              "target": "黒人社会を包み込んでいる素晴らしい新たな闘争心が、すべての白人を不信に陥れることがあってはなりません。なぜなら、今日ここにいることで示されているように、多くの白人の兄弟たちは、自分たちの運命が私たちの運命と結びついていることを理解するようになったからです。"
             },
             {
               "id": "00010-001",
               "source": "And they have come to realize that their freedom is inextricably bound to our freedom.",
-              "target": "そして、彼らは自分たちの自由が私たちの自由と切り離せないほど結びついていることを理解してきた。"
+              "target": "そして、彼らは自分たちの自由が私たちの自由と切り離せないものであることを理解するようになりました。"
             }
           ],
           "raw_line": 22
@@ -251,17 +246,17 @@
             {
               "id": "00011-000",
               "source": "We cannot walk alone.",
-              "target": "私たちは一人では歩けない。"
+              "target": "私たちは一人で歩むことはできません。"
             },
             {
               "id": "00011-001",
               "source": "And as we walk, we must make the pledge that we shall always march ahead.",
-              "target": "そして私たちが歩む限り、私たちは常に前進することを誓わなければならない。"
+              "target": "そして、歩む際には、常に前進し続けることを誓わなければなりません。"
             },
             {
               "id": "00011-002",
               "source": "We cannot turn back.",
-              "target": "引き返すことはできない。"
+              "target": "私たちは後戻りすることはできません。"
             }
           ],
           "raw_line": 24
@@ -271,37 +266,37 @@
             {
               "id": "00012-000",
               "source": "There are those who are asking the devotees of civil rights, \"When will you be satisfied?\"",
-              "target": "「公民権の信奉者よ、いつ満足するのか」という人々がいます。"
+              "target": "公民権の信奉者たちに「いつ満足するのか」と問う者たちがいます。"
             },
             {
               "id": "00012-001",
               "source": "We can never be satisfied as long as the Negro is the victim of the unspeakable horrors of police brutality.",
-              "target": "私たちは、黒人が言い表せないほどの警察の残虐行為の犠牲者である限り、決して満足することはできません。"
+              "target": "黒人が警察の残虐行為という言葉にできない恐怖の犠牲者である限り、私たちは決して満足できません。"
             },
             {
               "id": "00012-002",
               "source": "We can never be satisfied as long as our bodies, heavy with the fatigue of travel, cannot gain lodging in the motels of the highways and the hotels of the cities.",
-              "target": "私たちの疲れ果てた体が、旅の疲れを抱えても、高速道路のモーテルや都市のホテルで宿泊できない限り、決して満足することはできません。"
+              "target": "旅の疲れで重くなった私たちの体が、高速道路のモーテルや都市のホテルに宿泊できない限り、私たちは決して満足できません。"
             },
             {
               "id": "00012-003",
               "source": "We cannot be satisfied as long as the negro's basic mobility is from a smaller ghetto to a larger one.",
-              "target": "黒人の基本的な移動が、より大きなゲットーからより大きなゲットーへという限られたものである限り、私たちは満足することはできません。"
+              "target": "黒人の基本的な移動が小さなゲットーから大きなゲットーへの移動である限り、私たちは満足できません。"
             },
             {
               "id": "00012-004",
               "source": "We can never be satisfied as long as our children are stripped of their self-hood and robbed of their dignity by signs stating: \"For Whites Only.\"",
-              "target": "私たちの子供たちが「白人専用」と書かれた看板によって自己を奪われ、尊厳を奪われる限り、私たちは決して満足することはできません。"
+              "target": "「白人専用」と書かれた看板によって、私たちの子供たちが自己を奪われ、尊厳を奪われる限り、私たちは決して満足できません。"
             },
             {
               "id": "00012-005",
               "source": "We cannot be satisfied as long as a Negro in Mississippi cannot vote and a Negro in New York believes he has nothing for which to vote.",
-              "target": "ミシシッピ州の黒人が投票できず、ニューヨークの黒人が何のために投票すべきか分からないと信じている限り、私たちは満足することはできません。"
+              "target": "ミシシッピの黒人が投票できず、ニューヨークの黒人が投票する理由がないと信じている限り、私たちは満足できません。"
             },
             {
               "id": "00012-006",
               "source": "No, no, we are not satisfied, and we will not be satisfied until \"justice rolls down like waters, and righteousness like a mighty stream.\"",
-              "target": "いいえ、いいえ、私たちは満足していませんし、\"正義が水のように流れ、義が大きな川のようになる\"まで満足することはありません。"
+              "target": "いいえ、いいえ、私たちは満足していませんし、「正義が水のように流れ、正義が力強い流れのようになる」まで満足しません。"
             }
           ],
           "raw_line": 26
@@ -311,32 +306,32 @@
             {
               "id": "00013-000",
               "source": "I am not unmindful that some of you have come here out of great trials and tribulations.",
-              "target": "私は、あなたたちの中には大きな試練と苦難を経てここに来た人もいることを忘れていません。"
+              "target": "私は、あなた方の中には大きな試練と苦難を経てここに来た人々がいることを忘れてはいません。"
             },
             {
               "id": "00013-001",
               "source": "Some of you have come fresh from narrow jail cells.",
-              "target": "狭い牢獄から出てきた人もいます。"
+              "target": "あなた方の中には、狭い牢獄から出てきたばかりの人もいます。"
             },
             {
               "id": "00013-002",
               "source": "And some of you have come from areas where your quest -- quest for freedom left you battered by the storms of persecution and staggered by the winds of police brutality.",
-              "target": "自由を求める旅が、あなたたちを迫害の嵐に翻弄され、警察の暴力の風によってよろめかせた場所から来た人もいます。"
+              "target": "また、自由を求めるあなた方の探求が、迫害の嵐に打たれ、警察の暴力の風に揺さぶられた地域から来た人もいます。"
             },
             {
               "id": "00013-003",
               "source": "You have been the veterans of creative suffering.",
-              "target": "あなたたちは創造的な苦しみのベテランです。"
+              "target": "あなた方は創造的な苦しみのベテランです。"
             },
             {
               "id": "00013-004",
               "source": "Continue to work with the faith that unearned suffering is redemptive.",
-              "target": "報われない苦しみが救済されるという信念を持ち続けてください。"
+              "target": "報われない苦しみが救いとなるという信念を持って働き続けてください。"
             },
             {
               "id": "00013-005",
               "source": "Go back to Mississippi, go back to Alabama, go back to South Carolina, go back to Georgia, go back to Louisiana, go back to the slums and ghettos of our northern cities, knowing that somehow this situation can and will be changed.",
-              "target": "ミシシッピに戻り、アラバマに戻り、サウスカロライナに戻り、ジョージアに戻り、ルイジアナに戻り、北部都市のスラムやゲットーに戻り、この状況がどうにかして変わることを知ってください。"
+              "target": "ミシシッピに戻り、アラバマに戻り、サウスカロライナに戻り、ジョージアに戻り、ルイジアナに戻り、北部の都市のスラムやゲットーに戻ってください。この状況がどうにかして変わることができ、そして変わるであろうことを知ってください。"
             }
           ],
           "raw_line": 28
@@ -346,7 +341,7 @@
             {
               "id": "00014-000",
               "source": "Let us not wallow in the valley of despair, I say to you today, my friends.",
-              "target": "絶望の谷に陥ることなかれ、私は今日、友よ、あなたに言う。"
+              "target": "絶望の谷に浸ることはやめましょう。今日、私はあなたたちに言います、友よ。"
             }
           ],
           "raw_line": 30
@@ -356,12 +351,12 @@
             {
               "id": "00015-000",
               "source": "And so even though we face the difficulties of today and tomorrow, I still have a dream.",
-              "target": "だから今日も明日も困難に直面しているとしても、私はまだ夢を持っています。"
+              "target": "それゆえ、たとえ私たちが今日と明日の困難に直面していても、私はなお夢を持っています。"
             },
             {
               "id": "00015-001",
               "source": "It is a dream deeply rooted in the American dream.",
-              "target": "それはアメリカン・ドリームに深く根ざした夢です。"
+              "target": "それはアメリカンドリームに深く根ざした夢です。"
             }
           ],
           "raw_line": 32
@@ -370,8 +365,13 @@
           "paragraph": [
             {
               "id": "00016-000",
-              "source": "I have a dream that one day this nation will rise up and live out the true meaning of its creed: \"We hold these truths to be self-evident, that all men are created equal.\"",
-              "target": "いつかこの国が立ち上がり、その信条の真の意味を実現するという夢を抱いています。「我々はこれらの真理を自明のものとし、すべての人間は平等に造られている」と。"
+              "source": "I have a dream that one day this nation will rise up and live out the true meaning of its creed:",
+              "target": "私は夢を持っています。いつの日か、この国が立ち上がり、その信条の真の意味を実現することを。"
+            },
+            {
+              "id": "00016-001",
+              "source": "\"We hold these truths to be self-evident, that all men are created equal.\"",
+              "target": "「我々はこれらの真実を自明のものと信じる。すべての人間は平等に創られているということを。」"
             }
           ],
           "raw_line": 34
@@ -381,7 +381,7 @@
             {
               "id": "00017-000",
               "source": "I have a dream that one day on the red hills of Georgia, the sons of former slaves and the sons of former slave owners will be able to sit down together at the table of brotherhood.",
-              "target": "いつの日か、ジョージア州の赤い丘で、元奴隷の息子たちと元奴隷所有者の息子たちが兄弟愛のテーブルに一緒に座ることができるという夢を抱いています。"
+              "target": "私は夢を持っています、いつの日かジョージアの赤い丘の上で、かつての奴隷の子孫と、かつての奴隷所有者の子孫が、兄弟愛のテーブルに共に座ることができるという夢を。"
             }
           ],
           "raw_line": 36
@@ -391,7 +391,7 @@
             {
               "id": "00018-000",
               "source": "I have a dream that one day even the state of Mississippi, a state sweltering with the heat of injustice, sweltering with the heat of oppression, will be transformed into an oasis of freedom and justice.",
-              "target": "いつかミシシッピ州という不正の熱で蒸し暑く、抑圧の熱で蒸し暑い州ですら、自由と正義のオアシスに変わる日が来ると私は夢見ています。"
+              "target": "私は夢を持っています、いつの日かミシシッピ州でさえも、不正義の熱にうだる州、抑圧の熱にうだる州が、自由と正義のオアシスに変わるという夢を。"
             }
           ],
           "raw_line": 38
@@ -401,7 +401,7 @@
             {
               "id": "00019-000",
               "source": "I have a dream that my four little children will one day live in a nation where they will not be judged by the color of their skin but by the content of their character.",
-              "target": "私には夢があります。いつの日か、私の4人の小さな子どもたちが、肌の色でではなく、その人の性格で判断される国で生活することができるという夢です。"
+              "target": "私には夢があります。いつの日か、私の四人の幼い子供たちが、肌の色ではなく、その人格の中身によって評価される国に住むことができるという夢です。"
             }
           ],
           "raw_line": 40
@@ -411,12 +411,17 @@
             {
               "id": "00020-000",
               "source": "I have a dream today!",
-              "target": "私には今日も夢があります！"
+              "target": "私は今日、夢を持っています！"
             },
             {
               "id": "00020-001",
-              "source": "I have a dream that one day, down in Alabama, with its vicious racists, with its governor having his lips dripping with the words of \"interposition\" and \"nullification\" -- one day right there in Alabama little black boys and black girls will be able to join hands with little white boys and white girls as sisters and brothers.",
-              "target": "私には夢があります。ある日、アラバマ州で、その残忍な人種差別主義者たちがいる場所で、その知事が「干渉」と「無効宣言」という言葉を滴らせながら -- ある日、まさにその場所で、小さな黒人の男の子や女の子が、小さな白人の男の子や女の子と手を取り合い、姉妹や兄弟として共に過ごすことができる日が来ることを夢見ています。"
+              "source": "I have a dream that one day, down in Alabama, with its vicious racists, with its governor having his lips dripping with the words of \"interposition\" and \"nullification\" --",
+              "target": "私は夢を持っています。いつの日か、アラバマ州で、そこには悪意ある人種差別主義者たちがいて、知事が「介入」と「無効化」という言葉を口にしているその場所で、"
+            },
+            {
+              "id": "00020-002",
+              "source": "one day right there in Alabama little black boys and black girls will be able to join hands with little white boys and white girls as sisters and brothers.",
+              "target": "いつの日か、まさにそのアラバマ州で、小さな黒人の男の子と女の子が、小さな白人の男の子と女の子と兄弟姉妹として手をつなぐことができるようになるという夢を。"
             }
           ],
           "raw_line": 42
@@ -426,12 +431,17 @@
             {
               "id": "00021-000",
               "source": "I have a dream today!",
-              "target": "私は今、夢を持っています！"
+              "target": "私は今日、夢を持っています！"
             },
             {
               "id": "00021-001",
-              "source": "I have a dream that one day every valley shall be exalted, and every hill and mountain shall be made low, the rough places will be made plain, and the crooked places will be made straight; \"and the glory of the Lord shall be revealed and all flesh shall see it together.\"",
-              "target": "いつか、すべての谷が高められ、すべての丘や山が低くされ、でこぼこの場所が平らにされ、曲がった場所がまっすぐにされる夢を持っています。そして、主の栄光が現れ、すべての人が一緒に見るでしょう。"
+              "source": "I have a dream that one day every valley shall be exalted, and every hill and mountain shall be made low, the rough places will be made plain, and the crooked places will be made straight;",
+              "target": "私は、いつの日か、すべての谷が高められ、すべての丘や山が低くされ、でこぼこした場所が平らにされ、曲がった場所がまっすぐにされるという夢を持っています；"
+            },
+            {
+              "id": "00021-002",
+              "source": "\"and the glory of the Lord shall be revealed and all flesh shall see it together.\"",
+              "target": "「そして主の栄光が現れ、すべての人がそれを共に見るでしょう。」"
             }
           ],
           "raw_line": 44
@@ -441,7 +451,7 @@
             {
               "id": "00022-000",
               "source": "This is our hope, and this is the faith that I go back to the South with.",
-              "target": "これが私たちの希望であり、これが私が南部に持ち帰る信念です。"
+              "target": "これが私たちの希望です。そして、これが私が南部に持ち帰る信仰です。"
             }
           ],
           "raw_line": 46
@@ -451,17 +461,17 @@
             {
               "id": "00023-000",
               "source": "With this faith, we will be able to hew out of the mountain of despair a stone of hope.",
-              "target": "この信念を持って、私たちは絶望の山から希望の石を切り出すことができるでしょう。"
+              "target": "この信仰を持って、私たちは絶望の山から希望の石を切り出すことができるでしょう。"
             },
             {
               "id": "00023-001",
               "source": "With this faith, we will be able to transform the jangling discords of our nation into a beautiful symphony of brotherhood.",
-              "target": "この信念を持って、私たちは国家の不協和音を美しい友愛の交響曲に変えることができるでしょう。"
+              "target": "この信仰を持って、私たちは国の不協和音を美しい兄弟愛の交響曲に変えることができるでしょう。"
             },
             {
               "id": "00023-002",
               "source": "With this faith, we will be able to work together, to pray together, to struggle together, to go to jail together, to stand up for freedom together, knowing that we will be free one day.",
-              "target": "この信念を持って、私たちは一緒に働き、一緒に祈り、一緒に闘い、一緒に牢獄に入り、自由のために立ち上がることができるでしょう。そしていつか私たちは自由になることを知っています。"
+              "target": "この信仰を持って、私たちは共に働き、共に祈り、共に闘い、共に投獄され、共に自由のために立ち上がることができるでしょう。そして、いつの日か私たちが自由になることを知っているのです。"
             }
           ],
           "raw_line": 48
@@ -470,8 +480,13 @@
           "paragraph": [
             {
               "id": "00024-000",
-              "source": "And this will be the day -- this will be the day when all of God's children will be able to sing with new meaning:",
-              "target": "そして、これがその日となるでしょう―神の子どもたち全員が新たな意味を持って歌える日が、それがです："
+              "source": "And this will be the day --",
+              "target": "そしてこの日が来るでしょう――"
+            },
+            {
+              "id": "00024-001",
+              "source": "this will be the day when all of God's children will be able to sing with new meaning:",
+              "target": "この日は、すべての神の子供たちが新たな意味を持って歌うことができる日です。"
             }
           ],
           "raw_line": 50
@@ -481,17 +496,12 @@
             {
               "id": "00025-000",
               "source": "My country 'tis of thee, sweet land of liberty, of thee I sing.",
-              "target": "わが祖国よ、君は自由の美しい地、君に歌おう。"
+              "target": "我が国よ、汝のことを歌う、自由の甘美な地よ。"
             },
             {
               "id": "00025-001",
-              "source": "Land where my fathers died, land of the Pilgrim's pride,",
-              "target": "先祖が亡くなった土地、巡礼者の誇りの地、"
-            },
-            {
-              "id": "00025-002",
-              "source": "From every mountainside, let freedom ring!",
-              "target": "あらゆる山々から、自由を鳴らそう！"
+              "source": "Land where my fathers died, land of the Pilgrim's pride, From every mountainside, let freedom ring!",
+              "target": "我が父祖が死んだ地、巡礼者の誇りの地よ、すべての山の側面から、自由の鐘を鳴らそう！"
             }
           ],
           "raw_line": 52
@@ -501,32 +511,32 @@
             {
               "id": "00026-000",
               "source": "And if America is to be a great nation, this must become true.",
-              "target": "もしアメリカが偉大な国であり続けるなら、このことが実現しなければならない。"
+              "target": "そして、もしアメリカが偉大な国家となるならば、これは実現しなければなりません。"
             },
             {
               "id": "00026-001",
               "source": "And so let freedom ring from the prodigious hilltops of New Hampshire.",
-              "target": "そして、ニューハンプシャー州の雄大な丘の頂から自由の鐘を鳴らそう。"
+              "target": "だからこそ、ニューハンプシャーの壮大な丘の上から自由の鐘を鳴らしましょう。"
             },
             {
               "id": "00026-002",
               "source": "Let freedom ring from the mighty mountains of New York.",
-              "target": "ニューヨークの強大な山々から自由の鐘を鳴らそう。"
+              "target": "ニューヨークの力強い山々から自由の鐘を鳴らしましょう。"
             },
             {
               "id": "00026-003",
               "source": "Let freedom ring from the heightening Alleghenies of Pennsylvania.",
-              "target": "ペンシルベニア州の高まるアレゲニー山脈から自由の鐘を鳴らそう。"
+              "target": "ペンシルベニアの高まるアレゲーニー山脈から自由の鐘を鳴らしましょう。"
             },
             {
               "id": "00026-004",
               "source": "Let freedom ring from the snow-capped Rockies of Colorado.",
-              "target": "コロラド州の雪をかぶったロッキー山脈から自由の鐘を鳴らそう。"
+              "target": "コロラドの雪を頂くロッキー山脈から自由の鐘を鳴らしましょう。"
             },
             {
               "id": "00026-005",
               "source": "Let freedom ring from the curvaceous slopes of California.",
-              "target": "カリフォルニア州の曲線美の斜面から自由の鐘を鳴らそう。"
+              "target": "カリフォルニアの曲線美しい斜面から自由の鐘を鳴らしましょう。"
             }
           ],
           "raw_line": 54
@@ -536,22 +546,22 @@
             {
               "id": "00027-000",
               "source": "But not only that: Let freedom ring from Stone Mountain of Georgia.",
-              "target": "しかし、それだけではありません。ジョージア州のストーンマウンテンから自由を響かせよう。"
+              "target": "しかしそれだけではありません。ジョージア州のストーンマウンテンからも自由の鐘を鳴らしましょう。"
             },
             {
               "id": "00027-001",
               "source": "Let freedom ring from Lookout Mountain of Tennessee.",
-              "target": "テネシー州のルックアウトマウンテンから自由を響かせよう。"
+              "target": "テネシー州のルックアウトマウンテンからも自由の鐘を鳴らしましょう。"
             },
             {
               "id": "00027-002",
               "source": "Let freedom ring from every hill and molehill of Mississippi.",
-              "target": "ミシシッピ州のあらゆる丘や小高から自由を響かせよう。"
+              "target": "ミシシッピ州のあらゆる丘や小丘からも自由の鐘を鳴らしましょう。"
             },
             {
               "id": "00027-003",
               "source": "From every mountainside, let freedom ring.",
-              "target": "あらゆる山々の斜面から、自由を響かせよう。"
+              "target": "あらゆる山の側面から、自由の鐘を鳴らしましょう。"
             }
           ],
           "raw_line": 56
@@ -561,7 +571,7 @@
             {
               "id": "00028-000",
               "source": "And when this happens, and when we allow freedom ring, when we let it ring from every village and every hamlet, from every state and every city, we will be able to speed up that day when all of God's children, black men and white men, Jews and Gentiles, Protestants and Catholics, will be able to join hands and sing in the words of the old Negro spiritual:",
-              "target": "そして、このようなことが起こり、自由の鐘を鳴らすことを許し、村や町、州や都市から鳴らすようにすると、全ての神の子どもたち、黒人と白人、ユダヤ人と異邦人、プロテスタントとカトリック教徒が手を取り合い、古い黒人霊歌の言葉で歌う日を早めることができるでしょう。"
+              "target": "そしてこれが起こり、私たちが自由を響かせることを許すとき、それをすべての村や小さな集落、すべての州や都市から響かせるとき、私たちは、すべての神の子供たち、黒人も白人も、ユダヤ人も異邦人も、プロテスタントもカトリックも、手を取り合い、古い黒人霊歌の言葉で歌うことができるその日を早めることができるでしょう。"
             }
           ],
           "raw_line": 58
@@ -570,8 +580,18 @@
           "paragraph": [
             {
               "id": "00029-000",
-              "source": "Free at last! Free at last! Thank God Almighty, we are free at last!",
-              "target": "やっと自由だ！ やっと自由だ！全能の神に感謝します、やっと自由だ！"
+              "source": "Free at last!",
+              "target": "ついに自由になった！"
+            },
+            {
+              "id": "00029-001",
+              "source": "Free at last!",
+              "target": "ついに自由になった！"
+            },
+            {
+              "id": "00029-002",
+              "source": "Thank God Almighty, we are free at last!",
+              "target": "全能の神に感謝します、私たちはついに自由になったのです！"
             }
           ],
           "raw_line": 60
@@ -580,5 +600,5 @@
       "raw_line": 6
     }
   ],
-  "cost": 0.03
+  "cost": 0.25
 }

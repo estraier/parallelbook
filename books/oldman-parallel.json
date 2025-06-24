@@ -7250,13 +7250,8 @@
           "paragraph": [
             {
               "id": "00387-000",
-              "source": "He did not dream of the lions but instead of a vast school of porpoises that stretched for eight or ten miles",
-              "target": "彼はライオンの夢を見るのではなく、8〜10マイルに及ぶ広大なイルカの群れの夢を見た"
-            },
-            {
-              "id": "00387-001",
-              "source": "and it was in the time of their mating and they would leap high into the air and return into the same hole they had made in the water when they leaped.",
-              "target": "それはイルカたちの交尾の時期であり、彼らは空高く跳び上がり、水中に跳ぶ際に作った同じ穴に戻っていくのだった。"
+              "source": "He did not dream of the lions but instead of a vast school of porpoises that stretched for eight or ten miles and it was in the time of their mating and they would leap high into the air and return into the same hole they had made in the water when they leaped.",
+              "target": "彼はライオンの夢を見るのではなく、8〜10マイルに及ぶ広大なイルカの群れの夢を見た、それはイルカたちの交尾の時期であり、彼らは空高く跳び上がり、水中に跳ぶ際に作った同じ穴に戻っていくのだった。"
             }
           ],
           "raw_line": 1511

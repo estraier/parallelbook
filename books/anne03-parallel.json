@@ -51,12 +51,27 @@
             {
               "id": "00005-000",
               "source": "To be sure, if you came down to harsh facts . . . which, it must be confessed, Anne seldom did until she had to . . . it did not seem likely that there was much promising material for celebrities in Avonlea school; but you could never tell what might happen if a teacher used her influence for good.",
-              "target": "確かに、厳しい現実に立ち向かうとなると...認めざるを得ないが、アンは必要があるまで滅多にそうしなかった...エイボンリーの学校には有望な有名人材が多くいるとは思えなかったが、教師が良い方向に影響を与えると何が起こるかはわからない。"
+              "target": "確かに、冷酷な事実に立ち向かうとしたら...それを白状しなければならないが、アンは必要に迫られるまで滅多にそこには行かなかった...エイボンリーの学校には有望な有名人材がほとんどいないように見えた。しかし、教師がその影響力を良い方向に使えば、何が起こるか誰にもわからない。"
             },
             {
               "id": "00005-001",
-              "source": "Anne had certain rose-tinted ideals of what a teacher might accomplish if she only went the right way about it; and she was in the midst of a delightful scene, forty years hence, with a famous personage . . . just exactly what he was to be famous for was left in convenient haziness, but Anne thought it would be rather nice to have him a college president or a Canadian premier . . . bowing low over her wrinkled hand and assuring her that it was she who had first kindled his ambition, and that all his success in life was due to the lessons she had instilled so long ago in Avonlea school.",
-              "target": "アンは、教師が正しい方法で進めば何ができるかについて、ある種のローズ色の理想を持っていた。そして、彼女は楽しい場面の中にいて、40年後、有名人と一緒にいる...彼が有名になる理由は便宜的に曖昧にされていたが、アンは彼を大学の学長やカナダの首相にしたいと思っていた...彼が彼女のしわの手をかがめ、彼女が彼の野心を最初にかき立てたのは彼女であり、彼の人生での成功はすべて、彼女がエイボンリーの学校で長い間教え込んだ授業のおかげだと彼女に保証した。"
+              "source": "Anne had certain rose-tinted ideals of what a teacher might accomplish if she only went the right way about it;",
+              "target": "アンは、教師が正しい方法で行けば何ができるかについて確かな理想を持っていた。"
+            },
+            {
+              "id": "00005-002",
+              "source": "and she was in the midst of a delightful scene, forty years hence, with a famous personage . . . just exactly what he was to be famous for was left in convenient haziness, but Anne thought it would be rather nice to have him a college president or a Canadian premier .",
+              "target": "そして、彼女は気晴らしのシーンの最中で、40年後、有名な人物と一緒にいる...彼が何で有名になるかは便宜的に曖昧のままだが、アンは彼が大学の学長やカナダの首相になってくれると思うのはかなりいいことだと考えていた。"
+            },
+            {
+              "id": "00005-003",
+              "source": ". . . bowing low over her wrinkled hand and assuring her that it was she who had first kindled his ambition, and that all his success in life was due to the lessons she had instilled so long ago in Avonlea school.",
+              "target": "彼女の皺だらけの手に深くお辞儀をして、彼女に彼の野望を初めて燃やしたのは彼女であり、彼の人生でのすべての成功は、彼女がエイボンリーの学校でずっと前に教え込んでくれた授業のおかげだと彼女に確信させた。"
+            },
+            {
+              "id": "00005-004",
+              "source": "This pleasant vision was shattered by a most unpleasant interruption.",
+              "target": "この楽しい幻想は、非常に不快な中断によって打ち砕かれた。"
             }
           ],
           "raw_line": 13
@@ -2756,7 +2771,7 @@
             {
               "id": "00146-005",
               "source": "Some people object to his swearing habits but he can’t be broken of them.",
-              "target": " swearing（悪態）をする癖には文句を言う人もいるが、それを直すことはできないんだ。"
+              "target": "swearing（悪態）をする癖には文句を言う人もいるが、それを直すことはできないんだ。"
             },
             {
               "id": "00146-006",
@@ -6335,16 +6350,11 @@
             },
             {
               "id": "00322-001",
-              "source": "the fire was crackling cheerily, a vase of frost-bleached ferns and ruby-red maple leaves adorned the table,",
-              "target": "暖炉が陽気にパチパチと音を立て、霜で白くなったシダとルビー色のカエデの葉が飾られた花瓶がテーブルを飾っていた。"
+              "source": "the fire was crackling cheerily, a vase of frost-bleached ferns and ruby-red maple leaves adorned the table, and delectable odors of ham and toast pervaded the air.",
+              "target": "暖炉が陽気にパチパチと音を立て、霜で白くなったシダとルビー色のカエデの葉が飾られた花瓶がテーブルを飾っていた。そして、ハムとトーストのおいしい香りが空気に漂っていた。"
             },
             {
               "id": "00322-002",
-              "source": "and delectable odors of ham and toast pervaded the air.",
-              "target": "そして、ハムとトーストのおいしい香りが空気に漂っていた。"
-            },
-            {
-              "id": "00322-003",
               "source": "But Marilla sank into her chair with a deep sigh.",
               "target": "しかし、マリラは深いため息をつきながら椅子に沈んでしまった。"
             }
@@ -9085,7 +9095,7 @@
           "paragraph": [
             {
               "id": "00458-000",
-              "source": "“No, I don’t,” said Davy stoutly. ",
+              "source": "“No, I don’t,” said Davy stoutly.",
               "target": "「いや、知らないよ」とデイヴィはしっかりと言った。"
             },
             {
@@ -11190,51 +11200,46 @@
             },
             {
               "id": "00566-001",
-              "source": "‘it was someone who was studying for a minister, and so he could write lovely letters,",
-              "target": "『牧師になるために勉強していた人で、だから素敵な手紙が書けたの。"
+              "source": "‘it was someone who was studying for a minister, and so he could write lovely letters, but ma didn’t marry him after all.",
+              "target": "『牧師になるために勉強していた人で、だから素敵な手紙が書けたの。でも結局、ママは彼と結婚しなかったの。"
             },
             {
               "id": "00566-002",
-              "source": "but ma didn’t marry him after all.",
-              "target": "でも結局、ママは彼と結婚しなかったの。"
-            },
-            {
-              "id": "00566-003",
               "source": "She said she couldn’t make out what he was driving at half the time.",
               "target": "彼が何を言いたいのか半分もわからなかったって言ってたわ。"
             },
             {
-              "id": "00566-004",
+              "id": "00566-003",
               "source": "But I thought the letters were sweet and that I’d just copy things out of them here and there to write you.",
               "target": "でも私はその手紙が素敵だと思って、あちこちから抜き出してあなたに書こうと思ったの。"
             },
             {
-              "id": "00566-005",
+              "id": "00566-004",
               "source": "I put “teacher” where he put “lady” and I put in something of my own when I could think of it and I changed some words.",
               "target": "彼が「レディ」と書いたところを「先生」にして、思いついたときには自分の言葉を入れて、いくつかの言葉を変えたの。"
             },
             {
-              "id": "00566-006",
+              "id": "00566-005",
               "source": "I put “dress” in place of “mood.”",
               "target": "「ムード」の代わりに「ドレス」を入れたの。"
             },
             {
-              "id": "00566-007",
+              "id": "00566-006",
               "source": "I didn’t know just what a “mood” was but I s’posed it was something to wear.",
               "target": "「ムード」が何なのかよくわからなかったけど、何か着るものだと思ったの。"
             },
             {
-              "id": "00566-008",
+              "id": "00566-007",
               "source": "I didn’t s’pose you’d know the difference.",
               "target": "あなたが違いに気づくとは思わなかったの。"
             },
             {
-              "id": "00566-009",
+              "id": "00566-008",
               "source": "I don’t see how you found out it wasn’t all mine.",
               "target": "どうして全部が私のものじゃないってわかったのかしら。"
             },
             {
-              "id": "00566-010",
+              "id": "00566-009",
               "source": "You must be awful clever, teacher.’",
               "target": "先生は本当に賢いに違いないわ。』"
             }
@@ -11840,13 +11845,8 @@
             },
             {
               "id": "00590-002",
-              "source": "The coal rolled to every part of the room, her slate was broken into fragments,",
-              "target": "石炭は部屋のあちこちに転がり、彼女の黒板は破片になり、"
-            },
-            {
-              "id": "00590-003",
-              "source": "and when she picked herself up, her face, stained with coal dust, sent the boys into roars of laughter.",
-              "target": "そして、彼女が立ち上がると、石炭の粉で汚れた顔が、男の子たちを爆笑させた。"
+              "source": "The coal rolled to every part of the room, her slate was broken into fragments, and when she picked herself up, her face, stained with coal dust, sent the boys into roars of laughter.",
+              "target": "石炭は部屋のあちこちに転がり、彼女の黒板は破片になり、そして、彼女が立ち上がると、石炭の粉で汚れた顔が、男の子たちを爆笑させた。"
             }
           ],
           "raw_line": 2540
@@ -12640,13 +12640,8 @@
           "paragraph": [
             {
               "id": "00634-000",
-              "source": "“Every morn is a fresh beginning,",
-              "target": "「すべての朝は新たな始まり、"
-            },
-            {
-              "id": "00634-001",
-              "source": "Every morn is the world made new,”",
-              "target": "すべての朝は世界を新たにする」とアンは歌った。"
+              "source": "“Every morn is a fresh beginning, Every morn is the world made new,”",
+              "target": "「すべての朝は新たな始まり、すべての朝は世界を新たにする」とアンは歌った。"
             }
           ],
           "raw_line": 2707
@@ -12750,21 +12745,16 @@
           "paragraph": [
             {
               "id": "00641-000",
-              "source": "“I never expected to win him by whipping him, though,” said Anne, a little mournfully, ",
-              "target": "「ムチで彼を勝ち取るなんて、決して期待していなかったわ」と、アンは少し悲しげに言った。"
+              "source": "“I never expected to win him by whipping him, though,” said Anne, a little mournfully, feeling that her ideals had played her false somewhere.",
+              "target": "「ムチで彼を勝ち取るなんて、決して期待していなかったわ」と、アンは少し悲しげに言った。どこかで自分の理想が裏切られたと感じながら。"
             },
             {
               "id": "00641-001",
-              "source": "feeling that her ideals had played her false somewhere. ",
-              "target": "どこかで自分の理想が裏切られたと感じながら。"
-            },
-            {
-              "id": "00641-002",
-              "source": "“It doesn’t seem right. ",
+              "source": "“It doesn’t seem right.",
               "target": "それは正しくないように思えるわ。"
             },
             {
-              "id": "00641-003",
+              "id": "00641-002",
               "source": "I’m sure my theory of kindness can’t be wrong.”",
               "target": "きっと私の親切の理論は間違っていないはず」。"
             }
@@ -13280,16 +13270,11 @@
           "paragraph": [
             {
               "id": "00673-000",
-              "source": "Anne, standing behind them, implored Priscilla with her eyes not to perpetrate another such name",
-              "target": "彼らの後ろに立つアンは、プリシラに目で懇願し、もう一つそのような名前を提案しないようにと。"
+              "source": "Anne, standing behind them, implored Priscilla with her eyes not to perpetrate another such name and Priscilla rose to the occasion with “Glimmer-glass.”",
+              "target": "彼らの後ろに立つアンは、プリシラに目で懇願し、もう一つそのような名前を提案しないようにと。プリシラはその場にふさわしい名前として「グリマーグラス」と提案した。"
             },
             {
               "id": "00673-001",
-              "source": "and Priscilla rose to the occasion with “Glimmer-glass.”",
-              "target": "プリシラはその場にふさわしい名前として「グリマーグラス」と提案した。"
-            },
-            {
-              "id": "00673-002",
               "source": "Anne’s selection was “The Fairies’ Mirror.”",
               "target": "アンの選択は「妖精の鏡」だった。"
             }
@@ -26211,12 +26196,17 @@
             {
               "id": "01328-003",
               "source": "He says you must never sow seeds or kill pork or cut your hair or do any ‘portant thing in the wrong time of the moon.",
-              "target": "彼は、種をまく、豚を屠る、髪を切る、または重要なことをする時期を間違えてはいけないと言うんだ。"
+              "target": "彼は、種をまく、豚を屠る、髪を切る、または重要なことをするときは、決して月の時期を間違えてはいけないと言うんだ。"
             },
             {
               "id": "01328-004",
-              "source": "Is that true, Anne?”",
-              "target": "アン、それって本当なのかな？教えて。」"
+              "source": "Is that true, Anne?",
+              "target": "アン、それって本当なのかな？」"
+            },
+            {
+              "id": "01328-005",
+              "source": "I want to know.”",
+              "target": "教えてほしいな。」"
             }
           ],
           "raw_line": 5599
@@ -26600,7 +26590,7 @@
           "paragraph": [
             {
               "id": "01347-000",
-              "source": "“Well, I’d have said my prayers too if I’d have thought of it,” said Davy; ",
+              "source": "“Well, I’d have said my prayers too if I’d have thought of it,” said Davy;",
               "target": "「まあ、もし考えていたら、私も祈りを捧げたでしょう」とデイヴィが言った。"
             },
             {
@@ -28600,21 +28590,16 @@
           "paragraph": [
             {
               "id": "01445-000",
-              "source": "Mrs. Rachel looked sharply at Anne,",
-              "target": "レイチェル夫人はアンを鋭く見つめましたが、"
+              "source": "Mrs. Rachel looked sharply at Anne, but Anne was bending over a sleepy Davy nodding on the sofa and nothing was to be read in her face.",
+              "target": "レイチェル夫人はアンを鋭く見つめましたが、アンはソファでうとうとしているデイビーにかがみ込んでおり、彼女の顔からは何も読み取れませんでした。"
             },
             {
               "id": "01445-001",
-              "source": "but Anne was bending over a sleepy Davy nodding on the sofa and nothing was to be read in her face.",
-              "target": "アンはソファでうとうとしているデイビーにかがみ込んでおり、彼女の顔からは何も読み取れませんでした。"
-            },
-            {
-              "id": "01445-002",
               "source": "She carried Davy away, her oval girlish cheek pressed against his curly yellow head.",
               "target": "彼女はデイビーを抱き上げ、彼の巻き毛の黄色い頭に自分の卵形の少女らしい頬を押し当てました。"
             },
             {
-              "id": "01445-003",
+              "id": "01445-002",
               "source": "As they went up the stairs Davy flung a tired arm about Anne’s neck and gave her a warm hug and a sticky kiss.",
               "target": "階段を上がるとき、デイビーは疲れた腕をアンの首に回し、彼女に温かい抱擁とべたべたしたキスをしました。"
             }
@@ -29590,56 +29575,51 @@
             },
             {
               "id": "01490-006",
-              "source": "and I have a fancy that if I could steal back there some spring evening, just at the magic time ’twixt light and dark, and tiptoe so softly up the beech hill that my footsteps could not frighten her,",
-              "target": "もし私が春の夕方にそっと戻って、その光と闇の間の魔法の時間に、彼女を驚かせないように足音を立てずにそっとブナの丘を上ることができたらと思っているの。"
+              "source": "and I have a fancy that if I could steal back there some spring evening, just at the magic time ’twixt light and dark, and tiptoe so softly up the beech hill that my footsteps could not frighten her, I would find the garden just as it used to be, all sweet with June lilies and early roses, with the tiny house beyond it all hung with vines;",
+              "target": "もし私が春の夕方にそっと戻って、その光と闇の間の魔法の時間に、彼女を驚かせないように足音を立てずにそっとブナの丘を上ることができたらと思っているの。そして庭は昔のままで、6月のユリと初夏のバラが香り、小さな家は蔓で覆われているのを見つけると思うの。"
             },
             {
               "id": "01490-007",
-              "source": "I would find the garden just as it used to be, all sweet with June lilies and early roses, with the tiny house beyond it all hung with vines;",
-              "target": "そして庭は昔のままで、6月のユリと初夏のバラが香り、小さな家は蔓で覆われているのを見つけると思うの。"
-            },
-            {
-              "id": "01490-008",
               "source": "and little Hester Gray would be there, with her soft eyes, and the wind ruffling her dark hair, wandering about, putting her fingertips under the chins of the lilies and whispering secrets with the roses;",
               "target": "そしてヘスター・グレイちゃんはそこにいて、柔らかい目をし、風が彼女の黒髪を揺らしながら歩き回り、ユリの顎の下に指を差し入れてバラと秘密を囁いているの。"
             },
             {
-              "id": "01490-009",
+              "id": "01490-008",
               "source": "and I would go forward, oh, so softly, and hold out my hands and say to her, ‘Little Hester Gray, won’t you let me be your playmate, for I love the roses too?’",
               "target": "そして私は前に進み、そっと手を差し出して『ヘスター・グレイちゃん、私もバラが大好きだからあなたの遊び相手にならせてくれない？』と言うの。"
             },
             {
-              "id": "01490-010",
+              "id": "01490-009",
               "source": "And we would sit down on the old bench and talk a little and dream a little, or just be beautifully silent together.",
               "target": "そして私たちは古いベンチに座り、少し話したり、夢を見たり、ただ静かに一緒に過ごしたりするの。"
             },
             {
-              "id": "01490-011",
+              "id": "01490-010",
               "source": "And then the moon would rise and I would look around me . . .",
               "target": "そして月が昇って私が周りを見ると..."
             },
             {
-              "id": "01490-012",
+              "id": "01490-011",
               "source": "and there would be no Hester Gray and no little vine-hung house, and no roses . . .",
               "target": "そこにはもうヘスター・グレイも、小さな蔓で覆われた家も、バラもなくて..."
             },
             {
-              "id": "01490-013",
+              "id": "01490-012",
               "source": "only an old waste garden starred with June lilies amid the grasses, and the wind sighing, oh, so sorrowfully in the cherry trees.",
               "target": "ただ草の中に6月のユリが咲く古い荒れた庭と、桜の木の間で風がとても悲しげにため息をついているだけなの。"
             },
             {
-              "id": "01490-014",
+              "id": "01490-013",
               "source": "And I would not know whether it had been real or if I had just imagined it all.”",
               "target": "そしてそれが現実だったのか、それともただ想像したことなのか分からなくなるの。」"
             },
             {
-              "id": "01490-015",
+              "id": "01490-014",
               "source": "Diana crawled up and got her back against the headboard of the bed.",
               "target": "ダイアナは起き上がり、ベッドのヘッドボードにもたれかかった。"
             },
             {
-              "id": "01490-016",
+              "id": "01490-015",
               "source": "When your companion of twilight hour said such spooky things it was just as well not to be able to fancy there was anything behind you.",
               "target": "たそがれ時の仲間がこんな不気味なことを言うと、背後に何もないと思える方が良かった。"
             }
@@ -30190,7 +30170,7 @@
             },
             {
               "id": "01516-001",
-              "source": " entreated Davy.",
+              "source": "entreated Davy.",
               "target": "デイビーは懇願しました。"
             }
           ],
@@ -30376,62 +30356,72 @@
             {
               "id": "01522-000",
               "source": "“But I’ll wash my face before I go courting,” protested Davy, trying to improve matters by rubbing the back of his hand over the smears.",
-              "target": "「でも、デートに行く前に顔を洗うよ」とデイヴィーが抗議し、手の甲でシミをこすり取ろうとしています。"
+              "target": "「でも、デイヴィーは抗議した。「デートに行く前に顔を洗うよ。」と言って、手の甲でシミをこすることで状況を改善しようとしていた。"
             },
             {
               "id": "01522-001",
               "source": "“And I’ll wash behind my ears too, without being told.",
-              "target": "「それに耳の後ろも洗うよ。言われなくても。"
+              "target": "「それに、耳の後ろも洗うよ。言われなくても。"
             },
             {
               "id": "01522-002",
               "source": "I remembered to this morning, Marilla.",
-              "target": "今朝は覚えてたよ、マリラ。"
+              "target": "今朝は覚えていたよ、マリラ。"
             },
             {
               "id": "01522-003",
               "source": "I don’t forget half as often as I did.",
-              "target": "昔ほど忘れなくなったんだ。"
+              "target": "昔ほどよく忘れなくなった。"
             },
             {
               "id": "01522-004",
-              "source": "But . . .” and Davy sighed . . . “there’s so many corners about a fellow that it’s awful hard to remember them all.",
-              "target": "でも…」とデイヴィーがため息をつきながら言います。「男の人にはたくさんの隅があるから、全部覚えるのはすごく難しいんだ。"
+              "source": "But . . .” and Davy sighed . . .",
+              "target": "でも…」とデイヴィーがため息をついた。"
             },
             {
               "id": "01522-005",
+              "source": "“there’s so many corners about a fellow that it’s awful hard to remember them all.",
+              "target": "「男の子にはたくさんの隅があって、それを全部覚えるのはとても難しいんだ。"
+            },
+            {
+              "id": "01522-006",
               "source": "Well, if I can’t go to Miss Lavendar’s I’ll go over and see Mrs. Harrison.",
               "target": "まあ、ミス・ラベンダーのところに行けないなら、ハリソン夫人のところに行くよ。"
             },
             {
-              "id": "01522-006",
-              "source": "Mrs. Harrison’s an awful nice woman, I tell you.",
-              "target": "ハリソン夫人はすごくいい人なんだ、本当だよ。"
-            },
-            {
               "id": "01522-007",
-              "source": "She keeps a jar of cookies in her pantry a-purpose for little boys, and she always gives me the scrapings out of a pan she’s mixed up a plum cake in.",
-              "target": "彼女はパントリーに子どもたちのためにクッキーの入った瓶を置いていて、いつもプラムケーキを作るときの鍋の端の部分をくれるんだ。"
+              "source": "Mrs. Harrison’s an awful nice woman, I tell you.",
+              "target": "ハリソン夫人は本当に素敵な女性なんだ、信じて。"
             },
             {
               "id": "01522-008",
+              "source": "She keeps a jar of cookies in her pantry a-purpose for little boys, and she always gives me the scrapings out of a pan she’s mixed up a plum cake in.",
+              "target": "彼女はパントリーに子供たちのためにクッキーの瓶を置いていて、いつもプラムケーキを作る時の鍋の端の部分をくれるんだ。"
+            },
+            {
+              "id": "01522-009",
               "source": "A good many plums stick to the sides, you see.",
               "target": "たくさんのプラムが鍋の側面にくっついているんだ。"
             },
             {
-              "id": "01522-009",
-              "source": "Mr. Harrison was always a nice man, but he’s twice as nice since he got married over again.",
-              "target": "ハリソンさんはいつもいい人だったけど、再婚してからは2倍くらいいい人になったよ。"
-            },
-            {
               "id": "01522-010",
-              "source": "I guess getting married makes folks nicer.",
-              "target": "結婚すると人はいい人になるんだろうね。"
+              "source": "Mr. Harrison was always a nice man, but he’s twice as nice since he got married over again.",
+              "target": "ハリソンさんはいつも素敵な男性だったけど、再婚してからは2倍も素敵になったんだ。"
             },
             {
               "id": "01522-011",
-              "source": "Why don’t you get married, Marilla?”",
-              "target": "なんで結婚しないの、マリラ？」"
+              "source": "I guess getting married makes folks nicer.",
+              "target": "結婚すると人は優しくなるんだろうね。"
+            },
+            {
+              "id": "01522-012",
+              "source": "Why don’t you get married, Marilla?",
+              "target": "なんで結婚しないの、マリラ？"
+            },
+            {
+              "id": "01522-013",
+              "source": "I want to know.”",
+              "target": "教えてほしいな。」"
             }
           ],
           "raw_line": 6503
@@ -32095,13 +32085,8 @@
             },
             {
               "id": "01601-001",
-              "source": "“I’m wholesomely ashamed to think that a new dress . . . even it is a forget-me-not organdy . . . should exhilarate me so,",
-              "target": "「新しいドレスが私をそんなに喜ばせるなんて、考えると健全な恥ずかしさを感じますが、"
-            },
-            {
-              "id": "01601-002",
-              "source": "when a good conscience and an extra contribution to Foreign Missions couldn’t do it.”",
-              "target": "良心の呵責や外国宣教の追加寄付がそれをできなかったことを」"
+              "source": "“I’m wholesomely ashamed to think that a new dress . . . even it is a forget-me-not organdy . . . should exhilarate me so, when a good conscience and an extra contribution to Foreign Missions couldn’t do it.”",
+              "target": "「新しいドレスが私をそんなに喜ばせるなんて、考えると健全な恥ずかしさを感じますが、良心の呵責や外国宣教の追加寄付がそれをできなかったことを」"
             }
           ],
           "raw_line": 6872

@@ -635,7 +635,7 @@
           "paragraph": [
             {
               "id": "00032-000",
-              "source": "“One moment,” I asked. ",
+              "source": "“One moment,” I asked.",
               "target": "「ちょっと待ってください」と私は尋ねました。"
             },
             {
@@ -3261,7 +3261,12 @@
             {
               "id": "00192-000",
               "source": "As the drag drew up in the enclosure near the grand stand I glanced at the card to see the entries.",
-              "target": "ドラッグがグランドスタンドの近くの囲いに停まると、私はエントリーを見るためにカードをちらりと見ました。"
+              "target": "ドラッグがグランドスタンドの近くのエンクロージャーに停車すると、私はエントリーを見るためにカードをちらりと見ました。"
+            },
+            {
+              "id": "00192-001",
+              "source": "It ran:—",
+              "target": "掲載内容は次の通りでした:"
             }
           ],
           "raw_line": 662
@@ -4035,7 +4040,7 @@
           "paragraph": [
             {
               "id": "00229-000",
-              "source": "“Wonderful!” cried the Colonel. ",
+              "source": "“Wonderful!” cried the Colonel.",
               "target": "「素晴らしい！」と大佐が叫んだ。"
             },
             {
@@ -7235,16 +7240,11 @@
             },
             {
               "id": "00370-004",
-              "source": "That he should have kept himself in training under such circumstances is remarkable,",
-              "target": "そのような状況下で彼がトレーニングを続けていたことは驚くべきことだが、"
+              "source": "That he should have kept himself in training under such circumstances is remarkable, but his diet was usually of the sparest, and his habits were simple to the verge of austerity.",
+              "target": "そのような状況下で彼がトレーニングを続けていたことは驚くべきことだが、彼の食事は普通極めて質素であり、彼の習慣は禁欲主義の瀬戸際までシンプルだった。"
             },
             {
               "id": "00370-005",
-              "source": "but his diet was usually of the sparest, and his habits were simple to the verge of austerity.",
-              "target": "彼の食事は普通極めて質素であり、彼の習慣は禁欲主義の瀬戸際までシンプルだった。"
-            },
-            {
-              "id": "00370-006",
               "source": "Save for the occasional use of cocaine, he had no vices, and he only turned to the drug as a protest against the monotony of existence when cases were scanty and the papers uninteresting.",
               "target": "コカインを時折使用することを除けば、彼は悪癖がなく、事件が少なく新聞がつまらないときに、生活の単調さに抗議するためにその薬物に頼るだけだった。"
             }
@@ -9840,7 +9840,7 @@
           "paragraph": [
             {
               "id": "00507-000",
-              "source": "“My God!” he cried. ",
+              "source": "“My God!” he cried.",
               "target": "「まさか！」彼は叫んだ。"
             },
             {
@@ -11945,13 +11945,8 @@
           "paragraph": [
             {
               "id": "00637-000",
-              "source": "Sherlock Holmes rubbed his hands with delight",
-              "target": "シャーロック・ホームズは喜びで手をこすりました"
-            },
-            {
-              "id": "00637-001",
-              "source": "and I stared with astonishment at our client.",
-              "target": "私は驚きながら、私たちの依頼人をじっと見つめました。"
+              "source": "Sherlock Holmes rubbed his hands with delight and I stared with astonishment at our client.",
+              "target": "シャーロック・ホームズは喜びで手をこすりました、私は驚きながら、私たちの依頼人をじっと見つめました。"
             }
           ],
           "raw_line": 2473
@@ -16420,26 +16415,16 @@
           "paragraph": [
             {
               "id": "00883-000",
-              "source": "“‘I am delighted to hear it,",
-              "target": "「それを聞いて嬉しいです。"
+              "source": "“‘I am delighted to hear it, for your advice at present would be exceedingly valuable to me.",
+              "target": "「それを聞いて嬉しいです。今の私にはあなたの助言が非常に貴重です。"
             },
             {
               "id": "00883-001",
-              "source": "for your advice at present would be exceedingly valuable to me.",
-              "target": "今の私にはあなたの助言が非常に貴重です。"
+              "source": "We have had some very strange doings at Hurlstone, and the police have been able to throw no light upon the matter.",
+              "target": "ハールストンでは非常に奇妙な出来事がありました。警察もその件について何の手がかりも得られていません。"
             },
             {
               "id": "00883-002",
-              "source": "We have had some very strange doings at Hurlstone,",
-              "target": "ハールストンでは非常に奇妙な出来事がありました。"
-            },
-            {
-              "id": "00883-003",
-              "source": "and the police have been able to throw no light upon the matter.",
-              "target": "警察もその件について何の手がかりも得られていません。"
-            },
-            {
-              "id": "00883-004",
               "source": "It is really the most extraordinary and inexplicable business.’",
               "target": "本当に最も奇妙で説明のつかない事件です。」"
             }
@@ -23120,12 +23105,12 @@
           "paragraph": [
             {
               "id": "01256-000",
-              "source": "“‘I promised my friend that I would say nothing of the matter, and a promise is a promise,’ said she; ",
+              "source": "“‘I promised my friend that I would say nothing of the matter, and a promise is a promise,’ said she;",
               "target": "「友達にこのことを一切口外しないと約束したのです。約束は守らねばなりません」と彼女は言いました。"
             },
             {
               "id": "01256-001",
-              "source": "‘but if I can really help her when so serious a charge is laid against her, and when her own mouth, poor darling, is closed by illness, then I think I am absolved from my promise. ",
+              "source": "‘but if I can really help her when so serious a charge is laid against her, and when her own mouth, poor darling, is closed by illness, then I think I am absolved from my promise.",
               "target": "しかし、彼女に非常に重い罪状がかけられ、かつ自分の口が病気で閉ざされているときに、本当に彼女を助けられるのであれば、私は約束を果たしたと思います。"
             },
             {
@@ -28730,17 +28715,17 @@
           "paragraph": [
             {
               "id": "01595-000",
-              "source": "“‘There are five sovereigns here,’ said he, walking up to me, ",
+              "source": "“‘There are five sovereigns here,’ said he, walking up to me,",
               "target": "「『ここに5ポンド金貨がある』と彼は言い、私の方に歩み寄り、"
             },
             {
               "id": "01595-001",
-              "source": "‘which will, I hope, be a sufficient fee. ",
+              "source": "‘which will, I hope, be a sufficient fee.",
               "target": "『これが十分な報酬になることを願っています。"
             },
             {
               "id": "01595-002",
-              "source": "But remember,’ he added, tapping me lightly on the chest and giggling, ",
+              "source": "But remember,’ he added, tapping me lightly on the chest and giggling,",
               "target": "しかし、覚えておいてください』と彼は付け加え、私の胸を軽く叩きながらくすくす笑い、"
             },
             {
@@ -38531,17 +38516,22 @@
             {
               "id": "02187-000",
               "source": "“Certainly not!” he cried.",
-              "target": "「もちろんそんなことはない！」彼は叫んだ。"
+              "target": "「もちろん違います！」彼は叫んだ。"
             },
             {
               "id": "02187-001",
               "source": "“But it has the hotel mark upon it!",
-              "target": "しかし、ホテルの印がついているじゃないか！"
+              "target": "「しかし、ホテルの印がついています！"
             },
             {
               "id": "02187-002",
-              "source": "Ha, it must have been written by that tall Englishman who came in after you had gone.”",
-              "target": "ああ、お前が去った後にやってきたあの背の高いイギリス人が書いたに違いない。」"
+              "source": "Ha, it must have been written by that tall Englishman who came in after you had gone.",
+              "target": "ああ、あなたが去った後にやってきたあの背の高いイギリス人が書いたに違いない。"
+            },
+            {
+              "id": "02187-003",
+              "source": "He said—”",
+              "target": "彼が言った―」"
             }
           ],
           "raw_line": 7935

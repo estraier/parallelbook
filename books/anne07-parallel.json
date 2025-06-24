@@ -3535,13 +3535,8 @@
           "paragraph": [
             {
               "id": "00160-000",
-              "source": "“We had only bread and molasses for supper",
-              "target": "「夕食にはパンと糖蜜しかありませんでした」とウーナは愚痴った。"
-            },
-            {
-              "id": "00160-001",
-              "source": "and cold ditto for dinner,” said Una plaintively.",
-              "target": "「そして冷たい同じものが夕食に出されました」とウーナは悲しげに言った。"
+              "source": "“We had only bread and molasses for supper and cold ditto for dinner,” said Una plaintively.",
+              "target": "「夕食にはパンと糖蜜しかありませんでした」とウーナは愚痴った。「そして冷たい同じものが夕食に出されました」とウーナは悲しげに言った。"
             }
           ],
           "raw_line": 755
@@ -9420,13 +9415,8 @@
           "paragraph": [
             {
               "id": "00461-000",
-              "source": "“I’m going to pray that you won’t have to go back,” whispered Una",
-              "target": "「あなたが戻らなくて済むように祈るわ」とウーナがささやいた。"
-            },
-            {
-              "id": "00461-001",
-              "source": "as she and Mary walked home to the manse.",
-              "target": "2人がマンスへ帰る途中で。"
+              "source": "“I’m going to pray that you won’t have to go back,” whispered Una as she and Mary walked home to the manse.",
+              "target": "「あなたが戻らなくて済むように祈るわ」とウーナがささやいた。2人がマンスへ帰る途中で。"
             }
           ],
           "raw_line": 1984
@@ -9615,7 +9605,7 @@
           "paragraph": [
             {
               "id": "00471-000",
-              "source": "“But what is to be done, Mrs. Elliott?” he asked helplessly. ",
+              "source": "“But what is to be done, Mrs. Elliott?” he asked helplessly.",
               "target": "「でも、エリオット夫人、どうしたらいいのでしょうか？」彼は無力そうに尋ねました。"
             },
             {
@@ -10940,16 +10930,11 @@
             },
             {
               "id": "00544-001",
-              "source": "“since you and I can’t settle it,",
-              "target": "「あなたと私では解決できないから、"
+              "source": "“since you and I can’t settle it, there ain’t no use in talking more about it until we’ve a chanct to find out the rights of it.",
+              "target": "「あなたと私では解決できないから、それについての正しいことが分かるまで話しても無駄よ。"
             },
             {
               "id": "00544-002",
-              "source": "there ain’t no use in talking more about it until we’ve a chanct to find out the rights of it.",
-              "target": "それについての正しいことが分かるまで話しても無駄よ。"
-            },
-            {
-              "id": "00544-003",
               "source": "I’ll do the best I can alone till then.”",
               "target": "それまでは私一人でできる限りのことをするわ。」"
             }
@@ -11970,13 +11955,8 @@
             },
             {
               "id": "00587-004",
-              "source": "but there was no mother, and poor little Carl, with his sore throat and aching head and crimson cheeks, rolled himself up in his twisted bedclothes and suffered alone,",
-              "target": "しかし、母親はいなかった。カールは、喉の痛みや頭痛、真っ赤な頬を抱え、ひねくれた寝具にくるまって一人苦しんでいた。"
-            },
-            {
-              "id": "00587-005",
-              "source": "somewhat comforted by the companionship of a small green lizard in the pocket of his ragged nighty.",
-              "target": "そのぼろぼろのパジャマのポケットにいた小さな緑色のトカゲとの付き合いに少し安らぎを感じていた。"
+              "source": "but there was no mother, and poor little Carl, with his sore throat and aching head and crimson cheeks, rolled himself up in his twisted bedclothes and suffered alone, somewhat comforted by the companionship of a small green lizard in the pocket of his ragged nighty.",
+              "target": "しかし、母親はいなかった。カールは、喉の痛みや頭痛、真っ赤な頬を抱え、ひねくれた寝具にくるまって一人苦しんでいた。そのぼろぼろのパジャマのポケットにいた小さな緑色のトカゲとの付き合いに少し安らぎを感じていた。"
             }
           ],
           "raw_line": 2498
@@ -12950,13 +12930,8 @@
           "paragraph": [
             {
               "id": "00640-000",
-              "source": "“There were gardens bright with sinuous rills Where blossomed many an incense bearing tree,",
-              "target": "「曲がりくねった小川が輝く庭園があり、多くの香り高い木々が咲いていました。"
-            },
-            {
-              "id": "00640-001",
-              "source": "And there were forests ancient as the hills Enfolding sunny spots of greenery.”",
-              "target": "そして、丘のように古い森があり、緑の明るい場所を包み込んでいました。」"
+              "source": "“There were gardens bright with sinuous rills Where blossomed many an incense bearing tree, And there were forests ancient as the hills Enfolding sunny spots of greenery.”",
+              "target": "「曲がりくねった小川が輝く庭園があり、多くの香り高い木々が咲いていました。そして、丘のように古い森があり、緑の明るい場所を包み込んでいました。」"
             }
           ],
           "raw_line": 2711
@@ -31740,161 +31715,146 @@
           "paragraph": [
             {
               "id": "01431-000",
-              "source": "Mrs. Clow came with a glass of milk,",
-              "target": "クロウ夫人が牛乳の入ったグラスを持ってきた。"
+              "source": "Mrs. Clow came with a glass of milk, Faith and Jerry and Carl sneaked off to the pantry, and John Meredith went into his study, where he sat in the darkness for a long time, alone with his bitter thoughts.",
+              "target": "クロウ夫人が牛乳の入ったグラスを持ってきた。フェイスとジェリーとカールはこっそりと食料庫へ向かった。そしてジョン・メレディスは書斎に入った。そこで彼は長い間、暗闇の中で苦い思いにふけりながら座っていた。"
             },
             {
               "id": "01431-001",
-              "source": "Faith and Jerry and Carl sneaked off to the pantry,",
-              "target": "フェイスとジェリーとカールはこっそりと食料庫へ向かった。"
-            },
-            {
-              "id": "01431-002",
-              "source": "and John Meredith went into his study,",
-              "target": "そしてジョン・メレディスは書斎に入った。"
-            },
-            {
-              "id": "01431-003",
-              "source": "where he sat in the darkness for a long time, alone with his bitter thoughts.",
-              "target": "そこで彼は長い間、暗闇の中で苦い思いにふけりながら座っていた。"
-            },
-            {
-              "id": "01431-004",
               "source": "So his children were bringing themselves up because there was “nobody to do it”—struggling along amid their little perplexities without a hand to guide or a voice to counsel.",
               "target": "だから彼の子供たちは「誰もしてくれない」ために自分たちで育っていたのだ—導く手も助言する声もない中で小さな困惑に苦しみながら。"
             },
             {
-              "id": "01431-005",
+              "id": "01431-002",
               "source": "Faith’s innocently uttered phrase rankled in her father’s mind like a barbed shaft.",
               "target": "フェイスの無邪気に発した言葉が、父の心に刺さった矢のように残った。"
             },
             {
-              "id": "01431-006",
+              "id": "01431-003",
               "source": "There was “nobody” to look after them—to comfort their little souls and care for their little bodies.",
               "target": "彼らを見守り、小さな魂を慰め、小さな体を気遣う「誰も」いなかったのだ。"
             },
             {
-              "id": "01431-007",
+              "id": "01431-004",
               "source": "How frail Una had looked, lying there on the vestry sofa in that long faint!",
               "target": "ウーナが長い気絶の中で、教会の控え室のソファに横たわっていたとき、どれほどか弱く見えたことか！"
             },
             {
-              "id": "01431-008",
+              "id": "01431-005",
               "source": "How thin were her tiny hands, how pallid her little face!",
               "target": "彼女の小さな手はどれほど細く、顔はどれほど青白かったことか！"
             },
             {
-              "id": "01431-009",
+              "id": "01431-006",
               "source": "She looked as if she might slip away from him in a breath—sweet little Una, of whom Cecilia had begged him to take such special care.",
               "target": "彼からひと息で離れてしまいそうに見えた—セシリアが特に気をつけるように頼んだ、愛しい小さなウーナ。"
             },
             {
-              "id": "01431-010",
+              "id": "01431-007",
               "source": "Since his wife’s death he had not felt such an agony of dread as when he had hung over his little girl in her unconsciousness.",
               "target": "妻の死以来、彼は娘が意識を失っている間に彼女を見守っていたときほどの恐怖の苦しみを感じたことはなかった。"
             },
             {
-              "id": "01431-011",
+              "id": "01431-008",
               "source": "He must do something—but what?",
               "target": "何かをしなければ—でも何を？"
             },
             {
-              "id": "01431-012",
+              "id": "01431-009",
               "source": "Should he ask Elizabeth Kirk to marry him?",
               "target": "エリザベス・カークに結婚を申し込むべきだろうか？"
             },
             {
-              "id": "01431-013",
+              "id": "01431-010",
               "source": "She was a good woman—she would be kind to his children.",
               "target": "彼女は良い女性で—彼の子供たちに優しくしてくれるだろう。"
             },
             {
-              "id": "01431-014",
+              "id": "01431-011",
               "source": "He might bring himself to do it if it were not for his love for Rosemary West.",
               "target": "ローズマリー・ウェストへの愛がなければ、彼はそれをする気になるかもしれない。"
             },
             {
-              "id": "01431-015",
+              "id": "01431-012",
               "source": "But until he had crushed that out he could not seek another woman in marriage.",
               "target": "しかし、その愛を断ち切らない限り、彼は他の女性に結婚を求めることはできなかった。"
             },
             {
-              "id": "01431-016",
+              "id": "01431-013",
               "source": "And he could not crush it out—he had tried and he could not.",
               "target": "そして彼はそれを断ち切ることができなかった—試みたができなかった。"
             },
             {
-              "id": "01431-017",
+              "id": "01431-014",
               "source": "Rosemary had been in church that evening, for the first time since her return from Kingsport.",
               "target": "その晩、ローズマリーはキングスポートから戻って以来初めて教会に来ていた。"
             },
             {
-              "id": "01431-018",
+              "id": "01431-015",
               "source": "He had caught a glimpse of her face in the back of the crowded church, just as he had finished his sermon.",
               "target": "彼が説教を終えたとき、混雑した教会の後ろで彼女の顔を一瞬見かけた。"
             },
             {
-              "id": "01431-019",
+              "id": "01431-016",
               "source": "His heart had given a fierce throb.",
               "target": "彼の心臓は激しく鼓動した。"
             },
             {
-              "id": "01431-020",
+              "id": "01431-017",
               "source": "He sat while the choir sang the “collection piece,” with his bent head and tingling pulses.",
               "target": "彼は頭を垂れ、体中が震える中、聖歌隊が「献金の歌」を歌う間座っていた。"
             },
             {
-              "id": "01431-021",
+              "id": "01431-018",
               "source": "He had not seen her since the evening upon which he had asked her to marry him.",
               "target": "彼が彼女に結婚を申し込んだ晩以来、彼女を見ていなかった。"
             },
             {
-              "id": "01431-022",
+              "id": "01431-019",
               "source": "When he had risen to give out the hymn his hands were trembling and his pale face was flushed.",
               "target": "彼が賛美歌を配るために立ち上がったとき、彼の手は震え、青白い顔は赤くなっていた。"
             },
             {
-              "id": "01431-023",
+              "id": "01431-020",
               "source": "Then Una’s fainting spell had banished everything from his mind for a time.",
               "target": "その後、ウーナの気絶がしばらくの間、彼の心からすべてを追い払った。"
             },
             {
-              "id": "01431-024",
+              "id": "01431-021",
               "source": "Now, in the darkness and solitude of the study it rushed back.",
               "target": "今、書斎の暗闇と孤独の中でそれは戻ってきた。"
             },
             {
-              "id": "01431-025",
+              "id": "01431-022",
               "source": "Rosemary was the only woman in the world for him.",
               "target": "ローズマリーは彼にとって世界で唯一の女性だった。"
             },
             {
-              "id": "01431-026",
+              "id": "01431-023",
               "source": "It was of no use for him to think of marrying any other.",
               "target": "他の誰かと結婚することを考えるのは無駄だった。"
             },
             {
-              "id": "01431-027",
+              "id": "01431-024",
               "source": "He could not commit such a sacrilege even for his children’s sake.",
               "target": "彼は子供たちのためであっても、そのような冒涜を犯すことはできなかった。"
             },
             {
-              "id": "01431-028",
+              "id": "01431-025",
               "source": "He must take up his burden alone—he must try to be a better, a more watchful father—he must tell his children not to be afraid to come to him with all their little problems.",
               "target": "彼は一人でその重荷を背負わなければならなかった—より良い、より注意深い父親になろうとしなければならない—子供たちに、どんな小さな問題でも彼に相談することを恐れないように言わなければならなかった。"
             },
             {
-              "id": "01431-029",
+              "id": "01431-026",
               "source": "Then he lighted his lamp and took up a bulky new book which was setting the theological world by the ears.",
               "target": "それから彼はランプに火を灯し、神学界を騒がせている分厚い新しい本を手に取った。"
             },
             {
-              "id": "01431-030",
+              "id": "01431-027",
               "source": "He would read just one chapter to compose his mind.",
               "target": "彼は心を落ち着かせるためにちょうど一章を読むつもりだった。"
             },
             {
-              "id": "01431-031",
+              "id": "01431-028",
               "source": "Five minutes later he was lost to the world and the troubles of the world.",
               "target": "5分後、彼は世界とその問題から離れていた。"
             }
@@ -32870,8 +32830,18 @@
           "paragraph": [
             {
               "id": "01468-000",
-              "source": "“It was bigger than a million owls,” said Carl, sobbing—oh, how ashamed Carl was of that sobbing in after days—“and it—it grovelled just as Mary said—and it was crawling down over the dyke to get at us.”",
-              "target": "「何百万匹ものフクロウよりも大きかった」と、カールは泣きながら言った。ああ、後になってカールはその泣き声を恥じていた。「そして、それはメアリーが言った通りにグルグルと這っていて、堤防を降りてきて私たちに襲いかかろうとしていた。フクロウって這うの？」"
+              "source": "“It was bigger than a million owls,” said Carl, sobbing—oh, how ashamed Carl was of that sobbing in after days—",
+              "target": "「何百万匹ものフクロウよりも大きかった」と、カールは泣きながら言った。ああ、後になってその泣きじゃくりを恥じていたカールは。"
+            },
+            {
+              "id": "01468-001",
+              "source": "“and it—it grovelled just as Mary said—and it was crawling down over the dyke to get at us.",
+              "target": "そして、それはメアリーが言った通りに這いずり回っていて、堤防を這い降りてきて私たちに襲いかかろうとしていた。"
+            },
+            {
+              "id": "01468-002",
+              "source": "Do owls crawl?”",
+              "target": "フクロウって這うの？」"
             }
           ],
           "raw_line": 6888
@@ -36640,13 +36610,8 @@
             },
             {
               "id": "01648-001",
-              "source": "so Anne had lighted her ever ready fire of driftwood in the big living room,",
-              "target": "アンは大きなリビングルームでいつものように流木の火を灯していたので、"
-            },
-            {
-              "id": "01648-002",
-              "source": "and she and Miss Cornelia basked in its fairy flicker.",
-              "target": "彼女とミス・コーネリアはその幻想的な明かりに浴びていた。"
+              "source": "so Anne had lighted her ever ready fire of driftwood in the big living room, and she and Miss Cornelia basked in its fairy flicker.",
+              "target": "アンは大きなリビングルームでいつものように流木の火を灯していたので、彼女とミス・コーネリアはその幻想的な明かりに浴びていた。"
             }
           ],
           "raw_line": 7681
@@ -36905,13 +36870,8 @@
             },
             {
               "id": "01660-001",
-              "source": "The lads who were to fight, and perhaps fall, on the fields of France and Flanders, Gallipoli and Palestine, were still roguish schoolboys with a fair life in prospect before them:",
-              "target": "フランスやフランドル、ガリポリやパレスチナの戦場で戦い、そして倒れるかもしれない少年たちは、まだ悪ガキの学生で、前途洋々の人生が彼らの前に広がっていた。"
-            },
-            {
-              "id": "01660-002",
-              "source": "the girls whose hearts were to be wrung were yet fair little maidens a-star with hopes and dreams.",
-              "target": "心を痛めることになる少女たちは、まだ希望と夢に満ちた美しい少女たちだった。"
+              "source": "The lads who were to fight, and perhaps fall, on the fields of France and Flanders, Gallipoli and Palestine, were still roguish schoolboys with a fair life in prospect before them: the girls whose hearts were to be wrung were yet fair little maidens a-star with hopes and dreams.",
+              "target": "フランスやフランドル、ガリポリやパレスチナの戦場で戦い、そして倒れるかもしれない少年たちは、まだ悪ガキの学生で、前途洋々の人生が彼らの前に広がっていた。心を痛めることになる少女たちは、まだ希望と夢に満ちた美しい少女たちだった。"
             }
           ],
           "raw_line": 7734
