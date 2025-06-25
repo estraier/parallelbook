@@ -823,7 +823,7 @@ def execute_task(
   for record in batch_records:
     for translation in record["content"]:
       content.append(translation)
-    cost += record["cost"]
+    cost += record.get("cost", 0)
   merged_record = {
     "content": content,
     "hint": batch_hint,
@@ -849,7 +849,6 @@ def execute_task_single(
     if hint:
       record["hint"] = hint
     record["intact"] = True
-    record["cost"] = 0
     return record
   models = [main_model]
   if not no_fallback:
