@@ -147,6 +147,9 @@ def make_chapter_file(args, output_path, chapter, chapter_num):
         for cell in row:
           td = ET.SubElement(tr, "td")
           td.append(create_parallel_element("span", "sentence", cell["source"], cell["target"]))
+    elif "code" in block:
+      pre = ET.SubElement(body, "pre", {"class": "code"})
+      pre.text = block["code"]["text"]
   tree = ET.ElementTree(html)
   with open(output_path, "w", encoding="utf-8") as f:
     f.write(prettify(tree.getroot()))
@@ -175,16 +178,26 @@ blockquote {
 }
 
 ul {
-  padding-left: 2ex;
+  padding-left: 2.8ex;
 }
 
 table {
+  margin-left: 0.4ex;
   border-collapse: collapse;
   font-size: 95%;
 }
 td {
   border: 1px solid #ddd;
   padding: 0 0.5ex;
+}
+
+pre {
+  margin-left: 0.4ex;
+  padding: 0 0.4ex;
+  font-size: 90%;
+  white-space: pre-wrap; word-wrap: break-word;
+  line-height: 1.2;
+  border: 1px solid #ddd;
 }
 """.strip()
   output_path.write_text(css, encoding="utf-8")
