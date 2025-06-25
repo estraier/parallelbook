@@ -16,7 +16,7 @@ function jsonize {
 function translate {
     ls samples/*-source.json books/*-source.json |
         while read file ; do
-            ./scripts/make_parallel_book_chatgpt.py "$file"
+            ./scripts/make_parallel_corpus.py "$file"
         done
 }
 

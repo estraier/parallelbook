@@ -19095,26 +19095,31 @@
           "paragraph": [
             {
               "id": "00881-000",
-              "source": "My own darling Diana: Of course I am not cross at you because you have to obey your mother.",
-              "target": "私の愛しいダイアナへ：もちろん、あなたがお母さんの言うことを聞かなければならないので、私はあなたに腹を立てていません。"
+              "source": "My own darling Diana:",
+              "target": "私の愛しいダイアナへ："
             },
             {
               "id": "00881-001",
+              "source": "Of course I am not cross at you because you have to obey your mother.",
+              "target": "もちろん、あなたがお母さんの言うことを聞かなければならないので、私はあなたに腹を立てていません。"
+            },
+            {
+              "id": "00881-002",
               "source": "Our spirits can commune.",
               "target": "私たちの心は通じ合うのです。"
             },
             {
-              "id": "00881-002",
+              "id": "00881-003",
               "source": "I shall keep your lovely present forever.",
               "target": "あなたの素敵な贈り物はずっと大切にします。"
             },
             {
-              "id": "00881-003",
+              "id": "00881-004",
               "source": "Minnie Andrews is a very nice little girl—although she has no imagination—but after having been Diana’s busum friend I cannot be Minnie’s.",
               "target": "ミニー・アンドリュースはとてもいい子です―想像力はないけれども―でも、ダイアナの親友だった私はミニーの友達にはなれません。"
             },
             {
-              "id": "00881-004",
+              "id": "00881-005",
               "source": "Please excuse mistakes because my spelling isn’t very good yet, although much improoved.",
               "target": "スペルミスがあっても許してください。まだスペルは上手くありませんが、だいぶ改善されました。"
             }

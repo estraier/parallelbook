@@ -14160,16 +14160,21 @@
           "paragraph": [
             {
               "id": "00692-000",
-              "source": "The candle was on the floor, and there they all was, looking at me, and me at them, for about a quarter of a minute: Three big men with guns pointed at me, which made me wince, I tell you;",
-              "target": "ろうそくが床に置かれていて、彼ら全員が私を見つめ、私も彼らを見つめ返した、およそ15秒間。私に向けられた銃を持った大男3人、それを見て私は身をすくめた、本当に。"
+              "source": "The candle was on the floor, and there they all was, looking at me, and me at them, for about a quarter of a minute:",
+              "target": "ろうそくが床に置かれていて、彼ら全員が私を見つめ、私も彼らを見つめ返した、およそ15秒間。"
             },
             {
               "id": "00692-001",
+              "source": "Three big men with guns pointed at me, which made me wince, I tell you;",
+              "target": "私に向けられた銃を持った大男3人、それを見て私は身をすくめた、本当に。"
+            },
+            {
+              "id": "00692-002",
               "source": "the oldest, gray and about sixty, the other two thirty or more—all of them fine and handsome—and the sweetest old gray-headed lady, and back of her two young women which I couldn’t see right well.",
               "target": "最年長の男性は灰色で60歳ほど、他の2人は30歳以上―みんな立派でハンサムで―そして最愛らしい灰色の髪のおばあさん、その後ろには私がよく見えなかった2人の若い女性がいた。"
             },
             {
-              "id": "00692-002",
+              "id": "00692-003",
               "source": "The old gentleman says:",
               "target": "老紳士が言った："
             }

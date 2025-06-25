@@ -13070,8 +13070,13 @@
           "paragraph": [
             {
               "id": "00570-000",
-              "source": "“'Tired or not, I will wear it that long,' I said: and then I marched upstairs and cried to think that I had been sarcastic to mother.",
-              "target": "「『疲れていようとも、それをそのまま着用する』と私は言いました。そして私は階段を上がって行進し、母親に皮肉を言ってしまったことを思い出して泣きました。"
+              "source": "“'Tired or not, I will wear it that long,' I said:",
+              "target": "「『疲れていようとも、それをそのまま着用する』と私は言いました。"
+            },
+            {
+              "id": "00570-001",
+              "source": "and then I marched upstairs and cried to think that I had been sarcastic to mother.",
+              "target": "そして私は階段を上がって行進し、母親に皮肉を言ってしまったことを思い出して泣きました。"
             }
           ],
           "raw_line": 2787

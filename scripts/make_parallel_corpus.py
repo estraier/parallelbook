@@ -14,7 +14,7 @@ import time
 from pathlib import Path
 
 
-PROG_NAME = "make_parallel_book_chatgpt.py"
+PROG_NAME = "make_parallel_corpus.py"
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 CHATGPT_MODELS = [
   # model name, input token cost (USD/1K), output token cost (USD/1K)
@@ -23,7 +23,7 @@ CHATGPT_MODELS = [
   ("gpt-4-turbo", 0.01, 0.03),
   ("gpt-4", 0.03, 0.06),
 ]
-CHATGPT_ASSISTANT_NAME = "make_parallel_book"
+CHATGPT_ASSISTANT_NAME = "make_parallel_corpus"
 
 
 logging.basicConfig(format="%(message)s", stream=sys.stderr)

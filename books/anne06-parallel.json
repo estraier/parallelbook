@@ -17075,26 +17075,31 @@
           "paragraph": [
             {
               "id": "00888-000",
-              "source": "Ways and means must be considered: He had an allowance but it was all needed for necessary things and pearl necklaces were not among the items budgeted for.",
-              "target": "手段と方法を考えなければならない：彼はお小遣いをもらっていたが、それは必要なものに全て必要だったし、真珠のネックレスは予算に入っていなかった。"
+              "source": "Ways and means must be considered:",
+              "target": "手段と方法を考えなければならない："
             },
             {
               "id": "00888-001",
+              "source": "He had an allowance but it was all needed for necessary things and pearl necklaces were not among the items budgeted for.",
+              "target": "彼はお小遣いをもらっていたが、それは必要なものに全て必要だったし、真珠のネックレスは予算に入っていなかった。"
+            },
+            {
+              "id": "00888-002",
               "source": "Besides, he wanted to earn the money for it himself.",
               "target": "それに、彼は自分でそのお金を稼ぎたかった。"
             },
             {
-              "id": "00888-002",
+              "id": "00888-003",
               "source": "It would be really his gift then.",
               "target": "それは本当に彼の贈り物になるだろう。"
             },
             {
-              "id": "00888-003",
+              "id": "00888-004",
               "source": "Mother's birthday was in March...only six weeks away.",
               "target": "母の誕生日は3月だった...あと6週間しかない。"
             },
             {
-              "id": "00888-004",
+              "id": "00888-005",
               "source": "And the necklace would cost fifty cents!",
               "target": "そしてネックレスは50セントもする！"
             }

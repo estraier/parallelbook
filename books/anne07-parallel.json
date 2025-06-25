@@ -36870,8 +36870,13 @@
             },
             {
               "id": "01660-001",
-              "source": "The lads who were to fight, and perhaps fall, on the fields of France and Flanders, Gallipoli and Palestine, were still roguish schoolboys with a fair life in prospect before them: the girls whose hearts were to be wrung were yet fair little maidens a-star with hopes and dreams.",
-              "target": "フランスやフランドル、ガリポリやパレスチナの戦場で戦い、そして倒れるかもしれない少年たちは、まだ悪ガキの学生で、前途洋々の人生が彼らの前に広がっていた。心を痛めることになる少女たちは、まだ希望と夢に満ちた美しい少女たちだった。"
+              "source": "The lads who were to fight, and perhaps fall, on the fields of France and Flanders, Gallipoli and Palestine, were still roguish schoolboys with a fair life in prospect before them:",
+              "target": "フランスやフランドル、ガリポリやパレスチナの戦場で戦い、そして倒れるかもしれない少年たちは、まだ悪ガキの学生で、前途洋々の人生が彼らの前に広がっていた。"
+            },
+            {
+              "id": "01660-002",
+              "source": "the girls whose hearts were to be wrung were yet fair little maidens a-star with hopes and dreams.",
+              "target": "心を痛めることになる少女たちは、まだ希望と夢に満ちた美しい少女たちだった。"
             }
           ],
           "raw_line": 7734

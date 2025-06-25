@@ -7156,8 +7156,13 @@
           "paragraph": [
             {
               "id": "00464-000",
-              "source": "Everyone suspects himself of at least one of the cardinal virtues, and this is mine: I am one of the few honest people that I have ever known.",
-              "target": "誰もが自分自身を少なくとも1つの基本的美徳の持ち主だと疑っており、私の場合はこちらです：私はこれまで知ってきた数少ない正直な人間の1人です。"
+              "source": "Everyone suspects himself of at least one of the cardinal virtues, and this is mine:",
+              "target": "誰もが自分自身を少なくとも1つの基本的美徳の持ち主だと疑っており、私の場合はこちらです："
+            },
+            {
+              "id": "00464-001",
+              "source": "I am one of the few honest people that I have ever known.",
+              "target": "私はこれまで知ってきた数少ない正直な人間の1人です。"
             }
           ],
           "raw_line": 1503

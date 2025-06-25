@@ -89,7 +89,7 @@ Dr. Slump said, “We did it!” I was surprised.
 以下のコマンドを実行して、ChatGPTで翻訳を行い、結果の対訳JSONファイルを生成します。
 
 ```shell
-./scripts/make_parallel_book_chatgpt.py minimum-source.json
+./scripts/make_parallel_corpus.py minimum-source.json
 ```
 
 生成されたminimum-parallel.jsonの中身は以下のようになるはずです。
@@ -210,7 +210,7 @@ This software is distributed under the terms of Apache License version 2.0.  Sam
 以下のコマンドを実行して、ChatGPTで翻訳を行い、結果の対訳JSONファイルを生成します。
 
 ```shell
-./scripts/make_parallel_book_chatgpt.py basic-source.json
+./scripts/make_parallel_corpus.py basic-source.json
 ```
 
 生成されたbasic-parallel.jsonの中身は以下のようになるはずです。
@@ -343,7 +343,7 @@ Finished
 デフォルトでは、gpt-3.5-turboというモデルが使われます。これは多くのタスクで十分な精度で、かつ安いのが利点です。費用は多くかかりますが、より高精度な結果が欲しいのであれば、gpt-4oを使うのも良いでしょう。以下のように実行します。
 
 ```shell
-./scripts/make_parallel_book_chatgpt.py basic-source.json --model gpt-4o
+./scripts/make_parallel_corpus.py basic-source.json --model gpt-4o
 ```
 
 ```
@@ -378,7 +378,7 @@ gpt-3.5-turboでは$0.0038（0.6円）だったのに、gpt-4oだと$0.0341（5.
 その場合、タスク35をやり直すことになるでしょう。--redoオプションに、タスクIDを指定します。35,128,247のように、複数のタスクIDを指定することもできます。
 
 ```
-./scripts/make_parallel_book_chatgpt.py basic-source.json --model gpt-4o --redo 35
+./scripts/make_parallel_corpus.py basic-source.json --model gpt-4o --redo 35
 ```
 
 タスクの中には、ChatGPTがうまく扱えないものもあるかもしれません。ChatGPTにはJSONの結果を返すように指示していますが、その生成がうまくいかない場合には、プロンプトやパラメータを調整して自動的に再試行がなされます。6回の再試行を経ても失敗する場合には、モデルを変えてさらに6回の再試行を行い、処理を完遂させます。
@@ -432,12 +432,12 @@ Attempt 4 failed (model=gpt-4o, temperature=0.4, jsonize=False): Extra data: lin
 Attempt 5 failed (model=gpt-4o, temperature=0.8, jsonize=True): Extra data: line 17 column 2 (char 614)
 Attempt 6 failed (model=gpt-4o, temperature=0.8, jsonize=False): Extra data: line 17 column 2 (char 605)
 Traceback (most recent call last):
-  File "/Users/mikio/dev/parallelbook/./scripts/make_parallel_book_chatgpt.py", line 637, in <module>
+  File "/Users/mikio/dev/parallelbook/./scripts/make_parallel_corpus.py", line 637, in <module>
     main()
-  File "/Users/mikio/dev/parallelbook/./scripts/make_parallel_book_chatgpt.py", line 611, in main
+  File "/Users/mikio/dev/parallelbook/./scripts/make_parallel_corpus.py", line 611, in main
     response = execute_task_by_chatgpt_enja(
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mikio/dev/parallelbook/./scripts/make_parallel_book_chatgpt.py", line 514, in execute_task_by_chatgpt_enja
+  File "/Users/mikio/dev/parallelbook/./scripts/make_parallel_corpus.py", line 514, in execute_task_by_chatgpt_enja
     raise RuntimeError("All retries failed: unable to parse valid JSON with required fields")
 RuntimeError: All retries failed: unable to parse valid JSON with required fields
 ```
@@ -458,7 +458,7 @@ AIモデルにとって都合の悪いデータを入力すれば、この事態
 特定のタスクの文分割や翻訳が意図通りじゃないといった場合でには、--redoでそのタスクだけやり直すと同時に、--extra-hintで追加のヒント情報を与えると回復できる場合があります。
 
 ```shell
-./scripts/make_parallel_book_chatgpt.py books/anne02-source.json --redo 0 --extra-hint="「Anne of the Island」は、「島のアン」と訳してください。" --debug
+./scripts/make_parallel_corpus.py books/anne02-source.json --redo 0 --extra-hint="「Anne of the Island」は、「島のアン」と訳してください。" --debug
 ```
 
 ## 変換機能群のチュートリアル
@@ -531,14 +531,14 @@ three three three
 -「|」で始まり「|」で終わる行は表の行になります。連続した表の行は1つの表になります。
 -「```」で始まる行から次の「```」の行までは、コードブロックになります。コードブロックは翻訳されません。
 
-### make_parallel_book_chatgpt.py
+### make_parallel_corpus.py
 
-make_parallel_book_chatgpt.pyは、jsonize_plaintext.pyが生成したソースJSONファイルを読んで、その内容を元に対訳データを生成するスクリプトです。対訳データの生成にはChatGPTを用います。
+make_parallel_corpus.pyは、jsonize_plaintext.pyが生成したソースJSONファイルを読んで、その内容を元に対訳データを生成するスクリプトです。対訳データの生成にはChatGPTを用います。
 
 前提として、環境変数OPENAI_API_KEYの値にOpenAIのAPIキーが設定されている必要があります。そのうえで、ソースJSONファイルを指定して実行すると、そのファイル名から拡張子と "-source" を抜いた文字列に "-parallel.json" をつけた名前で翻訳データのJSONファイルが生成されます。以下のコマンドを実行すると、sample-parallel.jsonが生成されます。
 
 ```shell
-make_parallel_book_chatgpt.py sample-source.json
+make_parallel_corpus.py sample-source.json
 ```
 
 本スクリプトは、パラグラフ単位でChatGPTを呼び出して翻訳を行います。文単位ではなくパラグラフ単位で翻訳することで、文脈を加味した翻訳が可能になります。語彙の曖昧性や代名詞の曖昧性を解決するには、ある程度大きい単位で翻訳するのが有利です。さらに、プロンプトの中に文脈情報として以下のものを加えています。
@@ -624,7 +624,7 @@ ChatGPTのAPIを叩くと、費用がかかります。2025年5月現在、デ�
 
 ChatGPTによる処理には時間がかかり、またサーバ側やネットワークの不調などで処理が止まることも多々あります。したがって、途中経過の保存のそこからの再開をする機能が必須となります。本スクリプトでは、途中経過をSQLiteのデータベースに保存することで中断と再開の機能を実現しています。処理中にCtrl-Cを入力するなどして任意のタイミングでプロセスを終了しても、同じコマンドを実行すれば処理を再開することができます。途中経過のデータベースは、入力ファイル名に "-state.db" をつけた名前のファイルで管理されます。
 
-make_parallel_book_chatgpt.pyは以下のオプションを備えます。
+make_parallel_corpus.pyは以下のオプションを備えます。
 
 - --output OUTPUT : 出力ファイルを明示的に指定します。
 - --state STATE : 状態ファイルを明示的に指定します。
@@ -640,7 +640,7 @@ make_parallel_book_chatgpt.pyは以下のオプションを備えます。
 
 ChatGPTに渡すプロンプトはスクリプト内にハードコードされているので、適宜修正して使ってください。表記揺れを防ぐために固有名詞とその翻訳のリストを与えたり、作品の背景知識を埋め込んだりすることも有用です。
 
-make_parallel_book_chatgpt.pyの出力は以下のような形式になります。
+make_parallel_corpus.pyの出力は以下のような形式になります。
 
 ```json
 {
