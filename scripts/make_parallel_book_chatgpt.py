@@ -565,9 +565,10 @@ def get_assistant_id():
     if assistant.name == CHATGPT_ASSISTANT_NAME:
       global_assistant_id = assistant.id
       return global_assistant_id
+  default_model = CHATGPT_MODELS[0][0]
   assistant = client.beta.assistants.create(
     name=CHATGPT_ASSISTANT_NAME,
-    model="gpt-4o"
+    model=default_model,
   )
   global_assistant_id = assistant.id
   return global_assistant_id
