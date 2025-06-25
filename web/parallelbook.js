@@ -422,6 +422,27 @@ function renderBookmark(contentEl, bookId) {
   }
 }
 
+function utterMonolingualBlock(block) {
+  if (!SpeechSynthesisUtterance) return;
+  speechSynthesis.cancel();
+  const text = block.textContent.trim();
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = "en-US";
+  speechSynthesis.speak(utterance);
+}
+
+function setMonolingualBlock(block) {
+  block.setAttribute("tabindex", "0");
+  block.lang = "en";
+  block.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      e.stopPropagation();
+      utterMonolingualBlock(block);
+    }
+  });
+}
+
 function createTableOfContents(book, mode) {
   const tocNav = document.createElement("nav");
   tocNav.className = "book-toc";
@@ -594,12 +615,10 @@ function renderParallelBookContent(contentElementId, bookId, bookContent, mode) 
         setParallelPane(pane, bookId, contentEl);
       } else if (block.code) {
         const pane = document.createElement("pre");
-        pane.className = "code";
+        pane.className = "code mono";
         pane.textContent = block.code.text;
-        console.log(block);
-        console.log(block.code.text);
-        console.log(pane);
         chapterSection.appendChild(pane);
+        setMonolingualBlock(pane);
       } else if (block.macro?.name === "image") {
         const values = (block.macro.value ?? "").trim().split(" ");
         const pane = document.createElement("div");
@@ -693,6 +712,9 @@ function countSourceWordsInBook(bookContent) {
             addCounts(cell.source);
           }
         }
+        counts.blocks += 1;
+      } else if (block.code) {
+        addCounts(block.code.text);
         counts.blocks += 1;
       }
     }

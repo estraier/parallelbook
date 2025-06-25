@@ -240,6 +240,12 @@ body {
   border: 1px solid #ddd;
 }
 
+.parallel-book .mono:focus {
+  outline: none;
+  background: #f8fbff;
+  border: solid 1px #8bf;
+}
+
 .parallel-book div.macro-image {
   margin: 1ex 0;
 }
