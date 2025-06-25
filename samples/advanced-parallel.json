@@ -25,7 +25,7 @@
           "header": {
             "id": "00003-000",
             "source": "Header in the chapter",
-            "target": "章の中の見出し"
+            "target": "章内の見出し"
           }
         },
         {
@@ -191,5 +191,5 @@
       "raw_line": 20
     }
   ],
-  "cost": 0.005
+  "cost": 0.008
 }

@@ -554,6 +554,14 @@ def make_assistant_thread():
   return thread.id
 
 
+def remove_assistant():
+  client = openai.OpenAI(api_key=OPENAI_API_KEY)
+  assistants = client.beta.assistants.list(limit=100).data
+  for assistant in assistants:
+    if assistant.name == CHATGPT_ASSISTANT_NAME:
+      client.beta.assistants.delete(assistant.id)
+
+
 global_assistant_id = None
 def get_assistant_id():
   global global_assistant_id
@@ -1043,6 +1051,8 @@ def main():
   sm = StateManager(state_path)
   if args.reset or not state_path.exists():
     sm.initialize(input_tasks)
+    if args.assistant:
+      remove_assistant()
   assistant_thread_id = None
   if args.assistant:
     assistant_thread_id = sm.get_assistant_thread_id()
