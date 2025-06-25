@@ -574,9 +574,9 @@ def get_assistant_id():
   return global_assistant_id
 
 
-def make_prompt_enja(book_title, role, source_text,
-                     hint, prev_context, next_context, extra_hint, attempt,
-                     jsonize_input, use_source_example):
+def make_prompt(book_title, role, source_text,
+                hint, prev_context, next_context, extra_hint, attempt,
+                jsonize_input, use_source_example):
   lines = []
   def p(line):
     lines.append(line)
@@ -849,6 +849,7 @@ def execute_task_single(
     if hint:
       record["hint"] = hint
     record["intact"] = True
+    record["cost"] = 0
     return record
   models = [main_model]
   if not no_fallback:
@@ -862,7 +863,7 @@ def execute_task_single(
                (0.4, True, False), (0.4, False, False),
                (0.8, True, True), (0.8, False, True)]
     for attempt, (temp, jsonize_input, use_source_example) in enumerate(configs, 1):
-      prompt = make_prompt_enja(
+      prompt = make_prompt(
         book_title, role, source_text, hint, prev_context, next_context, extra_hint, attempt,
         jsonize_input, use_source_example)
       logger.debug(f"Prompt:\n{prompt}")
