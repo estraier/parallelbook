@@ -592,6 +592,14 @@ function renderParallelBookContent(contentElementId, bookId, bookContent, mode) 
         }
         chapterSection.appendChild(pane);
         setParallelPane(pane, bookId, contentEl);
+      } else if (block.code) {
+        const pane = document.createElement("pre");
+        pane.className = "code";
+        pane.textContent = block.code.text;
+        console.log(block);
+        console.log(block.code.text);
+        console.log(pane);
+        chapterSection.appendChild(pane);
       } else if (block.macro?.name === "image") {
         const values = (block.macro.value ?? "").trim().split(" ");
         const pane = document.createElement("div");

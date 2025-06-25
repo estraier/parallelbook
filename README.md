@@ -813,7 +813,7 @@ make_parallel_corpus.pyの出力は以下のような形式になります。
         {
           "code": {
             "id": "00014-000",
-            "code": "one\ntwo two\n\nthree three three"
+            "text": "one\ntwo two\n\nthree three three"
           },
           "raw_line": 32
         }

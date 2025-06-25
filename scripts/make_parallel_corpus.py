@@ -294,7 +294,7 @@ def build_code_record(task):
   content = response["content"]
   record = {
     "id": f"{index:05d}-000",
-    "code": content.get("value"),
+    "text": content.get("value"),
   }
   return record
 

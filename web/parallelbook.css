@@ -232,6 +232,14 @@ body {
   padding: 0 0.5ex;
 }
 
+.parallel-book pre.code {
+  padding: 0 0.4ex;
+  font-size: 90%;
+  white-space: pre-wrap; word-wrap: break-word;
+  line-height: 1.2;
+  border: 1px solid #ddd;
+}
+
 .parallel-book div.macro-image {
   margin: 1ex 0;
 }
