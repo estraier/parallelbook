@@ -911,7 +911,7 @@ def execute_task_single(
             messages=[{ "role": "user", "content": prompt }],
             temperature=temp,
           ).choices[0].message.content
-        match = regex.search(r'```(?:json)?\s*(\{.*?\})\s*```', response, regex.DOTALL)
+        match = regex.search(r'```(?:json)?\s*([{\[].*?[}\]])\s*```', response, regex.DOTALL)
         if match:
           response = match.group(1)
         response = regex.sub(r',\s*([\]}])', r'\1', response)
@@ -958,7 +958,8 @@ def execute_task_single(
         return record
       except Exception as e:
         logger.info(f"Attempt {attempt} failed"
-                    f" (model={model}, temperature={temp}, jsonize_input={jsonize_input}): {e}")
+                    f" (model={model}, temperature={temp},"
+                    f" j={jsonize_input}, x={use_source_example}): {e}")
         time.sleep(0.2)
   if failsoft:
     logger.warning(f"Failsoft: dummy data is generated")

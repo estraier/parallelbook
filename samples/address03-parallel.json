@@ -56,27 +56,27 @@
             {
               "id": "00004-000",
               "source": "But, in a larger sense, we can not dedicate—we can not consecrate—we can not hallow—this ground.",
-              "target": "しかし、より広い意味では、私たちはこの地を奉納することはできません―神聖化することもできません―この地を聖なるものとすることもできません。"
+              "target": "しかし、より広い意味では、私たちはこの地を捧げることも、神聖にすることも、崇めることもできません。"
             },
             {
               "id": "00004-001",
               "source": "The brave men, living and dead, who struggled here, have consecrated it, far above our poor power to add or detract.",
-              "target": "ここで戦い苦闘した勇敢な生者と亡者たちが、この地を神聖なものとし、私たちのわずかな力でそれを増やしたり減らしたりすることは遥かに超えています。"
+              "target": "ここで戦った勇敢な人々、生きている者も亡くなった者も、この地を私たちの力では到底及ばないほどに神聖なものとしました。"
             },
             {
               "id": "00004-002",
               "source": "The world will little note, nor long remember what we say here, but it can never forget what they did here.",
-              "target": "世界は私たちがここで述べたことをほとんど注目しないでしょうし、長く記憶にとどめることもないでしょうが、彼らがここで行ったことを決して忘れることはありません。"
+              "target": "世界はここで私たちが言うことをほとんど注目せず、長く記憶することもないでしょうが、彼らがここで成し遂げたことを忘れることは決してありません。"
             },
             {
               "id": "00004-003",
               "source": "It is for us the living, rather, to be dedicated here to the unfinished work which they who fought here have thus far so nobly advanced.",
-              "target": "むしろ、私たち生きている者には、ここで戦った人々がこれまでに非常に高潔に進めてきた未完の仕事に奉納されるべきです。"
+              "target": "むしろ、ここで戦った彼らがこれまでに高貴に進めてきた未完の仕事に、私たち生きている者がここで専念することが求められています。"
             },
             {
               "id": "00004-004",
               "source": "It is rather for us to be here dedicated to the great task remaining before us—that from these honored dead we take increased devotion to that cause for which they gave the last full measure of devotion—that we here highly resolve that these dead shall not have died in vain—that this nation, under God, shall have a new birth of freedom—and that government of the people, by the people, for the people, shall not perish from the earth.",
-              "target": "むしろ、私たちには、私たちの前に残された偉大な課題にここで奉納されるべきです――これらの尊い亡者から私たちは、彼らが捧げた最後の献身の完全なる尊敬を受け取り、ここで私たちは、これらの亡者が無駄死にしないようにと強く決意し、この国が神の下で新たな自由の誕生を迎えること――そして人々のための人々による人々の政府が地上から消え去ることはないということを。"
+              "target": "その所業とは、むしろ、眼前にある残された重大な仕事に私達が身を捧げることなのです。その仕事とは、名誉の死を遂げた人々から、彼らが最後の献身を捧げた大義へのより多くの献身を受け継ぐことです。そして、死んでいった人々が無駄死にはならないように強く決意すること。さらに、この国が神の名のもとに新しい自由を生み出すことです。最後に、人民を代表する、人民の手による、人民のための政府が、地球から消え去らないようにすることです。"
             }
           ],
           "raw_line": 10
@@ -85,5 +85,5 @@
       "raw_line": 6
     }
   ],
-  "cost": 0.008
+  "cost": 0.021
 }
