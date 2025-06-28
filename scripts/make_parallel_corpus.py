@@ -23,7 +23,6 @@ CHATGPT_MODELS = [
   ("gpt-4-turbo", 0.01, 0.03),
   ("gpt-4", 0.03, 0.06),
 ]
-CHATGPT_ASSISTANT_NAME = "make_parallel_corpus"
 
 
 logging.basicConfig(format="%(message)s", stream=sys.stderr)
@@ -35,29 +34,9 @@ class StateManager:
   def __init__(self, db_path):
     self.db_path = db_path
 
-  def migrate(self):
-    with sqlite3.connect(self.db_path) as conn:
-      cur = conn.cursor()
-      cur.execute('''
-        CREATE TABLE IF NOT EXISTS config (
-          id INTEGER PRIMARY KEY,
-          assistant_thread_id TEXT
-        )
-      ''')
-      cur.execute('DELETE FROM config')
-      conn.commit()
-
   def initialize(self, input_tasks):
     with sqlite3.connect(self.db_path) as conn:
       cur = conn.cursor()
-      cur.execute('''
-        CREATE TABLE IF NOT EXISTS config (
-          id INTEGER PRIMARY KEY,
-          assistant_thread_id TEXT
-        )
-      ''')
-      cur.execute('DELETE FROM config')
-      cur.execute('INSERT INTO config (id) VALUES (0)')
       cur.execute('''
         CREATE TABLE IF NOT EXISTS tasks (
           idx INTEGER PRIMARY KEY,
@@ -72,22 +51,6 @@ class StateManager:
           'INSERT INTO tasks (idx, role, source_text) VALUES (?, ?, ?)',
           (i, role, text)
         )
-      conn.commit()
-
-  def get_assistant_thread_id(self):
-    with sqlite3.connect(self.db_path) as conn:
-      cur = conn.cursor()
-      cur.execute('SELECT assistant_thread_id FROM config WHERE id = 0')
-      row = cur.fetchone()
-      if row:
-        return row[0]
-      return None
-
-  def set_assistant_thread_id(self, assistant_thread_id):
-    with sqlite3.connect(self.db_path) as conn:
-      cur = conn.cursor()
-      cur.execute('UPDATE config SET assistant_thread_id = ? WHERE id = 0',
-                  (assistant_thread_id,))
       conn.commit()
 
   def load(self, index):
@@ -549,39 +512,6 @@ def get_next_context(sm, index, max_width=200):
   return picked_sentences
 
 
-def make_assistant_thread():
-  thread = openai.beta.threads.create()
-  return thread.id
-
-
-def remove_assistant():
-  client = openai.OpenAI(api_key=OPENAI_API_KEY)
-  assistants = client.beta.assistants.list(limit=100).data
-  for assistant in assistants:
-    if assistant.name == CHATGPT_ASSISTANT_NAME:
-      client.beta.assistants.delete(assistant.id)
-
-
-global_assistant_id = None
-def get_assistant_id():
-  global global_assistant_id
-  if global_assistant_id is not None:
-    return global_assistant_id
-  client = openai.OpenAI(api_key=OPENAI_API_KEY)
-  assistants = client.beta.assistants.list(limit=100).data
-  for assistant in assistants:
-    if assistant.name == CHATGPT_ASSISTANT_NAME:
-      global_assistant_id = assistant.id
-      return global_assistant_id
-  default_model = CHATGPT_MODELS[0][0]
-  assistant = client.beta.assistants.create(
-    name=CHATGPT_ASSISTANT_NAME,
-    model=default_model,
-  )
-  global_assistant_id = assistant.id
-  return global_assistant_id
-
-
 def make_prompt(book_title, role, source_text,
                 hint, prev_context, next_context, extra_hint, attempt,
                 jsonize_input, use_source_example):
@@ -780,13 +710,11 @@ def validate_content(role, source_text, content):
 
 def execute_task(
     book_title, role, source_text, hint, prev_context, next_context,
-    assistant_thread_id, main_model,
-    failsoft, no_fallback, extra_hint):
+    main_model, failsoft, no_fallback, extra_hint):
   if len(source_text) <= 2000:
     return execute_task_single(
       book_title, role, source_text, hint, prev_context, next_context,
-      assistant_thread_id, main_model,
-      failsoft, no_fallback, extra_hint)
+      main_model, failsoft, no_fallback, extra_hint)
   sentences = split_sentences_english(source_text)
   batches = [[]]
   batch_len = 0
@@ -815,8 +743,7 @@ def execute_task(
         if context_width > 100: break
     record = execute_task_single(
       book_title, role, batch_text, hint, batch_prev_context, batch_next_context,
-      assistant_thread_id, main_model,
-      failsoft, no_fallback, batch_hint)
+      main_model, failsoft, no_fallback, batch_hint)
     batch_records.append(record)
     batch_prev_context = []
     context_width = 0
@@ -842,8 +769,7 @@ def execute_task(
 
 def execute_task_single(
     book_title, role, source_text, hint, prev_context, next_context,
-    assistant_thread_id, main_model,
-    failsoft, no_fallback, extra_hint):
+    main_model, failsoft, no_fallback, extra_hint):
   latins = regex.sub(r"[^\p{Latin}]", "", source_text)
   if len(latins) < 2:
     logger.debug(f"Not English: intact data is generated")
@@ -876,41 +802,11 @@ def execute_task_single(
       logger.debug(f"Prompt:\n{prompt}")
       try:
         client = openai.OpenAI(api_key=OPENAI_API_KEY).with_options(timeout=30)
-        if assistant_thread_id:
-          client.beta.threads.messages.create(
-            thread_id=assistant_thread_id,
-            role="user",
-            content=prompt,
-          )
-          run = client.beta.threads.runs.create(
-            assistant_id=get_assistant_id(),
-            thread_id=assistant_thread_id,
-            model=model,
-          )
-          while True:
-            run = client.beta.threads.runs.retrieve(
-              thread_id=assistant_thread_id,
-              run_id=run.id,
-            )
-            if run.status == "completed":
-              break
-            elif run.status in ("failed", "cancelled", "expired"):
-              raise RuntimeError(f"Assistant run failed with status: {run.status}")
-            time.sleep(1.0)
-          messages = client.beta.threads.messages.list(thread_id=assistant_thread_id, limit=10)
-          resnpose = None
-          for msg in messages.data:
-            if msg.role == "assistant":
-              response = msg.content[0].text.value
-              break
-          if not response:
-            raise RuntimeError("No assistant response found")
-        else:
-          response = client.chat.completions.create(
-            model=model,
-            messages=[{ "role": "user", "content": prompt }],
-            temperature=temp,
-          ).choices[0].message.content
+        response = client.chat.completions.create(
+          model=model,
+          messages=[{ "role": "user", "content": prompt }],
+          temperature=temp,
+        ).choices[0].message.content
         match = regex.search(r'```(?:json)?\s*([{\[].*?[}\]])\s*```', response, regex.DOTALL)
         if match:
           response = match.group(1)
@@ -1030,8 +926,6 @@ def main():
                       help="do not use the fallback model")
   parser.add_argument("--extra-hint", default="",
                       help="extra hint to be appended to the prompt")
-  parser.add_argument("--assistant", action="store_true",
-                      help="use the assistant API")
   parser.add_argument("--debug", action="store_true",
                       help="prints the debug messages too")
   args = parser.parse_args()
@@ -1052,22 +946,6 @@ def main():
   sm = StateManager(state_path)
   if args.reset or not state_path.exists():
     sm.initialize(input_tasks)
-    if args.assistant:
-      remove_assistant()
-  assistant_thread_id = None
-  if args.assistant:
-    assistant_thread_id = sm.get_assistant_thread_id()
-    if assistant_thread_id:
-      logger.info(f"Reusing the assistant thread: {assistant_thread_id}")
-      try:
-        openai.beta.threads.retrieve(thread_id=assistant_thread_id)
-      except openai.NotFoundError:
-        logger.warning(f"Invalid the assistant thread: {assistant_thread_id}")
-        assistant_thread_id = None
-    if not assistant_thread_id:
-      assistant_thread_id = make_assistant_thread()
-      logger.info(f"Created the assistant thread: {assistant_thread_id}")
-      sm.set_assistant_thread_id(assistant_thread_id)
   total_tasks = sm.count()
   logger.info(f"Total tasks: {total_tasks}")
   book_title = ""
@@ -1118,8 +996,7 @@ def main():
         response = execute_task(
           book_title, role, source_text,
           hint, prev_context, next_context,
-          assistant_thread_id, args.model,
-          args.failsoft, args.no_fallback, args.extra_hint,
+          args.model, args.failsoft, args.no_fallback, args.extra_hint,
         )
       sm.set_response(index, response)
       total_cost += response.get("cost", 0)
