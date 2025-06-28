@@ -628,12 +628,12 @@ JSON形式で与えられた英文"source"を文単位に分解し、各文に�
 
 ```json
 {
-  "source": "Oh! Hello, Nancy. Yes, sir.",
+  "source": "Oh! Hello, Nancy. Yes, sir. How to win.",
   "target": "あら。こんにちはナンシー。承知しました。"
 }
 ```
 
-その出力例を示します。文型（S, V, O, C）に直接関与しない感動詞や呼びかけ語などは修飾語として扱ってください。
+その出力例を示します。文型（S, V, O, C）に直接関与しない感動詞や呼びかけ語などは修飾語として扱ってください。全体が名詞句や形容詞句や副詞句である場合も "other" にします。
 
 ```json
 [
@@ -663,6 +663,51 @@ JSON形式で与えられた英文"source"を文単位に分解し、各文に�
       { "type": "M", "text": "sir", "translation": "旦那様" }
     ]
   },
+  {
+    "format": "sentence",
+    "text": "How to win.",
+    "pattern": "other",
+    "elements": [
+      { "type": "M", "text": "How to win", "translation": "勝つ方法" }
+    ]
+  }
+]
+```
+
+命令法の例を示します。
+
+```
+{
+  "source": "Let's go! Hey, do it now.",
+  "target": "行きましょう！今すぐしろ。"
+}
+```
+
+その出力例を示します。命令法は主語が省略されていますが、隠れた主語が存在するとみなして文型を選択してください。
+
+```json
+[
+  {
+    "format": "sentence",
+    "text": "Let's go!",
+    "pattern": "SVOC",
+    "elements": [
+      { "type": "V", "text": "Let", "translation": "仕向ける" },
+      { "type": "O", "text": "us", "translation": "私達が" },
+      { "type": "C", "text": "go", "translation": "行くように" }
+    ]
+  },
+  {
+    "format": "sentence",
+    "text": "Hey, do it now.",
+    "pattern": "SVO",
+    "elements": [
+      { "type": "M", "text": "Hey", "translation": "おい" },
+      { "type": "V", "text": "do", "translation": "しろ" },
+      { "type": "O", "text": "it", "translation": "それを" },
+      { "type": "M", "text": "now", "translation": "今すぐ" }
+    ]
+  }
 ]
 ```
 
@@ -1240,7 +1285,7 @@ def main():
   if args.debug:
     logger.setLevel(logging.DEBUG)
   input_path = Path(args.input_file)
-  input_stem = regex.sub(r"-(parallel)", "", input_path.stem)
+  input_stem = regex.sub(r"-(parallel|analyzed)", "", input_path.stem)
   if args.output:
     output_path = Path(args.output)
   else:

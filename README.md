@@ -461,9 +461,14 @@ AIモデルにとって都合の悪いデータを入力すれば、この事態
 ./scripts/make_parallel_corpus.py books/anne02-source.json --redo 0 --extra-hint="「Anne of the Island」は、「島のアン」と訳してください。" --debug
 ```
 
-## 変換機能群のチュートリアル
 
-TBD.
+
+その場合、タスク35をやり直すことになるでしょう。--redoオプションに、タスクIDを指定します。35,128,247のように、複数のタスクIDを指定することもできます。
+
+```
+./scripts/make_parallel_corpus.py basic-source.json --model gpt-4o --redo 35
+```
+
 
 ## 生成機能群の仕様
 
