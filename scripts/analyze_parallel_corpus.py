@@ -25,7 +25,6 @@ CHATGPT_MODELS = [
   ("gpt-4-turbo", 0.01, 0.03),
   ("gpt-4", 0.03, 0.06),
 ]
-CHATGPT_ASSISTANT_NAME = "analyze_parallel_corpus"
 ANALYZE_INSTRUCTIONS = """
 あなたは英文の構文解析を行っている言語学者です。
 JSON形式で与えられた英文"source"を文単位に分解し、各文について構文を解析し、結果をJSON形式で記述してください。
@@ -797,29 +796,9 @@ class StateManager:
   def __init__(self, db_path):
     self.db_path = db_path
 
-  def migrate(self):
-    with sqlite3.connect(self.db_path) as conn:
-      cur = conn.cursor()
-      cur.execute('''
-        CREATE TABLE IF NOT EXISTS config (
-          id INTEGER PRIMARY KEY,
-          assistant_thread_id TEXT
-        )
-      ''')
-      cur.execute('DELETE FROM config')
-      conn.commit()
-
   def initialize(self, input_tasks):
     with sqlite3.connect(self.db_path) as conn:
       cur = conn.cursor()
-      cur.execute('''
-        CREATE TABLE IF NOT EXISTS config (
-          id INTEGER PRIMARY KEY,
-          assistant_thread_id TEXT
-        )
-      ''')
-      cur.execute('DELETE FROM config')
-      cur.execute('INSERT INTO config (id) VALUES (0)')
       cur.execute('''
         CREATE TABLE IF NOT EXISTS tasks (
           idx INTEGER PRIMARY KEY,
@@ -834,22 +813,6 @@ class StateManager:
           'INSERT INTO tasks (idx, source_text, target_text) VALUES (?, ?, ?)',
           (i, source_text, target_text)
         )
-      conn.commit()
-
-  def get_assistant_thread_id(self):
-    with sqlite3.connect(self.db_path) as conn:
-      cur = conn.cursor()
-      cur.execute('SELECT assistant_thread_id FROM config WHERE id = 0')
-      row = cur.fetchone()
-      if row:
-        return row[0]
-      return None
-
-  def set_assistant_thread_id(self, assistant_thread_id):
-    with sqlite3.connect(self.db_path) as conn:
-      cur = conn.cursor()
-      cur.execute('UPDATE config SET assistant_thread_id = ? WHERE id = 0',
-                  (assistant_thread_id,))
       conn.commit()
 
   def load(self, index):
@@ -974,44 +937,12 @@ def cut_text_by_width(text, max_width):
   return ''.join(result)
 
 
-def make_assistant_thread():
-  thread = openai.beta.threads.create()
-  return thread.id
-
-
-def remove_assistant():
-  client = openai.OpenAI(api_key=OPENAI_API_KEY)
-  assistants = client.beta.assistants.list(limit=100).data
-  for assistant in assistants:
-    if assistant.name == CHATGPT_ASSISTANT_NAME:
-      client.beta.assistants.delete(assistant.id)
-
-
-global_assistant_id = None
-def get_assistant_id():
-  global global_assistant_id
-  if global_assistant_id is not None:
-    return global_assistant_id
-  client = openai.OpenAI(api_key=OPENAI_API_KEY)
-  assistants = client.beta.assistants.list(limit=100).data
-  for assistant in assistants:
-    if assistant.name == CHATGPT_ASSISTANT_NAME:
-      global_assistant_id = assistant.id
-      return global_assistant_id
-  default_model = CHATGPT_MODELS[0][0]
-  assistant = client.beta.assistants.create(
-    name=CHATGPT_ASSISTANT_NAME,
-    model=default_model,
-    instructions=ANALYZE_INSTRUCTIONS.strip(),
-  )
-  global_assistant_id = assistant.id
-  return global_assistant_id
-
-
 def make_prompt(source_text, target_text, attempt, extra_hint, use_source_example):
   lines = []
   def p(line):
     lines.append(line)
+  p(ANALYZE_INSTRUCTIONS.strip())
+  p("----")
   p("以下の情報をもとに、インストラクションの指示に従って構文解析を行ってください。")
   p("----")
   input_data = {
@@ -1089,9 +1020,7 @@ def validate_content(source_text, content):
   return True
 
 
-def execute_task(source_text, target_text,
-                 assistant_thread_id, main_model,
-                 failsoft, no_fallback, extra_hint):
+def execute_task(source_text, target_text, main_model, failsoft, no_fallback, extra_hint):
   latins = regex.sub(r"[^\p{Latin}]", "", source_text)
   if len(latins) < 2:
     logger.debug(f"Not English: intact data is generated")
@@ -1125,34 +1054,11 @@ def execute_task(source_text, target_text,
       logger.debug(f"Prompt:\n{prompt}")
       try:
         client = openai.OpenAI(api_key=OPENAI_API_KEY).with_options(timeout=30)
-        client.beta.threads.messages.create(
-          thread_id=assistant_thread_id,
-          role="user",
-          content=prompt,
-        )
-        run = client.beta.threads.runs.create(
-          assistant_id=get_assistant_id(),
-          thread_id=assistant_thread_id,
+        response = client.chat.completions.create(
           model=model,
-        )
-        while True:
-          run = client.beta.threads.runs.retrieve(
-            thread_id=assistant_thread_id,
-            run_id=run.id,
-          )
-          if run.status == "completed":
-            break
-          elif run.status in ("failed", "cancelled", "expired"):
-            raise RuntimeError(f"Assistant run failed with status: {run.status}")
-          time.sleep(1.0)
-        messages = client.beta.threads.messages.list(thread_id=assistant_thread_id, limit=10)
-        resnpose = None
-        for msg in messages.data:
-          if msg.role == "assistant":
-            response = msg.content[0].text.value
-            break
-        if not response:
-          raise RuntimeError("No assistant response found")
+          messages=[{ "role": "user", "content": prompt }],
+          temperature=temp,
+        ).choices[0].message.content
         match = regex.search(r'```(?:json)?\s*([{\[].*?[}\]])\s*```', response, regex.DOTALL)
         if match:
           response = match.group(1)
@@ -1263,8 +1169,6 @@ def main():
                       help="path of the state SQLite file")
   parser.add_argument("--reset", action="store_true",
                       help="resets the state and start over all tasks")
-  parser.add_argument("--refresh", action="store_true",
-                      help="refreshes the memory of the assistant.")
   parser.add_argument("--num-tasks", type=int, default=None,
                       help="limits the number of tasks to do")
   parser.add_argument("--redo", type=str, default=None,
@@ -1299,23 +1203,6 @@ def main():
   sm = StateManager(state_path)
   if args.reset or not state_path.exists():
     sm.initialize(input_tasks)
-  assistant_thread_id = None
-  if args.refresh:
-    logger.info(f"Refreshing the assistant")
-    remove_assistant()
-  else:
-    assistant_thread_id = sm.get_assistant_thread_id()
-  if assistant_thread_id:
-    logger.info(f"Reusing the assistant thread: {assistant_thread_id}")
-    try:
-      openai.beta.threads.retrieve(thread_id=assistant_thread_id)
-    except openai.NotFoundError:
-      logger.warning(f"Invalid the assistant thread: {assistant_thread_id}")
-      assistant_thread_id = None
-  if not assistant_thread_id:
-    assistant_thread_id = make_assistant_thread()
-    logger.info(f"Created the assistant thread: {assistant_thread_id}")
-    sm.set_assistant_thread_id(assistant_thread_id)
   total_tasks = sm.count()
   logger.info(f"Total tasks: {total_tasks}")
   logger.info(f"GPT models: {args.model}")
@@ -1348,7 +1235,7 @@ def main():
       short_source_text = cut_text_by_width(short_source_text, 64)
       logger.info(f"Task {index}: {short_source_text}")
       response = execute_task(
-        source_text, target_text, assistant_thread_id,
+        source_text, target_text,
         args.model, args.failsoft, args.no_fallback, args.extra_hint)
       sm.set_response(index, response)
       total_cost += response.get("cost", 0)
