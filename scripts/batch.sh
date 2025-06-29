@@ -5,7 +5,7 @@ if [ -z README.md ] || [ -z samples ] || [ -z books ] ; then
     exit
 fi
 
-function jsonize {
+function do_jsonize {
     ls samples/*-raw.txt books/*-raw.txt |
         while read file ; do
             output="${file/-raw.txt/-source.json}"
@@ -13,23 +13,30 @@ function jsonize {
         done
 }
 
-function translate {
+function do_translate {
     ls samples/*-source.json books/*-source.json |
         while read file ; do
             ./scripts/make_parallel_corpus.py "$file"
         done
 }
 
-function web {
+function do_analyze {
+    ls samples/*-parallel.json |
+        while read file ; do
+            ./scripts/analyze_parallel_corpus.py "$file"
+        done
+}
+
+function do_web {
     mkdir -p web/books
     cp samples/*-parallel.json books/*-parallel.json web/books
 }
 
-function clean_web {
+function do_clean_web {
     rm -rf web/books
 }
 
-function build_epub {
+function do_build_epub {
     ls samples/*-parallel.json books/*-parallel.json |
         while read file ; do
             svgname="${file%-parallel.json}-cover.svg"
@@ -40,7 +47,7 @@ function build_epub {
         done
 }
 
-function clean_epub {
+function do_clean_epub {
     rm -rf samples/*-epub samples/*.epub samples/*-cover.*
     rm -rf books/*-epub books/*.epub books/*-cover.*
 }
@@ -50,26 +57,29 @@ set -eux
 mode="$1"
 case "$mode" in
     jsonize)
-        jsonize
+        do_jsonize
         ;;
     translate)
-        translate
+        do_translate
+        ;;
+    analyze)
+        do_analyze
         ;;
     web)
-        web
+        do_web
         ;;
     web-clean)
-        clean_web
+        do_clean_web
         ;;
     epub)
-        build_epub
+        do_build_epub
         ;;
     epub-clean)
-        clean_epub
+        do_clean_epub
         ;;
     clean)
-        clean_web
-        clean_epub
+        do_clean_web
+        do_clean_epub
         ;;
     "")
         echo "specify a mode"

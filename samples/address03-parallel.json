@@ -21,7 +21,7 @@
             {
               "id": "00002-000",
               "source": "Four score and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.",
-              "target": "87年前、我々の先人たちはこの大陸に新しい国を生み出した。その国は自由の理念のもとに構想され、すべての人は平等に創られているという命題に献身している。"
+              "target": "今から八十七年前、我々の父祖たちはこの大陸に、自由の理念のもとに構想され、すべての人は平等に造られているという命題に捧げられた、新しい国家を生み出しました。"
             }
           ],
           "raw_line": 6
@@ -31,7 +31,7 @@
             {
               "id": "00003-000",
               "source": "Now we are engaged in a great civil war, testing whether that nation, or any nation so conceived and so dedicated, can long endure.",
-              "target": "今、私たちは大きな内戦に従事しており、その国、あるいはそのように構想され献身されたいかなる国も長く存続できるかどうかを試されているのです。"
+              "target": "今、私たちは大きな内戦に関わっており、その国、またはそのように考えられ、そのようにささげられたどの国も、長く存続できるかどうかを試しています。"
             },
             {
               "id": "00003-001",
@@ -41,12 +41,12 @@
             {
               "id": "00003-002",
               "source": "We have come to dedicate a portion of that field, as a final resting place for those who here gave their lives that that nation might live.",
-              "target": "私たちはその戦場の一部を、この国のために命を捧げた者たちの最期の安息の地として捧げるために来たのです。"
+              "target": "私たちは、その国が生き続けるためにここで命をささげた人々のための、最後の安息の地として、その戦場の一部をささげるために来ました。"
             },
             {
               "id": "00003-003",
               "source": "It is altogether fitting and proper that we should do this.",
-              "target": "これを行うことはまったくふさわしく、正しいことです。"
+              "target": "私たちがこれを行うのは、まったくもってふさわしく、正しいことです。"
             }
           ],
           "raw_line": 8
@@ -56,32 +56,27 @@
             {
               "id": "00004-000",
               "source": "But, in a larger sense, we can not dedicate—we can not consecrate—we can not hallow—this ground.",
-              "target": "しかし、より広い意味では、私たちはこの地を捧げることも、聖別することも、神聖化することもできません。"
+              "target": "しかし、より広い意味において、私たちはこの地をささげることはできません――この地を聖別することも、神聖なものとすることもできません。"
             },
             {
               "id": "00004-001",
               "source": "The brave men, living and dead, who struggled here, have consecrated it, far above our poor power to add or detract.",
-              "target": "ここで戦った勇敢な人々、生きている者も死んだ者も、この地をすでに聖別しており、私たちのわずかな力で加えたり減らしたりできるものではありません。"
+              "target": "ここで戦った勇敢な人々――生きている者も、亡くなった者も――が、この地を、私たちのつたない力で何かを加えたり減らしたりできる以上に、すでに聖別しました。"
             },
             {
               "id": "00004-002",
               "source": "The world will little note, nor long remember what we say here, but it can never forget what they did here.",
-              "target": "世界は私たちがここで語ることをほとんど気に留めず、長く記憶もしないでしょうが、彼らがここで成し遂げたことを決して忘れることはありません。"
+              "target": "世界は、私たちがここで語ることにほとんど注意を払わず、長く記憶することもないでしょうが、彼らがここで成し遂げたことを決して忘れることはできません。"
             },
             {
               "id": "00004-003",
               "source": "It is for us the living, rather, to be dedicated here to the unfinished work which they who fought here have thus far so nobly advanced.",
-              "target": "むしろ私たち生きている者が、ここで戦った者たちがこれまで高貴に進めてきた未完の仕事に身を捧げるべきなのです。"
+              "target": "むしろ、私たち生きている者が、ここで戦った人々がこれまで高貴に進めてきた未完の事業に、ここで身をささげるべきなのです。"
             },
             {
               "id": "00004-004",
-              "source": "It is rather for us to be here dedicated to the great task remaining before us—that from these honored dead we take increased devotion to that cause for which they gave the last full measure of devotion—",
-              "target": "むしろ私たちがここで身を捧げるべきは、私たちの前に残された大いなる課題に対してであり、ここに眠る尊い死者たちから、彼らが最後の一滴まで捧げた大義へのさらなる献身を受け継ぐことです。"
-            },
-            {
-              "id": "00004-005",
-              "source": "that we here highly resolve that these dead shall not have died in vain—that this nation, under God, shall have a new birth of freedom—and that government of the people, by the people, for the people, shall not perish from the earth.",
-              "target": "ここに私たちは強く決意します。これらの死者が無駄死にでなかったこと、この国が神のもとで新たな自由の誕生を迎えること、そして人民の、人民による、人民のための政府がこの地上から滅び去ることのないように。"
+              "source": "It is rather for us to be here dedicated to the great task remaining before us—that from these honored dead we take increased devotion to that cause for which they gave the last full measure of devotion—that we here highly resolve that these dead shall not have died in vain—that this nation, under God, shall have a new birth of freedom—and that government of the people, by the people, for the people, shall not perish from the earth.",
+              "target": "むしろ、私たちがここで、私たちの前に残された大いなる課題に身をささげるべきなのです――すなわち、これらの誉れ高き死者たちから、彼らがそのために最後の全てをささげた大義への、より深い献身を受け継ぐこと――ここで、これらの死者が無駄に死んだのではないと固く決意すること――この国が、神のもとで、自由の新たな誕生を遂げること――そして、人民の、人民による、人民のための政治が、地上から滅びることのないようにすることです。"
             }
           ],
           "raw_line": 10
@@ -90,5 +85,5 @@
       "raw_line": 6
     }
   ],
-  "cost": 0.004
+  "cost": 0.023
 }

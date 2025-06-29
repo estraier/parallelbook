@@ -682,7 +682,7 @@ JSON形式で与えられた英文"source"を文単位に分解し、各文に�
 
 命令法の例を示します。
 
-```
+```json
 {
   "source": "Let's go! Hey, do it now.",
   "target": "行きましょう！今すぐしろ。"
