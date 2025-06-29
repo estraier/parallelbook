@@ -19,11 +19,13 @@ from pathlib import Path
 PROG_NAME = "analyze_parallel_corpus.py"
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 CHATGPT_MODELS = [
-  # model name, input token cost (USD/1K), output token cost (USD/1K)
-  ("gpt-3.5-turbo", 0.0005, 0.0015),
-  ("gpt-4o", 0.005, 0.015),
-  ("gpt-4-turbo", 0.01, 0.03),
-  ("gpt-4", 0.03, 0.06),
+  ("gpt-4.1-mini",  0.00040, 0.00160),
+  ("gpt-4.1",       0.00200, 0.00800),
+  ("gpt-4.1-nano",  0.00010, 0.00040),
+  ("gpt-3.5-turbo", 0.00050, 0.00150),
+  ("gpt-4o",        0.00250, 0.01000),
+  ("gpt-4-turbo",   0.01000, 0.03000),
+  ("gpt-4",         0.01000, 0.03000),
 ]
 ANALYZE_INSTRUCTIONS = """
 あなたは英文の構文解析を行っている言語学者です。
@@ -97,12 +99,18 @@ JSON形式で与えられた英文"source"を文単位に分解し、各文に�
 出力はJSON配列のみで、余計な装飾やブラケットは省いてください。
 必ず "format": "sentence" を各文のトップに含め、全体はJSON配列で返してください。
 各文の本文は "text" 属性として表現してください。英字だけでなく、引用符や句読点も含めた全ての文字を複写してください。複写した文字列は原文から一切の変更をしないでください。
-文や節の文型 "pattern" は、 SV、SVO、SVC、SVOO、SVOC、other のいずれかで示します。
+文や節の文型 "pattern" は、 以下のいずれかで示します。
+- SV : 動詞が自動詞で、目的語も補語も取らない。例：I ran quickly.
+- SVO : 動詞が他動詞で、目的語を1つ取る。例：You ate a big apple quickly.
+- SVC : 動詞がbe動詞などのlinking動詞で、補語を1つ取る。例：He is a popular teacher.
+- SVOO : 動詞が他動詞で、目的語を2つ取る。例：She gave him chocolate.
+- SVOC : 動詞が他動詞で、目的語を1つと補語1つを取る。例：You make me happy.
+- other : 動詞を含まず、上記の5つに当てはまららないもの。例：Nice to meet you.
 文や節の文型を構成する要素は "element" の中に配列で示します。要素の種類 "type" は、S（主語）、V（動詞）、O（目的語）、C（補語）、M（修飾語）のいずれかで示します。
 名詞にかかる形容詞は名詞句に含めてください。動詞にかかる副詞は修飾語（M）として扱ってください。ただし、助動詞や句動詞は動詞句（V）に結合してください。倒置や慣用により位置が飛び飛びになっている動詞句も、結合して表現してください。
 名詞にかかる不定詞句や動名詞句や前置詞句は形容詞句なので、それがかかる名詞と同じ要素に含めてください。動詞にかかる不定詞句や分詞構文や前置詞句は副詞句なので、修飾語として扱って下さい。
 各 "elements" オブジェクトには、構文要素の直訳を示す "translation" 属性を付加してください。これは "text" に対応する日本語訳であり、構文構成の意味を読解するための補助となります。翻訳は直訳調で構いません。入力の "target" を参考にしつつも、その要素の語句の辞書的な語義の範疇で最も文脈に合ったものを表現してください。
-各 "element" の "text" の中にthat節、関係詞節、if節、whether節などの従属節が含まれる場合は、"subclauses" に分解して2階層目まで構文を分析してください。再帰は最大1段階までにして、従属節の中の従属節は抽出しないでください。従属節として抽出した文字列も元の "text" に含めたままにして下さい。
+各 "element" の "text" の中にthat節、関係詞節、if節、whether節などの従属節が含まれる場合は、"subclauses" に分解して2階層目まで構文を分析してください。再帰させないでください。つまり、従属節の中の従属節は抽出しないでください。従属節として抽出した文字列も元の "text" に含めたままにして下さい。
 文全体にかかる副詞節は、"elements" と並列の層に "subclauses" として抽出してください。
 従属節の "relation" には、主節に対する従属節の関係を記述します。代表的な語彙は以下のものです。
 - content : 動詞や形容詞の内容を表す節（that節など）
@@ -117,7 +125,7 @@ JSON形式で与えられた英文"source"を文単位に分解し、各文に�
 - manner : 様態・方法を示す節（as if節など）
 - comparison : 比較を示す節（than節など）
 - concession : 譲歩を示す節（even if節など）
-引用符を使った直接話法の副文を含む場合、"subsentences" に分解して2階層目まで構文を分析してください。再帰は最大1段階までにして、副文の中の副文は抽出しないでください。副文として抽出した文字列も主文の "text" に含めたままにして下さい。
+引用符を使った直接話法の副文を含む場合、"subsentences" に分解して2階層目まで構文を分析してください。再帰させないでください。つまり、副文の中の副文は抽出しないでください。副文として抽出した文字列も主文の "text" に含めたままにして下さい。
 入力の "target" を構文解釈の参考として補助的に用いてください。意味的な整合性を高めるためのヒントとして使ってください。
 
 典型的な入力例を示します。
@@ -383,7 +391,6 @@ JSON形式で与えられた英文"source"を文単位に分解し、各文に�
 ```
 
 修飾語が多い例を示します。
-
 
 ```json
 {
@@ -975,7 +982,7 @@ def make_prompt(source_text, target_text, attempt, extra_hint, use_source_exampl
 
 
 def count_chatgpt_tokens(text, model):
-  encoding = tiktoken.encoding_for_model(model)
+  encoding = tiktoken.get_encoding("cl100k_base")
   tokens = encoding.encode(text)
   return len(tokens)
 

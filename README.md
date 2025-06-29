@@ -326,46 +326,47 @@ This software is distributed under the terms of Apache License version 2.0.  Sam
 Loading data from basic-source.json
 Total tasks: 7
 Title: How to Make Parallel Books
-GPT models: gpt-3.5-turbo
+GPT models: gpt-4.1-mini
 Task 0: book_title - How to Make Parallel Books
 Task 1: book_author - Mikio Hirabayashi
 Task 2: chapter_title - Basics
-Task 3: paragraph - Parallel corpora are powerful tools to learn languages.  With th
+Task 3: paragraph - Parallel corpora are powerful tools to learn languages. With the
 Task 4: paragraph - This project provides scripts to make parallel books from arbitr
 Task 5: chapter_title - License
 Task 6: paragraph - This software is distributed under the terms of Apache License v
-Done: tasks=7, total_cost=$0.0038 (Y0.57)
-Validating output
+Done: tasks=7, total_cost=$0.0045 (Y0.68)
+Postprocessing the output
+Validating the output
 Writing data into basic-parallel.json
 Finished
 ```
 
-デフォルトでは、gpt-3.5-turboというモデルが使われます。これは多くのタスクで十分な精度で、かつ安いのが利点です。費用は多くかかりますが、より高精度な結果が欲しいのであれば、gpt-4oを使うのも良いでしょう。以下のように実行します。
+デフォルトでは、gpt-4.1-miniというモデルが使われます。これは多くのタスクで十分な精度で、かつ安いのが利点です。より高精度な結果が欲しいのであれば、費用は多くかかりますが、gpt-4.1を使うのも良いでしょう。以下のように実行します。
 
 ```shell
-./scripts/make_parallel_corpus.py basic-source.json --model gpt-4o
+./scripts/make_parallel_corpus.py basic-source.json --model gpt-4.1
 ```
 
 ```
 Loading data from basic-source.json
 Total tasks: 7
 Title: How to Make Parallel Books
-GPT models: gpt-4o
+GPT models: gpt-4.1
 Task 0: book_title - How to Make Parallel Books
 Task 1: book_author - Mikio Hirabayashi
-Attempt 1 failed (model=gpt-4o, temperature=0.0, jsonize=True): Validation error
 Task 2: chapter_title - Basics
-Task 3: paragraph - Parallel corpora are powerful tools to learn languages.  With th
+Task 3: paragraph - Parallel corpora are powerful tools to learn languages. With the
 Task 4: paragraph - This project provides scripts to make parallel books from arbitr
 Task 5: chapter_title - License
 Task 6: paragraph - This software is distributed under the terms of Apache License v
-Done: tasks=7, total_cost=$0.0341 (Y5.11)
-Validating output
+Done: tasks=7, total_cost=$0.0206 (Y3.09)
+Postprocessing the output
+Validating the output
 Writing data into basic-parallel.json
 Finished
 ```
 
-gpt-3.5-turboでは$0.0038（0.6円）だったのに、gpt-4oだと$0.0341（5.11円）になっています。長い文章を扱うには、ちょっと高いですね。よって、まずはgpt-3.5-turboで全体のタスクを終わらせてから、気に入らない部分だけをgpt-4oで再試行するのが良いでしょう。どのタスクを再試行するかを把握するには、生成したJSONデータに含まれるタスクIDを見ます。以下の例の場合、原文と翻訳が全く合っていません。
+gpt-4.1-miniでは$0.0045（0.68円）だったのに、gpt-4.1だと$0.0206（3.09円）になっています。長い文章を扱うには、ちょっと高いですね。よって、まずはgpt-4.1-miniで全体のタスクを終わらせてから、気に入らない部分だけをgpt-4.1で再試行するのが良いでしょう。どのタスクを再試行するかを把握するには、生成したJSONデータに含まれるタスクIDを見ます。以下の例の場合、原文と翻訳が全く合っていません。
 
 ```json
 {
@@ -378,7 +379,7 @@ gpt-3.5-turboでは$0.0038（0.6円）だったのに、gpt-4oだと$0.0341（5.
 その場合、タスク35をやり直すことになるでしょう。--redoオプションに、タスクIDを指定します。35,128,247のように、複数のタスクIDを指定することもできます。
 
 ```
-./scripts/make_parallel_corpus.py basic-source.json --model gpt-4o --redo 35
+./scripts/make_parallel_corpus.py basic-source.json --model gpt-4.1 --redo 35
 ```
 
 タスクの中には、ChatGPTがうまく扱えないものもあるかもしれません。ChatGPTにはJSONの結果を返すように指示していますが、その生成がうまくいかない場合には、プロンプトやパラメータを調整して自動的に再試行がなされます。6回の再試行を経ても失敗する場合には、モデルを変えてさらに6回の再試行を行い、処理を完遂させます。
@@ -387,18 +388,18 @@ gpt-3.5-turboでは$0.0038（0.6円）だったのに、gpt-4oだと$0.0341（5.
 Loading data from basic-source.json
 Total tasks: 7
 Title: How to Make Parallel Books
-GPT models: gpt-3.5-turbo
+GPT models: gpt-4.1-mini
 Task 0: book_title - How to Make Parallel Books
 Task 1: book_author - Mikio Hirabayashi
 Task 2: chapter_title - Basics
 Task 3: paragraph - Parallel corpora are powerful tools to learn languages.  With th
 Task 4: paragraph - This project provides scripts to make parallel books from arbitr
-Attempt 1 failed (model=gpt-3.5-turbo, temperature=0.0, jsonize=True): Extra data: line 8 column 2 (char 585)
-Attempt 2 failed (model=gpt-3.5-turbo, temperature=0.0, jsonize=False): Extra data: line 8 column 2 (char 587)
-Attempt 3 failed (model=gpt-3.5-turbo, temperature=0.4, jsonize=True): Extra data: line 8 column 2 (char 582)
-Attempt 4 failed (model=gpt-3.5-turbo, temperature=0.4, jsonize=False): Extra data: line 8 column 2 (char 587)
-Attempt 5 failed (model=gpt-3.5-turbo, temperature=0.8, jsonize=True): Extra data: line 8 column 2 (char 614)
-Attempt 6 failed (model=gpt-3.5-turbo, temperature=0.8, jsonize=False): Extra data: line 8 column 2 (char 605)
+Attempt 1 failed (model=gpt-4.1-mini, temperature=0.0, jsonize=True): Extra data: line 8 column 2 (char 585)
+Attempt 2 failed (model=gpt-4.1-mini, temperature=0.0, jsonize=False): Extra data: line 8 column 2 (char 587)
+Attempt 3 failed (model=gpt-4.1-mini, temperature=0.4, jsonize=True): Extra data: line 8 column 2 (char 582)
+Attempt 4 failed (model=gpt-4.1-mini, temperature=0.4, jsonize=False): Extra data: line 8 column 2 (char 587)
+Attempt 5 failed (model=gpt-4.1-mini, temperature=0.8, jsonize=True): Extra data: line 8 column 2 (char 614)
+Attempt 6 failed (model=gpt-4.1-mini, temperature=0.8, jsonize=False): Extra data: line 8 column 2 (char 605)
 Task 5: chapter_title - License
 Task 6: paragraph - This software is distributed under the terms of Apache License v
 Done: tasks=7, total_cost=$0.0094 (Y1.41)
@@ -413,24 +414,24 @@ Finished
 Loading data from basic-source.json
 Total tasks: 7
 Title: How to Make Parallel Books
-GPT models: gpt-3.5-turbo
+GPT models: gpt-4.1-mini
 Task 0: book_title - How to Make Parallel Books
 Task 1: book_author - Mikio Hirabayashi
 Task 2: chapter_title - Basics
 Task 3: paragraph - Parallel corpora are powerful tools to learn languages.  With th
 Task 4: paragraph - This project provides scripts to make parallel books from arbitr
-Attempt 1 failed (model=gpt-3.5-turbo, temperature=0.0, jsonize=True): Extra data: line 8 column 2 (char 718)
-Attempt 2 failed (model=gpt-3.5-turbo, temperature=0.0, jsonize=False): Extra data: line 8 column 2 (char 766)
-Attempt 3 failed (model=gpt-3.5-turbo, temperature=0.4, jsonize=True): Extra data: line 8 column 2 (char 573)
-Attempt 4 failed (model=gpt-3.5-turbo, temperature=0.4, jsonize=False): Extra data: line 8 column 2 (char 645)
-Attempt 5 failed (model=gpt-3.5-turbo, temperature=0.8, jsonize=True): Extra data: line 8 column 2 (char 616)
-Attempt 6 failed (model=gpt-3.5-turbo, temperature=0.8, jsonize=False): Extra data: line 8 column 2 (char 614)
-Attempt 1 failed (model=gpt-4o, temperature=0.0, jsonize=True): Extra data: line 8 column 2 (char 607)
-Attempt 2 failed (model=gpt-4o, temperature=0.0, jsonize=False): Extra data: line 8 column 2 (char 601)
-Attempt 3 failed (model=gpt-4o, temperature=0.4, jsonize=True): Extra data: line 8 column 2 (char 551)
-Attempt 4 failed (model=gpt-4o, temperature=0.4, jsonize=False): Extra data: line 8 column 2 (char 572)
-Attempt 5 failed (model=gpt-4o, temperature=0.8, jsonize=True): Extra data: line 17 column 2 (char 614)
-Attempt 6 failed (model=gpt-4o, temperature=0.8, jsonize=False): Extra data: line 17 column 2 (char 605)
+Attempt 1 failed (model=gpt-4.1-mini, temperature=0.0, jsonize=True): Extra data: line 8 column 2 (char 718)
+Attempt 2 failed (model=gpt-4.1-mini, temperature=0.0, jsonize=False): Extra data: line 8 column 2 (char 766)
+Attempt 3 failed (model=gpt-4.1-mini, temperature=0.4, jsonize=True): Extra data: line 8 column 2 (char 573)
+Attempt 4 failed (model=gpt-4.1-mini, temperature=0.4, jsonize=False): Extra data: line 8 column 2 (char 645)
+Attempt 5 failed (model=gpt-4.1-mini, temperature=0.8, jsonize=True): Extra data: line 8 column 2 (char 616)
+Attempt 6 failed (model=gpt-4.1-mini, temperature=0.8, jsonize=False): Extra data: line 8 column 2 (char 614)
+Attempt 1 failed (model=gpt-4.1, temperature=0.0, jsonize=True): Extra data: line 8 column 2 (char 607)
+Attempt 2 failed (model=gpt-4.1, temperature=0.0, jsonize=False): Extra data: line 8 column 2 (char 601)
+Attempt 3 failed (model=gpt-4.1, temperature=0.4, jsonize=True): Extra data: line 8 column 2 (char 551)
+Attempt 4 failed (model=gpt-4.1, temperature=0.4, jsonize=False): Extra data: line 8 column 2 (char 572)
+Attempt 5 failed (model=gpt-4.1, temperature=0.8, jsonize=True): Extra data: line 17 column 2 (char 614)
+Attempt 6 failed (model=gpt-4.1, temperature=0.8, jsonize=False): Extra data: line 17 column 2 (char 605)
 Traceback (most recent call last):
   File "/Users/mikio/dev/parallelbook/./scripts/make_parallel_corpus.py", line 637, in <module>
     main()
@@ -464,7 +465,7 @@ AIモデルにとって都合の悪いデータを入力すれば、この事態
 その場合、タスク35をやり直すことになるでしょう。--redoオプションに、タスクIDを指定します。35,128,247のように、複数のタスクIDを指定することもできます。
 
 ```
-./scripts/make_parallel_corpus.py basic-source.json --model gpt-4o --redo 35
+./scripts/make_parallel_corpus.py basic-source.json --model gpt-4.1 --redo 35
 ```
 
 ## 生成機能群の仕様
@@ -616,11 +617,11 @@ AIは間違います。特に、指示通りのJSONフォーマットを出力�
 
 再試行の際にはtemperatureパラメータを増やして出力のランダム性を上げるほか、プロンプトに微調整をします。特にプロンプト内の入力データを疑似JSON形式とプレーンテキストで切り替えるのが効果があります。
 
-パラメータやプロンプトを変えて6回の試行をしてもうまくいかない場合、モデルを切り替えてさらに6回の試行をします。gpt-4oモデルを使っている場合、gpt-3.5-turboモデルに切り替え、gpt-4oモデルを以外を使っている場合、gpt-4oモデルに切り替えます。それでもうまく行かない場合、処理が停止します。ただし、--failsoftオプションをつけている場合、ダミーデータを出力して処理が続行されます。
+パラメータやプロンプトを変えて6回の試行をしてもうまくいかない場合、モデルを切り替えてさらに6回の試行をします。gpt-4.1モデルを使っている場合、gpt-4.1-miniモデルに切り替え、gpt-4.1モデルを以外を使っている場合、gpt-4.1モデルに切り替えます。それでもうまく行かない場合、処理が停止します。ただし、--failsoftオプションをつけている場合、ダミーデータを出力して処理が続行されます。
 
-ChatGPTのAPIを叩くと、費用がかかります。2025年5月現在、デフォルトのgpt-3.5-turboモデルだと、入力には1000トークンあたり0.0005ドルかかり、出力には1000トークンあたり0.0015ドルかかります。gpt-4oモデルだとその10倍で、入力には1000トークンあたり0.005ドルかかり、出力には1000トークンあたり0.015ドルかかります。
+ChatGPTのAPIを叩くと、費用がかかります。2025年6月現在、デフォルトのgpt-4.1-miniモデルだと、入力には1000トークンあたり0.0004ドルかかり、出力には1000トークンあたり0.0016ドルかかります。gpt-4.1モデルだとその5倍で、入力には1000トークンあたり0.00200ドルかかり、出力には1000トークンあたり0.00800ドルかかります。
 
-例えば、「Anne of Green Gables」を訳すとしましょう。平均すると、各パラグラフの翻訳には、入力で800トークン、出力で400トークン程度が使われます。よって、gpt-3.5-turboモデルだと、入力には0.8*0.0005=0.0004ドルかかり、出力には0.4*0.0015=0.0006ドルかかります。合計で0.0012ドルです。それを1826パラグラフの分だけやるので、1.096ドルかかります。実際には再試行の分がかかるので、その1.5倍くらい見ておくと良いでしょう。つまり1.7ドルくらいです。gpt-4oモデルだと、その10倍の17ドルくらいかかります。
+例えば、「Anne of Green Gables」を訳すとしましょう。平均すると、各パラグラフの翻訳には、入力で800トークン、出力で400トークン程度が使われます。よって、gpt-4.1-miniモデルだと、入力には0.8*0.0004=0.00032ドルかかり、出力には0.4*0.0016=0.00064ドルかかります。合計で0.00096ドルです。それを1826パラグラフの分だけやるので、1.752ドルかかります。実際には再試行の分がかかるので、その1.3倍くらい見ておくと良いでしょう。つまり2.3ドルくらいです。gpt-4.1モデルだと、その5倍の11.39ドルくらいかかります。
 
 本スクリプトの手法では文脈情報を入力するために多くのトークン数が費やされていますが、入力トークンの費用が出力トークンの費用よりも小さいので、文脈情報を付加することによる総合的な費用の向上は大きくありません。パラグラフ単位での翻訳と文分割を同時に行うことでの出力トークン数の増加の方が問題ですが、使いやすい対訳本を作る上ではそこは譲れません。
 
@@ -638,6 +639,7 @@ make_parallel_corpus.pyは以下のオプションを備えます。
 - --no-fallback : 失敗時に別モデルを使う処理を抑制します。
 - --extra-hint : プロンプトに追加するヒント情報を指定します。
 - --debug : 各タスクのプロンプトと応答などのデバッグ情報をログ表示します。
+- --list-models : 既知のモデルの一覧を出力して終了します。
 
 ChatGPTに渡すプロンプトはスクリプト内にハードコードされているので、適宜修正して使ってください。表記揺れを防ぐために固有名詞とその翻訳のリストを与えたり、作品の背景知識を埋め込んだりすることも有用です。
 
@@ -902,11 +904,9 @@ analyze_parallel_corpus.py sample-parallel.json
 
 AIは間違います。特に、指示通りのJSONフォーマットを出力しなかったり、指示通りの内容を出さなかったりすることがよくあります。よって、後処理として整合性を確認し、不整合であれば、自動的に再試行が行われます。整合性の確認としては、まずJSONが適切に構築できるかを検査します。さらに、結果の個々の要素が上述の属性を持っているかどうかを調べます。内容に関する整合性の検査は行わないので、時に奇妙な結果が含まれることがあります。"SVO" と判定しておきながら要素に補語が含まれていたり、初歩的な不整合が含まれることがあります。
 
-パラメータやプロンプトを変えて6回の試行をしてもうまくいかない場合、モデルを切り替えてさらに6回の試行をします。gpt-4oモデルを使っている場合、gpt-3.5-turboモデルに切り替え、gpt-4oモデルを以外を使っている場合、gpt-4oモデルに切り替えます。それでもうまく行かない場合、処理が停止します。ただし、--failsoftオプションをつけている場合、ダミーデータを出力して処理が続行されます。
+パラメータやプロンプトを変えて6回の試行をしてもうまくいかない場合、モデルを切り替えてさらに6回の試行をします。gpt-4.1モデルを使っている場合、gpt-4.1-miniモデルに切り替え、gpt-4.1モデルを以外を使っている場合、gpt-4.1モデルに切り替えます。それでもうまく行かない場合、処理が停止します。ただし、--failsoftオプションをつけている場合、ダミーデータを出力して処理が続行されます。
 
-ChatGPTのAPIを叩くと、費用がかかります。2025年5月現在、デフォルトのgpt-3.5-turboモデルだと、入力には1000トークンあたり0.0005ドルかかり、出力には1000トークンあたり0.0015ドルかかります。gpt-4oモデルだとその10倍で、入力には1000トークンあたり0.005ドルかかり、出力には1000トークンあたり0.015ドルかかります。
-
-例えば、「Anne of Green Gables」を訳すとしましょう。平均すると、各パラグラフの翻訳には、入力で10000トークン、出力で500トークン程度が使われます。よって、gpt-3.5-turboモデルだと、入力には10*0.0005=0.005ドルかかり、出力には0.5*0.0015=0.00075ドルかかります。合計で0.00575ドルです。それを6402文の分だけやるので、36.8ドルかかります。実際には再試行の分がかかるので、その1.1倍くらい見ておくと良いでしょう。つまり40ドルくらいです。gpt-4oモデルだと、その10倍の400ドルくらいかかります。
+ChatGPTのAPIの費用についてはmake_parallel_corpus.pyの説明を読んでください。例えば、「Anne of Green Gables」を訳すとしましょう。平均すると、各パラグラフの翻訳には、入力で10000トークン、出力で500トークン程度が使われます。よって、gpt-4.1-miniモデルだと、入力には10*0.0004=0.004ドルかかり、出力には0.5*0.0016=0.0008ドルかかります。合計で0.00575ドルです。それを6402文の分だけやるので、30.72ドルかかります。実際には再試行の分がかかるので、その1.1倍くらい見ておくと良いでしょう。つまり34ドルくらいです。gpt-4.1モデルだと、その5倍の153ドルくらいかかります。
 
 本スクリプトの手法ではインストラクションに膨大な例を掲載しているので、そのせいで入力トークン数が10000近くにもなり、それが実行費用を増大させています。例を省けば費用を削減できますが、その分だけ精度が下がります。文型に基づく構文解析の複雑性と、その解析作業の学習データがネット上に流布されていないことにより、AIモデルに多数の例を与えないと十分な精度が出ないのが現状です。
 

@@ -6,7 +6,7 @@
   "title": {
     "id": "00000-000",
     "source": "Book Title",
-    "target": "本の題名"
+    "target": "書名"
   },
   "author": {
     "id": "00001-000",
@@ -18,14 +18,14 @@
       "title": {
         "id": "00002-000",
         "source": "Chapter1's Title",
-        "target": "第1章のタイトル"
+        "target": "第1章の題名"
       },
       "body": [
         {
           "header": {
             "id": "00003-000",
             "source": "Header in the chapter",
-            "target": "章の見出し"
+            "target": "章内の見出し"
           }
         },
         {
@@ -33,22 +33,27 @@
             {
               "id": "00004-000",
               "source": "This is paragraph one.",
-              "target": "これは1つ目の段落です。"
+              "target": "これは第一段落です。"
             },
             {
               "id": "00004-001",
               "source": "\"Baby steps to giant strides!\", he said.",
-              "target": "「小さな一歩から巨大な進歩へ！」と彼は言いました。"
+              "target": "「小さな一歩が大きな飛躍へ！」と彼は言った。"
             },
             {
               "id": "00004-002",
-              "source": "Contiguous lines are concatenated into one paragraph.",
-              "target": "隣接する行は1つの段落に連結されます。"
+              "source": "Contiguous lines are concatenated.",
+              "target": "連続する行はつなげられます。"
             },
             {
               "id": "00004-003",
+              "source": "into one paragraph.",
+              "target": "一つの段落にまとめられます。"
+            },
+            {
+              "id": "00004-004",
               "source": "So, you can fold them by a single linefeed.",
-              "target": "そのため、1つの改行で折りたたむことができます。"
+              "target": "ですから、単一の改行で折りたたむことができます。"
             }
           ],
           "raw_line": 10
@@ -57,18 +62,13 @@
           "paragraph": [
             {
               "id": "00005-000",
-              "source": "I replied, \"This is the second paragraph.",
-              "target": "私は答えた。「これが2番目の段落です。"
+              "source": "I replied, \"This is the second paragraph. I'm not sure though.\"",
+              "target": "私は答えました。「これは第二の段落です。ただ、確かではありません。」"
             },
             {
               "id": "00005-001",
-              "source": "I'm not sure though.\"",
-              "target": "でも、確信はありません。」"
-            },
-            {
-              "id": "00005-002",
               "source": "Brank lines separate paragraphs.",
-              "target": "空行は段落を区切ります。"
+              "target": "空行が段落を区切ります。"
             }
           ],
           "raw_line": 14
@@ -96,7 +96,7 @@
       "title": {
         "id": "00008-000",
         "source": "Chapter2's Title",
-        "target": "第2章のタイトル"
+        "target": "第2章の題名"
       },
       "body": [
         {
@@ -104,12 +104,12 @@
             {
               "id": "00009-000",
               "source": "Lines in blockquotes are also concatenated and translated.",
-              "target": "ブロック引用内の行も連結されて翻訳されます。"
+              "target": "引用符で囲まれた行も連結されて翻訳されます。"
             },
             {
               "id": "00009-001",
               "source": "A whitespace must follow \">\".",
-              "target": "「>」の後には空白を入れる必要があります。"
+              "target": "\">\"の後には空白が必要です。"
             }
           ],
           "raw_line": 22
@@ -119,12 +119,12 @@
             {
               "id": "00010-000",
               "source": "Hop. Step. Jump! Each item in the list are not segmented.",
-              "target": "ホップ。ステップ。ジャンプ！リスト内の各項目は分割されません。"
+              "target": "ホップ。ステップ。ジャンプ！リストの各項目は区切られていません。"
             },
             {
               "id": "00011-000",
               "source": "Saitama, Saitama? A whitespace must follow \"-\".",
-              "target": "埼玉、埼玉？「-」の後には空白を入れる必要があります。"
+              "target": "さいたま、さいたま？「-」の後には空白が必要です。"
             }
           ],
           "raw_line": 25
@@ -196,5 +196,5 @@
       "raw_line": 20
     }
   ],
-  "cost": 0.005
+  "cost": 0.006
 }

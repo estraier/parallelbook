@@ -17,11 +17,13 @@ from pathlib import Path
 PROG_NAME = "make_parallel_corpus.py"
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 CHATGPT_MODELS = [
-  # model name, input token cost (USD/1K), output token cost (USD/1K)
-  ("gpt-3.5-turbo", 0.0005, 0.0015),
-  ("gpt-4o", 0.005, 0.015),
-  ("gpt-4-turbo", 0.01, 0.03),
-  ("gpt-4", 0.03, 0.06),
+  ("gpt-4.1-mini",  0.00040, 0.00160),
+  ("gpt-4.1",       0.00200, 0.00800),
+  ("gpt-4.1-nano",  0.00010, 0.00040),
+  ("gpt-3.5-turbo", 0.00050, 0.00150),
+  ("gpt-4o",        0.00250, 0.01000),
+  ("gpt-4-turbo",   0.01000, 0.03000),
+  ("gpt-4",         0.01000, 0.03000),
 ]
 
 
@@ -642,7 +644,7 @@ def make_prompt(book_title, role, source_text,
 
 
 def count_chatgpt_tokens(text, model):
-  encoding = tiktoken.encoding_for_model(model)
+  encoding = tiktoken.get_encoding("cl100k_base")
   tokens = encoding.encode(text)
   return len(tokens)
 
@@ -902,6 +904,12 @@ def simulate_task_as_code(source_text):
   return record
 
 
+def list_available_models():
+  models = openai.models.list()
+  for model in models.data:
+    print(model.id)
+
+
 def main():
   parser = argparse.ArgumentParser()
   parser.add_argument("input_file",
@@ -928,6 +936,11 @@ def main():
                       help="extra hint to be appended to the prompt")
   parser.add_argument("--debug", action="store_true",
                       help="prints the debug messages too")
+  parser.add_argument("--list-models", action="store_true",
+                      help="prints known models and exit")
+  if "--list-models" in sys.argv:
+    list_available_models()
+    sys.exit(0)
   args = parser.parse_args()
   if args.debug:
     logger.setLevel(logging.DEBUG)
