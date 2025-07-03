@@ -123,6 +123,101 @@ body {
   display: block;
 }
 
+.parallel-book .parallel .analysis {
+  font-size: 90%;
+  font-weight: normal;
+  margin: 0;
+  padding-left: 0;
+  text-align: left;
+}
+.parallel-book .parallel .analysis ul {
+  margin: 0 0 0 2ex;
+  padding: 0;
+}
+.parallel-book .parallel .analysis li {
+  padding-left: 0;
+  list-style: none;
+}
+.parallel-book .parallel .analysis span.pattern {
+  display: inline-block;
+  text-align: center;
+  min-width: 4ex;
+  margin-right: 0.5ex;
+  padding: 0 0.2ex;
+  font-size: 85%;
+  background: #eee;
+  border: 1px solid #999;
+  border-radius: 0.5ex;
+  opacity: 0.8;
+}
+.parallel-book .parallel .analysis span.pattern-sv {
+  background: #def;
+}
+.parallel-book .parallel .analysis span.pattern-svo {
+  background: #efd;
+}
+.parallel-book .parallel .analysis span.pattern-svc {
+  background: #ffd;
+}
+.parallel-book .parallel .analysis span.pattern-svoo {
+  background: #edf;
+}
+.parallel-book .parallel .analysis span.pattern-svoo {
+  background: #fde;
+}
+.parallel-book .parallel .analysis span {
+  display: inline;
+}
+.parallel-book .parallel .analysis span.type {
+  display: inline-block;
+  text-align: center;
+  min-width: 2.5ex;
+  margin-right: 0.5ex;
+  padding: 0 0.2ex;
+  font-size: 85%;
+  background: #eee;
+  border: 1px solid #ddd;
+  border-radius: 0.5ex;
+  opacity: 0.7;
+}
+.parallel-book .parallel .analysis span.type-s {
+  background: #fde;
+}
+.parallel-book .parallel .analysis span.type-v {
+  background: #def;
+}
+.parallel-book .parallel .analysis span.type-o {
+  background: #efd;
+}
+.parallel-book .parallel .analysis span.type-c {
+  background: #ffd;
+}
+.parallel-book .parallel .analysis span.tran {
+  margin-left: 1.2ex;
+  color: #036;
+  opacity: 0.7;
+}
+.parallel-book .parallel .analysis span.conj {
+  margin-right: 0.5ex;
+  font-size: 80%;
+  opacity: 0.7;
+}
+.parallel-book .parallel .analysis span.conj:before {
+  content: "(";
+}
+.parallel-book .parallel .analysis span.conj:after {
+  content: ")";
+}
+
+
+
+.parallel-book .parallel .analysis span.tran:before {
+  content: "(";
+}
+.parallel-book .parallel .analysis span.tran:after {
+  content: ")";
+}
+
 .parallel-book .pane {
   position: relative;
 }

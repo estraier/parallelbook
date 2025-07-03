@@ -28,7 +28,8 @@ CHATGPT_MODELS = [
   ("gpt-4",         0.01000, 0.03000),
 ]
 ANALYZE_INSTRUCTIONS = """
-あなたは英文の構文解析を行っている言語学者です。
+あなたは英文法の構文解析の試験を受けている学生です。
+減点を防ぐため、英文法の規則に厳密に従って答えてください。例外的な判断や分析を加えず、教科書的なルールや分類に忠実に構文要素を分類してください。
 JSON形式で与えられた英文"source"を文単位に分解し、各文について構文を解析し、結果をJSON形式で記述してください。
 出力は List[Object] 形式で、各要素が1文に対応します。
 各文の構文記述は以下の要素を含んでください：
@@ -41,7 +42,8 @@ JSON形式で与えられた英文"source"を文単位に分解し、各文に�
     "pattern": "SVOC", // 文型分類: SV, SVO, SVC, SVOO, SVOC, other
     "elements": [
       { "type": "S", "text": "...", "translation": "..." },  // 主語の語句または節
-      { "type": "V", "text": "...", "translation": "..." },  // 動詞の語句または節
+      { "type": "V", "text": "...", "translation": "...",    // 動詞の語句または節
+        "tense": "...", "aspect": "...", "mood": "...", "voice": "..." },
       { "type": "O", "text": "...", "translation": "..." },  // 目的語の語句または節
       {
         "type": "C", "text": "...", "translation": "...",
@@ -52,7 +54,8 @@ JSON形式で与えられた英文"source"を文単位に分解し、各文に�
           "pattern": "SVC",
           "elements": [
             { "type": "S", "text": "...", "translation": "..." },
-            { "type": "V", "text": "...", "translation": "..." },
+            { "type": "V", "text": "...", "translation": "...",
+              "tense": "...", "aspect": "...", "mood": "...", "voice": "..." },
             { "type": "C", "text": "...", "translation": "..." },
             { "type": "M", "text": "...", "translation": "..." }
           ]
@@ -68,7 +71,8 @@ JSON形式で与えられた英文"source"を文単位に分解し、各文に�
       "pattern": "SV",
       "elements": [
         { "type": "S", "text": "...", "translation": "..." },
-        { "type": "V", "text": "...", "translation": "..." }
+        { "type": "V", "text": "...", "translation": "...",
+          "tense": "...", "aspect": "...", "mood": "...", "voice": "..." }
       ]
     ]
   },
@@ -78,7 +82,8 @@ JSON形式で与えられた英文"source"を文単位に分解し、各文に�
     "pattern": "SV",
     "elements": [
       { "type": "S", "text": "...", "translation": "..." },
-      { "type": "V", "text": "...", "translation": "..." },
+      { "type": "V", "text": "...", "translation": "...",
+        "tense": "...", "aspect": "...", "mood": "...", "voice": "..." },
       { "type": "O", "text": "...", "translation": "..." }
     ],
     "subsentences": [
@@ -88,7 +93,8 @@ JSON形式で与えられた英文"source"を文単位に分解し、各文に�
         "pattern": "SV",
         "elements": [
           { "type": "S", "text": "...", "translation": "..." },
-          { "type": "V", "text": "...", "translation": "..." }
+          { "type": "V", "text": "...", "translation": "...",
+            "tense": "...", "aspect": "...", "mood": "...", "voice": "..." }
         ]
       }
     ]
@@ -107,8 +113,27 @@ JSON形式で与えられた英文"source"を文単位に分解し、各文に�
 - SVOC : 動詞が他動詞で、目的語を1つと補語1つを取る。例：You make me happy.
 - other : 動詞を含まず、上記の5つに当てはまららないもの。例：Nice to meet you.
 文や節の文型を構成する要素は "element" の中に配列で示します。要素の種類 "type" は、S（主語）、V（動詞）、O（目的語）、C（補語）、M（修飾語）のいずれかで示します。
+主語や目的語になれるのは、通常は名詞句だけです。補語になれるのは、通常は名詞句か形容詞句だけです。
 名詞にかかる形容詞は名詞句に含めてください。動詞にかかる副詞は修飾語（M）として扱ってください。ただし、助動詞や句動詞は動詞句（V）に結合してください。倒置や慣用により位置が飛び飛びになっている動詞句も、結合して表現してください。
 名詞にかかる不定詞句や動名詞句や前置詞句は形容詞句なので、それがかかる名詞と同じ要素に含めてください。動詞にかかる不定詞句や分詞構文や前置詞句は副詞句なので、修飾語として扱って下さい。
+動詞句（V）には、"tense"（時制）と "aspect"（相）と "mood"（法）と "voice"（態）の分類を付けます。
+"tense" は以下のものから選びます。
+- present : 現在時制。例：I live in Tokyo.
+- past : 過去時制。例：I lived in Tokyo.
+"aspect" は以下のものから選びます。
+- simple : 単純相。例：I live in Tokyo.
+- progressive : 進行相。例：I'm living in Tokyo.
+- perfect : 完了相。例：I've lived in Tokyo.
+- perfect progressive : 完了進行相。例：I've been living in Tokyo.
+"mood" は以下のものから選びます。
+- indicative : 直説法。例：I run quickly.
+- imperative : 命令法。例：Run quickly!
+- subjunctive : 仮定法。例：If I were a bird, ...
+- conditional : 条件法。I would fly to you.
+"voice" は以下のものから選びます。
+- active : 能動態。例：I picked up the flower.
+- passive : 受動態。例：The flower was picked up by me.
+- none : 態なし。動作ではない場合。例：I am Nancy.
 各 "elements" オブジェクトには、構文要素の直訳を示す "translation" 属性を付加してください。これは "text" に対応する日本語訳であり、構文構成の意味を読解するための補助となります。翻訳は直訳調で構いません。入力の "target" を参考にしつつも、その要素の語句の辞書的な語義の範疇で最も文脈に合ったものを表現してください。
 各 "element" の "text" の中にthat節、関係詞節、if節、whether節などの従属節が含まれる場合は、"subclauses" に分解して2階層目まで構文を分析してください。再帰させないでください。つまり、従属節の中の従属節は抽出しないでください。従属節として抽出した文字列も元の "text" に含めたままにして下さい。
 文全体にかかる副詞節は、"elements" と並列の層に "subclauses" として抽出してください。
@@ -125,6 +150,7 @@ JSON形式で与えられた英文"source"を文単位に分解し、各文に�
 - manner : 様態・方法を示す節（as if節など）
 - comparison : 比較を示す節（than節など）
 - concession : 譲歩を示す節（even if節など）
+節と句を区別してください。節とは主語と述語を含む文法構造であり、文型を持ちます。句はそうではありません。不定詞句や動名詞句は意味上の動詞を持ちますが、節にはならず、名詞句か形容詞句か副詞句になります。前置詞句は形容詞句か副詞句になります。
 引用符を使った直接話法の副文を含む場合、"subsentences" に分解して2階層目まで構文を分析してください。再帰させないでください。つまり、副文の中の副文は抽出しないでください。副文として抽出した文字列も主文の "text" に含めたままにして下さい。
 入力の "target" を構文解釈の参考として補助的に用いてください。意味的な整合性を高めるためのヒントとして使ってください。
 
@@ -147,8 +173,9 @@ JSON形式で与えられた英文"source"を文単位に分解し、各文に�
     "pattern": "SVO",
     "elements": [
       { "type": "S", "text": "I", "translation": "私は" },
-      { "type": "V", "text": "studied", "translation": "勉強した" },
-      { "type": "O", "text": "hard", "translation": "一生懸命に" },
+      { "type": "V", "text": "studied", "translation": "勉強した",
+        "tense": "past", "aspect": "simple", "mood": "indicative", "voice": "active" },
+      { "type": "M", "text": "hard", "translation": "一生懸命に" },
       {
         "type": "M",
         "text": "even though I was tired", "translation": "疲れていたけれど",
@@ -160,7 +187,8 @@ JSON形式で与えられた英文"source"を文単位に分解し、各文に�
             "relation": "concession",
             "elements": [
               { "type": "S", "text": "I", "translation": "私は" },
-              { "type": "V", "text": "was", "translation": "状態だった" },
+              { "type": "V", "text": "was", "translation": "状態だった",
+                "tense": "past", "aspect": "simple", "mood": "indicative", "voice": "none" },
               { "type": "C", "text": "tired", "translation": "疲れた" }
             ]
           }
@@ -176,7 +204,8 @@ JSON形式で与えられた英文"source"を文単位に分解し、各文に�
         "relation": "cause",
         "elements": [
           { "type": "S", "text": "I", "translation": "私は" },
-          { "type": "V", "text": "wanted", "translation": "欲した" },
+          { "type": "V", "text": "wanted", "translation": "欲した",
+            "tense": "past", "aspect": "simple", "mood": "indicative", "voice": "active" },
           { "type": "O", "text": "to pass", "translation": "合格することを" }
         ]
       }
@@ -204,7 +233,8 @@ JSON形式で与えられた英文"source"を文単位に分解し、各文に�
     "pattern": "SVO",
     "elements": [
       { "type": "S", "text": "He", "translation": "彼は" },
-      { "type": "V", "text": "loved", "translation": "好んだ" },
+      { "type": "V", "text": "loved", "translation": "好んだ",
+        "tense": "past", "aspect": "simple", "mood": "indicative", "voice": "active" },
       { "type": "O", "text": "linguistics", "translation": "言語学を" }
     ]
   },
@@ -214,7 +244,8 @@ JSON形式で与えられた英文"source"を文単位に分解し、各文に�
     "pattern": "SVOO",
     "elements": [
       { "type": "S", "text": "It", "translation": "それは" },
-      { "type": "V", "text": "gave", "translation": "与えた" },
+      { "type": "V", "text": "gave", "translation": "与えた",
+        "tense": "past", "aspect": "simple", "mood": "indicative", "voice": "active" },
       { "type": "O", "text": "him", "translation": "彼に" },
       { "type": "O", "text": "wisdom", "translation": "知恵を" }
     ]
@@ -241,7 +272,8 @@ JSON形式で与えられた英文"source"を文単位に分解し、各文に�
     "pattern": "SVC",
     "elements": [
       { "type": "S", "text": "It", "translation": "それは" },
-      { "type": "V", "text": "is", "translation": "状態だ" },
+      { "type": "V", "text": "is", "translation": "状態だ",
+        "tense": "present", "aspect": "simple", "mood": "indicative", "voice": "none" },
       { "type": "C", "text": "true", "translation": "真実の" },
       {
         "type": "S",
@@ -256,7 +288,8 @@ JSON形式で与えられた英文"source"を文単位に分解し、各文に�
             "pattern": "SVO",
             "elements": [
               { "type": "S", "text": "I", "translation": "私は" },
-              { "type": "V", "text": "am", "translation": "存在だ" },
+              { "type": "V", "text": "am", "translation": "存在だ",
+                "tense": "present", "aspect": "simple", "mood": "indicative", "voice": "active" },
               { "type": "C", "text": "Japanese", "translation": "日本人という" }
             ]
           }
@@ -292,7 +325,7 @@ JSON形式で与えられた英文"source"を文単位に分解し、各文に�
     "subsentences": [
       {
         "format": "sentence",
-        "text": "Excuse me!",
+        "text": "“Excuse me!”",
         "pattern": "SV",
         "elements": [
           { "type": "V", "text": "Excuse", "translation": "許す" },
@@ -334,7 +367,8 @@ JSON形式で与えられた英文"source"を文単位に分解し、各文に�
           "pattern": "SVC",
           "elements": [
             { "type": "S", "text": "who", "translation": "その人は" },
-            { "type": "V", "text": "is", "translation": "である" },
+            { "type": "V", "text": "is", "translation": "である",
+              "tense": "present", "aspect": "simple", "mood": "indicative", "voice": "none" },
             { "type": "C", "text": "a rich investor in 30s", "translation": "30代の裕福な投資家である" }
           ]
         }
@@ -354,7 +388,8 @@ JSON形式で与えられた英文"source"を文単位に分解し、各文に�
           "pattern": "SV",
           "elements": [
             { "type": "S", "text": "many ghosts", "translation": "多くの幽霊が" },
-            { "type": "V", "text": "hide", "translation": "隠れている" }
+            { "type": "V", "text": "hide", "translation": "隠れている",
+              "tense": "present", "aspect": "simple", "mood": "indicative", "voice": "active" }
           ]
         }
       ]
@@ -382,7 +417,8 @@ JSON形式で与えられた英文"source"を文単位に分解し、各文に�
     "pattern": "SVOC",
     "elements": [
       { "type": "S", "text": "John", "translation": "ジョンは" },
-      { "type": "V", "text": "did make", "translation": "状態にさせた" },
+      { "type": "V", "text": "did make", "translation": "状態にさせた",
+        "tense": "past", "aspect": "simple", "mood": "indicative", "voice": "active" },
       { "type": "O", "text": "you", "translation": "あなたを" },
       { "type": "C", "text": "mad", "translation": "怒った" }
     ]
@@ -394,8 +430,8 @@ JSON形式で与えられた英文"source"を文単位に分解し、各文に�
 
 ```json
 {
-  "source": "The pretty girl often loves different boys without specific reasons.",
-  "target": "その魅力的な少女は頻繁に違う少年を特別な理由もなく愛する。"
+  "source": "The pretty girl often loves different boys without specific reasons. We don't trust her. She is not trustable.",
+  "target": "その魅力的な少女は頻繁に違う少年を特別な理由もなく愛する。しかし、私達は彼女を信用しない。彼女は信用できない。"
 }
 ```
 
@@ -405,14 +441,37 @@ JSON形式で与えられた英文"source"を文単位に分解し、各文に�
 [
   {
     "format": "sentence",
-    "text": The pretty girl often loves different boys without specific reasons.",
+    "text": "The pretty girl often loves different boys without specific reasons.",
     "pattern": "SVO",
     "elements": [
       { "type": "S", "text": "The pretty girl", "translation": "その魅力的な少女は" },
       { "type": "M", "text": "often", "translation": "頻繁に" },
-      { "type": "V", "text": "loves", "translation": "愛する" },
-      { "type": "O", "text": "different boys", "translation": "異なる少年を" }
+      { "type": "V", "text": "loves", "translation": "愛する",
+        "tense": "present", "aspect": "simple", "mood": "indicative", "voice": "active" },
+      { "type": "O", "text": "different boys", "translation": "異なる少年を" },
       { "type": "M", "text": "without specific reasons", "translation": "特別な理由もなく" }
+    ]
+  },
+  {
+    "format": "sentence",
+    "text": "We don't trust her.",
+    "pattern": "SVO",
+    "elements": [
+      { "type": "S", "text": "We", "translation": "私達は" },
+      { "type": "V", "text": "don't trust", "translation": "信用しない",
+        "tense": "present", "aspect": "simple", "mood": "indicative", "voice": "active" },
+      { "type": "O", "text": "her", "translation": "彼女を" }
+    ]
+  },
+  {
+    "format": "sentence",
+    "text": "She is not trustable.",
+    "pattern": "SVC",
+    "elements": [
+      { "type": "S", "text": "She", "translation": "彼女は" },
+      { "type": "V", "text": "is not", "translation": "存在ではない",
+        "tense": "present", "aspect": "simple", "mood": "indicative", "voice": "none" },
+      { "type": "O", "text": "trustable", "translation": "信用できる" }
     ]
   }
 ]
@@ -437,7 +496,8 @@ JSON形式で与えられた英文"source"を文単位に分解し、各文に�
     "pattern": "SVO",
     "elements": [
       { "type": "S", "text": "He", "translation": "彼は" },
-      { "type": "V", "text": "ought not to give up", "translation": "諦めるべきではない" },
+      { "type": "V", "text": "ought not to give up", "translation": "諦めるべきではない",
+        "tense": "present", "aspect": "simple", "mood": "indicative", "voice": "active" },
       { "type": "O", "text": "it", "translation": "それを" }
     ]
   }
@@ -463,7 +523,8 @@ JSON形式で与えられた英文"source"を文単位に分解し、各文に�
     "pattern": "SVO",
     "elements": [
       { "type": "S", "text": "She", "translation": "彼女は" },
-      { "type": "V", "text": "came to love", "translation": "愛し始めた" },
+      { "type": "V", "text": "came to love", "translation": "愛し始めた",
+        "tense": "past", "aspect": "simple", "mood": "indicative", "voice": "active" },
       { "type": "O", "text": "you", "translation": "君を" }
     ]
   },
@@ -473,7 +534,8 @@ JSON形式で与えられた英文"source"を文単位に分解し、各文に�
     "pattern": "SV",
     "elements": [
       { "type": "S", "text": "We", "translation": "我々は" },
-      { "type": "V", "text": "have come", "translation": "来た" },
+      { "type": "V", "text": "have come", "translation": "来た",
+        "tense": "present", "aspect": "perfect", "mood": "indicative", "voice": "active" },
       { "type": "M", "text": "to see you", "translation": "君に会うために" }
     ]
   }
@@ -484,40 +546,25 @@ JSON形式で与えられた英文"source"を文単位に分解し、各文に�
 
 ```json
 {
-  "source": "Our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.",
+  "source": "Our fathers brought forth on this continent a new nation conceived in Liberty",
   "target": "我々の先祖たちはこの大陸に新しい国をもたらしたが、その国は自由に構想され、すべての人間が平等に創造されたという命題に捧げられた。"
 }
 ```
 
-その出力例を示します。副詞句は、VとOの間に挿入されても、Mとして扱ってください。長い名詞句でも分解しないでください。
+その出力例を示します。副詞句は、VとOの間に挿入されても、Mとして扱ってください。長い名詞句でも分解しないでください。現在分詞や過去分詞が後置されて名詞句が長くなっていたとしても、それは句であって、節ではないので、"subclauses" にはしないでください。
 
 ```json
 [
   {
     "format": "sentence",
-    "text": "Our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.",
+    "text": "Our fathers brought forth on this continent a new nation conceived in Liberty.",
     "pattern": "SVO",
     "elements": [
       { "type": "S", "text": "Our fathers", "translation": "我々の先祖たち" },
-      { "type": "V", "text": "brought forth", "translation": "もたらした" },
-      { "type": "M", "text": "on this content", "translation": "この大陸に" },
-      { "type": "O", "text": "a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.",
-        "translation": "自由の下に構想されて、全ての人間が平等に作られたという命題に捧げられた、新しい国を",
-        "subclauses": [
-          {
-            "format": "clause",
-            "text": "that all men are created equal",
-            "relation": "content",
-            "conjunction": "that",
-            "pattern": "SVC",
-            "elements": [
-              { "type": "S", "text": "all men", "translation": "すべての人間は" },
-              { "type": "V", "text": "are created", "translation": "創造された" },
-              { "type": "C", "text": "equal", "translation": "平等に" }
-            ]
-          }
-        ]
-      },
+      { "type": "V", "text": "brought forth", "translation": "もたらした",
+        "tense": "past", "aspect": "simple", "mood": "indicative", "voice": "active" },
+      { "type": "M", "text": "on this continent", "translation": "この大陸に" },
+      { "type": "O", "text": "a new nation conceived in Liberty", "translation": "自由の下に構想された新しい国を"}
     ]
   }
 ]
@@ -527,12 +574,12 @@ JSON形式で与えられた英文"source"を文単位に分解し、各文に�
 
 ```json
 {
-  "source": "He was surprising everyone. He surprised me too. I was surprised by him. It was surprising. Thus, I was suprised. I'd never been surprised before that.",
+  "source": "He was surprising everyone. He surprised me too. I was surprised by him. It was surprising. It made everyone surprised. Everyone was made surprised by it. Thus, I was suprised. I'd never been surprised before that.",
   "target": "彼は皆を驚かせていた。彼は私も驚かせた。私は彼に驚かされた。それは驚異的だった。それゆえ、私は驚いた。私はそれ以前は驚いたことがなかった。"
 }
 ```
 
-その出力例を示します。be動詞に動詞の屈折形が付いた形でも、動作を意味すれば受動態や進行相として動詞に含め、状態を意味すれば形容詞として補語に含めてください。
+その出力例を示します。be動詞に動詞の分詞が付いた形でも、動作を意味すれば受動態や進行相として動詞に含め、状態を意味すれば形容詞として補語に含めてください。能動態でSVOである文に対応する受動態の文はSVになり、能動態でSVOOである文に対応する受動態の文はSVOになり、能動態でSVOCである文に対応する受動態はSVCになります。
 
 ```json
 [
@@ -542,7 +589,8 @@ JSON形式で与えられた英文"source"を文単位に分解し、各文に�
     "pattern": "SVO",
     "elements": [
       { "type": "S", "text": "He", "translation": "彼は" },
-      { "type": "V", "text": "was surprising", "translation": "驚かせていた" },
+      { "type": "V", "text": "was surprising", "translation": "驚かせていた",
+        "tense": "past", "aspect": "progressive", "mood": "indicative", "voice": "active" },
       { "type": "O", "text": "everyone", "translation": "皆を" }
     ]
   },
@@ -552,7 +600,8 @@ JSON形式で与えられた英文"source"を文単位に分解し、各文に�
     "pattern": "SVO",
     "elements": [
       { "type": "S", "text": "He", "translation": "彼は" },
-      { "type": "V", "text": "surprised", "translation": "驚かせた" },
+      { "type": "V", "text": "surprised", "translation": "驚かせた",
+        "tense": "past", "aspect": "simple", "mood": "indicative", "voice": "active" },
       { "type": "O", "text": "me", "translation": "私を" },
       { "type": "M", "text": "too", "translation": "〜も" }
     ]
@@ -560,11 +609,12 @@ JSON形式で与えられた英文"source"を文単位に分解し、各文に�
   {
     "format": "sentence",
     "text": "I was surprised by him.",
-    "pattern": "SVO",
+    "pattern": "SV",
     "elements": [
       { "type": "S", "text": "I", "translation": "私は" },
-      { "type": "V", "text": "was surprised", "translation": "驚かされた" },
-      { "type": "O", "text": "by him", "translation": "彼によって" }
+      { "type": "V", "text": "was surprised", "translation": "驚かされた",
+        "tense": "past", "aspect": "simple", "mood": "indicative", "voice": "passive" },
+      { "type": "M", "text": "by him", "translation": "彼によって" }
     ]
   },
   {
@@ -573,8 +623,33 @@ JSON形式で与えられた英文"source"を文単位に分解し、各文に�
     "pattern": "SVC",
     "elements": [
       { "type": "S", "text": "It", "translation": "それは" },
-      { "type": "V", "text": "was", "translation": "状態だった" },
+      { "type": "V", "text": "was", "translation": "状態だった",
+        "tense": "past", "aspect": "simple", "mood": "indicative", "voice": "none" },
       { "type": "C", "text": "surprising", "translation": "驚異的な" }
+    ]
+  },
+  {
+    "format": "sentence",
+    "text": "It made everyone surprised.",
+    "pattern": "SVOC",
+    "elements": [
+      { "type": "S", "text": "It", "translation": "それは" },
+      { "type": "V", "text": "made", "translation": "状態にした",
+        "tense": "past", "aspect": "simple", "mood": "indicative", "voice": "active" },
+      { "type": "O", "text": "everyone", "translation": "皆を" },
+      { "type": "C", "text": "surprised", "translation": "驚いた" }
+    ]
+  },
+  {
+    "format": "sentence",
+    "text": "Everyone was made surprised by it.",
+    "pattern": "SVC",
+    "elements": [
+      { "type": "S", "text": "Everyone", "translation": "皆は" },
+      { "type": "V", "text": "was made", "translation": "状態にされた",
+        "tense": "past", "aspect": "simple", "mood": "indicative", "voice": "passive" },
+      { "type": "C", "text": "surprised", "translation": "驚いた" },
+      { "type": "M", "text": "by it", "translation": "それによって" }
     ]
   },
   {
@@ -584,7 +659,8 @@ JSON形式で与えられた英文"source"を文単位に分解し、各文に�
     "elements": [
       { "type": "M", "text": "Thus", "translation": "それゆえ" },
       { "type": "S", "text": "I", "translation": "私は" },
-      { "type": "V", "text": "was", "translation": "状態だった" },
+      { "type": "V", "text": "was", "translation": "状態だった",
+        "tense": "past", "aspect": "simple", "mood": "indicative", "voice": "none" },
       { "type": "C", "text": "surprised", "translation": "驚いた" }
     ]
   },
@@ -594,12 +670,51 @@ JSON形式で与えられた英文"source"を文単位に分解し、各文に�
     "pattern": "SVC",
     "elements": [
       { "type": "S", "text": "I", "translation": "私は" },
-      { "type": "V", "text": "had never been", "translation": "一度も状態にならなかった" },
+      { "type": "V", "text": "had never been", "translation": "一度も状態にならなかった",
+        "tense": "past", "aspect": "perfect", "mood": "indicative", "voice": "none" },
       { "type": "C", "text": "surprised", "translation": "驚いた" },
       { "type": "M", "text": "before that", "translation": "それ以前に" }
     ]
   }
 ]
+```
+
+受動態の動詞を持つSV文型の例と、動詞の過去分詞由来の形容詞を持つSVC文型の例を示します。
+
+```json
+{
+  "source": "It is associated with many hints. We are engaged in a big trouble.",
+  "target": "それらはたくさんのヒントと関連づけられている。我々は大きな問題に巻き込まれている。"
+}
+```
+
+その出力例を示します。述語を受動態とみなすなら過去分詞はbe動詞と結合して動詞として扱います。述語を形容詞の叙述用法とみなすなら、be動詞だけを動詞として扱って過去分詞由来の形容詞は補語として扱います。いずれにせよ、前置詞句の副詞句は修飾語として扱います。受動態の動作主を表す "by" で始まる前置詞句も修飾語として扱います。
+
+```json
+[
+  {
+    "format": "sentence",
+    "text": "It is associated with many hints.",
+    "pattern": "SV",
+    "elements": [
+      { "type": "S", "text": "It", "translation": "それは" },
+      { "type": "V", "text": "is associated", "translation": "関連付けられている",
+        "tense": "present", "aspect": "simple", "mood": "indicative", "voice": "passive" },
+      { "type": "M", "text": "with many hints", "translation": "たくさんのヒントに" }
+    ]
+  },
+  {
+    "format": "sentence",
+    "text": "We are engaged in a big trouble.",
+    "pattern": "SVC",
+    "elements": [
+      { "type": "S", "text": "We", "translation": "我々は" },
+      { "type": "V", "text": "are", "translation": "状態である",
+        "tense": "present", "aspect": "simple", "mood": "indicative", "voice": "none" },
+      { "type": "C", "text": "engaged", "translation": "巻き込まれた" },
+      { "type": "M", "text": "in a big trouble", "translation": "大きな問題に" }
+    ]
+  },
 ```
 
 分詞構文を含む例を示します。
@@ -622,9 +737,50 @@ JSON形式で与えられた英文"source"を文単位に分解し、各文に�
     "elements": [
       { "type": "M", "text": "Living in Tokyo", "translation": "東京に住んでいるので" },
       { "type": "S", "text": "we", "translation": "私達は" },
-      { "type": "V", "text": "cannot avoid", "translation": "避けられない" },
+      { "type": "V", "text": "cannot avoid", "translation": "避けられない",
+        "tense": "present", "aspect": "simple", "mood": "indicative", "voice": "active" },
       { "type": "O", "text": "traffic congestion", "translation": "交通渋滞を" },
       { "type": "M", "text": "basically", "translation": "基本的に" }
+    ]
+  }
+]
+```
+
+不定詞句や前置詞句を含む例を示します。
+
+```json
+{
+  "source": "The girl to leave tomorrow was happy to join with you. The dog in the park now was in the cage yesterday.",
+  "target": "明日出発する少女はあなたたちに加われて幸せだった。今公園を走っているその犬は昨日は檻の中に居た。"
+}
+```
+
+その出力例を示します。名詞に係る不定詞は名詞の要素に含め、動詞に係る不定詞は修飾語にします。名詞に係る前置詞句は名詞の要素に含め、動詞に係る前置詞句は修飾語にします。通常、前置詞句は単体では主語や目的語にはなり得ず、補語や副詞になるか、名詞に係って主語や目的語の一部になります。
+
+```json
+[
+  {
+    "format": "sentence",
+    "text": "The girl to leave tomorrow was happy to join with you.",
+    "pattern": "SVC",
+    "elements": [
+      { "type": "S", "text": "The girl to leave tomorrow", "translation": "明日出発する少女" },
+      { "type": "V", "text": "was", "translation": "状態だった",
+        "tense": "past", "aspect": "simple", "mood": "indicative", "voice": "none" },
+      { "type": "C", "text": "happy", "translation": "幸せな" },
+      { "type": "M", "text": "to join with you", "translation": "あなた達に加わって" }
+    ]
+  },
+  {
+    "format": "sentence",
+    "text": "The dog in the park now was in the cage yesterday.",
+    "pattern": "SVC",
+    "elements": [
+      { "type": "S", "text": "The dog in the park now", "translation": "今公園にいる犬" },
+      { "type": "V", "text": "was", "translation": "存在した",
+        "tense": "past", "aspect": "simple", "mood": "indicative", "voice": "none" },
+      { "type": "C", "text": "in the cage", "translation": "檻の中に" },
+      { "type": "M", "text": "yesterday", "translation": "昨日" }
     ]
   }
 ]
@@ -698,7 +854,8 @@ JSON形式で与えられた英文"source"を文単位に分解し、各文に�
     "text": "Let's go!",
     "pattern": "SVOC",
     "elements": [
-      { "type": "V", "text": "Let", "translation": "仕向ける" },
+      { "type": "V", "text": "Let", "translation": "仕向ける",
+        "tense": "present", "aspect": "simple", "mood": "imperative", "voice": "active" },
       { "type": "O", "text": "us", "translation": "私達が" },
       { "type": "C", "text": "go", "translation": "行くように" }
     ]
@@ -709,9 +866,81 @@ JSON形式で与えられた英文"source"を文単位に分解し、各文に�
     "pattern": "SVO",
     "elements": [
       { "type": "M", "text": "Hey", "translation": "おい" },
-      { "type": "V", "text": "do", "translation": "しろ" },
+      { "type": "V", "text": "do", "translation": "しろ",
+        "tense": "present", "aspect": "simple", "mood": "imperative", "voice": "active" },
       { "type": "O", "text": "it", "translation": "それを" },
       { "type": "M", "text": "now", "translation": "今すぐ" }
+    ]
+  }
+]
+```
+
+仮定法と条件法の例を示します。
+
+```json
+{
+  "source": "If I were a bird, I would fly to you. If I had been an adult at the time, I could have married him.",
+  "target": "もし私が鳥なら、あなたのもとに飛んでいくのに。もし私が当時大人だったら、彼と結婚できたのに。"
+}
+```
+
+その出力例を示します。条件法の主節や仮定法の条件節は動詞の表層形が過去方向にずれますが、"tense" と "aspect" の値はその表層形ではなく意味に基づいて決めてください。つまり、仮定法や条件法において、動詞句が過去形である場合、"tense" は "present" になり、動詞句が過去完了形である場合、"tense" は "past" になります。意味が完了相でない場合、"aspect" は "simple" にします。
+
+```json
+[
+  {
+    "format": "sentence",
+    "text": "If I were a bird, I would fly to you.",
+    "pattern": "SV",
+    "elements": [
+      { "type": "S", "text": "I", "translation": "私は" },
+      { "type": "V", "text": "would fly", "translation": "飛ぶ",
+        "tense": "present", "aspect": "simple", "mood": "conditional", "voice": "active" },
+      { "type": "M", "text": "to you", "translation": "あなたに" }
+    ],
+    "subclauses": [
+      {
+        "format": "clause",
+        "text": "If I were a bird",
+        "relation": "condition",
+        "conjunction": "If",
+        "pattern": "SVC",
+        "elements": [
+          { "type": "M", "text": "If", "translation": "もし" },
+          { "type": "S", "text": "I", "translation": "私が" },
+          { "type": "V", "text": "were", "translation": "存在である",
+            "tense": "present", "aspect": "simple", "mood": "subjunctive", "voice": "none" },
+          { "type": "C", "text": "a bird", "translation": "鳥" }
+        ]
+      }
+    ]
+  },
+  {
+    "format": "sentence",
+    "text": "If I had been an adult at the time, I could have married him.",
+    "pattern": "SVO",
+    "elements": [
+      { "type": "S", "text": "I", "translation": "私は" },
+      { "type": "V", "text": "could have married", "translation": "結婚できた",
+        "tense": "past", "aspect": "simple", "mood": "conditional", "voice": "active" },
+      { "type": "O", "text": "him", "translation": "彼と" }
+    ],
+    "subclauses": [
+      {
+        "format": "clause",
+        "text": "If I had been an adult at the time",
+        "relation": "condition",
+        "conjunction": "If",
+        "pattern": "SVC",
+        "elements": [
+          { "type": "M", "text": "If", "translation": "もし" },
+          { "type": "S", "text": "I", "translation": "私が" },
+          { "type": "V", "text": "had been", "translation": "存在であった",
+            "tense": "past", "aspect": "simple", "mood": "subjunctive", "voice": "none" },
+          { "type": "C", "text": "an adult", "translation": "大人" },
+          { "type": "M", "text": "at the time", "translation": "当時" }
+        ]
+      }
     ]
   }
 ]
@@ -736,7 +965,8 @@ JSON形式で与えられた英文"source"を文単位に分解し、各文に�
     "pattern": "SVO",
     "elements": [
       { "type": "S", "text": "I", "translation": "私は" },
-      { "type": "V", "text": "love", "translation": "好きだ" },
+      { "type": "V", "text": "love", "translation": "好きだ",
+        "tense": "present", "aspect": "simple", "mood": "indicative", "voice": "active" },
       { "type": "O", "text": "chocolate", "translation": "チョコレートが" }
     ]
   },
@@ -747,7 +977,8 @@ JSON形式で与えられた英文"source"を文単位に分解し、各文に�
     "elements": [
       { "type": "M", "text": "but", "translation": "しかし" },
       { "type": "S", "text": "it", "translation": "それは" },
-      { "type": "V", "text": "makes", "translation": "状態にする" },
+      { "type": "V", "text": "makes", "translation": "状態にする",
+        "tense": "present", "aspect": "simple", "mood": "indicative", "voice": "active" },
       { "type": "O", "text": "me", "translation": "私を" },
       { "type": "C", "text": "fat", "translation": "太った" }
     ]
@@ -774,7 +1005,8 @@ JSON形式で与えられた英文"source"を文単位に分解し、各文に�
     "pattern": "SVC",
     "elements": [
       { "type": "S", "text": "I", "translation": "私は" },
-      { "type": "V", "text": "am", "translation": "である" },
+      { "type": "V", "text": "am", "translation": "である",
+        "tense": "present", "aspect": "simple", "mood": "indicative", "voice": "none" },
       { "type": "C", "text": "a boxer", "translation": "ボクサーである" }
     ]
   },
@@ -784,13 +1016,15 @@ JSON形式で与えられた英文"source"を文単位に分解し、各文に�
     "pattern": "SV",
     "elements": [
       { "type": "M", "text": "so", "translation": "だから" },
-      { "type": "V", "text": "can't run away", "translation": "逃げられない" }
+      { "type": "V", "text": "can't run away", "translation": "逃げられない",
+        "tense": "present", "aspect": "simple", "mood": "indicative", "voice": "active" }
     ]
   }
 ]
 ```
 
 "pattern" が示す文型と "elements" の各要素の "type" の対応関係には注意して下さい。文型が "SV" の場合、"type" は "S" と "V" が存在する必要があり、"O" や "C" は存在してはいけません。文型が "SVO" の場合、"S" と "V" と "O" が存在し、"C" は存在してはいけません。文型が "SVC" の場合、"S" と "V" と "C" が存在し、"O" は存在してはいけません。文型が "SVOO" の場合、"S" と "V" と "O" 2つが存在し、"C" は存在してはいけません。文型が "SVOC" の場合、"S" と "V" と "O" と "C" が存在する必要があります。"M" はどの文型でいくつ存在しても構いません。
+受動態の文
 """
 
 
@@ -1101,8 +1335,42 @@ def execute_task(source_text, target_text, main_model, failsoft, no_fallback, ex
   raise RuntimeError("All retries failed: unable to parse valid JSON with required fields")
 
 
+def postprocess_sentence(sentence):
+  if False:
+    pattern = sentence["pattern"]
+    elem_types = collections.defaultdict(int)
+    for element in sentence["elements"]:
+      elem_types[element["type"]] += 1
+    if "V" in elem_types:
+      if "O" in elem_types:
+        if "C" in elem_types:
+          if pattern != "SVOC":
+            print("pseudo-svoc", sentence)
+        else:
+          if elem_types.get("O") >= 2:
+            if pattern != "SVO":
+              print("pseudo-svoo", sentence)
+          else:
+            if pattern != "SVO":
+              print("pseudo-svo", sentence)
+      elif "C" in elem_types:
+        if pattern != "SVC":
+          print("pseudo-svc", sentence)
+      else:
+        if pattern != "SV":
+          print("pseudo-sv", sentence)
+
+
 def postprocess_tasks(tasks):
-  pass
+  for task in tasks:
+    response = task.get("response")
+    if not response: continue
+    for sentence in response["content"]:
+      postprocess_sentence(sentence)
+      for subclause in sentence.get("subclauses") or []:
+        postprocess_sentence(subclause)
+      for subsentence in sentence.get("subsentences") or []:
+        postprocess_sentence(subsentence)
 
 
 def validate_tasks(tasks):
@@ -1120,12 +1388,13 @@ def validate_tasks(tasks):
 def build_output(data, tasks):
   depot = collections.defaultdict(list)
   for task in tasks:
+    index = task["index"]
     source = task["source_text"]
     response = task.get("response")
     if not response:
-      logger.warning(f"Stop by an unprocessed task: {task['index']}")
+      logger.warning(f"Stop by an unprocessed task: {index}")
       break
-    depot[source].append(response)
+    depot[source].append((index, response))
   def normalize_sentence(sentence):
     del sentence["format"]
     for subclause in sentence.get("subclauses") or []:
@@ -1137,9 +1406,11 @@ def build_output(data, tasks):
     results = depot.get(source)
     if results:
       depot[source] = results[1:]
-      content = results[0]["content"]
-      for sentence in content:
+      index, response = results[0]
+      content = response["content"].copy()
+      for i, sentence in enumerate(content):
         normalize_sentence(sentence)
+        sentence["id"] = f"{index:05d}-{i:03d}"
       element["analysis"] = content
   book_title = data.get("title")
   if book_title:

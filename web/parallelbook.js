@@ -251,7 +251,93 @@ function utterParallelBlock(block) {
   }
 }
 
-function createParallelBlock(tagName, className, source, target, mode) {
+function createAnalysisSentenceItem(sentence, className, level, source) {
+  const sentenceLi = document.createElement("li");
+  sentenceLi.className = className;
+  if (sentence.pattern && sentence.pattern.length > 0) {
+    const patternSpan = document.createElement("span");
+    patternSpan.className = "pattern pattern-" + sentence.pattern.toLowerCase();
+    patternSpan.textContent = sentence.pattern;
+    sentenceLi.appendChild(patternSpan);
+  }
+
+  if (sentence.conjunction && sentence.conjunction.length > 0 &&
+      !(sentence.text && sentence.text.startsWith(sentence.conjunction + "--"))) {
+    console.log(sentence.conjunction);
+
+    const conjunctionSpan = document.createElement("span");
+    conjunctionSpan.className = "conj";
+    conjunctionSpan.textContent = "[" + sentence.conjunction + "]";
+
+
+    sentenceLi.appendChild(conjunctionSpan);
+  }
+
+  if (sentence.text && sentence.text.length > 0) {
+    const textSpan = document.createElement("span");
+    textSpan.className = "text";
+    textSpan.textContent = sentence.text;
+    sentenceLi.appendChild(textSpan);
+  }
+  if (sentence.elements && sentence.elements.length > 0) {
+    const elementsUl = document.createElement("ul");
+    elementsUl.className = "element-list";
+    for (const element of sentence.elements) {
+      const elementLi = document.createElement("li");
+      elementLi.className = "element-item";
+      if (element.type && element.type.length > 0) {
+        const elementTypeSpan = document.createElement("span");
+        elementTypeSpan.className = "type type-" + element.type.toLowerCase();
+        elementTypeSpan.textContent = element.type;
+        elementLi.appendChild(elementTypeSpan);
+      }
+      if (element.text && element.text.length > 0) {
+        const elementTextSpan = document.createElement("text");
+        elementTextSpan.className = "text";
+        elementTextSpan.textContent = element.text;
+        elementLi.appendChild(elementTextSpan);
+      }
+      if (element.translation && element.translation.length > 0) {
+        const tran_span = document.createElement("span");
+        tran_span.className = "tran";
+        tran_span.textContent = element.translation;
+        elementLi.appendChild(tran_span);
+      }
+      if (element.subclauses && element.subclauses.length > 0 && level < 2) {
+        const subclausesUl = document.createElement("ul");
+        subclausesUl.className = "subclause-list";
+        for (const subclause of element.subclauses) {
+          subclausesUl.appendChild(createAnalysisSentenceItem(
+            subclause, "clause", level + 1, source));
+        }
+        elementLi.appendChild(subclausesUl);
+      }
+      elementsUl.appendChild(elementLi);
+    }
+    sentenceLi.appendChild(elementsUl);
+  }
+  if (sentence.subsentences && sentence.subsentences.length > 0 && level < 2) {
+    const subsentencesUl = document.createElement("ul");
+    subsentencesUl.className = "subsentence-list";
+    for (const subsentence of sentence.subsentences) {
+      subsentencesUl.appendChild(createAnalysisSentenceItem(
+        subsentence, "sentence", level + 1, source));
+    }
+    sentenceLi.appendChild(subsentencesUl);
+  }
+  return sentenceLi;
+}
+
+function createAnalysisList(analysis, source) {
+  const list = document.createElement("ul");
+  list.className = "analysis";
+  for (const sentence of analysis) {
+    list.appendChild(createAnalysisSentenceItem(sentence, "sentence", 1, source));
+  }
+  return list;
+}
+
+function createParallelBlock(tagName, className, source, target, mode, analysis) {
   const block = document.createElement(tagName);
   block.className = `${className} parallel`;
   block.setAttribute("role", "group");
@@ -264,6 +350,14 @@ function createParallelBlock(tagName, className, source, target, mode) {
   spanJa.lang = "ja";
   spanJa.textContent = target ?? "";
   block.appendChild(spanJa);
+
+  if (analysis && analysis.length > 0) {
+    const analysisBlock = createAnalysisList(analysis, source);
+
+    block.appendChild(analysisBlock);
+  }
+
+
   const toggle = document.createElement("span");
   toggle.lang = "zxx";
   toggle.className = "parallel-toggle";
@@ -496,11 +590,13 @@ function renderParallelBookContent(contentElementId, bookId, bookContent, mode) 
   contentEl.appendChild(contentNav);
   if (bookContent.title) {
     contentEl.appendChild(createParallelBlock(
-      "h1", "book-title", bookContent.title.source, bookContent.title.target, mode));
+      "h1", "book-title", bookContent.title.source, bookContent.title.target, mode,
+      bookContent.title.analysis));
   }
   if (bookContent.author) {
     contentEl.appendChild(createParallelBlock(
-      "div", "book-author", bookContent.author.source, bookContent.author.target, mode));
+      "div", "book-author", bookContent.author.source, bookContent.author.target, mode,
+      bookContent.author.analysis));
   }
   if (bookContent.chapters && bookContent.chapters.length > 1) {
     contentEl.appendChild(createTableOfContents(bookContent, mode));
@@ -553,7 +649,8 @@ function renderParallelBookContent(contentElementId, bookId, bookContent, mode) 
     chapterSection.appendChild(chapterNav);
     if (chapter.title) {
       const pane = createParallelBlock(
-        "h2", "chapter-title", chapter.title.source, chapter.title.target, mode)
+        "h2", "chapter-title", chapter.title.source, chapter.title.target, mode,
+        chapter.title.analysis);
       pane.id = chapter.title.id;
       chapterSection.appendChild(pane);
       setParallelPane(pane, bookId, contentEl);
@@ -565,7 +662,7 @@ function renderParallelBookContent(contentElementId, bookId, bookContent, mode) 
         for (const item of block.paragraph) {
           if (!pane.id) pane.id = item.id;
           pane.appendChild(createParallelBlock(
-            "span", "sentence", item.source, item.target, mode));
+            "span", "sentence", item.source, item.target, mode, item.analysis));
         }
         chapterSection.appendChild(pane);
         setParallelPane(pane, bookId, contentEl);
@@ -575,13 +672,13 @@ function renderParallelBookContent(contentElementId, bookId, bookContent, mode) 
         for (const item of block.blockquote) {
           if (!pane.id) pane.id = item.id;
           pane.appendChild(createParallelBlock(
-            "span", "sentence", item.source, item.target, mode));
+            "span", "sentence", item.source, item.target, mode, item.analysis));
         }
         chapterSection.appendChild(pane);
         setParallelPane(pane, bookId, contentEl);
       } else if (block.header) {
         const pane = createParallelBlock(
-          "h3", "header", block.header.source, block.header.target, mode)
+          "h3", "header", block.header.source, block.header.target, mode, block.header.analysis);
         pane.id = block.header.id;
         chapterSection.appendChild(pane);
         setParallelPane(pane, bookId, contentEl);
@@ -592,7 +689,7 @@ function renderParallelBookContent(contentElementId, bookId, bookContent, mode) 
           if (!pane.id) pane.id = item.id;
           const li = document.createElement("li");
           li.appendChild(createParallelBlock(
-            "span", "list-item", item.source, item.target, mode));
+            "span", "list-item", item.source, item.target, mode, item.analysis));
           pane.appendChild(li);
         }
         chapterSection.appendChild(pane);
@@ -606,7 +703,7 @@ function renderParallelBookContent(contentElementId, bookId, bookContent, mode) 
             if (!pane.id) pane.id = cell.id;
             const td = document.createElement("td");
             td.appendChild(createParallelBlock(
-              "span", "table-cell", cell.source, cell.target, mode));
+              "span", "table-cell", cell.source, cell.target, mode, cell.analysis));
             tr.appendChild(td);
           }
           pane.appendChild(tr);
