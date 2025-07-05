@@ -1028,7 +1028,7 @@ def main():
     logger.info(f"Writing data into {output_path}")
     output_data = build_output(input_meta, input_tasks, tasks)
     with open(output_path, "w", encoding="utf-8") as f:
-      json.dump(output_data, f, ensure_ascii=False, indent=2)
+      print(json.dumps(output_data, ensure_ascii=False, indent=2), file=f)
     logger.info("Finished")
   else:
     logger.info("To be continued")
