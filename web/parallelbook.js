@@ -276,17 +276,13 @@ function utterParallelBlock(block) {
 
 function createStyledSentenceFragment(sentence) {
   const contractionTable = {
-    "have": ["ve"],
-    "has": ["s"],
-    "had": ["d"],
-    "am": ["m"],
-    "are": ["re"],
-    "is": ["s"],
-    "would": ["d"],
-    "will": ["ll"],
-    "shall": ["ll"],
-    "did": ["d"],
+    "have": ["ve"], "has": ["s"], "had": ["d"], "am": ["m"], "are": ["re"], "is": ["s"],
+    "would": ["d"], "will": ["ll"], "shall": ["ll"], "did": ["d"],
   };
+  const phrasalParticles = [
+    "up","out","down","through","off","in","on","over","back","away","apart",
+    "along","about","across","around","under","by","forth","together"
+  ];
   function tokenize(s) {
     return Array.from(s.matchAll(/[A-Za-z0-9]+|\s+|[^A-Za-z0-9\s]/g)).map(m => m[0]);
   }
@@ -309,15 +305,33 @@ function createStyledSentenceFragment(sentence) {
     });
     return expanded;
   }
+  function normalizePhrase(s) {
+    let norm = s.normalize('NFKC').toLowerCase();
+    norm = norm
+      .replace(/[`＇‘’]/g, "'")
+      .replace(/[“”]/g, '"');
+    return norm;
+  }
   const tokens = tokenize(sentence.text);
   let elementPool = expandElements(sentence.elements, contractionTable);
   const usedGroupIds = new Set();
   let i = 0;
   const frag = document.createDocumentFragment();
+  let reservedParticles = [];
   while (i < tokens.length) {
     const token = tokens[i];
     if (/^\s+$/.test(token)) {
       frag.append(token);
+      i++;
+      continue;
+    }
+    if (reservedParticles.length && normalizePhrase(token) === normalizePhrase(reservedParticles[0].token)) {
+      const span = document.createElement("span");
+      span.className = `element element-v`;
+      span.setAttribute("data-type", "V");
+      span.textContent = token;
+      frag.appendChild(span);
+      reservedParticles.shift();
       i++;
       continue;
     }
@@ -329,12 +343,83 @@ function createStyledSentenceFragment(sentence) {
       const window = tokens.slice(i, i + elTokens.length);
       if (
         window.length === elTokens.length &&
-        window.join("").toLowerCase() === elTokens.join("").toLowerCase()
+        normalizePhrase(window.join("")) === normalizePhrase(elTokens.join(""))
       ) {
         matched = el;
         matchedLen = elTokens.length;
         matchedGroupId = el._groupId;
         break;
+      }
+    }
+    if (!matched) {
+      for (let eIdx = 0; eIdx < elementPool.length; ++eIdx) {
+        const el = elementPool[eIdx];
+        if (el.type !== "V" || usedGroupIds.has(el._groupId)) continue;
+        const normElText = normalizePhrase(el.text);
+        const match = normElText.match(/^(do|does|did|will|would|should|have|has|had|can|could|may|might|must|shall|is|are|was|were|am|don't|doesn't|didn't|won't|can't|isn't|aren't|wasn't|weren't|shouldn't|wouldn't|couldn't|haven't|hasn't|hadn't|mustn't|n't)\b(.*)/i);
+        if (match) {
+          const modal = match[1];
+          const rest = match[2].trim();
+          const tokenNorm = normalizePhrase(tokens[i]);
+          if (tokenNorm === modal) {
+            matched = {
+              ...el,
+              _groupId: el._groupId + "_modal_only",
+              text: tokens[i],
+              type: el.type
+            };
+            matchedLen = 1;
+            matchedGroupId = matched._groupId;
+            if (rest) {
+              elementPool.splice(
+                eIdx + 1, 0,
+                {
+                  ...el,
+                  text: rest,
+                  _groupId: el._groupId + "_rest"
+                }
+              );
+            }
+            break;
+          }
+        }
+      }
+    }
+    if (!matched) {
+      for (let eIdx = 0; eIdx < elementPool.length; ++eIdx) {
+        const el = elementPool[eIdx];
+        if (el.type !== "V" || usedGroupIds.has(el._groupId)) continue;
+        for (const particle of phrasalParticles) {
+          const suffix = " " + particle;
+          if (
+            el.text.toLowerCase().endsWith(suffix) &&
+            el.text.length > suffix.length
+          ) {
+            const baseVerb = el.text.slice(0, el.text.length - suffix.length);
+            const baseTokens = tokenize(baseVerb);
+            const windowTokens = tokens.slice(i, i + baseTokens.length + 4);
+            if (
+              windowTokens.length >= baseTokens.length + 1 &&
+              normalizePhrase(windowTokens.slice(0, baseTokens.length).join("")) === normalizePhrase(baseTokens.join(""))
+            ) {
+              for (let j = baseTokens.length; j < windowTokens.length; ++j) {
+                if (normalizePhrase(windowTokens[j]) === normalizePhrase(particle)) {
+                  matched = {
+                    ...el,
+                    text: baseVerb,
+                    _groupId: el._groupId + "_phrasal",
+                  };
+                  matchedLen = baseTokens.length;
+                  matchedGroupId = matched._groupId;
+                  reservedParticles.push({ token: windowTokens[j], type: el.type });
+                  break;
+                }
+              }
+            }
+          }
+          if (matched) break;
+        }
+        if (matched) break;
       }
     }
     if (matched) {
