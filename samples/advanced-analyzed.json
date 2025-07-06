@@ -1,0 +1,835 @@
+{
+  "format": "parallel",
+  "id": "sample02: book title",
+  "source_language": "en",
+  "target_language": "ja",
+  "title": {
+    "id": "00000-000",
+    "source": "Book Title",
+    "target": "書名",
+    "analysis": [
+      {
+        "id": "00000-000-000",
+        "format": "sentence",
+        "text": "Book Title",
+        "pattern": "other",
+        "elements": [
+          {
+            "type": "M",
+            "text": "Book Title",
+            "translation": "書名"
+          }
+        ]
+      }
+    ]
+  },
+  "author": {
+    "id": "00001-000",
+    "source": "John Doe",
+    "target": "ジョン・ドウ",
+    "analysis": [
+      {
+        "id": "00000-001-000",
+        "format": "sentence",
+        "text": "John Doe",
+        "pattern": "other",
+        "elements": [
+          {
+            "type": "M",
+            "text": "John Doe",
+            "translation": "ジョン・ドウ"
+          }
+        ]
+      }
+    ]
+  },
+  "chapters": [
+    {
+      "title": {
+        "id": "00002-000",
+        "source": "Chapter1's Title",
+        "target": "第1章の題名",
+        "analysis": [
+          {
+            "id": "00000-002-000",
+            "format": "sentence",
+            "text": "Chapter1's Title",
+            "pattern": "other",
+            "elements": [
+              {
+                "type": "M",
+                "text": "Chapter1's Title",
+                "translation": "第1章の題名"
+              }
+            ]
+          }
+        ]
+      },
+      "body": [
+        {
+          "header": {
+            "id": "00003-000",
+            "source": "Header in the chapter",
+            "target": "章内の見出し",
+            "analysis": [
+              {
+                "id": "00000-003-000",
+                "format": "sentence",
+                "text": "Header in the chapter",
+                "pattern": "other",
+                "elements": [
+                  {
+                    "type": "M",
+                    "text": "Header in the chapter",
+                    "translation": "章内の見出し"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "paragraph": [
+            {
+              "id": "00004-000",
+              "source": "This is paragraph one.",
+              "target": "これは第一段落です。",
+              "analysis": [
+                {
+                  "id": "00000-004-000",
+                  "format": "sentence",
+                  "text": "This is paragraph one.",
+                  "pattern": "SVC",
+                  "elements": [
+                    {
+                      "type": "S",
+                      "text": "This",
+                      "translation": "これは"
+                    },
+                    {
+                      "type": "V",
+                      "text": "is",
+                      "translation": "である",
+                      "tense": "present",
+                      "aspect": "simple",
+                      "mood": "indicative",
+                      "voice": "none"
+                    },
+                    {
+                      "type": "C",
+                      "text": "paragraph one",
+                      "translation": "第一段落"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "00004-001",
+              "source": "\"Baby steps to giant strides!\", he said.",
+              "target": "「小さな一歩が大きな飛躍へ！」と彼は言った。",
+              "analysis": [
+                {
+                  "id": "00000-005-000",
+                  "format": "sentence",
+                  "text": "\"Baby steps to giant strides!\", he said.",
+                  "pattern": "SVO",
+                  "elements": [
+                    {
+                      "type": "S",
+                      "text": "he",
+                      "translation": "彼は"
+                    },
+                    {
+                      "type": "V",
+                      "text": "said",
+                      "translation": "言った",
+                      "tense": "past",
+                      "aspect": "simple",
+                      "mood": "indicative",
+                      "voice": "active"
+                    },
+                    {
+                      "type": "O",
+                      "text": "\"Baby steps to giant strides!\"",
+                      "translation": "「小さな一歩が大きな飛躍へ！」と"
+                    }
+                  ],
+                  "subsentences": [
+                    {
+                      "format": "sentence",
+                      "text": "\"Baby steps to giant strides!\"",
+                      "pattern": "other",
+                      "elements": [
+                        {
+                          "type": "M",
+                          "text": "Baby steps to giant strides",
+                          "translation": "小さな一歩が大きな飛躍へ"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "00004-002",
+              "source": "Contiguous lines are concatenated.",
+              "target": "連続する行はつなげられます。",
+              "analysis": [
+                {
+                  "id": "00000-006-000",
+                  "format": "sentence",
+                  "text": "Contiguous lines are concatenated.",
+                  "pattern": "SV",
+                  "elements": [
+                    {
+                      "type": "S",
+                      "text": "Contiguous lines",
+                      "translation": "連続する行は"
+                    },
+                    {
+                      "type": "V",
+                      "text": "are concatenated",
+                      "translation": "つなげられます",
+                      "tense": "present",
+                      "aspect": "simple",
+                      "mood": "indicative",
+                      "voice": "passive"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "00004-003",
+              "source": "into one paragraph.",
+              "target": "一つの段落にまとめられます。",
+              "analysis": [
+                {
+                  "id": "00000-007-000",
+                  "format": "sentence",
+                  "text": "into one paragraph.",
+                  "pattern": "other",
+                  "elements": [
+                    {
+                      "type": "M",
+                      "text": "into one paragraph",
+                      "translation": "一つの段落に"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "00004-004",
+              "source": "So, you can fold them by a single linefeed.",
+              "target": "ですから、単一の改行で折りたたむことができます。",
+              "analysis": [
+                {
+                  "id": "00000-008-000",
+                  "format": "sentence",
+                  "text": "So, you can fold them by a single linefeed.",
+                  "pattern": "SVO",
+                  "elements": [
+                    {
+                      "type": "M",
+                      "text": "So",
+                      "translation": "ですから"
+                    },
+                    {
+                      "type": "S",
+                      "text": "you",
+                      "translation": "あなたは"
+                    },
+                    {
+                      "type": "V",
+                      "text": "can fold",
+                      "translation": "折りたたむことができる",
+                      "tense": "present",
+                      "aspect": "simple",
+                      "mood": "indicative",
+                      "voice": "active"
+                    },
+                    {
+                      "type": "O",
+                      "text": "them",
+                      "translation": "それらを"
+                    },
+                    {
+                      "type": "M",
+                      "text": "by a single linefeed",
+                      "translation": "単一の改行で"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "raw_line": 10
+        },
+        {
+          "paragraph": [
+            {
+              "id": "00005-000",
+              "source": "I replied, \"This is the second paragraph. I'm not sure though.\"",
+              "target": "私は答えました。「これは第二の段落です。ただ、確かではありません。」",
+              "analysis": [
+                {
+                  "id": "00000-009-000",
+                  "format": "sentence",
+                  "text": "I replied, \"This is the second paragraph. I'm not sure though.\"",
+                  "pattern": "SVO",
+                  "elements": [
+                    {
+                      "type": "S",
+                      "text": "I",
+                      "translation": "私は"
+                    },
+                    {
+                      "type": "V",
+                      "text": "replied",
+                      "translation": "答えました",
+                      "tense": "past",
+                      "aspect": "simple",
+                      "mood": "indicative",
+                      "voice": "active"
+                    },
+                    {
+                      "type": "O",
+                      "text": "\"This is the second paragraph. I'm not sure though.\"",
+                      "translation": "「これは第二の段落です。ただ、確かではありません。」と"
+                    }
+                  ],
+                  "subsentences": [
+                    {
+                      "format": "sentence",
+                      "text": "This is the second paragraph.",
+                      "pattern": "SVC",
+                      "elements": [
+                        {
+                          "type": "S",
+                          "text": "This",
+                          "translation": "これは"
+                        },
+                        {
+                          "type": "V",
+                          "text": "is",
+                          "translation": "である",
+                          "tense": "present",
+                          "aspect": "simple",
+                          "mood": "indicative",
+                          "voice": "none"
+                        },
+                        {
+                          "type": "C",
+                          "text": "the second paragraph",
+                          "translation": "第二の段落"
+                        }
+                      ]
+                    },
+                    {
+                      "format": "sentence",
+                      "text": "I'm not sure though.",
+                      "pattern": "SVC",
+                      "elements": [
+                        {
+                          "type": "S",
+                          "text": "I",
+                          "translation": "私は"
+                        },
+                        {
+                          "type": "V",
+                          "text": "am not",
+                          "translation": "ではない",
+                          "tense": "present",
+                          "aspect": "simple",
+                          "mood": "indicative",
+                          "voice": "none"
+                        },
+                        {
+                          "type": "C",
+                          "text": "sure",
+                          "translation": "確か"
+                        },
+                        {
+                          "type": "M",
+                          "text": "though",
+                          "translation": "ただ"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "00005-001",
+              "source": "Brank lines separate paragraphs.",
+              "target": "空行が段落を区切ります。",
+              "analysis": [
+                {
+                  "id": "00000-010-000",
+                  "format": "sentence",
+                  "text": "Brank lines separate paragraphs.",
+                  "pattern": "SVO",
+                  "elements": [
+                    {
+                      "type": "S",
+                      "text": "Brank lines",
+                      "translation": "空行が"
+                    },
+                    {
+                      "type": "V",
+                      "text": "separate",
+                      "translation": "区切る",
+                      "tense": "present",
+                      "aspect": "simple",
+                      "mood": "indicative",
+                      "voice": "active"
+                    },
+                    {
+                      "type": "O",
+                      "text": "paragraphs",
+                      "translation": "段落を"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "raw_line": 14
+        },
+        {
+          "macro": {
+            "id": "00006-000",
+            "name": "image",
+            "value": "https://dbmx.net/parallelbook/abc-logo.png sample logo"
+          },
+          "raw_line": 17
+        },
+        {
+          "macro": {
+            "id": "00007-000",
+            "name": "comment",
+            "value": "Macros are not translated but kept intact to the output."
+          },
+          "raw_line": 18
+        }
+      ],
+      "raw_line": 6
+    },
+    {
+      "title": {
+        "id": "00008-000",
+        "source": "Chapter2's Title",
+        "target": "第2章の題名",
+        "analysis": [
+          {
+            "id": "00000-011-000",
+            "format": "sentence",
+            "text": "Chapter2's Title",
+            "pattern": "other",
+            "elements": [
+              {
+                "type": "M",
+                "text": "Chapter2's Title",
+                "translation": "第2章の題名"
+              }
+            ]
+          }
+        ]
+      },
+      "body": [
+        {
+          "blockquote": [
+            {
+              "id": "00009-000",
+              "source": "Lines in blockquotes are also concatenated and translated.",
+              "target": "引用符で囲まれた行も連結されて翻訳されます。",
+              "analysis": [
+                {
+                  "id": "00000-012-000",
+                  "format": "sentence",
+                  "text": "Lines in blockquotes are also concatenated and translated.",
+                  "pattern": "SV",
+                  "elements": [
+                    {
+                      "type": "S",
+                      "text": "Lines in blockquotes",
+                      "translation": "引用符で囲まれた行は"
+                    },
+                    {
+                      "type": "V",
+                      "text": "are also concatenated and translated",
+                      "translation": "連結されて翻訳されます",
+                      "tense": "present",
+                      "aspect": "simple",
+                      "mood": "indicative",
+                      "voice": "passive"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "00009-001",
+              "source": "A whitespace must follow \">\".",
+              "target": "\">\"の後には空白が必要です。",
+              "analysis": [
+                {
+                  "id": "00000-013-000",
+                  "format": "sentence",
+                  "text": "A whitespace must follow \">\".",
+                  "pattern": "SVO",
+                  "elements": [
+                    {
+                      "type": "S",
+                      "text": "A whitespace",
+                      "translation": "空白が"
+                    },
+                    {
+                      "type": "V",
+                      "text": "must follow",
+                      "translation": "従う必要がある",
+                      "tense": "present",
+                      "aspect": "simple",
+                      "mood": "indicative",
+                      "voice": "active"
+                    },
+                    {
+                      "type": "O",
+                      "text": "\">\"",
+                      "translation": "「>」の後に"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "raw_line": 22
+        },
+        {
+          "list": [
+            {
+              "id": "00010-000",
+              "source": "Hop. Step. Jump! Each item in the list are not segmented.",
+              "target": "ホップ。ステップ。ジャンプ！リストの各項目は区切られていません。",
+              "analysis": [
+                {
+                  "id": "00000-014-000",
+                  "format": "sentence",
+                  "text": "Hop.",
+                  "pattern": "other",
+                  "elements": [
+                    {
+                      "type": "M",
+                      "text": "Hop",
+                      "translation": "ホップ"
+                    }
+                  ]
+                },
+                {
+                  "id": "00000-014-001",
+                  "format": "sentence",
+                  "text": "Step.",
+                  "pattern": "other",
+                  "elements": [
+                    {
+                      "type": "M",
+                      "text": "Step",
+                      "translation": "ステップ"
+                    }
+                  ]
+                },
+                {
+                  "id": "00000-014-002",
+                  "format": "sentence",
+                  "text": "Jump!",
+                  "pattern": "other",
+                  "elements": [
+                    {
+                      "type": "M",
+                      "text": "Jump",
+                      "translation": "ジャンプ"
+                    }
+                  ]
+                },
+                {
+                  "id": "00000-014-003",
+                  "format": "sentence",
+                  "text": "Each item in the list are not segmented.",
+                  "pattern": "SV",
+                  "elements": [
+                    {
+                      "type": "S",
+                      "text": "Each item in the list",
+                      "translation": "リストの各項目は"
+                    },
+                    {
+                      "type": "V",
+                      "text": "are not segmented",
+                      "translation": "区切られていません",
+                      "tense": "present",
+                      "aspect": "simple",
+                      "mood": "indicative",
+                      "voice": "passive"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "00011-000",
+              "source": "Saitama, Saitama? A whitespace must follow \"-\".",
+              "target": "さいたま、さいたま？「-」の後には空白が必要です。",
+              "analysis": [
+                {
+                  "id": "00000-015-000",
+                  "format": "sentence",
+                  "text": "Saitama, Saitama?",
+                  "pattern": "other",
+                  "elements": [
+                    {
+                      "type": "M",
+                      "text": "Saitama, Saitama",
+                      "translation": "さいたま、さいたま"
+                    }
+                  ]
+                },
+                {
+                  "id": "00000-015-001",
+                  "format": "sentence",
+                  "text": "A whitespace must follow \"-\".",
+                  "pattern": "SVO",
+                  "elements": [
+                    {
+                      "type": "S",
+                      "text": "A whitespace",
+                      "translation": "空白が"
+                    },
+                    {
+                      "type": "V",
+                      "text": "must follow",
+                      "translation": "従う必要がある",
+                      "tense": "present",
+                      "aspect": "simple",
+                      "mood": "indicative",
+                      "voice": "active"
+                    },
+                    {
+                      "type": "O",
+                      "text": "\"-\"",
+                      "translation": "「-」の後に"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "raw_line": 25
+        },
+        {
+          "table": [
+            [
+              {
+                "id": "00012-000",
+                "source": "symbol",
+                "target": "記号",
+                "analysis": [
+                  {
+                    "id": "00001-000-000",
+                    "format": "sentence",
+                    "text": "symbol",
+                    "pattern": "other",
+                    "elements": [
+                      {
+                        "type": "M",
+                        "text": "symbol",
+                        "translation": "記号"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "00012-001",
+                "source": "name",
+                "target": "名前",
+                "analysis": [
+                  {
+                    "id": "00001-001-000",
+                    "format": "sentence",
+                    "text": "name",
+                    "pattern": "other",
+                    "elements": [
+                      {
+                        "type": "M",
+                        "text": "name",
+                        "translation": "名前"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "00012-002",
+                "source": "number",
+                "target": "番号",
+                "analysis": [
+                  {
+                    "id": "00001-002-000",
+                    "format": "sentence",
+                    "text": "number",
+                    "pattern": "other",
+                    "elements": [
+                      {
+                        "type": "M",
+                        "text": "number",
+                        "translation": "番号"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "id": "00013-000",
+                "source": "Au",
+                "target": "Au",
+                "analysis": [
+                  {
+                    "id": "00001-003-000",
+                    "format": "sentence",
+                    "text": "Au",
+                    "pattern": "other",
+                    "elements": [
+                      {
+                        "type": "M",
+                        "text": "Au",
+                        "translation": "Au"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "00013-001",
+                "source": "gold",
+                "target": "金",
+                "analysis": [
+                  {
+                    "id": "00001-004-000",
+                    "format": "sentence",
+                    "text": "gold",
+                    "pattern": "other",
+                    "elements": [
+                      {
+                        "type": "M",
+                        "text": "gold",
+                        "translation": "金"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "00013-002",
+                "source": "79",
+                "target": "79",
+                "analysis": [
+                  {
+                    "id": "00001-005-000",
+                    "format": "sentence",
+                    "text": "79",
+                    "pattern": "other",
+                    "elements": [
+                      {
+                        "type": "M",
+                        "text": "79",
+                        "translation": "79"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "id": "00014-000",
+                "source": "Ag",
+                "target": "Ag",
+                "analysis": [
+                  {
+                    "id": "00001-006-000",
+                    "format": "sentence",
+                    "text": "Ag",
+                    "pattern": "other",
+                    "elements": [
+                      {
+                        "type": "M",
+                        "text": "Ag",
+                        "translation": "Ag"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "00014-001",
+                "source": "silver",
+                "target": "銀",
+                "analysis": [
+                  {
+                    "id": "00001-007-000",
+                    "format": "sentence",
+                    "text": "silver",
+                    "pattern": "other",
+                    "elements": [
+                      {
+                        "type": "M",
+                        "text": "silver",
+                        "translation": "銀"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "00014-002",
+                "source": "47",
+                "target": "47",
+                "analysis": [
+                  {
+                    "id": "00001-008-000",
+                    "format": "sentence",
+                    "text": "47",
+                    "pattern": "other",
+                    "elements": [
+                      {
+                        "type": "M",
+                        "text": "47",
+                        "translation": "47"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          ],
+          "raw_line": 28
+        },
+        {
+          "code": {
+            "id": "00015-000",
+            "text": "one\ntwo two\n\nthree three three"
+          },
+          "raw_line": 32
+        }
+      ],
+      "raw_line": 20
+    }
+  ],
+  "cost": 0.006
+}

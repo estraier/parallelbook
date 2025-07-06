@@ -1,0 +1,173 @@
+{
+  "format": "parallel",
+  "source_language": "en",
+  "target_language": "ja",
+  "chapters": [
+    {
+      "body": [
+        {
+          "paragraph": [
+            {
+              "id": "00000-000",
+              "source": "Hello, world.",
+              "target": "こんにちは、世界。",
+              "analysis": [
+                {
+                  "id": "00000-000-000",
+                  "format": "sentence",
+                  "text": "Hello, world.",
+                  "pattern": "other",
+                  "elements": [
+                    {
+                      "type": "M",
+                      "text": "Hello",
+                      "translation": "こんにちは"
+                    },
+                    {
+                      "type": "M",
+                      "text": "world",
+                      "translation": "世界"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "00000-001",
+              "source": "We love translation.",
+              "target": "私たちは翻訳が大好きです。",
+              "analysis": [
+                {
+                  "id": "00000-001-000",
+                  "format": "sentence",
+                  "text": "We love translation.",
+                  "pattern": "SVO",
+                  "elements": [
+                    {
+                      "type": "S",
+                      "text": "We",
+                      "translation": "私たちは"
+                    },
+                    {
+                      "type": "V",
+                      "text": "love",
+                      "translation": "大好きです",
+                      "tense": "present",
+                      "aspect": "simple",
+                      "mood": "indicative",
+                      "voice": "active"
+                    },
+                    {
+                      "type": "O",
+                      "text": "translation",
+                      "translation": "翻訳が"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "raw_line": 1
+        },
+        {
+          "paragraph": [
+            {
+              "id": "00001-000",
+              "source": "Dr. Slump said, “We did it!”",
+              "target": "ドクター・スランプは言った。「やったぞ！」",
+              "analysis": [
+                {
+                  "id": "00000-002-000",
+                  "format": "sentence",
+                  "text": "Dr. Slump said, “We did it!”",
+                  "pattern": "SVO",
+                  "elements": [
+                    {
+                      "type": "S",
+                      "text": "Dr. Slump",
+                      "translation": "ドクター・スランプは"
+                    },
+                    {
+                      "type": "V",
+                      "text": "said",
+                      "translation": "言った",
+                      "tense": "past",
+                      "aspect": "simple",
+                      "mood": "indicative",
+                      "voice": "active"
+                    },
+                    {
+                      "type": "O",
+                      "text": "“We did it!”",
+                      "translation": "「やったぞ！」と"
+                    }
+                  ],
+                  "subsentences": [
+                    {
+                      "format": "sentence",
+                      "text": "“We did it!”",
+                      "pattern": "SVO",
+                      "elements": [
+                        {
+                          "type": "S",
+                          "text": "We",
+                          "translation": "私たちは"
+                        },
+                        {
+                          "type": "V",
+                          "text": "did",
+                          "translation": "やった",
+                          "tense": "past",
+                          "aspect": "simple",
+                          "mood": "indicative",
+                          "voice": "active"
+                        },
+                        {
+                          "type": "O",
+                          "text": "it",
+                          "translation": "それを"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "00001-001",
+              "source": "I was surprised.",
+              "target": "私は驚いた。",
+              "analysis": [
+                {
+                  "id": "00000-003-000",
+                  "format": "sentence",
+                  "text": "I was surprised.",
+                  "pattern": "SV",
+                  "elements": [
+                    {
+                      "type": "S",
+                      "text": "I",
+                      "translation": "私は"
+                    },
+                    {
+                      "type": "V",
+                      "text": "was surprised",
+                      "translation": "驚いた",
+                      "tense": "past",
+                      "aspect": "simple",
+                      "mood": "indicative",
+                      "voice": "passive"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "raw_line": 3
+        }
+      ],
+      "raw_line": 1
+    }
+  ],
+  "cost": 0.001
+}

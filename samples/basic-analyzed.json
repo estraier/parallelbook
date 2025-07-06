@@ -1,0 +1,445 @@
+{
+  "format": "parallel",
+  "id": "sample01: How to Make Parallel Books",
+  "source_language": "en",
+  "target_language": "ja",
+  "title": {
+    "id": "00000-000",
+    "source": "How to Make Parallel Books",
+    "target": "対訳本の作り方",
+    "analysis": [
+      {
+        "id": "00000-000-000",
+        "format": "sentence",
+        "text": "How to Make Parallel Books",
+        "pattern": "other",
+        "elements": [
+          {
+            "type": "M",
+            "text": "How to Make Parallel Books",
+            "translation": "対訳本の作り方"
+          }
+        ]
+      }
+    ]
+  },
+  "author": {
+    "id": "00001-000",
+    "source": "Mikio Hirabayashi",
+    "target": "平林幹夫",
+    "analysis": [
+      {
+        "id": "00000-001-000",
+        "format": "sentence",
+        "text": "Mikio Hirabayashi",
+        "pattern": "other",
+        "elements": [
+          {
+            "type": "M",
+            "text": "Mikio Hirabayashi",
+            "translation": "平林幹夫"
+          }
+        ]
+      }
+    ]
+  },
+  "chapters": [
+    {
+      "title": {
+        "id": "00002-000",
+        "source": "Basics",
+        "target": "基本",
+        "analysis": [
+          {
+            "id": "00000-002-000",
+            "format": "sentence",
+            "text": "Basics",
+            "pattern": "other",
+            "elements": [
+              {
+                "type": "M",
+                "text": "Basics",
+                "translation": "基本"
+              }
+            ]
+          }
+        ]
+      },
+      "body": [
+        {
+          "paragraph": [
+            {
+              "id": "00003-000",
+              "source": "Parallel corpora are powerful tools to learn languages.",
+              "target": "対訳コーパスは言語を学ぶための強力な道具です。",
+              "analysis": [
+                {
+                  "id": "00000-003-000",
+                  "format": "sentence",
+                  "text": "Parallel corpora are powerful tools to learn languages.",
+                  "pattern": "SVC",
+                  "elements": [
+                    {
+                      "type": "S",
+                      "text": "Parallel corpora",
+                      "translation": "対訳コーパスは"
+                    },
+                    {
+                      "type": "V",
+                      "text": "are",
+                      "translation": "である",
+                      "tense": "present",
+                      "aspect": "simple",
+                      "mood": "indicative",
+                      "voice": "none"
+                    },
+                    {
+                      "type": "C",
+                      "text": "powerful tools to learn languages",
+                      "translation": "言語を学ぶための強力な道具"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "00003-001",
+              "source": "With them, you can learn foreign languages easily by reading your favorite stories.",
+              "target": "それらを使えば、好きな物語を読みながら簡単に外国語を学ぶことができます。",
+              "analysis": [
+                {
+                  "id": "00000-004-000",
+                  "format": "sentence",
+                  "text": "With them, you can learn foreign languages easily by reading your favorite stories.",
+                  "pattern": "SVO",
+                  "elements": [
+                    {
+                      "type": "M",
+                      "text": "With them",
+                      "translation": "それらを使えば"
+                    },
+                    {
+                      "type": "S",
+                      "text": "you",
+                      "translation": "あなたは"
+                    },
+                    {
+                      "type": "V",
+                      "text": "can learn",
+                      "translation": "学ぶことができる",
+                      "tense": "present",
+                      "aspect": "simple",
+                      "mood": "indicative",
+                      "voice": "active"
+                    },
+                    {
+                      "type": "O",
+                      "text": "foreign languages",
+                      "translation": "外国語を"
+                    },
+                    {
+                      "type": "M",
+                      "text": "easily",
+                      "translation": "簡単に"
+                    },
+                    {
+                      "type": "M",
+                      "text": "by reading your favorite stories",
+                      "translation": "好きな物語を読みながら"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "00003-002",
+              "source": "Each sentence in the original corpus is associated with its translation in your mother tongue.",
+              "target": "原文コーパスの各文は、あなたの母語での訳文と対応づけられています。",
+              "analysis": [
+                {
+                  "id": "00000-005-000",
+                  "format": "sentence",
+                  "text": "Each sentence in the original corpus is associated with its translation in your mother tongue.",
+                  "pattern": "SV",
+                  "elements": [
+                    {
+                      "type": "S",
+                      "text": "Each sentence in the original corpus",
+                      "translation": "原文コーパスの各文は"
+                    },
+                    {
+                      "type": "V",
+                      "text": "is associated",
+                      "translation": "対応づけられている",
+                      "tense": "present",
+                      "aspect": "simple",
+                      "mood": "indicative",
+                      "voice": "passive"
+                    },
+                    {
+                      "type": "M",
+                      "text": "with its translation in your mother tongue",
+                      "translation": "あなたの母語での訳文と"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "raw_line": 8
+        },
+        {
+          "paragraph": [
+            {
+              "id": "00004-000",
+              "source": "This project provides scripts to make parallel books from arbitrary contents.",
+              "target": "この企画は、任意の内容から対訳本を作成するための手順書を提供します。",
+              "analysis": [
+                {
+                  "id": "00000-006-000",
+                  "format": "sentence",
+                  "text": "This project provides scripts to make parallel books from arbitrary contents.",
+                  "pattern": "SVO",
+                  "elements": [
+                    {
+                      "type": "S",
+                      "text": "This project",
+                      "translation": "この企画は"
+                    },
+                    {
+                      "type": "V",
+                      "text": "provides",
+                      "translation": "提供する",
+                      "tense": "present",
+                      "aspect": "simple",
+                      "mood": "indicative",
+                      "voice": "active"
+                    },
+                    {
+                      "type": "O",
+                      "text": "scripts to make parallel books from arbitrary contents",
+                      "translation": "任意の内容から対訳本を作成するための手順書を"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "00004-001",
+              "source": "All you have to do is to prepare the original corpus and run some commands to make parallel books in various formats.",
+              "target": "あなたがしなければならないのは、原文の資料を用意し、いくつかの命令を実行して、さまざまな形式の対訳本を作ることだけです。",
+              "analysis": [
+                {
+                  "id": "00000-007-000",
+                  "format": "sentence",
+                  "text": "All you have to do is to prepare the original corpus and run some commands to make parallel books in various formats.",
+                  "pattern": "SVC",
+                  "elements": [
+                    {
+                      "type": "S",
+                      "text": "All you have to do",
+                      "translation": "あなたがしなければならないすべてのことは"
+                    },
+                    {
+                      "type": "V",
+                      "text": "is",
+                      "translation": "である",
+                      "tense": "present",
+                      "aspect": "simple",
+                      "mood": "indicative",
+                      "voice": "none"
+                    },
+                    {
+                      "type": "C",
+                      "text": "to prepare the original corpus and run some commands to make parallel books in various formats",
+                      "translation": "原文の資料を用意し、いくつかの命令を実行して、さまざまな形式の対訳本を作ること"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "00004-002",
+              "source": "Translation is done by AI platforms like ChatGPT and Gemini.",
+              "target": "翻訳は、ChatGPTやGeminiのような人工知能基盤の仕組みによって行われます。",
+              "analysis": [
+                {
+                  "id": "00000-008-000",
+                  "format": "sentence",
+                  "text": "Translation is done by AI platforms like ChatGPT and Gemini.",
+                  "pattern": "SV",
+                  "elements": [
+                    {
+                      "type": "S",
+                      "text": "Translation",
+                      "translation": "翻訳は"
+                    },
+                    {
+                      "type": "V",
+                      "text": "is done",
+                      "translation": "行われる",
+                      "tense": "present",
+                      "aspect": "simple",
+                      "mood": "indicative",
+                      "voice": "passive"
+                    },
+                    {
+                      "type": "M",
+                      "text": "by AI platforms like ChatGPT and Gemini",
+                      "translation": "ChatGPTやGeminiのような人工知能基盤の仕組みによって"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "raw_line": 10
+        }
+      ],
+      "raw_line": 6
+    },
+    {
+      "title": {
+        "id": "00005-000",
+        "source": "License",
+        "target": "利用許諾",
+        "analysis": [
+          {
+            "id": "00000-009-000",
+            "format": "sentence",
+            "text": "License",
+            "pattern": "other",
+            "elements": [
+              {
+                "type": "M",
+                "text": "License",
+                "translation": "利用許諾"
+              }
+            ]
+          }
+        ]
+      },
+      "body": [
+        {
+          "paragraph": [
+            {
+              "id": "00006-000",
+              "source": "This software is distributed under the terms of Apache License version 2.0.",
+              "target": "このソフトウェアは、アパッチ・ライセンス バージョン2.0の条件のもとで配布されています。",
+              "analysis": [
+                {
+                  "id": "00001-000-000",
+                  "format": "sentence",
+                  "text": "This software is distributed under the terms of Apache License version 2.0.",
+                  "pattern": "SV",
+                  "elements": [
+                    {
+                      "type": "S",
+                      "text": "This software",
+                      "translation": "このソフトウェアは"
+                    },
+                    {
+                      "type": "V",
+                      "text": "is distributed",
+                      "translation": "配布されている",
+                      "tense": "present",
+                      "aspect": "simple",
+                      "mood": "indicative",
+                      "voice": "passive"
+                    },
+                    {
+                      "type": "M",
+                      "text": "under the terms of Apache License version 2.0",
+                      "translation": "アパッチ・ライセンス バージョン2.0の条件のもとで"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "00006-001",
+              "source": "Sample data in this project are in public domain.",
+              "target": "本プロジェクトのサンプル資料は、著作権の制約を受けない公有のものです。",
+              "analysis": [
+                {
+                  "id": "00001-001-000",
+                  "format": "sentence",
+                  "text": "Sample data in this project are in public domain.",
+                  "pattern": "SVC",
+                  "elements": [
+                    {
+                      "type": "S",
+                      "text": "Sample data in this project",
+                      "translation": "本プロジェクトのサンプル資料は"
+                    },
+                    {
+                      "type": "V",
+                      "text": "are",
+                      "translation": "存在する",
+                      "tense": "present",
+                      "aspect": "simple",
+                      "mood": "indicative",
+                      "voice": "none"
+                    },
+                    {
+                      "type": "C",
+                      "text": "in public domain",
+                      "translation": "公有のものです"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "00006-002",
+              "source": "So, both can be redestributed freely without additional permissions.",
+              "target": "したがって、いずれも追加の許可なく自由に再配布できます。",
+              "analysis": [
+                {
+                  "id": "00001-002-000",
+                  "format": "sentence",
+                  "text": "So, both can be redestributed freely without additional permissions.",
+                  "pattern": "SV",
+                  "elements": [
+                    {
+                      "type": "M",
+                      "text": "So",
+                      "translation": "したがって"
+                    },
+                    {
+                      "type": "S",
+                      "text": "both",
+                      "translation": "いずれも"
+                    },
+                    {
+                      "type": "V",
+                      "text": "can be redestributed",
+                      "translation": "再配布できる",
+                      "tense": "present",
+                      "aspect": "simple",
+                      "mood": "indicative",
+                      "voice": "passive"
+                    },
+                    {
+                      "type": "M",
+                      "text": "freely",
+                      "translation": "自由に"
+                    },
+                    {
+                      "type": "M",
+                      "text": "without additional permissions",
+                      "translation": "追加の許可なく"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "raw_line": 14
+        }
+      ],
+      "raw_line": 12
+    }
+  ],
+  "cost": 0.021
+}
