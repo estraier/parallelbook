@@ -274,6 +274,85 @@ function utterParallelBlock(block) {
   }
 }
 
+function createStyledSentenceFragment(sentence) {
+  const contractionTable = {
+    "have": ["ve"],
+    "has": ["s"],
+    "had": ["d"],
+    "am": ["m"],
+    "are": ["re"],
+    "is": ["s"],
+    "would": ["d"],
+    "will": ["ll"],
+    "shall": ["ll"],
+    "did": ["d"],
+  };
+  function tokenize(s) {
+    return Array.from(s.matchAll(/[A-Za-z0-9]+|\s+|[^A-Za-z0-9\s]/g)).map(m => m[0]);
+  }
+  function expandElements(elements, contractionTable) {
+    const expanded = [];
+    elements.forEach((el, idx) => {
+      const groupId = idx + "_grp";
+      expanded.push({ ...el, _groupId: groupId });
+      for (const [key, forms] of Object.entries(contractionTable)) {
+        const re = new RegExp("^(?:" + key + ")(?=\\s|$)", "i");
+        if (el.text && re.test(el.text)) {
+          forms.forEach(contr => {
+            ["'", "’"].forEach(apos => {
+              const replaced = el.text.replace(re, apos + contr);
+              expanded.push({ ...el, text: replaced, _groupId: groupId });
+            });
+          });
+        }
+      }
+    });
+    return expanded;
+  }
+  const tokens = tokenize(sentence.text);
+  let elementPool = expandElements(sentence.elements, contractionTable);
+  const usedGroupIds = new Set();
+  let i = 0;
+  const frag = document.createDocumentFragment();
+  while (i < tokens.length) {
+    const token = tokens[i];
+    if (/^\s+$/.test(token)) {
+      frag.append(token);
+      i++;
+      continue;
+    }
+    let matched = null, matchedLen = 0, matchedGroupId = null;
+    for (let eIdx = 0; eIdx < elementPool.length; ++eIdx) {
+      const el = elementPool[eIdx];
+      if (usedGroupIds.has(el._groupId)) continue;
+      const elTokens = tokenize(el.text);
+      const window = tokens.slice(i, i + elTokens.length);
+      if (
+        window.length === elTokens.length &&
+        window.join("").toLowerCase() === elTokens.join("").toLowerCase()
+      ) {
+        matched = el;
+        matchedLen = elTokens.length;
+        matchedGroupId = el._groupId;
+        break;
+      }
+    }
+    if (matched) {
+      const span = document.createElement("span");
+      span.className = `element element-${matched.type.toLowerCase()}`;
+      span.setAttribute("data-type", matched.type);
+      span.textContent = tokens.slice(i, i + matchedLen).join("");
+      frag.appendChild(span);
+      usedGroupIds.add(matchedGroupId);
+      i += matchedLen;
+    } else {
+      frag.append(token);
+      i++;
+    }
+  }
+  return frag;
+}
+
 function createAnalysisSentenceItem(sentence, className, level, source) {
   const sentenceLi = document.createElement("li");
   sentenceLi.className = className;
@@ -283,19 +362,16 @@ function createAnalysisSentenceItem(sentence, className, level, source) {
     patternSpan.textContent = sentence.pattern;
     sentenceLi.appendChild(patternSpan);
   }
-
   if (sentence.relation && sentence.relation.length > 0) {
     const relationSpan = document.createElement("span");
     relationSpan.className = "relation";
     relationSpan.textContent = sentence.relation;
     sentenceLi.appendChild(relationSpan);
   }
-
-
   if (sentence.text && sentence.text.length > 0) {
     const textSpan = document.createElement("span");
     textSpan.className = "text";
-    textSpan.textContent = sentence.text;
+    textSpan.appendChild(createStyledSentenceFragment(sentence));
     sentenceLi.appendChild(textSpan);
   }
   if (sentence.elements && sentence.elements.length > 0) {
