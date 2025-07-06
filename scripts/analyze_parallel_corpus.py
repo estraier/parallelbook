@@ -52,7 +52,6 @@ JSON形式で複数の英文とその対訳が与えられます。それぞれ�
           "subclauses": [  // その要素に従属節を含んでいれば記述
             "format": "clause",
             "relation": "...", // 従属節と主節の関係：apposition, cause, timeなど
-            "conjunction": "...", // 接続詞：that, because, as, when, although, if, even thoughなど
             "pattern": "SVC",
             "elements": [
               { "type": "S", "text": "...", "translation": "..." },
@@ -69,7 +68,6 @@ JSON形式で複数の英文とその対訳が与えられます。それぞれ�
         "format": "clause",
         "text": "...",
         "relation": "...",
-        "conjunction": "...",
         "pattern": "SV",
         "elements": [
           { "type": "S", "text": "...", "translation": "..." },
@@ -205,9 +203,9 @@ JSON形式で複数の英文とその対訳が与えられます。それぞれ�
             {
               "format": "clause",
               "pattern": "SVC",
-              "conjunction": "even though",
               "relation": "concession",
               "elements": [
+                { "type": "M", "text": "even though", "translation": "〜だけれど" },
                 { "type": "S", "text": "I", "translation": "私は" },
                 { "type": "V", "text": "was", "translation": "状態だった",
                   "tense": "past", "aspect": "simple", "mood": "indicative", "voice": "none" },
@@ -222,9 +220,9 @@ JSON形式で複数の英文とその対訳が与えられます。それぞれ�
           "format": "clause",
           "text": "because I wanted to pass",
           "pattern": "SVO",
-          "conjunction": "because",
           "relation": "cause",
           "elements": [
+            { "type": "M", "text": "because", "translation": "なぜなら" },
             { "type": "S", "text": "I", "translation": "私は" },
             { "type": "V", "text": "wanted", "translation": "欲した",
               "tense": "past", "aspect": "simple", "mood": "indicative", "voice": "active" },
@@ -386,9 +384,9 @@ JSON形式で複数の英文とその対訳が与えられます。それぞれ�
               "format": "clause",
               "text": "that I am Japanese",
               "relation": "apposition",
-              "conjunction": "that",
               "pattern": "SVO",
               "elements": [
+                { "type": "M", "text": "that", "translation": "〜であること" },
                 { "type": "S", "text": "I", "translation": "私は" },
                 { "type": "V", "text": "am", "translation": "存在だ",
                   "tense": "present", "aspect": "simple", "mood": "indicative", "voice": "active" },
@@ -455,7 +453,7 @@ JSON形式で複数の英文とその対訳が与えられます。それぞれ�
 ]
 ```
 
-その出力例を示します。関係詞節は "subclauses" として示して下さい。
+その出力例を示します。関係詞節は "subclauses" として示して下さい。関係代名詞は従属節の中で主語や目的語になることが多く、関係副詞は従属節の中で副詞句になります。
 
 ```json
 [
@@ -474,7 +472,6 @@ JSON形式で複数の英文とその対訳が与えられます。それぞれ�
               "format": "clause",
               "text": "who is a rich investor in 30s",
               "relation": "apposition",
-              "conjunction": "who",
               "pattern": "SVC",
               "elements": [
                 { "type": "S", "text": "who", "translation": "その人は" },
@@ -495,9 +492,9 @@ JSON形式で複数の英文とその対訳が与えられます。それぞれ�
               "format": "clause",
               "text": "where many ghosts hide",
               "relation": "place",
-              "conjunction": "where",
               "pattern": "SV",
               "elements": [
+                { "type": "M", "text": "where", "translation": "そこでは" },
                 { "type": "S", "text": "many ghosts", "translation": "多くの幽霊が" },
                 { "type": "V", "text": "hide", "translation": "隠れている",
                   "tense": "present", "aspect": "simple", "mood": "indicative", "voice": "active" }
@@ -903,7 +900,7 @@ JSON形式で複数の英文とその対訳が与えられます。それぞれ�
 ]
 ```
 
-その出力例を示します。名詞に係る不定詞は名詞の要素に含め、動詞に係る不定詞は修飾語にします。名詞に係る前置詞句は名詞の要素に含め、動詞に係る前置詞句は修飾語にします。通常、前置詞句は単体では主語や目的語にはなり得ず、補語や副詞になるか、名詞に係って主語や目的語の一部になります。
+その出力例を示します。名詞に係る不定詞は名詞の要素に含め、動詞に係る不定詞は修飾語にします。名詞に係る前置詞句は名詞の要素に含め、動詞に係る前置詞句は修飾語にします。通常、前置詞句は単体では主語や目的語にはなり得ず、補語や副詞になるか、名詞に係って主語や目的語の一部になります。理由や結果や状況を表す前置詞句や不定詞句は動詞に係る副詞句になることが多いです。その場合、修飾語として動詞や補語からは独立させてください。
 
 ```json
 [
@@ -1064,7 +1061,6 @@ JSON形式で複数の英文とその対訳が与えられます。それぞれ�
           "format": "clause",
           "text": "If I were a bird",
           "relation": "condition",
-          "conjunction": "If",
           "pattern": "SVC",
           "elements": [
             { "type": "M", "text": "If", "translation": "もし" },
@@ -1091,7 +1087,6 @@ JSON形式で複数の英文とその対訳が与えられます。それぞれ�
           "format": "clause",
           "text": "If I had been an adult at the time",
           "relation": "condition",
-          "conjunction": "If",
           "pattern": "SVC",
           "elements": [
             { "type": "M", "text": "If", "translation": "もし" },
@@ -1767,8 +1762,8 @@ def main():
   if redo_indexes:
     for redo_index in redo_indexes:
       if redo_index < len(tasks):
-        source_text, target_text = tasks[redo_index]
-        sm.reset_task(redo_index, source_text, target_text)
+        request = tasks[redo_index]
+        sm.reset_task(redo_index, request)
       else:
         logger.error(f"Invalid task ID for redo: {redo_index}")
   total_cost = 0

@@ -261,17 +261,13 @@ function createAnalysisSentenceItem(sentence, className, level, source) {
     sentenceLi.appendChild(patternSpan);
   }
 
-  if (sentence.conjunction && sentence.conjunction.length > 0 &&
-      !(sentence.text && sentence.text.startsWith(sentence.conjunction + "--"))) {
-    console.log(sentence.conjunction);
-
-    const conjunctionSpan = document.createElement("span");
-    conjunctionSpan.className = "conj";
-    conjunctionSpan.textContent = "[" + sentence.conjunction + "]";
-
-
-    sentenceLi.appendChild(conjunctionSpan);
+  if (sentence.relation && sentence.relation.length > 0) {
+    const relationSpan = document.createElement("span");
+    relationSpan.className = "relation";
+    relationSpan.textContent = sentence.relation;
+    sentenceLi.appendChild(relationSpan);
   }
+
 
   if (sentence.text && sentence.text.length > 0) {
     const textSpan = document.createElement("span");

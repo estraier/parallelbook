@@ -124,6 +124,7 @@ body {
 }
 
 .parallel-book .parallel .analysis {
+  display: none;
   font-size: 90%;
   font-weight: normal;
   margin: 0;
@@ -197,25 +198,30 @@ body {
   color: #036;
   opacity: 0.7;
 }
-.parallel-book .parallel .analysis span.conj {
+.parallel-book .parallel .analysis span.relation {
   margin-right: 0.5ex;
   font-size: 80%;
   opacity: 0.7;
 }
-.parallel-book .parallel .analysis span.conj:before {
+.parallel-book .parallel .analysis span.relation:before {
   content: "(";
 }
-.parallel-book .parallel .analysis span.conj:after {
+.parallel-book .parallel .analysis span.relation:after {
   content: ")";
 }
-
-
-
 .parallel-book .parallel .analysis span.tran:before {
   content: "(";
 }
 .parallel-book .parallel .analysis span.tran:after {
   content: ")";
+}
+.parallel-book .parallel .analysis .subclause-list {
+  font-size: 90%;
+  opacity: 0.9;
+}
+.parallel-book .parallel .analysis .subsentence-list {
+  font-size: 90%;
+  opacity: 0.9;
 }
 
 .parallel-book .pane {
