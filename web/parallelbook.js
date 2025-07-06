@@ -221,11 +221,34 @@ function setGlobalKeyEvents() {
 function toggleParallelBlock(block) {
   const spanEn = block.querySelector('span[lang="en"]');
   const spanJa = block.querySelector('span[lang="ja"]');
-  const trgSpan = block.lang === "ja" ? spanEn : spanJa;
-  if (trgSpan.style.display === "none") {
-    trgSpan.style.display = "";
+  const spanAn = block.querySelector('.analysis');
+  if (block.lang === "ja") {
+    if (spanEn) {
+      if (spanEn.style.display === "none") {
+        spanEn.style.display = "";
+      } else {
+        spanEn.style.display = "none";
+      }
+    }
   } else {
-    trgSpan.style.display = "none";
+    if (spanJa) {
+      if (spanAn) {
+        if (spanJa.style.display === "none") {
+          spanJa.style.display = "";
+        } else if (spanAn.style.display === "none") {
+          spanAn.style.display = "";
+        } else {
+          spanJa.style.display = "none";
+          spanAn.style.display = "none";
+        }
+      } else {
+        if (spanJa.style.display === "none") {
+          spanJa.style.display = "";
+        } else {
+          spanJa.style.display = "none";
+        }
+      }
+    }
   }
 }
 
@@ -407,6 +430,7 @@ function setParallelBlockMode(block, mode) {
   }
   const spanEn = block.querySelector('span[lang="en"]');
   const spanJa = block.querySelector('span[lang="ja"]');
+  const spanAn = block.querySelector('.analysis');
   if (spanEn) {
     spanEn.style.display = (mode === "ja") ? "none" : "";
     if (mode === "ja") {
@@ -426,6 +450,9 @@ function setParallelBlockMode(block, mode) {
       spanJa.style.fontSize = "";
       spanJa.style.marginLeft = "";
     }
+  }
+  if (spanAn) {
+    spanAn.style.display = "none";
   }
 }
 
