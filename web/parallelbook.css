@@ -224,6 +224,15 @@ body {
 .parallel-book .parallel .analysis span.tran:after {
   content: ")";
 }
+.parallel-book .parallel .analysis span.vattr {
+    font-size: 75%;
+    color: #333;
+    opacity: 0.8;
+    background: #eee;
+    border: solid 1pt #ddd;
+    border-radius: 0.8ex;
+    margin-left: 0.3ex;
+}
 .parallel-book .parallel .analysis .subclause-list {
   font-size: 90%;
   opacity: 0.9;

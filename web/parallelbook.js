@@ -478,10 +478,25 @@ function createAnalysisSentenceItem(sentence, className, level, source) {
         elementLi.appendChild(elementTextSpan);
       }
       if (element.translation && element.translation.length > 0) {
-        const tran_span = document.createElement("span");
-        tran_span.className = "tran";
-        tran_span.textContent = element.translation;
-        elementLi.appendChild(tran_span);
+        const tranSpan = document.createElement("span");
+        tranSpan.className = "tran";
+        tranSpan.textContent = element.translation;
+        elementLi.appendChild(tranSpan);
+      }
+      const verb_attrs = [
+        [element.tense, {"past": "過去"}],
+        [element.aspect, {"progressive": "進行", "perfect": "完了", "perfect progressive": "完進"}],
+        [element.mood, {"imperative": "命令", "subjunctive": "仮定", "conditional": "条件"}],
+        [element.voice, {"passive": "受動"}],
+      ];
+      for (const verb_attr of verb_attrs) {
+        const label = verb_attr[1][verb_attr[0]];
+        if (label) {
+          const vattrSpan = document.createElement("span");
+          vattrSpan.className = "vattr";
+          vattrSpan.textContent = label;
+          elementLi.appendChild(vattrSpan);
+        }
       }
       if (element.subclauses && element.subclauses.length > 0 && level < 2) {
         const subclausesUl = document.createElement("ul");
