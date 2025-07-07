@@ -193,8 +193,6 @@ def postprocess_tasks(tasks):
 
 
 def validate_tasks(tasks):
-  def normalize_text(text):
-    return regex.sub(r"\s+", " ", text).lower().strip()
   for task in tasks:
     role = task["role"]
     if role in ["macro", "code"]: continue
@@ -808,7 +806,10 @@ def execute_task_single(
           model=model,
           messages=[{ "role": "user", "content": prompt }],
           temperature=temp,
-        ).choices[0].message.content
+        )
+        usage = response.usage.model_dump()
+        logger.debug(f"Usage:\n{usage}")
+        response = response.choices[0].message.content
         match = regex.search(r'```(?:json)?\s*([{\[].*?[}\]])\s*```', response, regex.DOTALL)
         if match:
           response = match.group(1)

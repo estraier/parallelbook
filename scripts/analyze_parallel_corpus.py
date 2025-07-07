@@ -1519,6 +1519,7 @@ def execute_task(request, main_model, failsoft, no_fallback, extra_hint):
   valid_cost = 0
   for model in models:
     if not pairs: break
+    if valid_content: break
     configs = [(0.0, False), (0.0, True),
                (0.4, False), (0.4, True),
                (0.8, False), (0.8, True)]
@@ -1531,7 +1532,10 @@ def execute_task(request, main_model, failsoft, no_fallback, extra_hint):
           model=model,
           messages=[{ "role": "user", "content": prompt }],
           temperature=temp,
-        ).choices[0].message.content
+        )
+        usage = response.usage.model_dump()
+        logger.debug(f"Usage:\n{usage}")
+        response = response.choices[0].message.content
         match = regex.search(r'```(?:json)?\s*([{\[].*?[}\]])\s*```', response, regex.DOTALL)
         if match:
           response = match.group(1)
