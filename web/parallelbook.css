@@ -141,12 +141,10 @@ body {
   padding-left: 0;
   list-style: none;
 }
-
 .parallel-book .parallel .analysis span.text .element-s { background: #fde; }
 .parallel-book .parallel .analysis span.text .element-v { background: #def; }
 .parallel-book .parallel .analysis span.text .element-o { background: #efd; }
 .parallel-book .parallel .analysis span.text .element-c { background: #ffd; }
-
 .parallel-book .parallel .analysis span.pattern {
   display: inline-block;
   text-align: center;
@@ -225,13 +223,13 @@ body {
   content: ")";
 }
 .parallel-book .parallel .analysis span.vattr {
-    font-size: 75%;
-    color: #333;
-    opacity: 0.8;
-    background: #eee;
-    border: solid 1pt #ddd;
-    border-radius: 0.8ex;
-    margin-left: 0.3ex;
+  font-size: 75%;
+  color: #333;
+  opacity: 0.8;
+  background: #eee;
+  border: solid 1pt #ddd;
+  border-radius: 0.8ex;
+  margin-left: 0.3ex;
 }
 .parallel-book .parallel .analysis .subclause-list {
   font-size: 90%;
@@ -401,5 +399,9 @@ body {
   }
   .parallel-book span.parallel-toggle {
     transform: translateX(-70%);
+  }
+  .parallel-book .parallel .analysis ul {
+    margin: 0 0 0 1ex;
+    padding: 0;
   }
 }
