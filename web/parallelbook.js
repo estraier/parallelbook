@@ -628,8 +628,7 @@ function setParallelBlockMode(block, mode) {
     }
   }
   if (spanAn) {
-    // hoge
-    // spanAn.style.display = "none";
+    spanAn.style.display = "none";
   }
 }
 
