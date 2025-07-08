@@ -511,6 +511,18 @@ function createAnalysisSentenceItem(sentence, className, level, source) {
     }
     sentenceLi.appendChild(elementsUl);
   }
+
+  if (sentence.subclauses && sentence.subclauses.length > 0 && level < 2) {
+    const subclausesUl = document.createElement("ul");
+    subclausesUl.className = "subclause-list";
+    for (const subclause of sentence.subclauses) {
+      subclausesUl.appendChild(createAnalysisSentenceItem(
+        subclause, "sentence", level + 1, source));
+    }
+    sentenceLi.appendChild(subclausesUl);
+  }
+
+
   if (sentence.subsentences && sentence.subsentences.length > 0 && level < 2) {
     const subsentencesUl = document.createElement("ul");
     subsentencesUl.className = "subsentence-list";

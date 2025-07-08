@@ -153,7 +153,7 @@ JSON形式で複数の英文とその対訳が与えられます。それぞれ�
 各 "element" の "text" の中にthat節、関係詞節、if節、whether節などの従属節が含まれる場合は、"subclauses" に分解して2階層目まで構文を分析してください。再帰させないでください。つまり、従属節の中の従属節は抽出しないでください。従属節として抽出した文字列も元の "text" に含めたままにして下さい。
 文全体にかかる副詞節は、"elements" と並列の層に "subclauses" として抽出してください。
 従属節の "relation" には、主節に対する従属節の関係を記述します。代表的な語彙は以下のものです。
-- content : 動詞や形容詞の内容を表す節（that節など）。例：I heard that he won.
+- content : それ自体が名詞節で、動詞や形容詞の内容を表す節（that節など）。例：I heard that he won.
 - apposition : 名詞を補足説明する同格節（that節など）。例：I know the news that he won.
 - reason : 理由・原因を示す節（because節など）。例：I noticed it because it is red.
 - condition : 条件を示す節（if節など）。例：I will buy it if it is cheap.
@@ -534,6 +534,114 @@ JSON形式で複数の英文とその対訳が与えられます。それぞれ�
           "tense": "past", "aspect": "simple", "mood": "indicative", "voice": "active" },
         { "type": "O", "text": "you", "translation": "あなたを" },
         { "type": "C", "text": "mad", "translation": "怒った" }
+      ]
+    }
+  ]
+]
+```
+
+多様な副詞節を含む例を示します。
+
+```json
+[
+  {
+    "source": "When he saw her, he fell in love at once.",
+    "target": "彼は彼女を一目見て恋に落ちた。"
+  },
+  {
+    "source": "I'll go if you excuse me.",
+    "target": "それでは失礼させていただきます。"
+  },
+  {
+    "source": "They live where wild animals loiter.",
+    "target": "彼らは野生動物が徘徊するところに住んでいる。"
+  }
+]
+```
+
+その出力例を示します。従属節は "subclauses" として抽出しますが、文の "text" から該当部分を取り除かないでください。文全体の副詞句である従属節は、文の直下の "subclauses" にします。その場合、主節の "elements" には該当部分を載せません。
+
+```json
+[
+  [
+    {
+      "format": "sentence",
+      "text": "When he saw her, he fell in love at once.",
+      "pattern": "SV",
+      "elements": [
+        { "type": "S", "text": "he", "translation": "彼は" },
+        { "type": "V", "text": "fell", "translation": "落ちた",
+          "tense": "past", "aspect": "simple", "mood": "indicative", "voice": "active" },
+        { "type": "M", "text": "in love", "translation": "恋に" },
+        { "type": "M", "text": "at once", "translation": "たちまち" }
+      ],
+      "subclauses": [
+        {
+          "format": "clause",
+          "relation": "time",
+          "text": "When he saw her",
+          "pattern": "SVO",
+          "elements": [
+            { "type": "M", "text": "When", "translation": "〜の時に" },
+            { "type": "S", "text": "he", "translation": "彼が" },
+            { "type": "V", "text": "saw", "translation": "見た",
+              "tense": "past", "aspect": "simple", "mood": "indicative", "voice": "active" },
+            { "type": "O", "text": "her", "translation": "彼女を" }
+          ]
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "format": "sentence",
+      "text": "I'll go if you excuse me.",
+      "pattern": "SV",
+      "elements": [
+        { "type": "S", "text": "I", "translation": "私は" },
+        { "type": "V", "text": "will go", "translation": "立ち去る",
+          "tense": "present", "aspect": "simple", "mood": "indicative", "voice": "active" }
+      ],
+      "subclauses": [
+        {
+          "format": "clause",
+          "relation": "condition",
+          "text": "if you excuse me",
+          "pattern": "SVO",
+          "elements": [
+            { "type": "M", "text": "if", "translation": "もし〜なら" },
+            { "type": "S", "text": "you", "translation": "あなたが" },
+            { "type": "V", "text": "excuse", "translation": "許す",
+              "tense": "present", "aspect": "simple", "mood": "indicative", "voice": "active" },
+            { "type": "O", "text": "me", "translation": "私を" }
+          ]
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "format": "sentence",
+      "text": "They live where wild animals loiter.",
+      "pattern": "SV",
+      "elements": [
+        { "type": "S", "text": "They", "translation": "彼らは" },
+        { "type": "V", "text": "live", "translation": "住んでいる",
+          "tense": "present", "aspect": "simple", "mood": "indicative", "voice": "active" }
+      ],
+      "subclauses": [
+        {
+          "format": "clause",
+          "relation": "place",
+          "text": "where wild animals loiter",
+          "pattern": "SV",
+          "elements": [
+            { "type": "M", "text": "where", "translation": "〜の場所で" },
+            { "type": "S", "text": "wild animals", "translation": "野生動物が" },
+            { "type": "V", "text": "loiter", "translation": "徘徊する",
+              "tense": "present", "aspect": "simple", "mood": "indicative", "voice": "active" }
+          ]
+        }
       ]
     }
   ]
@@ -1103,6 +1211,228 @@ JSON形式で複数の英文とその対訳が与えられます。それぞれ�
 ]
 ```
 
+"would", "could", "should" が現在時制で用いられる例を示します。
+
+```json
+[
+  {
+    "source": "I would rather say that he's right.",
+    "target": "私はむしろ彼が正しいと言いたいくらいだ。"
+  },
+  {
+    "source": "Could you pass me the salt?",
+    "target": "塩を取ってくれますか。"
+  },
+  {
+    "source": "You should do it yourself.",
+    "target": "自分でやりなさいよ。"
+  }
+]
+```
+
+その出力例を示します。"would", "could", "should" が現在時制で用いられている場合、過去時制ではなく、現在時制の条件法として扱ってください。
+
+```json
+[
+  [
+    {
+      "format": "sentence",
+      "text": "I would rather say that he's right.",
+      "pattern": "SVO",
+      "elements": [
+        { "type": "S", "text": "I", "translation": "私は" },
+        { "type": "V", "text": "would say", "translation": "言うだろう",
+          "tense": "present", "aspect": "simple", "mood": "conditional", "voice": "active" },
+        { "type": "M", "text": "rather", "translation": "むしろ" },
+        { "type": "O", "text": "that he's right", "translation": "彼は正しい",
+          "subclauses": [
+            {
+              "format": "clause",
+              "pattern": "SVC",
+              "relation": "content",
+              "elements": [
+                { "type": "S", "text": "he", "translation": "彼は" },
+                { "type": "V", "text": "is", "translation": "状態だ",
+                  "tense": "present", "aspect": "simple", "mood": "indicative", "voice": "none" },
+                { "type": "C", "text": "right", "translation": "正しい" }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "format": "sentence",
+      "text": "Could you pass me the salt?",
+      "pattern": "SVOO",
+      "elements": [
+        { "type": "S", "text": "you", "translation": "あなたは" },
+        { "type": "V", "text": "Could pass", "translation": "渡せるか",
+          "tense": "present", "aspect": "simple", "mood": "conditional", "voice": "active" },
+        { "type": "O", "text": "me", "translation": "私に" },
+        { "type": "O", "text": "the salt", "translation": "その塩を" }
+      ]
+    }
+  ],
+  [
+    {
+      "format": "sentence",
+      "text": "You should do it yourself.",
+      "pattern": "SVO",
+      "elements": [
+        { "type": "S", "text": "you", "translation": "あなたは" },
+        { "type": "V", "text": "should do", "translation": "すべきである",
+          "tense": "present", "aspect": "simple", "mood": "conditional", "voice": "active" },
+        { "type": "O", "text": "it", "translation": "それを" },
+        { "type": "M", "text": "yourself", "translation": "自分で" }
+      ]
+    }
+  ]
+]
+```
+
+句動詞の判別のための例を示します。
+
+```json
+[
+  {
+    "source": "Nancy came up with the plan on the double.",
+    "target": "ナンシーは大急ぎでその計画を考えた。"
+  },
+  {
+    "source": "John graduated from the school in two years.",
+    "target": "ジョンは2年でその学校を卒業した。"
+  }
+]
+```
+
+その出力例を示します。"come up" 単体だと意味を成さないので、"come up with" を他動詞の句動詞とみなして扱います。一方で、"graduate" は単体で意味を成すので、"from" 以降は分離して副詞句の前置詞句のとして扱います。また、動詞に係る前置詞句は副詞句として要素に分けます。
+
+```json
+[
+  [
+    {
+      "format": "sentence",
+      "text": "Nancy came up with the plan on the double.",
+      "pattern": "SVO",
+      "elements": [
+        { "type": "S", "text": "Nancy", "translation": "ナンシーは" },
+        { "type": "V", "text": "came up with", "translation": "考案した",
+          "tense": "past", "aspect": "simple", "mood": "indicative", "voice": "active" },
+        { "type": "O", "text": "the plan", "translation": "その計画を" },
+        { "type": "M", "text": "on the double", "translation": "大急ぎで" }
+      ]
+    }
+  ],
+  [
+    {
+      "format": "sentence",
+      "text": "John graduated from the school in two years.",
+      "pattern": "SV",
+      "elements": [
+        { "type": "S", "text": "John", "translation": "ジョンは" },
+        { "type": "V", "text": "graduated", "translation": "卒業した",
+          "tense": "past", "aspect": "simple", "mood": "indicative", "voice": "active" },
+        { "type": "M", "text": "from the school", "translation": "その学校から" },
+        { "type": "M", "text": "in two years", "translation": "2年間で" }
+      ]
+    }
+  ]
+]
+```
+
+不定詞句を多く含む例を示します。
+
+```json
+[
+  {
+    "source": "I want to run to lose weight.",
+    "target": "体重を落とすために走りたい。"
+  },
+  {
+    "source": "She bought a knife to cut paper to decorate the room.",
+    "target": "彼女は部屋を飾るために、髪を切るナイフを買った。"
+  },
+  {
+    "source": "The bike is to commute; It's a bike to commute. I'm glad to have it.",
+    "target": "その二輪車は通勤用だ。それは通勤用の二輪車だ。私はそれを持てて嬉しい。"
+  }
+]
+```
+
+その出力例を示します。"want" などに続く不定詞句は名詞句の目的語なので独立した要素になります。目的語ではなく動詞にかかる不定詞は副詞句として独立した要素になります。名詞にかかる不定詞は形容詞句として名詞の要素に含めます。形容詞句として補語そのものになる不定詞句もありますし、名詞である補語にかかる不定詞句もあります。補語の原因や帰結を示す不定詞は副詞句として独立させます。
+
+```json
+[
+  [
+    {
+      "format": "sentence",
+      "text": "I want to run to lose weight.",
+      "pattern": "SVO",
+      "elements": [
+        { "type": "S", "text": "I", "translation": "私は" },
+        { "type": "V", "text": "want", "translation": "欲する",
+          "tense": "present", "aspect": "simple", "mood": "indicative", "voice": "active" },
+        { "type": "O", "text": "to run", "translation": "走ることを" },
+        { "type": "M", "text": "to lose weight", "translation": "痩せるために" }
+      ]
+    }
+  ],
+  [
+    {
+      "format": "sentence",
+      "text": "She bought a knife to cut paper to decorate the room.",
+      "pattern": "SVO",
+      "elements": [
+        { "type": "S", "text": "She", "translation": "彼女は" },
+        { "type": "V", "text": "bought", "translation": "買った",
+          "tense": "past", "aspect": "simple", "mood": "indicative", "voice": "active" },
+        { "type": "O", "text": "a knife to cut paper", "translation": "紙を切るためのナイフを" },
+        { "type": "M", "text": "to decorate the room", "translation": "部屋を飾るために" }
+      ]
+    }
+  ],
+  [
+    {
+      "format": "sentence",
+      "text": "The bike is to commute;",
+      "pattern": "SVC",
+      "elements": [
+        { "type": "S", "text": "The bike", "translation": "その二輪車は" },
+        { "type": "V", "text": "is", "translation": "存在である",
+          "tense": "present", "aspect": "simple", "mood": "indicative", "voice": "none" },
+        { "type": "C", "text": "to commute", "translation": "通勤するための" }
+      ]
+    },
+    {
+      "format": "sentence",
+      "text": "It's a bike to commute.",
+      "pattern": "SVC",
+      "elements": [
+        { "type": "S", "text": "It", "translation": "それは" },
+        { "type": "V", "text": "is", "translation": "存在である",
+          "tense": "present", "aspect": "simple", "mood": "indicative", "voice": "none" },
+        { "type": "O", "text": "a bike to commute", "translation": "通勤用の自転車" }
+      ]
+    },
+    {
+      "format": "sentence",
+      "text": "I'm glad to have it.",
+      "pattern": "SVC",
+      "elements": [
+        { "type": "S", "text": "I", "translation": "私は" },
+        { "type": "V", "text": "am", "translation": "状態である",
+          "tense": "present", "aspect": "simple", "mood": "indicative", "voice": "none" },
+        { "type": "C", "text": "glad", "translation": "嬉しい" },
+        { "type": "M", "text": "to have it", "translation": "それを持てて" }
+      ]
+    }
+  ]
+]
+```
+
 2つの文が接続詞で結合された例を示します。
 
 ```json
@@ -1188,7 +1518,8 @@ JSON形式で複数の英文とその対訳が与えられます。それぞれ�
 ]
 ```
 
-"pattern" が示す文型と "elements" の各要素の "type" の対応関係には注意して下さい。文型が "SV" の場合、"type" は "S" と "V" が存在する必要があり、"O" や "C" は存在してはいけません。文型が "SVO" の場合、"S" と "V" と "O" が存在し、"C" は存在してはいけません。文型が "SVC" の場合、"S" と "V" と "C" が存在し、"O" は存在してはいけません。文型が "SVOO" の場合、"S" と "V" と "O" 2つが存在し、"C" は存在してはいけません。文型が "SVOC" の場合、"S" と "V" と "O" と "C" が存在する必要があります。"M" はどの文型でいくつ存在しても構いません。
+"pattern" が示す文型と "elements" の各要素の "type" の対応関係には注意して下さい。文型が "SV" の場合、"type" は "S" と "V" が存在する必要があり、"O" や "C" は存在してはいけません。文型が "SVO" の場合、"S" と "V" と "O" が存在し、"C" は存在してはいけません。文型が "SVC" の場合、"S" と "V" と "C" が存在し、"O" は存在してはいけません。文型が "SVOO" の場合、"S" と "V" と "O" 2つが存在し、"C" は存在してはいけません。文型が "SVOC" の場合、"S" と "V" と "O" と "C" が存在する必要があります。"M" はどの文型でいくつ存在しても構いません。そうしないと減点されます。
+副詞節は "subclauses" として独立させてください。副詞句は "elements" として独立させてください。副詞句である不定詞句や前置詞句は、動詞や補語からは分離してください。そうしないと減点されます。
 """
 
 
@@ -1599,8 +1930,12 @@ def postprocess_sentence(sentence, index):
   pattern = sentence["pattern"]
   text = sentence["text"]
   elem_types = collections.defaultdict(int)
+  new_elements = []
   for element in sentence["elements"]:
+    if not element["text"].strip(): continue
+    new_elements.append(element)
     elem_types[element["type"]] += 1
+  sentence["elements"] = new_elements
   if "V" in elem_types:
     if "O" in elem_types:
       if "C" in elem_types:
