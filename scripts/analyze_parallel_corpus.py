@@ -1964,9 +1964,15 @@ def postprocess_sentence(sentence, index):
 def postprocess_tasks(tasks):
   for task in tasks:
     index = task["index"]
+    request = task["request"]
     response = task.get("response")
     if not response: continue
-    for item in response["content"]:
+    for item, req_item in zip(response["content"], request):
+      source = req_item["source"]
+      if len(item) == 2:
+        first, second = item
+        if first["text"] == source and first["text"].endswith(second["text"]):
+          first["text"] = first["text"][0:-len(second["text"])].rstrip()
       for sentence in item:
         postprocess_sentence(sentence, index)
         for subclause in sentence.get("subclauses") or []:
