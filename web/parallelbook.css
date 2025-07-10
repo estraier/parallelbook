@@ -371,6 +371,30 @@ body {
   max-height: 35ex;
 }
 
+.parallel-book aside.book-label {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0.5ex;
+  z-index: 10;
+}
+.parallel-book aside.book-label span {
+  margin: 0 0.2ex;
+  padding: 0.2ex 1.1ex;
+  border: 1px solid #ddd;
+  border-radius: 0.7ex;
+  opacity: 0.5;
+  font-size: 80%;
+}
+.parallel-book aside.book-label span.label-parallel {
+  color: #468;
+  background: #def;
+}
+.parallel-book aside.book-label span.label-analyzed {
+  color: #846;
+  background: #fde;
+}
+
 .parallel-book aside.book-meta {
   display: block;
   text-align: right;

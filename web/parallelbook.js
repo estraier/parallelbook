@@ -563,8 +563,6 @@ function createParallelBlock(tagName, className, source, target, mode, analysis)
 
     block.appendChild(analysisBlock);
   }
-
-
   const toggle = document.createElement("span");
   toggle.lang = "zxx";
   toggle.className = "parallel-toggle";
@@ -942,8 +940,44 @@ function renderParallelBookContent(contentElementId, bookId, bookContent, mode) 
     }
     contentEl.appendChild(chapterSection);
   }
+  contentEl.appendChild(createContentLabelPane(bookContent));
   contentEl.appendChild(createMetadataPane(bookContent));
   renderBookmark(contentEl, bookId);
+}
+
+function createContentLabelPane(bookContent) {
+  const pane = document.createElement("aside");
+  pane.lang = "ja";
+  pane.className = "book-label";
+  let isAnalyzed = false
+  if (bookContent.title?.analysis) {
+    isAnalyzed = true;
+  }
+  for (const chapter of bookContent.chapters ?? []) {
+    if (chapter.title?.analysis) {
+      isAnalyzed = true;
+    }
+    for (const block of chapter.body ?? []) {
+      if (block.paragraph) {
+        for (const item of block.paragraph) {
+          if (item.analysis) {
+            isAnalyzed = true;
+          }
+        }
+      }
+    }
+  }
+  const formatSpan = document.createElement("span");
+  formatSpan.className = "format label-parallel";
+  formatSpan.textContent = "parallel";
+  pane.appendChild(formatSpan);
+  if (isAnalyzed) {
+    const span = document.createElement("span");
+    span.classList.add("label-analyzed");
+    span.textContent = "analyzed";
+    pane.appendChild(span);
+  }
+  return pane;
 }
 
 function createMetadataPane(bookContent) {

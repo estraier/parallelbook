@@ -13,6 +13,7 @@ import sqlite3
 import sys
 import tiktoken
 import time
+import uuid
 from pathlib import Path
 
 
@@ -408,11 +409,15 @@ JSON形式で複数の英文とその対訳が与えられます。それぞれ�
   {
     "source": "“Excuse me!”, shouted John.",
     "target": "「すみません！」とジョンは叫んだ。"
+  },
+  {
+    "source": "Nancy was mumbling “Spiders are not insects...”",
+    "target": "ナンシーは「蜘蛛は昆虫じゃないわ」と呟いていた。"
   }
 ]
 ```
 
-その出力例を示します。倒置構文でも "elements" の要素は出現順ではなく、分かりやすい順番で良いです。
+その出力例を示します。倒置構文でも "elements" の要素は出現順ではなく、分かりやすい順番で良いです。副文は文として分割するのではなく、主文の属性 "subsentences" の要素として扱います。"text" の値には引用符も含めてください。副文の内容を主文の "text" から削除しないでください。
 
 ```json
 [
@@ -423,17 +428,45 @@ JSON形式で複数の英文とその対訳が与えられます。それぞれ�
       "pattern": "SVO",
       "elements": [
         { "type": "S", "text": "John", "translation": "ジョンは" },
-        { "type": "V", "text": "shouted", "translation": "叫んだ" },
+        { "type": "V", "text": "shouted", "translation": "叫んだ",
+          "tense": "past", "aspect": "simple", "mood": "indicative", "voice": "active" },
         { "type": "O", "text": "“Excuse me!”", "translation": "「すみません」と" }
       ],
       "subsentences": [
         {
           "format": "sentence",
           "text": "“Excuse me!”",
-          "pattern": "SV",
+          "pattern": "SVO",
           "elements": [
-            { "type": "V", "text": "Excuse", "translation": "許す" },
+            { "type": "V", "text": "Excuse", "translation": "許す",
+              "tense": "present", "aspect": "simple", "mood": "imperative", "voice": "active" },
             { "type": "O", "text": "me", "translation": "私を" }
+          ]
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "format": "sentence",
+      "text": "Nancy is mumbling “Spiders are not insects...”",
+      "pattern": "SVO",
+      "elements": [
+        { "type": "S", "text": "Nancy", "translation": "ナンシーは" },
+        { "type": "V", "text": "was mumbling", "translation": "呟いていた",
+          "tense": "past", "aspect": "progressive", "mood": "indicative", "voice": "active" },
+        { "type": "O", "text": "“Spiders are not insects...”", "translation": "「蜘蛛は昆虫ではない」と" }
+      ],
+      "subsentences": [
+        {
+          "format": "sentence",
+          "text": "“Spiders are not insects...”",
+          "pattern": "SVC",
+          "elements": [
+            { "type": "S", "text": "Spiders", "translation": "蜘蛛は" },
+            { "type": "V", "text": "are not", "translation": "存在ではない",
+              "tense": "present", "aspect": "simple", "mood": "indicative", "voice": "none" },
+            { "type": "C", "text": "insects", "translation": "昆虫という" }
           ]
         }
       ]
@@ -1482,13 +1515,13 @@ JSON形式で複数の英文とその対訳が与えられます。それぞれ�
 ```json
 [
   {
-    "source": "I'm a boxer so can't run away",
+    "source": "I'm a boxer so can't run away.",
     "target": "私はボクサーなので、逃げるわけにはいかない。"
   }
 ]
 ```
 
-その出力例を示します。省略がある場合には、省略を補った上で文型を推定してください。
+その出力例を示します。省略がある場合には、省略を補った上で文型を推定してください。文を分割して複数の要素を出力する場合、"text" の内容が重複しないようにしてください。各要素の "text" を結合すると元の文の "source" に一致する必要があります。
 
 ```json
 [
@@ -1549,6 +1582,8 @@ def validate_content(content, pairs):
       diff = distance / length
       if diff > 0.1:
         raise ValueError(f"Too much diff {short_orig} vs {norm_first}")
+      if norm_orig == norm_first and len(item) > 1 and item[0]["text"] == item[1]["text"]:
+        raise ValueError(f"Duplicated texts: {short_orig}")
 
 
 def validate_sentence_content(content):
@@ -1719,6 +1754,50 @@ def load_input_data(path):
   return data, pairs
 
 
+def read_batch_output_data(path):
+  records = {}
+  with open(path, encoding="utf-8") as f:
+    line_num = 0
+    for line in f:
+      line_num += 1
+      try:
+        data = json.loads(line)
+      except Exception as e:
+        logger.warning(f"invalid batch data: line={line_num}: {e}")
+        continue
+      custom_id = data.get("custom_id")
+      if not custom_id: continue
+      match = regex.search(r"-(\d+)$", custom_id)
+      if not match: continue
+      task_index = int(match.group(1))
+      response = data.get("response")
+      if not response: continue
+      body = response.get("body")
+      if not body: continue
+      usage = body.get("usage")
+      if not usage: continue
+      choices = body.get("choices")
+      if not choices: continue
+      message = choices[0].get("message")
+      if not message: continue
+      content = message.get("content")
+      if not content: continue
+      match = regex.search(r'```(?:json)?\s*([{\[].*?[}\]])\s*```', content, regex.DOTALL)
+      if match:
+        content = match.group(1)
+      try:
+        content = json.loads(content)
+      except Exception:
+        content = []
+      record = {
+        "index": task_index,
+        "content": content,
+        "usage": usage,
+      }
+      records[task_index] = record
+  return records
+
+
 def count_chatgpt_tokens(text):
   encoding = tiktoken.get_encoding("cl100k_base")
   tokens = encoding.encode(text)
@@ -1823,8 +1902,7 @@ def make_prompt(pairs, attempt, extra_hint, use_source_example):
   return "\n".join(lines)
 
 
-
-def execute_task(request, main_model, failsoft, no_fallback, extra_hint):
+def execute_task(request, main_model, failsoft, no_fallback, extra_hint, batch_response):
   pairs = []
   void_pairs = collections.defaultdict(list)
   for item in request:
@@ -1855,6 +1933,25 @@ def execute_task(request, main_model, failsoft, no_fallback, extra_hint):
                (0.4, False), (0.4, True),
                (0.8, False), (0.8, True)]
     for attempt, (temp, use_source_example) in enumerate(configs, 1):
+      if attempt == 1 and batch_response:
+        try:
+          content = batch_response["content"]
+          usage = batch_response["usage"]
+          texts = []
+          for item in content:
+            for sentence in item:
+              texts.append(sentence["text"])
+          short_text = cut_text_by_width(" ".join(texts), 80)
+          logger.info(f"Reusing: {short_text}")
+          logger.debug(f"Usage:\n{usage}")
+          logger.debug(f"Response:\n{content}")
+          validate_content(content, pairs)
+          valid_content = content
+          break
+        except Exception as e:
+          logger.info(f"Attempt {attempt} failed (batch): {e}")
+          time.sleep(0.2)
+          continue
       prompt = make_prompt(pairs, attempt, extra_hint, use_source_example)
       logger.debug(f"Prompt:\n{prompt}")
       try:
@@ -1972,7 +2069,9 @@ def postprocess_tasks(tasks):
       if len(item) == 2:
         first, second = item
         if first["text"] == source and first["text"].endswith(second["text"]):
-          first["text"] = first["text"][0:-len(second["text"])].rstrip()
+          short_text = first["text"][0:-len(second["text"])].rstrip()
+          if len(short_text) >= 3:
+            first["text"] = short_text
       for sentence in item:
         postprocess_sentence(sentence, index)
         for subclause in sentence.get("subclauses") or []:
@@ -1983,11 +2082,17 @@ def postprocess_tasks(tasks):
 
 def validate_tasks(tasks):
   for task in tasks:
+    index = task["index"]
     request = task["request"]
     response = task.get("response")
     if not response: continue
     content = response["content"]
-    validate_content(content, request)
+    try:
+      validate_content(content, request)
+    except Exception as e:
+      logger.warning(f"invalid task data: index={index}: {e}")
+      return False
+  return True
 
 
 def build_output(data, tasks):
@@ -2049,6 +2154,30 @@ def build_output(data, tasks):
   return data
 
 
+def make_batch_input(tasks, model, extra_hint, input_stem):
+  batch_input = []
+  input_stem = regex.sub(r"[^\w]", "", input_stem).strip()[:16].strip()
+  if not input_stem:
+    input_stem = "book"
+  custom_id_prefix = ("analyze-parallel-corpus-" + input_stem +
+                      "-" + regex.sub(r"-", "", str(uuid.uuid4())))
+  for index, task in enumerate(tasks):
+    prompt = make_prompt(task, 1, extra_hint, False)
+    item = {
+      "method": "POST",
+      "url": "/v1/chat/completions",
+      "body": {
+        "messages": [
+          {"role": "user", "content": prompt},
+        ],
+        "model": "gpt-4.1-mini",
+      },
+      "custom_id": custom_id_prefix + f"-{index:05d}",
+    }
+    batch_input.append(item)
+  return batch_input
+
+
 def main():
   parser = argparse.ArgumentParser()
   parser.add_argument("input_file",
@@ -2073,6 +2202,10 @@ def main():
                       help="do not use the fallback model")
   parser.add_argument("--extra-hint", default="",
                       help="extra hint to be appended to the prompt")
+  parser.add_argument("--make-batch-input", action="store_true",
+                      help="outputs JSONL data to input onto the batch API")
+  parser.add_argument("--use-batch-output", default=None,
+                      help="uses JSONL data from the batch API")
   parser.add_argument("--debug", action="store_true",
                       help="prints the debug messages too")
   args = parser.parse_args()
@@ -2082,21 +2215,59 @@ def main():
   input_stem = regex.sub(r"-(parallel|analyzed)", "", input_path.stem)
   if args.output:
     output_path = Path(args.output)
+  elif args.make_batch_input:
+    output_path = input_path.with_name(input_stem + "-batch-input-analyze.jsonl")
   else:
     output_path = input_path.with_name(input_stem + "-analyzed.json")
   if args.state:
     state_path = Path(args.state)
   else:
     state_path = input_path.with_name(input_stem + "-state-analyze.db")
+  batch_output_path = None
+  if args.use_batch_output:
+    if args.use_batch_output == "auto":
+      batch_output_path = input_path.with_name(input_stem + "-batch-output-analyze.jsonl")
+    else:
+      batch_output_path = args.use_batch_output
   logger.info(f"Loading data from {input_path}")
   input_data, input_pairs = load_input_data(input_path)
   tasks = make_tasks(input_pairs)
+  if args.make_batch_input:
+    batch_input = make_batch_input(tasks, args.model, args.extra_hint, input_stem)
+    logger.info(f"Total tasks: {len(batch_input)}")
+    num_tokens = 0
+    cost = 0
+    for item in batch_input:
+      for message in item["body"]["messages"]:
+        num_tokens += count_chatgpt_tokens(message["content"])
+        cost += calculate_chatgpt_cost(message["content"], "", args.model) / 2
+    logger.info(f"Total tokens: {num_tokens}")
+    logger.info(f"Total input cost: ${cost:.4f} (Y{cost*150:.2f})")
+    logger.info(f"Writing batch input data into {output_path}")
+    with open(output_path, "w") as f:
+      for batch_item in batch_input:
+        f.write(json.dumps(batch_item, ensure_ascii=False) + "\n")
+    logger.info("Finished")
+    return
+  batch_output_data = None
+  if batch_output_path:
+    logger.info(f"Reading batch output data from {batch_output_path}")
+    batch_output_data = read_batch_output_data(batch_output_path)
+    input_tokens = 0
+    output_tokens = 0
+    for index, record in batch_output_data.items():
+      usage = record["usage"]
+      input_tokens += usage.get("prompt_tokens", 0)
+      output_tokens += usage.get("completion_tokens", 0)
+    logger.info(
+      f"Batch info: tasks={len(batch_output_data)}, input_tokens={input_tokens},"
+      f" output_tokens={output_tokens}")
   sm = StateManager(state_path)
   if args.reset or not state_path.exists():
     sm.initialize(tasks)
   total_tasks = sm.count()
   logger.info(f"Total tasks: {total_tasks}")
-  logger.info(f"GPT models: {args.model}")
+  logger.info(f"GPT model: {args.model}")
   redo_indexes = []
   if args.redo:
     try:
@@ -2123,10 +2294,13 @@ def main():
       request = record["request"]
       short_source_text = " ".join([x["source"] for x in record["request"]])
       short_source_text = regex.sub(r"\s+", " ", short_source_text).strip()
-      short_source_text = cut_text_by_width(short_source_text, 64)
+      short_source_text = cut_text_by_width(short_source_text, 80)
       logger.info(f"Task {index}: {short_source_text}")
+      batch_response = None
+      if batch_output_data:
+        batch_response = batch_output_data.get(index)
       response = execute_task(
-        request, args.model, args.failsoft, args.no_fallback, args.extra_hint)
+        request, args.model, args.failsoft, args.no_fallback, args.extra_hint, batch_response)
       sm.set_response(index, response)
       total_cost += response.get("cost", 0)
       done_tasks += 1
@@ -2139,7 +2313,8 @@ def main():
     logger.info(f"Postprocessing the output")
     postprocess_tasks(tasks)
     logger.info(f"Validating the output")
-    validate_tasks(tasks)
+    if not validate_tasks(tasks):
+      raise RuntimeError("Validation failed")
     logger.info(f"Writing data into {output_path}")
     output_data = build_output(input_data, tasks)
     with open(output_path, "w", encoding="utf-8") as f:

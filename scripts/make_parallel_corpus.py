@@ -308,7 +308,7 @@ def build_output(input_meta, input_tasks, tasks):
       if role != input_role:
         logger.warning(f"mismatch input role: {index}: {role}")
       if source_text != input_text:
-        short_text = cut_text_by_width(source_text, 64)
+        short_text = cut_text_by_width(source_text, 80)
         logger.warning(f"mismatch input text: {index}: {short_text}")
       raw_line = input_attrs.get("raw_line")
       if raw_line:
@@ -970,7 +970,7 @@ def main():
       book_title = record["source_text"]
       logger.info(f"Title: {book_title}")
       break
-  logger.info(f"GPT models: {args.model}")
+  logger.info(f"GPT model: {args.model}")
   redo_indexes = []
   if args.redo:
     try:
