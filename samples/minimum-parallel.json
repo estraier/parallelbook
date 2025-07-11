@@ -9,13 +9,13 @@
           "paragraph": [
             {
               "id": "00000-000",
-              "source": "Hello, world.",
-              "target": "こんにちは、世界。"
+              "source": "Hello, world. I graduated from the world.",
+              "target": "こんにちは、世界。私はその世界から卒業した。"
             },
             {
               "id": "00000-001",
-              "source": "We love translation.",
-              "target": "私たちは翻訳が大好きです。"
+              "source": "We love translation. I come up with a new approach.",
+              "target": "私たちは翻訳が大好きです。私は新しい手法を考案する。"
             }
           ],
           "raw_line": 1
@@ -24,8 +24,8 @@
           "paragraph": [
             {
               "id": "00001-000",
-              "source": "Dr. Slump said, “We did it!”",
-              "target": "ドクター・スランプは言った。「やったぞ！」"
+              "source": "Dr. Slump said, “We did it! I'm alive.”",
+              "target": "ドクター・スランプは言った。「やったぞ！生きてる」"
             },
             {
               "id": "00001-001",
