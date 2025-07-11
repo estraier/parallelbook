@@ -2170,7 +2170,8 @@ def make_batch_input(tasks, model, extra_hint, input_stem):
         "messages": [
           {"role": "user", "content": prompt},
         ],
-        "model": "gpt-4.1-mini",
+        "model": model,
+        "temperature": 0,
       },
       "custom_id": custom_id_prefix + f"-{index:05d}",
     }

@@ -940,9 +940,114 @@ analyze_parallel_corpus.pyは以下のオプションを備えます。
 - --model GPT_MODEL : ChatGPTのモデル名を指定します。
 - --no-fallback : 失敗時に別モデルを使う処理を抑制します。
 - --extra-hint : プロンプトに追加するヒント情報を指定します。
+- --make-batch-input : バッチAPIを利用するためのJSONL入力ファイルを作成します。
+- --use-batch-output BATCHOUT : バッチAPIのJSONL出力ファイルを利用します。
 - --debug : 各タスクのプロンプトと応答などのデバッグ情報をログ表示します。
 
 ChatGPTに渡すプロンプトはスクリプト内にハードコードされているので、適宜修正して使ってください。失敗しがちなパターンがあれば、それを解決する例を足すと精度が上がります。
+
+### バッチAPI対応
+
+make_parallel_corpus.pyとanalyze_parallel_corpus.pyは、ChatGPTのバッチAPIを併用することで、より安価に実行できるようになります。バッチAPIでは、入力トークンの費用と出力トークンの費用の双方が、通常のAPIの半額になります。ただし、バッチAPIでは、個々のタスクの出力を即座に検証することができません。よって、通常APIでは不整合があるタスクを再試行することで結果の整合性を担保できますが、バッチAPIだとそれが困難です。そこで、バッチAPIと通常APIを併用します。バッチAPIの結果を読み込んで、通常APIの試行の1回目の結果とすり替えるのです。そこで不整合があれば2回目以降の試行は通常APIを使って行われます。この方法だと、1回目の試行で完了する多くのタスクはバッチAPIの費用だけで済むので、総合的な費用はバッチAPIだけを使った場合とそれほど変わりません。それでいて、整合性は通常APIを使った場合と同程度に担保できます。
+
+バッチAPIと通常APIを利用する際の作業手順を以下に示します。
+
+- --make-batch-inputオプションをつけてスクリプトを実行し、バッチAPIの入力JSONLファイルを作る。
+- chatgpt_batch.py createコマンドで、入力JSONLファイルを指定してバッチを作成し、バッチIDを得る。
+- chatgpt_batch.py checkコマンドで、バッチIDを指定して、状態を調べる。
+  - 状態にcompletedに変わるまで、たまに実行しながら待つ。
+- chatgpt_batch.py saveコマンドで、バッチIDを指定して、出力JSONLファイルを作る。
+- --use-batch-outputオプションをつけてスクリプトを実行し、最終出力を生成する。
+
+analyze_parallel_corpus.pyでの実行例を示します。まず、入力データのJSONファイルを指定して、バッチAPIの入力JSONLファイルを作ります。入力ファイルの "-parallel.json" の部分を "-batch-input-analyze.jsonl" に変えた名前のファイルが生成されます。
+
+```shell
+$ ./scripts/analyze_parallel_corpus.py samples/minimum-parallel.json --make-batch-input
+Loading data from samples/minimum-parallel.json
+Total tasks: 1
+Total tokens: 19808
+Total input cost: $0.0040 (Y0.59)
+Writing batch input data into samples/minimum-batch-input-analyze.jsonl
+Finished
+```
+
+生成されたminimum-batch-input-analyze.jsonの中身はこんな感じです。JSONLとは、配列の要素を改行抜きのJSON形式にしたものを改行区切りで並べたものです。
+
+```json
+{"method": "POST", "url": "/v1/chat/completions", "body": {"messages": [{"role": "user", "content": "あなたは英文法の構文解析の試験を受けている学生です...以下略..."}], "model": "gpt-4.1-mini"}, "custom_id": "analyze-parallel-corpus-e91011362cdb413f93e0630832be7442-00000"}
+```
+
+バッチ用入力ファイルを、バッチAPIに投げます。chatgpt_batch.py createはファイルアップロードとバッチの開始を自動的に行い、バッチIDを出力します。
+
+```shell
+$ ./scripts/chatgpt_batch.py create samples/minimum-batch-input-analyze.jsonl
+created: batch_686d1378324c8190874a9a158ec57cd5
+```
+
+印字にされたバッチIDを使って以後の管理を行います。バッチの状態は以下のようなコマンドで分かります。
+
+```
+$ ./scripts/chatgpt_batch.py check batch_686d1378324c8190874a9a158ec57cd5
+status: in_progress
+```
+
+しばらく待ってから状態を確認すると、バッチが終了していることが確認できます。最大24時間待つ可能性がありますが、多くの場合で1時間以内に結果が得られます。
+
+>|shell|
+$ ./scripts/chatgpt_batch.py check batch_686d1378324c8190874a9a158ec57cd5
+status: completed
+||<
+
+バッチの終了を確認したら、ダウンロードして保存します。
+
+>|shell|
+$ ./chatgpt_batch.py save batch_686d1378324c8190874a9a158ec57cd5 minimum-batch-output-analyze.jsonl
+||<
+
+なお、バッチ投入後でも、そのバッチが開始される前ならば、キャンセルできます。キャンセルした場合には料金はかからりません。
+
+>|shell|
+$ ./scripts/chatgpt_batch.py cancel batch_686d1378324c8190874a9a158ec57cd5
+canceled: batch_686d1378324c8190874a9a158ec57cd5
+||<
+
+既存のジョブの一覧を見る機能もあります。
+
+>|shell|
+$ ./scripts/chatgpt_batch.py list
+batch_id                                status        created_at
+batch_686f75f080208190bf4c87cd1e0047d2  completed     2025-07-10 08:12:32
+batch_686f6e50575881908def569ec159b31a  failed        2025-07-10 07:40:00
+batch_686e047a31048190b330965a1b4ffa86  cancelled     2025-07-09 05:56:10
+batch_686d1378324c8190874a9a158ec57cd5  completed     2025-07-08 12:47:52
+batch_686d12edd9908190b7cecaee7b27f5ef  failed        2025-07-08 12:45:33
+||<
+
+保存されたminimum-batch-output-analyze.jsonlの中身はこんな感じです。
+
+>|json|
+{"id": "batch_req_686d139704f08190a751168eac4050db", "custom_id": "analyze-parallel-corpus-e91011362cdb413f93e0630832be7442-00000", "response": {"status_code": 200, "request_id": "9bd0abfcb194ceb1ad233e8ba326d20c", "body": {"id": "chatcmpl-Br21lvVPHDfi4RSOlGFaqewok9meD", "object": "chat.completion", "created": 1751978877, "model": "gpt-4.1-mini-2025-04-14", "choices": [{"index": 0, "message": {"role": "assistant", "content": "ここに解析結果のJSONが入る", "refusal": null, "annotations": []}, "logprobs": null, "finish_reason": "stop"}], "usage": {"prompt_tokens": 17800, "completion_tokens": 1062, "total_tokens": 18862, "prompt_tokens_details": {"cached_tokens": 0, "audio_tokens": 0}, "completion_tokens_details": {"reasoning_tokens": 0, "audio_tokens": 0, "accepted_prediction_tokens": 0, "rejected_prediction_tokens": 0}}, "service_tier": "default", "system_fingerprint": "fp_6f2eabb9a5"}}, "error": null}
+||<
+
+このデータを注入して、解析パイプラインを実行します。--use-batch-result=autoを指定すると、入力ファイル名の-parallel.jsonを-batch-output-analyze.jsonlに変えたものを読み込みます。
+
+>|shell|
+$ ./scripts/analyze_parallel_corpus.py samples/minimum-parallel.json --use-batch-output=auto
+Loading data from samples/minimum-parallel.json
+Reading batch output data from samples/minimum-batch-output-analyze.jsonl
+Batch info: tasks=1, input_tokens=17800,, output_tokens=1062
+Total tasks: 1
+GPT model: gpt-4.1-mini
+Task 0: Hello, world. I graduated from the world. We love translation. I come up with a
+Reusing: Hello, world. I graduated from the world. We love translation. I come up with a
+Done: tasks=1, total_cost=$0.0000 (Y0.00)
+Postprocessing the output
+Validating the output
+Writing data into samples/minimum-analyzed.json
+Finished
+||<
+
+バッチAPIでのミニバッチが全て成功していたため、今回の実行では一度もChatGPTにアクセスせずに一瞬で全タスクが完了しました。バッチAPIの結果に不整合を含むタスクがあれば、そのタスクは通常APIで自動的に再実行されます。
 
 ## 変換機能群のチュートリアル
 
