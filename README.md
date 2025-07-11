@@ -1072,6 +1072,7 @@ cp web/index.html web/parallelbook.js web/parallelbook.css /home/mikio/public/pa
 ```shell
 mkdir /home/mikio/public/parallelbook/books
 cp samples/*-parallel.json books/*-parallel.json /home/mikio/public/parallelbook/books
+cp samples/*-analyzed.json books/*-analyzed.json /home/mikio/public/parallelbook/books
 ```
 
 Webサーバの該当URLにアクセスすると、対訳本を閲覧できます。ローカルで簡易Webサーバを立ち上げた場合、http://localhost:8000/ にアクセスしてください。詳しい使い方はそのページに書いてあります。
@@ -1150,6 +1151,8 @@ parallelbook.jsは、任意のWebページに対訳コーパスを表示する�
 parallelbook.cssは、renderParallelBookが表示した対訳本のスタイルを設定する。このファイルを編集すると、文字の色や大きさや文書の幅などの様々な設定をカスタマイズできる。
 
 書籍パラメータ名が "book" でモードパラメータ名が "mode" の場合、URLのクエリ部分に "?book=anne01&mode=en" などとすることで、初期状態で該当の書籍を表示できます。その場合、書籍選択セレクタを省略しても機能します。
+
+parallelbook.jsが読み込めるのは、make_parallel_corpus.pyが生成した*-parallel.jsonという名前で保存される通常の対訳JSONファイルか、analyze_parallel_corpus.pyが生成した*-analyzed.jsonという名前で保存される構文解析注釈付きの対訳JSONファイルです。構文解析注釈が付いていると、「▶」ボタンを押した時にそれが表示されるようになります。
 
 ### make_parallel_epub.py
 
