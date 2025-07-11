@@ -905,12 +905,6 @@ def simulate_task_as_code(source_text):
   return record
 
 
-def list_available_models():
-  models = openai.models.list()
-  for model in models.data:
-    print(model.id)
-
-
 def main():
   parser = argparse.ArgumentParser()
   parser.add_argument("input_file",
@@ -937,11 +931,6 @@ def main():
                       help="extra hint to be appended to the prompt")
   parser.add_argument("--debug", action="store_true",
                       help="prints the debug messages too")
-  parser.add_argument("--list-models", action="store_true",
-                      help="prints known models and exit")
-  if "--list-models" in sys.argv:
-    list_available_models()
-    sys.exit(0)
   args = parser.parse_args()
   if args.debug:
     logger.setLevel(logging.DEBUG)
