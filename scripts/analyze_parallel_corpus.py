@@ -1788,7 +1788,7 @@ def read_batch_output_data(path):
       try:
         content = json.loads(content)
       except Exception:
-        content = []
+        continue
       record = {
         "index": task_index,
         "content": content,
