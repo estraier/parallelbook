@@ -51,7 +51,7 @@
                     {
                       "type": "V",
                       "text": "love",
-                      "translation": "大好きです",
+                      "translation": "大好きだ",
                       "tense": "present",
                       "aspect": "simple",
                       "mood": "indicative",
@@ -60,7 +60,7 @@
                     {
                       "type": "O",
                       "text": "translation",
-                      "translation": "翻訳が"
+                      "translation": "翻訳を"
                     }
                   ]
                 }
@@ -142,7 +142,7 @@
                   "id": "00000-003-000",
                   "format": "sentence",
                   "text": "I was surprised.",
-                  "pattern": "SV",
+                  "pattern": "SVC",
                   "elements": [
                     {
                       "type": "S",
@@ -151,12 +151,17 @@
                     },
                     {
                       "type": "V",
-                      "text": "was surprised",
-                      "translation": "驚いた",
+                      "text": "was",
+                      "translation": "状態だった",
                       "tense": "past",
                       "aspect": "simple",
                       "mood": "indicative",
-                      "voice": "passive"
+                      "voice": "none"
+                    },
+                    {
+                      "type": "C",
+                      "text": "surprised",
+                      "translation": "驚いた"
                     }
                   ]
                 }

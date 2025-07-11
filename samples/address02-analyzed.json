@@ -17,11 +17,11 @@
           {
             "type": "S",
             "text": "I",
-            "translation": "私には"
+            "translation": "私は"
           },
           {
             "type": "V",
-            "text": "have",
+            "text": "Have",
             "translation": "持っている",
             "tense": "present",
             "aspect": "simple",
@@ -31,7 +31,7 @@
           {
             "type": "O",
             "text": "a Dream",
-            "translation": "夢が"
+            "translation": "夢を"
           }
         ]
       }
@@ -81,7 +81,7 @@
                     {
                       "type": "V",
                       "text": "am",
-                      "translation": "である",
+                      "translation": "状態である",
                       "tense": "present",
                       "aspect": "simple",
                       "mood": "indicative",
@@ -94,8 +94,42 @@
                     },
                     {
                       "type": "M",
-                      "text": "to join with you today in what will go down in history as the greatest demonstration for freedom in the history of our nation",
-                      "translation": "今日皆さんと共に、この国の歴史において最も偉大な自由のための示威行動として歴史に刻まれるであろう場に参加できることを"
+                      "text": "to join with you today",
+                      "translation": "今日あなたと共に参加することに"
+                    },
+                    {
+                      "type": "M",
+                      "text": "in what will go down in history as the greatest demonstration for freedom in the history of our nation",
+                      "translation": "我々の国の歴史における自由のための最も偉大な示威行動として歴史に刻まれるものに",
+                      "subclauses": [
+                        {
+                          "format": "clause",
+                          "text": "what will go down in history as the greatest demonstration for freedom in the history of our nation",
+                          "relation": "apposition",
+                          "pattern": "SV",
+                          "elements": [
+                            {
+                              "type": "S",
+                              "text": "what",
+                              "translation": "何が"
+                            },
+                            {
+                              "type": "V",
+                              "text": "will go down",
+                              "translation": "刻まれるだろう",
+                              "tense": "present",
+                              "aspect": "simple",
+                              "mood": "indicative",
+                              "voice": "active"
+                            },
+                            {
+                              "type": "M",
+                              "text": "in history as the greatest demonstration for freedom in the history of our nation",
+                              "translation": "我々の国の歴史における自由のための最も偉大な示威行動として"
+                            }
+                          ]
+                        }
+                      ]
                     }
                   ]
                 }
@@ -120,7 +154,7 @@
                     {
                       "type": "M",
                       "text": "Five score years ago",
-                      "translation": "百年前"
+                      "translation": "百年前に"
                     },
                     {
                       "type": "S",
@@ -130,14 +164,18 @@
                         {
                           "format": "clause",
                           "text": "in whose symbolic shadow we stand today",
-                          "relation": "place",
-                          "conjunction": "in whose",
+                          "relation": "apposition",
                           "pattern": "SV",
                           "elements": [
                             {
+                              "type": "M",
+                              "text": "in whose symbolic shadow",
+                              "translation": "その象徴的な影の中で"
+                            },
+                            {
                               "type": "S",
                               "text": "we",
-                              "translation": "私たちが"
+                              "translation": "私たちは"
                             },
                             {
                               "type": "V",
@@ -202,25 +240,29 @@
                     },
                     {
                       "type": "M",
-                      "text": "as a great beacon light of hope to millions of Negro slaves who had been seared in the flames of withering injustice",
-                      "translation": "衰えゆく不正の炎に焼かれてきた何百万もの黒人奴隷たちにとって大きな希望の灯台のように",
+                      "text": "as a great beacon light of hope to millions of Negro slaves",
+                      "translation": "何百万もの黒人奴隷たちにとっての大きな希望の灯台として"
+                    },
+                    {
+                      "type": "M",
+                      "text": "who had been seared in the flames of withering injustice",
+                      "translation": "衰えゆく不正の炎に焼かれていた",
                       "subclauses": [
                         {
                           "format": "clause",
                           "text": "who had been seared in the flames of withering injustice",
                           "relation": "apposition",
-                          "conjunction": "who",
                           "pattern": "SV",
                           "elements": [
                             {
                               "type": "S",
                               "text": "who",
-                              "translation": "その人たちは"
+                              "translation": "彼らは"
                             },
                             {
                               "type": "V",
                               "text": "had been seared",
-                              "translation": "焼かれてきた",
+                              "translation": "焼かれていた",
                               "tense": "past",
                               "aspect": "perfect",
                               "mood": "indicative",
@@ -229,7 +271,7 @@
                             {
                               "type": "M",
                               "text": "in the flames of withering injustice",
-                              "translation": "衰えゆく不正の炎に"
+                              "translation": "衰えゆく不正の炎の中で"
                             }
                           ]
                         }
@@ -266,8 +308,13 @@
                     },
                     {
                       "type": "M",
-                      "text": "as a joyous daybreak to end the long night of their captivity",
-                      "translation": "彼らの長い捕囚の夜を終わらせる喜ばしい夜明けとして"
+                      "text": "as a joyous daybreak",
+                      "translation": "喜ばしい夜明けとして"
+                    },
+                    {
+                      "type": "M",
+                      "text": "to end the long night of their captivity",
+                      "translation": "彼らの長い捕囚の夜を終わらせるために"
                     }
                   ]
                 }
@@ -302,7 +349,7 @@
                     {
                       "type": "V",
                       "text": "is not",
-                      "translation": "存在していない",
+                      "translation": "ではない",
                       "tense": "present",
                       "aspect": "simple",
                       "mood": "indicative",
@@ -311,7 +358,7 @@
                     {
                       "type": "C",
                       "text": "free",
-                      "translation": "自由である"
+                      "translation": "自由な"
                     }
                   ]
                 }
@@ -326,7 +373,7 @@
                   "id": "00000-007-000",
                   "format": "sentence",
                   "text": "One hundred years later, the life of the Negro is still sadly crippled by the manacles of segregation and the chains of discrimination.",
-                  "pattern": "SV",
+                  "pattern": "SVC",
                   "elements": [
                     {
                       "type": "M",
@@ -340,12 +387,17 @@
                     },
                     {
                       "type": "V",
-                      "text": "is still sadly crippled",
-                      "translation": "いまだに悲しく傷つけられている",
+                      "text": "is",
+                      "translation": "状態である",
                       "tense": "present",
                       "aspect": "simple",
                       "mood": "indicative",
-                      "voice": "passive"
+                      "voice": "none"
+                    },
+                    {
+                      "type": "C",
+                      "text": "sadly crippled",
+                      "translation": "悲しいことに傷つけられている"
                     },
                     {
                       "type": "M",
@@ -404,7 +456,7 @@
                   "id": "00000-009-000",
                   "format": "sentence",
                   "text": "One hundred years later, the Negro is still languished in the corners of American society and finds himself an exile in his own land.",
-                  "pattern": "SV",
+                  "pattern": "SVOC",
                   "elements": [
                     {
                       "type": "M",
@@ -418,8 +470,8 @@
                     },
                     {
                       "type": "V",
-                      "text": "is still languished",
-                      "translation": "いまだに苦しんでいる",
+                      "text": "is languished",
+                      "translation": "苦しんでいる",
                       "tense": "present",
                       "aspect": "simple",
                       "mood": "indicative",
@@ -429,29 +481,16 @@
                       "type": "M",
                       "text": "in the corners of American society",
                       "translation": "アメリカ社会の片隅で"
-                    }
-                  ]
-                },
-                {
-                  "id": "00000-009-001",
-                  "format": "sentence",
-                  "text": "and finds himself an exile in his own land.",
-                  "pattern": "SVOC",
-                  "elements": [
+                    },
                     {
                       "type": "M",
                       "text": "and",
                       "translation": "そして"
                     },
                     {
-                      "type": "S",
-                      "text": "the Negro",
-                      "translation": "黒人は"
-                    },
-                    {
                       "type": "V",
                       "text": "finds",
-                      "translation": "見出す",
+                      "translation": "見つける",
                       "tense": "present",
                       "aspect": "simple",
                       "mood": "indicative",
@@ -465,7 +504,7 @@
                     {
                       "type": "C",
                       "text": "an exile in his own land",
-                      "translation": "自分の国で追放者のような立場に"
+                      "translation": "自分の国での追放者"
                     }
                   ]
                 }
@@ -480,7 +519,7 @@
                   "id": "00000-010-000",
                   "format": "sentence",
                   "text": "And so we've come here today to dramatize a shameful condition.",
-                  "pattern": "SV",
+                  "pattern": "SVO",
                   "elements": [
                     {
                       "type": "M",
@@ -507,7 +546,7 @@
                       "translation": "今日ここに"
                     },
                     {
-                      "type": "M",
+                      "type": "O",
                       "text": "to dramatize a shameful condition",
                       "translation": "この恥ずべき状況を強く訴えるために"
                     }
@@ -553,12 +592,12 @@
                     {
                       "type": "M",
                       "text": "to our nation's capital",
-                      "translation": "国の首都に"
+                      "translation": "我々の国の首都に"
                     },
                     {
                       "type": "M",
                       "text": "to cash a check",
-                      "translation": "小切手を現金化しに"
+                      "translation": "小切手を現金化するために"
                     }
                   ]
                 }
@@ -591,8 +630,13 @@
                     },
                     {
                       "type": "O",
-                      "text": "a promissory note to which every American was to fall heir",
-                      "translation": "すべてのアメリカ人が相続する約束手形に"
+                      "text": "a promissory note",
+                      "translation": "約束手形に"
+                    },
+                    {
+                      "type": "M",
+                      "text": "to which every American was to fall heir",
+                      "translation": "すべてのアメリカ人が相続することになる"
                     }
                   ],
                   "subclauses": [
@@ -600,18 +644,12 @@
                       "format": "clause",
                       "text": "When the architects of our republic wrote the magnificent words of the Constitution and the Declaration of Independence",
                       "relation": "time",
-                      "conjunction": "When",
                       "pattern": "SVO",
                       "elements": [
                         {
-                          "type": "M",
-                          "text": "When",
-                          "translation": "〜のとき"
-                        },
-                        {
                           "type": "S",
                           "text": "the architects of our republic",
-                          "translation": "私たちの共和国の建設者たちが"
+                          "translation": "我々の共和国の建設者たちが"
                         },
                         {
                           "type": "V",
@@ -626,29 +664,6 @@
                           "type": "O",
                           "text": "the magnificent words of the Constitution and the Declaration of Independence",
                           "translation": "憲法と独立宣言の壮大な言葉を"
-                        }
-                      ]
-                    },
-                    {
-                      "format": "clause",
-                      "text": "to which every American was to fall heir",
-                      "relation": "apposition",
-                      "conjunction": "to which",
-                      "pattern": "SV",
-                      "elements": [
-                        {
-                          "type": "S",
-                          "text": "every American",
-                          "translation": "すべてのアメリカ人が"
-                        },
-                        {
-                          "type": "V",
-                          "text": "was to fall heir",
-                          "translation": "相続することになっていた",
-                          "tense": "future",
-                          "aspect": "simple",
-                          "mood": "indicative",
-                          "voice": "active"
                         }
                       ]
                     }
@@ -684,20 +699,24 @@
                     {
                       "type": "C",
                       "text": "a promise",
-                      "translation": "約束であった"
+                      "translation": "約束である"
                     },
                     {
                       "type": "C",
                       "text": "that all men, yes, black men as well as white men, would be guaranteed the \"unalienable Rights\" of \"Life, Liberty and the pursuit of Happiness.\"",
-                      "translation": "すべての人、そう、黒人も白人も含めて、「生命、自由、幸福追求」という「譲ることのできない権利」が保証されるという約束",
+                      "translation": "すべての人、そう、黒人も白人も含めて、「生命、自由、幸福追求」という「譲ることのできない権利」が保証されるということ",
                       "subclauses": [
                         {
                           "format": "clause",
                           "text": "that all men, yes, black men as well as white men, would be guaranteed the \"unalienable Rights\" of \"Life, Liberty and the pursuit of Happiness.\"",
                           "relation": "apposition",
-                          "conjunction": "that",
-                          "pattern": "SV",
+                          "pattern": "SVO",
                           "elements": [
+                            {
+                              "type": "M",
+                              "text": "that",
+                              "translation": "〜ということ"
+                            },
                             {
                               "type": "S",
                               "text": "all men, yes, black men as well as white men",
@@ -707,13 +726,13 @@
                               "type": "V",
                               "text": "would be guaranteed",
                               "translation": "保証されるだろう",
-                              "tense": "future",
+                              "tense": "present",
                               "aspect": "simple",
-                              "mood": "indicative",
+                              "mood": "conditional",
                               "voice": "passive"
                             },
                             {
-                              "type": "M",
+                              "type": "O",
                               "text": "the \"unalienable Rights\" of \"Life, Liberty and the pursuit of Happiness.\"",
                               "translation": "「生命、自由、幸福追求」という「譲ることのできない権利」を"
                             }
@@ -744,7 +763,7 @@
                     {
                       "type": "V",
                       "text": "is",
-                      "translation": "である",
+                      "translation": "明らかである",
                       "tense": "present",
                       "aspect": "simple",
                       "mood": "indicative",
@@ -752,29 +771,33 @@
                     },
                     {
                       "type": "C",
-                      "text": "obvious today",
-                      "translation": "今日明らかである"
+                      "text": "obvious",
+                      "translation": "明らかな"
                     },
                     {
-                      "type": "S",
-                      "text": "that America has defaulted on this promissory note",
-                      "translation": "アメリカがこの約束手形を履行していないこと",
+                      "type": "C",
+                      "text": "that America has defaulted on this promissory note, insofar as her citizens of color are concerned",
+                      "translation": "アメリカがこの約束手形を、肌の色の異なる市民に関しては履行していないということ",
                       "subclauses": [
                         {
                           "format": "clause",
-                          "text": "that America has defaulted on this promissory note",
+                          "text": "that America has defaulted on this promissory note, insofar as her citizens of color are concerned",
                           "relation": "apposition",
-                          "conjunction": "that",
                           "pattern": "SVO",
                           "elements": [
                             {
+                              "type": "M",
+                              "text": "that",
+                              "translation": "〜ということ"
+                            },
+                            {
                               "type": "S",
                               "text": "America",
-                              "translation": "アメリカが"
+                              "translation": "アメリカは"
                             },
                             {
                               "type": "V",
-                              "text": "has defaulted on",
+                              "text": "has defaulted",
                               "translation": "履行していない",
                               "tense": "present",
                               "aspect": "perfect",
@@ -783,17 +806,17 @@
                             },
                             {
                               "type": "O",
-                              "text": "this promissory note",
-                              "translation": "この約束手形を"
+                              "text": "on this promissory note",
+                              "translation": "この約束手形に関して"
+                            },
+                            {
+                              "type": "M",
+                              "text": "insofar as her citizens of color are concerned",
+                              "translation": "肌の色の異なる市民に関しては"
                             }
                           ]
                         }
                       ]
-                    },
-                    {
-                      "type": "M",
-                      "text": "insofar as her citizens of color are concerned",
-                      "translation": "肌の色の異なる市民に関しては"
                     }
                   ]
                 }
@@ -837,35 +860,34 @@
                     {
                       "type": "O",
                       "text": "a bad check, a check which has come back marked \"insufficient funds.\"",
-                      "translation": "不渡り小切手を",
-                      "subclauses": [
+                      "translation": "不渡り小切手を"
+                    }
+                  ],
+                  "subclauses": [
+                    {
+                      "format": "clause",
+                      "text": "which has come back marked \"insufficient funds.\"",
+                      "relation": "apposition",
+                      "pattern": "SV",
+                      "elements": [
                         {
-                          "format": "clause",
-                          "text": "which has come back marked \"insufficient funds.\"",
-                          "relation": "apposition",
-                          "conjunction": "which",
-                          "pattern": "SV",
-                          "elements": [
-                            {
-                              "type": "S",
-                              "text": "which",
-                              "translation": "その小切手は"
-                            },
-                            {
-                              "type": "V",
-                              "text": "has come back",
-                              "translation": "戻ってきた",
-                              "tense": "present",
-                              "aspect": "perfect",
-                              "mood": "indicative",
-                              "voice": "active"
-                            },
-                            {
-                              "type": "M",
-                              "text": "marked \"insufficient funds.\"",
-                              "translation": "「資金不足」と印字されて"
-                            }
-                          ]
+                          "type": "M",
+                          "text": "which",
+                          "translation": "それは"
+                        },
+                        {
+                          "type": "V",
+                          "text": "has come back",
+                          "translation": "戻ってきた",
+                          "tense": "present",
+                          "aspect": "perfect",
+                          "mood": "indicative",
+                          "voice": "active"
+                        },
+                        {
+                          "type": "M",
+                          "text": "marked \"insufficient funds\"",
+                          "translation": "「資金不足」と印字されて"
                         }
                       ]
                     }
@@ -902,7 +924,7 @@
                     {
                       "type": "V",
                       "text": "refuse to believe",
-                      "translation": "信じることを拒む",
+                      "translation": "信じることを拒否する",
                       "tense": "present",
                       "aspect": "simple",
                       "mood": "indicative",
@@ -911,24 +933,28 @@
                     {
                       "type": "O",
                       "text": "that the bank of justice is bankrupt",
-                      "translation": "正義の銀行が破産していることを",
+                      "translation": "正義の銀行が破産していること",
                       "subclauses": [
                         {
                           "format": "clause",
                           "text": "that the bank of justice is bankrupt",
                           "relation": "content",
-                          "conjunction": "that",
                           "pattern": "SVC",
                           "elements": [
                             {
+                              "type": "M",
+                              "text": "that",
+                              "translation": "〜ということ"
+                            },
+                            {
                               "type": "S",
                               "text": "the bank of justice",
-                              "translation": "正義の銀行が"
+                              "translation": "正義の銀行は"
                             },
                             {
                               "type": "V",
                               "text": "is",
-                              "translation": "存在である",
+                              "translation": "である",
                               "tense": "present",
                               "aspect": "simple",
                               "mood": "indicative",
@@ -966,7 +992,7 @@
                     {
                       "type": "V",
                       "text": "refuse to believe",
-                      "translation": "信じることを拒む",
+                      "translation": "信じることを拒否する",
                       "tense": "present",
                       "aspect": "simple",
                       "mood": "indicative",
@@ -975,15 +1001,19 @@
                     {
                       "type": "O",
                       "text": "that there are insufficient funds in the great vaults of opportunity of this nation",
-                      "translation": "この国の偉大な機会の金庫に資金不足があることを",
+                      "translation": "この国の偉大な機会の金庫に資金不足があること",
                       "subclauses": [
                         {
                           "format": "clause",
                           "text": "that there are insufficient funds in the great vaults of opportunity of this nation",
                           "relation": "content",
-                          "conjunction": "that",
-                          "pattern": "SVC",
+                          "pattern": "SV",
                           "elements": [
+                            {
+                              "type": "M",
+                              "text": "that",
+                              "translation": "〜ということ"
+                            },
                             {
                               "type": "S",
                               "text": "there",
@@ -992,16 +1022,16 @@
                             {
                               "type": "V",
                               "text": "are",
-                              "translation": "存在する",
+                              "translation": "ある",
                               "tense": "present",
                               "aspect": "simple",
                               "mood": "indicative",
-                              "voice": "none"
+                              "voice": "active"
                             },
                             {
-                              "type": "C",
+                              "type": "M",
                               "text": "insufficient funds in the great vaults of opportunity of this nation",
-                              "translation": "この国の偉大な機会の金庫にある不十分な資金が"
+                              "translation": "この国の偉大な機会の金庫に十分でない資金"
                             }
                           ]
                         }
@@ -1020,7 +1050,7 @@
                   "id": "00001-002-000",
                   "format": "sentence",
                   "text": "And so, we've come to cash this check, a check that will give us upon demand the riches of freedom and the security of justice.",
-                  "pattern": "SV",
+                  "pattern": "SVO",
                   "elements": [
                     {
                       "type": "M",
@@ -1034,17 +1064,66 @@
                     },
                     {
                       "type": "V",
-                      "text": "have come",
-                      "translation": "来た",
+                      "text": "have come to cash",
+                      "translation": "現金化しに来た",
                       "tense": "present",
                       "aspect": "perfect",
                       "mood": "indicative",
                       "voice": "active"
                     },
                     {
+                      "type": "O",
+                      "text": "this check",
+                      "translation": "この小切手を"
+                    },
+                    {
                       "type": "M",
-                      "text": "to cash this check, a check that will give us upon demand the riches of freedom and the security of justice",
-                      "translation": "この小切手を現金化しに"
+                      "text": "a check that will give us upon demand the riches of freedom and the security of justice",
+                      "translation": "請求すれば自由の富と正義の保障を私たちに与える小切手",
+                      "subclauses": [
+                        {
+                          "format": "clause",
+                          "text": "that will give us upon demand the riches of freedom and the security of justice",
+                          "relation": "apposition",
+                          "pattern": "SVOO",
+                          "elements": [
+                            {
+                              "type": "M",
+                              "text": "that",
+                              "translation": "〜という"
+                            },
+                            {
+                              "type": "S",
+                              "text": "will give",
+                              "translation": "与えるだろう"
+                            },
+                            {
+                              "type": "V",
+                              "text": "will give",
+                              "translation": "与えるだろう",
+                              "tense": "present",
+                              "aspect": "simple",
+                              "mood": "indicative",
+                              "voice": "active"
+                            },
+                            {
+                              "type": "O",
+                              "text": "us",
+                              "translation": "私たちに"
+                            },
+                            {
+                              "type": "O",
+                              "text": "the riches of freedom and the security of justice",
+                              "translation": "自由の富と正義の保障を"
+                            },
+                            {
+                              "type": "M",
+                              "text": "upon demand",
+                              "translation": "請求すれば"
+                            }
+                          ]
+                        }
+                      ]
                     }
                   ]
                 }
@@ -1072,11 +1151,6 @@
                       "translation": "私たちは"
                     },
                     {
-                      "type": "M",
-                      "text": "also",
-                      "translation": "また"
-                    },
-                    {
                       "type": "V",
                       "text": "have come",
                       "translation": "来た",
@@ -1084,6 +1158,11 @@
                       "aspect": "perfect",
                       "mood": "indicative",
                       "voice": "active"
+                    },
+                    {
+                      "type": "M",
+                      "text": "also",
+                      "translation": "また"
                     },
                     {
                       "type": "M",
@@ -1145,9 +1224,14 @@
                   "pattern": "SVC",
                   "elements": [
                     {
-                      "type": "S",
+                      "type": "M",
                       "text": "Now",
-                      "translation": "今"
+                      "translation": "今こそ"
+                    },
+                    {
+                      "type": "S",
+                      "text": "is the time",
+                      "translation": "時である"
                     },
                     {
                       "type": "V",
@@ -1179,9 +1263,14 @@
                   "pattern": "SVC",
                   "elements": [
                     {
-                      "type": "S",
+                      "type": "M",
                       "text": "Now",
-                      "translation": "今"
+                      "translation": "今こそ"
+                    },
+                    {
+                      "type": "S",
+                      "text": "is the time",
+                      "translation": "時である"
                     },
                     {
                       "type": "V",
@@ -1213,9 +1302,14 @@
                   "pattern": "SVC",
                   "elements": [
                     {
-                      "type": "S",
+                      "type": "M",
                       "text": "Now",
-                      "translation": "今"
+                      "translation": "今こそ"
+                    },
+                    {
+                      "type": "S",
+                      "text": "is the time",
+                      "translation": "時である"
                     },
                     {
                       "type": "V",
@@ -1247,9 +1341,14 @@
                   "pattern": "SVC",
                   "elements": [
                     {
-                      "type": "S",
+                      "type": "M",
                       "text": "Now",
-                      "translation": "今"
+                      "translation": "今こそ"
+                    },
+                    {
+                      "type": "S",
+                      "text": "is the time",
+                      "translation": "時である"
                     },
                     {
                       "type": "V",
@@ -1301,8 +1400,13 @@
                     },
                     {
                       "type": "C",
-                      "text": "fatal for the nation to overlook the urgency of the moment",
-                      "translation": "国がこの瞬間の緊急性を見過ごすことは致命的"
+                      "text": "fatal",
+                      "translation": "致命的な"
+                    },
+                    {
+                      "type": "M",
+                      "text": "for the nation to overlook the urgency of the moment",
+                      "translation": "国がこの瞬間の緊急性を見過ごすことは"
                     }
                   ]
                 }
@@ -1327,7 +1431,7 @@
                     {
                       "type": "V",
                       "text": "will not pass",
-                      "translation": "終わらない",
+                      "translation": "終わらないだろう",
                       "tense": "present",
                       "aspect": "simple",
                       "mood": "indicative",
@@ -1339,9 +1443,13 @@
                       "format": "clause",
                       "text": "until there is an invigorating autumn of freedom and equality",
                       "relation": "time",
-                      "conjunction": "until",
-                      "pattern": "SVC",
+                      "pattern": "SV",
                       "elements": [
+                        {
+                          "type": "M",
+                          "text": "until",
+                          "translation": "〜まで"
+                        },
                         {
                           "type": "S",
                           "text": "there",
@@ -1350,16 +1458,16 @@
                         {
                           "type": "V",
                           "text": "is",
-                          "translation": "存在する",
+                          "translation": "ある",
                           "tense": "present",
                           "aspect": "simple",
                           "mood": "indicative",
-                          "voice": "none"
+                          "voice": "active"
                         },
                         {
-                          "type": "C",
+                          "type": "M",
                           "text": "an invigorating autumn of freedom and equality",
-                          "translation": "自由と平等という爽やかな秋が"
+                          "translation": "自由と平等という爽やかな秋"
                         }
                       ]
                     }
@@ -1394,8 +1502,13 @@
                     },
                     {
                       "type": "C",
-                      "text": "an end, but a beginning",
-                      "translation": "終わりではなく始まりである"
+                      "text": "an end",
+                      "translation": "終わり"
+                    },
+                    {
+                      "type": "M",
+                      "text": "but a beginning",
+                      "translation": "しかし始まりである"
                     }
                   ]
                 }
@@ -1420,19 +1533,18 @@
                     {
                       "type": "S",
                       "text": "those who hope that the Negro needed to blow off steam and will now be content",
-                      "translation": "黒人がただ憤りを発散する必要があっただけで今は満足すると望む者たちは",
+                      "translation": "黒人がただ憤りを発散する必要があっただけで、今は満足すると望む者たちは",
                       "subclauses": [
                         {
                           "format": "clause",
                           "text": "who hope that the Negro needed to blow off steam and will now be content",
                           "relation": "apposition",
-                          "conjunction": "who",
                           "pattern": "SVO",
                           "elements": [
                             {
                               "type": "S",
                               "text": "who",
-                              "translation": "その人たちは"
+                              "translation": "その者たちは"
                             },
                             {
                               "type": "V",
@@ -1446,33 +1558,32 @@
                             {
                               "type": "O",
                               "text": "that the Negro needed to blow off steam and will now be content",
-                              "translation": "黒人が憤りを発散する必要があっただけで今は満足すると",
+                              "translation": "黒人が憤りを発散する必要があったことと今は満足すること",
                               "subclauses": [
                                 {
                                   "format": "clause",
                                   "text": "that the Negro needed to blow off steam and will now be content",
                                   "relation": "content",
-                                  "conjunction": "that",
-                                  "pattern": "SVO",
+                                  "pattern": "SV",
                                   "elements": [
+                                    {
+                                      "type": "M",
+                                      "text": "that",
+                                      "translation": "〜ということ"
+                                    },
                                     {
                                       "type": "S",
                                       "text": "the Negro",
-                                      "translation": "黒人が"
+                                      "translation": "黒人は"
                                     },
                                     {
                                       "type": "V",
                                       "text": "needed to blow off steam and will now be content",
-                                      "translation": "憤りを発散する必要があった、そして今は満足するだろう",
-                                      "tense": "past",
+                                      "translation": "憤りを発散する必要があり、今は満足するだろう",
+                                      "tense": "present",
                                       "aspect": "simple",
                                       "mood": "indicative",
                                       "voice": "active"
-                                    },
-                                    {
-                                      "type": "O",
-                                      "text": "steam",
-                                      "translation": "憤りを"
                                     }
                                   ]
                                 }
@@ -1485,8 +1596,8 @@
                     {
                       "type": "V",
                       "text": "will have",
-                      "translation": "持つことになる",
-                      "tense": "future",
+                      "translation": "経験するだろう",
+                      "tense": "present",
                       "aspect": "simple",
                       "mood": "indicative",
                       "voice": "active"
@@ -1494,35 +1605,44 @@
                     {
                       "type": "O",
                       "text": "a rude awakening",
-                      "translation": "痛い目を見ることを"
-                    }
-                  ],
-                  "subclauses": [
+                      "translation": "痛い目を"
+                    },
                     {
-                      "format": "clause",
+                      "type": "M",
                       "text": "if the nation returns to business as usual",
-                      "relation": "condition",
-                      "conjunction": "if",
-                      "pattern": "SV",
-                      "elements": [
+                      "translation": "国がいつも通りの状態に戻れば",
+                      "subclauses": [
                         {
-                          "type": "S",
-                          "text": "the nation",
-                          "translation": "国が"
-                        },
-                        {
-                          "type": "V",
-                          "text": "returns",
-                          "translation": "戻る",
-                          "tense": "present",
-                          "aspect": "simple",
-                          "mood": "indicative",
-                          "voice": "active"
-                        },
-                        {
-                          "type": "M",
-                          "text": "to business as usual",
-                          "translation": "いつも通りの状態に"
+                          "format": "clause",
+                          "text": "if the nation returns to business as usual",
+                          "relation": "condition",
+                          "pattern": "SV",
+                          "elements": [
+                            {
+                              "type": "M",
+                              "text": "if",
+                              "translation": "もし"
+                            },
+                            {
+                              "type": "S",
+                              "text": "the nation",
+                              "translation": "国は"
+                            },
+                            {
+                              "type": "V",
+                              "text": "returns",
+                              "translation": "戻る",
+                              "tense": "present",
+                              "aspect": "simple",
+                              "mood": "indicative",
+                              "voice": "active"
+                            },
+                            {
+                              "type": "M",
+                              "text": "to business as usual",
+                              "translation": "いつも通りの状態に"
+                            }
+                          ]
                         }
                       ]
                     }
@@ -1539,7 +1659,7 @@
                   "id": "00001-013-000",
                   "format": "sentence",
                   "text": "And there will be neither rest nor tranquility in America until the Negro is granted his citizenship rights.",
-                  "pattern": "SVC",
+                  "pattern": "SV",
                   "elements": [
                     {
                       "type": "M",
@@ -1554,16 +1674,16 @@
                     {
                       "type": "V",
                       "text": "will be",
-                      "translation": "存在しないだろう",
-                      "tense": "future",
+                      "translation": "あるだろう",
+                      "tense": "present",
                       "aspect": "simple",
                       "mood": "indicative",
-                      "voice": "none"
+                      "voice": "active"
                     },
                     {
-                      "type": "C",
+                      "type": "M",
                       "text": "neither rest nor tranquility in America",
-                      "translation": "アメリカに安息も平穏も"
+                      "translation": "アメリカに安息も平穏もない"
                     }
                   ],
                   "subclauses": [
@@ -1571,13 +1691,17 @@
                       "format": "clause",
                       "text": "until the Negro is granted his citizenship rights",
                       "relation": "time",
-                      "conjunction": "until",
                       "pattern": "SVO",
                       "elements": [
                         {
+                          "type": "M",
+                          "text": "until",
+                          "translation": "〜まで"
+                        },
+                        {
                           "type": "S",
                           "text": "the Negro",
-                          "translation": "黒人に"
+                          "translation": "黒人は"
                         },
                         {
                           "type": "V",
@@ -1591,7 +1715,7 @@
                         {
                           "type": "O",
                           "text": "his citizenship rights",
-                          "translation": "市民権が"
+                          "translation": "彼の市民権を"
                         }
                       ]
                     }
@@ -1619,7 +1743,7 @@
                       "type": "V",
                       "text": "will continue to shake",
                       "translation": "揺るがし続けるだろう",
-                      "tense": "future",
+                      "tense": "present",
                       "aspect": "simple",
                       "mood": "indicative",
                       "voice": "active"
@@ -1635,9 +1759,13 @@
                       "format": "clause",
                       "text": "until the bright day of justice emerges",
                       "relation": "time",
-                      "conjunction": "until",
                       "pattern": "SV",
                       "elements": [
+                        {
+                          "type": "M",
+                          "text": "until",
+                          "translation": "〜まで"
+                        },
                         {
                           "type": "S",
                           "text": "the bright day of justice",
@@ -1646,7 +1774,7 @@
                         {
                           "type": "V",
                           "text": "emerges",
-                          "translation": "現れる",
+                          "translation": "訪れる",
                           "tense": "present",
                           "aspect": "simple",
                           "mood": "indicative",
@@ -1672,7 +1800,7 @@
                   "id": "00001-015-000",
                   "format": "sentence",
                   "text": "But there is something that I must say to my people, who stand on the warm threshold which leads into the palace of justice:",
-                  "pattern": "SVC",
+                  "pattern": "SVO",
                   "elements": [
                     {
                       "type": "M",
@@ -1691,24 +1819,28 @@
                       "tense": "present",
                       "aspect": "simple",
                       "mood": "indicative",
-                      "voice": "none"
+                      "voice": "active"
                     },
                     {
-                      "type": "C",
-                      "text": "something that I must say to my people, who stand on the warm threshold which leads into the palace of justice",
-                      "translation": "正義の宮殿へと続く温かな敷居に立つ我が民にどうしても伝えなければならないこと",
+                      "type": "O",
+                      "text": "something that I must say to my people",
+                      "translation": "私が我が民に言わなければならない何か",
                       "subclauses": [
                         {
                           "format": "clause",
                           "text": "that I must say to my people",
                           "relation": "apposition",
-                          "conjunction": "that",
                           "pattern": "SVO",
                           "elements": [
                             {
+                              "type": "M",
+                              "text": "that",
+                              "translation": "〜ということ"
+                            },
+                            {
                               "type": "S",
                               "text": "I",
-                              "translation": "私が"
+                              "translation": "私は"
                             },
                             {
                               "type": "V",
@@ -1725,32 +1857,62 @@
                               "translation": "我が民に"
                             }
                           ]
+                        }
+                      ]
+                    }
+                  ],
+                  "subclauses": [
+                    {
+                      "format": "clause",
+                      "text": "who stand on the warm threshold which leads into the palace of justice",
+                      "relation": "apposition",
+                      "pattern": "SV",
+                      "elements": [
+                        {
+                          "type": "S",
+                          "text": "who",
+                          "translation": "その者たちは"
                         },
                         {
-                          "format": "clause",
-                          "text": "who stand on the warm threshold which leads into the palace of justice",
-                          "relation": "apposition",
-                          "conjunction": "who",
-                          "pattern": "SV",
-                          "elements": [
+                          "type": "V",
+                          "text": "stand",
+                          "translation": "立っている",
+                          "tense": "present",
+                          "aspect": "simple",
+                          "mood": "indicative",
+                          "voice": "active"
+                        },
+                        {
+                          "type": "M",
+                          "text": "on the warm threshold which leads into the palace of justice",
+                          "translation": "正義の宮殿へと続く温かな敷居に",
+                          "subclauses": [
                             {
-                              "type": "S",
-                              "text": "who",
-                              "translation": "その人たちが"
-                            },
-                            {
-                              "type": "V",
-                              "text": "stand",
-                              "translation": "立つ",
-                              "tense": "present",
-                              "aspect": "simple",
-                              "mood": "indicative",
-                              "voice": "active"
-                            },
-                            {
-                              "type": "M",
-                              "text": "on the warm threshold which leads into the palace of justice",
-                              "translation": "正義の宮殿へと続く温かな敷居に"
+                              "format": "clause",
+                              "text": "which leads into the palace of justice",
+                              "relation": "apposition",
+                              "pattern": "SV",
+                              "elements": [
+                                {
+                                  "type": "S",
+                                  "text": "which",
+                                  "translation": "それは"
+                                },
+                                {
+                                  "type": "V",
+                                  "text": "leads",
+                                  "translation": "続く",
+                                  "tense": "present",
+                                  "aspect": "simple",
+                                  "mood": "indicative",
+                                  "voice": "active"
+                                },
+                                {
+                                  "type": "M",
+                                  "text": "into the palace of justice",
+                                  "translation": "正義の宮殿へ"
+                                }
+                              ]
                             }
                           ]
                         }
@@ -1774,7 +1936,7 @@
                     {
                       "type": "M",
                       "text": "In the process of gaining our rightful place",
-                      "translation": "正当な地位を勝ち取る過程で"
+                      "translation": "正当な地位を得る過程で"
                     },
                     {
                       "type": "S",
@@ -1784,7 +1946,7 @@
                     {
                       "type": "V",
                       "text": "must not be",
-                      "translation": "であってはならない",
+                      "translation": "してはならない",
                       "tense": "present",
                       "aspect": "simple",
                       "mood": "indicative",
@@ -1792,13 +1954,8 @@
                     },
                     {
                       "type": "C",
-                      "text": "guilty",
-                      "translation": "有罪の"
-                    },
-                    {
-                      "type": "M",
-                      "text": "of wrongful deeds",
-                      "translation": "不正な行いに"
+                      "text": "guilty of wrongful deeds",
+                      "translation": "不正な行いをした"
                     }
                   ]
                 }
@@ -1813,7 +1970,7 @@
                   "id": "00002-001-000",
                   "format": "sentence",
                   "text": "Let us not seek to satisfy our thirst for freedom by drinking from the cup of bitterness and hatred.",
-                  "pattern": "SVOC",
+                  "pattern": "SVOO",
                   "elements": [
                     {
                       "type": "V",
@@ -1830,9 +1987,14 @@
                       "translation": "私たちが"
                     },
                     {
-                      "type": "C",
-                      "text": "not seek to satisfy our thirst for freedom",
-                      "translation": "自由への渇望を満たそうとしないように"
+                      "type": "V",
+                      "text": "not seek",
+                      "translation": "求めないように"
+                    },
+                    {
+                      "type": "O",
+                      "text": "to satisfy our thirst for freedom",
+                      "translation": "自由への渇望を満たすことを"
                     },
                     {
                       "type": "M",
@@ -1862,7 +2024,7 @@
                     {
                       "type": "M",
                       "text": "forever",
-                      "translation": "常に"
+                      "translation": "永遠に"
                     },
                     {
                       "type": "V",
@@ -1914,8 +2076,13 @@
                     },
                     {
                       "type": "O",
-                      "text": "our creative protest to degenerate into physical violence",
-                      "translation": "私たちの創造的な抗議が肉体的な暴力に堕することを"
+                      "text": "our creative protest",
+                      "translation": "私たちの創造的な抗議を"
+                    },
+                    {
+                      "type": "M",
+                      "text": "to degenerate into physical violence",
+                      "translation": "肉体的な暴力に堕することを"
                     }
                   ]
                 }
@@ -1954,7 +2121,7 @@
                     {
                       "type": "M",
                       "text": "to the majestic heights of meeting physical force with soul force",
-                      "translation": "肉体の力に精神の力で立ち向かう崇高な高みへと"
+                      "translation": "肉体の力に精神の力で立ち向かう崇高な高みへ"
                     }
                   ]
                 }
@@ -1985,13 +2152,17 @@
                           "format": "clause",
                           "text": "which has engulfed the Negro community",
                           "relation": "apposition",
-                          "conjunction": "which",
                           "pattern": "SVO",
                           "elements": [
                             {
-                              "type": "S",
+                              "type": "M",
                               "text": "which",
                               "translation": "それは"
+                            },
+                            {
+                              "type": "S",
+                              "text": "",
+                              "translation": ""
                             },
                             {
                               "type": "V",
@@ -2022,94 +2193,61 @@
                     },
                     {
                       "type": "O",
-                      "text": "us to a distrust of all white people",
-                      "translation": "私たちをすべての白人に対する不信感へと"
-                    }
-                  ],
-                  "subclauses": [
+                      "text": "us",
+                      "translation": "私たちを"
+                    },
                     {
-                      "format": "clause",
-                      "text": "for many of our white brothers, as evidenced by their presence here today, have come to realize that their destiny is tied up with our destiny.",
-                      "relation": "reason",
-                      "conjunction": "for",
-                      "pattern": "SVO",
-                      "elements": [
+                      "type": "M",
+                      "text": "to a distrust of all white people",
+                      "translation": "すべての白人に対する不信感へ"
+                    },
+                    {
+                      "type": "M",
+                      "text": "for many of our white brothers, as evidenced by their presence here today, have come to realize that their destiny is tied up with our destiny",
+                      "translation": "なぜなら、今日ここにいる多くの白人の兄弟たちが示しているように、彼らの運命が私たちの運命と結びついていることに気づいたからである",
+                      "subclauses": [
                         {
-                          "type": "S",
-                          "text": "many of our white brothers, as evidenced by their presence here today",
-                          "translation": "今日ここにいる多くの白人の兄弟たちが示しているように",
-                          "subclauses": [
+                          "format": "clause",
+                          "text": "as evidenced by their presence here today",
+                          "relation": "manner",
+                          "pattern": "other",
+                          "elements": [
                             {
-                              "format": "clause",
+                              "type": "M",
                               "text": "as evidenced by their presence here today",
-                              "relation": "manner",
-                              "conjunction": "as",
-                              "pattern": "SV",
-                              "elements": [
-                                {
-                                  "type": "S",
-                                  "text": "as",
-                                  "translation": "ように"
-                                },
-                                {
-                                  "type": "V",
-                                  "text": "evidenced",
-                                  "translation": "示されている",
-                                  "tense": "present",
-                                  "aspect": "simple",
-                                  "mood": "indicative",
-                                  "voice": "passive"
-                                },
-                                {
-                                  "type": "M",
-                                  "text": "by their presence here today",
-                                  "translation": "今日ここにいることによって"
-                                }
-                              ]
+                              "translation": "今日ここにいることによって示されているように"
                             }
                           ]
                         },
                         {
-                          "type": "V",
-                          "text": "have come to realize",
-                          "translation": "気づいた",
-                          "tense": "present",
-                          "aspect": "perfect",
-                          "mood": "indicative",
-                          "voice": "active"
-                        },
-                        {
-                          "type": "O",
+                          "format": "clause",
                           "text": "that their destiny is tied up with our destiny",
-                          "translation": "彼らの運命が私たちの運命と結びついていることに",
-                          "subclauses": [
+                          "relation": "content",
+                          "pattern": "SVC",
+                          "elements": [
                             {
-                              "format": "clause",
-                              "text": "that their destiny is tied up with our destiny",
-                              "relation": "content",
-                              "conjunction": "that",
-                              "pattern": "SVC",
-                              "elements": [
-                                {
-                                  "type": "S",
-                                  "text": "their destiny",
-                                  "translation": "彼らの運命が"
-                                },
-                                {
-                                  "type": "V",
-                                  "text": "is tied up",
-                                  "translation": "結びついている",
-                                  "tense": "present",
-                                  "aspect": "simple",
-                                  "mood": "indicative",
-                                  "voice": "passive"
-                                },
-                                {
-                                  "type": "C",
-                                  "text": "with our destiny",
-                                  "translation": "私たちの運命と"
-                                }
-                              ]
+                              "type": "M",
+                              "text": "that",
+                              "translation": "〜ということ"
+                            },
+                            {
+                              "type": "S",
+                              "text": "their destiny",
+                              "translation": "彼らの運命は"
+                            },
+                            {
+                              "type": "V",
+                              "text": "is tied up",
+                              "translation": "結びついている",
+                              "tense": "present",
+                              "aspect": "simple",
+                              "mood": "indicative",
+                              "voice": "passive"
+                            },
+                            {
+                              "type": "C",
+                              "text": "with our destiny",
+                              "translation": "私たちの運命と"
                             }
                           ]
                         }
@@ -2128,7 +2266,7 @@
                   "id": "00002-006-000",
                   "format": "sentence",
                   "text": "And they have come to realize that their freedom is inextricably bound to our freedom.",
-                  "pattern": "SVO",
+                  "pattern": "SV",
                   "elements": [
                     {
                       "type": "M",
@@ -2142,7 +2280,7 @@
                     },
                     {
                       "type": "V",
-                      "text": "have come to realize",
+                      "text": "have come",
                       "translation": "気づいた",
                       "tense": "present",
                       "aspect": "perfect",
@@ -2150,21 +2288,25 @@
                       "voice": "active"
                     },
                     {
-                      "type": "O",
-                      "text": "that their freedom is inextricably bound to our freedom",
+                      "type": "M",
+                      "text": "to realize that their freedom is inextricably bound to our freedom",
                       "translation": "自分たちの自由が私たちの自由と切り離せないほど結びついていることに",
                       "subclauses": [
                         {
                           "format": "clause",
                           "text": "that their freedom is inextricably bound to our freedom",
                           "relation": "content",
-                          "conjunction": "that",
                           "pattern": "SVC",
                           "elements": [
                             {
+                              "type": "M",
+                              "text": "that",
+                              "translation": "〜ということ"
+                            },
+                            {
                               "type": "S",
                               "text": "their freedom",
-                              "translation": "彼らの自由が"
+                              "translation": "彼らの自由は"
                             },
                             {
                               "type": "V",
@@ -2177,13 +2319,8 @@
                             },
                             {
                               "type": "C",
-                              "text": "inextricably",
-                              "translation": "切り離せないほど"
-                            },
-                            {
-                              "type": "M",
-                              "text": "to our freedom",
-                              "translation": "私たちの自由と"
+                              "text": "inextricably to our freedom",
+                              "translation": "切り離せないほど私たちの自由と"
                             }
                           ]
                         }
@@ -2249,40 +2386,30 @@
                       "translation": "そして"
                     },
                     {
-                      "type": "S",
-                      "text": "we",
-                      "translation": "私たちは"
-                    },
-                    {
-                      "type": "V",
-                      "text": "must make",
-                      "translation": "しなければならない",
-                      "tense": "present",
-                      "aspect": "simple",
-                      "mood": "indicative",
-                      "voice": "active"
-                    },
-                    {
-                      "type": "O",
-                      "text": "the pledge that we shall always march ahead",
-                      "translation": "常に前進し続けることを誓うことを",
+                      "type": "M",
+                      "text": "as we walk",
+                      "translation": "歩む中で",
                       "subclauses": [
                         {
                           "format": "clause",
-                          "text": "that we shall always march ahead",
-                          "relation": "apposition",
-                          "conjunction": "that",
+                          "text": "as we walk",
+                          "relation": "time",
                           "pattern": "SV",
                           "elements": [
                             {
+                              "type": "M",
+                              "text": "as",
+                              "translation": "〜する時に"
+                            },
+                            {
                               "type": "S",
                               "text": "we",
-                              "translation": "私たちが"
+                              "translation": "私たちは"
                             },
                             {
                               "type": "V",
-                              "text": "shall always march ahead",
-                              "translation": "常に前進し続ける",
+                              "text": "walk",
+                              "translation": "歩む",
                               "tense": "present",
                               "aspect": "simple",
                               "mood": "indicative",
@@ -2291,29 +2418,62 @@
                           ]
                         }
                       ]
-                    }
-                  ],
-                  "subclauses": [
+                    },
                     {
-                      "format": "clause",
-                      "text": "as we walk",
-                      "relation": "time",
-                      "conjunction": "as",
-                      "pattern": "SV",
-                      "elements": [
+                      "type": "S",
+                      "text": "we",
+                      "translation": "私たちは"
+                    },
+                    {
+                      "type": "V",
+                      "text": "must make",
+                      "translation": "誓わなければならない",
+                      "tense": "present",
+                      "aspect": "simple",
+                      "mood": "indicative",
+                      "voice": "active"
+                    },
+                    {
+                      "type": "O",
+                      "text": "the pledge",
+                      "translation": "誓いを"
+                    },
+                    {
+                      "type": "M",
+                      "text": "that we shall always march ahead",
+                      "translation": "私たちは常に前進し続けるという",
+                      "subclauses": [
                         {
-                          "type": "S",
-                          "text": "we",
-                          "translation": "私たちが"
-                        },
-                        {
-                          "type": "V",
-                          "text": "walk",
-                          "translation": "歩む",
-                          "tense": "present",
-                          "aspect": "simple",
-                          "mood": "indicative",
-                          "voice": "active"
+                          "format": "clause",
+                          "text": "that we shall always march ahead",
+                          "relation": "content",
+                          "pattern": "SV",
+                          "elements": [
+                            {
+                              "type": "M",
+                              "text": "that",
+                              "translation": "〜ということ"
+                            },
+                            {
+                              "type": "S",
+                              "text": "we",
+                              "translation": "私たちは"
+                            },
+                            {
+                              "type": "V",
+                              "text": "shall always march",
+                              "translation": "常に前進するだろう",
+                              "tense": "present",
+                              "aspect": "simple",
+                              "mood": "indicative",
+                              "voice": "active"
+                            },
+                            {
+                              "type": "M",
+                              "text": "ahead",
+                              "translation": "前に"
+                            }
+                          ]
                         }
                       ]
                     }
@@ -2340,7 +2500,7 @@
                     {
                       "type": "V",
                       "text": "cannot turn back",
-                      "translation": "後戻りすることはできない",
+                      "translation": "後戻りできない",
                       "tense": "present",
                       "aspect": "simple",
                       "mood": "indicative",
@@ -2364,7 +2524,7 @@
                   "id": "00002-010-000",
                   "format": "sentence",
                   "text": "There are those who are asking the devotees of civil rights, \"When will you be satisfied?\"",
-                  "pattern": "SVC",
+                  "pattern": "SVO",
                   "elements": [
                     {
                       "type": "S",
@@ -2374,33 +2534,32 @@
                     {
                       "type": "V",
                       "text": "are",
-                      "translation": "存在する",
+                      "translation": "いる",
                       "tense": "present",
                       "aspect": "simple",
                       "mood": "indicative",
                       "voice": "none"
                     },
                     {
-                      "type": "C",
-                      "text": "those who are asking the devotees of civil rights, \"When will you be satisfied?\"",
-                      "translation": "市民権の信奉者たちに「いつになったら満足するのか」と問う者たち",
+                      "type": "O",
+                      "text": "those who are asking the devotees of civil rights",
+                      "translation": "市民権の信奉者たちに問う者たちが",
                       "subclauses": [
                         {
                           "format": "clause",
-                          "text": "who are asking the devotees of civil rights, \"When will you be satisfied?\"",
+                          "text": "who are asking the devotees of civil rights",
                           "relation": "apposition",
-                          "conjunction": "who",
                           "pattern": "SVO",
                           "elements": [
                             {
                               "type": "S",
                               "text": "who",
-                              "translation": "その人たちが"
+                              "translation": "その人たちは"
                             },
                             {
                               "type": "V",
                               "text": "are asking",
-                              "translation": "尋ねている",
+                              "translation": "問っている",
                               "tense": "present",
                               "aspect": "progressive",
                               "mood": "indicative",
@@ -2408,8 +2567,8 @@
                             },
                             {
                               "type": "O",
-                              "text": "the devotees of civil rights, \"When will you be satisfied?\"",
-                              "translation": "市民権の信奉者たちに「いつになったら満足するのか」と"
+                              "text": "the devotees of civil rights",
+                              "translation": "市民権の信奉者たちを"
                             }
                           ]
                         }
@@ -2436,7 +2595,7 @@
                           "type": "V",
                           "text": "will be",
                           "translation": "なるだろう",
-                          "tense": "future",
+                          "tense": "present",
                           "aspect": "simple",
                           "mood": "indicative",
                           "voice": "none"
@@ -2471,7 +2630,7 @@
                     {
                       "type": "V",
                       "text": "can never be",
-                      "translation": "決してなり得ない",
+                      "translation": "決して〜できない",
                       "tense": "present",
                       "aspect": "simple",
                       "mood": "indicative",
@@ -2481,34 +2640,43 @@
                       "type": "C",
                       "text": "satisfied",
                       "translation": "満足した"
-                    }
-                  ],
-                  "subclauses": [
+                    },
                     {
-                      "format": "clause",
+                      "type": "M",
                       "text": "as long as the Negro is the victim of the unspeakable horrors of police brutality",
-                      "relation": "condition",
-                      "conjunction": "as long as",
-                      "pattern": "SVC",
-                      "elements": [
+                      "translation": "黒人が警察の暴力という言葉に尽くせない恐怖の犠牲者であるかぎり",
+                      "subclauses": [
                         {
-                          "type": "S",
-                          "text": "the Negro",
-                          "translation": "黒人が"
-                        },
-                        {
-                          "type": "V",
-                          "text": "is",
-                          "translation": "である",
-                          "tense": "present",
-                          "aspect": "simple",
-                          "mood": "indicative",
-                          "voice": "none"
-                        },
-                        {
-                          "type": "C",
-                          "text": "the victim of the unspeakable horrors of police brutality",
-                          "translation": "警察の暴力という言葉に尽くせない恐怖の犠牲者である"
+                          "format": "clause",
+                          "text": "as long as the Negro is the victim of the unspeakable horrors of police brutality",
+                          "relation": "condition",
+                          "pattern": "SVC",
+                          "elements": [
+                            {
+                              "type": "M",
+                              "text": "as long as",
+                              "translation": "〜であるかぎり"
+                            },
+                            {
+                              "type": "S",
+                              "text": "the Negro",
+                              "translation": "黒人は"
+                            },
+                            {
+                              "type": "V",
+                              "text": "is",
+                              "translation": "である",
+                              "tense": "present",
+                              "aspect": "simple",
+                              "mood": "indicative",
+                              "voice": "none"
+                            },
+                            {
+                              "type": "C",
+                              "text": "the victim of the unspeakable horrors of police brutality",
+                              "translation": "警察の暴力という言葉に尽くせない恐怖の犠牲者"
+                            }
+                          ]
                         }
                       ]
                     }
@@ -2535,7 +2703,7 @@
                     {
                       "type": "V",
                       "text": "can never be",
-                      "translation": "決してなり得ない",
+                      "translation": "決して〜できない",
                       "tense": "present",
                       "aspect": "simple",
                       "mood": "indicative",
@@ -2545,39 +2713,48 @@
                       "type": "C",
                       "text": "satisfied",
                       "translation": "満足した"
-                    }
-                  ],
-                  "subclauses": [
+                    },
                     {
-                      "format": "clause",
+                      "type": "M",
                       "text": "as long as our bodies, heavy with the fatigue of travel, cannot gain lodging in the motels of the highways and the hotels of the cities",
-                      "relation": "condition",
-                      "conjunction": "as long as",
-                      "pattern": "SV",
-                      "elements": [
+                      "translation": "旅の疲れで重くなった私たちの身体が高速道路のモーテルや街のホテルに宿泊できないかぎり",
+                      "subclauses": [
                         {
-                          "type": "S",
-                          "text": "our bodies, heavy with the fatigue of travel",
-                          "translation": "旅の疲れで重くなった私たちの身体が"
-                        },
-                        {
-                          "type": "V",
-                          "text": "cannot gain",
-                          "translation": "得ることができない",
-                          "tense": "present",
-                          "aspect": "simple",
-                          "mood": "indicative",
-                          "voice": "active"
-                        },
-                        {
-                          "type": "O",
-                          "text": "lodging",
-                          "translation": "宿泊を"
-                        },
-                        {
-                          "type": "M",
-                          "text": "in the motels of the highways and the hotels of the cities",
-                          "translation": "高速道路のモーテルや街のホテルに"
+                          "format": "clause",
+                          "text": "as long as our bodies, heavy with the fatigue of travel, cannot gain lodging in the motels of the highways and the hotels of the cities",
+                          "relation": "condition",
+                          "pattern": "SVO",
+                          "elements": [
+                            {
+                              "type": "M",
+                              "text": "as long as",
+                              "translation": "〜であるかぎり"
+                            },
+                            {
+                              "type": "S",
+                              "text": "our bodies, heavy with the fatigue of travel",
+                              "translation": "旅の疲れで重くなった私たちの身体は"
+                            },
+                            {
+                              "type": "V",
+                              "text": "cannot gain",
+                              "translation": "得られない",
+                              "tense": "present",
+                              "aspect": "simple",
+                              "mood": "indicative",
+                              "voice": "active"
+                            },
+                            {
+                              "type": "O",
+                              "text": "lodging",
+                              "translation": "宿泊場所を"
+                            },
+                            {
+                              "type": "M",
+                              "text": "in the motels of the highways and the hotels of the cities",
+                              "translation": "高速道路のモーテルや街のホテルに"
+                            }
+                          ]
                         }
                       ]
                     }
@@ -2604,7 +2781,7 @@
                     {
                       "type": "V",
                       "text": "cannot be",
-                      "translation": "なり得ない",
+                      "translation": "満足できない",
                       "tense": "present",
                       "aspect": "simple",
                       "mood": "indicative",
@@ -2614,34 +2791,43 @@
                       "type": "C",
                       "text": "satisfied",
                       "translation": "満足した"
-                    }
-                  ],
-                  "subclauses": [
+                    },
                     {
-                      "format": "clause",
+                      "type": "M",
                       "text": "as long as the negro's basic mobility is from a smaller ghetto to a larger one",
-                      "relation": "condition",
-                      "conjunction": "as long as",
-                      "pattern": "SVC",
-                      "elements": [
+                      "translation": "黒人の基本的な移動がより小さなゲットーからより大きなゲットーへと移るだけであるかぎり",
+                      "subclauses": [
                         {
-                          "type": "S",
-                          "text": "the negro's basic mobility",
-                          "translation": "黒人の基本的な移動が"
-                        },
-                        {
-                          "type": "V",
-                          "text": "is",
-                          "translation": "である",
-                          "tense": "present",
-                          "aspect": "simple",
-                          "mood": "indicative",
-                          "voice": "none"
-                        },
-                        {
-                          "type": "C",
-                          "text": "from a smaller ghetto to a larger one",
-                          "translation": "より小さなゲットーからより大きなゲットーへ"
+                          "format": "clause",
+                          "text": "as long as the negro's basic mobility is from a smaller ghetto to a larger one",
+                          "relation": "condition",
+                          "pattern": "SVC",
+                          "elements": [
+                            {
+                              "type": "M",
+                              "text": "as long as",
+                              "translation": "〜であるかぎり"
+                            },
+                            {
+                              "type": "S",
+                              "text": "the negro's basic mobility",
+                              "translation": "黒人の基本的な移動は"
+                            },
+                            {
+                              "type": "V",
+                              "text": "is",
+                              "translation": "である",
+                              "tense": "present",
+                              "aspect": "simple",
+                              "mood": "indicative",
+                              "voice": "none"
+                            },
+                            {
+                              "type": "C",
+                              "text": "from a smaller ghetto to a larger one",
+                              "translation": "より小さなゲットーからより大きなゲットーへ"
+                            }
+                          ]
                         }
                       ]
                     }
@@ -2668,7 +2854,7 @@
                     {
                       "type": "V",
                       "text": "can never be",
-                      "translation": "決してなり得ない",
+                      "translation": "決して満足できない",
                       "tense": "present",
                       "aspect": "simple",
                       "mood": "indicative",
@@ -2678,39 +2864,48 @@
                       "type": "C",
                       "text": "satisfied",
                       "translation": "満足した"
-                    }
-                  ],
-                  "subclauses": [
+                    },
                     {
-                      "format": "clause",
+                      "type": "M",
                       "text": "as long as our children are stripped of their self-hood and robbed of their dignity by signs stating: \"For Whites Only.\"",
-                      "relation": "condition",
-                      "conjunction": "as long as",
-                      "pattern": "SV",
-                      "elements": [
+                      "translation": "子どもたちが自己の存在を奪われ、尊厳を剥ぎ取られているかぎり",
+                      "subclauses": [
                         {
-                          "type": "S",
-                          "text": "our children",
-                          "translation": "私たちの子どもたちが"
-                        },
-                        {
-                          "type": "V",
-                          "text": "are stripped and robbed",
-                          "translation": "奪われ、剥ぎ取られている",
-                          "tense": "present",
-                          "aspect": "simple",
-                          "mood": "indicative",
-                          "voice": "passive"
-                        },
-                        {
-                          "type": "O",
-                          "text": "of their self-hood and of their dignity",
-                          "translation": "自己の存在と尊厳を"
-                        },
-                        {
-                          "type": "M",
-                          "text": "by signs stating: \"For Whites Only.\"",
-                          "translation": "「白人専用」と書かれた標識によって"
+                          "format": "clause",
+                          "text": "as long as our children are stripped of their self-hood and robbed of their dignity by signs stating: \"For Whites Only.\"",
+                          "relation": "condition",
+                          "pattern": "SV",
+                          "elements": [
+                            {
+                              "type": "M",
+                              "text": "as long as",
+                              "translation": "〜であるかぎり"
+                            },
+                            {
+                              "type": "S",
+                              "text": "our children",
+                              "translation": "私たちの子どもたちは"
+                            },
+                            {
+                              "type": "V",
+                              "text": "are stripped and robbed",
+                              "translation": "奪われている",
+                              "tense": "present",
+                              "aspect": "simple",
+                              "mood": "indicative",
+                              "voice": "passive"
+                            },
+                            {
+                              "type": "M",
+                              "text": "of their self-hood and of their dignity by signs stating: \"For Whites Only.\"",
+                              "translation": "自己の存在と尊厳を「白人専用」と書かれた標識によって"
+                            },
+                            {
+                              "type": "M",
+                              "text": "stating: \"For Whites Only.\"",
+                              "translation": "「白人専用」と書かれた"
+                            }
+                          ]
                         }
                       ]
                     }
@@ -2737,7 +2932,7 @@
                     {
                       "type": "V",
                       "text": "cannot be",
-                      "translation": "なり得ない",
+                      "translation": "満足できない",
                       "tense": "present",
                       "aspect": "simple",
                       "mood": "indicative",
@@ -2747,83 +2942,76 @@
                       "type": "C",
                       "text": "satisfied",
                       "translation": "満足した"
-                    }
-                  ],
-                  "subclauses": [
-                    {
-                      "format": "clause",
-                      "text": "as long as a Negro in Mississippi cannot vote and a Negro in New York believes he has nothing for which to vote",
-                      "relation": "condition",
-                      "conjunction": "as long as",
-                      "pattern": "SV",
-                      "elements": [
-                        {
-                          "type": "S",
-                          "text": "a Negro in Mississippi",
-                          "translation": "ミシシッピの黒人が"
-                        },
-                        {
-                          "type": "V",
-                          "text": "cannot vote",
-                          "translation": "投票できない",
-                          "tense": "present",
-                          "aspect": "simple",
-                          "mood": "indicative",
-                          "voice": "active"
-                        }
-                      ]
                     },
                     {
-                      "format": "clause",
-                      "text": "a Negro in New York believes he has nothing for which to vote",
-                      "relation": "condition",
-                      "conjunction": "and",
-                      "pattern": "SVO",
-                      "elements": [
+                      "type": "M",
+                      "text": "as long as a Negro in Mississippi cannot vote and a Negro in New York believes he has nothing for which to vote",
+                      "translation": "ミシシッピの黒人が投票できず、ニューヨークの黒人が投票する価値がないと信じているかぎり",
+                      "subclauses": [
                         {
-                          "type": "S",
-                          "text": "a Negro in New York",
-                          "translation": "ニューヨークの黒人が"
+                          "format": "clause",
+                          "text": "as long as a Negro in Mississippi cannot vote and a Negro in New York believes he has nothing for which to vote",
+                          "relation": "condition",
+                          "pattern": "SV",
+                          "elements": [
+                            {
+                              "type": "M",
+                              "text": "as long as",
+                              "translation": "〜であるかぎり"
+                            },
+                            {
+                              "type": "S",
+                              "text": "a Negro in Mississippi",
+                              "translation": "ミシシッピの黒人は"
+                            },
+                            {
+                              "type": "V",
+                              "text": "cannot vote",
+                              "translation": "投票できない",
+                              "tense": "present",
+                              "aspect": "simple",
+                              "mood": "indicative",
+                              "voice": "active"
+                            }
+                          ]
                         },
                         {
-                          "type": "V",
-                          "text": "believes",
-                          "translation": "信じている",
-                          "tense": "present",
-                          "aspect": "simple",
-                          "mood": "indicative",
-                          "voice": "active"
-                        },
-                        {
-                          "type": "O",
-                          "text": "he has nothing for which to vote",
-                          "translation": "投票する価値がないと",
+                          "format": "clause",
+                          "text": "a Negro in New York believes he has nothing for which to vote",
+                          "relation": "condition",
+                          "pattern": "SVO",
+                          "elements": [
+                            {
+                              "type": "S",
+                              "text": "a Negro in New York",
+                              "translation": "ニューヨークの黒人は"
+                            },
+                            {
+                              "type": "V",
+                              "text": "believes",
+                              "translation": "信じている",
+                              "tense": "present",
+                              "aspect": "simple",
+                              "mood": "indicative",
+                              "voice": "active"
+                            },
+                            {
+                              "type": "O",
+                              "text": "he has nothing for which to vote",
+                              "translation": "彼には投票する価値がないことを"
+                            }
+                          ],
                           "subclauses": [
                             {
                               "format": "clause",
-                              "text": "he has nothing for which to vote",
-                              "relation": "content",
-                              "conjunction": "",
-                              "pattern": "SVO",
+                              "text": "for which to vote",
+                              "relation": "purpose",
+                              "pattern": "other",
                               "elements": [
                                 {
-                                  "type": "S",
-                                  "text": "he",
-                                  "translation": "彼が"
-                                },
-                                {
-                                  "type": "V",
-                                  "text": "has",
-                                  "translation": "持っている",
-                                  "tense": "present",
-                                  "aspect": "simple",
-                                  "mood": "indicative",
-                                  "voice": "active"
-                                },
-                                {
-                                  "type": "O",
-                                  "text": "nothing for which to vote",
-                                  "translation": "投票するための何も"
+                                  "type": "M",
+                                  "text": "for which to vote",
+                                  "translation": "投票するための"
                                 }
                               ]
                             }
@@ -2843,13 +3031,13 @@
                 {
                   "id": "00003-000-000",
                   "format": "sentence",
-                  "text": "No, no, we are not satisfied, and we will not be satisfied until \"justice rolls down like waters, and righteousness like a mighty stream.\"",
-                  "pattern": "SVC",
+                  "text": "No, no, we are not satisfied,",
+                  "pattern": "SV",
                   "elements": [
                     {
                       "type": "M",
                       "text": "No, no",
-                      "translation": "いいえ、いいえ"
+                      "translation": "いいえ、決して"
                     },
                     {
                       "type": "S",
@@ -2858,17 +3046,12 @@
                     },
                     {
                       "type": "V",
-                      "text": "are not",
-                      "translation": "存在しない",
+                      "text": "are not satisfied",
+                      "translation": "満足していない",
                       "tense": "present",
                       "aspect": "simple",
                       "mood": "indicative",
                       "voice": "none"
-                    },
-                    {
-                      "type": "C",
-                      "text": "satisfied",
-                      "translation": "満足している"
                     }
                   ]
                 },
@@ -2876,7 +3059,7 @@
                   "id": "00003-000-001",
                   "format": "sentence",
                   "text": "and we will not be satisfied until \"justice rolls down like waters, and righteousness like a mighty stream.\"",
-                  "pattern": "SVC",
+                  "pattern": "SV",
                   "elements": [
                     {
                       "type": "M",
@@ -2890,69 +3073,57 @@
                     },
                     {
                       "type": "V",
-                      "text": "will not be",
-                      "translation": "存在しないだろう",
-                      "tense": "future",
+                      "text": "will not be satisfied",
+                      "translation": "満足しないだろう",
+                      "tense": "present",
                       "aspect": "simple",
                       "mood": "indicative",
                       "voice": "none"
                     },
                     {
-                      "type": "C",
-                      "text": "satisfied",
-                      "translation": "満足している"
-                    },
-                    {
                       "type": "M",
                       "text": "until \"justice rolls down like waters, and righteousness like a mighty stream.\"",
-                      "translation": "正義が水のように流れ、義が力強い流れのようになるまで",
-                      "subclauses": [
+                      "translation": "正義が水のように流れ、義が力強い流れのようになるまで"
+                    }
+                  ],
+                  "subclauses": [
+                    {
+                      "format": "clause",
+                      "text": "justice rolls down like waters",
+                      "relation": "time",
+                      "pattern": "SV",
+                      "elements": [
                         {
-                          "format": "clause",
-                          "text": "until justice rolls down like waters",
-                          "relation": "time",
-                          "conjunction": "until",
-                          "pattern": "SV",
-                          "elements": [
-                            {
-                              "type": "S",
-                              "text": "justice",
-                              "translation": "正義が"
-                            },
-                            {
-                              "type": "V",
-                              "text": "rolls down",
-                              "translation": "流れる",
-                              "tense": "present",
-                              "aspect": "simple",
-                              "mood": "indicative",
-                              "voice": "active"
-                            },
-                            {
-                              "type": "M",
-                              "text": "like waters",
-                              "translation": "水のように"
-                            }
-                          ]
+                          "type": "S",
+                          "text": "justice",
+                          "translation": "正義は"
                         },
                         {
-                          "format": "clause",
-                          "text": "and righteousness like a mighty stream",
-                          "relation": "time",
-                          "conjunction": "and",
-                          "pattern": "other",
-                          "elements": [
-                            {
-                              "type": "S",
-                              "text": "righteousness",
-                              "translation": "義が"
-                            },
-                            {
-                              "type": "M",
-                              "text": "like a mighty stream",
-                              "translation": "力強い流れのように"
-                            }
-                          ]
+                          "type": "V",
+                          "text": "rolls down",
+                          "translation": "流れ落ちる",
+                          "tense": "present",
+                          "aspect": "simple",
+                          "mood": "indicative",
+                          "voice": "active"
+                        },
+                        {
+                          "type": "M",
+                          "text": "like waters",
+                          "translation": "水のように"
+                        }
+                      ]
+                    },
+                    {
+                      "format": "clause",
+                      "text": "righteousness like a mighty stream",
+                      "relation": "time",
+                      "pattern": "other",
+                      "elements": [
+                        {
+                          "type": "M",
+                          "text": "righteousness like a mighty stream",
+                          "translation": "義が力強い流れのように"
                         }
                       ]
                     }
@@ -2983,8 +3154,8 @@
                     },
                     {
                       "type": "V",
-                      "text": "am not",
-                      "translation": "ではない",
+                      "text": "am not unmindful",
+                      "translation": "忘れていない",
                       "tense": "present",
                       "aspect": "simple",
                       "mood": "indicative",
@@ -2992,25 +3163,24 @@
                     },
                     {
                       "type": "C",
-                      "text": "unmindful",
-                      "translation": "忘れている"
-                    },
-                    {
-                      "type": "C",
                       "text": "that some of you have come here out of great trials and tribulations",
-                      "translation": "皆さんの中には大きな試練や苦難を乗り越えてここに来られた方がいること",
+                      "translation": "皆さんの中には大きな試練や苦難を乗り越えてここに来たこと",
                       "subclauses": [
                         {
                           "format": "clause",
                           "text": "that some of you have come here out of great trials and tribulations",
                           "relation": "content",
-                          "conjunction": "that",
-                          "pattern": "SV",
+                          "pattern": "SVO",
                           "elements": [
+                            {
+                              "type": "M",
+                              "text": "that",
+                              "translation": "〜ということ"
+                            },
                             {
                               "type": "S",
                               "text": "some of you",
-                              "translation": "皆さんの中の何人かが"
+                              "translation": "皆さんの中の何人かは"
                             },
                             {
                               "type": "V",
@@ -3023,13 +3193,8 @@
                             },
                             {
                               "type": "M",
-                              "text": "here",
-                              "translation": "ここに"
-                            },
-                            {
-                              "type": "M",
-                              "text": "out of great trials and tribulations",
-                              "translation": "大きな試練や苦難を乗り越えて"
+                              "text": "here out of great trials and tribulations",
+                              "translation": "ここに大きな試練や苦難から"
                             }
                           ]
                         }
@@ -3112,18 +3277,22 @@
                           "format": "clause",
                           "text": "where your quest -- quest for freedom left you battered by the storms of persecution and staggered by the winds of police brutality",
                           "relation": "place",
-                          "conjunction": "where",
                           "pattern": "SVO",
                           "elements": [
                             {
+                              "type": "M",
+                              "text": "where",
+                              "translation": "そこでは"
+                            },
+                            {
                               "type": "S",
                               "text": "your quest -- quest for freedom",
-                              "translation": "あなたの探求――自由への探求が"
+                              "translation": "あなたの探求――自由の探求は"
                             },
                             {
                               "type": "V",
                               "text": "left",
-                              "translation": "残した",
+                              "translation": "打ちのめした",
                               "tense": "past",
                               "aspect": "simple",
                               "mood": "indicative",
@@ -3161,12 +3330,12 @@
                     {
                       "type": "S",
                       "text": "You",
-                      "translation": "皆さんは"
+                      "translation": "あなたたちは"
                     },
                     {
                       "type": "V",
                       "text": "have been",
-                      "translation": "であった",
+                      "translation": "なっている",
                       "tense": "present",
                       "aspect": "perfect",
                       "mood": "indicative",
@@ -3175,7 +3344,7 @@
                     {
                       "type": "C",
                       "text": "the veterans of creative suffering",
-                      "translation": "創造的な苦しみのベテラン"
+                      "translation": "創造的な苦しみのベテランである"
                     }
                   ]
                 }
@@ -3204,15 +3373,19 @@
                     {
                       "type": "M",
                       "text": "to work with the faith that unearned suffering is redemptive",
-                      "translation": "報われない苦しみも贖いとなるという信念を持って働くことを",
+                      "translation": "報われない苦しみが贖いであるという信念を持って働くこと",
                       "subclauses": [
                         {
                           "format": "clause",
                           "text": "that unearned suffering is redemptive",
-                          "relation": "content",
-                          "conjunction": "that",
+                          "relation": "apposition",
                           "pattern": "SVC",
                           "elements": [
+                            {
+                              "type": "M",
+                              "text": "that",
+                              "translation": "〜ということ"
+                            },
                             {
                               "type": "S",
                               "text": "unearned suffering",
@@ -3254,7 +3427,7 @@
                     {
                       "type": "V",
                       "text": "Go back",
-                      "translation": "戻りなさい",
+                      "translation": "戻れ",
                       "tense": "present",
                       "aspect": "simple",
                       "mood": "imperative",
@@ -3262,21 +3435,143 @@
                     },
                     {
                       "type": "M",
-                      "text": "to Mississippi, to Alabama, to South Carolina, to Georgia, to Louisiana, to the slums and ghettos of our northern cities",
-                      "translation": "ミシシッピ、アラバマ、サウスカロライナ、ジョージア、ルイジアナ、北部都市のスラムやゲットーに"
+                      "text": "to Mississippi",
+                      "translation": "ミシシッピに"
+                    }
+                  ]
+                },
+                {
+                  "id": "00003-006-001",
+                  "format": "sentence",
+                  "text": "go back to Alabama",
+                  "pattern": "SV",
+                  "elements": [
+                    {
+                      "type": "V",
+                      "text": "go back",
+                      "translation": "戻れ",
+                      "tense": "present",
+                      "aspect": "simple",
+                      "mood": "imperative",
+                      "voice": "active"
                     },
                     {
                       "type": "M",
+                      "text": "to Alabama",
+                      "translation": "アラバマに"
+                    }
+                  ]
+                },
+                {
+                  "id": "00003-006-002",
+                  "format": "sentence",
+                  "text": "go back to South Carolina",
+                  "pattern": "SV",
+                  "elements": [
+                    {
+                      "type": "V",
+                      "text": "go back",
+                      "translation": "戻れ",
+                      "tense": "present",
+                      "aspect": "simple",
+                      "mood": "imperative",
+                      "voice": "active"
+                    },
+                    {
+                      "type": "M",
+                      "text": "to South Carolina",
+                      "translation": "サウスカロライナに"
+                    }
+                  ]
+                },
+                {
+                  "id": "00003-006-003",
+                  "format": "sentence",
+                  "text": "go back to Georgia",
+                  "pattern": "SV",
+                  "elements": [
+                    {
+                      "type": "V",
+                      "text": "go back",
+                      "translation": "戻れ",
+                      "tense": "present",
+                      "aspect": "simple",
+                      "mood": "imperative",
+                      "voice": "active"
+                    },
+                    {
+                      "type": "M",
+                      "text": "to Georgia",
+                      "translation": "ジョージアに"
+                    }
+                  ]
+                },
+                {
+                  "id": "00003-006-004",
+                  "format": "sentence",
+                  "text": "go back to Louisiana",
+                  "pattern": "SV",
+                  "elements": [
+                    {
+                      "type": "V",
+                      "text": "go back",
+                      "translation": "戻れ",
+                      "tense": "present",
+                      "aspect": "simple",
+                      "mood": "imperative",
+                      "voice": "active"
+                    },
+                    {
+                      "type": "M",
+                      "text": "to Louisiana",
+                      "translation": "ルイジアナに"
+                    }
+                  ]
+                },
+                {
+                  "id": "00003-006-005",
+                  "format": "sentence",
+                  "text": "go back to the slums and ghettos of our northern cities",
+                  "pattern": "SV",
+                  "elements": [
+                    {
+                      "type": "V",
+                      "text": "go back",
+                      "translation": "戻れ",
+                      "tense": "present",
+                      "aspect": "simple",
+                      "mood": "imperative",
+                      "voice": "active"
+                    },
+                    {
+                      "type": "M",
+                      "text": "to the slums and ghettos of our northern cities",
+                      "translation": "北部の都市のスラムやゲットーに"
+                    }
+                  ]
+                },
+                {
+                  "id": "00003-006-006",
+                  "format": "sentence",
+                  "text": "knowing that somehow this situation can and will be changed.",
+                  "pattern": "other",
+                  "elements": [
+                    {
+                      "type": "M",
                       "text": "knowing that somehow this situation can and will be changed",
-                      "translation": "いかなる方法であれこの状況は変えられ、変わるのだと信じて",
+                      "translation": "いかなる方法であれ、この状況は変えられ、変わるのだと信じていること",
                       "subclauses": [
                         {
                           "format": "clause",
                           "text": "that somehow this situation can and will be changed",
                           "relation": "content",
-                          "conjunction": "that",
                           "pattern": "SV",
                           "elements": [
+                            {
+                              "type": "M",
+                              "text": "that",
+                              "translation": "〜ということ"
+                            },
                             {
                               "type": "S",
                               "text": "this situation",
@@ -3285,16 +3580,11 @@
                             {
                               "type": "V",
                               "text": "can and will be changed",
-                              "translation": "変えられ、変わることができる",
-                              "tense": "future",
+                              "translation": "変えられ、変わることができるし、変わるだろう",
+                              "tense": "present",
                               "aspect": "simple",
                               "mood": "indicative",
                               "voice": "passive"
-                            },
-                            {
-                              "type": "M",
-                              "text": "somehow",
-                              "translation": "いかなる方法であれ"
                             }
                           ]
                         }
@@ -3317,13 +3607,13 @@
                 {
                   "id": "00003-007-000",
                   "format": "sentence",
-                  "text": "Let us not wallow in the valley of despair, I say to you today, my friends.",
+                  "text": "Let us not wallow in the valley of despair,",
                   "pattern": "SVOC",
                   "elements": [
                     {
                       "type": "V",
                       "text": "Let",
-                      "translation": "させなさい",
+                      "translation": "させてください",
                       "tense": "present",
                       "aspect": "simple",
                       "mood": "imperative",
@@ -3332,50 +3622,44 @@
                     {
                       "type": "O",
                       "text": "us",
-                      "translation": "私たちが"
+                      "translation": "私たちを"
                     },
                     {
                       "type": "C",
                       "text": "not wallow in the valley of despair",
                       "translation": "絶望の谷に沈み込まないように"
                     }
-                  ],
-                  "subsentences": [
+                  ]
+                },
+                {
+                  "id": "00003-007-001",
+                  "format": "sentence",
+                  "text": "I say to you today, my friends.",
+                  "pattern": "SVO",
+                  "elements": [
                     {
-                      "format": "sentence",
-                      "text": "I say to you today, my friends.",
-                      "pattern": "SVO",
-                      "elements": [
-                        {
-                          "type": "S",
-                          "text": "I",
-                          "translation": "私は"
-                        },
-                        {
-                          "type": "V",
-                          "text": "say",
-                          "translation": "申し上げる",
-                          "tense": "present",
-                          "aspect": "simple",
-                          "mood": "indicative",
-                          "voice": "active"
-                        },
-                        {
-                          "type": "O",
-                          "text": "to you",
-                          "translation": "あなたに"
-                        },
-                        {
-                          "type": "M",
-                          "text": "today",
-                          "translation": "今日"
-                        },
-                        {
-                          "type": "M",
-                          "text": "my friends",
-                          "translation": "皆さん"
-                        }
-                      ]
+                      "type": "S",
+                      "text": "I",
+                      "translation": "私は"
+                    },
+                    {
+                      "type": "V",
+                      "text": "say",
+                      "translation": "言う",
+                      "tense": "present",
+                      "aspect": "simple",
+                      "mood": "indicative",
+                      "voice": "active"
+                    },
+                    {
+                      "type": "O",
+                      "text": "to you",
+                      "translation": "あなたたちに"
+                    },
+                    {
+                      "type": "M",
+                      "text": "today, my friends",
+                      "translation": "今日、友よ"
                     }
                   ]
                 }
@@ -3399,8 +3683,42 @@
                   "elements": [
                     {
                       "type": "M",
-                      "text": "And so",
-                      "translation": "だからこそ"
+                      "text": "And so even though we face the difficulties of today and tomorrow",
+                      "translation": "だからこそ、私たちは今日と明日の困難に直面しているにもかかわらず",
+                      "subclauses": [
+                        {
+                          "format": "clause",
+                          "text": "even though we face the difficulties of today and tomorrow",
+                          "relation": "concession",
+                          "pattern": "SVO",
+                          "elements": [
+                            {
+                              "type": "M",
+                              "text": "even though",
+                              "translation": "〜だけれども"
+                            },
+                            {
+                              "type": "S",
+                              "text": "we",
+                              "translation": "私たちは"
+                            },
+                            {
+                              "type": "V",
+                              "text": "face",
+                              "translation": "直面する",
+                              "tense": "present",
+                              "aspect": "simple",
+                              "mood": "indicative",
+                              "voice": "active"
+                            },
+                            {
+                              "type": "O",
+                              "text": "the difficulties of today and tomorrow",
+                              "translation": "今日と明日の困難に"
+                            }
+                          ]
+                        }
+                      ]
                     },
                     {
                       "type": "S",
@@ -3409,8 +3727,8 @@
                     },
                     {
                       "type": "V",
-                      "text": "have",
-                      "translation": "持っている",
+                      "text": "still have",
+                      "translation": "なお持っている",
                       "tense": "present",
                       "aspect": "simple",
                       "mood": "indicative",
@@ -3420,41 +3738,6 @@
                       "type": "O",
                       "text": "a dream",
                       "translation": "夢を"
-                    },
-                    {
-                      "type": "M",
-                      "text": "still",
-                      "translation": "なおも"
-                    }
-                  ],
-                  "subclauses": [
-                    {
-                      "format": "clause",
-                      "text": "even though we face the difficulties of today and tomorrow",
-                      "relation": "concession",
-                      "conjunction": "even though",
-                      "pattern": "SVO",
-                      "elements": [
-                        {
-                          "type": "S",
-                          "text": "we",
-                          "translation": "私たちは"
-                        },
-                        {
-                          "type": "V",
-                          "text": "face",
-                          "translation": "直面している",
-                          "tense": "present",
-                          "aspect": "simple",
-                          "mood": "indicative",
-                          "voice": "active"
-                        },
-                        {
-                          "type": "O",
-                          "text": "the difficulties of today and tomorrow",
-                          "translation": "今日と明日の困難に"
-                        }
-                      ]
                     }
                   ]
                 }
@@ -3488,7 +3771,7 @@
                     {
                       "type": "C",
                       "text": "a dream deeply rooted in the American dream",
-                      "translation": "アメリカの夢に深く根ざした夢"
+                      "translation": "アメリカの夢に深く根ざした夢である"
                     }
                   ]
                 }
@@ -3507,7 +3790,7 @@
                 {
                   "id": "00003-010-000",
                   "format": "sentence",
-                  "text": "I have a dream that one day this nation will rise up and live out the true meaning of its creed: \"We hold these truths to be self-evident, that all men are created equal.\"",
+                  "text": "I have a dream that one day this nation will rise up and live out the true meaning of its creed:",
                   "pattern": "SVO",
                   "elements": [
                     {
@@ -3527,25 +3810,29 @@
                     {
                       "type": "O",
                       "text": "a dream that one day this nation will rise up and live out the true meaning of its creed",
-                      "translation": "いつの日かこの国が立ち上がり、その信条の真の意味を生きるという夢",
+                      "translation": "いつの日かこの国が立ち上がり、その信条の真の意味を生きる夢を",
                       "subclauses": [
                         {
                           "format": "clause",
                           "text": "that one day this nation will rise up and live out the true meaning of its creed",
                           "relation": "content",
-                          "conjunction": "that",
                           "pattern": "SV",
                           "elements": [
                             {
+                              "type": "M",
+                              "text": "that",
+                              "translation": "〜ということ"
+                            },
+                            {
                               "type": "S",
                               "text": "this nation",
-                              "translation": "この国が"
+                              "translation": "この国は"
                             },
                             {
                               "type": "V",
                               "text": "will rise up and live out",
-                              "translation": "立ち上がり、生きるだろう",
-                              "tense": "future",
+                              "translation": "立ち上がり生きる",
+                              "tense": "present",
                               "aspect": "simple",
                               "mood": "indicative",
                               "voice": "active"
@@ -3556,7 +3843,7 @@
                               "translation": "いつの日か"
                             },
                             {
-                              "type": "M",
+                              "type": "O",
                               "text": "the true meaning of its creed",
                               "translation": "その信条の真の意味を"
                             }
@@ -3564,64 +3851,67 @@
                         }
                       ]
                     }
-                  ],
-                  "subsentences": [
+                  ]
+                },
+                {
+                  "id": "00003-010-001",
+                  "format": "sentence",
+                  "text": "\"We hold these truths to be self-evident, that all men are created equal.\"",
+                  "pattern": "SVO",
+                  "elements": [
                     {
-                      "format": "sentence",
-                      "text": "\"We hold these truths to be self-evident, that all men are created equal.\"",
-                      "pattern": "SVO",
-                      "elements": [
+                      "type": "S",
+                      "text": "We",
+                      "translation": "われわれは"
+                    },
+                    {
+                      "type": "V",
+                      "text": "hold",
+                      "translation": "考える",
+                      "tense": "present",
+                      "aspect": "simple",
+                      "mood": "indicative",
+                      "voice": "active"
+                    },
+                    {
+                      "type": "O",
+                      "text": "these truths to be self-evident",
+                      "translation": "これらの真理を自明のものと"
+                    },
+                    {
+                      "type": "M",
+                      "text": "that all men are created equal",
+                      "translation": "すべての人は平等に創られているということ",
+                      "subclauses": [
                         {
-                          "type": "S",
-                          "text": "We",
-                          "translation": "われわれは"
-                        },
-                        {
-                          "type": "V",
-                          "text": "hold",
-                          "translation": "考える",
-                          "tense": "present",
-                          "aspect": "simple",
-                          "mood": "indicative",
-                          "voice": "active"
-                        },
-                        {
-                          "type": "O",
-                          "text": "these truths to be self-evident",
-                          "translation": "これらの真理を自明のものと"
-                        },
-                        {
-                          "type": "O",
+                          "format": "clause",
                           "text": "that all men are created equal",
-                          "translation": "すべての人は平等に創られているということ",
-                          "subclauses": [
+                          "relation": "content",
+                          "pattern": "SVC",
+                          "elements": [
                             {
-                              "format": "clause",
-                              "text": "that all men are created equal",
-                              "relation": "content",
-                              "conjunction": "that",
-                              "pattern": "SVC",
-                              "elements": [
-                                {
-                                  "type": "S",
-                                  "text": "all men",
-                                  "translation": "すべての人は"
-                                },
-                                {
-                                  "type": "V",
-                                  "text": "are created",
-                                  "translation": "創られている",
-                                  "tense": "present",
-                                  "aspect": "simple",
-                                  "mood": "indicative",
-                                  "voice": "passive"
-                                },
-                                {
-                                  "type": "C",
-                                  "text": "equal",
-                                  "translation": "平等に"
-                                }
-                              ]
+                              "type": "M",
+                              "text": "that",
+                              "translation": "〜ということ"
+                            },
+                            {
+                              "type": "S",
+                              "text": "all men",
+                              "translation": "すべての人は"
+                            },
+                            {
+                              "type": "V",
+                              "text": "are created",
+                              "translation": "創られている",
+                              "tense": "present",
+                              "aspect": "simple",
+                              "mood": "indicative",
+                              "voice": "passive"
+                            },
+                            {
+                              "type": "C",
+                              "text": "equal",
+                              "translation": "平等である"
                             }
                           ]
                         }
@@ -3664,43 +3954,42 @@
                     {
                       "type": "O",
                       "text": "a dream that one day on the red hills of Georgia, the sons of former slaves and the sons of former slave owners will be able to sit down together at the table of brotherhood",
-                      "translation": "いつの日かジョージアの赤い丘の上で、かつての奴隷の子孫とかつての奴隷所有者の子孫が共に兄弟愛のテーブルにつくことができるという夢",
+                      "translation": "いつの日かジョージアの赤い丘の上で、かつての奴隷の子孫とかつての奴隷所有者の子孫が共に兄弟愛のテーブルにつくことができる夢を",
                       "subclauses": [
                         {
                           "format": "clause",
                           "text": "that one day on the red hills of Georgia, the sons of former slaves and the sons of former slave owners will be able to sit down together at the table of brotherhood",
                           "relation": "content",
-                          "conjunction": "that",
                           "pattern": "SV",
                           "elements": [
                             {
+                              "type": "M",
+                              "text": "that",
+                              "translation": "〜ということ"
+                            },
+                            {
                               "type": "S",
                               "text": "the sons of former slaves and the sons of former slave owners",
-                              "translation": "かつての奴隷の子孫とかつての奴隷所有者の子孫が"
+                              "translation": "かつての奴隷の子孫とかつての奴隷所有者の子孫は"
                             },
                             {
                               "type": "V",
-                              "text": "will be able to sit down",
-                              "translation": "つくことができるだろう",
-                              "tense": "future",
+                              "text": "will be able to sit down together",
+                              "translation": "共に座ることができるだろう",
+                              "tense": "present",
                               "aspect": "simple",
                               "mood": "indicative",
                               "voice": "active"
                             },
                             {
                               "type": "M",
-                              "text": "together",
-                              "translation": "共に"
+                              "text": "one day on the red hills of Georgia",
+                              "translation": "いつの日かジョージアの赤い丘の上で"
                             },
                             {
                               "type": "M",
                               "text": "at the table of brotherhood",
-                              "translation": "兄弟愛のテーブルに"
-                            },
-                            {
-                              "type": "M",
-                              "text": "one day on the red hills of Georgia",
-                              "translation": "いつの日かジョージアの赤い丘の上で"
+                              "translation": "兄弟愛のテーブルで"
                             }
                           ]
                         }
@@ -3743,38 +4032,42 @@
                     {
                       "type": "O",
                       "text": "a dream that one day even the state of Mississippi, a state sweltering with the heat of injustice, sweltering with the heat of oppression, will be transformed into an oasis of freedom and justice",
-                      "translation": "いつの日か、不正の熱気に包まれ、抑圧の熱気に包まれたミシシッピ州でさえも、自由と正義のオアシスへと変わるだろうという夢",
+                      "translation": "いつの日か、不正の熱気に包まれ、抑圧の熱気に包まれたミシシッピ州でさえも、自由と正義のオアシスへと変わる夢を",
                       "subclauses": [
                         {
                           "format": "clause",
                           "text": "that one day even the state of Mississippi, a state sweltering with the heat of injustice, sweltering with the heat of oppression, will be transformed into an oasis of freedom and justice",
                           "relation": "content",
-                          "conjunction": "that",
                           "pattern": "SV",
                           "elements": [
                             {
+                              "type": "M",
+                              "text": "that",
+                              "translation": "〜ということ"
+                            },
+                            {
                               "type": "S",
-                              "text": "even the state of Mississippi, a state sweltering with the heat of injustice, sweltering with the heat of oppression",
-                              "translation": "不正の熱気に包まれ、抑圧の熱気に包まれたミシシッピ州でさえも"
+                              "text": "the state of Mississippi, a state sweltering with the heat of injustice, sweltering with the heat of oppression",
+                              "translation": "不正の熱気に包まれ、抑圧の熱気に包まれたミシシッピ州は"
                             },
                             {
                               "type": "V",
                               "text": "will be transformed",
-                              "translation": "変わるだろう",
-                              "tense": "future",
+                              "translation": "変えられるだろう",
+                              "tense": "present",
                               "aspect": "simple",
                               "mood": "indicative",
                               "voice": "passive"
                             },
                             {
-                              "type": "C",
-                              "text": "into an oasis of freedom and justice",
-                              "translation": "自由と正義のオアシスへ"
-                            },
-                            {
                               "type": "M",
                               "text": "one day",
                               "translation": "いつの日か"
+                            },
+                            {
+                              "type": "C",
+                              "text": "into an oasis of freedom and justice",
+                              "translation": "自由と正義のオアシスに"
                             }
                           ]
                         }
@@ -3817,28 +4110,37 @@
                     {
                       "type": "O",
                       "text": "a dream that my four little children will one day live in a nation where they will not be judged by the color of their skin but by the content of their character",
-                      "translation": "私の四人の小さな子どもたちが、肌の色ではなく、その人の人格の中身によって評価される国に住むことができるという夢",
+                      "translation": "私の四人の小さな子どもたちが、肌の色ではなく、その人の人格の中身によって評価される国に住む夢を",
                       "subclauses": [
                         {
                           "format": "clause",
                           "text": "that my four little children will one day live in a nation where they will not be judged by the color of their skin but by the content of their character",
                           "relation": "content",
-                          "conjunction": "that",
                           "pattern": "SV",
                           "elements": [
                             {
+                              "type": "M",
+                              "text": "that",
+                              "translation": "〜ということ"
+                            },
+                            {
                               "type": "S",
                               "text": "my four little children",
-                              "translation": "私の四人の小さな子どもたちが"
+                              "translation": "私の四人の小さな子どもたちは"
                             },
                             {
                               "type": "V",
                               "text": "will live",
                               "translation": "住むだろう",
-                              "tense": "future",
+                              "tense": "present",
                               "aspect": "simple",
                               "mood": "indicative",
                               "voice": "active"
+                            },
+                            {
+                              "type": "M",
+                              "text": "one day",
+                              "translation": "いつの日か"
                             },
                             {
                               "type": "M",
@@ -3849,9 +4151,13 @@
                                   "format": "clause",
                                   "text": "where they will not be judged by the color of their skin but by the content of their character",
                                   "relation": "place",
-                                  "conjunction": "where",
                                   "pattern": "SV",
                                   "elements": [
+                                    {
+                                      "type": "M",
+                                      "text": "where",
+                                      "translation": "そこでは"
+                                    },
                                     {
                                       "type": "S",
                                       "text": "they",
@@ -3861,7 +4167,7 @@
                                       "type": "V",
                                       "text": "will not be judged",
                                       "translation": "評価されないだろう",
-                                      "tense": "future",
+                                      "tense": "present",
                                       "aspect": "simple",
                                       "mood": "indicative",
                                       "voice": "passive"
@@ -3869,16 +4175,11 @@
                                     {
                                       "type": "M",
                                       "text": "by the color of their skin but by the content of their character",
-                                      "translation": "肌の色ではなく、その人の人格の中身によって"
+                                      "translation": "肌の色によってではなく、人格の中身によって"
                                     }
                                   ]
                                 }
                               ]
-                            },
-                            {
-                              "type": "M",
-                              "text": "one day",
-                              "translation": "いつの日か"
                             }
                           ]
                         }
@@ -3960,33 +4261,42 @@
                     {
                       "type": "O",
                       "text": "a dream that one day, down in Alabama, with its vicious racists, with its governor having his lips dripping with the words of \"interposition\" and \"nullification\" -- one day right there in Alabama little black boys and black girls will be able to join hands with little white boys and white girls as sisters and brothers",
-                      "translation": "いつの日か、アラバマ州で、そこには凶暴な人種差別主義者がいて、州知事は「介入」や「無効化」という言葉を口にしているが――そのアラバマで、黒人の小さな男の子や女の子たちが、白人の小さな男の子や女の子たちと手を取り合い、兄弟姉妹として結ばれる日が来るという夢",
+                      "translation": "いつの日か、アラバマ州で、そこには凶暴な人種差別主義者がいて、州知事は「介入」や「無効化」という言葉を口にしているが――そのアラバマで、黒人の小さな男の子や女の子たちが、白人の小さな男の子や女の子たちと手を取り合い、兄弟姉妹として結ばれる夢を",
                       "subclauses": [
                         {
                           "format": "clause",
                           "text": "that one day, down in Alabama, with its vicious racists, with its governor having his lips dripping with the words of \"interposition\" and \"nullification\" -- one day right there in Alabama little black boys and black girls will be able to join hands with little white boys and white girls as sisters and brothers",
                           "relation": "content",
-                          "conjunction": "that",
                           "pattern": "SV",
                           "elements": [
                             {
+                              "type": "M",
+                              "text": "that",
+                              "translation": "〜ということ"
+                            },
+                            {
                               "type": "S",
                               "text": "little black boys and black girls",
-                              "translation": "黒人の小さな男の子や女の子たちが"
+                              "translation": "黒人の小さな男の子や女の子たちは"
                             },
                             {
                               "type": "V",
                               "text": "will be able to join hands",
                               "translation": "手を取り合うことができるだろう",
-                              "tense": "future",
+                              "tense": "present",
                               "aspect": "simple",
                               "mood": "indicative",
                               "voice": "active"
                             },
                             {
                               "type": "M",
-                              "text": "with little white boys and white girls",
-                              "translation": "白人の小さな男の子や女の子たちと"
+                              "text": "one day, down in Alabama, with its vicious racists, with its governor having his lips dripping with the words of \"interposition\" and \"nullification\" -- one day right there in Alabama",
+                              "translation": "いつの日か、アラバマ州で、そこには凶暴な人種差別主義者がいて、州知事は「介入」や「無効化」という言葉を口にしているが――そのアラバマで"
+                            },
+                            {
+                              "type": "M",
+                              "text": "with its governor having his lips dripping with the words of \"interposition\" and \"nullification\"",
+                              "translation": "州知事は「介入」や「無効化」という言葉を口にしている"
                             },
                             {
                               "type": "M",
@@ -3994,14 +4304,9 @@
                               "translation": "兄弟姉妹として"
                             },
                             {
-                              "type": "M",
-                              "text": "one day right there in Alabama",
-                              "translation": "いつの日か、まさにアラバマで"
-                            },
-                            {
-                              "type": "M",
-                              "text": "down in Alabama, with its vicious racists, with its governor having his lips dripping with the words of \"interposition\" and \"nullification\"",
-                              "translation": "アラバマ州で、そこには凶暴な人種差別主義者がいて、州知事は「介入」や「無効化」という言葉を口にしているが"
+                              "type": "O",
+                              "text": "little white boys and white girls",
+                              "translation": "白人の小さな男の子や女の子たちと"
                             }
                           ]
                         }
@@ -4083,19 +4388,128 @@
                     {
                       "type": "O",
                       "text": "a dream that one day every valley shall be exalted, and every hill and mountain shall be made low, the rough places will be made plain, and the crooked places will be made straight",
-                      "translation": "いつの日かすべての谷が高くされ、すべての丘と山が低くされ、でこぼこした場所が平らにされ、曲がった場所がまっすぐにされるという夢を",
+                      "translation": "いつの日かすべての谷が高く持ち上げられ、すべての丘や山が低くされ、でこぼこした場所が平らにされ、曲がった場所がまっすぐにされるという夢",
                       "subclauses": [
                         {
                           "format": "clause",
-                          "text": "that one day every valley shall be exalted, and every hill and mountain shall be made low, the rough places will be made plain, and the crooked places will be made straight",
+                          "text": "that one day every valley shall be exalted",
                           "relation": "apposition",
-                          "conjunction": "that",
                           "pattern": "SV",
                           "elements": [
                             {
                               "type": "M",
+                              "text": "that",
+                              "translation": "〜ということ"
+                            },
+                            {
+                              "type": "M",
                               "text": "one day",
                               "translation": "いつの日か"
+                            },
+                            {
+                              "type": "S",
+                              "text": "every valley",
+                              "translation": "すべての谷が"
+                            },
+                            {
+                              "type": "V",
+                              "text": "shall be exalted",
+                              "translation": "高く持ち上げられるだろう",
+                              "tense": "present",
+                              "aspect": "simple",
+                              "mood": "indicative",
+                              "voice": "passive"
+                            }
+                          ]
+                        },
+                        {
+                          "format": "clause",
+                          "text": "and every hill and mountain shall be made low",
+                          "relation": "apposition",
+                          "pattern": "SV",
+                          "elements": [
+                            {
+                              "type": "M",
+                              "text": "and",
+                              "translation": "そして"
+                            },
+                            {
+                              "type": "S",
+                              "text": "every hill and mountain",
+                              "translation": "すべての丘と山が"
+                            },
+                            {
+                              "type": "V",
+                              "text": "shall be made",
+                              "translation": "低くされるだろう",
+                              "tense": "present",
+                              "aspect": "simple",
+                              "mood": "indicative",
+                              "voice": "passive"
+                            },
+                            {
+                              "type": "M",
+                              "text": "low",
+                              "translation": "低く"
+                            }
+                          ]
+                        },
+                        {
+                          "format": "clause",
+                          "text": "the rough places will be made plain",
+                          "relation": "apposition",
+                          "pattern": "SV",
+                          "elements": [
+                            {
+                              "type": "S",
+                              "text": "the rough places",
+                              "translation": "でこぼこした場所が"
+                            },
+                            {
+                              "type": "V",
+                              "text": "will be made",
+                              "translation": "されるだろう",
+                              "tense": "present",
+                              "aspect": "simple",
+                              "mood": "indicative",
+                              "voice": "passive"
+                            },
+                            {
+                              "type": "M",
+                              "text": "plain",
+                              "translation": "平らに"
+                            }
+                          ]
+                        },
+                        {
+                          "format": "clause",
+                          "text": "and the crooked places will be made straight",
+                          "relation": "apposition",
+                          "pattern": "SV",
+                          "elements": [
+                            {
+                              "type": "M",
+                              "text": "and",
+                              "translation": "そして"
+                            },
+                            {
+                              "type": "S",
+                              "text": "the crooked places",
+                              "translation": "曲がった場所が"
+                            },
+                            {
+                              "type": "V",
+                              "text": "will be made",
+                              "translation": "されるだろう",
+                              "tense": "present",
+                              "aspect": "simple",
+                              "mood": "indicative",
+                              "voice": "passive"
+                            },
+                            {
+                              "type": "M",
+                              "text": "straight",
+                              "translation": "まっすぐに"
                             }
                           ]
                         }
@@ -4114,7 +4528,7 @@
                   "id": "00004-002-000",
                   "format": "sentence",
                   "text": "\"and the glory of the Lord shall be revealed and all flesh shall see it together.\"",
-                  "pattern": "SV, SVO",
+                  "pattern": "SV",
                   "elements": [
                     {
                       "type": "M",
@@ -4129,19 +4543,25 @@
                     {
                       "type": "V",
                       "text": "shall be revealed",
-                      "translation": "現れるであろう",
-                      "tense": "future",
+                      "translation": "現れるだろう",
+                      "tense": "present",
                       "aspect": "simple",
                       "mood": "indicative",
                       "voice": "passive"
                     }
                   ],
-                  "subsentences": [
+                  "subclauses": [
                     {
-                      "format": "sentence",
-                      "text": "all flesh shall see it together.",
+                      "format": "clause",
+                      "text": "and all flesh shall see it together",
+                      "relation": "content",
                       "pattern": "SVO",
                       "elements": [
+                        {
+                          "type": "M",
+                          "text": "and",
+                          "translation": "そして"
+                        },
                         {
                           "type": "S",
                           "text": "all flesh",
@@ -4150,8 +4570,8 @@
                         {
                           "type": "V",
                           "text": "shall see",
-                          "translation": "見るであろう",
-                          "tense": "future",
+                          "translation": "見るだろう",
+                          "tense": "present",
                           "aspect": "simple",
                           "mood": "indicative",
                           "voice": "active"
@@ -4185,8 +4605,8 @@
                 {
                   "id": "00004-003-000",
                   "format": "sentence",
-                  "text": "This is our hope, and this is the faith that I go back to the South with.",
-                  "pattern": "SVC, SVC",
+                  "text": "This is our hope,",
+                  "pattern": "SVC",
                   "elements": [
                     {
                       "type": "S",
@@ -4205,66 +4625,74 @@
                     {
                       "type": "C",
                       "text": "our hope",
-                      "translation": "私たちの希望"
+                      "translation": "私たちの希望である"
                     }
-                  ],
-                  "subsentences": [
+                  ]
+                },
+                {
+                  "id": "00004-003-001",
+                  "format": "sentence",
+                  "text": "and this is the faith that I go back to the South with.",
+                  "pattern": "SVC",
+                  "elements": [
                     {
-                      "format": "sentence",
-                      "text": "this is the faith that I go back to the South with.",
-                      "pattern": "SVC",
-                      "elements": [
+                      "type": "M",
+                      "text": "and",
+                      "translation": "そして"
+                    },
+                    {
+                      "type": "S",
+                      "text": "this",
+                      "translation": "これが"
+                    },
+                    {
+                      "type": "V",
+                      "text": "is",
+                      "translation": "である",
+                      "tense": "present",
+                      "aspect": "simple",
+                      "mood": "indicative",
+                      "voice": "none"
+                    },
+                    {
+                      "type": "C",
+                      "text": "the faith that I go back to the South with",
+                      "translation": "私が南部に持ち帰る信念である",
+                      "subclauses": [
                         {
-                          "type": "S",
-                          "text": "this",
-                          "translation": "これが"
-                        },
-                        {
-                          "type": "V",
-                          "text": "is",
-                          "translation": "である",
-                          "tense": "present",
-                          "aspect": "simple",
-                          "mood": "indicative",
-                          "voice": "none"
-                        },
-                        {
-                          "type": "C",
-                          "text": "the faith that I go back to the South with",
-                          "translation": "私が南部に持ち帰る信念",
-                          "subclauses": [
+                          "format": "clause",
+                          "text": "that I go back to the South with",
+                          "relation": "apposition",
+                          "pattern": "SVO",
+                          "elements": [
                             {
-                              "format": "clause",
-                              "text": "that I go back to the South with",
-                              "relation": "apposition",
-                              "conjunction": "that",
-                              "pattern": "SVO",
-                              "elements": [
-                                {
-                                  "type": "S",
-                                  "text": "I",
-                                  "translation": "私が"
-                                },
-                                {
-                                  "type": "V",
-                                  "text": "go back",
-                                  "translation": "戻る",
-                                  "tense": "present",
-                                  "aspect": "simple",
-                                  "mood": "indicative",
-                                  "voice": "active"
-                                },
-                                {
-                                  "type": "O",
-                                  "text": "to the South",
-                                  "translation": "南部へ"
-                                },
-                                {
-                                  "type": "M",
-                                  "text": "with",
-                                  "translation": "〜とともに"
-                                }
-                              ]
+                              "type": "M",
+                              "text": "that",
+                              "translation": "〜という"
+                            },
+                            {
+                              "type": "S",
+                              "text": "I",
+                              "translation": "私が"
+                            },
+                            {
+                              "type": "V",
+                              "text": "go back",
+                              "translation": "戻る",
+                              "tense": "present",
+                              "aspect": "simple",
+                              "mood": "indicative",
+                              "voice": "active"
+                            },
+                            {
+                              "type": "M",
+                              "text": "to the South",
+                              "translation": "南部へ"
+                            },
+                            {
+                              "type": "M",
+                              "text": "with",
+                              "translation": "持って"
                             }
                           ]
                         }
@@ -4303,16 +4731,21 @@
                     {
                       "type": "V",
                       "text": "will be able to hew out",
-                      "translation": "切り出すことができる",
-                      "tense": "future",
+                      "translation": "切り出すことができるだろう",
+                      "tense": "present",
                       "aspect": "simple",
                       "mood": "indicative",
                       "voice": "active"
                     },
                     {
+                      "type": "M",
+                      "text": "of the mountain of despair",
+                      "translation": "絶望の山から"
+                    },
+                    {
                       "type": "O",
-                      "text": "of the mountain of despair a stone of hope",
-                      "translation": "絶望の山から希望の石を"
+                      "text": "a stone of hope",
+                      "translation": "希望の石を"
                     }
                   ]
                 }
@@ -4342,8 +4775,8 @@
                     {
                       "type": "V",
                       "text": "will be able to transform",
-                      "translation": "変えることができる",
-                      "tense": "future",
+                      "translation": "変えることができるだろう",
+                      "tense": "present",
                       "aspect": "simple",
                       "mood": "indicative",
                       "voice": "active"
@@ -4371,7 +4804,7 @@
                   "id": "00004-006-000",
                   "format": "sentence",
                   "text": "With this faith, we will be able to work together, to pray together, to struggle together, to go to jail together, to stand up for freedom together, knowing that we will be free one day.",
-                  "pattern": "SVO",
+                  "pattern": "SV",
                   "elements": [
                     {
                       "type": "M",
@@ -4385,9 +4818,9 @@
                     },
                     {
                       "type": "V",
-                      "text": "will be able to work, to pray, to struggle, to go to jail, to stand up for freedom",
-                      "translation": "働き、祈り、闘い、投獄され、自由のために立ち上がることができる",
-                      "tense": "future",
+                      "text": "will be able to work",
+                      "translation": "働くことができるだろう",
+                      "tense": "present",
                       "aspect": "simple",
                       "mood": "indicative",
                       "voice": "active"
@@ -4399,6 +4832,26 @@
                     },
                     {
                       "type": "M",
+                      "text": "to pray together",
+                      "translation": "共に祈るために"
+                    },
+                    {
+                      "type": "M",
+                      "text": "to struggle together",
+                      "translation": "共に闘うために"
+                    },
+                    {
+                      "type": "M",
+                      "text": "to go to jail together",
+                      "translation": "共に投獄されるために"
+                    },
+                    {
+                      "type": "M",
+                      "text": "to stand up for freedom together",
+                      "translation": "共に自由のために立ち上がるために"
+                    },
+                    {
+                      "type": "M",
                       "text": "knowing that we will be free one day",
                       "translation": "いつの日か自由になることを知りながら",
                       "subclauses": [
@@ -4406,19 +4859,23 @@
                           "format": "clause",
                           "text": "that we will be free one day",
                           "relation": "content",
-                          "conjunction": "that",
-                          "pattern": "SVC",
+                          "pattern": "SV",
                           "elements": [
+                            {
+                              "type": "M",
+                              "text": "that",
+                              "translation": "〜ということ"
+                            },
                             {
                               "type": "S",
                               "text": "we",
-                              "translation": "私たちが"
+                              "translation": "私たちは"
                             },
                             {
                               "type": "V",
                               "text": "will be",
-                              "translation": "なるであろう",
-                              "tense": "future",
+                              "translation": "なるだろう",
+                              "tense": "present",
                               "aspect": "simple",
                               "mood": "indicative",
                               "voice": "none"
@@ -4426,7 +4883,7 @@
                             {
                               "type": "C",
                               "text": "free",
-                              "translation": "自由に"
+                              "translation": "自由な"
                             },
                             {
                               "type": "M",
@@ -4455,7 +4912,7 @@
                   "id": "00004-007-000",
                   "format": "sentence",
                   "text": "And this will be the day -- this will be the day when all of God's children will be able to sing with new meaning:",
-                  "pattern": "SVC, SVC",
+                  "pattern": "SVOC",
                   "elements": [
                     {
                       "type": "M",
@@ -4470,70 +4927,51 @@
                     {
                       "type": "V",
                       "text": "will be",
-                      "translation": "なるであろう",
-                      "tense": "future",
+                      "translation": "であるだろう",
+                      "tense": "present",
                       "aspect": "simple",
                       "mood": "indicative",
                       "voice": "none"
                     },
                     {
-                      "type": "C",
+                      "type": "O",
                       "text": "the day",
-                      "translation": "その日"
-                    }
-                  ],
-                  "subsentences": [
+                      "translation": "その日を"
+                    },
                     {
-                      "format": "sentence",
-                      "text": "this will be the day when all of God's children will be able to sing with new meaning:",
-                      "pattern": "SVC",
-                      "elements": [
+                      "type": "C",
+                      "text": "this will be the day when all of God's children will be able to sing with new meaning",
+                      "translation": "神のすべての子どもたちが新たな意味を込めて歌うことができる日である",
+                      "subclauses": [
                         {
-                          "type": "S",
-                          "text": "this",
-                          "translation": "これが"
-                        },
-                        {
-                          "type": "V",
-                          "text": "will be",
-                          "translation": "なるであろう",
-                          "tense": "future",
-                          "aspect": "simple",
-                          "mood": "indicative",
-                          "voice": "none"
-                        },
-                        {
-                          "type": "C",
-                          "text": "the day when all of God's children will be able to sing with new meaning",
-                          "translation": "神のすべての子どもたちが新たな意味を込めて歌うことができる日",
-                          "subclauses": [
+                          "format": "clause",
+                          "text": "when all of God's children will be able to sing with new meaning",
+                          "relation": "time",
+                          "pattern": "SV",
+                          "elements": [
                             {
-                              "format": "clause",
-                              "text": "when all of God's children will be able to sing with new meaning",
-                              "relation": "time",
-                              "conjunction": "when",
-                              "pattern": "SVO",
-                              "elements": [
-                                {
-                                  "type": "S",
-                                  "text": "all of God's children",
-                                  "translation": "神のすべての子どもたちが"
-                                },
-                                {
-                                  "type": "V",
-                                  "text": "will be able to sing",
-                                  "translation": "歌うことができる",
-                                  "tense": "future",
-                                  "aspect": "simple",
-                                  "mood": "indicative",
-                                  "voice": "active"
-                                },
-                                {
-                                  "type": "M",
-                                  "text": "with new meaning",
-                                  "translation": "新たな意味を込めて"
-                                }
-                              ]
+                              "type": "M",
+                              "text": "when",
+                              "translation": "その時に"
+                            },
+                            {
+                              "type": "S",
+                              "text": "all of God's children",
+                              "translation": "神のすべての子どもたちが"
+                            },
+                            {
+                              "type": "V",
+                              "text": "will be able to sing",
+                              "translation": "歌うことができるだろう",
+                              "tense": "present",
+                              "aspect": "simple",
+                              "mood": "indicative",
+                              "voice": "active"
+                            },
+                            {
+                              "type": "M",
+                              "text": "with new meaning",
+                              "translation": "新たな意味を込めて"
                             }
                           ]
                         }
@@ -4575,13 +5013,13 @@
                     },
                     {
                       "type": "O",
-                      "text": "of thee",
+                      "text": "thee",
                       "translation": "お前を"
                     },
                     {
                       "type": "M",
                       "text": "My country 'tis of thee, sweet land of liberty",
-                      "translation": "我が国よ、まさにお前は自由の甘き地"
+                      "translation": "我が国よ、自由の甘き地である"
                     }
                   ]
                 }
@@ -4596,31 +5034,31 @@
                   "id": "00004-009-000",
                   "format": "sentence",
                   "text": "Land where my fathers died, land of the Pilgrim's pride, From every mountainside, let freedom ring!",
-                  "pattern": "SVOC",
+                  "pattern": "SV",
                   "elements": [
                     {
                       "type": "M",
-                      "text": "Land where my fathers died, land of the Pilgrim's pride, From every mountainside",
-                      "translation": "我が先祖が死んだ地、巡礼者の誇りの地、あらゆる山の峰から"
+                      "text": "Land where my fathers died",
+                      "translation": "我が先祖が死んだ地"
+                    },
+                    {
+                      "type": "M",
+                      "text": "land of the Pilgrim's pride",
+                      "translation": "巡礼者の誇りの地"
+                    },
+                    {
+                      "type": "M",
+                      "text": "From every mountainside",
+                      "translation": "あらゆる山の峰から"
                     },
                     {
                       "type": "V",
-                      "text": "Let",
-                      "translation": "仕向けよう",
+                      "text": "let freedom ring",
+                      "translation": "自由の鐘を鳴らそう",
                       "tense": "present",
                       "aspect": "simple",
                       "mood": "imperative",
                       "voice": "active"
-                    },
-                    {
-                      "type": "O",
-                      "text": "freedom",
-                      "translation": "自由が"
-                    },
-                    {
-                      "type": "C",
-                      "text": "ring",
-                      "translation": "鳴るように"
                     }
                   ]
                 }
@@ -4664,7 +5102,7 @@
                     {
                       "type": "C",
                       "text": "true",
-                      "translation": "実現する"
+                      "translation": "真実である"
                     }
                   ],
                   "subclauses": [
@@ -4672,7 +5110,6 @@
                       "format": "clause",
                       "text": "if America is to be a great nation",
                       "relation": "condition",
-                      "conjunction": "if",
                       "pattern": "SVC",
                       "elements": [
                         {
@@ -4688,7 +5125,7 @@
                         {
                           "type": "V",
                           "text": "is to be",
-                          "translation": "なるべきである",
+                          "translation": "であることになっている",
                           "tense": "present",
                           "aspect": "simple",
                           "mood": "indicative",
@@ -4714,7 +5151,7 @@
                   "id": "00004-011-000",
                   "format": "sentence",
                   "text": "And so let freedom ring from the prodigious hilltops of New Hampshire.",
-                  "pattern": "SVOC",
+                  "pattern": "SV",
                   "elements": [
                     {
                       "type": "M",
@@ -4723,22 +5160,12 @@
                     },
                     {
                       "type": "V",
-                      "text": "Let",
-                      "translation": "仕向けよう",
+                      "text": "let freedom ring",
+                      "translation": "自由の鐘を鳴らそう",
                       "tense": "present",
                       "aspect": "simple",
                       "mood": "imperative",
                       "voice": "active"
-                    },
-                    {
-                      "type": "O",
-                      "text": "freedom",
-                      "translation": "自由が"
-                    },
-                    {
-                      "type": "C",
-                      "text": "ring",
-                      "translation": "鳴るように"
                     },
                     {
                       "type": "M",
@@ -4758,26 +5185,16 @@
                   "id": "00004-012-000",
                   "format": "sentence",
                   "text": "Let freedom ring from the mighty mountains of New York.",
-                  "pattern": "SVOC",
+                  "pattern": "SV",
                   "elements": [
                     {
                       "type": "V",
-                      "text": "Let",
-                      "translation": "仕向けよう",
+                      "text": "Let freedom ring",
+                      "translation": "自由の鐘を鳴らそう",
                       "tense": "present",
                       "aspect": "simple",
                       "mood": "imperative",
                       "voice": "active"
-                    },
-                    {
-                      "type": "O",
-                      "text": "freedom",
-                      "translation": "自由が"
-                    },
-                    {
-                      "type": "C",
-                      "text": "ring",
-                      "translation": "鳴るように"
                     },
                     {
                       "type": "M",
@@ -4797,26 +5214,16 @@
                   "id": "00004-013-000",
                   "format": "sentence",
                   "text": "Let freedom ring from the heightening Alleghenies of Pennsylvania.",
-                  "pattern": "SVOC",
+                  "pattern": "SV",
                   "elements": [
                     {
                       "type": "V",
-                      "text": "Let",
-                      "translation": "仕向けよう",
+                      "text": "Let freedom ring",
+                      "translation": "自由の鐘を鳴らそう",
                       "tense": "present",
                       "aspect": "simple",
                       "mood": "imperative",
                       "voice": "active"
-                    },
-                    {
-                      "type": "O",
-                      "text": "freedom",
-                      "translation": "自由が"
-                    },
-                    {
-                      "type": "C",
-                      "text": "ring",
-                      "translation": "鳴るように"
                     },
                     {
                       "type": "M",
@@ -4836,26 +5243,16 @@
                   "id": "00004-014-000",
                   "format": "sentence",
                   "text": "Let freedom ring from the snow-capped Rockies of Colorado.",
-                  "pattern": "SVOC",
+                  "pattern": "SV",
                   "elements": [
                     {
                       "type": "V",
-                      "text": "Let",
-                      "translation": "仕向けよう",
+                      "text": "Let freedom ring",
+                      "translation": "自由の鐘を鳴らそう",
                       "tense": "present",
                       "aspect": "simple",
                       "mood": "imperative",
                       "voice": "active"
-                    },
-                    {
-                      "type": "O",
-                      "text": "freedom",
-                      "translation": "自由が"
-                    },
-                    {
-                      "type": "C",
-                      "text": "ring",
-                      "translation": "鳴るように"
                     },
                     {
                       "type": "M",
@@ -4875,26 +5272,16 @@
                   "id": "00004-015-000",
                   "format": "sentence",
                   "text": "Let freedom ring from the curvaceous slopes of California.",
-                  "pattern": "SVOC",
+                  "pattern": "SV",
                   "elements": [
                     {
                       "type": "V",
-                      "text": "Let",
-                      "translation": "仕向けよう",
+                      "text": "Let freedom ring",
+                      "translation": "自由の鐘を鳴らそう",
                       "tense": "present",
                       "aspect": "simple",
                       "mood": "imperative",
                       "voice": "active"
-                    },
-                    {
-                      "type": "O",
-                      "text": "freedom",
-                      "translation": "自由が"
-                    },
-                    {
-                      "type": "C",
-                      "text": "ring",
-                      "translation": "鳴るように"
                     },
                     {
                       "type": "M",
@@ -4949,7 +5336,7 @@
                     {
                       "type": "V",
                       "text": "Let",
-                      "translation": "させよう",
+                      "translation": "鳴らそう",
                       "tense": "present",
                       "aspect": "simple",
                       "mood": "imperative",
@@ -4958,7 +5345,7 @@
                     {
                       "type": "O",
                       "text": "freedom",
-                      "translation": "自由が"
+                      "translation": "自由を"
                     },
                     {
                       "type": "C",
@@ -4988,7 +5375,7 @@
                     {
                       "type": "V",
                       "text": "Let",
-                      "translation": "させよう",
+                      "translation": "鳴らそう",
                       "tense": "present",
                       "aspect": "simple",
                       "mood": "imperative",
@@ -4997,7 +5384,7 @@
                     {
                       "type": "O",
                       "text": "freedom",
-                      "translation": "自由が"
+                      "translation": "自由を"
                     },
                     {
                       "type": "C",
@@ -5027,7 +5414,7 @@
                     {
                       "type": "V",
                       "text": "Let",
-                      "translation": "させよう",
+                      "translation": "鳴らそう",
                       "tense": "present",
                       "aspect": "simple",
                       "mood": "imperative",
@@ -5036,7 +5423,7 @@
                     {
                       "type": "O",
                       "text": "freedom",
-                      "translation": "自由が"
+                      "translation": "自由を"
                     },
                     {
                       "type": "C",
@@ -5070,8 +5457,8 @@
                     },
                     {
                       "type": "V",
-                      "text": "Let",
-                      "translation": "させよう",
+                      "text": "let",
+                      "translation": "鳴らそう",
                       "tense": "present",
                       "aspect": "simple",
                       "mood": "imperative",
@@ -5080,7 +5467,7 @@
                     {
                       "type": "O",
                       "text": "freedom",
-                      "translation": "自由が"
+                      "translation": "自由を"
                     },
                     {
                       "type": "C",
@@ -5120,46 +5507,16 @@
                     {
                       "type": "V",
                       "text": "will be able to speed up",
-                      "translation": "早めることができるだろう",
-                      "tense": "future",
+                      "translation": "早めることができる",
+                      "tense": "present",
                       "aspect": "simple",
                       "mood": "indicative",
                       "voice": "active"
                     },
                     {
                       "type": "O",
-                      "text": "that day when all of God's children, black men and white men, Jews and Gentiles, Protestants and Catholics, will be able to join hands and sing in the words of the old Negro spiritual",
-                      "translation": "神のすべての子どもたち、黒人も白人も、ユダヤ人も異邦人も、プロテスタントもカトリックも、手を取り合い、古い黒人霊歌の言葉を歌うことができるその日を",
-                      "subclauses": [
-                        {
-                          "format": "clause",
-                          "text": "when all of God's children, black men and white men, Jews and Gentiles, Protestants and Catholics, will be able to join hands and sing in the words of the old Negro spiritual",
-                          "relation": "time",
-                          "conjunction": "when",
-                          "pattern": "SV",
-                          "elements": [
-                            {
-                              "type": "S",
-                              "text": "all of God's children, black men and white men, Jews and Gentiles, Protestants and Catholics",
-                              "translation": "神のすべての子どもたち、黒人も白人も、ユダヤ人も異邦人も、プロテスタントもカトリックも"
-                            },
-                            {
-                              "type": "V",
-                              "text": "will be able to join and sing",
-                              "translation": "手を取り合い歌うことができるだろう",
-                              "tense": "future",
-                              "aspect": "simple",
-                              "mood": "indicative",
-                              "voice": "active"
-                            },
-                            {
-                              "type": "M",
-                              "text": "in the words of the old Negro spiritual",
-                              "translation": "古い黒人霊歌の言葉で"
-                            }
-                          ]
-                        }
-                      ]
+                      "text": "that day",
+                      "translation": "その日を"
                     }
                   ],
                   "subclauses": [
@@ -5167,13 +5524,12 @@
                       "format": "clause",
                       "text": "when this happens",
                       "relation": "time",
-                      "conjunction": "when",
                       "pattern": "SV",
                       "elements": [
                         {
                           "type": "M",
                           "text": "when",
-                          "translation": "〜のとき"
+                          "translation": "〜するとき"
                         },
                         {
                           "type": "S",
@@ -5195,18 +5551,17 @@
                       "format": "clause",
                       "text": "when we allow freedom ring",
                       "relation": "time",
-                      "conjunction": "when",
                       "pattern": "SVO",
                       "elements": [
                         {
                           "type": "M",
                           "text": "when",
-                          "translation": "〜のとき"
+                          "translation": "〜するとき"
                         },
                         {
                           "type": "S",
                           "text": "we",
-                          "translation": "私たちが"
+                          "translation": "私たちは"
                         },
                         {
                           "type": "V",
@@ -5220,31 +5575,30 @@
                         {
                           "type": "O",
                           "text": "freedom ring",
-                          "translation": "自由が鳴ることを"
+                          "translation": "自由の鐘が鳴ること"
                         }
                       ]
                     },
                     {
                       "format": "clause",
-                      "text": "when we let it ring from every village and every hamlet",
+                      "text": "when we let it ring from every village and every hamlet, from every state and every city",
                       "relation": "time",
-                      "conjunction": "when",
-                      "pattern": "SVOC",
+                      "pattern": "SVO",
                       "elements": [
                         {
                           "type": "M",
                           "text": "when",
-                          "translation": "〜のとき"
+                          "translation": "〜するとき"
                         },
                         {
                           "type": "S",
                           "text": "we",
-                          "translation": "私たちが"
+                          "translation": "私たちは"
                         },
                         {
                           "type": "V",
                           "text": "let",
-                          "translation": "させる",
+                          "translation": "鳴らすことを許す",
                           "tense": "present",
                           "aspect": "simple",
                           "mood": "indicative",
@@ -5252,27 +5606,40 @@
                         },
                         {
                           "type": "O",
-                          "text": "it",
-                          "translation": "それを"
-                        },
-                        {
-                          "type": "C",
-                          "text": "ring from every village and every hamlet",
-                          "translation": "あらゆる村や小さな集落から鳴るように"
+                          "text": "it ring from every village and every hamlet, from every state and every city",
+                          "translation": "それをあらゆる村や小さな集落、あらゆる州や都市から鳴らすこと"
                         }
                       ]
                     },
                     {
                       "format": "clause",
-                      "text": "from every state and every city",
-                      "relation": "place",
-                      "conjunction": "",
-                      "pattern": "other",
+                      "text": "when all of God's children, black men and white men, Jews and Gentiles, Protestants and Catholics, will be able to join hands and sing in the words of the old Negro spiritual",
+                      "relation": "time",
+                      "pattern": "SV",
                       "elements": [
                         {
                           "type": "M",
-                          "text": "from every state and every city",
-                          "translation": "あらゆる州や都市から"
+                          "text": "when",
+                          "translation": "〜するとき"
+                        },
+                        {
+                          "type": "S",
+                          "text": "all of God's children, black men and white men, Jews and Gentiles, Protestants and Catholics",
+                          "translation": "神のすべての子どもたち、黒人も白人も、ユダヤ人も異邦人も、プロテスタントもカトリックも"
+                        },
+                        {
+                          "type": "V",
+                          "text": "will be able to join hands and sing",
+                          "translation": "手を取り合い歌うことができる",
+                          "tense": "present",
+                          "aspect": "simple",
+                          "mood": "indicative",
+                          "voice": "active"
+                        },
+                        {
+                          "type": "M",
+                          "text": "in the words of the old Negro spiritual",
+                          "translation": "古い黒人霊歌の言葉で"
                         }
                       ]
                     }
@@ -5357,13 +5724,8 @@
                     },
                     {
                       "type": "C",
-                      "text": "free",
-                      "translation": "自由である"
-                    },
-                    {
-                      "type": "M",
-                      "text": "at last",
-                      "translation": "ついに"
+                      "text": "free at last",
+                      "translation": "ついに自由である"
                     }
                   ]
                 }

@@ -62,12 +62,12 @@
                     {
                       "type": "M",
                       "text": "Four score and seven years ago",
-                      "translation": "八十七年前に"
+                      "translation": "87年前"
                     },
                     {
                       "type": "S",
                       "text": "our fathers",
-                      "translation": "我々の父祖たちは"
+                      "translation": "我々の父祖たち"
                     },
                     {
                       "type": "V",
@@ -92,9 +92,13 @@
                           "format": "clause",
                           "text": "that all men are created equal",
                           "relation": "apposition",
-                          "conjunction": "that",
                           "pattern": "SVC",
                           "elements": [
+                            {
+                              "type": "M",
+                              "text": "that",
+                              "translation": "〜ということ"
+                            },
                             {
                               "type": "S",
                               "text": "all men",
@@ -102,17 +106,17 @@
                             },
                             {
                               "type": "V",
-                              "text": "are created",
-                              "translation": "創造されている",
+                              "text": "are",
+                              "translation": "存在する",
                               "tense": "present",
                               "aspect": "simple",
                               "mood": "indicative",
-                              "voice": "passive"
+                              "voice": "none"
                             },
                             {
                               "type": "C",
-                              "text": "equal",
-                              "translation": "平等に"
+                              "text": "created equal",
+                              "translation": "平等に造られている"
                             }
                           ]
                         }
@@ -136,7 +140,7 @@
                   "id": "00000-003-000",
                   "format": "sentence",
                   "text": "Now we are engaged in a great civil war, testing whether that nation, or any nation so conceived and so dedicated, can long endure.",
-                  "pattern": "SVC",
+                  "pattern": "SV",
                   "elements": [
                     {
                       "type": "M",
@@ -158,7 +162,7 @@
                       "voice": "passive"
                     },
                     {
-                      "type": "C",
+                      "type": "M",
                       "text": "in a great civil war",
                       "translation": "大きな内戦に"
                     },
@@ -171,13 +175,17 @@
                           "format": "clause",
                           "text": "whether that nation, or any nation so conceived and so dedicated, can long endure",
                           "relation": "content",
-                          "conjunction": "whether",
                           "pattern": "SV",
                           "elements": [
                             {
+                              "type": "M",
+                              "text": "whether",
+                              "translation": "かどうか"
+                            },
+                            {
                               "type": "S",
                               "text": "that nation, or any nation so conceived and so dedicated",
-                              "translation": "その国、またはそのように構想され捧げられたどの国も"
+                              "translation": "その国、またはそのように考えられ、そのようにささげられたどの国も"
                             },
                             {
                               "type": "V",
@@ -264,13 +272,17 @@
                           "format": "clause",
                           "text": "who here gave their lives that that nation might live",
                           "relation": "apposition",
-                          "conjunction": "who",
                           "pattern": "SVO",
                           "elements": [
                             {
                               "type": "S",
                               "text": "who",
-                              "translation": "その人々は"
+                              "translation": "その人たちは"
+                            },
+                            {
+                              "type": "M",
+                              "text": "here",
+                              "translation": "ここで"
                             },
                             {
                               "type": "V",
@@ -288,11 +300,6 @@
                             },
                             {
                               "type": "M",
-                              "text": "here",
-                              "translation": "ここで"
-                            },
-                            {
-                              "type": "M",
                               "text": "that that nation might live",
                               "translation": "その国が生き続けるために",
                               "subclauses": [
@@ -300,19 +307,23 @@
                                   "format": "clause",
                                   "text": "that that nation might live",
                                   "relation": "purpose",
-                                  "conjunction": "that",
                                   "pattern": "SV",
                                   "elements": [
                                     {
+                                      "type": "M",
+                                      "text": "that",
+                                      "translation": "〜するために"
+                                    },
+                                    {
                                       "type": "S",
                                       "text": "that nation",
-                                      "translation": "その国が"
+                                      "translation": "その国は"
                                     },
                                     {
                                       "type": "V",
                                       "text": "might live",
-                                      "translation": "生き続けるかもしれない",
-                                      "tense": "present",
+                                      "translation": "生きることができる",
+                                      "tense": "past",
                                       "aspect": "simple",
                                       "mood": "subjunctive",
                                       "voice": "active"
@@ -348,7 +359,7 @@
                     {
                       "type": "V",
                       "text": "is",
-                      "translation": "である",
+                      "translation": "状態である",
                       "tense": "present",
                       "aspect": "simple",
                       "mood": "indicative",
@@ -368,18 +379,22 @@
                           "format": "clause",
                           "text": "that we should do this",
                           "relation": "apposition",
-                          "conjunction": "that",
                           "pattern": "SVO",
                           "elements": [
                             {
+                              "type": "M",
+                              "text": "that",
+                              "translation": "〜ということ"
+                            },
+                            {
                               "type": "S",
                               "text": "we",
-                              "translation": "私たちが"
+                              "translation": "私たちは"
                             },
                             {
                               "type": "V",
                               "text": "should do",
-                              "translation": "行うべきである",
+                              "translation": "すべきである",
                               "tense": "present",
                               "aspect": "simple",
                               "mood": "subjunctive",
@@ -431,12 +446,22 @@
                     },
                     {
                       "type": "V",
-                      "text": "can not dedicate, can not consecrate, can not hallow",
-                      "translation": "ささげることはできない、聖別することはできない、神聖なものとすることはできない",
+                      "text": "can not dedicate",
+                      "translation": "ささげることができない",
                       "tense": "present",
                       "aspect": "simple",
                       "mood": "indicative",
                       "voice": "active"
+                    },
+                    {
+                      "type": "M",
+                      "text": "—we can not consecrate—",
+                      "translation": "ささげることもできない"
+                    },
+                    {
+                      "type": "M",
+                      "text": "—we can not hallow—",
+                      "translation": "神聖なものとすることもできない"
                     },
                     {
                       "type": "O",
@@ -461,19 +486,18 @@
                     {
                       "type": "S",
                       "text": "The brave men, living and dead, who struggled here",
-                      "translation": "ここで戦った勇敢な人々――生きている者も、亡くなった者も――が",
+                      "translation": "ここで戦った勇敢な人々（生きている者も亡くなった者も）",
                       "subclauses": [
                         {
                           "format": "clause",
                           "text": "who struggled here",
                           "relation": "apposition",
-                          "conjunction": "who",
                           "pattern": "SV",
                           "elements": [
                             {
                               "type": "S",
                               "text": "who",
-                              "translation": "その人々は"
+                              "translation": "その人たちは"
                             },
                             {
                               "type": "V",
@@ -505,7 +529,7 @@
                     {
                       "type": "O",
                       "text": "it",
-                      "translation": "この地を"
+                      "translation": "それを"
                     },
                     {
                       "type": "M",
@@ -534,9 +558,9 @@
                     },
                     {
                       "type": "V",
-                      "text": "will little note, nor long remember",
-                      "translation": "ほとんど注意を払わず、長く記憶することもないでしょう",
-                      "tense": "future",
+                      "text": "will little note",
+                      "translation": "ほとんど注意を払わないだろう",
+                      "tense": "present",
                       "aspect": "simple",
                       "mood": "indicative",
                       "voice": "active"
@@ -544,19 +568,23 @@
                     {
                       "type": "O",
                       "text": "what we say here",
-                      "translation": "私たちがここで語ることに",
+                      "translation": "私たちがここで語ること",
                       "subclauses": [
                         {
                           "format": "clause",
                           "text": "what we say here",
                           "relation": "content",
-                          "conjunction": "what",
                           "pattern": "SVO",
                           "elements": [
                             {
+                              "type": "M",
+                              "text": "what",
+                              "translation": "〜すること"
+                            },
+                            {
                               "type": "S",
                               "text": "we",
-                              "translation": "私たちが"
+                              "translation": "私たちは"
                             },
                             {
                               "type": "V",
@@ -568,7 +596,7 @@
                               "voice": "active"
                             },
                             {
-                              "type": "O",
+                              "type": "M",
                               "text": "here",
                               "translation": "ここで"
                             }
@@ -576,63 +604,135 @@
                         }
                       ]
                     }
-                  ]
-                },
-                {
-                  "id": "00000-009-001",
-                  "format": "sentence",
-                  "text": "but it can never forget what they did here.",
-                  "pattern": "SVO",
-                  "elements": [
+                  ],
+                  "subclauses": [
                     {
-                      "type": "M",
-                      "text": "but",
-                      "translation": "しかし"
-                    },
-                    {
-                      "type": "S",
-                      "text": "it",
-                      "translation": "それは"
-                    },
-                    {
-                      "type": "V",
-                      "text": "can never forget",
-                      "translation": "決して忘れることはできません",
-                      "tense": "present",
-                      "aspect": "simple",
-                      "mood": "indicative",
-                      "voice": "active"
-                    },
-                    {
-                      "type": "O",
-                      "text": "what they did here",
-                      "translation": "彼らがここで成し遂げたことを",
-                      "subclauses": [
+                      "format": "clause",
+                      "text": "nor long remember what we say here",
+                      "relation": "contrast",
+                      "pattern": "SVO",
+                      "elements": [
                         {
-                          "format": "clause",
+                          "type": "M",
+                          "text": "nor",
+                          "translation": "〜もしない"
+                        },
+                        {
+                          "type": "S",
+                          "text": "the world",
+                          "translation": "世界は"
+                        },
+                        {
+                          "type": "V",
+                          "text": "long remember",
+                          "translation": "長く記憶しない",
+                          "tense": "present",
+                          "aspect": "simple",
+                          "mood": "indicative",
+                          "voice": "active"
+                        },
+                        {
+                          "type": "O",
+                          "text": "what we say here",
+                          "translation": "私たちがここで語ること",
+                          "subclauses": [
+                            {
+                              "format": "clause",
+                              "text": "what we say here",
+                              "relation": "content",
+                              "pattern": "SVO",
+                              "elements": [
+                                {
+                                  "type": "M",
+                                  "text": "what",
+                                  "translation": "〜すること"
+                                },
+                                {
+                                  "type": "S",
+                                  "text": "we",
+                                  "translation": "私たちは"
+                                },
+                                {
+                                  "type": "V",
+                                  "text": "say",
+                                  "translation": "語る",
+                                  "tense": "present",
+                                  "aspect": "simple",
+                                  "mood": "indicative",
+                                  "voice": "active"
+                                },
+                                {
+                                  "type": "M",
+                                  "text": "here",
+                                  "translation": "ここで"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "format": "clause",
+                      "text": "but it can never forget what they did here",
+                      "relation": "contrast",
+                      "pattern": "SVO",
+                      "elements": [
+                        {
+                          "type": "M",
+                          "text": "but",
+                          "translation": "しかし"
+                        },
+                        {
+                          "type": "S",
+                          "text": "it",
+                          "translation": "それは"
+                        },
+                        {
+                          "type": "V",
+                          "text": "can never forget",
+                          "translation": "決して忘れることができない",
+                          "tense": "present",
+                          "aspect": "simple",
+                          "mood": "indicative",
+                          "voice": "active"
+                        },
+                        {
+                          "type": "O",
                           "text": "what they did here",
-                          "relation": "content",
-                          "conjunction": "what",
-                          "pattern": "SVO",
-                          "elements": [
+                          "translation": "彼らがここで成し遂げたこと",
+                          "subclauses": [
                             {
-                              "type": "S",
-                              "text": "they",
-                              "translation": "彼らが"
-                            },
-                            {
-                              "type": "V",
-                              "text": "did",
-                              "translation": "成し遂げた",
-                              "tense": "past",
-                              "aspect": "simple",
-                              "mood": "indicative",
-                              "voice": "active"
-                            },
-                            {
-                              "type": "O",
-                              "text": "here",
-                              "translation": "ここで"
+                              "format": "clause",
+                              "text": "what they did here",
+                              "relation": "content",
+                              "pattern": "SVO",
+                              "elements": [
+                                {
+                                  "type": "M",
+                                  "text": "what",
+                                  "translation": "〜すること"
+                                },
+                                {
+                                  "type": "S",
+                                  "text": "they",
+                                  "translation": "彼らは"
+                                },
+                                {
+                                  "type": "V",
+                                  "text": "did",
+                                  "translation": "成し遂げた",
+                                  "tense": "past",
+                                  "aspect": "simple",
+                                  "mood": "indicative",
+                                  "voice": "active"
+                                },
+                                {
+                                  "type": "M",
+                                  "text": "here",
+                                  "translation": "ここで"
+                                }
+                              ]
                             }
                           ]
                         }
@@ -669,20 +769,58 @@
                     },
                     {
                       "type": "C",
-                      "text": "for us the living, rather, to be dedicated here to the unfinished work which they who fought here have thus far so nobly advanced",
-                      "translation": "むしろ、私たち生きている者が、ここで戦った人々がこれまで高貴に進めてきた未完の事業に、ここで身をささげるべきである",
+                      "text": "for us the living",
+                      "translation": "私たち生きている者のための"
+                    },
+                    {
+                      "type": "M",
+                      "text": "rather",
+                      "translation": "むしろ"
+                    },
+                    {
+                      "type": "M",
+                      "text": "to be dedicated here to the unfinished work which they who fought here have thus far so nobly advanced",
+                      "translation": "ここで戦った人々がこれまで高貴に進めてきた未完の事業にここで身をささげること",
                       "subclauses": [
                         {
                           "format": "clause",
                           "text": "which they who fought here have thus far so nobly advanced",
                           "relation": "apposition",
-                          "conjunction": "which",
                           "pattern": "SVO",
                           "elements": [
                             {
                               "type": "S",
                               "text": "they who fought here",
-                              "translation": "ここで戦った彼らが"
+                              "translation": "ここで戦った彼らは",
+                              "subclauses": [
+                                {
+                                  "format": "clause",
+                                  "text": "who fought here",
+                                  "relation": "apposition",
+                                  "pattern": "SV",
+                                  "elements": [
+                                    {
+                                      "type": "S",
+                                      "text": "who",
+                                      "translation": "その人たちは"
+                                    },
+                                    {
+                                      "type": "V",
+                                      "text": "fought",
+                                      "translation": "戦った",
+                                      "tense": "past",
+                                      "aspect": "simple",
+                                      "mood": "indicative",
+                                      "voice": "active"
+                                    },
+                                    {
+                                      "type": "M",
+                                      "text": "here",
+                                      "translation": "ここで"
+                                    }
+                                  ]
+                                }
+                              ]
                             },
                             {
                               "type": "V",
@@ -695,6 +833,11 @@
                             },
                             {
                               "type": "O",
+                              "text": "the unfinished work",
+                              "translation": "未完の事業を"
+                            },
+                            {
+                              "type": "M",
                               "text": "thus far so nobly",
                               "translation": "これまで高貴に"
                             }
@@ -732,21 +875,40 @@
                       "voice": "none"
                     },
                     {
+                      "type": "M",
+                      "text": "rather",
+                      "translation": "むしろ"
+                    },
+                    {
                       "type": "C",
-                      "text": "rather for us to be here dedicated to the great task remaining before us—that from these honored dead we take increased devotion to that cause for which they gave the last full measure of devotion—that we here highly resolve that these dead shall not have died in vain—that this nation, under God, shall have a new birth of freedom—and that government of the people, by the people, for the people, shall not perish from the earth",
-                      "translation": "むしろ、私たちがここで、私たちの前に残された大いなる課題に身をささげるべきである――すなわち、これらの誉れ高き死者たちから、彼らがそのために最後の全てをささげた大義への、より深い献身を受け継ぐこと――ここで、これらの死者が無駄に死んだのではないと固く決意すること――この国が、神のもとで、自由の新たな誕生を遂げること――そして、人民の、人民による、人民のための政治が、地上から滅びることのないようにすること",
+                      "text": "for us to be here dedicated to the great task remaining before us",
+                      "translation": "私たちがここで、私たちの前に残された大いなる課題に身をささげること"
+                    },
+                    {
+                      "type": "M",
+                      "text": "—that from these honored dead we take increased devotion to that cause for which they gave the last full measure of devotion",
+                      "translation": "これらの誉れ高き死者たちから、彼らがそのために最後の全てをささげた大義への、より深い献身を受け継ぐこと",
                       "subclauses": [
                         {
                           "format": "clause",
                           "text": "that from these honored dead we take increased devotion to that cause for which they gave the last full measure of devotion",
                           "relation": "apposition",
-                          "conjunction": "that",
                           "pattern": "SVO",
                           "elements": [
                             {
+                              "type": "M",
+                              "text": "that",
+                              "translation": "〜ということ"
+                            },
+                            {
+                              "type": "M",
+                              "text": "from these honored dead",
+                              "translation": "これらの誉れ高き死者たちから"
+                            },
+                            {
                               "type": "S",
                               "text": "we",
-                              "translation": "私たちが"
+                              "translation": "私たちは"
                             },
                             {
                               "type": "V",
@@ -759,32 +921,77 @@
                             },
                             {
                               "type": "O",
-                              "text": "increased devotion to that cause for which they gave the last full measure of devotion",
-                              "translation": "彼らがそのために最後の全てをささげた大義への、より深い献身を"
+                              "text": "increased devotion",
+                              "translation": "より深い献身を"
                             },
                             {
                               "type": "M",
-                              "text": "from these honored dead",
-                              "translation": "これらの誉れ高き死者たちから"
+                              "text": "to that cause for which they gave the last full measure of devotion",
+                              "translation": "彼らが最後の全てをささげた大義への",
+                              "subclauses": [
+                                {
+                                  "format": "clause",
+                                  "text": "for which they gave the last full measure of devotion",
+                                  "relation": "apposition",
+                                  "pattern": "SVO",
+                                  "elements": [
+                                    {
+                                      "type": "M",
+                                      "text": "for which",
+                                      "translation": "〜のために"
+                                    },
+                                    {
+                                      "type": "S",
+                                      "text": "they",
+                                      "translation": "彼らは"
+                                    },
+                                    {
+                                      "type": "V",
+                                      "text": "gave",
+                                      "translation": "ささげた",
+                                      "tense": "past",
+                                      "aspect": "simple",
+                                      "mood": "indicative",
+                                      "voice": "active"
+                                    },
+                                    {
+                                      "type": "O",
+                                      "text": "the last full measure of devotion",
+                                      "translation": "最後の全ての献身を"
+                                    }
+                                  ]
+                                }
+                              ]
                             }
                           ]
-                        },
+                        }
+                      ]
+                    },
+                    {
+                      "type": "M",
+                      "text": "—that we here highly resolve that these dead shall not have died in vain",
+                      "translation": "ここでこれらの死者が無駄に死んだのではないと固く決意すること",
+                      "subclauses": [
                         {
                           "format": "clause",
                           "text": "that we here highly resolve that these dead shall not have died in vain",
                           "relation": "apposition",
-                          "conjunction": "that",
                           "pattern": "SVO",
                           "elements": [
                             {
+                              "type": "M",
+                              "text": "that",
+                              "translation": "〜ということ"
+                            },
+                            {
                               "type": "S",
                               "text": "we",
-                              "translation": "私たちが"
+                              "translation": "私たちは"
                             },
                             {
                               "type": "V",
-                              "text": "resolve",
-                              "translation": "決意する",
+                              "text": "highly resolve",
+                              "translation": "固く決意する",
                               "tense": "present",
                               "aspect": "simple",
                               "mood": "indicative",
@@ -793,25 +1000,29 @@
                             {
                               "type": "O",
                               "text": "that these dead shall not have died in vain",
-                              "translation": "これらの死者が無駄に死んだのではないことを",
+                              "translation": "これらの死者が無駄に死んだのではないこと",
                               "subclauses": [
                                 {
                                   "format": "clause",
                                   "text": "that these dead shall not have died in vain",
                                   "relation": "content",
-                                  "conjunction": "that",
                                   "pattern": "SV",
                                   "elements": [
                                     {
+                                      "type": "M",
+                                      "text": "that",
+                                      "translation": "〜ということ"
+                                    },
+                                    {
                                       "type": "S",
                                       "text": "these dead",
-                                      "translation": "これらの死者が"
+                                      "translation": "これらの死者は"
                                     },
                                     {
                                       "type": "V",
                                       "text": "shall not have died",
-                                      "translation": "死んだのではないだろう",
-                                      "tense": "future",
+                                      "translation": "無駄に死んでいないだろう",
+                                      "tense": "present",
                                       "aspect": "perfect",
                                       "mood": "indicative",
                                       "voice": "active"
@@ -824,36 +1035,37 @@
                                   ]
                                 }
                               ]
-                            },
-                            {
-                              "type": "M",
-                              "text": "here",
-                              "translation": "ここで"
-                            },
-                            {
-                              "type": "M",
-                              "text": "highly",
-                              "translation": "固く"
                             }
                           ]
-                        },
+                        }
+                      ]
+                    },
+                    {
+                      "type": "M",
+                      "text": "—that this nation, under God, shall have a new birth of freedom",
+                      "translation": "この国が神のもとで自由の新たな誕生を遂げること",
+                      "subclauses": [
                         {
                           "format": "clause",
                           "text": "that this nation, under God, shall have a new birth of freedom",
                           "relation": "apposition",
-                          "conjunction": "that",
                           "pattern": "SVO",
                           "elements": [
                             {
+                              "type": "M",
+                              "text": "that",
+                              "translation": "〜ということ"
+                            },
+                            {
                               "type": "S",
                               "text": "this nation, under God",
-                              "translation": "この国が、神のもとで"
+                              "translation": "この国は神のもとで"
                             },
                             {
                               "type": "V",
                               "text": "shall have",
                               "translation": "持つだろう",
-                              "tense": "future",
+                              "tense": "present",
                               "aspect": "simple",
                               "mood": "indicative",
                               "voice": "active"
@@ -864,24 +1076,35 @@
                               "translation": "自由の新たな誕生を"
                             }
                           ]
-                        },
+                        }
+                      ]
+                    },
+                    {
+                      "type": "M",
+                      "text": "—and that government of the people, by the people, for the people, shall not perish from the earth",
+                      "translation": "人民の、人民による、人民のための政治が地上から滅びることのないようにすること",
+                      "subclauses": [
                         {
                           "format": "clause",
                           "text": "that government of the people, by the people, for the people, shall not perish from the earth",
                           "relation": "apposition",
-                          "conjunction": "that",
                           "pattern": "SV",
                           "elements": [
                             {
+                              "type": "M",
+                              "text": "that",
+                              "translation": "〜ということ"
+                            },
+                            {
                               "type": "S",
                               "text": "government of the people, by the people, for the people",
-                              "translation": "人民の、人民による、人民のための政治が"
+                              "translation": "人民の、人民による、人民のための政治は"
                             },
                             {
                               "type": "V",
                               "text": "shall not perish",
                               "translation": "滅びることはないだろう",
-                              "tense": "future",
+                              "tense": "present",
                               "aspect": "simple",
                               "mood": "indicative",
                               "voice": "active"
