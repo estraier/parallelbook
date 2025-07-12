@@ -38,14 +38,15 @@ function do_clean_web {
 }
 
 function do_build_epub {
-    ls samples/*-parallel.json books/*-parallel.json |
+    ls samples/*-parallel.json books/*-parallel.json samples/*-analyzed.json books/*-analyzed.json |
         while read file ; do
-            svgname="${file%-parallel.json}-cover.svg"
-            pngname="${file%-parallel.json}-cover.png"
+            svgname="${file%.json}-cover.svg"
+            pngname="${file%.json}-cover.png"
             ./scripts/make_cover_image.py "$svgname" --book "$file"
             rsvg-convert -b white -w 1600 -h 2250 -o "${pngname}" "${svgname}"
             ./scripts/make_parallel_epub.py "$file" --cover "${pngname}"
         done
+    rm -f samples/*-cover.svg books/*-cover.png
 }
 
 function do_clean_epub {

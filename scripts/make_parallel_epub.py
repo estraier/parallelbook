@@ -94,13 +94,71 @@ def make_nav_file(args, output_path, book):
     f.write(prettify(tree.getroot()))
 
 
-def create_parallel_element(tag, class_name, source, target):
+def create_parallel_element(tag, class_name, source, target, analysis):
   container = ET.Element(tag, {"class": f"{class_name} parallel"})
   source_span = ET.SubElement(container, "span", {"class": "source", "lang": "en"})
   source_span.text = source
   target_span = ET.SubElement(container, "span", {"class": "target", "lang": "ja"})
   target_span.text = target
+  if analysis:
+    analysis_ul = ET.SubElement(container, "ul", {"class": "analysis"})
+    for sentence in analysis:
+      render_sentence(analysis_ul, sentence)
   return container
+
+
+def render_sentence(parent, sentence):
+  li = ET.SubElement(parent, "li", {"class": "sentence"})
+  pattern = sentence.get("pattern")
+  if pattern:
+    span_pat = ET.SubElement(li, "span", {
+      "class": f"pattern pattern-{pattern.lower()}"
+    })
+    span_pat.text = pattern
+  text = sentence.get("text")
+  if text:
+    span_txt = ET.SubElement(li, "span", {"class": "text"})
+    span_txt.text = text
+  elements = sentence.get("elements")
+  if elements:
+    ul_elem = ET.SubElement(li, "ul", {"class": "element-list"})
+    for element in elements:
+      render_element_item(ul_elem, element)
+
+
+def render_element_item(parent, element):
+  li = ET.SubElement(parent, "li", {"class": "element-item"})
+  typ = element.get("type")
+  if typ:
+    span_type = ET.SubElement(li, "span", {"class": f"type type-{typ.lower()}"})
+    span_type.text = typ
+  text = element.get("text")
+  if text:
+    span_txt = ET.SubElement(li, "span", {"class": "text"})
+    span_txt.text = text
+  tran = element.get("translation")
+  if tran:
+    span_tran = ET.SubElement(li, "span", {"class": "tran"})
+    span_tran.text = tran
+  verb_map = {
+    "tense": {"past": "過去"},
+    "aspect": {
+      "progressive": "進行",
+      "perfect": "完了",
+      "perfect progressive": "完進"
+    },
+    "mood": {
+      "imperative": "命令",
+      "subjunctive": "仮定",
+      "conditional": "条件"
+    },
+    "voice": {"passive": "受動"}
+  }
+  for attr, mapping in verb_map.items():
+    label = mapping.get(element.get(attr))
+    if label:
+      vattr = ET.SubElement(li, "span", {"class": "vattr"})
+      vattr.text = label
 
 
 def make_chapter_file(args, output_path, chapter, chapter_num):
@@ -120,33 +178,39 @@ def make_chapter_file(args, output_path, chapter, chapter_num):
   })
   body = ET.SubElement(html, "body")
   if "title" in chapter:
+    item = chapter["title"]
     ET.SubElement(body, "h2").append(create_parallel_element(
-      "span", "title", chapter["title"]["source"], chapter["title"]["target"]))
+      "span", "title", item["source"], item["target"], None))
   for block in chapter["body"]:
     if "header" in block:
       el = ET.SubElement(body, "h3")
+      item = block["header"]
       el.append(create_parallel_element(
-        "span", "header", block["header"]["source"], block["header"]["target"]))
+        "span", "header", item["source"], item["target"], None))
     elif "paragraph" in block:
       p = ET.SubElement(body, "p", {"class": "paragraph"})
       for item in block["paragraph"]:
-        p.append(create_parallel_element("span", "sentence", item["source"], item["target"]))
+        p.append(create_parallel_element(
+          "span", "sentence", item["source"], item["target"], item.get("analysis")))
     elif "blockquote" in block:
       bq = ET.SubElement(body, "blockquote", {"class": "blockquote"})
       for item in block["blockquote"]:
-        bq.append(create_parallel_element("span", "sentence", item["source"], item["target"]))
+        bq.append(create_parallel_element(
+          "span", "sentence", item["source"], item["target"], item.get("analysis")))
     elif "list" in block:
       ul = ET.SubElement(body, "ul", {"class": "list"})
       for item in block["list"]:
         li = ET.SubElement(ul, "li")
-        li.append(create_parallel_element("span", "sentence", item["source"], item["target"]))
+        li.append(create_parallel_element(
+          "span", "sentence", item["source"], item["target"], item.get("analysis")))
     elif "table" in block:
       table = ET.SubElement(body, "table", {"class": "table"})
       for row in block["table"]:
         tr = ET.SubElement(table, "tr")
         for cell in row:
           td = ET.SubElement(tr, "td")
-          td.append(create_parallel_element("span", "sentence", cell["source"], cell["target"]))
+          td.append(create_parallel_element(
+            "span", "sentence", cell["source"], cell["target"], None))
     elif "code" in block:
       pre = ET.SubElement(body, "pre", {"class": "code"})
       pre.text = block["code"]["text"]
@@ -198,6 +262,122 @@ pre {
   white-space: pre-wrap; word-wrap: break-word;
   line-height: 1.2;
   border: 1px solid #ddd;
+}
+.analysis {
+  font-size: 90%;
+  font-weight: normal;
+  margin: 0;
+  padding-left: 0;
+  text-align: left;
+  background: #fff;
+  border: solid 2px #fff;
+  border-radius: 0.5ex;
+}
+.analysis ul {
+  margin: 0 0 0 2ex;
+  padding: 0;
+}
+.analysis li {
+  padding-left: 0;
+  list-style: none;
+}
+.analysis span.text .element-s { background: #fde; }
+.analysis span.text .element-v { background: #def; }
+.analysis span.text .element-o { background: #efd; }
+.analysis span.text .element-c { background: #ffd; }
+.analysis span.pattern {
+  display: inline-block;
+  text-align: center;
+  min-width: 4ex;
+  margin-right: 0.5ex;
+  padding: 0 0.2ex;
+  font-size: 85%;
+  background: #eee;
+  border: 1px solid #999;
+  border-radius: 0.5ex;
+  opacity: 0.8;
+}
+.analysis span.pattern-sv {
+  background: #def;
+}
+.analysis span.pattern-svo {
+  background: #efd;
+}
+.analysis span.pattern-svc {
+  background: #ffd;
+}
+.analysis span.pattern-svoo {
+  background: #efc;
+}
+.analysis span.pattern-svoc {
+  background: #fed;
+}
+.analysis span {
+  display: inline;
+}
+.analysis span.type {
+  display: inline-block;
+  text-align: center;
+  min-width: 2.5ex;
+  margin-right: 0.5ex;
+  padding: 0 0.2ex;
+  font-size: 85%;
+  background: #eee;
+  border: 1px solid #ddd;
+  border-radius: 0.5ex;
+  opacity: 0.7;
+}
+.analysis span.type-s {
+  background: #fde;
+}
+.analysis span.type-v {
+  background: #def;
+}
+.analysis span.type-o {
+  background: #efd;
+}
+.analysis span.type-c {
+  background: #ffd;
+}
+.analysis span.tran {
+  margin-left: 1.2ex;
+  color: #036;
+  opacity: 0.7;
+  font-size: 85%;
+}
+.analysis span.relation {
+  margin-right: 0.5ex;
+  font-size: 80%;
+  opacity: 0.7;
+}
+.analysis span.relation:before {
+  content: "(";
+}
+.analysis span.relation:after {
+  content: ")";
+}
+.analysis span.tran:before {
+  content: "(";
+}
+.analysis span.tran:after {
+  content: ")";
+}
+.analysis span.vattr {
+  font-size: 75%;
+  color: #333;
+  opacity: 0.8;
+  background: #eee;
+  border: solid 1pt #ddd;
+  border-radius: 0.8ex;
+  margin-left: 0.3ex;
+}
+.analysis .subclause-list {
+  font-size: 90%;
+  opacity: 0.9;
+}
+.analysis .subsentence-list {
+  font-size: 90%;
+  opacity: 0.9;
 }
 """.strip()
   output_path.write_text(css, encoding="utf-8")
