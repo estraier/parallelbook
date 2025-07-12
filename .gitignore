@@ -1,4 +1,6 @@
 *.db
 *.epub
 *-epub
+*-batch-input-*.jsonl
+*-batch-output-*.jsonl
 web/books
